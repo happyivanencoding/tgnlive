@@ -12,7 +12,7 @@ $stderrLog = Join-Path $runtime 'server-error.log'
 $env:TGN_PORT = [string]$Port
 $env:TGN_SERVER_STDOUT_LOG = $stdoutLog
 $env:TGN_SERVER_STDERR_LOG = $stderrLog
-$process = Start-Process -FilePath (Get-Command node).Source -ArgumentList 'src/server.js' -WorkingDirectory $root -RedirectStandardOutput $stdoutLog -RedirectStandardError $stderrLog -WindowStyle Hidden -PassThru
+$process = Start-Process -FilePath (Get-Command node).Source -ArgumentList ('"' + (Join-Path $root 'src\server.js') + '"') -WorkingDirectory $root -RedirectStandardOutput $stdoutLog -RedirectStandardError $stderrLog -WindowStyle Hidden -PassThru
 for ($attempt = 0; $attempt -lt 50; $attempt++) {
   Start-Sleep -Milliseconds 100
   if ($process.HasExited) { throw "TGN Live exited with code $($process.ExitCode). See $stderrLog" }

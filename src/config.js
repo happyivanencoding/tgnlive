@@ -16,7 +16,7 @@ function integerEnv(name, fallback, minimum, maximum) {
 export function loadConfig(overrides = {}) {
   const runtimeDir = path.resolve(rootDir, process.env.TGN_RUNTIME_DIR || ".runtime");
   return {
-    version: "0.3.1",
+    version: "0.4.0",
     openingPlanStrategy: process.env.TGN_OPENING_PLAN || "authored",
     host: process.env.TGN_HOST || "127.0.0.1",
     port: integerEnv("TGN_PORT", 4317, 1, 65535),

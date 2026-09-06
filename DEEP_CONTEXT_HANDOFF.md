@@ -41,3 +41,7 @@ Cycle1 fixed replay:7/7 accepted, no repairs, mean first prose6.26s, mean comple
 ## v0.3.1 model/style verification candidate
 Cycle2 replay7/7 completed, mean6.50s first/17.20s full; judge4/5, repetition improved but spatial flaws remain. A turn5 Terra/low probe gave more natural correction and genuine short respite:10.00s first,21.18s full versus Luna6.91s/19.45s. Probe is NOT gameplay; same fictional state/action, but plan metadata createdForTurn:1 was omitted (19characters). Single-scene observation only. Default narrator now Terra/low for a bounded10-turn quality run, Luna remains configurable faster mode. Added explicit separation of writing constraints from narrative wording. No claim of overall winner before actual run.
 
+
+## v0.4 growth-affordance correction
+Terra/low adaptive test final-adaptive-v031 completed10/10 with checkpoint and two chapters, mean8.01s first/18.57s full. Actual player earned10 coins then spent10 to leave, refusing continued escort; judge spatial5/coherence5 but cultivation3. Scene had drifted toward port survival/work. v0.4 keeps the same pipeline but gives fresh worlds optional spiritual-tide, beginner-medicine and breathing-method affordances and a cultivation goal, with zero free realm/progress. Existing saved10-turn state is not migrated. A separate five-action directed growth test plus abuse/protocol/browser checks is pending; do not mislabel directed replay as ACP player decision-making.
+
