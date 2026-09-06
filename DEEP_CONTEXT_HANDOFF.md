@@ -33,3 +33,7 @@ node scripts/smoke.mjs
 ## Controller cycle 1
 Corrected UTF-8 adaptive baseline accepted 6 turns then failed turn7: six facts exceeded undocumented max5; repair repeated the defect. Evidence: artifacts/eval/baseline-utf8-v010. v0.2 uses an authored opening mini-plan (not model generated), retains live planning at turn9, raises the fact resource ceiling to20 with narrative target1-5, shares limits with repair, and records final candidates without thoughts. All19 tests pass. Performance replay is pending; no speedup claimed yet.
 
+
+## Controller cycle 2 candidate
+Cycle1 fixed replay:7/7 accepted, no repairs, mean first prose6.26s, mean completion16.56s; opening4.98s/12.80s versus corrected baseline22.60s/31.66s. This is a small stochastic replay, not a production SLA. Reader still reports repeated threats and missing durable payoff (overall4/5). v0.3 adds local physical/possession/scene-resolution constraints without another model stage, omits obsolete opening scene after turn1, displays power limits, labels stages in Chinese, reconciles cancel/retry against durable state, rejects damaged UTF-8. New live measurements pending.
+

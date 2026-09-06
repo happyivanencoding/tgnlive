@@ -29,3 +29,8 @@ body.light { color-scheme:light; --ink:#f0f0e7; --ink-raised:#e3e7dc; --paper:#1
 @media (max-width:410px) { main { padding:0 16px; }.brand { font-size:16px; }.provider-chip { font-size:10px; }.hero-copy { padding-top:56px; }.hero-copy h1 { font-size:42px; }.story-header-actions #reader-toggle { display:none; }.composer { gap:6px; padding-left:10px; }.compact { padding:8px 9px; }.compact span { padding-left:6px; } }
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; } }
 .export-options { display:flex; justify-content:flex-end; gap:8px; padding:9px 0; border-bottom:1px solid var(--line); }.export-options button { padding:6px 9px; border:1px solid var(--line); background:transparent; color:var(--mist); font-family:system-ui,sans-serif; font-size:11px; }.export-options button:hover { border-color:var(--jade); color:var(--jade-bright); }
+
+/* Programmatic region focus should not outline the entire novel; controls retain focus-visible. */
+#main-content:focus { outline:none; }
+.provisional p { white-space:pre-wrap; }
+.power-status p { color:var(--mist); }

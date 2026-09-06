@@ -225,6 +225,7 @@ function validateName(value) {
 function validateAction(value, maxLength) {
   if (typeof value !== "string") throw new AppError("行动必须是文本", { code: "INVALID_ACTION", status: 400 });
   const action = value.trim();
+  if (action.includes("\uFFFD")) throw new AppError("行动文字编码损坏，请重新输入", {code:"INVALID_ENCODING",status:400});
   if (!action || action.length > maxLength) throw new AppError(`行动需为 1–${maxLength} 个字符`, { code: "INVALID_ACTION", status: 400 });
   return action;
 }

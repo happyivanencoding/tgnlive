@@ -115,7 +115,7 @@ function stateCardHtml(state = {}) {
   const meter = Number.isFinite(progress) ? Math.max(0, Math.min(100, progress)) : 0;
   const itemList = inventory.length ? `<ul>${inventory.slice(0, 6).map((item) => `<li>${escapeHtml(item?.name || '未命名物品')}${item?.qty ? ` ×${escapeHtml(item.qty)}` : ''}</li>`).join('')}</ul>` : '<p>尚无重要物品</p>';
   const npcList = relationships.length ? `<ul>${relationships.slice(0, 6).map((npc) => `<li>${escapeHtml(npc?.name || '未命名人物')}${npc?.role ? ` · ${escapeHtml(npc.role)}` : ''}${npc?.attitude ? `（${escapeHtml(npc.attitude)}）` : ''}</li>`).join('')}</ul>` : '<p>尚无人际记录</p>';
-  return `<section class="status-card"><h3>当前境界</h3><h2>${escapeHtml(realm.name || '境界未明')}</h2><p>${realm.rank !== undefined ? `位阶 ${escapeHtml(realm.rank)}` : '位阶未记录'}</p><div class="realm-meter" aria-label="境界进度 ${meter}%"><i style="width:${meter}%"></i></div><p>${Number.isFinite(progress) ? `${meter}%` : '进度未记录'}</p></section><section class="status-card"><h3>所在之地</h3><p>${escapeHtml(state.location || '位置未记录')}</p></section><section class="status-card"><h3>钱财</h3><p>${state.coins === undefined || state.coins === null ? '未记录' : `${escapeHtml(state.coins)} 枚`}</p></section><section class="status-card"><h3>当前目标</h3><p>${escapeHtml(state.goal || '尚未立下目标')}</p></section><section class="status-card"><h3>重要物品</h3>${itemList}</section><section class="status-card"><h3>重要人物</h3>${npcList}</section>${facts.length ? `<section class="status-card"><h3>已知事实</h3><ul>${facts.slice(0,4).map((fact) => `<li>${escapeHtml(fact)}</li>`).join('')}</ul></section>` : ''}`;
+  return `<section class="status-card"><h3>当前境界</h3><h2>${escapeHtml(realm.name || '境界未明')}</h2><p>${realm.rank !== undefined ? `位阶 ${escapeHtml(realm.rank)}` : '位阶未记录'}</p><div class="realm-meter" aria-label="境界进度 ${meter}%"><i style="width:${meter}%"></i></div><p>${Number.isFinite(progress) ? `${meter}%` : '进度未记录'}</p></section><section class="status-card power-status"><h3>我的天赋</h3><h2>${escapeHtml(state.power?.name || "未记录")}</h2><p>${escapeHtml(state.power?.description || "")}</p></section><section class="status-card"><h3>所在之地</h3><p>${escapeHtml(state.location || '位置未记录')}</p></section><section class="status-card"><h3>钱财</h3><p>${state.coins === undefined || state.coins === null ? '未记录' : `${escapeHtml(state.coins)} 枚`}</p></section><section class="status-card"><h3>当前目标</h3><p>${escapeHtml(state.goal || '尚未立下目标')}</p></section><section class="status-card"><h3>重要物品</h3>${itemList}</section><section class="status-card"><h3>重要人物</h3>${npcList}</section>${facts.length ? `<section class="status-card"><h3>已知事实</h3><ul>${facts.slice(-4).map((fact) => `<li>${escapeHtml(fact)}</li>`).join('')}</ul></section>` : ''}`;
 }
 function renderStatus() { const markup = stateCardHtml(app.game?.state || {}); els.statusRail.innerHTML = markup; els.statusDrawer.innerHTML = `<button class="back-link close-drawer" type="button">← 收起</button>${markup}`; els.statusDrawer.querySelector('.close-drawer').addEventListener('click', closeDrawer); }
 function renderNarrative() {
@@ -132,14 +132,18 @@ function renderActions() {
   if (!choices.length && !app.stream) els.suggestions.innerHTML = '<p class="empty-state">本回合尚未给出建议；你仍可写下自己的行动。</p>';
   els.customAction.disabled = disabled; els.submitAction.disabled = disabled; els.retry.disabled = disabled;
 }
+function stageLabel(name) {
+  const labels = {authored_opening_plan:"铺开开局",plan:"整理后续局势",context_assembly:"回忆当前经历",narrative_generation:"续写你的行动",parse_validate:"核对结果",repair:"修复本段结果",persistence:"保存故事"};
+  return labels[name] || (name?.startsWith("acp_") ? "连接叙事模型" : name || "请求已发出");
+}
 function renderGeneration() {
   if (!app.stream || !app.startedAt) { els.generation.hidden = true; clearInterval(app.timer); app.timer = null; return; }
-  const elapsed = Date.now() - app.startedAt; els.generation.hidden = false; els.generation.innerHTML = `<span>真实生成中 · <strong>${escapeHtml(app.pendingAction?.stage || '请求已发出')}</strong> · ${formatElapsed(elapsed)}</span><button type="button" class="stop-button" id="stop-turn">停止本次生成</button>`;
+  const elapsed = Date.now() - app.startedAt; els.generation.hidden = false; els.generation.innerHTML = `<span>真实生成中 · <strong>${escapeHtml(stageLabel(app.pendingAction?.stage))}</strong> · ${formatElapsed(elapsed)}</span><button type="button" class="stop-button" id="stop-turn">停止本次生成</button>`;
   $('#stop-turn').addEventListener('click', cancelTurn);
 }
 function renderObservability() {
   const metrics = app.lastMetrics || app.turn?.metrics || {}; const rows = app.events.map((event) => `<li><strong>${escapeHtml(event.name)}</strong>${escapeHtml(event.details || '—')}<br><small>${escapeHtml(formatDate(event.at))}</small></li>`).join('');
-  els.observability.innerHTML = `<button class="back-link close-drawer" type="button">← 关闭</button><h2>运行记录</h2><p>仅记录客户端可见事件与后端返回字段；不含模型私有推理。</p><p>模型：${escapeHtml(app.health?.provider?.model || '服务未报告')}<br>服务：${escapeHtml(app.health?.provider?.name || '未连接')}</p>${Object.keys(metrics).length ? `<p>本回合指标：${escapeHtml(JSON.stringify(metrics))}</p>` : ''}<ul class="observability-list">${rows || '<li>尚无记录</li>'}</ul>`;
+  els.observability.innerHTML = `<button class="back-link close-drawer" type="button">← 关闭</button><h2>运行记录</h2><p>仅记录客户端可见事件与后端返回字段；不含模型私有推理。</p><p>模型：${escapeHtml(app.health?.provider?.model || '服务未报告')}<br>服务：${escapeHtml(app.health?.provider?.name || '未连接')}</p>${Object.keys(metrics).length ? `<p>本回合指标：${escapeHtml(JSON.stringify({ totalMs:metrics.totalElapsedMs, firstTextMs:metrics.firstReaderVisibleMs, repairs:metrics.repairAttempts, stages:metrics.stages?.map(({name,elapsedMs,status})=>({name,elapsedMs,status})), provider:metrics.provider ? Object.fromEntries(Object.entries(metrics.provider).map(([role,value])=>[role,{model:value.model,reasoning:value.reasoningEffort,sessionId:value.sessionId,runId:value.runId}])) : null }))}</p>` : ''}<ul class="observability-list">${rows || '<li>尚无记录</li>'}</ul>`;
   els.observability.querySelector('.close-drawer').addEventListener('click', closeDrawer);
 }
 function openDrawer(which) { app.activeDrawer = which; const panel = which === 'status' ? els.statusDrawer : els.observability; panel.classList.add('open'); panel.setAttribute('aria-hidden','false'); els.drawerScrim.hidden = false; (which === 'status' ? els.openStatus : els.openObservability).setAttribute('aria-expanded','true'); panel.focus(); }
@@ -178,7 +182,33 @@ async function submitAction(action) {
   } catch (error) { if (error.name === 'AbortError') return; failTurn(error.message, { code:'network', retryable:true }); }
 }
 function failTurn(message, details = {}) { record('turn-error', `${details.code || 'unknown'} · ${message}`); app.stream = null; app.startedAt = null; if (app.pendingAction) app.pendingAction.stage = '未写入正史'; els.turnError.textContent = message; els.retryRow.hidden = !app.pendingAction?.action; renderGeneration(); renderNarrative(); renderActions(); saveSession(); }
-async function cancelTurn() { const gameId = app.game?.id; if (!gameId || !app.stream) return; const controller = app.stream; app.stream = null; controller.abort(); record('cancel-click', gameId); try { const payload = await fetchJson(`/games/${encodeURIComponent(gameId)}/cancel`, { method:'POST' }); toast(payload.cancelled ? '已请求停止；本段不会写入正史。' : '停止请求已发送。'); } catch (error) { toast(`停止请求未确认：${error.message}`); } finally { app.startedAt = null; if (app.pendingAction) app.pendingAction.stage = '已停止，未写入正史'; els.turnError.textContent = '本次生成已停止，未写入正史。你可以重试或改变行动。'; els.retryRow.hidden = false; renderGeneration(); renderNarrative(); renderActions(); saveSession(); } }
+async function cancelTurn() {
+  const gameId=app.game?.id; if(!gameId||!app.stream)return;
+  const previousVersion=app.game.version; const controller=app.stream; const pending=app.pendingAction;
+  app.stream=null; controller.abort(); app.startedAt=null; record('cancel-click',gameId);
+  let cancelConfirmed=false;
+  try {
+    const payload=await fetchJson(`/games/${encodeURIComponent(gameId)}/cancel`,{method:'POST'});
+    cancelConfirmed=Boolean(payload.cancelled);
+    const current=await fetchJson(`/games/${encodeURIComponent(gameId)}`);
+    if(current.game.version>previousVersion){
+      app.pendingAction=null; applyGame(current.game); els.turnError.textContent='停止请求到达前，本回合已完成并保存。'; els.retryRow.hidden=true;
+    } else {
+      app.pendingAction=pending ? {...pending,text:'',stage:cancelConfirmed?'已停止':'停止状态待确认'}:null;
+      applyGame(current.game); els.turnError.textContent=cancelConfirmed?'已确认停止，本次没有写入新回合。':'当前还没有新回合；稍后重试前会重新核对存档。'; els.retryRow.hidden=!pending?.action;
+    }
+  }catch(error){els.turnError.textContent=`停止状态暂未确认：${error.message}。请刷新检查存档，勿将预览当作已保存。`;els.retryRow.hidden=!pending?.action;}
+  finally{renderGeneration();renderNarrative();renderActions();saveSession();}
+}
+async function retryTurn() {
+  const action=app.pendingAction?.action;if(!action||!app.game?.id||app.stream)return;
+  try {
+    const previousVersion=app.game.version;
+    const result=await fetchJson(`/games/${encodeURIComponent(app.game.id)}`);
+    if(result.game.version>previousVersion){app.pendingAction=null;applyGame(result.game);els.turnError.textContent='已恢复上次完成的回合，没有重复执行行动。';els.retryRow.hidden=true;return;}
+    applyGame(result.game);await submitAction(action);
+  }catch(error){els.turnError.textContent=`暂时无法核对存档：${error.message}`;}
+}
 function download(format) { if (!app.game?.id) return; const link = document.createElement('a'); link.href = `${API}/games/${encodeURIComponent(app.game.id)}/export?format=${format}`; link.download = ''; document.body.append(link); link.click(); link.remove(); record('download', format); }
 function bindEvents() {
   $('#new-game-button').addEventListener('click', async () => { showScreen('onboarding'); await refreshWorlds(); els.heroName.focus(); });
@@ -187,7 +217,7 @@ function bindEvents() {
   els.actionForm.addEventListener('submit', (event) => { event.preventDefault(); submitAction(); });
   els.customAction.addEventListener('keydown', (event) => { if (event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); submitAction(); } });
   els.customAction.addEventListener('input', () => { els.customAction.style.height = 'auto'; els.customAction.style.height = `${Math.min(112, els.customAction.scrollHeight)}px`; });
-  els.retry.addEventListener('click', () => submitAction(app.pendingAction?.action)); els.openStatus.addEventListener('click', () => openDrawer('status')); els.openObservability.addEventListener('click', () => openDrawer('observability')); els.drawerScrim.addEventListener('click', closeDrawer);
+  els.retry.addEventListener('click', retryTurn); els.openStatus.addEventListener('click', () => openDrawer('status')); els.openObservability.addEventListener('click', () => openDrawer('observability')); els.drawerScrim.addEventListener('click', closeDrawer);
   els.exportMenu.addEventListener('click', () => { const open = els.exportOptions.hidden; els.exportOptions.hidden = !open; els.exportMenu.setAttribute('aria-expanded', String(open)); });
   els.exportOptions.addEventListener('click', (event) => { const format = event.target.dataset.export; if (format) download(format); });
   els.reader.addEventListener('click', () => { const enabled = document.body.classList.toggle('reader-mode'); els.reader.setAttribute('aria-pressed', String(enabled)); els.reader.textContent = enabled ? '退出阅读' : '阅读模式'; });
