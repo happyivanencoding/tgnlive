@@ -45,7 +45,8 @@ try {
   await page.goto(base, { waitUntil: 'networkidle' });
   await page.locator('#new-game-button').click();
   await page.locator('#hero-name').fill('林照');
-  await page.locator('input[name="power"]').last().check();
+  await page.locator('.power-card').last().click();
+  if (!(await page.locator('input[name="power"]').last().isChecked())) throw new Error('Visible power card did not select the intended ability');
   await page.locator('#adult-confirmation').check();
   await page.screenshot({ path: path.join(output, 'onboarding-mobile.png'), fullPage: true });
   await page.locator('#create-game-button').click();

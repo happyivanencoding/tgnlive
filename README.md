@@ -1,48 +1,59 @@
-# TGN Live
+# TGN Live · 可玩的修仙小说
 
-TGN Live 是一个仅供本机私人试验的“可玩的修仙连载小说”MVP。后端使用 Node 24 原生 HTTP、`node:sqlite` 和本机 AgentDock ACP；没有运行时 npm 依赖。玩家状态以 SQLite Canon 为准，模型正文只是带结构化提案的候选结果。
+独立 Windows 本地 Web MVP，项目目录 `C:\dev\tgn_live`。它没有修改原来的 `tgn-story-mvp` 生产流水线。当前版本 **0.4.0**；最终已验证运行结果以 `docs/EXPERIMENTS.md` 与 `artifacts/reports/MEASUREMENTS.md` 为准。
 
-## 运行
+## 打开与启动
 
-要求：Windows、Node `>=24`、本机 AgentDock 已启动且当前 Windows 用户可解密其 DPAPI token。
+在这台电脑的浏览器打开 **http://127.0.0.1:4317**。这是电脑本机地址，不是手机远程访问地址。
+
+服务未运行时，在普通 PowerShell 终端执行：
 
 ```powershell
-node --test
-powershell -File scripts/start-local.ps1
+cd C:\dev\tgn_live
+node src/server.js
+```
+
+保持窗口打开，按 Ctrl+C 停止。后台启动可用 `pwsh -NoProfile -File scripts/start-local.ps1`，停止用 `pwsh -NoProfile -File scripts/stop-local.ps1`；停止脚本会核对项目入口的完整路径，拒绝终止无法确认归属的 PID。后台启动应从普通 Windows 终端执行；AgentDock 的短时命令会在命令超时后回收子进程，不能把它当常驻服务管理器。
+
+要求 Node 24、当前 Windows 用户可用的 AgentDock/Codex ACP 登录，以及运行中的本地 AgentDock MCP。无运行时 npm 依赖，无需先安装前端框架。模型失败会明确报错，不会拿测试故事冒充真实生成。
+
+## 已实现的玩法
+
+创建成年主角，选择烬息、借势印或空囊界，从“烬河照夜”的药市风波开始。每回合有三个建议，也可自由输入：帮人、拒绝、交易、逃走、试探和训练都可以尝试。正文真实流式显示，未完成段落明确标为预览；校验成功后才进入正史。
+
+SQLite 保存角色境界与进度、地点、钱财、重要物品、人物关系、事实、承诺及事件记录。书库可以继续旧故事，每6个已接受回合分章，提供阅读模式和 Markdown/TXT 导出。界面含手机窄屏布局、状态抽屉、天赋限制、亮暗切换、阶段耗时、停止和重试。重新提交同一请求不会重复领取结果。
+
+## 模型与速度
+
+默认叙事 **gpt-5.6-terra / low**，用于后续连续质量测试；快速对照配置为 **gpt-5.6-luna / low**。独立试玩玩家使用 Luna/low，短程规划与盲读者使用 Sol/medium。所有配置均经过实际 ACP 调用，而不是只看下拉列表。
+
+```powershell
+$env:TGN_NARRATOR_MODEL='gpt-5.6-luna'  # 快速叙事对照
+$env:TGN_NARRATOR_REASONING='low'
+node src/server.js
+```
+
+开局直接使用预先编写的局势底稿，不额外等待规划模型；它不是伪装成模型输出的正文。第9回合等检查点仍会调用真正的 Story Brain。默认每8回合检查，每6回合成章；配置见 `src/config.js`。环境变量 `TGN_OPENING_PLAN=live` 可恢复开局实时规划用于对照。
+
+## 检查与复现
+
+```powershell
+npm test
 node scripts/smoke.mjs
+node eval/play.mjs --label new-adaptive-run --turns 10 --persona progression --judge --max-minutes 20
+node eval/play.mjs --label new-fixed-replay --turns 7 --replay artifacts/eval/baseline-utf8-v010/actions.json --judge
+node eval/protocol.mjs final-adaptive-v031 new-protocol-check
+node eval/summarize.mjs
 ```
 
-人工长期运行时，最稳妥的方式是在一个独立 PowerShell 终端前台执行 `node src/server.js`，保持该终端打开；这不依赖自动化工具的命令超时。`scripts/start-local.ps1` 适合正常用户终端，但某些代理执行器会在命令会话到期时连同子进程一起回收，因此不能把“启动命令返回”当作长期存活证明。
+每次使用新的 label，避免覆盖证据。`play.mjs` 首回合为固定启动，之后由独立 ACP 玩家读取真实观察自主选择；`--replay` 则明确是固定行动重放。代理决策耗时与应用生成耗时分开。长测试通过 AgentDock 运行时须显式给足 `timeout_ms`。
 
-默认地址是 `http://127.0.0.1:4317`。启动脚本不会终止占用端口的未知进程；进程信息写入 `.runtime/server.json`，标准输出和错误日志分别写入 `.runtime/server.out.log`、`.runtime/server-error.log`。仅在进程命令与项目记录相符时可运行：
+原始证据保存在 `artifacts/eval/`：逐回合 JSONL、完整游玩文本、行动、ACP session/run、实际模型与思考等级、阶段时间、失败、修复、导出与独立读者意见。`server-metrics.json` 是完整后端 trace；SSE complete 携带的是摘要，不可把摘要当完整阶段数据。`artifacts/ui/` 保存浏览器截图及测试结果。所有此类本地数据与数据库均已被 Git 忽略。
 
-```powershell
-powershell -File scripts/stop-local.ps1
-```
+## 边界
 
-也可直接运行 `npm start`。数据默认保存在 `data/tgn-live.sqlite`。
+这是可信单用户的 **loopback-only 原型**，不是可公开运营的安全服务。只读 ACP 工作区与禁工具检测不等同于对抗式多租户沙箱。不要直接加公网隧道；正式上线前需独立认证、隔离、限流、配额与内容治理。
 
-## API
+目前没有 AI 插画生成、视频、语音、支付或多用户联机。能力边界和故事语义仍部分依赖模型，不能把几个样本成功当作完全确定的规则引擎；长篇记忆、数百回合稳定性和真人留存未验证。提供方未可靠返回的账单 token、成本与内部排队时间记为未知，不估算成零。
 
-- `GET /api/health`：版本、provider 状态和准确角色配置。
-- `GET /api/worlds`：一个精写开局与三种非对称异能。
-- `POST /api/games`：创建空白持久存档，不伪装成模型正文。
-- `GET /api/games`、`GET /api/games/:id`：存档列表与恢复。
-- `POST /api/games/:id/turns`：POST SSE，发送 `stage`、真实 `text` chunk、`complete` 或 `error`。
-- `POST /api/games/:id/cancel`：仅取消该存档当前生成，不提交状态。
-- `GET /api/games/:id/export?format=md|txt`：按章导出。
-- `GET /api/games/:id/metrics`：原始 Turn traces 与摘要。
-
-创建游戏后，首个行动应发送 `开始我的故事`。每个 Turn 请求必须带 `{action, expectedVersion, requestId}`。同一 `requestId` 绑定原行动和版本；同内容重放返回已提交结果，不同内容返回冲突。
-
-## Provider 配置
-
-默认配置经过真实会话能力验证：Narrator `gpt-5.6-luna/low`，Story Brain `gpt-5.6-sol/medium`，试玩 Player `gpt-5.6-luna/low`，Judge `gpt-5.6-sol/medium`。不会继承会话的 `ultra`。可用以下环境变量覆盖：
-
-`TGN_NARRATOR_MODEL`、`TGN_PLANNER_MODEL`、`TGN_PLAYER_MODEL`、`TGN_JUDGE_MODEL`，以及对应的 `TGN_*_REASONING`。适配器会核对会话实际公布的选项，并把最终应用配置写入 trace。模型不可用时直接报错，不回退到假正文。
-
-包导出 `createTgnLive`、`createAcpRoleAdapter`、`createPlaytestRoleAdapter`、`buildPlayerObservationPrompt`、`buildJudgePrompt`、`GameStore`、`GenerationService` 和 `McpHttpClient`。控制器可从 `tgn-live/acp-adapter` 或 `src/index.js` 创建独立 Player/Judge ACP 角色。
-
-## 限制
-
-这是绑定 `127.0.0.1` 的无登录原型。ACP 会话使用项目内空目录和 `read-only` 模式，并拒绝工具/权限事件，但这不等于经过证明的恶意多租户沙箱。当前没有 AI 插画、付费、多人或公网部署。完整 10 回合质量基线与两轮优化由控制器在后端冻结后执行，不能把确定性 fixture 时间当成 live 成绩。
+后续开发先读 `AGENTS.md`、`DEEP_CONTEXT_HANDOFF.md`、`docs/ARCHITECTURE.md`、`docs/EXPERIMENTS.md`。本地 Git 已建立，未绑定或推送远端。

@@ -1,36 +1,66 @@
-# TGN Live Backend Architecture
+# TGN Live 架构与运行边界
 
-## Request path
+适用：0.4.0，本地 `C:\dev\tgn_live`。实现独立于原 TGN 批量长篇生产流程。以实际代码及实验 trace 为准。
 
-`src/app.js` 提供原生 HTTP 路由。Turn 在发送 SSE 前完成 JSON、Host/Origin、游戏版本和幂等检查；随后建立该游戏唯一的 `AbortController`。`src/generation-service.js` 在开局、默认每 8 回合或临近突破时调用 Story Brain，其余回合复用最近计划。Narrator 每回合一次返回“正文 + `<TGN_DELTA_JSON>` + JSON”。
+## 一次行动
 
-正文 chunk 来自 ACP `final_answer` 事件，`src/output-parser.js` 在分隔符出现前逐块转发，因此不是全文到齐后的模拟打字。JSON 由 `src/reducer.js` 做边界检查。任何无法应用的状态变化会触发至多一次完整修复；修复仍失败则整轮失败。浏览器看到的 `changes` 只从实际应用的 delta 生成。
+```text
+静态阅读界面 → POST /games/:id/turns
+  → 输入 / UTF-8 / Origin / Host / version / requestId / 单游戏并发检查
+  → 开局：预写局势底稿；后续：仅每8回合等检查点调用 Story Brain
+  → 当前 Canon + 最近4回合 + 未过期事实/承诺 + 小计划
+  → 单次 Narrator ACP：先输出可见正文，再输出带分隔符的 JSON 提案
+  → 正文 SSE 实时预览（尚未成为正史）
+  → 解析 / 确定性状态约束校验
+  → 必要时仅一次有明确错误原因的修复，不做无条件二次改写
+  → 取消信号复核 → SQLite 原子提交（state / turn / ledger / idempotency）
+  → complete：客户端替换为最终接受正文，刷新状态与选择
+```
 
-## Atomic state
+关键代码：`src/app.js`、`generation-service.js`、`reducer.js`、`store.js`、`output-parser.js`。无运行时 npm 依赖；HTTP、SQLite、静态文件由一个 Node24 进程提供。浏览器使用 ES modules，不依赖外部字体/图片/CDN。
 
-`src/store.js` 使用 `node:sqlite` 和 `BEGIN IMMEDIATE`。一次成功提交在同一事务中写入 `turns`、更新 `games.state_json/version`、追加 `canon_ledger`、保存可选 `story_plans` 并完成 `requests`。失败和取消只更新请求状态与 trace，不写 Turn 或 Canon。提交前再次检查 AbortSignal，事务中再次检查 optimistic version。
+## 两速生成与改动理由
 
-表：
+开局已经拥有作者写好的世界、三方欲望和可选方向，再让规划模型重述一次没有体现出足以抵偿等待的收益。0.2起采用 `opening-plan.js` 的明确作者底稿，模型正文仍为实时生成。`TGN_OPENING_PLAN=live` 保留旧路径用于对照。计划只描述可能发生什么，不预先决定玩家必选哪条路线。
 
-- `games`：当前可见状态和版本。
-- `turns`：接受的正文、选择和玩家可见变化。
-- `canon_ledger`：每回合确定性 applied/rejected 记录。
-- `requests`：绑定 action + expectedVersion 的幂等状态。
-- `story_plans`：不会返回浏览器的短程计划。
-- `traces`：阶段、模型配置、ACP session/run、事件类型和错误。
+`plannerInterval=8` 意味着已提交8回合后，下个请求会生成新短程计划；接近突破也可能触发规划。当前实现没有独立调度器提前投机预生成，更不会把未选择分支混进Canon。常规回合仍为一次主叙事调用。
 
-每 6 个接受 Turn 形成一章，可通过 `TGN_CHAPTER_TURNS` 在 5–10 内调整。
+0.3减少已离开的开局场景反复进入提示；加入物理范围、物品归属、伤处/门窗连续性和阶段性结果约束。0.3.1试验 Terra/low 的叙事取舍，Luna/low 可通过环境变量恢复。规则约束不应变成正文里的作者声明。语义约束不能靠这个设计自动证明全部正确；保留真实失败与独立阅读评估。
 
-## ACP transport
+0.4仅调整新建世界的成长入口：河沿灵潮、基础引气药、粗浅吐纳和可选择的修行目标。没有强行送突破，也不迁移旧角色；这是十回合实际游玩暴露“码头求生/短工化”后的修正。定向五回合实测出现0→2→4→4→5进度，完整十回合自适应证据仍属于0.3.1，不冒充0.4的新十回合验证。
 
-`src/acp/mcp-client.js` 启动时通过一次隐藏 PowerShell 子进程在当前用户内存中解密 DPAPI token，之后使用 Node 原生 `fetch` 和 MCP session header 持久访问 AgentDock；token 不写文件、不进日志、不下发浏览器。Narrator 和 Planner 共享客户端。
+## Canon 与提案
 
-`src/acp/role-adapter.js` 为每次生成创建项目内空工作目录会话，先设 `read-only`，再核对并设置模型，然后从模型配置返回值核对 `reasoning_effort` 后设置 effort。全局 prompt 槽位固定为观察到的上限 2，不改 AgentDock 全局配置。适配器排空 `has_more` 页面，拒绝 `truncated`、工具/权限类事件及“completed 但正文内嵌 provider error”的假成功，最后关闭 ACP session。
+模型无权直接写库。境界只能逐级，修炼进度单回合最多20，金钱变化有界且余额不能为负，移除物品必须已持有，关系态度必须属于明确集合。所有提案必须整体通过；不能正文宣称拿到宝物、数据库却静默拒绝奖励。
 
-## Telemetry
+事实记录倾向每回合1—5条，但安全资源上限为20。旧版将5设为未披露硬门槛，真实第7回合产生6条事实后，连修复也失败。`delta-contract.js` 让初稿与修复看到相同约束，并给出实际类型或数量错误。提高上限并不意味着允许伪造事实，也不等于提高了长期事实容量。
 
-`src/telemetry.js` 使用 monotonic clock 和 ISO wall time。Trace 包含 request validation、context assembly、plan、各角色 ACP initialize/auth/session/model setup、narrative generation、parse/validate、repair、persistence、总耗时、首个 final-answer token、首个读者可见正文、prompt/output 字符数、精确模型/effort/session/run、事件序列、应用/拒绝 delta。provider queue、token usage 和成本拿不到时为 `null`。
+`facts` 当前最多100条、承诺最多30条、物品/重要NPC容量有限，属于MVP容量策略，不是长篇检索记忆系统。逐回合动作、正文与已应用的变化有独立记录，但超出活动状态容量的事实并没有成熟的晋升/检索策略，当前上下文不会自动语义检索历史所有事件。完整游戏接口返回全回合，尚未分页；长篇需要进一步处理。
 
-## Trust boundary
+三个能力有明确文本边界，但尚未全部转成不可绕过的独立战斗/次数/技能资源引擎。例如空囊界次数、真实余温以及空间可达性仍依赖模型与校验提案的配合，不能宣称完全形式化。
 
-玩家 free text 只作为 JSON 编码的数据进入提示，不能授权工具、奖励或改写规则。所有浏览器 mutation 有同源检查，Host 仅接受 loopback；无 Origin 的本机 CLI/控制器仍可调用。该设计降低本地误用风险，但不是认证系统、网络隔离器或恶意多租户沙箱。
+## ACP 实际配置
+
+默认 Narrator：Terra/low；Story Brain：Sol/medium；独立Player：Luna/low；Reader Judge：Sol/medium。模型以本机 advertised options 为入口，但必须通过真实调用；初始 Astra 虽列出却遭 Codex 版本错误。先 set_model 再读取该模型 reasoning options，不继承 ultra。
+
+`src/acp/mcp-client.js` 原生 HTTP MCP，认证 token 只在当前 Windows 用户进程内由DPAPI解密，不交给网页、不写文件、不打印。`role-adapter.js` 在项目自己的空叙事目录建立只读 ACP session，不给予额外工作目录；检测工具/权限事件则取消。最终回答与thought事件分开，后者只记类型/时间、不存内容。
+
+每次接收所有 `has_more` 页；next_seq 原样传递。检测历史缺页、完成但嵌入错误、空输出、超时与取消。仅本项目拥有的 session 会被关闭，不终止别的项目agent。此实现不是针对恶意公网用户的强沙箱。
+
+本机实测全局ACP并发上限为2。应用自身有有界并发，但别的项目仍可能占用全局容量；全球队列/自动接管未完全实现。模型、MCP连接或外部并发错误会暴露为失败，不返回假故事。
+
+## 可观测性
+
+`TurnTrace` 记录请求时点、校验、组装、开局底稿/规划、ACP设置、首个最终回答chunk、首段读者可见正文、生成、解析、修复、持久化与总耗时。ACP初始化/认证/session/model设置是一个组合span，不是假装拆出了提供方内部计算或网络排队。
+
+组合ACP设置span嵌套在规划/生成/修复内；不得把它们再次相加。当0ms出现于极快的本地阶段，是整数毫秒分辨率，不是证明没有工作。
+
+完整trace由 `/api/games/:id/metrics` 返回并持久化；SSE complete带轻量摘要。0.2起保存候选最终输出，便于分析失败JSON；不保存私有推理。Playtest 保存浏览器/API侧不同计时：API SSE receipt并不等于DOM paint，真实浏览器用MutationObserver+rAF另测。独立玩家决策时间与应用等待时间分列。
+
+账单token、美元成本、提供方内部排队时间未知时为null。ACP context-used不是“本次消费token”，不能直接累计成账单。
+
+## 启停、安全及恢复
+
+默认只监听127.0.0.1:4317。校验Host与浏览器Origin，拒绝外站修改，但无账户系统或公网鉴权。上公网前需要独立身份、隔离、限流与安全审查。取消后客户端重新读取存档：若完成先发生，就显示已保存，不谎称回合被撤销。
+
+SQLite原子提交保证已保存数据能跨重启读取，但突发进程死亡时，不保证所有在途request状态都已自动回收；现场保留了首次工具生命周期导致的失败。常驻运行不能依赖AgentDock默认30秒命令。用普通终端，或明确有足够生命周期的进程管理。

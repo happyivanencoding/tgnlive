@@ -30,3 +30,7 @@ Fixture verification on 2026-09-07 covered valid adult onboarding, library resum
 No image-generation endpoint is wired in this release. The CSS-only atmosphere is intentional; illustration milestones need backend metadata and a truthful generated asset before display.
 
 The prototype exposes model/provider values returned by the server. The server must explicitly set narrator/player `reasoning_effort=low` and planner/judge `reasoning_effort=medium`; the UI never sends model configuration or inherits an `ultra` setting. The frontend development session used `gpt-5.6-terra` at `high`; `gpt-6-astra` is intentionally excluded because generation was reported to fail with a Codex-version error.
+
+## Final real browser verification (v0.4.0)
+2026-09-06T23:10Z: artifacts/ui/final-live-v040b contains actual Chrome two-turn generation with no API stubs. All seven functional checks pass:3choices,mobile/desktop overflow,exact refresh,2accepted turns,MD download,reader mode. First narrative paint3454.2/3357.9ms; observed commit15152.8/14063.4ms. Three mobile choices subsequently passed real pointer hit-testing in mobile-hitcheck.json. The test retains issues_found because Chrome reported two net::ERR_ABORTED request events despite saved rounds; network cleanup cause is not proven. First attempt final-live-v040 failed at a hidden radio test locator before creating a game; test now clicks the visible card. No physical Android keyboard validation.
+
