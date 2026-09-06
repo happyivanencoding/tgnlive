@@ -1,0 +1,46 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { GenerationService } from "../src/generation-service.js";
+import { TurnTrace } from "../src/telemetry.js";
+import { createSeedState, WORLDS } from "../src/worlds.js";
+import { REJECTED_NARRATOR_OUTPUT, VALID_NARRATOR_OUTPUT } from "./fixtures/narrator-output.js";
+
+function adapter(role, outputs, reasoningEffort) {
+  let calls = 0;
+  return {
+    role,
+    model: role === "planner" ? "gpt-5.6-sol" : "gpt-5.6-luna",
+    reasoningEffort,
+    health: { status: "ready" },
+    get calls() { return calls; },
+    async run(prompt, { onText, onEvent }) {
+      const text = outputs[Math.min(calls, outputs.length - 1)];
+      calls += 1;
+      onEvent?.({ type: "acp_config_applied", sessionId: `${role}_session`, model: this.model, reasoningEffort, mode: "read-only" });
+      onEvent?.({ type: "acp_run_started", sessionId: `${role}_session`, runId: `${role}_run_${calls}` });
+      for (let index = 0; index < text.length; index += 17) onText?.(text.slice(index, index + 17));
+      return { text, sessionId: `${role}_session`, runId: `${role}_run_${calls}`, eventTypes: ["agent_message_chunk", "completed"], usage: null };
+    },
+  };
+}
+
+function game() {
+  const world = WORLDS[0];
+  return { id: "game_test", name: "林砚", version: 0, state: createSeedState(world, world.powers[0]), turns: [] };
+}
+
+test("generation repairs rejected delta and returns only repaired state", async () => {
+  const plannerOutput = JSON.stringify({ pressure: "搜查临近", npcMoves: [], openings: [], continuity: [], milestone: "" });
+  const narrator = adapter("narrator", [REJECTED_NARRATOR_OUTPUT, VALID_NARRATOR_OUTPUT], "low");
+  const planner = adapter("planner", [plannerOutput], "medium");
+  const service = new GenerationService({ narrator, planner, plannerInterval: 8 });
+  const trace = new TurnTrace({ gameId: "game_test", requestId: "request_test" });
+  const visible = [];
+  const result = await service.execute({ game: game(), world: WORLDS[0], action: "开始我的故事", trace, onText: (text) => visible.push(text) });
+  assert.equal(narrator.calls, 2);
+  assert.equal(trace.value.repairAttempts, 1);
+  assert.match(result.reduced.proposal.narrative, /药市的灯笼/);
+  assert.equal(result.reduced.state.turnNumber, 1);
+  assert.doesNotMatch(result.reduced.changes.join(""), /神器/);
+  assert.match(visible.join(""), /不存在的仙剑/);
+});

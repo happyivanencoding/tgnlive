@@ -1,0 +1,14 @@
+.runtime/
+data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+artifacts/live/
+coverage/
+node_modules/
+*.log
+
+artifacts/
+docs/sources/*.html
+docs/sources/*.json
+
