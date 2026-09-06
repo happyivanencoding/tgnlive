@@ -6,6 +6,10 @@ param(
   [switch]$ListTools
 )
 $ErrorActionPreference='Stop'
+# Child processes must emit UTF-8, not the Windows OEM code page (Chinese text otherwise corrupts in Node).
+[Console]::InputEncoding = [Text.UTF8Encoding]::new($false)
+[Console]::OutputEncoding = [Text.UTF8Encoding]::new($false)
+$OutputEncoding = [Console]::OutputEncoding
 Add-Type -AssemblyName System.Security
 $runtime=Join-Path $env:LOCALAPPDATA 'AgentDock'
 $uri=if($env:TGN_LIVE_AGENTDOCK_URL){$env:TGN_LIVE_AGENTDOCK_URL}else{'http://127.0.0.1:8766/mcp'}

@@ -54,6 +54,7 @@ async function rpc(tool, args, { cleanup = false } = {}) {
       cwd: ROOT, windowsHide: true, timeout: cleanup ? 25000 : 100000, maxBuffer: 8 * 1024 * 1024,
       ...(cleanup ? {} : { signal }), encoding: 'utf8',
     });
+    if (stdout.includes('\uFFFD')) throw new Error('RPC_UTF8_CORRUPTION: replacement characters detected in ACP transport; refusing to submit a damaged action');
     return JSON.parse(stdout.replace(/^\uFEFF/, '').trim());
   } finally {
     await rm(argPath, { force: true }).catch(() => {});
@@ -272,7 +273,8 @@ try {
   game = created.game;
   if (!game?.id) throw new Error('No game returned by create');
   const replay = cli.replay ? JSON.parse(await readFile(path.resolve(ROOT, String(cli.replay)), 'utf8')) : null;
-  manifest = { startedAt, label, taskId: 'tsk_9a52649bc5df2fe4', app: health, node: process.version, mode: replay ? 'fixed-action-replay' : 'adaptive-acp-player', playerModel: replay ? null : playerModel, playerReasoning: replay ? null : 'low', persona, selectedWorld: world.id, selectedPower: power.id, gameId: game.id, initialGame: game, requestedTurns: budgetTurns, replaySource: cli.replay || null, timingCaveat: 'Client API timings measure actual SSE receipt, not browser DOM paint. Player deliberation is separate. Provider-internal compute/queue and billable costs are not inferred.' };
+  const revision = await execFileAsync('git', ['rev-parse', 'HEAD'], { cwd: ROOT, windowsHide: true, encoding: 'utf8' }).then(r => r.stdout.trim()).catch(() => null);
+  manifest = { codeRevision: revision, startedAt, label, taskId: 'tsk_9a52649bc5df2fe4', app: health, node: process.version, mode: replay ? 'fixed-action-replay' : 'adaptive-acp-player', playerModel: replay ? null : playerModel, playerReasoning: replay ? null : 'low', persona, selectedWorld: world.id, selectedPower: power.id, gameId: game.id, initialGame: game, requestedTurns: budgetTurns, replaySource: cli.replay || null, timingCaveat: 'Client API timings measure actual SSE receipt, not browser DOM paint. Player deliberation is separate. Provider-internal compute/queue and billable costs are not inferred.' };
   await save('manifest.json', manifest);
   await checkpoint('running');
   for (let i = 1; i <= budgetTurns && (!replay || i <= replay.length); i++) {
