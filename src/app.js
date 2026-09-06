@@ -20,6 +20,7 @@ export function createApp({ config, store, generationService }) {
         return sendJson(response, 200, {
           ok: true,
           version: config.version,
+          architecture: { openingPlanStrategy: config.openingPlanStrategy, plannerInterval: config.plannerInterval, chapterTurns: config.chapterTurns },
           provider: {
             name: "AgentDock ACP",
             model: config.narratorModel,

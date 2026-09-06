@@ -1,5 +1,6 @@
 import { AppError } from "./errors.js";
 import { REALMS } from "./worlds.js";
+import { DELTA_LIMITS } from "./delta-contract.js";
 
 const ATTITUDES = new Set(["敌视", "戒备", "陌生", "中立", "好奇", "友善", "信任", "亲近"]);
 const MAX_TEXT = 160;
@@ -29,8 +30,11 @@ function boundedInteger(value, field, minimum, maximum, fallback = 0) {
 
 function uniqueStrings(values, field, maximum = 5) {
   if (values === undefined) return [];
-  if (!Array.isArray(values) || values.length > maximum) {
-    throw new AppError(`${field} 格式无效`, { code: "INVALID_DELTA", status: 422 });
+  if (!Array.isArray(values)) {
+    throw new AppError(`${field} 必须是字符串数组，实际类型为 ${typeof values}`, { code: "INVALID_DELTA", status: 422 });
+  }
+  if (values.length > maximum) {
+    throw new AppError(`${field} 最多 ${maximum} 条，实际 ${values.length} 条；请合并同义事实，勿丢失关键后果`, { code: "INVALID_DELTA", status: 422 });
   }
   return [...new Set(values.map((value, index) => shortText(value, `${field}[${index}]`, { required: true })))];
 }
@@ -196,7 +200,7 @@ export function reduceState(currentState, rawProposal) {
     applied.push({ field: "goal", value: goal });
   }
 
-  for (const fact of uniqueStrings(delta.factsAdd, "factsAdd", 5)) {
+  for (const fact of uniqueStrings(delta.factsAdd, "factsAdd", DELTA_LIMITS.factsPerTurn)) {
     if (!state.facts.includes(fact) && state.facts.length < 100) {
       state.facts.push(fact);
       applied.push({ field: "facts", op: "add", value: fact });

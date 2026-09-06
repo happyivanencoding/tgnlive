@@ -28,7 +28,7 @@ export function createTgnLive(options = {}) {
     timeoutMs: config.providerTimeoutMs,
     mcpClient,
   });
-  const generationService = options.generationService || new GenerationService({ narrator, planner, plannerInterval: config.plannerInterval });
+  const generationService = options.generationService || new GenerationService({ narrator, planner, plannerInterval: config.plannerInterval, openingPlanStrategy: config.openingPlanStrategy });
   const app = createApp({ config, store, generationService });
   return { ...app, config, store, generationService, narrator, planner };
 }

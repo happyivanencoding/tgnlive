@@ -29,3 +29,7 @@ node scripts/smoke.mjs
 ## Known limitations
 
 完整 gameplay 首轮尚未实跑，因此正文格式遵从率、单轮延迟和修复率仍未知。AI 插画只有未来扩展位，没有生成实现。服务仅本机、无账户认证；read-only ACP 和空 workspace 是防护层，不是恶意多租户 sandbox 保证。
+
+## Controller cycle 1
+Corrected UTF-8 adaptive baseline accepted 6 turns then failed turn7: six facts exceeded undocumented max5; repair repeated the defect. Evidence: artifacts/eval/baseline-utf8-v010. v0.2 uses an authored opening mini-plan (not model generated), retains live planning at turn9, raises the fact resource ceiling to20 with narrative target1-5, shares limits with repair, and records final candidates without thoughts. All19 tests pass. Performance replay is pending; no speedup claimed yet.
+

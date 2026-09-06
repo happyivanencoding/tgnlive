@@ -2,9 +2,12 @@ import { AppError } from "./errors.js";
 import { StreamingNarratorParser, extractJsonObject } from "./output-parser.js";
 import { buildNarratorPrompt, buildPlannerPrompt, buildRepairPrompt } from "./prompts.js";
 import { reduceState } from "./reducer.js";
+import { authoredOpeningPlan } from "./opening-plan.js";
 
 export class GenerationService {
-  constructor({ narrator, planner, plannerInterval = 8 }) {
+  constructor({ narrator, planner, plannerInterval = 8, openingPlanStrategy = "authored" }) {
+    if (!["authored", "live"].includes(openingPlanStrategy)) throw new Error("openingPlanStrategy must be authored or live");
+    this.openingPlanStrategy = openingPlanStrategy;
     this.narrator = narrator;
     this.planner = planner;
     this.plannerInterval = plannerInterval;
@@ -15,15 +18,24 @@ export class GenerationService {
   }
 
   shouldPlan(game) {
-    return game.state.turnNumber === 0
-      || game.state.turnNumber % this.plannerInterval === 0
+    return game.state.turnNumber === 0 ? this.openingPlanStrategy === "live"
+      : game.state.turnNumber % this.plannerInterval === 0
       || game.state.realm.progress >= 90;
   }
 
   async execute({ game, world, action, existingPlan, signal, trace, onStage, onText }) {
     let plan = existingPlan;
     let freshPlan = null;
+    trace.value.openingPlanStrategy = this.openingPlanStrategy;
+    if (game.state.turnNumber === 0 && this.openingPlanStrategy === "authored") {
+      await stage(trace, onStage, "authored_opening_plan", async () => {
+        freshPlan = authoredOpeningPlan(world);
+        plan = freshPlan;
+        trace.value.planSource = "authored-world-seed-no-model-call";
+      });
+    }
     if (this.shouldPlan(game)) {
+      trace.value.planSource = "live-story-brain";
       const plannerPrompt = buildPlannerPrompt({ game, world, action });
       trace.value.promptChars.planner = plannerPrompt.length;
       await stage(trace, onStage, "plan", async () => {
@@ -65,6 +77,8 @@ export class GenerationService {
       trace.value.outputChars = rawOutput.length;
     });
 
+    // Final visible model output only, never private reasoning. Retain failures for diagnosis.
+    trace.value.candidateOutputs = [{ role: "narrator", finalText: rawOutput }];
     let reduced;
     try {
       await stage(trace, onStage, "parse_validate", async () => {
@@ -89,6 +103,7 @@ export class GenerationService {
         });
         trace.value.provider.repair = providerResult(this.narrator, repairResult);
         trace.value.outputChars += repairedOutput.length;
+        trace.value.candidateOutputs.push({ role: "repair", finalText: repairedOutput });
         reduced = reduceState(game.state, repairedParser.finish());
       });
     }
