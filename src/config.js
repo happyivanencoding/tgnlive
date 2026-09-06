@@ -16,7 +16,7 @@ function integerEnv(name, fallback, minimum, maximum) {
 export function loadConfig(overrides = {}) {
   const runtimeDir = path.resolve(rootDir, process.env.TGN_RUNTIME_DIR || ".runtime");
   return {
-    version: "0.3.0",
+    version: "0.3.1",
     openingPlanStrategy: process.env.TGN_OPENING_PLAN || "authored",
     host: process.env.TGN_HOST || "127.0.0.1",
     port: integerEnv("TGN_PORT", 4317, 1, 65535),
@@ -26,7 +26,7 @@ export function loadConfig(overrides = {}) {
     databasePath: process.env.TGN_DATABASE_PATH || path.join(rootDir, "data", "tgn-live.sqlite"),
     narratorWorkspace: process.env.TGN_NARRATOR_WORKSPACE || path.join(runtimeDir, "narrator-workspace"),
     agentDockUrl: process.env.TGN_LIVE_AGENTDOCK_URL || "http://127.0.0.1:8766/mcp",
-    narratorModel: process.env.TGN_NARRATOR_MODEL || "gpt-5.6-luna",
+    narratorModel: process.env.TGN_NARRATOR_MODEL || "gpt-5.6-terra",
     plannerModel: process.env.TGN_PLANNER_MODEL || "gpt-5.6-sol",
     playerModel: process.env.TGN_PLAYER_MODEL || "gpt-5.6-luna",
     judgeModel: process.env.TGN_JUDGE_MODEL || "gpt-5.6-sol",

@@ -37,3 +37,7 @@ Corrected UTF-8 adaptive baseline accepted 6 turns then failed turn7: six facts 
 ## Controller cycle 2 candidate
 Cycle1 fixed replay:7/7 accepted, no repairs, mean first prose6.26s, mean completion16.56s; opening4.98s/12.80s versus corrected baseline22.60s/31.66s. This is a small stochastic replay, not a production SLA. Reader still reports repeated threats and missing durable payoff (overall4/5). v0.3 adds local physical/possession/scene-resolution constraints without another model stage, omits obsolete opening scene after turn1, displays power limits, labels stages in Chinese, reconciles cancel/retry against durable state, rejects damaged UTF-8. New live measurements pending.
 
+
+## v0.3.1 model/style verification candidate
+Cycle2 replay7/7 completed, mean6.50s first/17.20s full; judge4/5, repetition improved but spatial flaws remain. A turn5 Terra/low probe gave more natural correction and genuine short respite:10.00s first,21.18s full versus Luna6.91s/19.45s. Probe is NOT gameplay; same fictional state/action, but plan metadata createdForTurn:1 was omitted (19characters). Single-scene observation only. Default narrator now Terra/low for a bounded10-turn quality run, Luna remains configurable faster mode. Added explicit separation of writing constraints from narrative wording. No claim of overall winner before actual run.
+
