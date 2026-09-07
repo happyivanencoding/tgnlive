@@ -297,6 +297,16 @@ export class GameStore {
     });
   }
 
+  // Called only by the sole production server after it successfully owns its listening port.
+  // A request left running by a dead process has no producer; keep its receipt, never replay it.
+  recoverInterruptedRequests() {
+    const error = JSON.stringify({ code: "SERVER_RESTARTED", message: "服务已重启，这次行动未提交；请核对存档后重试", retryable: true });
+    return this.transaction(() => Number(this.db.prepare(`
+      UPDATE requests SET status = 'failed', error_json = ?, updated_at = ?
+      WHERE status = 'running'
+    `).run(error, nowIso()).changes));
+  }
+
   failRequest({ gameId, requestId, status, error, trace }) {
     this.transaction(() => {
       const updatedAt = nowIso();

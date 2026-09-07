@@ -45,3 +45,21 @@ test("idempotency key cannot replay a different action", () => {
   assert.throws(() => store.reserveRequest({ gameId: game.id, requestId: "request_bound", expectedVersion: 0, traceId: "trace_other", action: "向右走" }), { code: "IDEMPOTENCY_CONFLICT" });
   store.close();
 });
+
+
+test("server startup recovers only interrupted receipts without altering Canon or replaying actions", () => {
+  const store=new GameStore(":memory:");const world=WORLDS[0];
+  try {
+    const game=store.createGame({name:"恢复测试",title:"测试存档",worldId:world.id,powerId:world.powers[0].id,state:createSeedState(world,world.powers[0])});
+    const before=JSON.stringify(store.getGame(game.id));
+    const request={gameId:game.id,requestId:"interrupted-native-turn",expectedVersion:0,traceId:"interrupted-trace",action:"明确但未提交的行动"};
+    store.reserveRequest(request);
+    assert.throws(()=>store.reserveRequest(request),{code:"REQUEST_IN_PROGRESS"});
+    assert.equal(store.recoverInterruptedRequests(),1);
+    assert.equal(store.recoverInterruptedRequests(),0);
+    assert.equal(JSON.stringify(store.getGame(game.id)),before);
+    assert.throws(()=>store.reserveRequest(request),{code:"REQUEST_ID_REUSED"});
+    assert.equal(store.reserveRequest({...request,requestId:"explicit-user-retry"}).kind,"reserved");
+    assert.equal(store.getGame(game.id).turns.length,0);
+  } finally {store.close();}
+});

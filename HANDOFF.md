@@ -52,3 +52,10 @@ D隐潮第一式更早可得，但后二式准备仍服务化，否决为完整�
 新增只读SSE边界 `narrative_end`：发生于正文分隔符已确认、最后一段text发出后；内容只有characters/elapsedMs/provisional:true。**这不是commit，不授权下一次行动**。结构化JSON、校验、可能的repair和存档仍由既有生成链完成，只有原`complete`返回正式game。Web可忽略新增事件；Native据此收起旧操作、展示确认阶段并允许仅编辑下一步草稿，不自动发送。
 
 共享补丁仅output-parser/generation-service/app各少量行，不改prompt/reducer/progression/auth/store。`publicMetrics.narrativeCompleteMs`区分正文边界和API完成；29项旧Native确定性测试不替代真机新测试。本轮新增13项相关Node测试通过（包括边界在commit之前、不得将未校验状态当Canon）。实现理由与后续真机耗时见 `docs/NATIVE_TURN_HANDOFF.md`。
+
+
+### 真机暴露的服务重启恢复缺口
+
+在本轮受控升级窗口中，自己的Native测试书恰有一条新请求在快照之后进入，进程退出前未提交Canon。原服务重启后requests.running会永久保留，导致同requestId持续REQUEST_IN_PROGRESS；这不是虚构边界。新增`GameStore.recoverInterruptedRequests()`，仅由生产server成功取得监听端口后的同步启动回调执行，将死进程遗留的running收据置为failed/SERVER_RESTARTED。保留请求身份与失败原因，不重放动作，不改games/turns/ledger/worlds。没有放在store构造器中，避免一个启动失败的第二进程误伤现有请求。
+
+客户端仍先GET权威存档；服务证明旧requestId已终止后才允许显式重试取得新ID。未提交草稿不自动发送。原快照的一致性回执因这条请求入场而为false，原件保留，不能覆盖为全表PASS；所有Canon表仍一致。后续真实重试及设备证据见physical报告。

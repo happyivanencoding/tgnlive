@@ -6,6 +6,9 @@ const runtime = createTgnLive();
 fs.mkdirSync(runtime.config.runtimeDir, { recursive: true });
 
 runtime.server.listen(runtime.config.port, runtime.config.host, () => {
+  // Do not recover from a constructor: a second process that fails to bind must not touch a live request.
+  const interrupted = runtime.store.recoverInterruptedRequests();
+  if (interrupted) process.stdout.write(`Recovered ${interrupted} interrupted request(s); Canon unchanged.\n`);
   const address = runtime.server.address();
   const record = {
     pid: process.pid,
