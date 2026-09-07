@@ -1,0 +1,1468 @@
+{
+  "generatedAt": "2026-09-07T17:11:49.154Z",
+  "totals": {
+    "trajectories": 10,
+    "uniqueCommittedTurns": 200,
+    "failedSubmittedAttempts": 17,
+    "failedPlayerAttempts": 3
+  },
+  "failures": [
+    {
+      "trajectory": "ascension-baseline-hunt-20-v080-r2",
+      "kind": "submitted-attempt",
+      "turn": 16,
+      "attempt": 1,
+      "requestId": "3248944e-5466-4cde-b517-8b6e9f84c3dc",
+      "error": "SSE PROVIDER_TIMEOUT: 生成超时",
+      "trace": {
+        "id": "trace_92c8dfc7e7d5454ca18e42fa8a157038",
+        "requestId": "3248944e-5466-4cde-b517-8b6e9f84c3dc",
+        "kind": "foreground",
+        "status": "failed",
+        "startedAt": "2026-09-07T13:59:33.209Z",
+        "endedAt": "2026-09-07T14:01:36.239Z",
+        "totalMs": 123030,
+        "firstNarrativeSseMs": 4731,
+        "stages": [
+          {
+            "name": "http_input_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T13:59:33.209Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T13:59:33.209Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "request_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T13:59:33.209Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T13:59:33.211Z",
+            "elapsedMs": 2
+          },
+          {
+            "name": "context_assembly",
+            "status": "complete",
+            "startedAt": "2026-09-07T13:59:33.212Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T13:59:33.212Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "narrative_generation",
+            "status": "failed",
+            "startedAt": "2026-09-07T13:59:33.212Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:01:36.239Z",
+            "elapsedMs": 123026,
+            "errorCode": "PROVIDER_TIMEOUT"
+          },
+          {
+            "name": "acp_narrator_initialize_auth_session_model_setup",
+            "status": "complete",
+            "startedAt": "2026-09-07T13:59:33.212Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T13:59:33.917Z",
+            "elapsedMs": 705
+          },
+          {
+            "name": "acp_narrator_mcp_initialize",
+            "status": "complete",
+            "startedAt": "2026-09-07T13:59:33.212Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T13:59:33.212Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "acp_narrator_session_new",
+            "status": "complete",
+            "startedAt": "2026-09-07T13:59:33.212Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T13:59:33.892Z",
+            "elapsedMs": 680
+          },
+          {
+            "name": "acp_narrator_read_only_mode",
+            "status": "complete",
+            "startedAt": "2026-09-07T13:59:33.892Z",
+            "startMs": 683,
+            "endedAt": "2026-09-07T13:59:33.903Z",
+            "elapsedMs": 11
+          },
+          {
+            "name": "acp_narrator_model_select",
+            "status": "complete",
+            "startedAt": "2026-09-07T13:59:33.903Z",
+            "startMs": 694,
+            "endedAt": "2026-09-07T13:59:33.911Z",
+            "elapsedMs": 8
+          },
+          {
+            "name": "acp_narrator_effort_select",
+            "status": "complete",
+            "startedAt": "2026-09-07T13:59:33.911Z",
+            "startMs": 702,
+            "endedAt": "2026-09-07T13:59:33.917Z",
+            "elapsedMs": 6
+          }
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_TIMEOUT",
+            "message": "生成超时"
+          }
+        ],
+        "providers": {}
+      }
+    },
+    {
+      "trajectory": "ascension-baseline-hunt-20-v080-r2",
+      "kind": "submitted-attempt",
+      "turn": 16,
+      "attempt": 2,
+      "requestId": "f7927fc9-e25e-4897-a4d7-9b0fd038e691",
+      "error": "SSE PROVIDER_SETUP_TIMEOUT: 连接模型超时，本轮没有提交存档，可稍后重试",
+      "trace": {
+        "id": "trace_19af5ae1203d4d21a83eb0c88939c489",
+        "requestId": "f7927fc9-e25e-4897-a4d7-9b0fd038e691",
+        "kind": "foreground",
+        "status": "failed",
+        "startedAt": "2026-09-07T14:01:36.430Z",
+        "endedAt": "2026-09-07T14:01:56.446Z",
+        "totalMs": 20016,
+        "firstNarrativeSseMs": null,
+        "stages": [
+          {
+            "name": "http_input_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:01:36.430Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:01:36.431Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "request_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:01:36.431Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:01:36.432Z",
+            "elapsedMs": 2
+          },
+          {
+            "name": "context_assembly",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:01:36.433Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:01:36.433Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "narrative_generation",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:01:36.433Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:01:56.446Z",
+            "elapsedMs": 20014,
+            "errorCode": "PROVIDER_SETUP_TIMEOUT"
+          },
+          {
+            "name": "acp_narrator_initialize_auth_session_model_setup",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:01:36.433Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:01:56.446Z",
+            "elapsedMs": 20014
+          },
+          {
+            "name": "acp_narrator_mcp_initialize",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:01:36.433Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:01:36.433Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "acp_narrator_session_new",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:01:36.433Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:01:56.446Z",
+            "elapsedMs": 20012
+          }
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_SETUP_TIMEOUT",
+            "message": "连接模型超时，本轮没有提交存档，可稍后重试"
+          }
+        ],
+        "providers": {}
+      }
+    },
+    {
+      "trajectory": "ascension-baseline-hunt-20-v080-r2",
+      "kind": "submitted-attempt",
+      "turn": 16,
+      "attempt": 1,
+      "requestId": "913276da-dece-475c-9239-4a08362a6fa2",
+      "error": "SSE PROVIDER_SETUP_TIMEOUT: 连接模型超时，本轮没有提交存档，可稍后重试",
+      "trace": {
+        "id": "trace_03a9e42f77d146e28d719fc379199a8b",
+        "requestId": "913276da-dece-475c-9239-4a08362a6fa2",
+        "kind": "foreground",
+        "status": "failed",
+        "startedAt": "2026-09-07T14:05:35.204Z",
+        "endedAt": "2026-09-07T14:05:55.221Z",
+        "totalMs": 20017,
+        "firstNarrativeSseMs": null,
+        "stages": [
+          {
+            "name": "http_input_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:05:35.204Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:05:35.204Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "request_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:05:35.204Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:05:35.206Z",
+            "elapsedMs": 2
+          },
+          {
+            "name": "context_assembly",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:05:35.206Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:05:35.206Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "narrative_generation",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:05:35.206Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:05:55.221Z",
+            "elapsedMs": 20015,
+            "errorCode": "PROVIDER_SETUP_TIMEOUT"
+          },
+          {
+            "name": "acp_narrator_initialize_auth_session_model_setup",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:05:35.206Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:05:55.221Z",
+            "elapsedMs": 20015
+          },
+          {
+            "name": "acp_narrator_mcp_initialize",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:05:35.206Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:05:35.206Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "acp_narrator_session_new",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:05:35.206Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:05:55.221Z",
+            "elapsedMs": 20015
+          }
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_SETUP_TIMEOUT",
+            "message": "连接模型超时，本轮没有提交存档，可稍后重试"
+          }
+        ],
+        "providers": {}
+      }
+    },
+    {
+      "trajectory": "ascension-baseline-hunt-20-v080-r2",
+      "kind": "submitted-attempt",
+      "turn": 16,
+      "attempt": 2,
+      "requestId": "5d9d7da2-ea75-444b-b2ee-8b0788466543",
+      "error": "SSE PROVIDER_SETUP_TIMEOUT: 连接模型超时，本轮没有提交存档，可稍后重试",
+      "trace": {
+        "id": "trace_57dc71245eca4944bc7cda29ba47e5da",
+        "requestId": "5d9d7da2-ea75-444b-b2ee-8b0788466543",
+        "kind": "foreground",
+        "status": "failed",
+        "startedAt": "2026-09-07T14:05:55.352Z",
+        "endedAt": "2026-09-07T14:06:15.373Z",
+        "totalMs": 20021,
+        "firstNarrativeSseMs": null,
+        "stages": [
+          {
+            "name": "http_input_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:05:55.352Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:05:55.352Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "request_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:05:55.352Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:05:55.354Z",
+            "elapsedMs": 2
+          },
+          {
+            "name": "context_assembly",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:05:55.355Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:05:55.355Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "narrative_generation",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:05:55.355Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:06:15.373Z",
+            "elapsedMs": 20018,
+            "errorCode": "PROVIDER_SETUP_TIMEOUT"
+          },
+          {
+            "name": "acp_narrator_initialize_auth_session_model_setup",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:05:55.355Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:06:15.373Z",
+            "elapsedMs": 20018
+          },
+          {
+            "name": "acp_narrator_mcp_initialize",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:05:55.356Z",
+            "startMs": 4,
+            "endedAt": "2026-09-07T14:05:55.356Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "acp_narrator_session_new",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:05:55.356Z",
+            "startMs": 4,
+            "endedAt": "2026-09-07T14:06:15.372Z",
+            "elapsedMs": 20016
+          }
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_SETUP_TIMEOUT",
+            "message": "连接模型超时，本轮没有提交存档，可稍后重试"
+          }
+        ],
+        "providers": {}
+      }
+    },
+    {
+      "trajectory": "ascension-baseline-martial-20-v080-r2",
+      "kind": "player-before-submit",
+      "run": "ascension-baseline-martial-20-v080-r1",
+      "file": "player-15.meta.json",
+      "elapsedMs": 20019.8189,
+      "error": "连接模型超时，本轮没有提交存档，可稍后重试"
+    },
+    {
+      "trajectory": "ascension-baseline-martial-20-v080-r2",
+      "kind": "player-before-submit",
+      "run": "ascension-baseline-martial-20-v080",
+      "file": "player-15.meta.json",
+      "elapsedMs": 20004.61869999999,
+      "error": "连接模型超时，本轮没有提交存档，可稍后重试"
+    },
+    {
+      "trajectory": "ascension-a-hunt-20-r3",
+      "kind": "submitted-attempt",
+      "turn": 10,
+      "attempt": 1,
+      "requestId": "53518aa2-1df6-4965-99ca-956f9f7985a8",
+      "error": "SSE PROVIDER_SETUP_TIMEOUT: 连接模型超时，本轮没有提交存档，可稍后重试",
+      "trace": {
+        "id": "trace_62c971d25b7d4f389e0a9aa1993d7b02",
+        "requestId": "53518aa2-1df6-4965-99ca-956f9f7985a8",
+        "kind": "foreground",
+        "status": "failed",
+        "startedAt": "2026-09-07T14:33:31.372Z",
+        "endedAt": "2026-09-07T14:33:51.381Z",
+        "totalMs": 20008,
+        "firstNarrativeSseMs": null,
+        "stages": [
+          {
+            "name": "http_input_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:33:31.372Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:33:31.373Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "request_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:33:31.373Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:33:31.374Z",
+            "elapsedMs": 2
+          },
+          {
+            "name": "context_assembly",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:33:31.375Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:33:31.375Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "narrative_generation",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:33:31.375Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:33:51.381Z",
+            "elapsedMs": 20006,
+            "errorCode": "PROVIDER_SETUP_TIMEOUT"
+          },
+          {
+            "name": "acp_narrator_initialize_auth_session_model_setup",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:33:31.375Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:33:51.381Z",
+            "elapsedMs": 20006
+          },
+          {
+            "name": "acp_narrator_mcp_initialize",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:33:31.375Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:33:31.375Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "acp_narrator_session_new",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:33:31.375Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:33:51.380Z",
+            "elapsedMs": 20005
+          }
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_SETUP_TIMEOUT",
+            "message": "连接模型超时，本轮没有提交存档，可稍后重试"
+          }
+        ],
+        "providers": {}
+      }
+    },
+    {
+      "trajectory": "ascension-a-hunt-20-r3",
+      "kind": "submitted-attempt",
+      "turn": 10,
+      "attempt": 2,
+      "requestId": "d88e8b2d-ded8-41e6-a107-954c89b8a481",
+      "error": "SSE PROVIDER_SETUP_TIMEOUT: 连接模型超时，本轮没有提交存档，可稍后重试",
+      "trace": {
+        "id": "trace_43a05a1b669d4db6ac6c18a4332033eb",
+        "requestId": "d88e8b2d-ded8-41e6-a107-954c89b8a481",
+        "kind": "foreground",
+        "status": "failed",
+        "startedAt": "2026-09-07T14:33:51.447Z",
+        "endedAt": "2026-09-07T14:34:11.453Z",
+        "totalMs": 20005,
+        "firstNarrativeSseMs": null,
+        "stages": [
+          {
+            "name": "http_input_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:33:51.447Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:33:51.447Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "request_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:33:51.447Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:33:51.448Z",
+            "elapsedMs": 1
+          },
+          {
+            "name": "context_assembly",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:33:51.448Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:33:51.448Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "narrative_generation",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:33:51.448Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:34:11.453Z",
+            "elapsedMs": 20003,
+            "errorCode": "PROVIDER_SETUP_TIMEOUT"
+          },
+          {
+            "name": "acp_narrator_initialize_auth_session_model_setup",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:33:51.448Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:34:11.453Z",
+            "elapsedMs": 20003
+          },
+          {
+            "name": "acp_narrator_mcp_initialize",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:33:51.449Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:33:51.449Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "acp_narrator_session_new",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:33:51.449Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:34:11.453Z",
+            "elapsedMs": 20003
+          }
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_SETUP_TIMEOUT",
+            "message": "连接模型超时，本轮没有提交存档，可稍后重试"
+          }
+        ],
+        "providers": {}
+      }
+    },
+    {
+      "trajectory": "ascension-a-hunt-20-r3",
+      "kind": "submitted-attempt",
+      "turn": 10,
+      "attempt": 1,
+      "requestId": "f4b44043-6e11-47c0-b892-da1be2996134",
+      "error": "SSE PROVIDER_SETUP_TIMEOUT: 连接模型超时，本轮没有提交存档，可稍后重试",
+      "trace": {
+        "id": "trace_7444092379b144fcb745403b4eac6c46",
+        "requestId": "f4b44043-6e11-47c0-b892-da1be2996134",
+        "kind": "foreground",
+        "status": "failed",
+        "startedAt": "2026-09-07T14:37:50.591Z",
+        "endedAt": "2026-09-07T14:38:10.598Z",
+        "totalMs": 20007,
+        "firstNarrativeSseMs": null,
+        "stages": [
+          {
+            "name": "http_input_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:37:50.591Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:37:50.592Z",
+            "elapsedMs": 1
+          },
+          {
+            "name": "request_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:37:50.592Z",
+            "startMs": 1,
+            "endedAt": "2026-09-07T14:37:50.593Z",
+            "elapsedMs": 1
+          },
+          {
+            "name": "context_assembly",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:37:50.594Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:37:50.594Z",
+            "elapsedMs": 1
+          },
+          {
+            "name": "narrative_generation",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:37:50.594Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:38:10.598Z",
+            "elapsedMs": 20004,
+            "errorCode": "PROVIDER_SETUP_TIMEOUT"
+          },
+          {
+            "name": "acp_narrator_initialize_auth_session_model_setup",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:37:50.594Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:38:10.598Z",
+            "elapsedMs": 20004
+          },
+          {
+            "name": "acp_narrator_mcp_initialize",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:37:50.594Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:37:50.594Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "acp_narrator_session_new",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:37:50.594Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:38:10.598Z",
+            "elapsedMs": 20003
+          }
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_SETUP_TIMEOUT",
+            "message": "连接模型超时，本轮没有提交存档，可稍后重试"
+          }
+        ],
+        "providers": {}
+      }
+    },
+    {
+      "trajectory": "ascension-a-hunt-20-r3",
+      "kind": "submitted-attempt",
+      "turn": 10,
+      "attempt": 2,
+      "requestId": "e8a4599e-60d5-4982-b504-ecdc4bc34803",
+      "error": "SSE PROVIDER_SETUP_TIMEOUT: 连接模型超时，本轮没有提交存档，可稍后重试",
+      "trace": {
+        "id": "trace_a92b88c7c6914c679686cfc50f71698d",
+        "requestId": "e8a4599e-60d5-4982-b504-ecdc4bc34803",
+        "kind": "foreground",
+        "status": "failed",
+        "startedAt": "2026-09-07T14:38:10.679Z",
+        "endedAt": "2026-09-07T14:38:30.684Z",
+        "totalMs": 20005,
+        "firstNarrativeSseMs": null,
+        "stages": [
+          {
+            "name": "http_input_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:38:10.679Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:38:10.679Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "request_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:38:10.679Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:38:10.681Z",
+            "elapsedMs": 2
+          },
+          {
+            "name": "context_assembly",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:38:10.681Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:38:10.681Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "narrative_generation",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:38:10.681Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:38:30.683Z",
+            "elapsedMs": 20003,
+            "errorCode": "PROVIDER_SETUP_TIMEOUT"
+          },
+          {
+            "name": "acp_narrator_initialize_auth_session_model_setup",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:38:10.681Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:38:30.684Z",
+            "elapsedMs": 20003
+          },
+          {
+            "name": "acp_narrator_mcp_initialize",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:38:10.681Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:38:10.681Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "acp_narrator_session_new",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:38:10.681Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:38:30.683Z",
+            "elapsedMs": 20002
+          }
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_SETUP_TIMEOUT",
+            "message": "连接模型超时，本轮没有提交存档，可稍后重试"
+          }
+        ],
+        "providers": {}
+      }
+    },
+    {
+      "trajectory": "ascension-a-hunt-20-r3",
+      "kind": "submitted-attempt",
+      "turn": 10,
+      "attempt": 1,
+      "requestId": "670fa699-5c70-4bc0-9f89-42ba7b4f40ca",
+      "error": "SSE PROVIDER_SETUP_TIMEOUT: 连接模型超时，本轮没有提交存档，可稍后重试",
+      "trace": {
+        "id": "trace_17502e52ade64341978644f53575b98f",
+        "requestId": "670fa699-5c70-4bc0-9f89-42ba7b4f40ca",
+        "kind": "foreground",
+        "status": "failed",
+        "startedAt": "2026-09-07T14:42:53.163Z",
+        "endedAt": "2026-09-07T14:43:13.168Z",
+        "totalMs": 20004,
+        "firstNarrativeSseMs": null,
+        "stages": [
+          {
+            "name": "http_input_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:42:53.163Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:42:53.164Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "request_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:42:53.164Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:42:53.166Z",
+            "elapsedMs": 3
+          },
+          {
+            "name": "context_assembly",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:42:53.167Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:42:53.167Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "narrative_generation",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:42:53.167Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:43:13.168Z",
+            "elapsedMs": 20001,
+            "errorCode": "PROVIDER_SETUP_TIMEOUT"
+          },
+          {
+            "name": "acp_narrator_initialize_auth_session_model_setup",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:42:53.167Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:43:13.168Z",
+            "elapsedMs": 20001
+          },
+          {
+            "name": "acp_narrator_mcp_initialize",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:42:53.167Z",
+            "startMs": 4,
+            "endedAt": "2026-09-07T14:42:53.167Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "acp_narrator_session_new",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:42:53.167Z",
+            "startMs": 4,
+            "endedAt": "2026-09-07T14:43:13.167Z",
+            "elapsedMs": 20000
+          }
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_SETUP_TIMEOUT",
+            "message": "连接模型超时，本轮没有提交存档，可稍后重试"
+          }
+        ],
+        "providers": {}
+      }
+    },
+    {
+      "trajectory": "ascension-a-hunt-20-r3",
+      "kind": "submitted-attempt",
+      "turn": 10,
+      "attempt": 2,
+      "requestId": "43354ce2-6dd3-4e76-ac4e-121f511263eb",
+      "error": "SSE PROVIDER_SETUP_TIMEOUT: 连接模型超时，本轮没有提交存档，可稍后重试",
+      "trace": {
+        "id": "trace_10ee56589c214d20af42b5c8fcea7f46",
+        "requestId": "43354ce2-6dd3-4e76-ac4e-121f511263eb",
+        "kind": "foreground",
+        "status": "failed",
+        "startedAt": "2026-09-07T14:43:13.242Z",
+        "endedAt": "2026-09-07T14:43:33.254Z",
+        "totalMs": 20012,
+        "firstNarrativeSseMs": null,
+        "stages": [
+          {
+            "name": "http_input_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:43:13.242Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:43:13.243Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "request_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:43:13.243Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:43:13.245Z",
+            "elapsedMs": 2
+          },
+          {
+            "name": "context_assembly",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:43:13.245Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:43:13.245Z",
+            "elapsedMs": 1
+          },
+          {
+            "name": "narrative_generation",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:43:13.245Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:43:33.254Z",
+            "elapsedMs": 20009,
+            "errorCode": "PROVIDER_SETUP_TIMEOUT"
+          },
+          {
+            "name": "acp_narrator_initialize_auth_session_model_setup",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:43:13.245Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:43:33.254Z",
+            "elapsedMs": 20009
+          },
+          {
+            "name": "acp_narrator_mcp_initialize",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:43:13.245Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:43:13.245Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "acp_narrator_session_new",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:43:13.245Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:43:33.254Z",
+            "elapsedMs": 20009
+          }
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_SETUP_TIMEOUT",
+            "message": "连接模型超时，本轮没有提交存档，可稍后重试"
+          }
+        ],
+        "providers": {}
+      }
+    },
+    {
+      "trajectory": "ascension-a-beast-20-r3",
+      "kind": "submitted-attempt",
+      "turn": 9,
+      "attempt": 1,
+      "requestId": "562fbc43-189f-45d3-af11-3c2b313de3e6",
+      "error": "SSE PROVIDER_TIMEOUT: 生成超时",
+      "trace": {
+        "id": "trace_4aed500e88834c70975b49b55d349c63",
+        "requestId": "562fbc43-189f-45d3-af11-3c2b313de3e6",
+        "kind": "foreground",
+        "status": "failed",
+        "startedAt": "2026-09-07T14:32:46.694Z",
+        "endedAt": "2026-09-07T14:34:49.735Z",
+        "totalMs": 123039,
+        "firstNarrativeSseMs": null,
+        "planSource": "live-story-brain",
+        "stages": [
+          {
+            "name": "http_input_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:32:46.694Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:32:46.694Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "request_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:32:46.694Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:32:46.705Z",
+            "elapsedMs": 11
+          },
+          {
+            "name": "planner_context_assembly",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:32:46.705Z",
+            "startMs": 11,
+            "endedAt": "2026-09-07T14:32:46.705Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "plan",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:32:46.705Z",
+            "startMs": 11,
+            "endedAt": "2026-09-07T14:34:49.734Z",
+            "elapsedMs": 123028,
+            "errorCode": "PROVIDER_TIMEOUT"
+          },
+          {
+            "name": "acp_planner_initialize_auth_session_model_setup",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:32:46.705Z",
+            "startMs": 11,
+            "endedAt": "2026-09-07T14:32:47.268Z",
+            "elapsedMs": 563
+          },
+          {
+            "name": "acp_planner_mcp_initialize",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:32:46.706Z",
+            "startMs": 12,
+            "endedAt": "2026-09-07T14:32:46.706Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "acp_planner_session_new",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:32:46.706Z",
+            "startMs": 12,
+            "endedAt": "2026-09-07T14:32:47.236Z",
+            "elapsedMs": 530
+          },
+          {
+            "name": "acp_planner_read_only_mode",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:32:47.236Z",
+            "startMs": 542,
+            "endedAt": "2026-09-07T14:32:47.243Z",
+            "elapsedMs": 7
+          },
+          {
+            "name": "acp_planner_model_select",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:32:47.243Z",
+            "startMs": 549,
+            "endedAt": "2026-09-07T14:32:47.250Z",
+            "elapsedMs": 7
+          },
+          {
+            "name": "acp_planner_effort_select",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:32:47.251Z",
+            "startMs": 557,
+            "endedAt": "2026-09-07T14:32:47.268Z",
+            "elapsedMs": 17
+          }
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_TIMEOUT",
+            "message": "生成超时"
+          }
+        ],
+        "providers": {}
+      }
+    },
+    {
+      "trajectory": "ascension-a-beast-20-r3",
+      "kind": "submitted-attempt",
+      "turn": 9,
+      "attempt": 2,
+      "requestId": "e52da18a-d954-4b88-b182-d7ea97ff9e99",
+      "error": "SSE PROVIDER_SETUP_TIMEOUT: 连接模型超时，本轮没有提交存档，可稍后重试",
+      "trace": {
+        "id": "trace_17f1664578a94d568cea54eaa5e38bed",
+        "requestId": "e52da18a-d954-4b88-b182-d7ea97ff9e99",
+        "kind": "foreground",
+        "status": "failed",
+        "startedAt": "2026-09-07T14:34:49.793Z",
+        "endedAt": "2026-09-07T14:35:09.804Z",
+        "totalMs": 20011,
+        "firstNarrativeSseMs": null,
+        "planSource": "live-story-brain",
+        "stages": [
+          {
+            "name": "http_input_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:34:49.793Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:34:49.793Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "request_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:34:49.793Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T14:34:49.795Z",
+            "elapsedMs": 2
+          },
+          {
+            "name": "planner_context_assembly",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:34:49.795Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T14:34:49.796Z",
+            "elapsedMs": 1
+          },
+          {
+            "name": "plan",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:34:49.796Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:35:09.803Z",
+            "elapsedMs": 20007,
+            "errorCode": "PROVIDER_SETUP_TIMEOUT"
+          },
+          {
+            "name": "acp_planner_initialize_auth_session_model_setup",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:34:49.796Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:35:09.804Z",
+            "elapsedMs": 20008
+          },
+          {
+            "name": "acp_planner_mcp_initialize",
+            "status": "complete",
+            "startedAt": "2026-09-07T14:34:49.796Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:34:49.796Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "acp_planner_session_new",
+            "status": "failed",
+            "startedAt": "2026-09-07T14:34:49.796Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T14:35:09.803Z",
+            "elapsedMs": 20007
+          }
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_SETUP_TIMEOUT",
+            "message": "连接模型超时，本轮没有提交存档，可稍后重试"
+          }
+        ],
+        "providers": {}
+      }
+    },
+    {
+      "trajectory": "ascension-a-beast-20-r3",
+      "kind": "submitted-attempt",
+      "turn": 13,
+      "attempt": 1,
+      "requestId": "57e6c5ea-2ec0-4d9d-9ac9-3f7fb1d387a6",
+      "error": "SSE PROVIDER_SETUP_TIMEOUT: 连接模型超时，本轮没有提交存档，可稍后重试",
+      "trace": {
+        "id": "trace_33c8718fd0514b75b0663d96fe534005",
+        "requestId": "57e6c5ea-2ec0-4d9d-9ac9-3f7fb1d387a6",
+        "kind": "foreground",
+        "status": "failed",
+        "startedAt": "2026-09-07T15:01:22.211Z",
+        "endedAt": "2026-09-07T15:01:42.227Z",
+        "totalMs": 20016,
+        "firstNarrativeSseMs": null,
+        "stages": [
+          {
+            "name": "http_input_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T15:01:22.211Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T15:01:22.211Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "request_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T15:01:22.211Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T15:01:22.212Z",
+            "elapsedMs": 2
+          },
+          {
+            "name": "context_assembly",
+            "status": "complete",
+            "startedAt": "2026-09-07T15:01:22.213Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T15:01:22.213Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "narrative_generation",
+            "status": "failed",
+            "startedAt": "2026-09-07T15:01:22.213Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T15:01:42.226Z",
+            "elapsedMs": 20014,
+            "errorCode": "PROVIDER_SETUP_TIMEOUT"
+          },
+          {
+            "name": "acp_narrator_initialize_auth_session_model_setup",
+            "status": "failed",
+            "startedAt": "2026-09-07T15:01:22.213Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T15:01:42.227Z",
+            "elapsedMs": 20014
+          },
+          {
+            "name": "acp_narrator_mcp_initialize",
+            "status": "complete",
+            "startedAt": "2026-09-07T15:01:22.213Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T15:01:22.213Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "acp_narrator_session_new",
+            "status": "failed",
+            "startedAt": "2026-09-07T15:01:22.213Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T15:01:42.226Z",
+            "elapsedMs": 20014
+          }
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_SETUP_TIMEOUT",
+            "message": "连接模型超时，本轮没有提交存档，可稍后重试"
+          }
+        ],
+        "providers": {}
+      }
+    },
+    {
+      "trajectory": "ascension-a-beast-20-r3",
+      "kind": "submitted-attempt",
+      "turn": 13,
+      "attempt": 2,
+      "requestId": "174a68ef-48b4-47ed-81a4-ea3ff3870031",
+      "error": "SSE PROVIDER_SETUP_TIMEOUT: 连接模型超时，本轮没有提交存档，可稍后重试",
+      "trace": {
+        "id": "trace_162537a9983b432983baff48bed37dd3",
+        "requestId": "174a68ef-48b4-47ed-81a4-ea3ff3870031",
+        "kind": "foreground",
+        "status": "failed",
+        "startedAt": "2026-09-07T15:01:42.333Z",
+        "endedAt": "2026-09-07T15:02:02.347Z",
+        "totalMs": 20014,
+        "firstNarrativeSseMs": null,
+        "stages": [
+          {
+            "name": "http_input_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T15:01:42.333Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T15:01:42.333Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "request_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T15:01:42.333Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T15:01:42.335Z",
+            "elapsedMs": 2
+          },
+          {
+            "name": "context_assembly",
+            "status": "complete",
+            "startedAt": "2026-09-07T15:01:42.335Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T15:01:42.335Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "narrative_generation",
+            "status": "failed",
+            "startedAt": "2026-09-07T15:01:42.335Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T15:02:02.347Z",
+            "elapsedMs": 20012,
+            "errorCode": "PROVIDER_SETUP_TIMEOUT"
+          },
+          {
+            "name": "acp_narrator_initialize_auth_session_model_setup",
+            "status": "failed",
+            "startedAt": "2026-09-07T15:01:42.335Z",
+            "startMs": 2,
+            "endedAt": "2026-09-07T15:02:02.347Z",
+            "elapsedMs": 20012
+          },
+          {
+            "name": "acp_narrator_mcp_initialize",
+            "status": "complete",
+            "startedAt": "2026-09-07T15:01:42.336Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T15:01:42.336Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "acp_narrator_session_new",
+            "status": "failed",
+            "startedAt": "2026-09-07T15:01:42.336Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T15:02:02.347Z",
+            "elapsedMs": 20011
+          }
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_SETUP_TIMEOUT",
+            "message": "连接模型超时，本轮没有提交存档，可稍后重试"
+          }
+        ],
+        "providers": {}
+      }
+    },
+    {
+      "trajectory": "ascension-a-beast-20-r3",
+      "kind": "submitted-attempt",
+      "turn": 13,
+      "attempt": 1,
+      "requestId": "b6e01459-925f-45d9-be63-2e7b7908b900",
+      "error": "SSE PROVIDER_SETUP_TIMEOUT: 连接模型超时，本轮没有提交存档，可稍后重试",
+      "trace": {
+        "id": "trace_5715a19c4193468d95686f2b657d472a",
+        "requestId": "b6e01459-925f-45d9-be63-2e7b7908b900",
+        "kind": "foreground",
+        "status": "failed",
+        "startedAt": "2026-09-07T15:07:26.812Z",
+        "endedAt": "2026-09-07T15:07:46.828Z",
+        "totalMs": 20016,
+        "firstNarrativeSseMs": null,
+        "stages": [
+          {
+            "name": "http_input_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T15:07:26.812Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T15:07:26.813Z",
+            "elapsedMs": 1
+          },
+          {
+            "name": "request_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T15:07:26.813Z",
+            "startMs": 1,
+            "endedAt": "2026-09-07T15:07:26.815Z",
+            "elapsedMs": 1
+          },
+          {
+            "name": "context_assembly",
+            "status": "complete",
+            "startedAt": "2026-09-07T15:07:26.815Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T15:07:26.815Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "narrative_generation",
+            "status": "failed",
+            "startedAt": "2026-09-07T15:07:26.816Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T15:07:46.828Z",
+            "elapsedMs": 20013,
+            "errorCode": "PROVIDER_SETUP_TIMEOUT"
+          },
+          {
+            "name": "acp_narrator_initialize_auth_session_model_setup",
+            "status": "failed",
+            "startedAt": "2026-09-07T15:07:26.816Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T15:07:46.828Z",
+            "elapsedMs": 20013
+          },
+          {
+            "name": "acp_narrator_mcp_initialize",
+            "status": "complete",
+            "startedAt": "2026-09-07T15:07:26.816Z",
+            "startMs": 4,
+            "endedAt": "2026-09-07T15:07:26.816Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "acp_narrator_session_new",
+            "status": "failed",
+            "startedAt": "2026-09-07T15:07:26.816Z",
+            "startMs": 4,
+            "endedAt": "2026-09-07T15:07:46.828Z",
+            "elapsedMs": 20011
+          }
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_SETUP_TIMEOUT",
+            "message": "连接模型超时，本轮没有提交存档，可稍后重试"
+          }
+        ],
+        "providers": {}
+      }
+    },
+    {
+      "trajectory": "ascension-a-beast-20-r3",
+      "kind": "submitted-attempt",
+      "turn": 13,
+      "attempt": 2,
+      "requestId": "7c9837c2-9c09-40fb-b754-7d077117e5b7",
+      "error": "SSE PROVIDER_SETUP_TIMEOUT: 连接模型超时，本轮没有提交存档，可稍后重试",
+      "trace": {
+        "id": "trace_5ddde3c2906a47d1bb3c58b3710db982",
+        "requestId": "7c9837c2-9c09-40fb-b754-7d077117e5b7",
+        "kind": "foreground",
+        "status": "failed",
+        "startedAt": "2026-09-07T15:07:47.002Z",
+        "endedAt": "2026-09-07T15:08:07.017Z",
+        "totalMs": 20015,
+        "firstNarrativeSseMs": null,
+        "stages": [
+          {
+            "name": "http_input_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T15:07:47.002Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T15:07:47.002Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "request_validation",
+            "status": "complete",
+            "startedAt": "2026-09-07T15:07:47.002Z",
+            "startMs": 0,
+            "endedAt": "2026-09-07T15:07:47.005Z",
+            "elapsedMs": 3
+          },
+          {
+            "name": "context_assembly",
+            "status": "complete",
+            "startedAt": "2026-09-07T15:07:47.005Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T15:07:47.005Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "narrative_generation",
+            "status": "failed",
+            "startedAt": "2026-09-07T15:07:47.005Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T15:08:07.016Z",
+            "elapsedMs": 20011,
+            "errorCode": "PROVIDER_SETUP_TIMEOUT"
+          },
+          {
+            "name": "acp_narrator_initialize_auth_session_model_setup",
+            "status": "failed",
+            "startedAt": "2026-09-07T15:07:47.005Z",
+            "startMs": 3,
+            "endedAt": "2026-09-07T15:08:07.017Z",
+            "elapsedMs": 20012
+          },
+          {
+            "name": "acp_narrator_mcp_initialize",
+            "status": "complete",
+            "startedAt": "2026-09-07T15:07:47.005Z",
+            "startMs": 4,
+            "endedAt": "2026-09-07T15:07:47.005Z",
+            "elapsedMs": 0
+          },
+          {
+            "name": "acp_narrator_session_new",
+            "status": "failed",
+            "startedAt": "2026-09-07T15:07:47.005Z",
+            "startMs": 4,
+            "endedAt": "2026-09-07T15:08:07.016Z",
+            "elapsedMs": 20010
+          }
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_SETUP_TIMEOUT",
+            "message": "连接模型超时，本轮没有提交存档，可稍后重试"
+          }
+        ],
+        "providers": {}
+      }
+    },
+    {
+      "trajectory": "ascension-c-beast-browser-20-r2",
+      "kind": "submitted-attempt",
+      "turn": 1,
+      "attempt": 1,
+      "error": "Browser sse_error: AgentDock 工具 acp_prompt 返回错误",
+      "trace": null
+    },
+    {
+      "trajectory": "ascension-c-stars-20-r2",
+      "kind": "player-before-submit",
+      "run": "ascension-c-stars-20-r1",
+      "file": "player-07.meta.json",
+      "elapsedMs": 728.6404999999795,
+      "error": "AgentDock 工具 acp_prompt 返回错误"
+    }
+  ],
+  "otherIncidents": [
+    {
+      "kind": "zero-game-startup-error",
+      "source": "artifacts/eval/ascension-c-stars-20/summary.json",
+      "error": "Requested power absent",
+      "countsAsQualityTrajectory": false
+    },
+    {
+      "kind": "browser-recorder-exit-after-commit",
+      "source": "ascension-c-beast-browser-20-r2",
+      "turn": 16,
+      "recoveredOnce": true,
+      "visibleFrameImputed": false
+    },
+    {
+      "kind": "i18n-harness-missing-local-module",
+      "source": ".runtime/ascension-v090/i18n-contract-console.txt",
+      "resolvedBy": "Existing PLAYWRIGHT_MODULE/BROWSER_EXECUTABLE options; no dependency or production change"
+    },
+    {
+      "kind": "preexisting-interrupted-production-request",
+      "source": ".runtime/v090-release-before-deploy/orphan-recovery.json",
+      "requestRowsChanged": 1,
+      "traceRowsAdded": 1,
+      "canonicalRowsChanged": 0
+    }
+  ],
+  "limitations": [
+    "Failures remain in original raw artifacts; this is a sanitized register, not a replacement.",
+    "Player setup failures and zero-game startup failures are not failed submitted turns."
+  ]
+}

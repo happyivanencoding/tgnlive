@@ -1,0 +1,3562 @@
+[
+  {
+    "turn": 1,
+    "action": "开始我的故事",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 0
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "多数幼年云兽愿意闻一闻",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "陌生"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "陌生"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": []
+    },
+    "changes": []
+  },
+  {
+    "turn": 2,
+    "action": "帮弥娅进入笼边处理镜翅兽的伤口，先观察红苔来源和幼兽的反应。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 0
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "多数幼年云兽愿意闻一闻",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "好奇"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "陌生"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        }
+      ]
+    },
+    "changes": [
+      "弥娅: 好奇",
+      "可争取的成长: 抢先抵达暖脊岛",
+      "可争取的成长: 赢得镜翅兽回应",
+      "弥娅在镜翅兽翅根伤口中确认红苔会吸血扩伤，已用止血药泥暂时压住伤势。",
+      "沈舟借镜翅兽一次自愿对视看见红苔来风：北偏东的暖风指向正接近港湾的暗金色岛影。",
+      "弥娅依据该方向判断，红苔可能来自三年前失踪的暖脊岛；这是她的判断，尚未得到证实。",
+      "镜翅兽未与任何人结契，但在沈舟未强行靠近后停止磨笼索，并记住了他的气味。"
+    ]
+  },
+  {
+    "turn": 3,
+    "action": "趁弥娅压住伤口，我对港丁说幼兽再留笼中会死，要求立刻放它出来；若他们不肯，就请弥娅作证并寻找能暂时转移它的办法。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 0
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余一块；另一块已掰碎，用于引导镜翅兽离开铁笼",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "陌生"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        }
+      ]
+    },
+    "changes": [
+      "甜苔饼: 剩余一块；另一块已掰碎，用于引导镜翅兽离开铁笼",
+      "弥娅: 友善",
+      "获得长期筹码: 弥娅的后诊棚协助",
+      "镜翅兽在沈舟与弥娅的劝说下被移出铁笼，现由弥娅以旧软网护送至幼兽港后诊棚，暂时脱离磨索威胁。",
+      "弥娅当着港丁作证红苔会令伤势恶化，并承诺由后诊棚继续救治；港丁因此放行转移。",
+      "沈舟再次借镜翅兽自愿对视看见后诊棚、北偏东移动的暗金岛影，以及昆戈已将风帆船转向外海。",
+      "洛岑已下令将人与镜翅兽暂留港内，传令正赶往后诊棚与旧泊位。"
+    ]
+  },
+  {
+    "turn": 4,
+    "action": "留在后诊棚帮弥娅安置镜翅兽，先确认它的伤势和反应，再决定是否追查暖脊岛。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 0
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余大半块；本轮掰下一小角安抚镜翅兽。",
+        "qty": 1
+      },
+      {
+        "id": "warm-ridge-red-moss-root",
+        "name": "暖脊红苔根须",
+        "description": "弥娅从镜翅兽翅根伤口取出的暗红根须，可供熟悉失岛生态或航路的人辨认来源；不能自行指路。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "陌生"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "use-red-moss-root",
+          "name": "利用红苔根须寻找航路",
+          "payoff": "获得暖脊岛来源或航路的可行动判断，并可作为与领航员谈判的凭据。",
+          "approach": "将根须交给熟悉失岛生态、旧航图或北偏东航线的人辨认。",
+          "status": "open",
+          "offeredAtTurn": 4
+        }
+      ]
+    },
+    "changes": [
+      "获得 暖脊红苔根须",
+      "甜苔饼: 剩余大半块；本轮掰下一小角安抚镜翅兽。",
+      "可争取的成长: 利用红苔根须寻找航路",
+      "弥娅在后诊棚清除镜翅兽伤口中的红苔根须并重新封药，判断伤势今日不会继续扩散，但幼兽至少两天不能硬飞。",
+      "沈舟借镜翅兽自愿对视看见洛岑的传令正派港丁前往旧泊位；昆戈的风帆船已离栈桥半船身，仍受逆风所阻未出港。",
+      "镜翅兽通过共享传来的痛感与不安表明它愿意让沈舟借视野，但抗拒再被带回铁笼；这是它当下的反应。",
+      "弥娅将从伤口取出的暖脊红苔根须交给沈舟，称熟悉失岛生态或航路的人或可据此辨认来源；这是她的判断。"
+    ]
+  },
+  {
+    "turn": 5,
+    "action": "带着暖脊红苔根须赶往旧泊位，向昆戈说明镜翅兽暂时不能硬飞，提出用红苔线索和我的协助换取登船追查暖脊岛。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 0
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余大半块；本轮掰下一小角安抚镜翅兽。",
+        "qty": 1
+      },
+      {
+        "id": "warm-ridge-red-moss-root",
+        "name": "暖脊红苔根须",
+        "description": "弥娅从镜翅兽翅根伤口取出的暗红根须，可供熟悉失岛生态或航路的人辨认来源；不能自行指路。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "kun-ge-voyage-berth",
+          "kind": "access",
+          "name": "昆戈船上的临时船位",
+          "effect": "可留在昆戈的风帆船上参与追查暖脊岛，并以红苔辨风或共天眼协助航行。",
+          "scope": "仅限本次追查暖脊岛的航程，且沈舟须承担昆戈交代的实际船务与侦察。",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "use-red-moss-root",
+          "name": "利用红苔根须寻找航路",
+          "payoff": "获得暖脊岛来源或航路的可行动判断，并可作为与领航员谈判的凭据。",
+          "approach": "将根须交给熟悉失岛生态、旧航图或北偏东航线的人辨认。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "昆戈据根须给出可行动的辨风方法，并以此为凭据允许沈舟登船同行追查暖脊岛。",
+          "settledAtTurn": 5
+        }
+      ]
+    },
+    "changes": [
+      "抵达 昆戈的风帆船上，正离开折帆岛幼兽港驶向北偏东外港",
+      "昆戈: 好奇",
+      "获得长期筹码: 昆戈船上的临时船位",
+      "成长兑现: 利用红苔根须寻找航路",
+      "沈舟赶在旧泊位封锁合拢前登上昆戈的风帆船；昆戈斩断旧缆后，船已脱离栈桥驶向外港。",
+      "昆戈辨认暖脊红苔根须后称其会朝暖风弯、近岛时腥味更重；这是他的航行判断，尚待实际航程验证。",
+      "昆戈同意沈舟以整理副索、辨认红苔和必要时使用共天眼为代价同行追查暖脊岛。"
+    ]
+  },
+  {
+    "turn": 6,
+    "action": "先帮昆戈整理副索、稳住逆风中的风帆船，再请他教我一段能实际使用的跨缝控帆动作。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 4
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "gap-sail-control",
+        "name": "借隙控帆",
+        "description": "在船只、栈桥或岛缝边的短暂缓风中，能先放松帆索泄去猛风，再趁船身回正收索，帮助小船抢一次方向。限制：必须有人掌舵或协同操作；无法单独驾驭风帆船，也不能在持续强风或雷海风暴中稳定使用。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余大半块；本轮掰下一小角安抚镜翅兽。",
+        "qty": 1
+      },
+      {
+        "id": "warm-ridge-red-moss-root",
+        "name": "暖脊红苔根须",
+        "description": "弥娅从镜翅兽翅根伤口取出的暗红根须，可供熟悉失岛生态或航路的人辨认来源；不能自行指路。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "kun-ge-voyage-berth",
+          "kind": "access",
+          "name": "昆戈船上的临时船位",
+          "effect": "可留在昆戈的风帆船上参与追查暖脊岛，并以红苔辨风或共天眼协助航行。",
+          "scope": "仅限本次追查暖脊岛的航程，且沈舟须承担昆戈交代的实际船务与侦察。",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 6,
+          "useCount": 1
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "use-red-moss-root",
+          "name": "利用红苔根须寻找航路",
+          "payoff": "获得暖脊岛来源或航路的可行动判断，并可作为与领航员谈判的凭据。",
+          "approach": "将根须交给熟悉失岛生态、旧航图或北偏东航线的人辨认。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "昆戈据根须给出可行动的辨风方法，并以此为凭据允许沈舟登船同行追查暖脊岛。",
+          "settledAtTurn": 5
+        }
+      ]
+    },
+    "changes": [
+      "掌握能力: 借隙控帆",
+      "修行进度 +4",
+      "用上已有筹码: 昆戈船上的临时船位",
+      "沈舟在昆戈指点下整理副索并完成数次借隙控帆，成功协助风帆船避开外港礁柱、沿缓风槽前进十余丈。",
+      "暖脊红苔根须在北偏东航程中向船头一侧弯曲，腥甜味加重；昆戈据此判断暖脊岛已在近处，这是他的航行判断，尚待登岛验证。",
+      "暖脊岛的暗金岛影露出褐红山脊，其外侧风带通向雷海外缘；昆戈提出可继续冒险靠近，或及时转往安全中转岛。"
+    ]
+  },
+  {
+    "turn": 7,
+    "action": "协助昆戈穿过外侧乱风，靠近暖脊岛，先查证红苔来源和可行的登岛位置。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 7
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "gap-sail-control",
+        "name": "借隙控帆",
+        "description": "能在乱风与浪谷交错的短暂空隙中，配合掌舵者先泄帆压、再收回副索，帮助风帆船穿过狭窄风带或贴近背风岸。限制：仍须有人稳定掌舵；连续强风、雷海风暴或缺少可借的风隙时无法保证航向。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余大半块；本轮掰下一小角安抚镜翅兽。",
+        "qty": 1
+      },
+      {
+        "id": "warm-ridge-red-moss-root",
+        "name": "暖脊红苔根须",
+        "description": "弥娅从镜翅兽翅根伤口取出的暗红根须，可供熟悉失岛生态或航路的人辨认来源；不能自行指路。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "kun-ge-voyage-berth",
+          "kind": "access",
+          "name": "昆戈船上的临时船位",
+          "effect": "可留在昆戈的风帆船上参与追查暖脊岛，并以红苔辨风或共天眼协助航行。",
+          "scope": "仅限本次追查暖脊岛的航程，且沈舟须承担昆戈交代的实际船务与侦察。",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 7,
+          "useCount": 2
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟随昆戈抵达暖脊岛东侧背风水道，查证红苔来源并取得一处可系泊、可登岛也可撤离的落脚点。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "use-red-moss-root",
+          "name": "利用红苔根须寻找航路",
+          "payoff": "获得暖脊岛来源或航路的可行动判断，并可作为与领航员谈判的凭据。",
+          "approach": "将根须交给熟悉失岛生态、旧航图或北偏东航线的人辨认。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "昆戈据根须给出可行动的辨风方法，并以此为凭据允许沈舟登船同行追查暖脊岛。",
+          "settledAtTurn": 5
+        }
+      ]
+    },
+    "changes": [
+      "抵达 暖脊岛东侧背风水道，昆戈的风帆船已系泊在旧石鼻旁",
+      "能力提升: 借隙控帆",
+      "修行进度 +3",
+      "用上已有筹码: 昆戈船上的临时船位",
+      "成长兑现: 抢先抵达暖脊岛",
+      "沈舟与昆戈协作穿过暖脊岛外侧乱风，风帆船进入岛东侧背风水道并安全系泊。",
+      "暖脊红苔根须在岛东侧凹湾指向岩缝中生长的暗红苔，红苔来源已查证为暖脊岛。",
+      "背风水道尽头有可系船的旧铁环与一条通向褐红山脊的旧石径；石鼻泊记显示近期有人曾在此靠岸，但来者身份未明。"
+    ]
+  },
+  {
+    "turn": 8,
+    "action": "登上暖脊岛，沿旧石径追查近期靠岸者和红苔扩散源头，同时记住撤回船上的路线。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 7
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "gap-sail-control",
+        "name": "借隙控帆",
+        "description": "能在乱风与浪谷交错的短暂空隙中，配合掌舵者先泄帆压、再收回副索，帮助风帆船穿过狭窄风带或贴近背风岸。限制：仍须有人稳定掌舵；连续强风、雷海风暴或缺少可借的风隙时无法保证航向。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余大半块；本轮掰下一小角安抚镜翅兽。",
+        "qty": 1
+      },
+      {
+        "id": "warm-ridge-red-moss-root",
+        "name": "暖脊红苔根须",
+        "description": "弥娅从镜翅兽翅根伤口取出的暗红根须，可供熟悉失岛生态或航路的人辨认来源；不能自行指路。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "kun-ge-voyage-berth",
+          "kind": "access",
+          "name": "昆戈船上的临时船位",
+          "effect": "可留在昆戈的风帆船上参与追查暖脊岛，并以红苔辨风或共天眼协助航行。",
+          "scope": "仅限本次追查暖脊岛的航程，且沈舟须承担昆戈交代的实际船务与侦察。",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 7,
+          "useCount": 2
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟随昆戈抵达暖脊岛东侧背风水道，查证红苔来源并取得一处可系泊、可登岛也可撤离的落脚点。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "use-red-moss-root",
+          "name": "利用红苔根须寻找航路",
+          "payoff": "获得暖脊岛来源或航路的可行动判断，并可作为与领航员谈判的凭据。",
+          "approach": "将根须交给熟悉失岛生态、旧航图或北偏东航线的人辨认。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "昆戈据根须给出可行动的辨风方法，并以此为凭据允许沈舟登船同行追查暖脊岛。",
+          "settledAtTurn": 5
+        }
+      ]
+    },
+    "changes": [
+      "沈舟沿暖脊岛旧石径发现红苔集中从数处新翻石缝扩散，苔叶带有油灰，扩散源并非凹湾自然蔓延。",
+      "沈舟在半塌石棚发现近期使用的断裂拖索、空木桶、缺齿小铲及被碎石压住的苔根；桶底灰白粉末与红苔油灰混合，显示有人曾在此临时培植或搬运红苔，但身份未明。",
+      "石棚后方山脊裂口连着一条向北延伸的旧索道，通往雷海外缘方向；其是否仍可通行尚未验证。",
+      "沈舟已记住从石径经三道白纹岩壁返回背风水道与昆戈风帆船的撤回路线。"
+    ]
+  },
+  {
+    "turn": 9,
+    "action": "带上油灰和灰白粉末的痕迹回船，告诉昆戈石棚有人培植搬运红苔，商量沿旧索道追查来者。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 7
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "gap-sail-control",
+        "name": "借隙控帆",
+        "description": "能在乱风与浪谷交错的短暂空隙中，配合掌舵者先泄帆压、再收回副索，帮助风帆船穿过狭窄风带或贴近背风岸。限制：仍须有人稳定掌舵；连续强风、雷海风暴或缺少可借的风隙时无法保证航向。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余大半块；本轮掰下一小角安抚镜翅兽。",
+        "qty": 1
+      },
+      {
+        "id": "warm-ridge-red-moss-root",
+        "name": "暖脊红苔根须",
+        "description": "弥娅从镜翅兽翅根伤口取出的暗红根须，可供熟悉失岛生态或航路的人辨认来源；不能自行指路。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "kun-ge-voyage-berth",
+          "kind": "access",
+          "name": "昆戈船上的临时船位",
+          "effect": "可留在昆戈的风帆船上参与追查暖脊岛，并以红苔辨风或共天眼协助航行。",
+          "scope": "仅限本次追查暖脊岛的航程，且沈舟须承担昆戈交代的实际船务与侦察。",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 7,
+          "useCount": 2
+        },
+        {
+          "id": "kun-ge-short-scouting-support",
+          "kind": "access",
+          "name": "昆戈的短程索道接应",
+          "effect": "可在暖脊岛背风水道由昆戈守船接应，短程前往旧索道最近索台侦察并撤回。",
+          "scope": "仅限倒灌风未吞没近端索道、昆戈能维持船只系泊且沈舟不擅自深入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 9,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟随昆戈抵达暖脊岛东侧背风水道，查证红苔来源并取得一处可系泊、可登岛也可撤离的落脚点。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "use-red-moss-root",
+          "name": "利用红苔根须寻找航路",
+          "payoff": "获得暖脊岛来源或航路的可行动判断，并可作为与领航员谈判的凭据。",
+          "approach": "将根须交给熟悉失岛生态、旧航图或北偏东航线的人辨认。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "昆戈据根须给出可行动的辨风方法，并以此为凭据允许沈舟登船同行追查暖脊岛。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "verify-old-cable-station",
+          "name": "查证旧索道近端索台",
+          "payoff": "取得可重复辨认的索轮、停靠或补给标记，形成能用于登岛和撤离的新航路线索。",
+          "approach": "趁倒灌风尚未吞没近端索道，短程抵达最近索台，核对轮轴骨灰泥、停靠钩或补给痕迹，并沿三道白纹岩壁路线撤回昆戈的船。",
+          "status": "open",
+          "offeredAtTurn": 9
+        }
+      ]
+    },
+    "changes": [
+      "获得长期筹码: 昆戈的短程索道接应",
+      "可争取的成长: 查证旧索道近端索台",
+      "沈舟将石棚木桶底的油灰与灰白粉末分别取样带回风帆船。",
+      "昆戈辨认灰白粉末为索轮常用的防潮骨灰泥，判断旧索道近端若仍可用，可通过轮轴、停靠钩或补给标记验证近期是否有人经营；这是他的航行判断，尚待现场验证。",
+      "昆戈愿意守船接应，允许沈舟在风势许可时只探旧索道最近一处索台，并可随时沿既知路线撤回。"
+    ]
+  },
+  {
+    "turn": 10,
+    "action": "与昆戈确认风向后短程登上旧索道近端，寻找轮轴骨灰泥、停靠钩与补给标记，确认是否有人仍在经营，并随时沿白纹岩壁撤回。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 7
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "gap-sail-control",
+        "name": "借隙控帆",
+        "description": "能在乱风与浪谷交错的短暂空隙中，配合掌舵者先泄帆压、再收回副索，帮助风帆船穿过狭窄风带或贴近背风岸。限制：仍须有人稳定掌舵；连续强风、雷海风暴或缺少可借的风隙时无法保证航向。",
+        "source": "正文获得"
+      },
+      {
+        "id": "cable-station-trace",
+        "name": "索台辨迹",
+        "description": "可在近距离检查旧索道的轮轴泥料、停靠钩磨痕和补给标记，判断索道是否近期被使用，并记下可重复辨认的停靠线索。限制：必须实际抵达并看见索台；不能据此得知北端经营者身份、人数或即时动向。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余大半块；本轮掰下一小角安抚镜翅兽。",
+        "qty": 1
+      },
+      {
+        "id": "warm-ridge-red-moss-root",
+        "name": "暖脊红苔根须",
+        "description": "弥娅从镜翅兽翅根伤口取出的暗红根须，可供熟悉失岛生态或航路的人辨认来源；不能自行指路。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "kun-ge-voyage-berth",
+          "kind": "access",
+          "name": "昆戈船上的临时船位",
+          "effect": "可留在昆戈的风帆船上参与追查暖脊岛，并以红苔辨风或共天眼协助航行。",
+          "scope": "仅限本次追查暖脊岛的航程，且沈舟须承担昆戈交代的实际船务与侦察。",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 7,
+          "useCount": 2
+        },
+        {
+          "id": "kun-ge-short-scouting-support",
+          "kind": "access",
+          "name": "昆戈的短程索道接应",
+          "effect": "可在暖脊岛背风水道由昆戈守船接应，短程前往旧索道最近索台侦察并撤回。",
+          "scope": "仅限倒灌风未吞没近端索道、昆戈能维持船只系泊且沈舟不擅自深入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 9,
+          "lastUsedAtTurn": 10,
+          "useCount": 1
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟随昆戈抵达暖脊岛东侧背风水道，查证红苔来源并取得一处可系泊、可登岛也可撤离的落脚点。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "use-red-moss-root",
+          "name": "利用红苔根须寻找航路",
+          "payoff": "获得暖脊岛来源或航路的可行动判断，并可作为与领航员谈判的凭据。",
+          "approach": "将根须交给熟悉失岛生态、旧航图或北偏东航线的人辨认。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "昆戈据根须给出可行动的辨风方法，并以此为凭据允许沈舟登船同行追查暖脊岛。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "verify-old-cable-station",
+          "name": "查证旧索道近端索台",
+          "payoff": "取得可重复辨认的索轮、停靠或补给标记，形成能用于登岛和撤离的新航路线索。",
+          "approach": "趁倒灌风尚未吞没近端索道，短程抵达最近索台，核对轮轴骨灰泥、停靠钩或补给痕迹，并沿三道白纹岩壁路线撤回昆戈的船。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟抵达旧索道近端索台，确认索道近期仍在经营，并取得“北三”停靠标记、轮轴骨灰泥与承重磨痕这组可重复辨认的航路线索；他未登索，已沿白纹岩壁撤回。",
+          "settledAtTurn": 10
+        }
+      ]
+    },
+    "changes": [
+      "抵达 暖脊岛旧索道近端索台与背风水道之间的白纹岩壁石径",
+      "昆戈: 友善",
+      "掌握能力: 索台辨迹",
+      "用上已有筹码: 昆戈的短程索道接应",
+      "成长兑现: 查证旧索道近端索台",
+      "沈舟在旧索道近端索台确认轮轴留有近期补上的防潮骨灰泥，停靠钩有新鲜承重磨痕，索道近来仍被使用。",
+      "索台钩座下发现刻有三道斜纹与“北三”旧字的薄铜牌，并沾有盐饼碎屑；这表明有人曾从北边第三处停靠点向暖脊岛运送防潮泥、油料和盐饼等补给，但经营者身份未明。",
+      "倒灌风已使近端索道钢索颤响，沈舟未登索，沿三道白纹岩壁安全撤回昆戈风帆船可见的石径。"
+    ]
+  },
+  {
+    "turn": 11,
+    "action": "回船与昆戈规划前往北三停靠点，先确认索道北端的经营者与补给源，再决定是否深入雷海外缘。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 7
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "gap-sail-control",
+        "name": "借隙控帆",
+        "description": "能在乱风与浪谷交错的短暂空隙中，配合掌舵者先泄帆压、再收回副索，帮助风帆船穿过狭窄风带或贴近背风岸。限制：仍须有人稳定掌舵；连续强风、雷海风暴或缺少可借的风隙时无法保证航向。",
+        "source": "正文获得"
+      },
+      {
+        "id": "cable-station-trace",
+        "name": "索台辨迹",
+        "description": "可在近距离检查旧索道的轮轴泥料、停靠钩磨痕和补给标记，判断索道是否近期被使用，并记下可重复辨认的停靠线索。限制：必须实际抵达并看见索台；不能据此得知北端经营者身份、人数或即时动向。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余大半块；本轮掰下一小角安抚镜翅兽。",
+        "qty": 1
+      },
+      {
+        "id": "warm-ridge-red-moss-root",
+        "name": "暖脊红苔根须",
+        "description": "弥娅从镜翅兽翅根伤口取出的暗红根须，可供熟悉失岛生态或航路的人辨认来源；不能自行指路。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "kun-ge-voyage-berth",
+          "kind": "access",
+          "name": "昆戈船上的临时船位",
+          "effect": "可留在昆戈的风帆船上参与追查暖脊岛，并以红苔辨风或共天眼协助航行。",
+          "scope": "仅限本次追查暖脊岛的航程，且沈舟须承担昆戈交代的实际船务与侦察。",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 7,
+          "useCount": 2
+        },
+        {
+          "id": "kun-ge-short-scouting-support",
+          "kind": "access",
+          "name": "昆戈的短程索道接应",
+          "effect": "可在暖脊岛背风水道由昆戈守船接应，短程前往旧索道最近索台侦察并撤回。",
+          "scope": "仅限倒灌风未吞没近端索道、昆戈能维持船只系泊且沈舟不擅自深入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 9,
+          "lastUsedAtTurn": 10,
+          "useCount": 1
+        },
+        {
+          "id": "kun-ge-north-three-route",
+          "kind": "access",
+          "name": "昆戈标出的北三撤回路线",
+          "effect": "可由暖脊岛东侧背风流抵达断崖浮石下，并沿检修石阶短程探查北三停靠点后撤回。",
+          "scope": "仅限倒灌风尚未吞没贴山云路、昆戈能守住风帆船且沈舟不擅自越过北三进入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 11,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟随昆戈抵达暖脊岛东侧背风水道，查证红苔来源并取得一处可系泊、可登岛也可撤离的落脚点。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "use-red-moss-root",
+          "name": "利用红苔根须寻找航路",
+          "payoff": "获得暖脊岛来源或航路的可行动判断，并可作为与领航员谈判的凭据。",
+          "approach": "将根须交给熟悉失岛生态、旧航图或北偏东航线的人辨认。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "昆戈据根须给出可行动的辨风方法，并以此为凭据允许沈舟登船同行追查暖脊岛。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "verify-old-cable-station",
+          "name": "查证旧索道近端索台",
+          "payoff": "取得可重复辨认的索轮、停靠或补给标记，形成能用于登岛和撤离的新航路线索。",
+          "approach": "趁倒灌风尚未吞没近端索道，短程抵达最近索台，核对轮轴骨灰泥、停靠钩或补给痕迹，并沿三道白纹岩壁路线撤回昆戈的船。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟抵达旧索道近端索台，确认索道近期仍在经营，并取得“北三”停靠标记、轮轴骨灰泥与承重磨痕这组可重复辨认的航路线索；他未登索，已沿白纹岩壁撤回。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "scout-north-three",
+          "name": "短程探查北三停靠点",
+          "payoff": "可确认北三是否有值守者、近期补给与可重复利用的停靠条件，决定是否继续追查雷海外缘。",
+          "approach": "趁当前风势窗口，经断崖浮石下的检修石阶登北三，观察新缆结、补给桶、值守痕迹或来往方向；风势转强即沿原路撤回。",
+          "status": "open",
+          "offeredAtTurn": 11
+        }
+      ]
+    },
+    "changes": [
+      "获得长期筹码: 昆戈标出的北三撤回路线",
+      "可争取的成长: 短程探查北三停靠点",
+      "昆戈依据“北三”铜牌、索道走向和盐饼碎屑判断，北三补给中至少有一部分来自北侧潮雾礁群；这是他的航行判断，经营索道者身份仍未证实。",
+      "昆戈在旧帆布上标出前往北三的可撤回路线：风帆船可先贴东侧背风流到断崖浮石下，再沿旧索道检修石阶登台；倒灌风增强时应原路退回背风水道。",
+      "昆戈判断当前倒灌风尚留一趟前往北三并撤回的窗口，午后该窗口可能关闭；这是他的风势判断。"
+    ]
+  },
+  {
+    "turn": 12,
+    "action": "趁倒灌风尚弱，跟昆戈前往北三停靠点，沿检修石阶查找值守者、新缆结和近期补给；若风势转强就原路撤回。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 7
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "gap-sail-control",
+        "name": "借隙控帆",
+        "description": "能在乱风与浪谷交错的短暂空隙中，配合掌舵者先泄帆压、再收回副索，帮助风帆船穿过狭窄风带或贴近背风岸。限制：仍须有人稳定掌舵；连续强风、雷海风暴或缺少可借的风隙时无法保证航向。",
+        "source": "正文获得"
+      },
+      {
+        "id": "cable-station-trace",
+        "name": "索台辨迹",
+        "description": "可在近距离检查旧索道的轮轴泥料、停靠钩磨痕和补给标记，判断索道是否近期被使用，并记下可重复辨认的停靠线索。限制：必须实际抵达并看见索台；不能据此得知北端经营者身份、人数或即时动向。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余大半块；本轮掰下一小角安抚镜翅兽。",
+        "qty": 1
+      },
+      {
+        "id": "warm-ridge-red-moss-root",
+        "name": "暖脊红苔根须",
+        "description": "弥娅从镜翅兽翅根伤口取出的暗红根须，可供熟悉失岛生态或航路的人辨认来源；不能自行指路。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "kun-ge-voyage-berth",
+          "kind": "access",
+          "name": "昆戈船上的临时船位",
+          "effect": "可留在昆戈的风帆船上参与追查暖脊岛，并以红苔辨风或共天眼协助航行。",
+          "scope": "仅限本次追查暖脊岛的航程，且沈舟须承担昆戈交代的实际船务与侦察。",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 12,
+          "useCount": 3
+        },
+        {
+          "id": "kun-ge-short-scouting-support",
+          "kind": "access",
+          "name": "昆戈的短程索道接应",
+          "effect": "可在暖脊岛背风水道由昆戈守船接应，短程前往旧索道最近索台侦察并撤回。",
+          "scope": "仅限倒灌风未吞没近端索道、昆戈能维持船只系泊且沈舟不擅自深入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 9,
+          "lastUsedAtTurn": 10,
+          "useCount": 1
+        },
+        {
+          "id": "kun-ge-north-three-route",
+          "kind": "access",
+          "name": "昆戈标出的北三撤回路线",
+          "effect": "可由暖脊岛东侧背风流抵达断崖浮石下，并沿检修石阶短程探查北三停靠点后撤回。",
+          "scope": "仅限倒灌风尚未吞没贴山云路、昆戈能守住风帆船且沈舟不擅自越过北三进入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 11,
+          "lastUsedAtTurn": 12,
+          "useCount": 1
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟随昆戈抵达暖脊岛东侧背风水道，查证红苔来源并取得一处可系泊、可登岛也可撤离的落脚点。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "use-red-moss-root",
+          "name": "利用红苔根须寻找航路",
+          "payoff": "获得暖脊岛来源或航路的可行动判断，并可作为与领航员谈判的凭据。",
+          "approach": "将根须交给熟悉失岛生态、旧航图或北偏东航线的人辨认。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "昆戈据根须给出可行动的辨风方法，并以此为凭据允许沈舟登船同行追查暖脊岛。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "verify-old-cable-station",
+          "name": "查证旧索道近端索台",
+          "payoff": "取得可重复辨认的索轮、停靠或补给标记，形成能用于登岛和撤离的新航路线索。",
+          "approach": "趁倒灌风尚未吞没近端索道，短程抵达最近索台，核对轮轴骨灰泥、停靠钩或补给痕迹，并沿三道白纹岩壁路线撤回昆戈的船。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟抵达旧索道近端索台，确认索道近期仍在经营，并取得“北三”停靠标记、轮轴骨灰泥与承重磨痕这组可重复辨认的航路线索；他未登索，已沿白纹岩壁撤回。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "scout-north-three",
+          "name": "短程探查北三停靠点",
+          "payoff": "可确认北三是否有值守者、近期补给与可重复利用的停靠条件，决定是否继续追查雷海外缘。",
+          "approach": "趁当前风势窗口，经断崖浮石下的检修石阶登北三，观察新缆结、补给桶、值守痕迹或来往方向；风势转强即沿原路撤回。",
+          "status": "fulfilled",
+          "offeredAtTurn": 11,
+          "materialized": true,
+          "result": "沈舟抵达北三停靠台，确认其仍有人维护并取得潮雾礁群西晒棚铜印、近期新缆结与双向运货拖痕；风势转强后已按原路撤回。",
+          "settledAtTurn": 12
+        },
+        {
+          "id": "trace-tidefog-west-drying-shed",
+          "name": "追查潮雾礁群西晒棚",
+          "payoff": "可查明为北三装运补给的人与船只，判断红苔搬运链是否经过该处。",
+          "approach": "前往潮雾礁群西晒棚核对盐桶铜印、装船记录或下一批北三补给的经手者。",
+          "status": "open",
+          "offeredAtTurn": 12
+        }
+      ]
+    },
+    "changes": [
+      "抵达 暖脊岛东侧背风水道中的昆戈风帆船",
+      "用上已有筹码: 昆戈标出的北三撤回路线",
+      "用上已有筹码: 昆戈船上的临时船位",
+      "成长兑现: 短程探查北三停靠点",
+      "可争取的成长: 追查潮雾礁群西晒棚",
+      "沈舟在北三停靠台发现近期更换的索缆、两重八码结和潮湿新鲜的载货拖痕，确认此处仍持续使用。",
+      "北三木棚的空盐桶带有“潮雾礁群西晒棚”铜印，桶底黑藻盐屑与近端铜牌残屑一致，证实北三补给至少有一部分来自该处。",
+      "北三的重桶拖痕通向暖脊岛，回程只留较浅空筐痕；索道持续向岛上运入盐、油料与防潮泥，并带走较轻货物，但货物内容与经营者身份未明。",
+      "倒灌风在沈舟完成观察后吞没北三停靠台，沈舟与昆戈已沿检修石阶和背风流安全撤回。"
+    ]
+  },
+  {
+    "turn": 13,
+    "action": "跟昆戈前往潮雾礁群西晒棚，核对盐桶铜印和装船痕迹，查清是谁在为北三补给；若风势转强就立即撤回。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 7
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "gap-sail-control",
+        "name": "借隙控帆",
+        "description": "能在乱风与浪谷交错的短暂空隙中，配合掌舵者先泄帆压、再收回副索，帮助风帆船穿过狭窄风带或贴近背风岸。限制：仍须有人稳定掌舵；连续强风、雷海风暴或缺少可借的风隙时无法保证航向。",
+        "source": "正文获得"
+      },
+      {
+        "id": "cable-station-trace",
+        "name": "索台辨迹",
+        "description": "可在近距离检查旧索道的轮轴泥料、停靠钩磨痕和补给标记，判断索道是否近期被使用，并记下可重复辨认的停靠线索。限制：必须实际抵达并看见索台；不能据此得知北端经营者身份、人数或即时动向。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余大半块；本轮掰下一小角安抚镜翅兽。",
+        "qty": 1
+      },
+      {
+        "id": "warm-ridge-red-moss-root",
+        "name": "暖脊红苔根须",
+        "description": "弥娅从镜翅兽翅根伤口取出的暗红根须，可供熟悉失岛生态或航路的人辨认来源；不能自行指路。",
+        "qty": 1
+      },
+      {
+        "id": "qichao-freight-slip",
+        "name": "栖潮航栈作废货签",
+        "description": "西晒棚装船台上取得的作废货签，盖有栖潮航栈印记，写有“北三”油料、防潮骨灰泥与盐饼的供货项，可与盐桶铜印和船尾刻纹相互核对。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "tao-lu",
+        "name": "陶鹭",
+        "role": "潮雾礁群西晒棚主",
+        "attitude": "戒备"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "kun-ge-voyage-berth",
+          "kind": "access",
+          "name": "昆戈船上的临时船位",
+          "effect": "可留在昆戈的风帆船上参与追查暖脊岛，并以红苔辨风或共天眼协助航行。",
+          "scope": "仅限本次追查暖脊岛的航程，且沈舟须承担昆戈交代的实际船务与侦察。",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 12,
+          "useCount": 3
+        },
+        {
+          "id": "kun-ge-short-scouting-support",
+          "kind": "access",
+          "name": "昆戈的短程索道接应",
+          "effect": "可在暖脊岛背风水道由昆戈守船接应，短程前往旧索道最近索台侦察并撤回。",
+          "scope": "仅限倒灌风未吞没近端索道、昆戈能维持船只系泊且沈舟不擅自深入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 9,
+          "lastUsedAtTurn": 10,
+          "useCount": 1
+        },
+        {
+          "id": "kun-ge-north-three-route",
+          "kind": "access",
+          "name": "昆戈标出的北三撤回路线",
+          "effect": "可由暖脊岛东侧背风流抵达断崖浮石下，并沿检修石阶短程探查北三停靠点后撤回。",
+          "scope": "仅限倒灌风尚未吞没贴山云路、昆戈能守住风帆船且沈舟不擅自越过北三进入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 11,
+          "lastUsedAtTurn": 12,
+          "useCount": 1
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟随昆戈抵达暖脊岛东侧背风水道，查证红苔来源并取得一处可系泊、可登岛也可撤离的落脚点。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "use-red-moss-root",
+          "name": "利用红苔根须寻找航路",
+          "payoff": "获得暖脊岛来源或航路的可行动判断，并可作为与领航员谈判的凭据。",
+          "approach": "将根须交给熟悉失岛生态、旧航图或北偏东航线的人辨认。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "昆戈据根须给出可行动的辨风方法，并以此为凭据允许沈舟登船同行追查暖脊岛。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "verify-old-cable-station",
+          "name": "查证旧索道近端索台",
+          "payoff": "取得可重复辨认的索轮、停靠或补给标记，形成能用于登岛和撤离的新航路线索。",
+          "approach": "趁倒灌风尚未吞没近端索道，短程抵达最近索台，核对轮轴骨灰泥、停靠钩或补给痕迹，并沿三道白纹岩壁路线撤回昆戈的船。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟抵达旧索道近端索台，确认索道近期仍在经营，并取得“北三”停靠标记、轮轴骨灰泥与承重磨痕这组可重复辨认的航路线索；他未登索，已沿白纹岩壁撤回。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "scout-north-three",
+          "name": "短程探查北三停靠点",
+          "payoff": "可确认北三是否有值守者、近期补给与可重复利用的停靠条件，决定是否继续追查雷海外缘。",
+          "approach": "趁当前风势窗口，经断崖浮石下的检修石阶登北三，观察新缆结、补给桶、值守痕迹或来往方向；风势转强即沿原路撤回。",
+          "status": "fulfilled",
+          "offeredAtTurn": 11,
+          "materialized": true,
+          "result": "沈舟抵达北三停靠台，确认其仍有人维护并取得潮雾礁群西晒棚铜印、近期新缆结与双向运货拖痕；风势转强后已按原路撤回。",
+          "settledAtTurn": 12
+        },
+        {
+          "id": "trace-tidefog-west-drying-shed",
+          "name": "追查潮雾礁群西晒棚",
+          "payoff": "可查明为北三装运补给的人与船只，判断红苔搬运链是否经过该处。",
+          "approach": "前往潮雾礁群西晒棚核对盐桶铜印、装船记录或下一批北三补给的经手者。",
+          "status": "fulfilled",
+          "offeredAtTurn": 12,
+          "materialized": true,
+          "result": "沈舟查明北三的稳定补给由栖潮航栈经潮雾礁群西晒棚运送；棚主陶鹭指出回程货物交给名为乌檐的收货人，但货物内容仍待核实。",
+          "settledAtTurn": 13
+        },
+        {
+          "id": "identify-wuyan-cargo",
+          "name": "查明乌檐与回程货物",
+          "payoff": "可确认暖脊岛经北三运走的货物及其实际收货人，决定是截断、交易还是向外揭露这条运输链。",
+          "approach": "明早在西晒棚观察下一趟北三货船，在乌檐验收空筐前核对人、船尾刻纹与货物。",
+          "status": "open",
+          "offeredAtTurn": 13
+        }
+      ]
+    },
+    "changes": [
+      "抵达 潮雾礁群西晒棚外的浅湾，昆戈风帆船上",
+      "获得 栖潮航栈作废货签",
+      "陶鹭: 戒备",
+      "成长兑现: 追查潮雾礁群西晒棚",
+      "可争取的成长: 查明乌檐与回程货物",
+      "沈舟在潮雾礁群西晒棚核对盐桶铜印与北三一致，并发现写有“北三”的油桶、防潮骨灰泥和栖潮航栈货签。",
+      "西晒棚主陶鹭承认受栖潮航栈雇佣，每三日向北三运送盐、油料与防潮骨灰泥；这是他的当面陈述。",
+      "陶鹭称北三回程空筐由航栈人员接走，再交给名为“乌檐”的收货人；他表示未见过筐中货物。",
+      "沈舟取得一枚栖潮航栈作废货签，并记下西晒棚运货舟的船尾刻纹。"
+    ]
+  },
+  {
+    "turn": 14,
+    "action": "留在西晒棚附近观察明早的下一趟北三货船，先看清乌檐是谁、空筐里装了什么，再决定是否截断或交易。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 7
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "gap-sail-control",
+        "name": "借隙控帆",
+        "description": "能在乱风与浪谷交错的短暂空隙中，配合掌舵者先泄帆压、再收回副索，帮助风帆船穿过狭窄风带或贴近背风岸。限制：仍须有人稳定掌舵；连续强风、雷海风暴或缺少可借的风隙时无法保证航向。",
+        "source": "正文获得"
+      },
+      {
+        "id": "cable-station-trace",
+        "name": "索台辨迹",
+        "description": "可在近距离检查旧索道的轮轴泥料、停靠钩磨痕和补给标记，判断索道是否近期被使用，并记下可重复辨认的停靠线索。限制：必须实际抵达并看见索台；不能据此得知北端经营者身份、人数或即时动向。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余大半块；本轮掰下一小角安抚镜翅兽。",
+        "qty": 1
+      },
+      {
+        "id": "warm-ridge-red-moss-root",
+        "name": "暖脊红苔根须",
+        "description": "弥娅从镜翅兽翅根伤口取出的暗红根须，可供熟悉失岛生态或航路的人辨认来源；不能自行指路。",
+        "qty": 1
+      },
+      {
+        "id": "qichao-freight-slip",
+        "name": "栖潮航栈作废货签",
+        "description": "西晒棚装船台上取得的作废货签，盖有栖潮航栈印记，写有“北三”油料、防潮骨灰泥与盐饼的供货项，可与盐桶铜印和船尾刻纹相互核对。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "tao-lu",
+        "name": "陶鹭",
+        "role": "潮雾礁群西晒棚主",
+        "attitude": "戒备"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "kun-ge-voyage-berth",
+          "kind": "access",
+          "name": "昆戈船上的临时船位",
+          "effect": "可留在昆戈的风帆船上参与追查暖脊岛，并以红苔辨风或共天眼协助航行。",
+          "scope": "仅限本次追查暖脊岛的航程，且沈舟须承担昆戈交代的实际船务与侦察。",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 12,
+          "useCount": 3
+        },
+        {
+          "id": "kun-ge-short-scouting-support",
+          "kind": "access",
+          "name": "昆戈的短程索道接应",
+          "effect": "可在暖脊岛背风水道由昆戈守船接应，短程前往旧索道最近索台侦察并撤回。",
+          "scope": "仅限倒灌风未吞没近端索道、昆戈能维持船只系泊且沈舟不擅自深入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 9,
+          "lastUsedAtTurn": 10,
+          "useCount": 1
+        },
+        {
+          "id": "kun-ge-north-three-route",
+          "kind": "access",
+          "name": "昆戈标出的北三撤回路线",
+          "effect": "可由暖脊岛东侧背风流抵达断崖浮石下，并沿检修石阶短程探查北三停靠点后撤回。",
+          "scope": "仅限倒灌风尚未吞没贴山云路、昆戈能守住风帆船且沈舟不擅自越过北三进入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 11,
+          "lastUsedAtTurn": 12,
+          "useCount": 1
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟随昆戈抵达暖脊岛东侧背风水道，查证红苔来源并取得一处可系泊、可登岛也可撤离的落脚点。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "use-red-moss-root",
+          "name": "利用红苔根须寻找航路",
+          "payoff": "获得暖脊岛来源或航路的可行动判断，并可作为与领航员谈判的凭据。",
+          "approach": "将根须交给熟悉失岛生态、旧航图或北偏东航线的人辨认。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "昆戈据根须给出可行动的辨风方法，并以此为凭据允许沈舟登船同行追查暖脊岛。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "verify-old-cable-station",
+          "name": "查证旧索道近端索台",
+          "payoff": "取得可重复辨认的索轮、停靠或补给标记，形成能用于登岛和撤离的新航路线索。",
+          "approach": "趁倒灌风尚未吞没近端索道，短程抵达最近索台，核对轮轴骨灰泥、停靠钩或补给痕迹，并沿三道白纹岩壁路线撤回昆戈的船。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟抵达旧索道近端索台，确认索道近期仍在经营，并取得“北三”停靠标记、轮轴骨灰泥与承重磨痕这组可重复辨认的航路线索；他未登索，已沿白纹岩壁撤回。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "scout-north-three",
+          "name": "短程探查北三停靠点",
+          "payoff": "可确认北三是否有值守者、近期补给与可重复利用的停靠条件，决定是否继续追查雷海外缘。",
+          "approach": "趁当前风势窗口，经断崖浮石下的检修石阶登北三，观察新缆结、补给桶、值守痕迹或来往方向；风势转强即沿原路撤回。",
+          "status": "fulfilled",
+          "offeredAtTurn": 11,
+          "materialized": true,
+          "result": "沈舟抵达北三停靠台，确认其仍有人维护并取得潮雾礁群西晒棚铜印、近期新缆结与双向运货拖痕；风势转强后已按原路撤回。",
+          "settledAtTurn": 12
+        },
+        {
+          "id": "trace-tidefog-west-drying-shed",
+          "name": "追查潮雾礁群西晒棚",
+          "payoff": "可查明为北三装运补给的人与船只，判断红苔搬运链是否经过该处。",
+          "approach": "前往潮雾礁群西晒棚核对盐桶铜印、装船记录或下一批北三补给的经手者。",
+          "status": "fulfilled",
+          "offeredAtTurn": 12,
+          "materialized": true,
+          "result": "沈舟查明北三的稳定补给由栖潮航栈经潮雾礁群西晒棚运送；棚主陶鹭指出回程货物交给名为乌檐的收货人，但货物内容仍待核实。",
+          "settledAtTurn": 13
+        },
+        {
+          "id": "identify-wuyan-cargo",
+          "name": "查明乌檐与回程货物",
+          "payoff": "可确认暖脊岛经北三运走的货物及其实际收货人，决定是截断、交易还是向外揭露这条运输链。",
+          "approach": "明早在西晒棚观察下一趟北三货船，在乌檐验收空筐前核对人、船尾刻纹与货物。",
+          "status": "answered",
+          "offeredAtTurn": 13,
+          "materialized": false,
+          "result": "沈舟确认乌檐是暖脊岛回程红苔货物的实际收货人，货物会由西晒棚货舟转入栖潮航栈后仓；现可选择跟踪、交易、截断或揭露运输链。",
+          "settledAtTurn": 14
+        },
+        {
+          "id": "act-on-wuyan-route",
+          "name": "处置乌檐的红苔运输链",
+          "payoff": "可取得航栈后仓的出入线索、争取运输链中的人手，或让红苔货物无法悄然进入幼兽港。",
+          "approach": "趁乌檐货舟尚未入仓，跟踪其路线；或以货签和观察证据向陶鹭交涉；也可携证据撤离并交给能判断伤兽风险的人。",
+          "status": "open",
+          "offeredAtTurn": 14
+        }
+      ]
+    },
+    "changes": [
+      "问题已解答: 查明乌檐与回程货物",
+      "可争取的成长: 处置乌檐的红苔运输链",
+      "沈舟在西晒棚外观察到乌檐：他乘船尾刻有同样折纹的平底货舟而来，左手缺两指，并亲自核对北三货签与回程空筐。",
+      "乌檐从北三回程空筐中验收了裹有防潮骨灰泥的暗红苔根与两只渗出腥甜汁液的小木匣；其气味和形态与暖脊岛石棚的红苔培植痕迹一致。",
+      "乌檐命船夫午前将回程货物送入栖潮航栈后仓，并要求避开港丁；这是沈舟亲耳听见的指令。"
+    ]
+  },
+  {
+    "turn": 15,
+    "action": "让昆戈远远跟住乌檐的货舟，我沿岸观察栖潮航栈后仓的入口与守备，不急着截货。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 7
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "gap-sail-control",
+        "name": "借隙控帆",
+        "description": "能在乱风与浪谷交错的短暂空隙中，配合掌舵者先泄帆压、再收回副索，帮助风帆船穿过狭窄风带或贴近背风岸。限制：仍须有人稳定掌舵；连续强风、雷海风暴或缺少可借的风隙时无法保证航向。",
+        "source": "正文获得"
+      },
+      {
+        "id": "cable-station-trace",
+        "name": "索台辨迹",
+        "description": "可在近距离检查旧索道的轮轴泥料、停靠钩磨痕和补给标记，判断索道是否近期被使用，并记下可重复辨认的停靠线索。限制：必须实际抵达并看见索台；不能据此得知北端经营者身份、人数或即时动向。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余大半块；本轮掰下一小角安抚镜翅兽。",
+        "qty": 1
+      },
+      {
+        "id": "warm-ridge-red-moss-root",
+        "name": "暖脊红苔根须",
+        "description": "弥娅从镜翅兽翅根伤口取出的暗红根须，可供熟悉失岛生态或航路的人辨认来源；不能自行指路。",
+        "qty": 1
+      },
+      {
+        "id": "qichao-freight-slip",
+        "name": "栖潮航栈作废货签",
+        "description": "西晒棚装船台上取得的作废货签，盖有栖潮航栈印记，写有“北三”油料、防潮骨灰泥与盐饼的供货项，可与盐桶铜印和船尾刻纹相互核对。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "tao-lu",
+        "name": "陶鹭",
+        "role": "潮雾礁群西晒棚主",
+        "attitude": "戒备"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "kun-ge-voyage-berth",
+          "kind": "access",
+          "name": "昆戈船上的临时船位",
+          "effect": "可留在昆戈的风帆船上参与追查暖脊岛，并以红苔辨风或共天眼协助航行。",
+          "scope": "仅限本次追查暖脊岛的航程，且沈舟须承担昆戈交代的实际船务与侦察。",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 15,
+          "useCount": 4
+        },
+        {
+          "id": "kun-ge-short-scouting-support",
+          "kind": "access",
+          "name": "昆戈的短程索道接应",
+          "effect": "可在暖脊岛背风水道由昆戈守船接应，短程前往旧索道最近索台侦察并撤回。",
+          "scope": "仅限倒灌风未吞没近端索道、昆戈能维持船只系泊且沈舟不擅自深入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 9,
+          "lastUsedAtTurn": 10,
+          "useCount": 1
+        },
+        {
+          "id": "kun-ge-north-three-route",
+          "kind": "access",
+          "name": "昆戈标出的北三撤回路线",
+          "effect": "可由暖脊岛东侧背风流抵达断崖浮石下，并沿检修石阶短程探查北三停靠点后撤回。",
+          "scope": "仅限倒灌风尚未吞没贴山云路、昆戈能守住风帆船且沈舟不擅自越过北三进入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 11,
+          "lastUsedAtTurn": 12,
+          "useCount": 1
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟随昆戈抵达暖脊岛东侧背风水道，查证红苔来源并取得一处可系泊、可登岛也可撤离的落脚点。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "use-red-moss-root",
+          "name": "利用红苔根须寻找航路",
+          "payoff": "获得暖脊岛来源或航路的可行动判断，并可作为与领航员谈判的凭据。",
+          "approach": "将根须交给熟悉失岛生态、旧航图或北偏东航线的人辨认。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "昆戈据根须给出可行动的辨风方法，并以此为凭据允许沈舟登船同行追查暖脊岛。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "verify-old-cable-station",
+          "name": "查证旧索道近端索台",
+          "payoff": "取得可重复辨认的索轮、停靠或补给标记，形成能用于登岛和撤离的新航路线索。",
+          "approach": "趁倒灌风尚未吞没近端索道，短程抵达最近索台，核对轮轴骨灰泥、停靠钩或补给痕迹，并沿三道白纹岩壁路线撤回昆戈的船。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟抵达旧索道近端索台，确认索道近期仍在经营，并取得“北三”停靠标记、轮轴骨灰泥与承重磨痕这组可重复辨认的航路线索；他未登索，已沿白纹岩壁撤回。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "scout-north-three",
+          "name": "短程探查北三停靠点",
+          "payoff": "可确认北三是否有值守者、近期补给与可重复利用的停靠条件，决定是否继续追查雷海外缘。",
+          "approach": "趁当前风势窗口，经断崖浮石下的检修石阶登北三，观察新缆结、补给桶、值守痕迹或来往方向；风势转强即沿原路撤回。",
+          "status": "fulfilled",
+          "offeredAtTurn": 11,
+          "materialized": true,
+          "result": "沈舟抵达北三停靠台，确认其仍有人维护并取得潮雾礁群西晒棚铜印、近期新缆结与双向运货拖痕；风势转强后已按原路撤回。",
+          "settledAtTurn": 12
+        },
+        {
+          "id": "trace-tidefog-west-drying-shed",
+          "name": "追查潮雾礁群西晒棚",
+          "payoff": "可查明为北三装运补给的人与船只，判断红苔搬运链是否经过该处。",
+          "approach": "前往潮雾礁群西晒棚核对盐桶铜印、装船记录或下一批北三补给的经手者。",
+          "status": "fulfilled",
+          "offeredAtTurn": 12,
+          "materialized": true,
+          "result": "沈舟查明北三的稳定补给由栖潮航栈经潮雾礁群西晒棚运送；棚主陶鹭指出回程货物交给名为乌檐的收货人，但货物内容仍待核实。",
+          "settledAtTurn": 13
+        },
+        {
+          "id": "identify-wuyan-cargo",
+          "name": "查明乌檐与回程货物",
+          "payoff": "可确认暖脊岛经北三运走的货物及其实际收货人，决定是截断、交易还是向外揭露这条运输链。",
+          "approach": "明早在西晒棚观察下一趟北三货船，在乌檐验收空筐前核对人、船尾刻纹与货物。",
+          "status": "answered",
+          "offeredAtTurn": 13,
+          "materialized": false,
+          "result": "沈舟确认乌檐是暖脊岛回程红苔货物的实际收货人，货物会由西晒棚货舟转入栖潮航栈后仓；现可选择跟踪、交易、截断或揭露运输链。",
+          "settledAtTurn": 14
+        },
+        {
+          "id": "act-on-wuyan-route",
+          "name": "处置乌檐的红苔运输链",
+          "payoff": "可取得航栈后仓的出入线索、争取运输链中的人手，或让红苔货物无法悄然进入幼兽港。",
+          "approach": "趁乌檐货舟尚未入仓，跟踪其路线；或以货签和观察证据向陶鹭交涉；也可携证据撤离并交给能判断伤兽风险的人。",
+          "status": "fulfilled",
+          "offeredAtTurn": 14,
+          "materialized": true,
+          "result": "沈舟已确认栖潮航栈后仓的水路、步行入口与主楼高廊，并掌握乌檐货舟卸货后携四只空筐返回西晒棚这一可行动路线。",
+          "settledAtTurn": 15
+        }
+      ]
+    },
+    "changes": [
+      "抵达 幼兽港外侧石渠的礁影中，昆戈风帆船上",
+      "用上已有筹码: 昆戈船上的临时船位",
+      "成长兑现: 处置乌檐的红苔运输链",
+      "沈舟观察到栖潮航栈后仓有供小货舟进入的窄水道木闸、西侧步行窄门及通往主楼的北侧高廊三处出入；水闸由两名未佩港丁铜牌的搬运工看守。",
+      "乌檐的货舟在后仓卸下红苔根与木匣后，换回四只盖麻布的空筐，准备沿原路返回西晒棚；空筐内容尚未查明。",
+      "栖潮航栈北侧高廊午间会有穿蓝边外褂的人员来取单据；这是沈舟亲眼观察到的换班规律。"
+    ]
+  },
+  {
+    "turn": 16,
+    "action": "继续远远跟住返程空筐，观察乌檐从后仓带回什么，寻找运输链最薄弱的一环；若被察觉就立刻撤回昆戈的船。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 7
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "gap-sail-control",
+        "name": "借隙控帆",
+        "description": "能在乱风与浪谷交错的短暂空隙中，配合掌舵者先泄帆压、再收回副索，帮助风帆船穿过狭窄风带或贴近背风岸。限制：仍须有人稳定掌舵；连续强风、雷海风暴或缺少可借的风隙时无法保证航向。",
+        "source": "正文获得"
+      },
+      {
+        "id": "cable-station-trace",
+        "name": "索台辨迹",
+        "description": "可在近距离检查旧索道的轮轴泥料、停靠钩磨痕和补给标记，判断索道是否近期被使用，并记下可重复辨认的停靠线索。限制：必须实际抵达并看见索台；不能据此得知北端经营者身份、人数或即时动向。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余大半块；本轮掰下一小角安抚镜翅兽。",
+        "qty": 1
+      },
+      {
+        "id": "warm-ridge-red-moss-root",
+        "name": "暖脊红苔根须",
+        "description": "弥娅从镜翅兽翅根伤口取出的暗红根须，可供熟悉失岛生态或航路的人辨认来源；不能自行指路。",
+        "qty": 1
+      },
+      {
+        "id": "qichao-freight-slip",
+        "name": "栖潮航栈作废货签",
+        "description": "西晒棚装船台上取得的作废货签，盖有栖潮航栈印记，写有“北三”油料、防潮骨灰泥与盐饼的供货项，可与盐桶铜印和船尾刻纹相互核对。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "tao-lu",
+        "name": "陶鹭",
+        "role": "潮雾礁群西晒棚主",
+        "attitude": "戒备"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "kun-ge-voyage-berth",
+          "kind": "access",
+          "name": "昆戈船上的临时船位",
+          "effect": "可留在昆戈的风帆船上参与追查暖脊岛，并以红苔辨风或共天眼协助航行。",
+          "scope": "仅限本次追查暖脊岛的航程，且沈舟须承担昆戈交代的实际船务与侦察。",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 15,
+          "useCount": 4
+        },
+        {
+          "id": "kun-ge-short-scouting-support",
+          "kind": "access",
+          "name": "昆戈的短程索道接应",
+          "effect": "可在暖脊岛背风水道由昆戈守船接应，短程前往旧索道最近索台侦察并撤回。",
+          "scope": "仅限倒灌风未吞没近端索道、昆戈能维持船只系泊且沈舟不擅自深入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 9,
+          "lastUsedAtTurn": 10,
+          "useCount": 1
+        },
+        {
+          "id": "kun-ge-north-three-route",
+          "kind": "access",
+          "name": "昆戈标出的北三撤回路线",
+          "effect": "可由暖脊岛东侧背风流抵达断崖浮石下，并沿检修石阶短程探查北三停靠点后撤回。",
+          "scope": "仅限倒灌风尚未吞没贴山云路、昆戈能守住风帆船且沈舟不擅自越过北三进入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 11,
+          "lastUsedAtTurn": 12,
+          "useCount": 1
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟随昆戈抵达暖脊岛东侧背风水道，查证红苔来源并取得一处可系泊、可登岛也可撤离的落脚点。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "use-red-moss-root",
+          "name": "利用红苔根须寻找航路",
+          "payoff": "获得暖脊岛来源或航路的可行动判断，并可作为与领航员谈判的凭据。",
+          "approach": "将根须交给熟悉失岛生态、旧航图或北偏东航线的人辨认。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "昆戈据根须给出可行动的辨风方法，并以此为凭据允许沈舟登船同行追查暖脊岛。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "verify-old-cable-station",
+          "name": "查证旧索道近端索台",
+          "payoff": "取得可重复辨认的索轮、停靠或补给标记，形成能用于登岛和撤离的新航路线索。",
+          "approach": "趁倒灌风尚未吞没近端索道，短程抵达最近索台，核对轮轴骨灰泥、停靠钩或补给痕迹，并沿三道白纹岩壁路线撤回昆戈的船。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟抵达旧索道近端索台，确认索道近期仍在经营，并取得“北三”停靠标记、轮轴骨灰泥与承重磨痕这组可重复辨认的航路线索；他未登索，已沿白纹岩壁撤回。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "scout-north-three",
+          "name": "短程探查北三停靠点",
+          "payoff": "可确认北三是否有值守者、近期补给与可重复利用的停靠条件，决定是否继续追查雷海外缘。",
+          "approach": "趁当前风势窗口，经断崖浮石下的检修石阶登北三，观察新缆结、补给桶、值守痕迹或来往方向；风势转强即沿原路撤回。",
+          "status": "fulfilled",
+          "offeredAtTurn": 11,
+          "materialized": true,
+          "result": "沈舟抵达北三停靠台，确认其仍有人维护并取得潮雾礁群西晒棚铜印、近期新缆结与双向运货拖痕；风势转强后已按原路撤回。",
+          "settledAtTurn": 12
+        },
+        {
+          "id": "trace-tidefog-west-drying-shed",
+          "name": "追查潮雾礁群西晒棚",
+          "payoff": "可查明为北三装运补给的人与船只，判断红苔搬运链是否经过该处。",
+          "approach": "前往潮雾礁群西晒棚核对盐桶铜印、装船记录或下一批北三补给的经手者。",
+          "status": "fulfilled",
+          "offeredAtTurn": 12,
+          "materialized": true,
+          "result": "沈舟查明北三的稳定补给由栖潮航栈经潮雾礁群西晒棚运送；棚主陶鹭指出回程货物交给名为乌檐的收货人，但货物内容仍待核实。",
+          "settledAtTurn": 13
+        },
+        {
+          "id": "identify-wuyan-cargo",
+          "name": "查明乌檐与回程货物",
+          "payoff": "可确认暖脊岛经北三运走的货物及其实际收货人，决定是截断、交易还是向外揭露这条运输链。",
+          "approach": "明早在西晒棚观察下一趟北三货船，在乌檐验收空筐前核对人、船尾刻纹与货物。",
+          "status": "answered",
+          "offeredAtTurn": 13,
+          "materialized": false,
+          "result": "沈舟确认乌檐是暖脊岛回程红苔货物的实际收货人，货物会由西晒棚货舟转入栖潮航栈后仓；现可选择跟踪、交易、截断或揭露运输链。",
+          "settledAtTurn": 14
+        },
+        {
+          "id": "act-on-wuyan-route",
+          "name": "处置乌檐的红苔运输链",
+          "payoff": "可取得航栈后仓的出入线索、争取运输链中的人手，或让红苔货物无法悄然进入幼兽港。",
+          "approach": "趁乌檐货舟尚未入仓，跟踪其路线；或以货签和观察证据向陶鹭交涉；也可携证据撤离并交给能判断伤兽风险的人。",
+          "status": "fulfilled",
+          "offeredAtTurn": 14,
+          "materialized": true,
+          "result": "沈舟已确认栖潮航栈后仓的水路、步行入口与主楼高廊，并掌握乌檐货舟卸货后携四只空筐返回西晒棚这一可行动路线。",
+          "settledAtTurn": 15
+        },
+        {
+          "id": "trace-white-sail-repair-shed",
+          "name": "追查白帆修棚的空筐转运",
+          "payoff": "可查明航栈后仓用空筐和残料遮掩红苔运输的下一处接点，并争取截断或利用这条转运线。",
+          "approach": "在不惊动船夫的前提下跟随返程货舟至白帆修棚，确认阮娘、钥匙用途和空筐的去向。",
+          "status": "open",
+          "offeredAtTurn": 16
+        },
+        {
+          "id": "tail-wuyan-alone",
+          "name": "跟踪独行的乌檐",
+          "payoff": "可找到乌檐个人持有的账目、联络点或可施压的弱处。",
+          "approach": "趁乌檐离开货舟且身边无人，保持距离沿港北主街跟踪；一旦被察觉便撤回昆戈的船。",
+          "status": "open",
+          "offeredAtTurn": 16
+        }
+      ]
+    },
+    "changes": [
+      "可争取的成长: 追查白帆修棚的空筐转运",
+      "可争取的成长: 跟踪独行的乌檐",
+      "乌檐的返程空筐未直接返回西晒棚，而是在港北废吊臂旁的浮木栈短暂停靠。",
+      "乌檐从一只空筐底部取出沾油小铜钥匙，命船夫日落前交给白帆修棚的“缝帆的阮娘”，并称她知道空筐下一步送往何处；这是沈舟亲耳听见的指令。",
+      "返程空筐装有清理过的旧木匣和防潮骨灰泥布包，疑为航栈后仓留下的红苔运输残料，具体用途仍待查明。",
+      "乌檐在港北浮木栈独自下船步行离开，货舟则朝修棚区驶去。"
+    ]
+  },
+  {
+    "turn": 17,
+    "action": "让昆戈继续盯住乌檐的货舟，我沿岸远跟到白帆修棚，查清阮娘会把空筐和残料送往哪里；若有人发现我就撤回船上。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 7
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "gap-sail-control",
+        "name": "借隙控帆",
+        "description": "能在乱风与浪谷交错的短暂空隙中，配合掌舵者先泄帆压、再收回副索，帮助风帆船穿过狭窄风带或贴近背风岸。限制：仍须有人稳定掌舵；连续强风、雷海风暴或缺少可借的风隙时无法保证航向。",
+        "source": "正文获得"
+      },
+      {
+        "id": "cable-station-trace",
+        "name": "索台辨迹",
+        "description": "可在近距离检查旧索道的轮轴泥料、停靠钩磨痕和补给标记，判断索道是否近期被使用，并记下可重复辨认的停靠线索。限制：必须实际抵达并看见索台；不能据此得知北端经营者身份、人数或即时动向。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余大半块；本轮掰下一小角安抚镜翅兽。",
+        "qty": 1
+      },
+      {
+        "id": "warm-ridge-red-moss-root",
+        "name": "暖脊红苔根须",
+        "description": "弥娅从镜翅兽翅根伤口取出的暗红根须，可供熟悉失岛生态或航路的人辨认来源；不能自行指路。",
+        "qty": 1
+      },
+      {
+        "id": "qichao-freight-slip",
+        "name": "栖潮航栈作废货签",
+        "description": "西晒棚装船台上取得的作废货签，盖有栖潮航栈印记，写有“北三”油料、防潮骨灰泥与盐饼的供货项，可与盐桶铜印和船尾刻纹相互核对。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "tao-lu",
+        "name": "陶鹭",
+        "role": "潮雾礁群西晒棚主",
+        "attitude": "戒备"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "kun-ge-voyage-berth",
+          "kind": "access",
+          "name": "昆戈船上的临时船位",
+          "effect": "可留在昆戈的风帆船上参与追查暖脊岛，并以红苔辨风或共天眼协助航行。",
+          "scope": "仅限本次追查暖脊岛的航程，且沈舟须承担昆戈交代的实际船务与侦察。",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 15,
+          "useCount": 4
+        },
+        {
+          "id": "kun-ge-short-scouting-support",
+          "kind": "access",
+          "name": "昆戈的短程索道接应",
+          "effect": "可在暖脊岛背风水道由昆戈守船接应，短程前往旧索道最近索台侦察并撤回。",
+          "scope": "仅限倒灌风未吞没近端索道、昆戈能维持船只系泊且沈舟不擅自深入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 9,
+          "lastUsedAtTurn": 10,
+          "useCount": 1
+        },
+        {
+          "id": "kun-ge-north-three-route",
+          "kind": "access",
+          "name": "昆戈标出的北三撤回路线",
+          "effect": "可由暖脊岛东侧背风流抵达断崖浮石下，并沿检修石阶短程探查北三停靠点后撤回。",
+          "scope": "仅限倒灌风尚未吞没贴山云路、昆戈能守住风帆船且沈舟不擅自越过北三进入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 11,
+          "lastUsedAtTurn": 12,
+          "useCount": 1
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟随昆戈抵达暖脊岛东侧背风水道，查证红苔来源并取得一处可系泊、可登岛也可撤离的落脚点。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "use-red-moss-root",
+          "name": "利用红苔根须寻找航路",
+          "payoff": "获得暖脊岛来源或航路的可行动判断，并可作为与领航员谈判的凭据。",
+          "approach": "将根须交给熟悉失岛生态、旧航图或北偏东航线的人辨认。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "昆戈据根须给出可行动的辨风方法，并以此为凭据允许沈舟登船同行追查暖脊岛。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "verify-old-cable-station",
+          "name": "查证旧索道近端索台",
+          "payoff": "取得可重复辨认的索轮、停靠或补给标记，形成能用于登岛和撤离的新航路线索。",
+          "approach": "趁倒灌风尚未吞没近端索道，短程抵达最近索台，核对轮轴骨灰泥、停靠钩或补给痕迹，并沿三道白纹岩壁路线撤回昆戈的船。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟抵达旧索道近端索台，确认索道近期仍在经营，并取得“北三”停靠标记、轮轴骨灰泥与承重磨痕这组可重复辨认的航路线索；他未登索，已沿白纹岩壁撤回。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "scout-north-three",
+          "name": "短程探查北三停靠点",
+          "payoff": "可确认北三是否有值守者、近期补给与可重复利用的停靠条件，决定是否继续追查雷海外缘。",
+          "approach": "趁当前风势窗口，经断崖浮石下的检修石阶登北三，观察新缆结、补给桶、值守痕迹或来往方向；风势转强即沿原路撤回。",
+          "status": "fulfilled",
+          "offeredAtTurn": 11,
+          "materialized": true,
+          "result": "沈舟抵达北三停靠台，确认其仍有人维护并取得潮雾礁群西晒棚铜印、近期新缆结与双向运货拖痕；风势转强后已按原路撤回。",
+          "settledAtTurn": 12
+        },
+        {
+          "id": "trace-tidefog-west-drying-shed",
+          "name": "追查潮雾礁群西晒棚",
+          "payoff": "可查明为北三装运补给的人与船只，判断红苔搬运链是否经过该处。",
+          "approach": "前往潮雾礁群西晒棚核对盐桶铜印、装船记录或下一批北三补给的经手者。",
+          "status": "fulfilled",
+          "offeredAtTurn": 12,
+          "materialized": true,
+          "result": "沈舟查明北三的稳定补给由栖潮航栈经潮雾礁群西晒棚运送；棚主陶鹭指出回程货物交给名为乌檐的收货人，但货物内容仍待核实。",
+          "settledAtTurn": 13
+        },
+        {
+          "id": "identify-wuyan-cargo",
+          "name": "查明乌檐与回程货物",
+          "payoff": "可确认暖脊岛经北三运走的货物及其实际收货人，决定是截断、交易还是向外揭露这条运输链。",
+          "approach": "明早在西晒棚观察下一趟北三货船，在乌檐验收空筐前核对人、船尾刻纹与货物。",
+          "status": "answered",
+          "offeredAtTurn": 13,
+          "materialized": false,
+          "result": "沈舟确认乌檐是暖脊岛回程红苔货物的实际收货人，货物会由西晒棚货舟转入栖潮航栈后仓；现可选择跟踪、交易、截断或揭露运输链。",
+          "settledAtTurn": 14
+        },
+        {
+          "id": "act-on-wuyan-route",
+          "name": "处置乌檐的红苔运输链",
+          "payoff": "可取得航栈后仓的出入线索、争取运输链中的人手，或让红苔货物无法悄然进入幼兽港。",
+          "approach": "趁乌檐货舟尚未入仓，跟踪其路线；或以货签和观察证据向陶鹭交涉；也可携证据撤离并交给能判断伤兽风险的人。",
+          "status": "fulfilled",
+          "offeredAtTurn": 14,
+          "materialized": true,
+          "result": "沈舟已确认栖潮航栈后仓的水路、步行入口与主楼高廊，并掌握乌檐货舟卸货后携四只空筐返回西晒棚这一可行动路线。",
+          "settledAtTurn": 15
+        },
+        {
+          "id": "trace-white-sail-repair-shed",
+          "name": "追查白帆修棚的空筐转运",
+          "payoff": "可查明航栈后仓用空筐和残料遮掩红苔运输的下一处接点，并争取截断或利用这条转运线。",
+          "approach": "在不惊动船夫的前提下跟随返程货舟至白帆修棚，确认阮娘、钥匙用途和空筐的去向。",
+          "status": "answered",
+          "offeredAtTurn": 16,
+          "materialized": false,
+          "result": "沈舟确认阮娘将空筐伪装为修帆废料送往鸥骨旧坞，并把骨灰泥残料混入北堤药渣车分流；这两条路线可被重复监视、截断或借作送修掩护。",
+          "settledAtTurn": 17
+        },
+        {
+          "id": "tail-wuyan-alone",
+          "name": "跟踪独行的乌檐",
+          "payoff": "可找到乌檐个人持有的账目、联络点或可施压的弱处。",
+          "approach": "趁乌檐离开货舟且身边无人，保持距离沿港北主街跟踪；一旦被察觉便撤回昆戈的船。",
+          "status": "open",
+          "offeredAtTurn": 16
+        }
+      ]
+    },
+    "changes": [
+      "抵达 白帆修棚外侧的旧桅杆阴影中，可沿石道撤回昆戈的风帆船",
+      "问题已解答: 追查白帆修棚的空筐转运",
+      "沈舟在白帆修棚外远距离观察到，阮娘用乌檐的铜钥匙打开空筐底部夹层，取出一小卷沾油细麻绳。",
+      "阮娘当面命船夫将空筐送往鸥骨旧坞，以修帆废料填底伪装；骨灰泥布包则混入北堤药渣车分流。",
+      "阮娘留下旧木匣，称会在明早换成盐货外皮；这是沈舟亲耳听见的安排。",
+      "沈舟在阮娘用大帆试探周遭前退入旧桅杆阴影，未被发现，并记住白帆修棚至昆戈船的撤回石道。"
+    ]
+  },
+  {
+    "turn": 18,
+    "action": "我沿空筐被拖走的方向赶往鸥骨旧坞，保持距离观察接货人、伪装方式和可撤退路线，先不惊动他们。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 7
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "gap-sail-control",
+        "name": "借隙控帆",
+        "description": "能在乱风与浪谷交错的短暂空隙中，配合掌舵者先泄帆压、再收回副索，帮助风帆船穿过狭窄风带或贴近背风岸。限制：仍须有人稳定掌舵；连续强风、雷海风暴或缺少可借的风隙时无法保证航向。",
+        "source": "正文获得"
+      },
+      {
+        "id": "cable-station-trace",
+        "name": "索台辨迹",
+        "description": "可在近距离检查旧索道的轮轴泥料、停靠钩磨痕和补给标记，判断索道是否近期被使用，并记下可重复辨认的停靠线索。限制：必须实际抵达并看见索台；不能据此得知北端经营者身份、人数或即时动向。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余大半块；本轮掰下一小角安抚镜翅兽。",
+        "qty": 1
+      },
+      {
+        "id": "warm-ridge-red-moss-root",
+        "name": "暖脊红苔根须",
+        "description": "弥娅从镜翅兽翅根伤口取出的暗红根须，可供熟悉失岛生态或航路的人辨认来源；不能自行指路。",
+        "qty": 1
+      },
+      {
+        "id": "qichao-freight-slip",
+        "name": "栖潮航栈作废货签",
+        "description": "西晒棚装船台上取得的作废货签，盖有栖潮航栈印记，写有“北三”油料、防潮骨灰泥与盐饼的供货项，可与盐桶铜印和船尾刻纹相互核对。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "tao-lu",
+        "name": "陶鹭",
+        "role": "潮雾礁群西晒棚主",
+        "attitude": "戒备"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "kun-ge-voyage-berth",
+          "kind": "access",
+          "name": "昆戈船上的临时船位",
+          "effect": "可留在昆戈的风帆船上参与追查暖脊岛，并以红苔辨风或共天眼协助航行。",
+          "scope": "仅限本次追查暖脊岛的航程，且沈舟须承担昆戈交代的实际船务与侦察。",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 15,
+          "useCount": 4
+        },
+        {
+          "id": "kun-ge-short-scouting-support",
+          "kind": "access",
+          "name": "昆戈的短程索道接应",
+          "effect": "可在暖脊岛背风水道由昆戈守船接应，短程前往旧索道最近索台侦察并撤回。",
+          "scope": "仅限倒灌风未吞没近端索道、昆戈能维持船只系泊且沈舟不擅自深入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 9,
+          "lastUsedAtTurn": 10,
+          "useCount": 1
+        },
+        {
+          "id": "kun-ge-north-three-route",
+          "kind": "access",
+          "name": "昆戈标出的北三撤回路线",
+          "effect": "可由暖脊岛东侧背风流抵达断崖浮石下，并沿检修石阶短程探查北三停靠点后撤回。",
+          "scope": "仅限倒灌风尚未吞没贴山云路、昆戈能守住风帆船且沈舟不擅自越过北三进入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 11,
+          "lastUsedAtTurn": 12,
+          "useCount": 1
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟随昆戈抵达暖脊岛东侧背风水道，查证红苔来源并取得一处可系泊、可登岛也可撤离的落脚点。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "use-red-moss-root",
+          "name": "利用红苔根须寻找航路",
+          "payoff": "获得暖脊岛来源或航路的可行动判断，并可作为与领航员谈判的凭据。",
+          "approach": "将根须交给熟悉失岛生态、旧航图或北偏东航线的人辨认。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "昆戈据根须给出可行动的辨风方法，并以此为凭据允许沈舟登船同行追查暖脊岛。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "verify-old-cable-station",
+          "name": "查证旧索道近端索台",
+          "payoff": "取得可重复辨认的索轮、停靠或补给标记，形成能用于登岛和撤离的新航路线索。",
+          "approach": "趁倒灌风尚未吞没近端索道，短程抵达最近索台，核对轮轴骨灰泥、停靠钩或补给痕迹，并沿三道白纹岩壁路线撤回昆戈的船。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟抵达旧索道近端索台，确认索道近期仍在经营，并取得“北三”停靠标记、轮轴骨灰泥与承重磨痕这组可重复辨认的航路线索；他未登索，已沿白纹岩壁撤回。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "scout-north-three",
+          "name": "短程探查北三停靠点",
+          "payoff": "可确认北三是否有值守者、近期补给与可重复利用的停靠条件，决定是否继续追查雷海外缘。",
+          "approach": "趁当前风势窗口，经断崖浮石下的检修石阶登北三，观察新缆结、补给桶、值守痕迹或来往方向；风势转强即沿原路撤回。",
+          "status": "fulfilled",
+          "offeredAtTurn": 11,
+          "materialized": true,
+          "result": "沈舟抵达北三停靠台，确认其仍有人维护并取得潮雾礁群西晒棚铜印、近期新缆结与双向运货拖痕；风势转强后已按原路撤回。",
+          "settledAtTurn": 12
+        },
+        {
+          "id": "trace-tidefog-west-drying-shed",
+          "name": "追查潮雾礁群西晒棚",
+          "payoff": "可查明为北三装运补给的人与船只，判断红苔搬运链是否经过该处。",
+          "approach": "前往潮雾礁群西晒棚核对盐桶铜印、装船记录或下一批北三补给的经手者。",
+          "status": "fulfilled",
+          "offeredAtTurn": 12,
+          "materialized": true,
+          "result": "沈舟查明北三的稳定补给由栖潮航栈经潮雾礁群西晒棚运送；棚主陶鹭指出回程货物交给名为乌檐的收货人，但货物内容仍待核实。",
+          "settledAtTurn": 13
+        },
+        {
+          "id": "identify-wuyan-cargo",
+          "name": "查明乌檐与回程货物",
+          "payoff": "可确认暖脊岛经北三运走的货物及其实际收货人，决定是截断、交易还是向外揭露这条运输链。",
+          "approach": "明早在西晒棚观察下一趟北三货船，在乌檐验收空筐前核对人、船尾刻纹与货物。",
+          "status": "answered",
+          "offeredAtTurn": 13,
+          "materialized": false,
+          "result": "沈舟确认乌檐是暖脊岛回程红苔货物的实际收货人，货物会由西晒棚货舟转入栖潮航栈后仓；现可选择跟踪、交易、截断或揭露运输链。",
+          "settledAtTurn": 14
+        },
+        {
+          "id": "act-on-wuyan-route",
+          "name": "处置乌檐的红苔运输链",
+          "payoff": "可取得航栈后仓的出入线索、争取运输链中的人手，或让红苔货物无法悄然进入幼兽港。",
+          "approach": "趁乌檐货舟尚未入仓，跟踪其路线；或以货签和观察证据向陶鹭交涉；也可携证据撤离并交给能判断伤兽风险的人。",
+          "status": "fulfilled",
+          "offeredAtTurn": 14,
+          "materialized": true,
+          "result": "沈舟已确认栖潮航栈后仓的水路、步行入口与主楼高廊，并掌握乌檐货舟卸货后携四只空筐返回西晒棚这一可行动路线。",
+          "settledAtTurn": 15
+        },
+        {
+          "id": "trace-white-sail-repair-shed",
+          "name": "追查白帆修棚的空筐转运",
+          "payoff": "可查明航栈后仓用空筐和残料遮掩红苔运输的下一处接点，并争取截断或利用这条转运线。",
+          "approach": "在不惊动船夫的前提下跟随返程货舟至白帆修棚，确认阮娘、钥匙用途和空筐的去向。",
+          "status": "answered",
+          "offeredAtTurn": 16,
+          "materialized": false,
+          "result": "沈舟确认阮娘将空筐伪装为修帆废料送往鸥骨旧坞，并把骨灰泥残料混入北堤药渣车分流；这两条路线可被重复监视、截断或借作送修掩护。",
+          "settledAtTurn": 17
+        },
+        {
+          "id": "tail-wuyan-alone",
+          "name": "跟踪独行的乌檐",
+          "payoff": "可找到乌檐个人持有的账目、联络点或可施压的弱处。",
+          "approach": "趁乌檐离开货舟且身边无人，保持距离沿港北主街跟踪；一旦被察觉便撤回昆戈的船。",
+          "status": "open",
+          "offeredAtTurn": 16
+        },
+        {
+          "id": "trace-grey-heron-wharf",
+          "name": "追查灰鹭平码头的拆料接点",
+          "payoff": "可确认双鸥木牌的接货人、拆料船去向，并取得可监视、截断或冒充送修的下一段转运路线。",
+          "approach": "在不惊动鸥骨旧坞的前提下，守到明早潮退跟随拆料船；或先与昆戈会合，从水路选择可撤回的伏候位置。",
+          "status": "open",
+          "offeredAtTurn": 18
+        }
+      ]
+    },
+    "changes": [
+      "抵达 鸥骨旧坞外侧的残帆堆后，可经北墙缺口与潮沟撤回昆戈的风帆船",
+      "可争取的成长: 追查灰鹭平码头的拆料接点",
+      "沈舟在鸥骨旧坞观察到，阮娘的空筐会被浸油碎绳、坏帆骨和旧帆伪装成拆料货，以掩盖筐底夹层与此前运输残痕。",
+      "鸥骨旧坞的接手老人说明，装有“双鸥压浪”木牌的伪装空筐会在明早潮退时送往灰鹭平码头的拆料船；这是沈舟亲耳听见的安排。",
+      "沈舟确认鸥骨旧坞北墙缺口可接入潮沟，并能绕回通往昆戈船的撤回石道。"
+    ]
+  },
+  {
+    "turn": 19,
+    "action": "我藏在潮沟附近守到明早，跟踪挂双鸥木牌的拆料船去灰鹭平码头，查清接货人；一旦被发现就沿潮沟撤回昆戈的船。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 7
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "gap-sail-control",
+        "name": "借隙控帆",
+        "description": "能在乱风与浪谷交错的短暂空隙中，配合掌舵者先泄帆压、再收回副索，帮助风帆船穿过狭窄风带或贴近背风岸。限制：仍须有人稳定掌舵；连续强风、雷海风暴或缺少可借的风隙时无法保证航向。",
+        "source": "正文获得"
+      },
+      {
+        "id": "cable-station-trace",
+        "name": "索台辨迹",
+        "description": "可在近距离检查旧索道的轮轴泥料、停靠钩磨痕和补给标记，判断索道是否近期被使用，并记下可重复辨认的停靠线索。限制：必须实际抵达并看见索台；不能据此得知北端经营者身份、人数或即时动向。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余大半块；本轮掰下一小角安抚镜翅兽。",
+        "qty": 1
+      },
+      {
+        "id": "warm-ridge-red-moss-root",
+        "name": "暖脊红苔根须",
+        "description": "弥娅从镜翅兽翅根伤口取出的暗红根须，可供熟悉失岛生态或航路的人辨认来源；不能自行指路。",
+        "qty": 1
+      },
+      {
+        "id": "qichao-freight-slip",
+        "name": "栖潮航栈作废货签",
+        "description": "西晒棚装船台上取得的作废货签，盖有栖潮航栈印记，写有“北三”油料、防潮骨灰泥与盐饼的供货项，可与盐桶铜印和船尾刻纹相互核对。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "tao-lu",
+        "name": "陶鹭",
+        "role": "潮雾礁群西晒棚主",
+        "attitude": "戒备"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "kun-ge-voyage-berth",
+          "kind": "access",
+          "name": "昆戈船上的临时船位",
+          "effect": "可留在昆戈的风帆船上参与追查暖脊岛，并以红苔辨风或共天眼协助航行。",
+          "scope": "仅限本次追查暖脊岛的航程，且沈舟须承担昆戈交代的实际船务与侦察。",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 15,
+          "useCount": 4
+        },
+        {
+          "id": "kun-ge-short-scouting-support",
+          "kind": "access",
+          "name": "昆戈的短程索道接应",
+          "effect": "可在暖脊岛背风水道由昆戈守船接应，短程前往旧索道最近索台侦察并撤回。",
+          "scope": "仅限倒灌风未吞没近端索道、昆戈能维持船只系泊且沈舟不擅自深入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 9,
+          "lastUsedAtTurn": 10,
+          "useCount": 1
+        },
+        {
+          "id": "kun-ge-north-three-route",
+          "kind": "access",
+          "name": "昆戈标出的北三撤回路线",
+          "effect": "可由暖脊岛东侧背风流抵达断崖浮石下，并沿检修石阶短程探查北三停靠点后撤回。",
+          "scope": "仅限倒灌风尚未吞没贴山云路、昆戈能守住风帆船且沈舟不擅自越过北三进入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 11,
+          "lastUsedAtTurn": 12,
+          "useCount": 1
+        },
+        {
+          "id": "grey-heron-transfer-watch",
+          "kind": "access",
+          "name": "灰鹭码头拆料接点监视路线",
+          "effect": "可在潮退时从潮沟伏候灰鹭平码头，辨认双鸥木牌的拆料船、骆佑的验货棚与送往盐皮染坊的空筐去向。",
+          "scope": "仅限潮沟可通行、双鸥木牌路线尚未被乌檐或阮娘更换时；伏候只能提供监视、截断或冒充送修的时机，不保证进入鸣沙旧料棚。",
+          "status": "active",
+          "acquiredAtTurn": 19,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟随昆戈抵达暖脊岛东侧背风水道，查证红苔来源并取得一处可系泊、可登岛也可撤离的落脚点。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "use-red-moss-root",
+          "name": "利用红苔根须寻找航路",
+          "payoff": "获得暖脊岛来源或航路的可行动判断，并可作为与领航员谈判的凭据。",
+          "approach": "将根须交给熟悉失岛生态、旧航图或北偏东航线的人辨认。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "昆戈据根须给出可行动的辨风方法，并以此为凭据允许沈舟登船同行追查暖脊岛。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "verify-old-cable-station",
+          "name": "查证旧索道近端索台",
+          "payoff": "取得可重复辨认的索轮、停靠或补给标记，形成能用于登岛和撤离的新航路线索。",
+          "approach": "趁倒灌风尚未吞没近端索道，短程抵达最近索台，核对轮轴骨灰泥、停靠钩或补给痕迹，并沿三道白纹岩壁路线撤回昆戈的船。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟抵达旧索道近端索台，确认索道近期仍在经营，并取得“北三”停靠标记、轮轴骨灰泥与承重磨痕这组可重复辨认的航路线索；他未登索，已沿白纹岩壁撤回。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "scout-north-three",
+          "name": "短程探查北三停靠点",
+          "payoff": "可确认北三是否有值守者、近期补给与可重复利用的停靠条件，决定是否继续追查雷海外缘。",
+          "approach": "趁当前风势窗口，经断崖浮石下的检修石阶登北三，观察新缆结、补给桶、值守痕迹或来往方向；风势转强即沿原路撤回。",
+          "status": "fulfilled",
+          "offeredAtTurn": 11,
+          "materialized": true,
+          "result": "沈舟抵达北三停靠台，确认其仍有人维护并取得潮雾礁群西晒棚铜印、近期新缆结与双向运货拖痕；风势转强后已按原路撤回。",
+          "settledAtTurn": 12
+        },
+        {
+          "id": "trace-tidefog-west-drying-shed",
+          "name": "追查潮雾礁群西晒棚",
+          "payoff": "可查明为北三装运补给的人与船只，判断红苔搬运链是否经过该处。",
+          "approach": "前往潮雾礁群西晒棚核对盐桶铜印、装船记录或下一批北三补给的经手者。",
+          "status": "fulfilled",
+          "offeredAtTurn": 12,
+          "materialized": true,
+          "result": "沈舟查明北三的稳定补给由栖潮航栈经潮雾礁群西晒棚运送；棚主陶鹭指出回程货物交给名为乌檐的收货人，但货物内容仍待核实。",
+          "settledAtTurn": 13
+        },
+        {
+          "id": "identify-wuyan-cargo",
+          "name": "查明乌檐与回程货物",
+          "payoff": "可确认暖脊岛经北三运走的货物及其实际收货人，决定是截断、交易还是向外揭露这条运输链。",
+          "approach": "明早在西晒棚观察下一趟北三货船，在乌檐验收空筐前核对人、船尾刻纹与货物。",
+          "status": "answered",
+          "offeredAtTurn": 13,
+          "materialized": false,
+          "result": "沈舟确认乌檐是暖脊岛回程红苔货物的实际收货人，货物会由西晒棚货舟转入栖潮航栈后仓；现可选择跟踪、交易、截断或揭露运输链。",
+          "settledAtTurn": 14
+        },
+        {
+          "id": "act-on-wuyan-route",
+          "name": "处置乌檐的红苔运输链",
+          "payoff": "可取得航栈后仓的出入线索、争取运输链中的人手，或让红苔货物无法悄然进入幼兽港。",
+          "approach": "趁乌檐货舟尚未入仓，跟踪其路线；或以货签和观察证据向陶鹭交涉；也可携证据撤离并交给能判断伤兽风险的人。",
+          "status": "fulfilled",
+          "offeredAtTurn": 14,
+          "materialized": true,
+          "result": "沈舟已确认栖潮航栈后仓的水路、步行入口与主楼高廊，并掌握乌檐货舟卸货后携四只空筐返回西晒棚这一可行动路线。",
+          "settledAtTurn": 15
+        },
+        {
+          "id": "trace-white-sail-repair-shed",
+          "name": "追查白帆修棚的空筐转运",
+          "payoff": "可查明航栈后仓用空筐和残料遮掩红苔运输的下一处接点，并争取截断或利用这条转运线。",
+          "approach": "在不惊动船夫的前提下跟随返程货舟至白帆修棚，确认阮娘、钥匙用途和空筐的去向。",
+          "status": "answered",
+          "offeredAtTurn": 16,
+          "materialized": false,
+          "result": "沈舟确认阮娘将空筐伪装为修帆废料送往鸥骨旧坞，并把骨灰泥残料混入北堤药渣车分流；这两条路线可被重复监视、截断或借作送修掩护。",
+          "settledAtTurn": 17
+        },
+        {
+          "id": "tail-wuyan-alone",
+          "name": "跟踪独行的乌檐",
+          "payoff": "可找到乌檐个人持有的账目、联络点或可施压的弱处。",
+          "approach": "趁乌檐离开货舟且身边无人，保持距离沿港北主街跟踪；一旦被察觉便撤回昆戈的船。",
+          "status": "open",
+          "offeredAtTurn": 16
+        },
+        {
+          "id": "trace-grey-heron-wharf",
+          "name": "追查灰鹭平码头的拆料接点",
+          "payoff": "可确认双鸥木牌的接货人、拆料船去向，并取得可监视、截断或冒充送修的下一段转运路线。",
+          "approach": "在不惊动鸥骨旧坞的前提下，守到明早潮退跟随拆料船；或先与昆戈会合，从水路选择可撤回的伏候位置。",
+          "status": "fulfilled",
+          "offeredAtTurn": 18,
+          "materialized": true,
+          "result": "沈舟确认灰鹭平码头由骆佑验收双鸥木牌、取走空筐夹层信物，并将伪装空筐送往港南盐皮染坊换外皮；现可重复监视、截断或借送修名义接近这段路线。",
+          "settledAtTurn": 19
+        }
+      ]
+    },
+    "changes": [
+      "抵达 灰鹭平码头外侧的潮沟坍墙后，可沿原路撤回昆戈的风帆船",
+      "获得长期筹码: 灰鹭码头拆料接点监视路线",
+      "成长兑现: 追查灰鹭平码头的拆料接点",
+      "沈舟在明早潮退时跟踪挂“双鸥压浪”木牌的拆料船抵达灰鹭平码头。",
+      "灰鹭平码头“鸣沙旧料”棚的接货人骆佑验木牌后，从伪装空筐夹层取走沾油细麻绳和薄铜片，并放入带栖潮航栈印记的油布袋。",
+      "骆佑安排将空筐午前送往港南盐皮染坊，换成盐货外皮后再进入下一段转运；这是沈舟亲眼听见和看见的安排。"
+    ]
+  },
+  {
+    "turn": 20,
+    "action": "继续留在灰鹭平码头远远跟踪骆佑和装有夹层信物的油布袋，查清它下一站去向；若被发现就沿潮沟撤回昆戈的船。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 7
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "gap-sail-control",
+        "name": "借隙控帆",
+        "description": "能在乱风与浪谷交错的短暂空隙中，配合掌舵者先泄帆压、再收回副索，帮助风帆船穿过狭窄风带或贴近背风岸。限制：仍须有人稳定掌舵；连续强风、雷海风暴或缺少可借的风隙时无法保证航向。",
+        "source": "正文获得"
+      },
+      {
+        "id": "cable-station-trace",
+        "name": "索台辨迹",
+        "description": "可在近距离检查旧索道的轮轴泥料、停靠钩磨痕和补给标记，判断索道是否近期被使用，并记下可重复辨认的停靠线索。限制：必须实际抵达并看见索台；不能据此得知北端经营者身份、人数或即时动向。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩余大半块；本轮掰下一小角安抚镜翅兽。",
+        "qty": 1
+      },
+      {
+        "id": "warm-ridge-red-moss-root",
+        "name": "暖脊红苔根须",
+        "description": "弥娅从镜翅兽翅根伤口取出的暗红根须，可供熟悉失岛生态或航路的人辨认来源；不能自行指路。",
+        "qty": 1
+      },
+      {
+        "id": "qichao-freight-slip",
+        "name": "栖潮航栈作废货签",
+        "description": "西晒棚装船台上取得的作废货签，盖有栖潮航栈印记，写有“北三”油料、防潮骨灰泥与盐饼的供货项，可与盐桶铜印和船尾刻纹相互核对。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "tao-lu",
+        "name": "陶鹭",
+        "role": "潮雾礁群西晒棚主",
+        "attitude": "戒备"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "miya-clinic-aid",
+          "kind": "relationship",
+          "name": "弥娅的后诊棚协助",
+          "effect": "可在幼兽港后诊棚获得弥娅的兽医判断、短时掩护与救治协作。",
+          "scope": "仅限她不被洛岑禁止行医、且不要求她放弃救治镜翅兽的情况下。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 3,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "kun-ge-voyage-berth",
+          "kind": "access",
+          "name": "昆戈船上的临时船位",
+          "effect": "可留在昆戈的风帆船上参与追查暖脊岛，并以红苔辨风或共天眼协助航行。",
+          "scope": "仅限本次追查暖脊岛的航程，且沈舟须承担昆戈交代的实际船务与侦察。",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 15,
+          "useCount": 4
+        },
+        {
+          "id": "kun-ge-short-scouting-support",
+          "kind": "access",
+          "name": "昆戈的短程索道接应",
+          "effect": "可在暖脊岛背风水道由昆戈守船接应，短程前往旧索道最近索台侦察并撤回。",
+          "scope": "仅限倒灌风未吞没近端索道、昆戈能维持船只系泊且沈舟不擅自深入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 9,
+          "lastUsedAtTurn": 10,
+          "useCount": 1
+        },
+        {
+          "id": "kun-ge-north-three-route",
+          "kind": "access",
+          "name": "昆戈标出的北三撤回路线",
+          "effect": "可由暖脊岛东侧背风流抵达断崖浮石下，并沿检修石阶短程探查北三停靠点后撤回。",
+          "scope": "仅限倒灌风尚未吞没贴山云路、昆戈能守住风帆船且沈舟不擅自越过北三进入雷海外缘时。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 11,
+          "lastUsedAtTurn": 12,
+          "useCount": 1
+        },
+        {
+          "id": "grey-heron-transfer-watch",
+          "kind": "access",
+          "name": "灰鹭码头拆料接点监视路线",
+          "effect": "可在潮退时从潮沟伏候灰鹭平码头，辨认双鸥木牌的拆料船、骆佑的验货棚与送往盐皮染坊的空筐去向。",
+          "scope": "仅限潮沟可通行、双鸥木牌路线尚未被乌檐或阮娘更换时；伏候只能提供监视、截断或冒充送修的时机，不保证进入鸣沙旧料棚。",
+          "status": "active",
+          "acquiredAtTurn": 19,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "reach-warm-ridge",
+          "name": "抢先抵达暖脊岛",
+          "payoff": "可查证红苔来源，并争取一条尚未公开的新航路先手。",
+          "approach": "在昆戈钟停前起航，或取得港口许可后沿北偏东暖风追踪。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟随昆戈抵达暖脊岛东侧背风水道，查证红苔来源并取得一处可系泊、可登岛也可撤离的落脚点。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "earn-mirrorwing-response",
+          "name": "赢得镜翅兽回应",
+          "payoff": "获得可再次使用的共天眼共享视野，并有机会发展为首次双向协作。",
+          "approach": "先让幼兽脱离伤势与铁笼威胁，以不强迫的行动建立信任。",
+          "status": "open",
+          "offeredAtTurn": 2
+        },
+        {
+          "id": "use-red-moss-root",
+          "name": "利用红苔根须寻找航路",
+          "payoff": "获得暖脊岛来源或航路的可行动判断，并可作为与领航员谈判的凭据。",
+          "approach": "将根须交给熟悉失岛生态、旧航图或北偏东航线的人辨认。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "昆戈据根须给出可行动的辨风方法，并以此为凭据允许沈舟登船同行追查暖脊岛。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "verify-old-cable-station",
+          "name": "查证旧索道近端索台",
+          "payoff": "取得可重复辨认的索轮、停靠或补给标记，形成能用于登岛和撤离的新航路线索。",
+          "approach": "趁倒灌风尚未吞没近端索道，短程抵达最近索台，核对轮轴骨灰泥、停靠钩或补给痕迹，并沿三道白纹岩壁路线撤回昆戈的船。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟抵达旧索道近端索台，确认索道近期仍在经营，并取得“北三”停靠标记、轮轴骨灰泥与承重磨痕这组可重复辨认的航路线索；他未登索，已沿白纹岩壁撤回。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "scout-north-three",
+          "name": "短程探查北三停靠点",
+          "payoff": "可确认北三是否有值守者、近期补给与可重复利用的停靠条件，决定是否继续追查雷海外缘。",
+          "approach": "趁当前风势窗口，经断崖浮石下的检修石阶登北三，观察新缆结、补给桶、值守痕迹或来往方向；风势转强即沿原路撤回。",
+          "status": "fulfilled",
+          "offeredAtTurn": 11,
+          "materialized": true,
+          "result": "沈舟抵达北三停靠台，确认其仍有人维护并取得潮雾礁群西晒棚铜印、近期新缆结与双向运货拖痕；风势转强后已按原路撤回。",
+          "settledAtTurn": 12
+        },
+        {
+          "id": "trace-tidefog-west-drying-shed",
+          "name": "追查潮雾礁群西晒棚",
+          "payoff": "可查明为北三装运补给的人与船只，判断红苔搬运链是否经过该处。",
+          "approach": "前往潮雾礁群西晒棚核对盐桶铜印、装船记录或下一批北三补给的经手者。",
+          "status": "fulfilled",
+          "offeredAtTurn": 12,
+          "materialized": true,
+          "result": "沈舟查明北三的稳定补给由栖潮航栈经潮雾礁群西晒棚运送；棚主陶鹭指出回程货物交给名为乌檐的收货人，但货物内容仍待核实。",
+          "settledAtTurn": 13
+        },
+        {
+          "id": "identify-wuyan-cargo",
+          "name": "查明乌檐与回程货物",
+          "payoff": "可确认暖脊岛经北三运走的货物及其实际收货人，决定是截断、交易还是向外揭露这条运输链。",
+          "approach": "明早在西晒棚观察下一趟北三货船，在乌檐验收空筐前核对人、船尾刻纹与货物。",
+          "status": "answered",
+          "offeredAtTurn": 13,
+          "materialized": false,
+          "result": "沈舟确认乌檐是暖脊岛回程红苔货物的实际收货人，货物会由西晒棚货舟转入栖潮航栈后仓；现可选择跟踪、交易、截断或揭露运输链。",
+          "settledAtTurn": 14
+        },
+        {
+          "id": "act-on-wuyan-route",
+          "name": "处置乌檐的红苔运输链",
+          "payoff": "可取得航栈后仓的出入线索、争取运输链中的人手，或让红苔货物无法悄然进入幼兽港。",
+          "approach": "趁乌檐货舟尚未入仓，跟踪其路线；或以货签和观察证据向陶鹭交涉；也可携证据撤离并交给能判断伤兽风险的人。",
+          "status": "fulfilled",
+          "offeredAtTurn": 14,
+          "materialized": true,
+          "result": "沈舟已确认栖潮航栈后仓的水路、步行入口与主楼高廊，并掌握乌檐货舟卸货后携四只空筐返回西晒棚这一可行动路线。",
+          "settledAtTurn": 15
+        },
+        {
+          "id": "trace-white-sail-repair-shed",
+          "name": "追查白帆修棚的空筐转运",
+          "payoff": "可查明航栈后仓用空筐和残料遮掩红苔运输的下一处接点，并争取截断或利用这条转运线。",
+          "approach": "在不惊动船夫的前提下跟随返程货舟至白帆修棚，确认阮娘、钥匙用途和空筐的去向。",
+          "status": "answered",
+          "offeredAtTurn": 16,
+          "materialized": false,
+          "result": "沈舟确认阮娘将空筐伪装为修帆废料送往鸥骨旧坞，并把骨灰泥残料混入北堤药渣车分流；这两条路线可被重复监视、截断或借作送修掩护。",
+          "settledAtTurn": 17
+        },
+        {
+          "id": "tail-wuyan-alone",
+          "name": "跟踪独行的乌檐",
+          "payoff": "可找到乌檐个人持有的账目、联络点或可施压的弱处。",
+          "approach": "趁乌檐离开货舟且身边无人，保持距离沿港北主街跟踪；一旦被察觉便撤回昆戈的船。",
+          "status": "open",
+          "offeredAtTurn": 16
+        },
+        {
+          "id": "trace-grey-heron-wharf",
+          "name": "追查灰鹭平码头的拆料接点",
+          "payoff": "可确认双鸥木牌的接货人、拆料船去向，并取得可监视、截断或冒充送修的下一段转运路线。",
+          "approach": "在不惊动鸥骨旧坞的前提下，守到明早潮退跟随拆料船；或先与昆戈会合，从水路选择可撤回的伏候位置。",
+          "status": "fulfilled",
+          "offeredAtTurn": 18,
+          "materialized": true,
+          "result": "沈舟确认灰鹭平码头由骆佑验收双鸥木牌、取走空筐夹层信物，并将伪装空筐送往港南盐皮染坊换外皮；现可重复监视、截断或借送修名义接近这段路线。",
+          "settledAtTurn": 19
+        },
+        {
+          "id": "split-wharf-signals",
+          "name": "截断平码头分拆信物路线",
+          "payoff": "可确认并干预沾油麻绳与薄铜片重新汇入运输链的接手人，取得能用于截断、冒充送修或谈价的实际把柄。",
+          "approach": "跟踪午后去北堤系泊桩场的缆绳，或伏候来取北堤平码货单的蓝边外褂人；若暴露可沿潮沟撤回昆戈船。",
+          "status": "open",
+          "offeredAtTurn": 20
+        }
+      ]
+    },
+    "changes": [
+      "抵达 灰鹭平码头西侧潮沟外的旧桅杆堆后，可沿潮沟撤回昆戈的风帆船，也可监视听潮绳行与北堤方向",
+      "可争取的成长: 截断平码头分拆信物路线",
+      "骆佑将装有沾油细麻绳和薄铜片的油布袋交给灰鹭平码头西侧“听潮绳行”的铺主。",
+      "听潮绳行铺主把沾油细麻绳混入一束待修缆绳，安排午后送往北堤系泊桩场。",
+      "听潮绳行铺主将薄铜片压入盖有“北堤平码”红印的货单，安排另交给一名穿蓝边外褂的人；这是沈舟亲耳听见的安排。"
+    ]
+  }
+]

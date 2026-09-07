@@ -29,7 +29,7 @@ export function createTgnLive(options = {}) {
     timeoutMs: config.providerTimeoutMs,
     mcpClient,
   });
-  const generationService = options.generationService || new GenerationService({ narrator, planner, plannerInterval: config.plannerInterval, openingPlanStrategy: config.openingPlanStrategy });
+  const generationService = options.generationService || new GenerationService({ narrator, planner, plannerInterval: config.plannerInterval, openingPlanStrategy: config.openingPlanStrategy, plannerStrategy: config.plannerStrategy });
   const worldAdapter = options.worldAdapter || createAcpRoleAdapter({
     role: "world", model: config.worldModel, reasoningEffort: config.worldReasoning,
     workspace: config.narratorWorkspace, agentDockUrl: config.agentDockUrl,

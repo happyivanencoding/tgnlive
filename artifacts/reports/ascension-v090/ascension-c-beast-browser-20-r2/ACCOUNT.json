@@ -1,0 +1,212 @@
+{
+  "realm": {
+    "name": "一环驭手",
+    "rank": 2,
+    "benchmark": "心环能分担一次冲击，人与兽可在乱风中同时改变方向。",
+    "unlock": "可进入雷海外缘，独立护送或追猎。",
+    "progress": 0
+  },
+  "coins": 24,
+  "capabilities": [
+    {
+      "id": "power-shared-sky-eye",
+      "name": "共天眼",
+      "description": "当镜翅兽或其他自愿持续对视的云兽在近距离短飞时，沈舟可稳定共享其实际看见的近处视野、方向感、托风、侧风与疲乏，并据此为港内近程飞行预留落点、调整小风帆靠近位置或举起可抓停的横环。限制：不能夺取控制或得知视野外信息；对象受惊、疼痛、闭眼或中断回望时共享立刻中断，镜翅兽仍不能远飞或载人。",
+      "source": "开局天赋"
+    },
+    {
+      "id": "short-glide",
+      "name": "短距滑翔",
+      "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+      "source": "旧滑翔索"
+    },
+    {
+      "id": "tether-wind-handling",
+      "name": "系风绳借风",
+      "description": "在有经验领航员指挥、且身处配有系风绳的小型风帆或固定风具上时，沈舟能根据帆角抖动和绳索回弹调整站位、稳住帆角，协助穿过第一段乱风。限制：不能独自领航，不能用于无固定索具的高空滑翔，遇到陌生风暴仍需判断。",
+      "source": "正文获得"
+    },
+    {
+      "id": "realm-1",
+      "name": "缚风学徒行动空间",
+      "description": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+      "source": "境界突破"
+    },
+    {
+      "id": "low-cloud-channel-survey",
+      "name": "低云槽测向",
+      "description": "在有固定系风桩、系风绳或小风帆，并能对照明确岩脊、云形等地标时，沈舟可结合缆绳回弹、帆角抖动与云层下压，判断低云槽的安全入槽角、近处暂泊位置及原路返航余地。限制：只能用于已实地观察过的近程风域；不能预测雷海外缘突发乱风，也不能替代领航员带船穿越北脊风井。",
+      "source": "正文获得"
+    },
+    {
+      "id": "one-ring-joint-turn",
+      "name": "一环共同转向",
+      "description": "当镜翅兽自愿持续回应、且双方处于可见的近程飞行范围时，沈舟可借心环与它同时调整方向，并分担一次侧风、落点偏移或短促碰撞带来的冲击。现在可用于港内近程飞行、乱风边缘的转向和协助小型云兽避险；限制：一次强冲击后心环需要恢复，不能强迫云兽回应，不能代替镜翅兽飞行或承受北脊风井持续乱风。",
+      "source": "正文获得"
+    },
+    {
+      "id": "realm-2",
+      "name": "一环驭手行动空间",
+      "description": "心环能分担一次冲击，人与兽可在乱风中同时改变方向。",
+      "source": "境界突破"
+    }
+  ],
+  "inventory": [
+    {
+      "id": "glider-harness",
+      "name": "旧滑翔索",
+      "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+      "qty": 1
+    },
+    {
+      "id": "sweet-moss",
+      "name": "甜苔饼",
+      "description": "剩下一块，多数幼年云兽愿意闻一闻",
+      "qty": 1
+    },
+    {
+      "id": "wing-membrane-cloud-salt",
+      "name": "补羽膜云盐",
+      "description": "两片薄如鳞膜的专用云盐，其中一片已取少量调入温水供弥娅敷治镜翅兽翅根；其余仍须密封避潮，可再完成一次完整养护。",
+      "qty": 2
+    },
+    {
+      "id": "red-moss-silver-sand-sample",
+      "name": "带银砂红苔样本",
+      "description": "从红苔黑岛外缘温热石缝采下的红苔，根部混有细亮银砂；可供弥娅与港主公开比对镜翅兽伤口残留，油纸包裹，需避潮保存。",
+      "qty": 1
+    }
+  ],
+  "relationships": [
+    {
+      "id": "mi-ya",
+      "name": "弥娅",
+      "role": "云兽医",
+      "attitude": "友善"
+    },
+    {
+      "id": "kun-ge",
+      "name": "昆戈",
+      "role": "失势领航员",
+      "attitude": "信任"
+    },
+    {
+      "id": "mirrorwing",
+      "name": "镜翅兽",
+      "attitude": "信任"
+    },
+    {
+      "id": "luo-cen",
+      "name": "洛岑",
+      "attitude": "中立"
+    },
+    {
+      "id": "a-he",
+      "name": "阿赫",
+      "attitude": "中立"
+    }
+  ],
+  "progression": {
+    "version": 1,
+    "leverage": [
+      {
+        "id": "mirrorwing-care-access",
+        "kind": "access",
+        "name": "镜翅兽照护准入",
+        "effect": "沈舟可在弥娅安排下进入木笼区协助照护镜翅兽，并继续争取它的自愿回应。",
+        "scope": "仅限镜翅兽养伤期间的木笼区；不得单独触碰伤口或带离幼兽。",
+        "status": "active",
+        "acquiredAtTurn": 7,
+        "lastUsedAtTurn": null,
+        "useCount": 0
+      },
+      {
+        "id": "north-drift-co-discoverer",
+        "kind": "identity",
+        "name": "北漂旧航路共同申报者",
+        "effect": "沈舟可凭共同申报者身份报名护送、取样或探路航次，并以协作者身份参与事先谈定的成果分成。",
+        "scope": "仅限已获港口承认的北漂旧航路及相关航次；不授予独自领航、进入北脊风井或无条件登船的权利。",
+        "status": "active",
+        "acquiredAtTurn": 18,
+        "lastUsedAtTurn": null,
+        "useCount": 0
+      },
+      {
+        "id": "north-drift-voyage-token",
+        "kind": "access",
+        "name": "北漂航次牌",
+        "effect": "沈舟可在幼兽港航路申报处以协作者身份提出或接受北漂航路相关的护送、取样和探路航次。",
+        "scope": "需由航次主持人与港口规则认可，具体报酬、风险与船位须逐次议定。",
+        "status": "active",
+        "acquiredAtTurn": 18,
+        "lastUsedAtTurn": null,
+        "useCount": 0
+      }
+    ],
+    "opportunities": [
+      {
+        "id": "mirrorwing-first-response",
+        "name": "镜翅兽的第一次回应",
+        "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+        "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+        "status": "fulfilled",
+        "offeredAtTurn": 2,
+        "materialized": true,
+        "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+        "settledAtTurn": 3
+      },
+      {
+        "id": "kunge-first-crossing",
+        "name": "昆戈的第一段跨缝同行",
+        "payoff": "若与昆戈实际穿过第一段乱风并完成协作，沈舟可获得可重复使用的跨岛行动本领或天空行动资源。",
+        "approach": "在迁徙钟停前与昆戈谈妥同行条件，登上小风帆并在航行中承担真实协作。",
+        "status": "fulfilled",
+        "offeredAtTurn": 5,
+        "materialized": true,
+        "result": "沈舟与昆戈实际穿过第一段乱风，掌握在有领航员和系风绳条件下协助稳帆的动作，并抵达系风礁。",
+        "settledAtTurn": 6
+      },
+      {
+        "id": "mirrorwing-wing-salt",
+        "name": "镜翅兽的补羽膜云盐",
+        "payoff": "若取得合用云盐并完成弥娅的后续治疗，镜翅兽可更快恢复飞行能力，沈舟可争取更完整的空中协作。",
+        "approach": "向弥娅查明云盐来源，并以交易、劳动、航路行动或其他实际方式取得；镜翅兽是否愿意继续协作仍取决于它自身意愿。",
+        "status": "fulfilled",
+        "offeredAtTurn": 9,
+        "materialized": true,
+        "result": "沈舟拆回废旧吊架的一整组定风轮，以劳动换得两片补羽膜云盐；已可带回给弥娅进行镜翅兽的后续治疗。",
+        "settledAtTurn": 11
+      },
+      {
+        "id": "red-moss-black-isle-pursuit",
+        "name": "红苔黑岛的追航",
+        "payoff": "若实际追上红苔黑岛并安全登临，可查明镜翅兽伤口红苔的来源，并争取获得北漂航路的实物证据或先手。",
+        "approach": "趁低风窗口随昆戈的小风帆越过第一段断桥后继续追向东北；镜翅兽需留在弥娅处养伤，不能承担远航。",
+        "status": "fulfilled",
+        "offeredAtTurn": 13,
+        "materialized": true,
+        "result": "沈舟与昆戈实际追至红苔黑岛外缘，确认镜翅兽伤口红苔确来自该岛，并取得带银砂红苔样本及已核验的旧航路标记证据。",
+        "settledAtTurn": 14
+      },
+      {
+        "id": "fogroot-mother-isle-route",
+        "name": "雾根母岛的航线先手",
+        "payoff": "若实际穿过北脊风井并抵达雾根母岛，可查明红苔黑岛的崩脱原因，争取取得雷海外缘航路与兽群动向的先手。",
+        "approach": "先带雾根印记回港争取人手与船只，或在具备分担乱风冲击的稳定协作能力后，随昆戈由黑岛北侧低云槽进入北脊风井。",
+        "status": "fulfilled",
+        "offeredAtTurn": 15,
+        "materialized": true,
+        "result": "已取得从黑岛北侧断缆岩脊经低云槽抵达小礁台的实航路线先手；若要进入北脊风井，仍须取得能分担乱风冲击的驭手或结伴船队。",
+        "settledAtTurn": 18
+      },
+      {
+        "id": "north-spine-outer-rim-convoy",
+        "name": "北脊风井外沿结伴航次",
+        "payoff": "可实际抵达北脊风井外沿，取得雾根母岛方向的可核验证据或外沿测风成果，并争取航次分成或十二风铢与署名记录。",
+        "approach": "以北漂航次牌寻得第二艘愿意结伴的小风帆，并与昆戈向洛岑取得临时出航簿；航次须遵守已谈定的撤退条件。",
+        "status": "open",
+        "offeredAtTurn": 20
+      }
+    ]
+  }
+}

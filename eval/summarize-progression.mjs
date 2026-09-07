@@ -10,17 +10,33 @@ const reports=[];
 for(const label of names){
  const dir=path.join(root,'artifacts/eval',label),manifest=load(dir,'manifest.json',{}),summary=load(dir,'summary.json',{}),game=load(dir,'final-game.json',null),metric=load(dir,'server-metrics.json',{turns:[]});
  const file=path.join(dir,'turns.jsonl');const records=fs.existsSync(file)?fs.readFileSync(file,'utf8').trim().split('\n').filter(Boolean).map(JSON.parse):[];
- const committed=records.filter(r=>r.outcome==='completed'),traces=metric.turns||[],success=traces.filter(t=>t.status==='completed'||t.status==='complete');
+ const committed=records.filter(r=>r.outcome==='completed'),allTraces=metric.turns||[];
+ const backgroundTraces=allTraces.filter(t=>t.kind==='planner-prefetch');
+ const traces=allTraces.filter(t=>t.kind!=='planner-prefetch');
  // Older trace outcomes are 'committed'; explicitly use committed request IDs too.
  const ids=new Set(committed.map(r=>r.requestId));const accepted=traces.filter(t=>ids.has(t.requestId));
  const stages=[...new Set(traces.flatMap(t=>t.stages?.map(s=>s.name)||[]))].sort();
- const stagesAll=Object.fromEntries(stages.map(name=>[name,stats(traces.flatMap(t=>(t.stages||[]).filter(s=>s.name===name).map(s=>s.elapsedMs)))]));
+ const stageStats=rows=>Object.fromEntries(stages.map(name=>[name,stats(rows.flatMap(t=>(t.stages||[]).filter(s=>s.name===name).map(s=>s.elapsedMs)))]));
+ const stagesAll=stageStats(traces);
+ const failedTraces=traces.filter(t=>!ids.has(t.requestId));
+ const failedPlayers=[]; const seenRuns=new Set(); let ancestor=label;
+ while(ancestor&&!seenRuns.has(ancestor)){
+  seenRuns.add(ancestor); const ancestorDir=path.join(root,'artifacts/eval',ancestor);
+  for(const filename of fs.readdirSync(ancestorDir).filter(n=>/^player-\d+\.meta\.json$/.test(n))){
+   const meta=load(ancestorDir,filename,{});
+   if(meta.outcome==='failed')failedPlayers.push({run:ancestor,file:filename,error:meta.error,totalMs:meta.totalMs,sessionId:meta.sessionId,model:meta.model,effort:meta.reasoningEffort});
+  }
+  ancestor=load(ancestorDir,'manifest.json',{}).continuedFrom;
+ }
+ if(new Set(committed.map(r=>r.turn?.index??r.index)).size!==committed.length)throw Error(`Duplicate inherited committed turns: ${label}`);
  const checkpointRows=traces.filter(t=>t.stages?.some(s=>s.name==='plan')).map(t=>({requestId:t.requestId,status:t.status,turn:committed.find(r=>r.requestId===t.requestId)?.index??null,firstNarrativeSseMs:t.firstNarrativeSseMs??t.firstReaderVisibleMs,completeMs:t.totalElapsedMs,planningMs:t.stages.find(s=>s.name==='plan').elapsedMs,model:t.provider?.planner?.model,effort:t.provider?.planner?.reasoningEffort}));
- const models=Object.fromEntries(['narrator','planner','repair','world'].map(role=>[role,[...new Set(traces.map(t=>t.provider?.[role]).filter(Boolean).map(p=>`${p.model}/${p.reasoningEffort}`))]]));
+ const models=Object.fromEntries(['narrator','planner','repair','world'].map(role=>[role,[...new Set(allTraces.map(t=>t.provider?.[role]).filter(Boolean).map(p=>`${p.model}/${p.reasoningEffort}`))]]));
  const daily=committed.map(r=>({turn:r.index,action:r.action,playerIntent:r.playerIntent,continueReason:r.continueReason,realm:r.afterState?.realm,coins:r.afterState?.coins,capabilities:r.afterState?.capabilities,leverage:r.afterState?.progression?.leverage,opportunities:r.afterState?.progression?.opportunities,changes:r.turn?.changes,firstNarrativeMs:r.client?.firstNarrativeMs,completionMs:r.client?.completeMs,browser:r.client?.browserTiming}));
  const initial=manifest.initialGame?.state||{},final=game?.state||committed.at(-1)?.afterState||{};
  const report={label,transport:manifest.transport||'api',requestedTurns:manifest.requestedTurns,completedTurns:committed.length,attempts:records.length,failedAttempts:records.filter(r=>r.outcome==='failed').length,status:summary.fatal?'failed':summary.endedAt?'completed':'running',fatal:summary.fatal??null,models,
- server:{firstNarrativeSse:stats(accepted.map(t=>t.firstNarrativeSseMs??t.firstReaderVisibleMs)),completion:stats(accepted.map(t=>t.totalElapsedMs)),allAttempts:stats(traces.map(t=>t.totalElapsedMs)),repairCalls:traces.reduce((n,t)=>n+(t.repairAttempts||0),0),stages:stagesAll,checkpoints:checkpointRows,contextCharacters:stats(traces.map(t=>t.promptChars?.narrator))},
+ server:{firstNarrativeSse:stats(accepted.map(t=>t.firstNarrativeSseMs??t.firstReaderVisibleMs)),completion:stats(accepted.map(t=>t.totalElapsedMs)),failureCompletion:stats(failedTraces.map(t=>t.totalElapsedMs)),allAttempts:stats(traces.map(t=>t.totalElapsedMs)),repairCalls:traces.reduce((n,t)=>n+(t.repairAttempts||0),0),stages:stagesAll,successStages:stageStats(accepted),failureStages:stageStats(failedTraces),checkpoints:checkpointRows,contextCharacters:stats(traces.map(t=>t.promptChars?.narrator))},
+ backgroundPlanning:{attempts:backgroundTraces.length,completion:stats(backgroundTraces.filter(t=>t.status==='complete').map(t=>t.totalElapsedMs)),failed:backgroundTraces.filter(t=>!['complete','completed'].includes(t.status)).map(t=>({id:t.id,status:t.status,totalMs:t.totalElapsedMs,errors:t.errors})),readyReuses:accepted.filter(t=>t.planSource==='ready-prefetch-no-foreground-model-call').length,nonblockingFallbacks:accepted.filter(t=>t.planSource==='existing-plan-nonblocking-fallback').length,traces:backgroundTraces.map(t=>({id:t.id,requestId:t.requestId,basisVersion:t.basisVersion,targetVersion:t.targetVersion,status:t.status,totalMs:t.totalElapsedMs}))},
+ failedPlayers,wallElapsedMs:summary.endedAt?Date.parse(summary.endedAt)-Date.parse(manifest.startedAt):null,wallNote:'Includes outage/recovery and operator reading gaps; not the sum of app latency.',
  client:{firstByte:stats(committed.map(r=>r.client?.firstByteMs)),firstNarrativeReceipt:stats(committed.map(r=>r.client?.firstNarrativeMs)),completionReceipt:stats(committed.map(r=>r.client?.completeMs)),playerDecision:stats(committed.map(r=>r.player?.totalMs)),browserFeedbackPaint:stats(committed.map(r=>r.client?.browserTiming?.immediateFeedbackPaintMs)),browserNarrativePaint:stats(committed.map(r=>r.client?.browserFirstPaintMs)),browserChoicesPaint:stats(committed.map(r=>r.client?.choicesVisibleMs))},
  account:{initial:{realm:initial.realm,coins:initial.coins,capabilities:initial.capabilities?.map(x=>x.name)},final:{realm:final.realm,coins:final.coins,capabilities:final.capabilities?.map(x=>x.name),leverage:final.progression?.leverage||[],opportunities:final.progression?.opportunities||[]}},errors:traces.flatMap(t=>(t.errors||[]).map(e=>({traceId:t.id,requestId:t.requestId,...e}))),perTurn:daily,
  limits:['Unpaired autonomous trajectories; no causal retention claim','n<20 p95 nearest-rank is max; not a stable population tail','Stage durations are inclusive; ACP setup is inside model stages','API/SSE receipt and browser rAF paint approximation use different origins','Player deliberation is excluded from app waits','No physical phone or WAN measurements; provider queue/cost unknown']};
@@ -29,5 +45,5 @@ for(const label of names){
  fs.writeFileSync(path.join(dir,'analysis.json'),JSON.stringify(report,null,2));reports.push(report);
 }
 const concise=reports.map(({perTurn,errors,account,...r})=>({...r,finalAccount:account.final,errorCount:errors.length}));
-const destination=path.join(root,'artifacts/progression-v080/comparison.json');fs.writeFileSync(destination,JSON.stringify({generatedAt:new Date().toISOString(),samples:concise},null,2));
+const destination=process.env.TGN_EVAL_COMPARISON_PATH?path.resolve(root,process.env.TGN_EVAL_COMPARISON_PATH):path.join(root,'artifacts/progression-v080/comparison.json');fs.mkdirSync(path.dirname(destination),{recursive:true});fs.writeFileSync(destination,JSON.stringify({generatedAt:new Date().toISOString(),samples:concise},null,2));
 console.log(JSON.stringify(concise.map(r=>({label:r.label,status:r.status,completed:r.completedTurns,failures:r.failedAttempts,repairs:r.server.repairCalls,firstSse:r.server.firstNarrativeSse,complete:r.server.completion,browserPaint:r.client.browserNarrativePaint,choices:r.client.browserChoicesPaint,checkpoints:r.server.checkpoints,realm:r.finalAccount.realm,capabilities:r.finalAccount.capabilities,leverage:r.finalAccount.leverage.length})),null,2));

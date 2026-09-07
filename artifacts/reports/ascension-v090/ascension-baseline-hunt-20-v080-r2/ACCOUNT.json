@@ -1,0 +1,168 @@
+{
+  "realm": {
+    "name": "初醒一级",
+    "rank": 0,
+    "benchmark": "本命形态刚能显现，维持不满半刻。",
+    "unlock": "能使用形态最基础的身体或器物特性一次。",
+    "progress": 17
+  },
+  "coins": 16,
+  "capabilities": [
+    {
+      "id": "power-dual-aspect",
+      "name": "双相本命",
+      "description": "你的本命形态有两种可切换形态：一种强化身体，一种化为器物。 边界: 同一时刻只能维持一种形态，切换会中断当前印技。",
+      "source": "开局天赋"
+    },
+    {
+      "id": "manifest-form",
+      "name": "显现本命形态",
+      "description": "能让所选形态显现十余息，并使用其最基础特性；沈舟现可在雷角兽自愿导雷时，以强化身体形态按三道凹纹时序守住压石内侧，并在第三纹后将承力交给已加固的外坡与观察手轮换。限制：必须有稳固压石、预先布好的石槽、可靠观察者报纹、雷角兽配合及已核定的外坡泄势路；不能触碰引雷楔，外坡以外的地形未经核验，错过时序或持续重压仍会迅速耗尽体力。",
+      "source": "初醒一级"
+    }
+  ],
+  "inventory": [
+    {
+      "id": "training-brace",
+      "name": "训练护臂",
+      "description": "能承受一次初醒形态失控的冲击",
+      "qty": 1
+    },
+    {
+      "id": "salted-meat",
+      "name": "盐肉干",
+      "description": "进山一日口粮，也可用来引开普通野兽",
+      "qty": 1
+    },
+    {
+      "id": "bai-yan-whistle-token",
+      "name": "白砚的黑铜哨牌",
+      "description": "白砚交出的核验凭据。可在天黑前证明沈舟获准带他前往后山查看封口；不代表学院已撤销捕兽命令。",
+      "qty": 1
+    }
+  ],
+  "relationships": [
+    {
+      "id": "du-heng",
+      "name": "杜衡",
+      "role": "青栎村长",
+      "attitude": "好奇"
+    },
+    {
+      "id": "a-chi",
+      "name": "阿迟",
+      "role": "年轻猎人",
+      "attitude": "友善"
+    },
+    {
+      "id": "thunder-horn-beast",
+      "name": "雷角兽",
+      "role": "守护后山裂缝的离群异兽",
+      "attitude": "亲近"
+    }
+  ],
+  "progression": {
+    "version": 1,
+    "leverage": [
+      {
+        "id": "du-heng-evacuation-trust",
+        "kind": "relationship",
+        "name": "杜衡认可的撤离判断",
+        "effect": "沈舟可向杜衡直接报告后山封口与学院动向，并在村庄撤离安排中提出具体建议。",
+        "scope": "限青栎村本次撤离与后山危机期间；杜衡仍以村民安全为先。",
+        "sourceId": "du-heng",
+        "status": "active",
+        "acquiredAtTurn": 7,
+        "lastUsedAtTurn": 17,
+        "useCount": 1
+      },
+      {
+        "id": "bai-yan-night-net-ban",
+        "kind": "access",
+        "name": "白砚的今夜禁网命令",
+        "effect": "沈舟可要求白砚所属猎手在三日内停止捕捉雷角兽，并以封口安全为由制止其靠近石坡；山下守卫每日接收青栎村撤离与封口消息。",
+        "scope": "限未来三日及白砚所属猎手；三日后由白砚依封口稳定、撤离进度和学院回函重新裁定，不等于学院永久撤销捕兽命令。",
+        "sourceId": "bai-yan",
+        "status": "active",
+        "acquiredAtTurn": 9,
+        "lastUsedAtTurn": null,
+        "useCount": 0,
+        "updatedAtTurn": 20
+      },
+      {
+        "id": "bai-yan-archive-witness",
+        "kind": "access",
+        "name": "后山封口档案见证",
+        "effect": "沈舟可在明早持黑铜哨牌前往学院外档房，见证并核对后山封口完整巡检册中与铁钉、雷角兽群和封口变故有关的记录。",
+        "scope": "限本次后山封口调查及学院外档房；不得擅闯内库，完整档案是否调出由白砚负责。",
+        "sourceId": "bai-yan",
+        "status": "active",
+        "acquiredAtTurn": 10,
+        "lastUsedAtTurn": 11,
+        "useCount": 1
+      }
+    ],
+    "opportunities": [
+      {
+        "id": "thunder-horn-trust",
+        "name": "雷角兽的回应",
+        "payoff": "若能帮助雷角兽守住裂缝并获得其认可，沈舟可争取了解残缺兽印的用途，并获得接近第一枚印记的机会。",
+        "approach": "先处理裂缝外泄的威胁，且不得把雷角兽当作单纯猎物袭击。",
+        "status": "open",
+        "offeredAtTurn": 2
+      },
+      {
+        "id": "bai-yan-seal-verification",
+        "name": "让学院亲见封口危机",
+        "payoff": "若能在不扩大黑雾风险的前提下让白砚确认裂缝与引雷楔的作用，可争取学院今夜停止对雷角兽下网。",
+        "approach": "天黑前带白砚核验封口、引雷楔和黑雾，且不得借机隐瞒或破坏现场。",
+        "status": "fulfilled",
+        "offeredAtTurn": 8,
+        "materialized": true,
+        "result": "白砚现场确认封口危机与雷角兽导雷作用，已下达今夜禁网命令；沈舟获得可据此争取修补材料、查阅旧猎区记录与继续协作的学院见证。",
+        "settledAtTurn": 9
+      },
+      {
+        "id": "old-seal-records",
+        "name": "追查旧封口记录",
+        "payoff": "核对完整巡检册后，可获得能指向铁钉布设者、封口变故或后续修补方法的具体记录。",
+        "approach": "明早持黑铜哨牌到学院外档房，与白砚共同查阅调取的后山封口巡检册；不得擅闯内库或伪造记录。",
+        "status": "fulfilled",
+        "offeredAtTurn": 10,
+        "materialized": true,
+        "result": "沈舟与白砚核对完整巡检册，确认旧铁钉的封口用途、十七年前未完成修补的领队韩铎，以及可立即执行的外层修补方法；韩铎未完成修补的具体原因仍待查明。",
+        "settledAtTurn": 11
+      },
+      {
+        "id": "han-duo-repair-trail",
+        "name": "追查韩铎修补队",
+        "payoff": "若查明韩铎修补队的去向与山火记录，可进一步判断封口为何未完成复位，并获得处理旧铁钉或逆雷裂纹的线索。",
+        "approach": "由白砚依学院程序申请查阅韩铎修补队档案；沈舟可提供封口现状与巡检册抄录，不得擅闯学院内库。",
+        "status": "open",
+        "offeredAtTurn": 11
+      },
+      {
+        "id": "guided-lightning-support",
+        "name": "分担封口导雷",
+        "payoff": "若能在雷角兽认可下把部分导雷稳定分入外层坡石，沈舟可获得一套可重复使用的封口协作方法，并进一步争取雷角兽展示残缺兽印的用途。",
+        "approach": "保持安全距离，在阿迟观察黑雾变化时，依雷角兽留下的浅痕布置压石；不得触碰引雷楔、拔除旧铁钉或强迫雷角兽导雷。",
+        "status": "fulfilled",
+        "offeredAtTurn": 12,
+        "materialized": true,
+        "result": "沈舟依雷角兽浅痕布置压石，在阿迟观察下成功将一次导雷的部分冲击分入外层坡石；他获得可重复使用的封口协作方法，雷角兽也以踏定石槽回应认可。",
+        "settledAtTurn": 13
+      },
+      {
+        "id": "outer-slope-reinforcement",
+        "name": "外坡泄势加固",
+        "payoff": "若按已核定承力点完成加固并承受一次真实余雷，沈舟可让观察与承力轮换，减少亲自硬扛末段震势，并取得可供村民执行的封口协作办法。",
+        "approach": "从山路外侧取用石板、沙袋、木桩和长绳；不得封堵低洼碎石泄势通道、不得带铁器越过安全线、不得触碰引雷楔，施工须等待雷角兽导雷时序。",
+        "status": "fulfilled",
+        "offeredAtTurn": 18,
+        "materialized": true,
+        "result": "沈舟等人按已核定的硬土坡承力点完成外坡加固，并承受住一次真实余雷；村中现有可重复执行的观察、承力与撤离协作法，沈舟可轮换观察手，减少亲自硬扛末段震势。",
+        "settledAtTurn": 19
+      }
+    ]
+  }
+}

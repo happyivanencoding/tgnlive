@@ -1,0 +1,179 @@
+{
+  "realm": {
+    "name": "一式匠",
+    "rank": 1,
+    "benchmark": "能稳定承载一个刻式，在紧张行动中连续使用数分钟。",
+    "unlock": "可独立处理低危材料、登记个人配方，并以一个可靠能力接正式委托。",
+    "progress": 0
+  },
+  "coins": 62,
+  "capabilities": [
+    {
+      "id": "power-fault-taster",
+      "name": "错味校准",
+      "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤，识出偏差不等于越阶改方成功。",
+      "source": "开局天赋"
+    },
+    {
+      "id": "basic-batch-brewing",
+      "name": "小批配墨",
+      "description": "能按完整公开方操作蒸瓶并判断常见的温度与沉淀变化；陌生方仍需逐步验证。",
+      "source": "公共工坊训练"
+    },
+    {
+      "id": "mist-breath-practice",
+      "name": "雾息式练习",
+      "description": "能在紧张移动中连续维持雾息式数分钟，收住呼吸热气与衣声，使普通耳目较难凭气息和脚步定位；可用于夜雾穿行、短程递送和避开一般搜寻。边界: 猛跑、持续说话、受击或剧烈动作仍会使薄雾散开，不能隐形，也不能遮住足迹、碰撞或近距离目视。",
+      "source": "雾息入身墨首次练习"
+    },
+    {
+      "id": "realm-1",
+      "name": "一式匠行动空间",
+      "description": "能稳定承载一个刻式，在紧张行动中连续使用数分钟。",
+      "source": "境界突破"
+    }
+  ],
+  "inventory": [
+    {
+      "id": "folding-retort",
+      "name": "便携蒸瓶",
+      "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+      "qty": 1
+    },
+    {
+      "id": "cool-mist-recipe",
+      "name": "两用公开入门方",
+      "description": "合法完整抄本：凉雾墨用于密封包三日保鲜；雾息入身墨含安全入身与练习步骤，可收住呼吸热气和衣声。两者共用一份原料，只能制成其中一批；照方成墨不等于身体已经掌握刻式",
+      "qty": 1
+    },
+    {
+      "id": "echo-algae-reservation-receipt",
+      "name": "回声藻汁预订收据",
+      "description": "听藻铺出具。三潮券订金与十三潮券尾款均已通过修复封缄墨折清；盐料到港后三日内，凭回潮盐登记凭条可取得足量回声藻汁及一次当面配制指引。",
+      "qty": 1
+    },
+    {
+      "id": "reflow-salt",
+      "name": "回潮盐料",
+      "description": "灯墨坊按登记交付的一份受控盐料。能吸回空气水汽并在阴处吐出薄雾，是配制可帮助雾息重新收束的第二刻式主料；须避火、避暴晒，尚未调制前不能直接产生刻式效果。",
+      "qty": 1
+    }
+  ],
+  "relationships": [
+    {
+      "id": "luo-sha",
+      "name": "洛纱",
+      "role": "配方掮客",
+      "attitude": "陌生"
+    },
+    {
+      "id": "ou-lan",
+      "name": "欧岚",
+      "role": "邮船记账员",
+      "attitude": "友善"
+    },
+    {
+      "id": "cen-yi",
+      "name": "岑漪",
+      "attitude": "友善"
+    },
+    {
+      "id": "wuhuai-apothecary-manager",
+      "name": "雾槐港药栈管事",
+      "attitude": "友善"
+    }
+  ],
+  "progression": {
+    "version": 1,
+    "leverage": [
+      {
+        "id": "ou-lan-night-berth",
+        "kind": "access",
+        "name": "“砾钟”号今夜下舱仓位",
+        "effect": "完成欧岚交付的夜雾短递后，可登上今夜离开砾钟港的“砾钟”号。",
+        "scope": "仅限今夜一程；须带回西堤药栈季衡的收讫印。",
+        "status": "active",
+        "acquiredAtTurn": 4,
+        "lastUsedAtTurn": 6,
+        "useCount": 1
+      },
+      {
+        "id": "wuhuai-apothecary-referral",
+        "kind": "relationship",
+        "name": "雾槐港药栈履约引介",
+        "effect": "药栈管事以后遇到需要封缄手的跨港货舱，可向货主优先递出沈舟的本次履约记录。",
+        "scope": "限药栈管事接触的货舱事务；是否雇用、报酬与责任仍由货主另议。",
+        "sourceId": "wuhuai-apothecary-manager",
+        "status": "active",
+        "acquiredAtTurn": 17,
+        "lastUsedAtTurn": null,
+        "useCount": 0
+      }
+    ],
+    "opportunities": [
+      {
+        "id": "mist-breath-stabilize",
+        "name": "雾息式实战定型",
+        "payoff": "若能在真实紧张移动中稳定维持雾息式数分钟，沈舟可具备晋入一式匠的核心能力。",
+        "approach": "利用今晚仍可到达的码头、夜潮和短程事务，在不剧烈受击的实际移动中完成持续练习。",
+        "status": "fulfilled",
+        "offeredAtTurn": 2,
+        "materialized": true,
+        "result": "沈舟已在真实紧张移动中稳定维持雾息式五分钟，具备晋入一式匠的核心能力。",
+        "settledAtTurn": 3
+      },
+      {
+        "id": "ou-lan-night-delivery",
+        "name": "夜潮药单短递",
+        "payoff": "完成后获得八潮券，并兑现“砾钟”号今夜下舱仓位。",
+        "approach": "在夜潮进一步漫坡前，将铅封药单邮筒送至西堤药栈，取得季衡的收讫印后返回。",
+        "status": "fulfilled",
+        "offeredAtTurn": 4,
+        "materialized": true,
+        "result": "沈舟完整送达铅封药单并带回季衡收讫印，获得八潮券，且“砾钟”号今夜下舱仓位已可使用。",
+        "settledAtTurn": 5
+      },
+      {
+        "id": "lamp-ink-reflow-salt",
+        "name": "灯墨坊的回潮盐样本",
+        "payoff": "通过临时配墨工作后，可接触回潮盐样本，为改良雾息式或筹备第二道相容刻式取得真实材料入口。",
+        "approach": "前往栖灯港灯墨坊，按其当日要求完成临时配墨工作；是否录用与具体条件须由坊内人员当面确认。",
+        "status": "fulfilled",
+        "offeredAtTurn": 6,
+        "materialized": true,
+        "result": "沈舟完成护灯墨临时配制并通过验色，获得六潮券，且在监督下查看了回潮盐样本，得知其对雾息式收束和第二刻式筹备的具体用途。",
+        "settledAtTurn": 8
+      },
+      {
+        "id": "second-mark-materials",
+        "name": "第二刻式方料筹备",
+        "payoff": "取得一份回潮盐料、足量回声藻汁及一次配制指引后，沈舟可着手配制与雾息式相容的第二刻式。",
+        "approach": "保留回潮盐登记凭条并在月底补足盐料尾款；到港后三日内，持凭条向听藻铺支付约十六潮券购买回声藻汁与一次配制指引。",
+        "status": "open",
+        "offeredAtTurn": 10
+      },
+      {
+        "id": "mist-locust-supply-seal",
+        "name": "雾槐港补给船封缄核看",
+        "payoff": "若谈妥并完成船上潮墨封缄核看，可获得报酬，并取得一次前往雾槐港的跨港行动机会。",
+        "approach": "明早到听藻铺后门向岑漪确认船名、货批、报酬、航程与责任边界，再决定是否接下。",
+        "status": "fulfilled",
+        "offeredAtTurn": 13,
+        "materialized": true,
+        "result": "沈舟完成“青鳍”号四箱药材的登船前与航中封缄核看，补住第二箱轻微潮痕，抵达雾槐港后获十二潮券、两顿饭与下舱吊床。",
+        "settledAtTurn": 15
+      },
+      {
+        "id": "wuhuai-damp-goods-repair",
+        "name": "雾槐港受潮货封缄整修",
+        "payoff": "若谈妥并完成药栈的长期受潮货整修，可获得跨港收入与实际货栈合作机会。",
+        "approach": "明早向雾槐港药栈管事确认货批状况、报酬、工期与赔付边界，再决定是否承接。",
+        "status": "fulfilled",
+        "offeredAtTurn": 15,
+        "materialized": true,
+        "result": "沈舟三日内修妥五十六箱普通药材与九箱海芝粉，登记退运三箱发酸海芝粉；总验无误后获得五十三潮券，并取得药栈管事的后续引介。",
+        "settledAtTurn": 17
+      }
+    ]
+  }
+}

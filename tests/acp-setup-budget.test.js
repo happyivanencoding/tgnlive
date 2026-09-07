@@ -59,6 +59,6 @@ test('a completed setup has one measured step per preparation operation',async()
  try{
   const result=await createAcpRoleAdapter({role:'narrator',model:'fixture',reasoningEffort:'low',workspace:cwd,mcpClient:client}).run('fixture',{onEvent:event=>events.push(event)});
   assert.equal(result.text,'fixture narrative');
-  assert.deepEqual(events.filter(e=>e.type==='acp_setup_step'&&e.status==='complete').map(e=>e.step),['mcp_initialize','session_new','read_only_mode','model_select','effort_select']);
+  assert.deepEqual(events.filter(e=>e.type==='acp_setup_step'&&e.status==='complete').map(e=>e.step),['prompt_slot_wait','mcp_initialize','session_new','read_only_mode','model_select','effort_select']);
  }finally{fs.rmSync(cwd,{recursive:true,force:true});}
 });

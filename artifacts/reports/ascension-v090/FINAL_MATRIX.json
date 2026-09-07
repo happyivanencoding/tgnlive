@@ -1,0 +1,846 @@
+{
+  "generatedAt": "2026-09-07T17:06:23.527Z",
+  "samples": [
+    {
+      "label": "ascension-baseline-hunt-20-v080-r2",
+      "world": "万相猎庭",
+      "sourceHash": null,
+      "startedAt": "2026-09-07T13:51:47.595Z",
+      "endedAt": "2026-09-07T14:27:52.457Z",
+      "committed": 20,
+      "failedSubmittedAttempts": 4,
+      "failedPlayerAttempts": [],
+      "wallMs": 2164862,
+      "successfulServerSumMs": 519819,
+      "failedServerSumMs": 183084,
+      "successfulPlayerSumMs": 125020,
+      "backgroundPlannerSumMs": 0,
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 6553,
+        "firstSseP95Ms": 30575,
+        "completeMedianMs": 23923.5,
+        "completeP95Ms": 51462
+      },
+      "browser": null,
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "live-story-brain",
+          "planMs": 26016,
+          "firstSseMs": 30575,
+          "totalMs": 51462,
+          "prefetch": null
+        },
+        {
+          "turn": 17,
+          "planSource": "live-story-brain",
+          "planMs": 42015,
+          "firstSseMs": 46651,
+          "totalMs": 59630,
+          "prefetch": null
+        }
+      ],
+      "upgrades": [],
+      "finalRealm": {
+        "name": "初醒一级",
+        "rank": 0,
+        "benchmark": "本命形态刚能显现，维持不满半刻。",
+        "unlock": "能使用形态最基础的身体或器物特性一次。",
+        "progress": 17
+      },
+      "background": [],
+      "exactSuggestionMatches": 2,
+      "nonExactActions": 17,
+      "missingBrowserReceipts": [],
+      "limits": [
+        "Wall includes recovery and operator gaps; summed background work overlaps foreground and must not be added to player waiting.",
+        "Non-exact action wording is only a transport/design proxy, not a measured human comprehension or retention improvement.",
+        "API Player sees more world/state than browser Player; these are not a randomized paired human A/B."
+      ],
+      "gameId": "game_ffd8fe8331494f65a16bab675b96a916"
+    },
+    {
+      "label": "ascension-baseline-martial-20-v080-r2",
+      "world": "裂陆武途",
+      "sourceHash": null,
+      "startedAt": "2026-09-07T13:53:18.964Z",
+      "endedAt": "2026-09-07T14:28:11.075Z",
+      "committed": 20,
+      "failedSubmittedAttempts": 0,
+      "failedPlayerAttempts": [
+        {
+          "run": "ascension-baseline-martial-20-v080-r1",
+          "file": "player-15.meta.json",
+          "elapsedMs": 20019.8189,
+          "error": "连接模型超时，本轮没有提交存档，可稍后重试"
+        },
+        {
+          "run": "ascension-baseline-martial-20-v080",
+          "file": "player-15.meta.json",
+          "elapsedMs": 20004.61869999999,
+          "error": "连接模型超时，本轮没有提交存档，可稍后重试"
+        }
+      ],
+      "wallMs": 2092111,
+      "successfulServerSumMs": 451579,
+      "failedServerSumMs": 0,
+      "successfulPlayerSumMs": 121815,
+      "backgroundPlannerSumMs": 0,
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 4980.5,
+        "firstSseP95Ms": 28903,
+        "completeMedianMs": 20330.5,
+        "completeP95Ms": 45600
+      },
+      "browser": null,
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "live-story-brain",
+          "planMs": 22210,
+          "firstSseMs": 32708,
+          "totalMs": 45600,
+          "prefetch": null
+        },
+        {
+          "turn": 17,
+          "planSource": "live-story-brain",
+          "planMs": 24186,
+          "firstSseMs": 28903,
+          "totalMs": 46649,
+          "prefetch": null
+        }
+      ],
+      "upgrades": [],
+      "finalRealm": {
+        "name": "锻身段",
+        "rank": 0,
+        "benchmark": "身体略强于普通成年人，能完成基础负重，但连续爆发会迅速力竭。",
+        "unlock": "可使用公共训练器械、购买基础补给，并申请一次城内公开测试。",
+        "progress": 27
+      },
+      "background": [],
+      "exactSuggestionMatches": 1,
+      "nonExactActions": 18,
+      "missingBrowserReceipts": [],
+      "limits": [
+        "Wall includes recovery and operator gaps; summed background work overlaps foreground and must not be added to player waiting.",
+        "Non-exact action wording is only a transport/design proxy, not a measured human comprehension or retention improvement.",
+        "API Player sees more world/state than browser Player; these are not a randomized paired human A/B."
+      ],
+      "gameId": "game_88102b94b38f41cd9c087be3b3a292b6"
+    },
+    {
+      "label": "ascension-a-hunt-20-r3",
+      "world": "万相猎庭",
+      "sourceHash": "aeb7fa475792d8bea7013a2cb9193f4bb7ef059a077bfcd56a5335d6d78b583d",
+      "startedAt": "2026-09-07T14:28:22.467Z",
+      "endedAt": "2026-09-07T14:57:43.930Z",
+      "committed": 20,
+      "failedSubmittedAttempts": 6,
+      "failedPlayerAttempts": [],
+      "wallMs": 1761463,
+      "successfulServerSumMs": 539750,
+      "failedServerSumMs": 120041,
+      "successfulPlayerSumMs": 144061,
+      "backgroundPlannerSumMs": 0,
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 6193,
+        "firstSseP95Ms": 33037,
+        "completeMedianMs": 21921,
+        "completeP95Ms": 48270
+      },
+      "browser": null,
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "live-story-brain",
+          "planMs": 47074,
+          "firstSseMs": 51155,
+          "totalMs": 64490,
+          "prefetch": null
+        },
+        {
+          "turn": 17,
+          "planSource": "live-story-brain",
+          "planMs": 27315,
+          "firstSseMs": 33037,
+          "totalMs": 48270,
+          "prefetch": null
+        }
+      ],
+      "upgrades": [],
+      "finalRealm": {
+        "name": "初醒一级",
+        "rank": 0,
+        "benchmark": "本命形态刚能显现，维持不满半刻。",
+        "unlock": "能使用形态最基础的身体或器物特性一次。",
+        "progress": 14
+      },
+      "background": [],
+      "exactSuggestionMatches": 0,
+      "nonExactActions": 19,
+      "missingBrowserReceipts": [],
+      "limits": [
+        "Wall includes recovery and operator gaps; summed background work overlaps foreground and must not be added to player waiting.",
+        "Non-exact action wording is only a transport/design proxy, not a measured human comprehension or retention improvement.",
+        "API Player sees more world/state than browser Player; these are not a randomized paired human A/B."
+      ],
+      "gameId": "game_5f1c2e1683904ee3ab39403fefbbdb8a"
+    },
+    {
+      "label": "ascension-a-beast-20-r3",
+      "world": "云背群岛",
+      "sourceHash": "aeb7fa475792d8bea7013a2cb9193f4bb7ef059a077bfcd56a5335d6d78b583d",
+      "startedAt": "2026-09-07T14:28:58.711Z",
+      "endedAt": "2026-09-07T15:15:50.444Z",
+      "committed": 20,
+      "failedSubmittedAttempts": 6,
+      "failedPlayerAttempts": [],
+      "wallMs": 2811733,
+      "successfulServerSumMs": 566680,
+      "failedServerSumMs": 223111,
+      "successfulPlayerSumMs": 180850,
+      "backgroundPlannerSumMs": 0,
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 9114,
+        "firstSseP95Ms": 32972,
+        "completeMedianMs": 25616,
+        "completeP95Ms": 51557
+      },
+      "browser": null,
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "live-story-brain",
+          "planMs": 27944,
+          "firstSseMs": 32972,
+          "totalMs": 51557,
+          "prefetch": null
+        },
+        {
+          "turn": 17,
+          "planSource": "live-story-brain",
+          "planMs": 30465,
+          "firstSseMs": 43427,
+          "totalMs": 58960,
+          "prefetch": null
+        }
+      ],
+      "upgrades": [],
+      "finalRealm": {
+        "name": "地行者",
+        "rank": 0,
+        "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+        "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+        "progress": 7
+      },
+      "background": [],
+      "exactSuggestionMatches": 0,
+      "nonExactActions": 19,
+      "missingBrowserReceipts": [],
+      "limits": [
+        "Wall includes recovery and operator gaps; summed background work overlaps foreground and must not be added to player waiting.",
+        "Non-exact action wording is only a transport/design proxy, not a measured human comprehension or retention improvement.",
+        "API Player sees more world/state than browser Player; these are not a randomized paired human A/B."
+      ],
+      "gameId": "game_84f4280414dc4bd192a65915b4b4cb8b"
+    },
+    {
+      "label": "ascension-b-hunt-20",
+      "world": "万相猎庭",
+      "sourceHash": "5d020f4d19087bc0b47d120ae5c6a40f726a795bf20b5ea0f87a778fa8203046",
+      "startedAt": "2026-09-07T15:15:50.574Z",
+      "endedAt": "2026-09-07T15:29:35.738Z",
+      "committed": 20,
+      "failedSubmittedAttempts": 0,
+      "failedPlayerAttempts": [],
+      "wallMs": 825164,
+      "successfulServerSumMs": 614026,
+      "failedServerSumMs": 0,
+      "successfulPlayerSumMs": 209234,
+      "backgroundPlannerSumMs": 0,
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 11588,
+        "firstSseP95Ms": 40894,
+        "completeMedianMs": 24361,
+        "completeP95Ms": 60269
+      },
+      "browser": null,
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "live-story-brain",
+          "planMs": 35935,
+          "firstSseMs": 40894,
+          "totalMs": 60269,
+          "prefetch": null
+        },
+        {
+          "turn": 17,
+          "planSource": "live-story-brain",
+          "planMs": 79011,
+          "firstSseMs": 84724,
+          "totalMs": 97582,
+          "prefetch": null
+        }
+      ],
+      "upgrades": [
+        {
+          "turn": 10,
+          "fromRank": 0,
+          "to": {
+            "name": "成印十级",
+            "rank": 1,
+            "benchmark": "形态可稳定战斗，并承载第一枚印记。",
+            "unlock": "获得第一项真正印技，进入正式猎区与学院考核。",
+            "progress": 0
+          }
+        }
+      ],
+      "finalRealm": {
+        "name": "成印十级",
+        "rank": 1,
+        "benchmark": "形态可稳定战斗，并承载第一枚印记。",
+        "unlock": "获得第一项真正印技，进入正式猎区与学院考核。",
+        "progress": 4
+      },
+      "background": [],
+      "exactSuggestionMatches": 0,
+      "nonExactActions": 19,
+      "missingBrowserReceipts": [],
+      "limits": [
+        "Wall includes recovery and operator gaps; summed background work overlaps foreground and must not be added to player waiting.",
+        "Non-exact action wording is only a transport/design proxy, not a measured human comprehension or retention improvement.",
+        "API Player sees more world/state than browser Player; these are not a randomized paired human A/B."
+      ],
+      "gameId": "game_d1bd1f08475340c7a4781e3df84e493a"
+    },
+    {
+      "label": "ascension-b-martial-20",
+      "world": "裂陆武途",
+      "sourceHash": "5d020f4d19087bc0b47d120ae5c6a40f726a795bf20b5ea0f87a778fa8203046",
+      "startedAt": "2026-09-07T15:21:57.254Z",
+      "endedAt": "2026-09-07T15:33:48.952Z",
+      "committed": 20,
+      "failedSubmittedAttempts": 0,
+      "failedPlayerAttempts": [],
+      "wallMs": 711698,
+      "successfulServerSumMs": 518459,
+      "failedServerSumMs": 0,
+      "successfulPlayerSumMs": 191206,
+      "backgroundPlannerSumMs": 0,
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 7463.5,
+        "firstSseP95Ms": 36789,
+        "completeMedianMs": 23766,
+        "completeP95Ms": 52112
+      },
+      "browser": null,
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "live-story-brain",
+          "planMs": 49606,
+          "firstSseMs": 54544,
+          "totalMs": 70477,
+          "prefetch": null
+        },
+        {
+          "turn": 17,
+          "planSource": "live-story-brain",
+          "planMs": 31698,
+          "firstSseMs": 36789,
+          "totalMs": 52112,
+          "prefetch": null
+        }
+      ],
+      "upgrades": [
+        {
+          "turn": 9,
+          "fromRank": 0,
+          "to": {
+            "name": "通劲段",
+            "rank": 1,
+            "benchmark": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+            "unlock": "可学习正式招式、进入低危荒带，并获得基础材料的个人携出权。",
+            "progress": 0
+          }
+        }
+      ],
+      "finalRealm": {
+        "name": "通劲段",
+        "rank": 1,
+        "benchmark": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+        "unlock": "可学习正式招式、进入低危荒带，并获得基础材料的个人携出权。",
+        "progress": 20
+      },
+      "background": [],
+      "exactSuggestionMatches": 0,
+      "nonExactActions": 19,
+      "missingBrowserReceipts": [],
+      "limits": [
+        "Wall includes recovery and operator gaps; summed background work overlaps foreground and must not be added to player waiting.",
+        "Non-exact action wording is only a transport/design proxy, not a measured human comprehension or retention improvement.",
+        "API Player sees more world/state than browser Player; these are not a randomized paired human A/B."
+      ],
+      "gameId": "game_1ef683f560a54ea2a6de7af9a08c046a"
+    },
+    {
+      "label": "ascension-c-beast-browser-20-r2",
+      "world": "云背群岛",
+      "sourceHash": "69c4cc630284e4ddb8cff9e30d8b80a2b865545c83695c64150a30d18aa7e98e",
+      "startedAt": "2026-09-07T15:27:07.434Z",
+      "endedAt": "2026-09-07T16:07:18.077Z",
+      "committed": 20,
+      "failedSubmittedAttempts": 1,
+      "failedPlayerAttempts": [],
+      "wallMs": 2410643,
+      "successfulServerSumMs": 541512,
+      "failedServerSumMs": 1153,
+      "successfulPlayerSumMs": 167503,
+      "backgroundPlannerSumMs": 125072,
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 11688.5,
+        "firstSseP95Ms": 19450,
+        "completeMedianMs": 26216,
+        "completeP95Ms": 34974
+      },
+      "browser": {
+        "samples": 19,
+        "feedback": {
+          "n": 19,
+          "medianMs": 25.7,
+          "p95Ms": 28,
+          "maxMs": 28
+        },
+        "firstVisible": {
+          "n": 19,
+          "medianMs": 11384.6,
+          "p95Ms": 23798.9,
+          "maxMs": 23798.9
+        },
+        "choicesReady": {
+          "n": 19,
+          "medianMs": 26141.7,
+          "p95Ms": 41126.7,
+          "maxMs": 41126.7
+        },
+        "sseReceipt": {
+          "n": 19,
+          "medianMs": 11367,
+          "p95Ms": 23783.5,
+          "maxMs": 23783.5
+        },
+        "completeReceipt": {
+          "n": 19,
+          "medianMs": 26077.2,
+          "p95Ms": 41080.3,
+          "maxMs": 41080.3
+        },
+        "limitation": "Real Chrome rAF visibility, not physical phone or hardware paint. Turn16 has no fabricated browser receipt."
+      },
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "existing-plan-nonblocking-fallback",
+          "planMs": null,
+          "firstSseMs": 4531,
+          "totalMs": 26051,
+          "prefetch": {
+            "status": "pending",
+            "basisVersion": 6,
+            "targetVersion": 8,
+            "traceId": "trace_6f341b7a4d8845a38af35538773d8c0a"
+          }
+        },
+        {
+          "turn": 17,
+          "planSource": "ready-prefetch-no-foreground-model-call",
+          "planMs": null,
+          "firstSseMs": 11360,
+          "totalMs": 25642,
+          "prefetch": {
+            "status": "ready",
+            "basisVersion": 14,
+            "targetVersion": 16,
+            "traceId": "trace_5efd202ce41542cbb2b0ca97a4796d3f",
+            "backgroundElapsedMs": 42664
+          }
+        }
+      ],
+      "upgrades": [
+        {
+          "turn": 10,
+          "fromRank": 0,
+          "to": {
+            "name": "缚风学徒",
+            "rank": 1,
+            "benchmark": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+            "unlock": "能借伙伴视野侦察，并完成第一次真正的双向协作。",
+            "progress": 0
+          }
+        },
+        {
+          "turn": 19,
+          "fromRank": 1,
+          "to": {
+            "name": "一环驭手",
+            "rank": 2,
+            "benchmark": "心环能分担一次冲击，人与兽可在乱风中同时改变方向。",
+            "unlock": "可进入雷海外缘，独立护送或追猎。",
+            "progress": 0
+          }
+        }
+      ],
+      "finalRealm": {
+        "name": "一环驭手",
+        "rank": 2,
+        "benchmark": "心环能分担一次冲击，人与兽可在乱风中同时改变方向。",
+        "unlock": "可进入雷海外缘，独立护送或追猎。",
+        "progress": 0
+      },
+      "background": [
+        {
+          "id": "trace_6f341b7a4d8845a38af35538773d8c0a",
+          "basis": 6,
+          "target": 8,
+          "status": "complete",
+          "totalMs": 82408,
+          "disposition": "ready"
+        },
+        {
+          "id": "trace_5efd202ce41542cbb2b0ca97a4796d3f",
+          "basis": 14,
+          "target": 16,
+          "status": "complete",
+          "totalMs": 42664,
+          "disposition": "ready"
+        }
+      ],
+      "exactSuggestionMatches": 0,
+      "nonExactActions": 19,
+      "missingBrowserReceipts": [
+        16
+      ],
+      "limits": [
+        "Wall includes recovery and operator gaps; summed background work overlaps foreground and must not be added to player waiting.",
+        "Non-exact action wording is only a transport/design proxy, not a measured human comprehension or retention improvement.",
+        "API Player sees more world/state than browser Player; these are not a randomized paired human A/B."
+      ],
+      "gameId": "game_0635a7be47554d9795df3f00d4f54c8b"
+    },
+    {
+      "label": "ascension-d-masked-20",
+      "world": "隐潮七港",
+      "sourceHash": "7e4bd8f23533d7738214e3c750c7a3f0b6ef27774b6b32e116c16997ea1b551d",
+      "startedAt": "2026-09-07T15:55:17.867Z",
+      "endedAt": "2026-09-07T16:07:21.163Z",
+      "committed": 20,
+      "failedSubmittedAttempts": 0,
+      "failedPlayerAttempts": [],
+      "wallMs": 723296,
+      "successfulServerSumMs": 560066,
+      "failedServerSumMs": 0,
+      "successfulPlayerSumMs": 161024,
+      "backgroundPlannerSumMs": 0,
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 9290.5,
+        "firstSseP95Ms": 44707,
+        "completeMedianMs": 22186,
+        "completeP95Ms": 55674
+      },
+      "browser": null,
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "live-story-brain",
+          "planMs": 39928,
+          "firstSseMs": 44707,
+          "totalMs": 55674,
+          "prefetch": null
+        },
+        {
+          "turn": 17,
+          "planSource": "live-story-brain",
+          "planMs": 40006,
+          "firstSseMs": 54984,
+          "totalMs": 73573,
+          "prefetch": null
+        }
+      ],
+      "upgrades": [
+        {
+          "turn": 3,
+          "fromRank": 0,
+          "to": {
+            "name": "一式匠",
+            "rank": 1,
+            "benchmark": "能稳定承载一个刻式，在紧张行动中连续使用数分钟。",
+            "unlock": "可独立处理低危材料、登记个人配方，并以一个可靠能力接正式委托。",
+            "progress": 0
+          }
+        }
+      ],
+      "finalRealm": {
+        "name": "一式匠",
+        "rank": 1,
+        "benchmark": "能稳定承载一个刻式，在紧张行动中连续使用数分钟。",
+        "unlock": "可独立处理低危材料、登记个人配方，并以一个可靠能力接正式委托。",
+        "progress": 0
+      },
+      "background": [],
+      "exactSuggestionMatches": 0,
+      "nonExactActions": 19,
+      "missingBrowserReceipts": [],
+      "limits": [
+        "Wall includes recovery and operator gaps; summed background work overlaps foreground and must not be added to player waiting.",
+        "Non-exact action wording is only a transport/design proxy, not a measured human comprehension or retention improvement.",
+        "API Player sees more world/state than browser Player; these are not a randomized paired human A/B."
+      ],
+      "gameId": "game_6f9d2853be99446d8411887268c7dd5c"
+    },
+    {
+      "label": "ascension-e-masked-20",
+      "world": "隐潮七港",
+      "sourceHash": "50a3774662c8bec8b017307544c52ceae1357642efe46636742e5bb9bf261e8f",
+      "startedAt": "2026-09-07T16:18:36.967Z",
+      "endedAt": "2026-09-07T16:30:48.484Z",
+      "committed": 20,
+      "failedSubmittedAttempts": 0,
+      "failedPlayerAttempts": [],
+      "wallMs": 731517,
+      "successfulServerSumMs": 556913,
+      "failedServerSumMs": 0,
+      "successfulPlayerSumMs": 166598,
+      "backgroundPlannerSumMs": 157039,
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 11622.5,
+        "firstSseP95Ms": 15788,
+        "completeMedianMs": 26840,
+        "completeP95Ms": 41836
+      },
+      "browser": null,
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "existing-plan-nonblocking-fallback",
+          "planMs": null,
+          "firstSseMs": 9181,
+          "totalMs": 41836,
+          "prefetch": {
+            "status": "pending",
+            "basisVersion": 6,
+            "targetVersion": 8,
+            "traceId": "trace_203fa976cb1c429dbb36e52460ce6dd1"
+          }
+        },
+        {
+          "turn": 17,
+          "planSource": "ready-prefetch-no-foreground-model-call",
+          "planMs": null,
+          "firstSseMs": 9328,
+          "totalMs": 28196,
+          "prefetch": {
+            "status": "ready",
+            "basisVersion": 14,
+            "targetVersion": 16,
+            "traceId": "trace_acbcef8da3a44fd5a504f15a29780f63",
+            "backgroundElapsedMs": 56947
+          }
+        }
+      ],
+      "upgrades": [
+        {
+          "turn": 4,
+          "fromRank": 0,
+          "to": {
+            "name": "一式匠",
+            "rank": 1,
+            "benchmark": "能稳定承载一个刻式，在紧张行动中连续使用数分钟。",
+            "unlock": "可独立处理低危材料、试作个人支式；已具备绕开普通耳目、用刻式参与非凡者交换的实力。具体隐市仍需找到入口或获得引荐，不随晋阶自动放行。",
+            "progress": 0
+          }
+        },
+        {
+          "turn": 17,
+          "fromRank": 1,
+          "to": {
+            "name": "并式师",
+            "rank": 2,
+            "benchmark": "两个相容刻式可以前后衔接，身体能承受一次配方偏差。",
+            "unlock": "可改良低阶配方、制作复合成品，并进入受控材料市与跨港货舱。",
+            "progress": 0
+          }
+        }
+      ],
+      "finalRealm": {
+        "name": "并式师",
+        "rank": 2,
+        "benchmark": "两个相容刻式可以前后衔接，身体能承受一次配方偏差。",
+        "unlock": "可改良低阶配方、制作复合成品，并进入受控材料市与跨港货舱。",
+        "progress": 0
+      },
+      "background": [
+        {
+          "id": "trace_203fa976cb1c429dbb36e52460ce6dd1",
+          "basis": 6,
+          "target": 8,
+          "status": "complete",
+          "totalMs": 100092,
+          "disposition": "ready"
+        },
+        {
+          "id": "trace_acbcef8da3a44fd5a504f15a29780f63",
+          "basis": 14,
+          "target": 16,
+          "status": "complete",
+          "totalMs": 56947,
+          "disposition": "ready"
+        }
+      ],
+      "exactSuggestionMatches": 0,
+      "nonExactActions": 19,
+      "missingBrowserReceipts": [],
+      "limits": [
+        "Wall includes recovery and operator gaps; summed background work overlaps foreground and must not be added to player waiting.",
+        "Non-exact action wording is only a transport/design proxy, not a measured human comprehension or retention improvement.",
+        "API Player sees more world/state than browser Player; these are not a randomized paired human A/B."
+      ],
+      "gameId": "game_e1b8744ae46a4e9ca5a53111dd1956a9"
+    },
+    {
+      "label": "ascension-c-stars-20-r2",
+      "world": "陨港星图",
+      "sourceHash": "69c4cc630284e4ddb8cff9e30d8b80a2b865545c83695c64150a30d18aa7e98e",
+      "startedAt": "2026-09-07T16:15:04.170Z",
+      "endedAt": "2026-09-07T16:42:37.269Z",
+      "committed": 20,
+      "failedSubmittedAttempts": 0,
+      "failedPlayerAttempts": [
+        {
+          "run": "ascension-c-stars-20-r1",
+          "file": "player-07.meta.json",
+          "elapsedMs": 728.6404999999795,
+          "error": "AgentDock 工具 acp_prompt 返回错误"
+        }
+      ],
+      "wallMs": 1653099,
+      "successfulServerSumMs": 589520,
+      "failedServerSumMs": 0,
+      "successfulPlayerSumMs": 185618,
+      "backgroundPlannerSumMs": 84986,
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 12895,
+        "firstSseP95Ms": 22973,
+        "completeMedianMs": 28924,
+        "completeP95Ms": 43462
+      },
+      "browser": null,
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "ready-prefetch-no-foreground-model-call",
+          "planMs": null,
+          "firstSseMs": 11777,
+          "totalMs": 26079,
+          "prefetch": {
+            "status": "ready",
+            "basisVersion": 6,
+            "targetVersion": 8,
+            "traceId": "trace_488da09ac06a44c2984e92b081eb5a05",
+            "backgroundElapsedMs": 45248
+          }
+        },
+        {
+          "turn": 17,
+          "planSource": "ready-prefetch-no-foreground-model-call",
+          "planMs": null,
+          "firstSseMs": 8970,
+          "totalMs": 27144,
+          "prefetch": {
+            "status": "ready",
+            "basisVersion": 14,
+            "targetVersion": 16,
+            "traceId": "trace_d56b0f4b594e4b949850b7632105d892",
+            "backgroundElapsedMs": 39738
+          }
+        }
+      ],
+      "upgrades": [
+        {
+          "turn": 10,
+          "fromRank": 0,
+          "to": {
+            "name": "双轨回响",
+            "rank": 1,
+            "benchmark": "可同时维持两枚星核，反应和施法精度约为熟练猎人的两倍。",
+            "unlock": "让光与重力互相修饰，制造短促牵引、偏折光幕或空中踏点。",
+            "progress": 0
+          }
+        },
+        {
+          "turn": 17,
+          "fromRank": 1,
+          "to": {
+            "name": "星环行者",
+            "rank": 2,
+            "benchmark": "三至四枚星核形成稳定星环，足以在战斗中连续改变位置和方向。",
+            "unlock": "短距离滑翔、折射视线、把重力集中到一个明确目标上。",
+            "progress": 0
+          }
+        }
+      ],
+      "finalRealm": {
+        "name": "星环行者",
+        "rank": 2,
+        "benchmark": "三至四枚星核形成稳定星环，足以在战斗中连续改变位置和方向。",
+        "unlock": "短距离滑翔、折射视线、把重力集中到一个明确目标上。",
+        "progress": 0
+      },
+      "background": [
+        {
+          "id": "trace_488da09ac06a44c2984e92b081eb5a05",
+          "basis": 6,
+          "target": 8,
+          "status": "complete",
+          "totalMs": 45248,
+          "disposition": "ready"
+        },
+        {
+          "id": "trace_d56b0f4b594e4b949850b7632105d892",
+          "basis": 14,
+          "target": 16,
+          "status": "complete",
+          "totalMs": 39738,
+          "disposition": "ready"
+        }
+      ],
+      "exactSuggestionMatches": 0,
+      "nonExactActions": 19,
+      "missingBrowserReceipts": [],
+      "limits": [
+        "Wall includes recovery and operator gaps; summed background work overlaps foreground and must not be added to player waiting.",
+        "Non-exact action wording is only a transport/design proxy, not a measured human comprehension or retention improvement.",
+        "API Player sees more world/state than browser Player; these are not a randomized paired human A/B."
+      ],
+      "gameId": "game_3aa5c2cc720c40ec8544d2da9c71c8b5"
+    }
+  ],
+  "totals": {
+    "trajectories": 10,
+    "uniqueCommittedTurns": 200,
+    "failedSubmittedAttempts": 17,
+    "failedPlayerAttempts": 3
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "realm": {
+    "name": "初醒一级",
+    "rank": 0,
+    "benchmark": "本命形态刚能显现，维持不满半刻。",
+    "unlock": "能使用形态最基础的身体或器物特性一次。",
+    "progress": 14
+  },
+  "coins": 16,
+  "capabilities": [
+    {
+      "id": "power-dual-aspect",
+      "name": "双相本命",
+      "description": "你的本命形态有两种可切换形态：一种强化身体，一种化为器物。 边界: 同一时刻只能维持一种形态，切换会中断当前印技。",
+      "source": "开局天赋"
+    },
+    {
+      "id": "manifest-form",
+      "name": "显现本命形态",
+      "description": "能让所选形态显现十余息，并使用其最基础特性；现可在短距离移动、调整呼吸与近处雷鸣干扰中完成稳定显现、收束与主动解除，也能在十步内连续挑开湿藤、拨移碎石、疏通小沟。面对湿泥、树根、碎瓦、石块、烂布或竹节等不同近处堵物时，可先辨认水势、泄水空处与松动点，规划短路线后依次泄水、清障，使水流进入指定石槽。限制：仅适用于十步内可看清的近处地形，仍不能远距操控水流、撬动牢固嵌死的大石，维持时间未达到稳定战斗所需。",
+      "source": "初醒一级"
+    }
+  ],
+  "inventory": [
+    {
+      "id": "training-brace",
+      "name": "训练护臂",
+      "description": "能承受一次初醒形态失控的冲击",
+      "qty": 1
+    },
+    {
+      "id": "salted-meat",
+      "name": "盐肉干",
+      "description": "进山一日口粮，也可用来引开普通野兽",
+      "qty": 2
+    },
+    {
+      "id": "black-spring-spike",
+      "name": "乌黑石钉",
+      "description": "从雷息印泉上游石缝取出的乌黑石钉，钉尾留有学院钉盒的磨痕；可作为扰乱印泉的实物证据。",
+      "qty": 2
+    }
+  ],
+  "relationships": [
+    {
+      "id": "du-heng",
+      "name": "杜衡",
+      "role": "青栎村长",
+      "attitude": "信任"
+    },
+    {
+      "id": "a-chi",
+      "name": "阿迟",
+      "role": "年轻猎人",
+      "attitude": "友善"
+    },
+    {
+      "id": "thunder-antler-beast",
+      "name": "雷角兽",
+      "attitude": "友善"
+    }
+  ],
+  "progression": {
+    "version": 1,
+    "leverage": [
+      {
+        "id": "du-heng-evacuation-audience",
+        "kind": "relationship",
+        "name": "杜衡的撤离听证",
+        "effect": "可向杜衡报告与村民安全直接相关的后山见闻，并请求他调整撤离安排或提供有限协助。",
+        "scope": "限青栎村撤离期间，需给出具体可核查的见闻；杜衡不会因此批准冒险进山。",
+        "sourceId": "du-heng",
+        "status": "active",
+        "acquiredAtTurn": 4,
+        "lastUsedAtTurn": 10,
+        "useCount": 1
+      },
+      {
+        "id": "du-heng-evacuation-watch",
+        "kind": "access",
+        "name": "撤离哨位通报",
+        "effect": "可在青栎村撤离期间向旧道哨位发出与学院人员、后山危险有关的具体警讯，并请求其传递给车队。",
+        "scope": "限本次撤离路线与已布置哨位；哨位只负责示警、掩护车队和报告，不随沈舟进山或参与对质。",
+        "status": "active",
+        "acquiredAtTurn": 11,
+        "lastUsedAtTurn": 12,
+        "useCount": 1
+      },
+      {
+        "id": "du-heng-evidence-hearing",
+        "kind": "access",
+        "name": "杜衡的证据对质支持",
+        "effect": "可在与学院就扰泉、撤离安全有关的当面对质中，请杜衡提供村中安排、证物核对和见证人的事实说明。",
+        "scope": "限本次青栎村撤离事件与两枚乌黑石钉；杜衡不保证学院承认，也不会派人进入后山作战。",
+        "sourceId": "du-heng",
+        "status": "active",
+        "acquiredAtTurn": 13,
+        "lastUsedAtTurn": 14,
+        "useCount": 1
+      }
+    ],
+    "opportunities": [
+      {
+        "id": "trace-thunderwood",
+        "name": "循雷痕探后山",
+        "payoff": "找到雷角兽活动范围或它所守之物的可靠线索，可能获得不依附学院的成长入口。",
+        "approach": "跟随阿迟从后山小径出发，以双相本命的器物形态检查古木与沿途雷痕。",
+        "status": "answered",
+        "offeredAtTurn": 1,
+        "materialized": false,
+        "result": "已确认雷角兽守护的是受学院一方扰乱的雷息印泉，并掌握学院以此拖住雷角兽、等待布网的直接证据。",
+        "settledAtTurn": 3
+      },
+      {
+        "id": "academy-hunt-team",
+        "name": "加入学院活捉队",
+        "payoff": "获得接近雷角兽的机会，并可能争取学院考核或第一枚印记的线索。",
+        "approach": "向白砚证明本命形态的具体用途，并接受活捉队的现场安排。",
+        "status": "open",
+        "offeredAtTurn": 1
+      },
+      {
+        "id": "thunder-spring-training",
+        "name": "借雷息印泉练稳形态",
+        "payoff": "在安全条件下延长或练稳初醒形态的维持，并为接近第一枚相合印记作准备。",
+        "approach": "先解决雷角兽与印泉受扰的局面，获得可安全停留的机会，再以短时器物或强化形态进行完整练习。",
+        "status": "open",
+        "offeredAtTurn": 2
+      },
+      {
+        "id": "remove-spring-spikes",
+        "name": "清除印泉石钉",
+        "payoff": "让雷息印泉恢复较平静的状态，可能缓和雷角兽的守势，并创造安全练稳形态或接近它交涉的机会。",
+        "approach": "避开学院盯守者，找到并实际取出泉边乌黑石钉；沈舟与阿迟已知雷角兽饮到平静泉水时守势会短暂松缓。",
+        "status": "fulfilled",
+        "offeredAtTurn": 4,
+        "materialized": true,
+        "result": "已取出上游最浅的一枚乌黑石钉，印泉局部雷息缓和并获得实物证据；其余石钉与学院守卫仍在泉边，尚未完全恢复印泉。",
+        "settledAtTurn": 6
+      },
+      {
+        "id": "restore-side-spring",
+        "name": "恢复侧槽泉面",
+        "payoff": "取出侧槽乌黑石钉后，可让一片印泉稳定下来，获得更安全的短时练习位置，并进一步争取雷角兽的信任。",
+        "approach": "从岩背后沿上游贴岩浅沟接近侧槽石钉；避开雷角兽正面，同时准备应对学院守卫发现石钉减少后的合围。",
+        "status": "fulfilled",
+        "offeredAtTurn": 7,
+        "materialized": true,
+        "result": "已取出侧槽乌黑石钉，侧槽泉面恢复稳定清水，并获得第二枚学院扰泉的实物证据；雷角兽守势进一步缓和，但学院守卫已开始向上游搜查。",
+        "settledAtTurn": 8
+      },
+      {
+        "id": "academy-trial-proof",
+        "name": "争取猎庭考核",
+        "payoff": "若在三日后的现场证明双相本命具备猎区中的实际用途，可争取学院考核资格与接近第一枚印记的线索。",
+        "approach": "先打听考核要求，并在不越过初醒能力边界的前提下展示稳定、可复现的形态用途。",
+        "status": "closed",
+        "offeredAtTurn": 14,
+        "materialized": false,
+        "result": "白砚已将原先笼统的用途证明条件具体化为三项现场考核，原机会的取得条件不再适用。",
+        "settledAtTurn": 15
+      },
+      {
+        "id": "three-day-hunt-court-test",
+        "name": "完成猎庭三项现场考核",
+        "payoff": "完成两项可通过基础判定；三项全成才可能进入正式考核名册并争取进一步资格。",
+        "approach": "三日后按时在营地完成疏通排水沟、静音携匣绕石架、挪动粗木杆中的项目；可先在西侧旧渠和废料场练习。",
+        "status": "open",
+        "offeredAtTurn": 15
+      }
+    ]
+  }
+}

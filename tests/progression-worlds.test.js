@@ -63,7 +63,9 @@ test('progression worlds are distinct, valid Chinese definitions with bounded gr
     const openingNpcIds = new Set(world.opening.npcMoves.map((npc) => npc.id));
     assert.ok(world.seed.relationships.every((npc) => openingNpcIds.has(npc.id)), `${world.id}: seed relationship must exist in opening`);
     assert.ok(world.seed.inventory.every((item) => !openingNpcIds.has(item.id)), `${world.id}: NPC property cannot appear as player inventory`);
-    assert.match(world.opening.milestone, /一到三回合/);
+    // Reachable first payoff is validated by real play, not a required turn-count
+    // slogan. The old assertion made removing a numerical reward schedule fail.
+    assert.ok(world.opening.milestone.trim().length > 20);
     assert.match(world.opening.continuity.join(''), /玩家.*属于|属于玩家/);
   }
 });

@@ -8,6 +8,9 @@ import {createPlaytestRoleAdapter,loadConfig} from '../src/index.js';
 import {extractJsonObject} from '../src/output-parser.js';
 import {installBrowserTimingRecorder} from './browser-timing-recorder.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const resumeLabel=process.env.TGN_EVAL_RESUME||null;
+if(resumeLabel&&!/^[a-z0-9_.-]+$/i.test(resumeLabel))throw Error('Invalid resume label');
+const readSaved=(label,name)=>JSON.parse(fs.readFileSync(path.join(root,'artifacts/eval',label,name),'utf8').replace(/^\uFEFF/,''));
 const [label,worldId,turnString='18',base='http://127.0.0.1:4319',powerId]=process.argv.slice(2),target=Number(turnString);
 if(!/^[a-z0-9_.-]+$/i.test(label||'')||!worldId||!Number.isInteger(target)||target<15||target>40||!/^http:\/\/127\.0\.0\.1:431[89]$/.test(base))throw Error('label worldId turns(15..40) isolatedBase [powerId]');
 const dir=path.join(root,'artifacts/eval',label);
@@ -44,12 +47,37 @@ function checkpoint(status){save('progress.json',{status,gameId:game?.id,request
 const stats=a=>{a=a.filter(Number.isFinite).sort((x,y)=>x-y);return{n:a.length,medianMs:a.length?(a[Math.floor((a.length-1)/2)]+a[Math.ceil((a.length-1)/2)])/2:null,p95Ms:a.length?a[Math.ceil(a.length*.95)-1]:null,maxMs:a.at(-1)??null,meanMs:a.length?a.reduce((x,y)=>x+y,0)/a.length:null};};
 try{
   const health=await api('/api/health'),{worlds}=await api('/api/worlds'),world=worlds.find(w=>w.id===worldId);if(!world)throw Error('Requested world absent, no silent fallback');const power=powerId?world.powers.find(p=>p.id===powerId):world.powers[0];if(!power)throw Error('Requested power absent');
-  game=(await api('/api/games',{name:'沈舟',worldId,powerId:power.id,language:'zh'})).game;
-  manifest={label,taskId:'tsk_2a159f2c1ff89ff8',mode:'adaptive-acp-player-real-mobile-browser',startedAt:new Date().toISOString(),base,app:health,gameId:game.id,initialGame:game,requestedTurns:target,player:{model:player.model,reasoningEffort:player.reasoningEffort},viewport:{width:390,height:844},workspaceHead:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),limits:['Desktop Chrome viewport, not a physical phone.','Actual ACP actions entered through UI; no scripted route except first opening.','Status observation is rendered public status panel, not backend private plan.','Player deliberation, status inspection, screenshot and test-driver delays excluded from application waiting.','First visible frame requires two visible intersected frames; hardware paint timestamp remains unknown.','Not a strict paired A/B against API player: rendered status observation differs from full JSON state.']};save('manifest.json',manifest);checkpoint('running');
+  let predecessor=null;
+  if(resumeLabel){
+    predecessor=readSaved(resumeLabel,'manifest.json');game=(await api(`/api/games/${predecessor.gameId}`)).game;
+    const inherited=fs.readFileSync(path.join(root,'artifacts/eval',resumeLabel,'turns.jsonl'),'utf8').trim().split('\n').filter(Boolean).map(JSON.parse);
+    let committed=inherited.filter(r=>r.outcome==='completed');
+    if(game.world.id!==worldId||game.state.power.id!==power.id)throw Error('Resume world/power mismatch');
+    if(process.env.TGN_EVAL_RECOVER_COMMITTED==='1'&&game.turns.length===committed.length+1){
+      // Real incident: Chrome/driver stopped after a durable turn but before its
+      // measurements were saved. Recover Canon once, never invent visible frames.
+      const turn=game.turns.at(-1),n=String(turn.index).padStart(2,'0');
+      const decision=readSaved(resumeLabel,`player-${n}.final.txt`);
+      const playerMeta=readSaved(resumeLabel,`player-${n}.meta.json`);
+      const metrics=await api(`/api/games/${game.id}/metrics`),trace=metrics.turns.find(t=>t.id===turn.traceId);
+      if(decision.action!==turn.action||playerMeta.outcome!=='completed'||!['complete','completed'].includes(trace?.status))throw Error('Missing record is not independently matched by Player action and durable trace');
+      inherited.push({index:turn.index,attempt:1+inherited.filter(r=>r.index===turn.index).length,
+        action:turn.action,player:playerMeta,playerIntent:decision.intent,continueReason:decision.continueReason,
+        outcome:'completed',turn,requestId:trace.requestId,beforeState:committed.at(-1)?.afterState||predecessor.initialGame.state,
+        afterState:structuredClone(game.state),beforeVersion:game.version-1,afterVersion:game.version,
+        startedAt:trace.startedAt,endedAt:trace.endedAt,client:null,
+        recovery:{sourceRun:resumeLabel,kind:'durable-commit-without-browser-receipt',traceId:trace.id,
+          missingBrowserTimings:true,reason:'Original runner exited without finalization; server commit and exact ACP Player action match. No browser timing or paint is imputed.'}});
+      committed=inherited.filter(r=>r.outcome==='completed');
+    }
+    if(new Set(committed.map(r=>r.turn.index)).size!==committed.length||game.turns.length!==committed.length)throw Error('Resume Canon and unique committed records differ; inspect original evidence before recovery');
+    records.push(...inherited);for(const row of inherited)append('turns.jsonl',row);previousIntent=committed.at(-1)?.playerIntent||'';
+  }else game=(await api('/api/games',{name:'沈舟',worldId,powerId:power.id,language:'zh'})).game;
+  manifest={label,taskId:process.env.TGN_EVAL_TASK_ID||null,transport:'browser',serverSource:process.env.TGN_EVAL_SOURCE||null,serverSourceHash:process.env.TGN_EVAL_SOURCE_HASH||null,continuedFrom:resumeLabel,resumeReason:process.env.TGN_EVAL_RESUME_REASON||null,resumedAt:resumeLabel?new Date().toISOString():null,mode:'adaptive-acp-player-real-mobile-browser',startedAt:predecessor?.startedAt||new Date().toISOString(),base,app:health,gameId:game.id,initialGame:predecessor?.initialGame||game,requestedTurns:target,player:{model:player.model,reasoningEffort:player.reasoningEffort},viewport:{width:390,height:844},workspaceHead:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),limits:['Desktop Chrome viewport, not a physical phone.','Actual ACP actions entered through UI; no scripted route except first opening.','Status observation is rendered public status panel, not backend private plan.','Player deliberation, status inspection, screenshot and test-driver delays excluded from application waiting.','First visible frame requires two visible intersected frames; hardware paint timestamp remains unknown.','Not a strict paired A/B against API player: rendered status observation differs from full JSON state.']};save('manifest.json',manifest);checkpoint('running');
   await page.goto(`${base}/?game=${game.id}`,{waitUntil:'networkidle'});await page.locator('#story-screen.active').waitFor();
   while(game.turns.length<target){
     controller.signal.throwIfAborted();const index=game.turns.length+1,decision=index===1?{action:'开始我的故事',intent:'开始',meta:null}:await decide(index);
-    const rec={index,attempt:1,startedAt:new Date().toISOString(),action:decision.action,player:decision.meta,playerIntent:decision.intent,continueReason:decision.continueReason||null,beforeState:structuredClone(game.state),beforeVersion:game.version};
+    const rec={index,attempt:1+records.filter(r=>r.index===index).length,startedAt:new Date().toISOString(),action:decision.action,player:decision.meta,playerIntent:decision.intent,continueReason:decision.continueReason||null,beforeState:structuredClone(game.state),beforeVersion:game.version};
     console.log(JSON.stringify({event:'browser_turn_start',label,index,action:rec.action}));
     const beforeRequestCount=await page.evaluate(()=>window.__tgnBrowserEvidence.length);
     try{

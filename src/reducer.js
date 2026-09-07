@@ -85,8 +85,15 @@ function applyInventory(state, operations, applied, rejected) {
       }
       const existing = state.inventory[existingIndex];
       const description = shortText(operation.description, `inventoryOps[${index}].description`, { required: true, max: 360 });
+      // update.qty is the remaining count, not an increment. Omitted qty keeps
+      // the packet/bottle itself while its partially used contents are described.
+      if (operation.qty !== undefined && qty > existing.qty) {
+        rejected.push({ field: "inventory", op, name: existing.name, reason: "update_cannot_add_quantity" });
+        continue;
+      }
+      if (operation.qty !== undefined) existing.qty = qty;
       existing.description = description;
-      applied.push({ field: "inventory", op, name: existing.name, description });
+      applied.push({ field: "inventory", op, name: existing.name, description, qty: existing.qty });
       continue;
     }
     if (op === "remove") {
@@ -184,10 +191,9 @@ function applyRealm(state, delta, world, applied, rejected, language) {
     applied.push({ field: "realm.progress", delta: progressDelta, value: state.realm.progress });
   }
   if (!delta.realmAdvance) return;
-  if (state.realm.progress < 100) {
-    rejected.push({ field: "realm", reason: "insufficient_progress" });
-    return;
-  }
+  // progress tracks preparation, not a second definition of physical identity.
+  // An explicit narrator proposal attests to stable attainment in Canon; this
+  // reducer checks the exact adjacent stage, not a per-turn XP threshold.
   const realms = world?.powerSystem?.realms || REALMS;
   const expected = realms.find((realm) => realm.rank === state.realm.rank + 1);
   if (!expected || delta.realmAdvance !== expected.name) {
@@ -202,8 +208,8 @@ function applyRealm(state, delta, world, applied, rejected, language) {
     if (!state.capabilities.some((ability) => ability.id === id)) {
       const labels = seedLabels(language);
       const name = labels.realmCapability(expected.name);
-      state.capabilities.push({ id, name, description: expected.unlock, source: labels.realmBreakthrough });
-      applied.push({ field: "capability", op: "add", name, description: expected.unlock });
+      state.capabilities.push({ id, name, description: expected.benchmark, source: labels.realmBreakthrough });
+      applied.push({ field: "capability", op: "add", name, description: expected.benchmark });
     }
   }
 }

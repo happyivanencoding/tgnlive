@@ -1,0 +1,115 @@
+{
+  "at": "2026-09-07T17:15:00.354Z",
+  "stage": "released-and-verified",
+  "version": "0.9.0",
+  "baseline": "26fc8e1d241aebf8ee798c6f186d5a079cd2afe0",
+  "tests": {
+    "source": ".runtime/ascension-v090/final-release-suite.txt",
+    "passed": 114,
+    "failed": 0
+  },
+  "compatibility": {
+    "kind": "private-backup-copy-release-smoke-not-long-form-evidence",
+    "startedAt": "2026-09-07T17:08:50.840Z",
+    "checks": {
+      "allOldBooksLoad": true,
+      "oldSaveContinuesThroughActualAcp": true,
+      "oldNarrativePrefixUnchanged": true,
+      "oldWorldSnapshotUnchanged": true,
+      "oldRequestReplayAddsNoTurn": true,
+      "newGameGetsAcceptedWorldDefinition": true,
+      "newGameOpeningActualAcpCommitted": true,
+      "newOpeningContainsPublicCoordinates": true,
+      "allExistingWorldRowsStillByteEqual": true
+    },
+    "models": {
+      "narrator": "gpt-5.6-terra",
+      "planner": "gpt-5.6-sol"
+    },
+    "version": "0.9.0",
+    "oldGames": 28,
+    "oldTurns": 130,
+    "explicitWorldSnapshots": 13,
+    "success": true,
+    "additionalCommittedProbeTurns": 2,
+    "endedAt": "2026-09-07T17:09:25.923Z"
+  },
+  "uiEvidence": "UI_RELEASE_EVIDENCE.json",
+  "qualityEvidence": "FINAL_MATRIX.json",
+  "privateBackup": {
+    "relativePath": ".runtime/v090-release-final-backup/tgn-live.sqlite",
+    "capturedAt": "2026-09-07T17:12:51.789825+00:00",
+    "checks": {
+      "integrity": [
+        "ok"
+      ],
+      "foreignKeyViolations": 0,
+      "pendingRequests": 0
+    },
+    "tables": {
+      "games": {
+        "rows": 28,
+        "sha256": "3989fa617af90ca3b3f25176c5f78a60195fbb77f780a9809784cad81ea5b93f"
+      },
+      "worlds": {
+        "rows": 2,
+        "sha256": "a467a1249ea3fb4f66f1f61ca09fc578238f7f3ff96e98fb37a387514b029899"
+      },
+      "game_worlds": {
+        "rows": 13,
+        "sha256": "07c8c2b7de1904eda406bae5eb5db676ab2e2701d3143592176442b444662580"
+      },
+      "turns": {
+        "rows": 131,
+        "sha256": "a92acc37402084d2271d09a490ddf29284c586d2fee94c68feaf809997120efb"
+      },
+      "requests": {
+        "rows": 140,
+        "sha256": "1ecd53b23123957a9d5ddb025fb8f73fe2132f4ee80c44536ef22ca7d7cb50cb"
+      },
+      "canon_ledger": {
+        "rows": 131,
+        "sha256": "164c4712363f3bfa8ffea47e0b6cdba31d2159e8007cf0c1205bb144485dcc0a"
+      },
+      "story_plans": {
+        "rows": 29,
+        "sha256": "3f47325fb46aa2bdff39c922b841d2528cd49ff277196bdb5530c29f3f19d032"
+      },
+      "traces": {
+        "rows": 142,
+        "sha256": "1977c0902fb9268cff17112e77dbaa17d6f5874f5a2e13c498bbaf629d615ece"
+      }
+    }
+  },
+  "historicalRequestRecovery": {
+    "at": "2026-09-07T17:09:48.613Z",
+    "reason": "Request predates the current production process; no trace or committed turn exists",
+    "productionProcessStartedAt": "2026-09-07T12:43:32.899Z",
+    "tables": {
+      "games": true,
+      "worlds": true,
+      "game_worlds": true,
+      "turns": true,
+      "canon_ledger": true,
+      "story_plans": true
+    },
+    "success": true,
+    "requestRowsChanged": 1,
+    "traceRowsAdded": 1,
+    "canonRowsChanged": 0,
+    "oldTurnRowsChanged": 0
+  },
+  "android": {
+    "head": "c21d1a3d0ef4a55808a8cd75b145fef0dc6b8880",
+    "clean": true
+  },
+  "acceptedSource": "Candidate E; current generation source differs only in version/default selection and metrics-summary isolation. public/index.html changes cache version only.",
+  "limits": [
+    "Compatibility uses a private backup copy, not a live mutation of user narrative.",
+    "Two ACP release probes are not counted in 200 quality submissions.",
+    "A real production turn committed during release preparation; final backup has131 turns, not the earlier130.",
+    "Actual deployment and post-release verification will be recorded separately in DEPLOYMENT.json."
+  ],
+  "deploymentReceipt": "DEPLOYMENT.json",
+  "deployedCodeCommit": "6b59581a123494cfe393d68030369822735445d5"
+}

@@ -19,5 +19,5 @@ if(!runtime.store.getWorld(starId)){
 await new Promise((resolve,reject)=>{runtime.server.once('error',reject);runtime.server.listen(port,'127.0.0.1',resolve);});
 fs.writeFileSync(path.join(runtimeDir,'server.json'),JSON.stringify({pid:process.pid,label,port,source,version:runtime.config.version,startedAt:new Date().toISOString()},null,2));
 console.log(JSON.stringify({testService:true,label,port,source,version:runtime.config.version}));
-let stopping=false;function stop(){if(stopping)return;stopping=true;for(const {controller} of runtime.inFlight.values())controller.abort();for(const controller of runtime.worldInFlight.values())controller.abort();runtime.server.close(()=>{runtime.store.close();process.exit(0);});setTimeout(()=>process.exit(1),8000).unref();}
+let stopping=false;async function stop(){if(stopping)return;stopping=true;const hardStop=setTimeout(()=>process.exit(1),8000);hardStop.unref();for(const {controller} of runtime.inFlight.values())controller.abort();for(const {controller} of runtime.worldInFlight.values())controller.abort();await runtime.generationService.close?.();runtime.server.close(()=>{clearTimeout(hardStop);runtime.store.close();process.exit(0);});}
 process.on('SIGINT',stop);process.on('SIGTERM',stop);setTimeout(stop,100*60*1000).unref();

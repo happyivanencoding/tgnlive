@@ -24,13 +24,19 @@ runtime.server.listen(runtime.config.port, runtime.config.host, () => {
   process.stdout.write(`TGN Live listening on http://${record.host}:${record.port}\n`);
 });
 
-function shutdown(signal) {
+let stopping = false;
+async function shutdown(signal) {
+  if (stopping) return;
+  stopping = true;
+  setTimeout(() => process.exit(1), 8000).unref();
+  for (const { controller } of runtime.inFlight.values()) controller.abort(new Error('server shutting down'));
+  for (const controller of runtime.worldInFlight.values()) controller.abort(new Error('server shutting down'));
+  await runtime.generationService.close?.();
   runtime.server.close(() => {
     runtime.store.close();
     process.stdout.write(`TGN Live stopped (${signal})\n`);
     process.exit(0);
   });
-  setTimeout(() => process.exit(1), 5000).unref();
 }
 
 process.on("SIGINT", () => shutdown("SIGINT"));

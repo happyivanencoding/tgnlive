@@ -30,7 +30,7 @@ export function createApp({ config, store, generationService, worldForge }) {
           ok: true,
           version: config.version,
           access: { mode: config.remote ? 'owner-only' : 'local-only', publicUrl: config.remote?.publicUrl || null },
-          architecture: { openingPlanStrategy: config.openingPlanStrategy, plannerInterval: config.plannerInterval, chapterTurns: config.chapterTurns },
+          architecture: { openingPlanStrategy: config.openingPlanStrategy, plannerStrategy: generationService.plannerStrategy || 'checkpoint', plannerInterval: config.plannerInterval, chapterTurns: config.chapterTurns },
           provider: {
             name: "AgentDock ACP",
             model: config.narratorModel,
@@ -95,6 +95,7 @@ export function createApp({ config, store, generationService, worldForge }) {
         const gameId = decodeURIComponent(cancelMatch[1]);
         const active = inFlight.get(gameId);
         if (active) active.controller.abort(new Error("cancelled by user"));
+        generationService.cancelPrefetch?.(gameId);
         return sendJson(response, 200, { cancelled: Boolean(active) });
       }
 
@@ -200,6 +201,14 @@ export function createApp({ config, store, generationService, worldForge }) {
       writeSse(response, "stage", { name: "persistence", status: "complete", elapsedMs: finished.stages.find((stage) => stage.name === "persistence")?.elapsedMs });
       writeSse(response, "complete", { game: committed.game, turn: committed.turn, metrics: publicMetrics(finished) });
       response.end();
+      try {
+        generationService.afterCommit?.({ game: committed.game, world, language: reservation.language,
+          existingPlan: generated.plan || existingPlan, onTrace: value => store.insertTrace(value, value.status) });
+      } catch (error) {
+        // This optional job starts after the durable response. Never turn an
+        // already committed move into a failed request because planning failed.
+        console.warn('Optional planner could not start:', error.code || error.name);
+      }
     } catch (error) {
       const cancelled = controller.signal.aborted || error.code === "CANCELLED";
       const safe = publicError(error);

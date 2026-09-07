@@ -1,0 +1,2770 @@
+[
+  {
+    "turn": 1,
+    "action": "开始我的故事",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 0
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "多数幼年云兽愿意闻一闻",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "陌生"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "陌生"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": []
+    },
+    "changes": []
+  },
+  {
+    "turn": 2,
+    "action": "我先向弥娅说明愿意帮忙救治镜翅兽，请她告诉我需要做什么，并趁机查看它伤口上的红苔。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 0
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "多数幼年云兽愿意闻一闻",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "好奇"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "陌生"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "open",
+          "offeredAtTurn": 2
+        }
+      ]
+    },
+    "changes": [
+      "弥娅: 好奇",
+      "可争取的成长: 镜翅兽的第一次回应",
+      "弥娅从镜翅兽伤口的红苔中发现银砂，判断它来自雷海外一座近期仍可抵达的浮岛；这是她的专业判断，尚未得到实地证实。",
+      "弥娅说明救治需要先让镜翅兽自愿靠近，再为翅根上药；沈舟获准留在木笼旁协助。",
+      "猎团买手已到幼兽港码头，弥娅需要尽快完成救治或取得能改变处置的证据。"
+    ]
+  },
+  {
+    "turn": 3,
+    "action": "取出一块甜苔饼，按弥娅的指引放在笼门左侧，耐心等镜翅兽主动靠近，再请她为它上药。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 2
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当一只云兽自愿持续对视时，沈舟可稳定借用它数息视野与方向感，辨认它亲眼见过的地形、航向和可见标记。边界: 不能强迫、不夺取控制；对象受惊、疼痛或闭眼时共享立刻中断，不能借此看见它未观察过的远处。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "好奇"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "陌生"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        }
+      ]
+    },
+    "changes": [
+      "甜苔饼: 剩下一块，多数幼年云兽愿意闻一闻",
+      "镜翅兽: 好奇",
+      "能力提升: 共天眼",
+      "修行进度 +2",
+      "成长兑现: 镜翅兽的第一次回应",
+      "镜翅兽主动吃下一块甜苔饼，并在弥娅上药时与沈舟持续对视，允许他借用数息视野。",
+      "通过镜翅兽当时的视野，沈舟看见北面断续云桥尽头有一座覆着红苔的黑色小岛正在漂离，岛旁可见蓝边旧风帆标记。",
+      "弥娅已为镜翅兽翅根上药并暂时止血；它仍受伤，尚不能起飞。",
+      "猎团买手已踏上通往木笼区的栈桥，昆戈的小风帆正在收缆准备离港。"
+    ]
+  },
+  {
+    "turn": 4,
+    "action": "把我从镜翅兽视野里看到的断续云桥、红苔黑岛和蓝边风帆标记告诉弥娅，请她用这份线索阻止猎团带走它。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 2
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当一只云兽自愿持续对视时，沈舟可稳定借用它数息视野与方向感，辨认它亲眼见过的地形、航向和可见标记。边界: 不能强迫、不夺取控制；对象受惊、疼痛或闭眼时共享立刻中断，不能借此看见它未观察过的远处。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "陌生"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        }
+      ]
+    },
+    "changes": [
+      "弥娅: 友善",
+      "弥娅根据沈舟描述的断续云桥、红苔黑岛与蓝边风帆标记，判断镜翅兽可能是通往北面漂流岛的航线证据；这仍待昆戈或实地核验。",
+      "猎团买手同意在迁徙钟停前暂缓带走镜翅兽，条件是弥娅拿出可核验的航线证据；期限内它仍在木笼区，由弥娅看守。"
+    ]
+  },
+  {
+    "turn": 5,
+    "action": "赶到昆戈的小风帆前，告诉他我从镜翅兽视野里看见的断续云桥、红苔黑岛和蓝边风帆标记，请他当场核验旧航图。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 2
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当一只云兽自愿持续对视时，沈舟可稳定借用它数息视野与方向感，辨认它亲眼见过的地形、航向和可见标记。边界: 不能强迫、不夺取控制；对象受惊、疼痛或闭眼时共享立刻中断，不能借此看见它未观察过的远处。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "kunge-first-crossing",
+          "name": "昆戈的第一段跨缝同行",
+          "payoff": "若与昆戈实际穿过第一段乱风并完成协作，沈舟可获得可重复使用的跨岛行动本领或天空行动资源。",
+          "approach": "在迁徙钟停前与昆戈谈妥同行条件，登上小风帆并在航行中承担真实协作。",
+          "status": "open",
+          "offeredAtTurn": 5
+        }
+      ]
+    },
+    "changes": [
+      "抵达 折帆岛幼兽港码头，昆戈的小风帆旁",
+      "昆戈: 好奇",
+      "可争取的成长: 昆戈的第一段跨缝同行",
+      "昆戈依据沈舟从镜翅兽视野中描述的断续云桥、红苔黑岛与灰云位置，确认蓝边风帆标记属于北漂旧航路的系风标；他在旧航图上盖下压舱铜印，可供公开核验。",
+      "昆戈判断北面断桥会短暂接上，穿过第一段风口可追向正在外漂的红苔黑岛；这是基于旧航图和当前风势的领航判断，尚未实际通行。"
+    ]
+  },
+  {
+    "turn": 6,
+    "action": "我愿意同行，但先说清楚：我要学习穿过第一段乱风的动作，也要确保弥娅能用盖印航图保住镜翅兽。条件谈妥我就上船。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 8
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当一只云兽自愿持续对视时，沈舟可稳定借用它数息视野与方向感，辨认它亲眼见过的地形、航向和可见标记。边界: 不能强迫、不夺取控制；对象受惊、疼痛或闭眼时共享立刻中断，不能借此看见它未观察过的远处。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "tether-wind-handling",
+        "name": "系风绳借风",
+        "description": "在有经验领航员指挥、且身处配有系风绳的小型风帆或固定风具上时，沈舟能根据帆角抖动和绳索回弹调整站位、稳住帆角，协助穿过第一段乱风。限制：不能独自领航，不能用于无固定索具的高空滑翔，遇到陌生风暴仍需判断。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "kunge-first-crossing",
+          "name": "昆戈的第一段跨缝同行",
+          "payoff": "若与昆戈实际穿过第一段乱风并完成协作，沈舟可获得可重复使用的跨岛行动本领或天空行动资源。",
+          "approach": "在迁徙钟停前与昆戈谈妥同行条件，登上小风帆并在航行中承担真实协作。",
+          "status": "fulfilled",
+          "offeredAtTurn": 5,
+          "materialized": true,
+          "result": "沈舟与昆戈实际穿过第一段乱风，掌握在有领航员和系风绳条件下协助稳帆的动作，并抵达系风礁。",
+          "settledAtTurn": 6
+        }
+      ]
+    },
+    "changes": [
+      "抵达 北面断续云桥外，系风礁背风面，昆戈的小风帆上",
+      "昆戈: 友善",
+      "掌握能力: 系风绳借风",
+      "修行进度 +6",
+      "成长兑现: 昆戈的第一段跨缝同行",
+      "昆戈将盖有压舱铜印的北漂旧航路副页交给帆具行跑腿送往木笼区，供弥娅当着猎团买手公开核验。",
+      "沈舟随昆戈的小风帆实际穿过北面断续云桥的第一段乱风，抵达断桥外的系风礁背风面。",
+      "在昆戈指挥下，沈舟学会利用系风绳回弹与帆角抖动稳住帆角；这能协助小风帆过第一段乱风，尚不足以独自领航或高空滑翔。",
+      "红苔黑岛仍在系风礁以北的云层后外漂，昆戈尚未实际抵达该岛。"
+    ]
+  },
+  {
+    "turn": 7,
+    "action": "先和昆戈返回港口，用首段通行结果和盖印航图公开核验，确保弥娅能保住镜翅兽，再筹划追向红苔黑岛。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 8
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当一只云兽自愿持续对视时，沈舟可稳定借用它数息视野与方向感，辨认它亲眼见过的地形、航向和可见标记。边界: 不能强迫、不夺取控制；对象受惊、疼痛或闭眼时共享立刻中断，不能借此看见它未观察过的远处。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "tether-wind-handling",
+        "name": "系风绳借风",
+        "description": "在有经验领航员指挥、且身处配有系风绳的小型风帆或固定风具上时，沈舟能根据帆角抖动和绳索回弹调整站位、稳住帆角，协助穿过第一段乱风。限制：不能独自领航，不能用于无固定索具的高空滑翔，遇到陌生风暴仍需判断。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "好奇"
+      },
+      {
+        "id": "luo-cen",
+        "name": "洛岑",
+        "attitude": "戒备"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "mirrorwing-care-access",
+          "kind": "access",
+          "name": "镜翅兽照护准入",
+          "effect": "沈舟可在弥娅安排下进入木笼区协助照护镜翅兽，并继续争取它的自愿回应。",
+          "scope": "仅限镜翅兽养伤期间的木笼区；不得单独触碰伤口或带离幼兽。",
+          "status": "active",
+          "acquiredAtTurn": 7,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "kunge-first-crossing",
+          "name": "昆戈的第一段跨缝同行",
+          "payoff": "若与昆戈实际穿过第一段乱风并完成协作，沈舟可获得可重复使用的跨岛行动本领或天空行动资源。",
+          "approach": "在迁徙钟停前与昆戈谈妥同行条件，登上小风帆并在航行中承担真实协作。",
+          "status": "fulfilled",
+          "offeredAtTurn": 5,
+          "materialized": true,
+          "result": "沈舟与昆戈实际穿过第一段乱风，掌握在有领航员和系风绳条件下协助稳帆的动作，并抵达系风礁。",
+          "settledAtTurn": 6
+        }
+      ]
+    },
+    "changes": [
+      "抵达 折帆岛幼兽港木笼区，弥娅的药箱旁",
+      "洛岑: 戒备",
+      "获得长期筹码: 镜翅兽照护准入",
+      "沈舟与昆戈乘小风帆按已验证的系风路线返回幼兽港，公开证明北面断续云桥的第一段目前可实际通行。",
+      "港主洛岑核验昆戈的压舱铜印、系风礁云盐与断桥时刻后，承认北漂旧航路第一段可通行。",
+      "洛岑宣布在航路申报处置完成前，镜翅兽暂归弥娅照护，猎团不得带走；镜翅兽仍在木笼区养伤，尚不能起飞。"
+    ]
+  },
+  {
+    "turn": 8,
+    "action": "留在弥娅处照护镜翅兽，先帮它养伤、建立信任，等它愿意回应后再考虑是否一起追向红苔黑岛。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 12
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当一只云兽自愿持续对视时，沈舟可稳定借用它数息视野与方向感，辨认它亲眼见过的地形、航向、可见标记及近处可利用的风缝。边界：不能强迫、不夺取控制；对象受惊、疼痛或闭眼时共享立刻中断，不能借此看见它未观察过的远处。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "tether-wind-handling",
+        "name": "系风绳借风",
+        "description": "在有经验领航员指挥、且身处配有系风绳的小型风帆或固定风具上时，沈舟能根据帆角抖动和绳索回弹调整站位、稳住帆角，协助穿过第一段乱风。限制：不能独自领航，不能用于无固定索具的高空滑翔，遇到陌生风暴仍需判断。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "友善"
+      },
+      {
+        "id": "luo-cen",
+        "name": "洛岑",
+        "attitude": "戒备"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "mirrorwing-care-access",
+          "kind": "access",
+          "name": "镜翅兽照护准入",
+          "effect": "沈舟可在弥娅安排下进入木笼区协助照护镜翅兽，并继续争取它的自愿回应。",
+          "scope": "仅限镜翅兽养伤期间的木笼区；不得单独触碰伤口或带离幼兽。",
+          "status": "active",
+          "acquiredAtTurn": 7,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "kunge-first-crossing",
+          "name": "昆戈的第一段跨缝同行",
+          "payoff": "若与昆戈实际穿过第一段乱风并完成协作，沈舟可获得可重复使用的跨岛行动本领或天空行动资源。",
+          "approach": "在迁徙钟停前与昆戈谈妥同行条件，登上小风帆并在航行中承担真实协作。",
+          "status": "fulfilled",
+          "offeredAtTurn": 5,
+          "materialized": true,
+          "result": "沈舟与昆戈实际穿过第一段乱风，掌握在有领航员和系风绳条件下协助稳帆的动作，并抵达系风礁。",
+          "settledAtTurn": 6
+        }
+      ]
+    },
+    "changes": [
+      "镜翅兽: 友善",
+      "能力提升: 共天眼",
+      "修行进度 +4",
+      "沈舟在弥娅指导下连续照护镜翅兽三天；其翅根肿胀消退，已能在木笼内完成一次短距扑飞，但仍不能远飞。",
+      "镜翅兽在自愿对视中让沈舟借共天眼看见它亲眼观察到的港内风缝：可从木笼区外废旧吊架借北偏缓风越过栈桥，抵达昆戈小风帆外侧礁台。",
+      "镜翅兽以朝北面礁台偏头的动作向沈舟示意该空路；这是它的行为表达，尚不等于结契或同意远征。"
+    ]
+  },
+  {
+    "turn": 9,
+    "action": "继续按弥娅的指导陪镜翅兽做短距扑飞，保持它能随时退开的距离，观察它是否愿意再次靠近或对视。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 20
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当一只云兽自愿持续对视时，沈舟可稳定借用它数息视野与方向感，辨认它亲眼见过的地形、航向、可见标记及近处可利用的风缝；在镜翅兽进行近距离短飞且主动回望时，也能察觉它当下感到的托风、侧风与疲乏，从而调整自己的站位为其预留落点。边界：不能强迫、不夺取控制；对象受惊、疼痛、闭眼或中断回望时共享立刻中断，不能借此看见它未观察过的远处，也不能替它操控飞行。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "tether-wind-handling",
+        "name": "系风绳借风",
+        "description": "在有经验领航员指挥、且身处配有系风绳的小型风帆或固定风具上时，沈舟能根据帆角抖动和绳索回弹调整站位、稳住帆角，协助穿过第一段乱风。限制：不能独自领航，不能用于无固定索具的高空滑翔，遇到陌生风暴仍需判断。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "信任"
+      },
+      {
+        "id": "luo-cen",
+        "name": "洛岑",
+        "attitude": "戒备"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "mirrorwing-care-access",
+          "kind": "access",
+          "name": "镜翅兽照护准入",
+          "effect": "沈舟可在弥娅安排下进入木笼区协助照护镜翅兽，并继续争取它的自愿回应。",
+          "scope": "仅限镜翅兽养伤期间的木笼区；不得单独触碰伤口或带离幼兽。",
+          "status": "active",
+          "acquiredAtTurn": 7,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "kunge-first-crossing",
+          "name": "昆戈的第一段跨缝同行",
+          "payoff": "若与昆戈实际穿过第一段乱风并完成协作，沈舟可获得可重复使用的跨岛行动本领或天空行动资源。",
+          "approach": "在迁徙钟停前与昆戈谈妥同行条件，登上小风帆并在航行中承担真实协作。",
+          "status": "fulfilled",
+          "offeredAtTurn": 5,
+          "materialized": true,
+          "result": "沈舟与昆戈实际穿过第一段乱风，掌握在有领航员和系风绳条件下协助稳帆的动作，并抵达系风礁。",
+          "settledAtTurn": 6
+        },
+        {
+          "id": "mirrorwing-wing-salt",
+          "name": "镜翅兽的补羽膜云盐",
+          "payoff": "若取得合用云盐并完成弥娅的后续治疗，镜翅兽可更快恢复飞行能力，沈舟可争取更完整的空中协作。",
+          "approach": "向弥娅查明云盐来源，并以交易、劳动、航路行动或其他实际方式取得；镜翅兽是否愿意继续协作仍取决于它自身意愿。",
+          "status": "open",
+          "offeredAtTurn": 9
+        }
+      ]
+    },
+    "changes": [
+      "抵达 折帆岛幼兽港木笼区外训练空地，弥娅的药箱旁",
+      "镜翅兽: 信任",
+      "能力提升: 共天眼",
+      "修行进度 +8",
+      "可争取的成长: 镜翅兽的补羽膜云盐",
+      "沈舟在弥娅指导下陪镜翅兽完成一整个下午的短距扑飞训练；镜翅兽可从木笼侧门飞至两座低矮训练台之间并自行落稳，仍不能远飞或载人。",
+      "镜翅兽在短飞转向时多次主动与沈舟对视，使他能借共天眼辨认它当下感到的托风、侧风与翅根疲乏，并据此为它留出安全落点。",
+      "弥娅说明若取得补羽膜的云盐，可帮助镜翅兽更快恢复飞行；具体来源尚待询问或寻找。"
+    ]
+  },
+  {
+    "turn": 10,
+    "action": "我先向弥娅询问补羽膜云盐的来源，想通过劳动或交易为镜翅兽争取恢复资源，再继续陪它训练。",
+    "realm": {
+      "name": "缚风学徒",
+      "rank": 1,
+      "benchmark": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+      "unlock": "能借伙伴视野侦察，并完成第一次真正的双向协作。",
+      "progress": 0
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当镜翅兽或其他自愿持续对视的云兽在近距离短飞时，沈舟可稳定借用其数息视野、方向感以及当下的托风、侧风与疲乏，并以移动站位为其预留转向或落点，完成短距离的双向协作。限制：只能共享对方实际观察到的近处信息，不能夺取控制；对象受惊、疼痛、闭眼或中断回望时共享立刻中断，镜翅兽仍不能远飞或载人。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "tether-wind-handling",
+        "name": "系风绳借风",
+        "description": "在有经验领航员指挥、且身处配有系风绳的小型风帆或固定风具上时，沈舟能根据帆角抖动和绳索回弹调整站位、稳住帆角，协助穿过第一段乱风。限制：不能独自领航，不能用于无固定索具的高空滑翔，遇到陌生风暴仍需判断。",
+        "source": "正文获得"
+      },
+      {
+        "id": "realm-1",
+        "name": "缚风学徒行动空间",
+        "description": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+        "source": "境界突破"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "信任"
+      },
+      {
+        "id": "luo-cen",
+        "name": "洛岑",
+        "attitude": "戒备"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "mirrorwing-care-access",
+          "kind": "access",
+          "name": "镜翅兽照护准入",
+          "effect": "沈舟可在弥娅安排下进入木笼区协助照护镜翅兽，并继续争取它的自愿回应。",
+          "scope": "仅限镜翅兽养伤期间的木笼区；不得单独触碰伤口或带离幼兽。",
+          "status": "active",
+          "acquiredAtTurn": 7,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "kunge-first-crossing",
+          "name": "昆戈的第一段跨缝同行",
+          "payoff": "若与昆戈实际穿过第一段乱风并完成协作，沈舟可获得可重复使用的跨岛行动本领或天空行动资源。",
+          "approach": "在迁徙钟停前与昆戈谈妥同行条件，登上小风帆并在航行中承担真实协作。",
+          "status": "fulfilled",
+          "offeredAtTurn": 5,
+          "materialized": true,
+          "result": "沈舟与昆戈实际穿过第一段乱风，掌握在有领航员和系风绳条件下协助稳帆的动作，并抵达系风礁。",
+          "settledAtTurn": 6
+        },
+        {
+          "id": "mirrorwing-wing-salt",
+          "name": "镜翅兽的补羽膜云盐",
+          "payoff": "若取得合用云盐并完成弥娅的后续治疗，镜翅兽可更快恢复飞行能力，沈舟可争取更完整的空中协作。",
+          "approach": "向弥娅查明云盐来源，并以交易、劳动、航路行动或其他实际方式取得；镜翅兽是否愿意继续协作仍取决于它自身意愿。",
+          "status": "open",
+          "offeredAtTurn": 9
+        }
+      ]
+    },
+    "changes": [
+      "能力提升: 共天眼",
+      "修行进度 +8",
+      "境界提升为 缚风学徒",
+      "掌握能力: 缚风学徒行动空间",
+      "弥娅说明补羽膜云盐可在系风礁背风面的盐窝结出；帆具行的阿赫目前收有半罐，来源与昆戈带回的系风礁灰白云盐相同。",
+      "阿赫需要有人从木笼区外废旧吊架拆回一组可用的定风轮，可能以补羽膜云盐作为劳动报酬；具体交易条件尚待当面商谈。",
+      "沈舟与镜翅兽完成一整个傍晚的短空路协作训练：它主动共享近处托风和转向感觉，沈舟能以站位为它预留稳定落点；镜翅兽仍不能远飞或载人。"
+    ]
+  },
+  {
+    "turn": 11,
+    "action": "去帆具行找阿赫，询问拆回废吊架定风轮的具体要求，谈妥后用劳动换取补羽膜云盐。",
+    "realm": {
+      "name": "缚风学徒",
+      "rank": 1,
+      "benchmark": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+      "unlock": "能借伙伴视野侦察，并完成第一次真正的双向协作。",
+      "progress": 0
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当镜翅兽或其他自愿持续对视的云兽在近距离短飞时，沈舟可稳定借用其数息视野、方向感以及当下的托风、侧风与疲乏，并以移动站位为其预留转向或落点，完成短距离的双向协作。限制：只能共享对方实际观察到的近处信息，不能夺取控制；对象受惊、疼痛、闭眼或中断回望时共享立刻中断，镜翅兽仍不能远飞或载人。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "tether-wind-handling",
+        "name": "系风绳借风",
+        "description": "在有经验领航员指挥、且身处配有系风绳的小型风帆或固定风具上时，沈舟能根据帆角抖动和绳索回弹调整站位、稳住帆角，协助穿过第一段乱风。限制：不能独自领航，不能用于无固定索具的高空滑翔，遇到陌生风暴仍需判断。",
+        "source": "正文获得"
+      },
+      {
+        "id": "realm-1",
+        "name": "缚风学徒行动空间",
+        "description": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+        "source": "境界突破"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      },
+      {
+        "id": "wing-membrane-cloud-salt",
+        "name": "补羽膜云盐",
+        "description": "两片薄如鳞膜的专用云盐。每次取一小撮调入温水，可由弥娅敷于镜翅兽翅根以帮助恢复羽膜；需密封避潮，不能直接令其远飞。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "信任"
+      },
+      {
+        "id": "luo-cen",
+        "name": "洛岑",
+        "attitude": "戒备"
+      },
+      {
+        "id": "a-he",
+        "name": "阿赫",
+        "attitude": "中立"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "mirrorwing-care-access",
+          "kind": "access",
+          "name": "镜翅兽照护准入",
+          "effect": "沈舟可在弥娅安排下进入木笼区协助照护镜翅兽，并继续争取它的自愿回应。",
+          "scope": "仅限镜翅兽养伤期间的木笼区；不得单独触碰伤口或带离幼兽。",
+          "status": "active",
+          "acquiredAtTurn": 7,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "kunge-first-crossing",
+          "name": "昆戈的第一段跨缝同行",
+          "payoff": "若与昆戈实际穿过第一段乱风并完成协作，沈舟可获得可重复使用的跨岛行动本领或天空行动资源。",
+          "approach": "在迁徙钟停前与昆戈谈妥同行条件，登上小风帆并在航行中承担真实协作。",
+          "status": "fulfilled",
+          "offeredAtTurn": 5,
+          "materialized": true,
+          "result": "沈舟与昆戈实际穿过第一段乱风，掌握在有领航员和系风绳条件下协助稳帆的动作，并抵达系风礁。",
+          "settledAtTurn": 6
+        },
+        {
+          "id": "mirrorwing-wing-salt",
+          "name": "镜翅兽的补羽膜云盐",
+          "payoff": "若取得合用云盐并完成弥娅的后续治疗，镜翅兽可更快恢复飞行能力，沈舟可争取更完整的空中协作。",
+          "approach": "向弥娅查明云盐来源，并以交易、劳动、航路行动或其他实际方式取得；镜翅兽是否愿意继续协作仍取决于它自身意愿。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟拆回废旧吊架的一整组定风轮，以劳动换得两片补羽膜云盐；已可带回给弥娅进行镜翅兽的后续治疗。",
+          "settledAtTurn": 11
+        }
+      ]
+    },
+    "changes": [
+      "抵达 折帆岛帆具行外的北栈桥",
+      "获得 补羽膜云盐",
+      "阿赫: 中立",
+      "成长兑现: 镜翅兽的补羽膜云盐",
+      "阿赫说明废旧吊架上的一整组定风轮由四只轮与完整轮轴组成；沈舟拆回后可换取补羽膜云盐。",
+      "沈舟在阿赫借出的扳钩与防滑手套协助下，从北栈桥外废旧吊架拆回一整组可用定风轮，并以劳动换得两片补羽膜云盐。",
+      "阿赫说明补羽膜云盐需少量调入温水敷于镜翅兽翅根，其余应密封避潮；它可供弥娅进行后续恢复治疗，但不能立刻令镜翅兽远飞。"
+    ]
+  },
+  {
+    "turn": 12,
+    "action": "带补羽膜云盐回木笼区，请弥娅为镜翅兽进行后续治疗，并继续陪它做安全的短距训练。",
+    "realm": {
+      "name": "缚风学徒",
+      "rank": 1,
+      "benchmark": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+      "unlock": "能借伙伴视野侦察，并完成第一次真正的双向协作。",
+      "progress": 8
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当镜翅兽或其他自愿持续对视的云兽在近距离短飞时，沈舟可稳定共享其实际看见的近处视野、方向感、托风、侧风与疲乏，并通过移动站位、预留落点或举起可抓停的横环协助其完成港内低空短飞转向。限制：不能夺取控制或得知视野外信息；对象受惊、疼痛、闭眼或中断回望时共享立刻中断，镜翅兽仍不能远飞或载人。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "tether-wind-handling",
+        "name": "系风绳借风",
+        "description": "在有经验领航员指挥、且身处配有系风绳的小型风帆或固定风具上时，沈舟能根据帆角抖动和绳索回弹调整站位、稳住帆角，协助穿过第一段乱风。限制：不能独自领航，不能用于无固定索具的高空滑翔，遇到陌生风暴仍需判断。",
+        "source": "正文获得"
+      },
+      {
+        "id": "realm-1",
+        "name": "缚风学徒行动空间",
+        "description": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+        "source": "境界突破"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      },
+      {
+        "id": "wing-membrane-cloud-salt",
+        "name": "补羽膜云盐",
+        "description": "两片薄如鳞膜的专用云盐，其中一片已取少量调入温水供弥娅敷治镜翅兽翅根；其余仍须密封避潮，可再完成一次完整养护。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "信任"
+      },
+      {
+        "id": "luo-cen",
+        "name": "洛岑",
+        "attitude": "戒备"
+      },
+      {
+        "id": "a-he",
+        "name": "阿赫",
+        "attitude": "中立"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "mirrorwing-care-access",
+          "kind": "access",
+          "name": "镜翅兽照护准入",
+          "effect": "沈舟可在弥娅安排下进入木笼区协助照护镜翅兽，并继续争取它的自愿回应。",
+          "scope": "仅限镜翅兽养伤期间的木笼区；不得单独触碰伤口或带离幼兽。",
+          "status": "active",
+          "acquiredAtTurn": 7,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "kunge-first-crossing",
+          "name": "昆戈的第一段跨缝同行",
+          "payoff": "若与昆戈实际穿过第一段乱风并完成协作，沈舟可获得可重复使用的跨岛行动本领或天空行动资源。",
+          "approach": "在迁徙钟停前与昆戈谈妥同行条件，登上小风帆并在航行中承担真实协作。",
+          "status": "fulfilled",
+          "offeredAtTurn": 5,
+          "materialized": true,
+          "result": "沈舟与昆戈实际穿过第一段乱风，掌握在有领航员和系风绳条件下协助稳帆的动作，并抵达系风礁。",
+          "settledAtTurn": 6
+        },
+        {
+          "id": "mirrorwing-wing-salt",
+          "name": "镜翅兽的补羽膜云盐",
+          "payoff": "若取得合用云盐并完成弥娅的后续治疗，镜翅兽可更快恢复飞行能力，沈舟可争取更完整的空中协作。",
+          "approach": "向弥娅查明云盐来源，并以交易、劳动、航路行动或其他实际方式取得；镜翅兽是否愿意继续协作仍取决于它自身意愿。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟拆回废旧吊架的一整组定风轮，以劳动换得两片补羽膜云盐；已可带回给弥娅进行镜翅兽的后续治疗。",
+          "settledAtTurn": 11
+        }
+      ]
+    },
+    "changes": [
+      "抵达 折帆岛幼兽港木笼区外训练空地",
+      "补羽膜云盐: 两片薄如鳞膜的专用云盐，其中一片已取少量调入温水供弥娅敷治镜翅兽翅根；其余仍须密封避潮，可再完成一次完整养护。",
+      "能力提升: 共天眼",
+      "修行进度 +8",
+      "弥娅用一小撮补羽膜云盐调入温水，为镜翅兽翅根完成后续治疗；剩余云盐仍可再做一次完整养护。",
+      "镜翅兽治疗后在木笼区外完成多轮低空短飞，已能自行往返北栈桥附近训练吊架与训练台，但仍不能远飞或载人。",
+      "沈舟在镜翅兽主动对视的短飞中，已能稳定依据其托风、侧风与疲乏预留转向和落点，使港内近程双向协作更可靠。"
+    ]
+  },
+  {
+    "turn": 13,
+    "action": "先带镜翅兽前往外侧礁台，但不让它载人；与昆戈商定一次近程探航，借它共享的风向和落点协作核验红苔黑岛方位。",
+    "realm": {
+      "name": "缚风学徒",
+      "rank": 1,
+      "benchmark": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+      "unlock": "能借伙伴视野侦察，并完成第一次真正的双向协作。",
+      "progress": 12
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当镜翅兽或其他自愿持续对视的云兽在近距离短飞时，沈舟可稳定共享其实际看见的近处视野、方向感、托风、侧风与疲乏，并据此为港内近程飞行预留落点、调整小风帆靠近位置或举起可抓停的横环。限制：不能夺取控制或得知视野外信息；对象受惊、疼痛、闭眼或中断回望时共享立刻中断，镜翅兽仍不能远飞或载人。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "tether-wind-handling",
+        "name": "系风绳借风",
+        "description": "在有经验领航员指挥、且身处配有系风绳的小型风帆或固定风具上时，沈舟能根据帆角抖动和绳索回弹调整站位、稳住帆角，协助穿过第一段乱风。限制：不能独自领航，不能用于无固定索具的高空滑翔，遇到陌生风暴仍需判断。",
+        "source": "正文获得"
+      },
+      {
+        "id": "realm-1",
+        "name": "缚风学徒行动空间",
+        "description": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+        "source": "境界突破"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      },
+      {
+        "id": "wing-membrane-cloud-salt",
+        "name": "补羽膜云盐",
+        "description": "两片薄如鳞膜的专用云盐，其中一片已取少量调入温水供弥娅敷治镜翅兽翅根；其余仍须密封避潮，可再完成一次完整养护。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "信任"
+      },
+      {
+        "id": "luo-cen",
+        "name": "洛岑",
+        "attitude": "戒备"
+      },
+      {
+        "id": "a-he",
+        "name": "阿赫",
+        "attitude": "中立"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "mirrorwing-care-access",
+          "kind": "access",
+          "name": "镜翅兽照护准入",
+          "effect": "沈舟可在弥娅安排下进入木笼区协助照护镜翅兽，并继续争取它的自愿回应。",
+          "scope": "仅限镜翅兽养伤期间的木笼区；不得单独触碰伤口或带离幼兽。",
+          "status": "active",
+          "acquiredAtTurn": 7,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "kunge-first-crossing",
+          "name": "昆戈的第一段跨缝同行",
+          "payoff": "若与昆戈实际穿过第一段乱风并完成协作，沈舟可获得可重复使用的跨岛行动本领或天空行动资源。",
+          "approach": "在迁徙钟停前与昆戈谈妥同行条件，登上小风帆并在航行中承担真实协作。",
+          "status": "fulfilled",
+          "offeredAtTurn": 5,
+          "materialized": true,
+          "result": "沈舟与昆戈实际穿过第一段乱风，掌握在有领航员和系风绳条件下协助稳帆的动作，并抵达系风礁。",
+          "settledAtTurn": 6
+        },
+        {
+          "id": "mirrorwing-wing-salt",
+          "name": "镜翅兽的补羽膜云盐",
+          "payoff": "若取得合用云盐并完成弥娅的后续治疗，镜翅兽可更快恢复飞行能力，沈舟可争取更完整的空中协作。",
+          "approach": "向弥娅查明云盐来源，并以交易、劳动、航路行动或其他实际方式取得；镜翅兽是否愿意继续协作仍取决于它自身意愿。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟拆回废旧吊架的一整组定风轮，以劳动换得两片补羽膜云盐；已可带回给弥娅进行镜翅兽的后续治疗。",
+          "settledAtTurn": 11
+        },
+        {
+          "id": "red-moss-black-isle-pursuit",
+          "name": "红苔黑岛的追航",
+          "payoff": "若实际追上红苔黑岛并安全登临，可查明镜翅兽伤口红苔的来源，并争取获得北漂航路的实物证据或先手。",
+          "approach": "趁低风窗口随昆戈的小风帆越过第一段断桥后继续追向东北；镜翅兽需留在弥娅处养伤，不能承担远航。",
+          "status": "open",
+          "offeredAtTurn": 13
+        }
+      ]
+    },
+    "changes": [
+      "抵达 折帆岛幼兽港外侧礁台",
+      "能力提升: 共天眼",
+      "修行进度 +4",
+      "可争取的成长: 红苔黑岛的追航",
+      "沈舟、昆戈与镜翅兽实际抵达幼兽港外侧礁台；镜翅兽可在沈舟协助判断落点的情况下完成这段港内近程飞行，仍不适合远飞或载人。",
+      "沈舟通过镜翅兽在外侧礁台的实际视野看见红苔黑岛位于系风礁东北方向，岛旁蓝边旧风帆标记仍可辨认。",
+      "昆戈依据现场方位、铜印航图和风势判断，红苔黑岛仍沿北漂旧航路外漂，已越过第一段断桥的安全回转线；这是他的领航判断，尚待实际追航核验。"
+    ]
+  },
+  {
+    "turn": 14,
+    "action": "趁今夜低风随昆戈追向红苔黑岛外缘，镜翅兽留在弥娅处养伤；我想亲自核验黑岛位置并查清红苔来源。",
+    "realm": {
+      "name": "缚风学徒",
+      "rank": 1,
+      "benchmark": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+      "unlock": "能借伙伴视野侦察，并完成第一次真正的双向协作。",
+      "progress": 12
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当镜翅兽或其他自愿持续对视的云兽在近距离短飞时，沈舟可稳定共享其实际看见的近处视野、方向感、托风、侧风与疲乏，并据此为港内近程飞行预留落点、调整小风帆靠近位置或举起可抓停的横环。限制：不能夺取控制或得知视野外信息；对象受惊、疼痛、闭眼或中断回望时共享立刻中断，镜翅兽仍不能远飞或载人。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "tether-wind-handling",
+        "name": "系风绳借风",
+        "description": "在有经验领航员指挥、且身处配有系风绳的小型风帆或固定风具上时，沈舟能根据帆角抖动和绳索回弹调整站位、稳住帆角，协助穿过第一段乱风。限制：不能独自领航，不能用于无固定索具的高空滑翔，遇到陌生风暴仍需判断。",
+        "source": "正文获得"
+      },
+      {
+        "id": "realm-1",
+        "name": "缚风学徒行动空间",
+        "description": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+        "source": "境界突破"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      },
+      {
+        "id": "wing-membrane-cloud-salt",
+        "name": "补羽膜云盐",
+        "description": "两片薄如鳞膜的专用云盐，其中一片已取少量调入温水供弥娅敷治镜翅兽翅根；其余仍须密封避潮，可再完成一次完整养护。",
+        "qty": 2
+      },
+      {
+        "id": "red-moss-silver-sand-sample",
+        "name": "带银砂红苔样本",
+        "description": "从红苔黑岛外缘温热石缝采下的红苔，根部混有细亮银砂；可供弥娅与港主公开比对镜翅兽伤口残留，油纸包裹，需避潮保存。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "信任"
+      },
+      {
+        "id": "luo-cen",
+        "name": "洛岑",
+        "attitude": "戒备"
+      },
+      {
+        "id": "a-he",
+        "name": "阿赫",
+        "attitude": "中立"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "mirrorwing-care-access",
+          "kind": "access",
+          "name": "镜翅兽照护准入",
+          "effect": "沈舟可在弥娅安排下进入木笼区协助照护镜翅兽，并继续争取它的自愿回应。",
+          "scope": "仅限镜翅兽养伤期间的木笼区；不得单独触碰伤口或带离幼兽。",
+          "status": "active",
+          "acquiredAtTurn": 7,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "kunge-first-crossing",
+          "name": "昆戈的第一段跨缝同行",
+          "payoff": "若与昆戈实际穿过第一段乱风并完成协作，沈舟可获得可重复使用的跨岛行动本领或天空行动资源。",
+          "approach": "在迁徙钟停前与昆戈谈妥同行条件，登上小风帆并在航行中承担真实协作。",
+          "status": "fulfilled",
+          "offeredAtTurn": 5,
+          "materialized": true,
+          "result": "沈舟与昆戈实际穿过第一段乱风，掌握在有领航员和系风绳条件下协助稳帆的动作，并抵达系风礁。",
+          "settledAtTurn": 6
+        },
+        {
+          "id": "mirrorwing-wing-salt",
+          "name": "镜翅兽的补羽膜云盐",
+          "payoff": "若取得合用云盐并完成弥娅的后续治疗，镜翅兽可更快恢复飞行能力，沈舟可争取更完整的空中协作。",
+          "approach": "向弥娅查明云盐来源，并以交易、劳动、航路行动或其他实际方式取得；镜翅兽是否愿意继续协作仍取决于它自身意愿。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟拆回废旧吊架的一整组定风轮，以劳动换得两片补羽膜云盐；已可带回给弥娅进行镜翅兽的后续治疗。",
+          "settledAtTurn": 11
+        },
+        {
+          "id": "red-moss-black-isle-pursuit",
+          "name": "红苔黑岛的追航",
+          "payoff": "若实际追上红苔黑岛并安全登临，可查明镜翅兽伤口红苔的来源，并争取获得北漂航路的实物证据或先手。",
+          "approach": "趁低风窗口随昆戈的小风帆越过第一段断桥后继续追向东北；镜翅兽需留在弥娅处养伤，不能承担远航。",
+          "status": "fulfilled",
+          "offeredAtTurn": 13,
+          "materialized": true,
+          "result": "沈舟与昆戈实际追至红苔黑岛外缘，确认镜翅兽伤口红苔确来自该岛，并取得带银砂红苔样本及已核验的旧航路标记证据。",
+          "settledAtTurn": 14
+        }
+      ]
+    },
+    "changes": [
+      "抵达 红苔黑岛东南外缘的系风裂台",
+      "获得 带银砂红苔样本",
+      "成长兑现: 红苔黑岛的追航",
+      "沈舟与昆戈趁今夜低风实际穿过北漂旧航路的断桥后段，抵达红苔黑岛东南外缘的系风裂台。",
+      "沈舟在红苔黑岛外缘确认红苔成片生长于温热黑色岩缝，根部混有细亮银砂；这与镜翅兽伤口残留的红苔和银砂相符。",
+      "昆戈现场核验岛上蓝边旧风帆标记的系风纹，确认该纹属于幼兽港旧航图所用的北漂航路标记。"
+    ]
+  },
+  {
+    "turn": 15,
+    "action": "随昆戈继续沿黑岛北侧追查漂移痕迹，寻找红苔原岛和更大的航路线索。",
+    "realm": {
+      "name": "缚风学徒",
+      "rank": 1,
+      "benchmark": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+      "unlock": "能借伙伴视野侦察，并完成第一次真正的双向协作。",
+      "progress": 12
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当镜翅兽或其他自愿持续对视的云兽在近距离短飞时，沈舟可稳定共享其实际看见的近处视野、方向感、托风、侧风与疲乏，并据此为港内近程飞行预留落点、调整小风帆靠近位置或举起可抓停的横环。限制：不能夺取控制或得知视野外信息；对象受惊、疼痛、闭眼或中断回望时共享立刻中断，镜翅兽仍不能远飞或载人。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "tether-wind-handling",
+        "name": "系风绳借风",
+        "description": "在有经验领航员指挥、且身处配有系风绳的小型风帆或固定风具上时，沈舟能根据帆角抖动和绳索回弹调整站位、稳住帆角，协助穿过第一段乱风。限制：不能独自领航，不能用于无固定索具的高空滑翔，遇到陌生风暴仍需判断。",
+        "source": "正文获得"
+      },
+      {
+        "id": "realm-1",
+        "name": "缚风学徒行动空间",
+        "description": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+        "source": "境界突破"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      },
+      {
+        "id": "wing-membrane-cloud-salt",
+        "name": "补羽膜云盐",
+        "description": "两片薄如鳞膜的专用云盐，其中一片已取少量调入温水供弥娅敷治镜翅兽翅根；其余仍须密封避潮，可再完成一次完整养护。",
+        "qty": 2
+      },
+      {
+        "id": "red-moss-silver-sand-sample",
+        "name": "带银砂红苔样本",
+        "description": "从红苔黑岛外缘温热石缝采下的红苔，根部混有细亮银砂；可供弥娅与港主公开比对镜翅兽伤口残留，油纸包裹，需避潮保存。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "信任"
+      },
+      {
+        "id": "luo-cen",
+        "name": "洛岑",
+        "attitude": "戒备"
+      },
+      {
+        "id": "a-he",
+        "name": "阿赫",
+        "attitude": "中立"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "mirrorwing-care-access",
+          "kind": "access",
+          "name": "镜翅兽照护准入",
+          "effect": "沈舟可在弥娅安排下进入木笼区协助照护镜翅兽，并继续争取它的自愿回应。",
+          "scope": "仅限镜翅兽养伤期间的木笼区；不得单独触碰伤口或带离幼兽。",
+          "status": "active",
+          "acquiredAtTurn": 7,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "kunge-first-crossing",
+          "name": "昆戈的第一段跨缝同行",
+          "payoff": "若与昆戈实际穿过第一段乱风并完成协作，沈舟可获得可重复使用的跨岛行动本领或天空行动资源。",
+          "approach": "在迁徙钟停前与昆戈谈妥同行条件，登上小风帆并在航行中承担真实协作。",
+          "status": "fulfilled",
+          "offeredAtTurn": 5,
+          "materialized": true,
+          "result": "沈舟与昆戈实际穿过第一段乱风，掌握在有领航员和系风绳条件下协助稳帆的动作，并抵达系风礁。",
+          "settledAtTurn": 6
+        },
+        {
+          "id": "mirrorwing-wing-salt",
+          "name": "镜翅兽的补羽膜云盐",
+          "payoff": "若取得合用云盐并完成弥娅的后续治疗，镜翅兽可更快恢复飞行能力，沈舟可争取更完整的空中协作。",
+          "approach": "向弥娅查明云盐来源，并以交易、劳动、航路行动或其他实际方式取得；镜翅兽是否愿意继续协作仍取决于它自身意愿。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟拆回废旧吊架的一整组定风轮，以劳动换得两片补羽膜云盐；已可带回给弥娅进行镜翅兽的后续治疗。",
+          "settledAtTurn": 11
+        },
+        {
+          "id": "red-moss-black-isle-pursuit",
+          "name": "红苔黑岛的追航",
+          "payoff": "若实际追上红苔黑岛并安全登临，可查明镜翅兽伤口红苔的来源，并争取获得北漂航路的实物证据或先手。",
+          "approach": "趁低风窗口随昆戈的小风帆越过第一段断桥后继续追向东北；镜翅兽需留在弥娅处养伤，不能承担远航。",
+          "status": "fulfilled",
+          "offeredAtTurn": 13,
+          "materialized": true,
+          "result": "沈舟与昆戈实际追至红苔黑岛外缘，确认镜翅兽伤口红苔确来自该岛，并取得带银砂红苔样本及已核验的旧航路标记证据。",
+          "settledAtTurn": 14
+        },
+        {
+          "id": "fogroot-mother-isle-route",
+          "name": "雾根母岛的航线先手",
+          "payoff": "若实际穿过北脊风井并抵达雾根母岛，可查明红苔黑岛的崩脱原因，争取取得雷海外缘航路与兽群动向的先手。",
+          "approach": "先带雾根印记回港争取人手与船只，或在具备分担乱风冲击的稳定协作能力后，随昆戈由黑岛北侧低云槽进入北脊风井。",
+          "status": "open",
+          "offeredAtTurn": 15
+        }
+      ]
+    },
+    "changes": [
+      "抵达 红苔黑岛北侧的断缆岩脊",
+      "可争取的成长: 雾根母岛的航线先手",
+      "沈舟与昆戈在红苔黑岛北侧发现带有雾根印记的旧系风桩、朝雷海断裂的粗缆和新鲜岛体撕裂面。",
+      "昆戈依据雾根印记、断缆方向与岛体裂面判断，红苔黑岛可能刚从雷海外缘的雾根母岛边缘崩脱；这是领航判断，尚待实际抵达核验。",
+      "昆戈确认可由红苔黑岛北侧低云槽接近北脊风井，但继续进入雷海外缘需要能分担乱风冲击的驭手或结伴船队。"
+    ]
+  },
+  {
+    "turn": 16,
+    "action": "留在黑岛北侧与昆戈一起测定北脊风井的入槽方位，记录风向、云层和可停靠位置。",
+    "realm": {
+      "name": "缚风学徒",
+      "rank": 1,
+      "benchmark": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+      "unlock": "能借伙伴视野侦察，并完成第一次真正的双向协作。",
+      "progress": 14
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当镜翅兽或其他自愿持续对视的云兽在近距离短飞时，沈舟可稳定共享其实际看见的近处视野、方向感、托风、侧风与疲乏，并据此为港内近程飞行预留落点、调整小风帆靠近位置或举起可抓停的横环。限制：不能夺取控制或得知视野外信息；对象受惊、疼痛、闭眼或中断回望时共享立刻中断，镜翅兽仍不能远飞或载人。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "tether-wind-handling",
+        "name": "系风绳借风",
+        "description": "在有经验领航员指挥、且身处配有系风绳的小型风帆或固定风具上时，沈舟能根据帆角抖动和绳索回弹调整站位、稳住帆角，协助穿过第一段乱风。限制：不能独自领航，不能用于无固定索具的高空滑翔，遇到陌生风暴仍需判断。",
+        "source": "正文获得"
+      },
+      {
+        "id": "realm-1",
+        "name": "缚风学徒行动空间",
+        "description": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+        "source": "境界突破"
+      },
+      {
+        "id": "low-cloud-channel-survey",
+        "name": "低云槽测向",
+        "description": "在有固定系风桩、系风绳或小风帆，并能对照明确岩脊、云形等地标时，沈舟可结合缆绳回弹、帆角抖动与云层下压，判断低云槽的安全入槽角和近处可暂泊位置。限制：只能用于已实地观察过的近程风域；不能预测雷海外缘的突发乱风，也不能替代领航员带船穿越风井。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      },
+      {
+        "id": "wing-membrane-cloud-salt",
+        "name": "补羽膜云盐",
+        "description": "两片薄如鳞膜的专用云盐，其中一片已取少量调入温水供弥娅敷治镜翅兽翅根；其余仍须密封避潮，可再完成一次完整养护。",
+        "qty": 2
+      },
+      {
+        "id": "red-moss-silver-sand-sample",
+        "name": "带银砂红苔样本",
+        "description": "从红苔黑岛外缘温热石缝采下的红苔，根部混有细亮银砂；可供弥娅与港主公开比对镜翅兽伤口残留，油纸包裹，需避潮保存。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "信任"
+      },
+      {
+        "id": "luo-cen",
+        "name": "洛岑",
+        "attitude": "戒备"
+      },
+      {
+        "id": "a-he",
+        "name": "阿赫",
+        "attitude": "中立"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "mirrorwing-care-access",
+          "kind": "access",
+          "name": "镜翅兽照护准入",
+          "effect": "沈舟可在弥娅安排下进入木笼区协助照护镜翅兽，并继续争取它的自愿回应。",
+          "scope": "仅限镜翅兽养伤期间的木笼区；不得单独触碰伤口或带离幼兽。",
+          "status": "active",
+          "acquiredAtTurn": 7,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "kunge-first-crossing",
+          "name": "昆戈的第一段跨缝同行",
+          "payoff": "若与昆戈实际穿过第一段乱风并完成协作，沈舟可获得可重复使用的跨岛行动本领或天空行动资源。",
+          "approach": "在迁徙钟停前与昆戈谈妥同行条件，登上小风帆并在航行中承担真实协作。",
+          "status": "fulfilled",
+          "offeredAtTurn": 5,
+          "materialized": true,
+          "result": "沈舟与昆戈实际穿过第一段乱风，掌握在有领航员和系风绳条件下协助稳帆的动作，并抵达系风礁。",
+          "settledAtTurn": 6
+        },
+        {
+          "id": "mirrorwing-wing-salt",
+          "name": "镜翅兽的补羽膜云盐",
+          "payoff": "若取得合用云盐并完成弥娅的后续治疗，镜翅兽可更快恢复飞行能力，沈舟可争取更完整的空中协作。",
+          "approach": "向弥娅查明云盐来源，并以交易、劳动、航路行动或其他实际方式取得；镜翅兽是否愿意继续协作仍取决于它自身意愿。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟拆回废旧吊架的一整组定风轮，以劳动换得两片补羽膜云盐；已可带回给弥娅进行镜翅兽的后续治疗。",
+          "settledAtTurn": 11
+        },
+        {
+          "id": "red-moss-black-isle-pursuit",
+          "name": "红苔黑岛的追航",
+          "payoff": "若实际追上红苔黑岛并安全登临，可查明镜翅兽伤口红苔的来源，并争取获得北漂航路的实物证据或先手。",
+          "approach": "趁低风窗口随昆戈的小风帆越过第一段断桥后继续追向东北；镜翅兽需留在弥娅处养伤，不能承担远航。",
+          "status": "fulfilled",
+          "offeredAtTurn": 13,
+          "materialized": true,
+          "result": "沈舟与昆戈实际追至红苔黑岛外缘，确认镜翅兽伤口红苔确来自该岛，并取得带银砂红苔样本及已核验的旧航路标记证据。",
+          "settledAtTurn": 14
+        },
+        {
+          "id": "fogroot-mother-isle-route",
+          "name": "雾根母岛的航线先手",
+          "payoff": "若实际穿过北脊风井并抵达雾根母岛，可查明红苔黑岛的崩脱原因，争取取得雷海外缘航路与兽群动向的先手。",
+          "approach": "先带雾根印记回港争取人手与船只，或在具备分担乱风冲击的稳定协作能力后，随昆戈由黑岛北侧低云槽进入北脊风井。",
+          "status": "open",
+          "offeredAtTurn": 15
+        }
+      ]
+    },
+    "changes": [
+      "掌握能力: 低云槽测向",
+      "修行进度 +2",
+      "沈舟与昆戈在红苔黑岛北侧断缆岩脊实际测定北脊风井低云槽的入槽方位：低云槽先沿黑岛北侧下沉，再于两层灰云交接处转向东北。",
+      "昆戈在航图副页上标出低云槽内一块可暂泊的小礁台；从南面斜切入槽可避开最初横风，错过该点则可能被送往雷海外缘。",
+      "昆戈确认这条测定路线只能抵达北脊风井外沿，进入风井仍需要能分担乱风冲击的驭手或结伴船队。"
+    ]
+  },
+  {
+    "turn": 17,
+    "action": "沿已测出的低云槽推进到小礁台，核验暂泊点、入槽角度和回航余地，确认安全后立即返回。",
+    "realm": {
+      "name": "缚风学徒",
+      "rank": 1,
+      "benchmark": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+      "unlock": "能借伙伴视野侦察，并完成第一次真正的双向协作。",
+      "progress": 15
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当镜翅兽或其他自愿持续对视的云兽在近距离短飞时，沈舟可稳定共享其实际看见的近处视野、方向感、托风、侧风与疲乏，并据此为港内近程飞行预留落点、调整小风帆靠近位置或举起可抓停的横环。限制：不能夺取控制或得知视野外信息；对象受惊、疼痛、闭眼或中断回望时共享立刻中断，镜翅兽仍不能远飞或载人。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "tether-wind-handling",
+        "name": "系风绳借风",
+        "description": "在有经验领航员指挥、且身处配有系风绳的小型风帆或固定风具上时，沈舟能根据帆角抖动和绳索回弹调整站位、稳住帆角，协助穿过第一段乱风。限制：不能独自领航，不能用于无固定索具的高空滑翔，遇到陌生风暴仍需判断。",
+        "source": "正文获得"
+      },
+      {
+        "id": "realm-1",
+        "name": "缚风学徒行动空间",
+        "description": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+        "source": "境界突破"
+      },
+      {
+        "id": "low-cloud-channel-survey",
+        "name": "低云槽测向",
+        "description": "在有固定系风桩、系风绳或小风帆，并能对照明确岩脊、云形等地标时，沈舟可结合缆绳回弹、帆角抖动与云层下压，判断低云槽的安全入槽角、近处暂泊位置及原路返航余地。限制：只能用于已实地观察过的近程风域；不能预测雷海外缘突发乱风，也不能替代领航员带船穿越北脊风井。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      },
+      {
+        "id": "wing-membrane-cloud-salt",
+        "name": "补羽膜云盐",
+        "description": "两片薄如鳞膜的专用云盐，其中一片已取少量调入温水供弥娅敷治镜翅兽翅根；其余仍须密封避潮，可再完成一次完整养护。",
+        "qty": 2
+      },
+      {
+        "id": "red-moss-silver-sand-sample",
+        "name": "带银砂红苔样本",
+        "description": "从红苔黑岛外缘温热石缝采下的红苔，根部混有细亮银砂；可供弥娅与港主公开比对镜翅兽伤口残留，油纸包裹，需避潮保存。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "信任"
+      },
+      {
+        "id": "luo-cen",
+        "name": "洛岑",
+        "attitude": "戒备"
+      },
+      {
+        "id": "a-he",
+        "name": "阿赫",
+        "attitude": "中立"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "mirrorwing-care-access",
+          "kind": "access",
+          "name": "镜翅兽照护准入",
+          "effect": "沈舟可在弥娅安排下进入木笼区协助照护镜翅兽，并继续争取它的自愿回应。",
+          "scope": "仅限镜翅兽养伤期间的木笼区；不得单独触碰伤口或带离幼兽。",
+          "status": "active",
+          "acquiredAtTurn": 7,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "kunge-first-crossing",
+          "name": "昆戈的第一段跨缝同行",
+          "payoff": "若与昆戈实际穿过第一段乱风并完成协作，沈舟可获得可重复使用的跨岛行动本领或天空行动资源。",
+          "approach": "在迁徙钟停前与昆戈谈妥同行条件，登上小风帆并在航行中承担真实协作。",
+          "status": "fulfilled",
+          "offeredAtTurn": 5,
+          "materialized": true,
+          "result": "沈舟与昆戈实际穿过第一段乱风，掌握在有领航员和系风绳条件下协助稳帆的动作，并抵达系风礁。",
+          "settledAtTurn": 6
+        },
+        {
+          "id": "mirrorwing-wing-salt",
+          "name": "镜翅兽的补羽膜云盐",
+          "payoff": "若取得合用云盐并完成弥娅的后续治疗，镜翅兽可更快恢复飞行能力，沈舟可争取更完整的空中协作。",
+          "approach": "向弥娅查明云盐来源，并以交易、劳动、航路行动或其他实际方式取得；镜翅兽是否愿意继续协作仍取决于它自身意愿。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟拆回废旧吊架的一整组定风轮，以劳动换得两片补羽膜云盐；已可带回给弥娅进行镜翅兽的后续治疗。",
+          "settledAtTurn": 11
+        },
+        {
+          "id": "red-moss-black-isle-pursuit",
+          "name": "红苔黑岛的追航",
+          "payoff": "若实际追上红苔黑岛并安全登临，可查明镜翅兽伤口红苔的来源，并争取获得北漂航路的实物证据或先手。",
+          "approach": "趁低风窗口随昆戈的小风帆越过第一段断桥后继续追向东北；镜翅兽需留在弥娅处养伤，不能承担远航。",
+          "status": "fulfilled",
+          "offeredAtTurn": 13,
+          "materialized": true,
+          "result": "沈舟与昆戈实际追至红苔黑岛外缘，确认镜翅兽伤口红苔确来自该岛，并取得带银砂红苔样本及已核验的旧航路标记证据。",
+          "settledAtTurn": 14
+        },
+        {
+          "id": "fogroot-mother-isle-route",
+          "name": "雾根母岛的航线先手",
+          "payoff": "若实际穿过北脊风井并抵达雾根母岛，可查明红苔黑岛的崩脱原因，争取取得雷海外缘航路与兽群动向的先手。",
+          "approach": "先带雾根印记回港争取人手与船只，或在具备分担乱风冲击的稳定协作能力后，随昆戈由黑岛北侧低云槽进入北脊风井。",
+          "status": "open",
+          "offeredAtTurn": 15
+        }
+      ]
+    },
+    "changes": [
+      "能力提升: 低云槽测向",
+      "修行进度 +1",
+      "沈舟与昆戈实际沿黑岛北侧低云槽抵达航图标注的小礁台，并在低风窗口内原路返回断缆岩脊。",
+      "小礁台可供一艘小风帆短暂系缆、整帆或等待结伴船队；继续向东北进入北脊风井会立刻承受乱风冲击，当前二人仍无法分担。",
+      "昆戈依据本次实航确认，按已测路线可在低风窗口内往返断缆岩脊与小礁台；雷云下压后该余地会消失。"
+    ]
+  },
+  {
+    "turn": 18,
+    "action": "随昆戈立即返港，提交红苔样本、雾根印记和低云槽实测结果，争取公开核验并换取进入北脊风井所需的人手与船只。",
+    "realm": {
+      "name": "缚风学徒",
+      "rank": 1,
+      "benchmark": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+      "unlock": "能借伙伴视野侦察，并完成第一次真正的双向协作。",
+      "progress": 15
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当镜翅兽或其他自愿持续对视的云兽在近距离短飞时，沈舟可稳定共享其实际看见的近处视野、方向感、托风、侧风与疲乏，并据此为港内近程飞行预留落点、调整小风帆靠近位置或举起可抓停的横环。限制：不能夺取控制或得知视野外信息；对象受惊、疼痛、闭眼或中断回望时共享立刻中断，镜翅兽仍不能远飞或载人。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "tether-wind-handling",
+        "name": "系风绳借风",
+        "description": "在有经验领航员指挥、且身处配有系风绳的小型风帆或固定风具上时，沈舟能根据帆角抖动和绳索回弹调整站位、稳住帆角，协助穿过第一段乱风。限制：不能独自领航，不能用于无固定索具的高空滑翔，遇到陌生风暴仍需判断。",
+        "source": "正文获得"
+      },
+      {
+        "id": "realm-1",
+        "name": "缚风学徒行动空间",
+        "description": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+        "source": "境界突破"
+      },
+      {
+        "id": "low-cloud-channel-survey",
+        "name": "低云槽测向",
+        "description": "在有固定系风桩、系风绳或小风帆，并能对照明确岩脊、云形等地标时，沈舟可结合缆绳回弹、帆角抖动与云层下压，判断低云槽的安全入槽角、近处暂泊位置及原路返航余地。限制：只能用于已实地观察过的近程风域；不能预测雷海外缘突发乱风，也不能替代领航员带船穿越北脊风井。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      },
+      {
+        "id": "wing-membrane-cloud-salt",
+        "name": "补羽膜云盐",
+        "description": "两片薄如鳞膜的专用云盐，其中一片已取少量调入温水供弥娅敷治镜翅兽翅根；其余仍须密封避潮，可再完成一次完整养护。",
+        "qty": 2
+      },
+      {
+        "id": "red-moss-silver-sand-sample",
+        "name": "带银砂红苔样本",
+        "description": "从红苔黑岛外缘温热石缝采下的红苔，根部混有细亮银砂；可供弥娅与港主公开比对镜翅兽伤口残留，油纸包裹，需避潮保存。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "信任"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "信任"
+      },
+      {
+        "id": "luo-cen",
+        "name": "洛岑",
+        "attitude": "中立"
+      },
+      {
+        "id": "a-he",
+        "name": "阿赫",
+        "attitude": "中立"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "mirrorwing-care-access",
+          "kind": "access",
+          "name": "镜翅兽照护准入",
+          "effect": "沈舟可在弥娅安排下进入木笼区协助照护镜翅兽，并继续争取它的自愿回应。",
+          "scope": "仅限镜翅兽养伤期间的木笼区；不得单独触碰伤口或带离幼兽。",
+          "status": "active",
+          "acquiredAtTurn": 7,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "north-drift-co-discoverer",
+          "kind": "identity",
+          "name": "北漂旧航路共同申报者",
+          "effect": "沈舟可凭共同申报者身份报名护送、取样或探路航次，并以协作者身份参与事先谈定的成果分成。",
+          "scope": "仅限已获港口承认的北漂旧航路及相关航次；不授予独自领航、进入北脊风井或无条件登船的权利。",
+          "status": "active",
+          "acquiredAtTurn": 18,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "north-drift-voyage-token",
+          "kind": "access",
+          "name": "北漂航次牌",
+          "effect": "沈舟可在幼兽港航路申报处以协作者身份提出或接受北漂航路相关的护送、取样和探路航次。",
+          "scope": "需由航次主持人与港口规则认可，具体报酬、风险与船位须逐次议定。",
+          "status": "active",
+          "acquiredAtTurn": 18,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "kunge-first-crossing",
+          "name": "昆戈的第一段跨缝同行",
+          "payoff": "若与昆戈实际穿过第一段乱风并完成协作，沈舟可获得可重复使用的跨岛行动本领或天空行动资源。",
+          "approach": "在迁徙钟停前与昆戈谈妥同行条件，登上小风帆并在航行中承担真实协作。",
+          "status": "fulfilled",
+          "offeredAtTurn": 5,
+          "materialized": true,
+          "result": "沈舟与昆戈实际穿过第一段乱风，掌握在有领航员和系风绳条件下协助稳帆的动作，并抵达系风礁。",
+          "settledAtTurn": 6
+        },
+        {
+          "id": "mirrorwing-wing-salt",
+          "name": "镜翅兽的补羽膜云盐",
+          "payoff": "若取得合用云盐并完成弥娅的后续治疗，镜翅兽可更快恢复飞行能力，沈舟可争取更完整的空中协作。",
+          "approach": "向弥娅查明云盐来源，并以交易、劳动、航路行动或其他实际方式取得；镜翅兽是否愿意继续协作仍取决于它自身意愿。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟拆回废旧吊架的一整组定风轮，以劳动换得两片补羽膜云盐；已可带回给弥娅进行镜翅兽的后续治疗。",
+          "settledAtTurn": 11
+        },
+        {
+          "id": "red-moss-black-isle-pursuit",
+          "name": "红苔黑岛的追航",
+          "payoff": "若实际追上红苔黑岛并安全登临，可查明镜翅兽伤口红苔的来源，并争取获得北漂航路的实物证据或先手。",
+          "approach": "趁低风窗口随昆戈的小风帆越过第一段断桥后继续追向东北；镜翅兽需留在弥娅处养伤，不能承担远航。",
+          "status": "fulfilled",
+          "offeredAtTurn": 13,
+          "materialized": true,
+          "result": "沈舟与昆戈实际追至红苔黑岛外缘，确认镜翅兽伤口红苔确来自该岛，并取得带银砂红苔样本及已核验的旧航路标记证据。",
+          "settledAtTurn": 14
+        },
+        {
+          "id": "fogroot-mother-isle-route",
+          "name": "雾根母岛的航线先手",
+          "payoff": "若实际穿过北脊风井并抵达雾根母岛，可查明红苔黑岛的崩脱原因，争取取得雷海外缘航路与兽群动向的先手。",
+          "approach": "先带雾根印记回港争取人手与船只，或在具备分担乱风冲击的稳定协作能力后，随昆戈由黑岛北侧低云槽进入北脊风井。",
+          "status": "fulfilled",
+          "offeredAtTurn": 15,
+          "materialized": true,
+          "result": "已取得从黑岛北侧断缆岩脊经低云槽抵达小礁台的实航路线先手；若要进入北脊风井，仍须取得能分担乱风冲击的驭手或结伴船队。",
+          "settledAtTurn": 18
+        }
+      ]
+    },
+    "changes": [
+      "抵达 幼兽港航路申报处外的木笼区与北栈桥之间",
+      "洛岑: 中立",
+      "昆戈: 信任",
+      "获得长期筹码: 北漂旧航路共同申报者",
+      "获得长期筹码: 北漂航次牌",
+      "成长兑现: 雾根母岛的航线先手",
+      "沈舟与昆戈在低风窗口内按已实测路线从红苔黑岛返抵幼兽港，带回红苔样本、雾根印记拓痕与低云槽实航记录。",
+      "洛岑公开核验红苔样本、旧航路系风纹及低云槽礁台方位后，承认沈舟与昆戈的北漂旧航路申报。",
+      "洛岑维持镜翅兽由弥娅照护的处置，猎团不得提前接触或带走它。",
+      "北脊风井仍需能分担乱风冲击的驭手或结伴船队；现有航路记录只能安全抵达其外沿。"
+    ]
+  },
+  {
+    "turn": 19,
+    "action": "留在港内陪镜翅兽做短距共同转向训练，先观察它在侧风和疲乏时的反应，再决定是否组队进入北脊风井。",
+    "realm": {
+      "name": "一环驭手",
+      "rank": 2,
+      "benchmark": "心环能分担一次冲击，人与兽可在乱风中同时改变方向。",
+      "unlock": "可进入雷海外缘，独立护送或追猎。",
+      "progress": 0
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当镜翅兽或其他自愿持续对视的云兽在近距离短飞时，沈舟可稳定共享其实际看见的近处视野、方向感、托风、侧风与疲乏，并据此为港内近程飞行预留落点、调整小风帆靠近位置或举起可抓停的横环。限制：不能夺取控制或得知视野外信息；对象受惊、疼痛、闭眼或中断回望时共享立刻中断，镜翅兽仍不能远飞或载人。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "tether-wind-handling",
+        "name": "系风绳借风",
+        "description": "在有经验领航员指挥、且身处配有系风绳的小型风帆或固定风具上时，沈舟能根据帆角抖动和绳索回弹调整站位、稳住帆角，协助穿过第一段乱风。限制：不能独自领航，不能用于无固定索具的高空滑翔，遇到陌生风暴仍需判断。",
+        "source": "正文获得"
+      },
+      {
+        "id": "realm-1",
+        "name": "缚风学徒行动空间",
+        "description": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+        "source": "境界突破"
+      },
+      {
+        "id": "low-cloud-channel-survey",
+        "name": "低云槽测向",
+        "description": "在有固定系风桩、系风绳或小风帆，并能对照明确岩脊、云形等地标时，沈舟可结合缆绳回弹、帆角抖动与云层下压，判断低云槽的安全入槽角、近处暂泊位置及原路返航余地。限制：只能用于已实地观察过的近程风域；不能预测雷海外缘突发乱风，也不能替代领航员带船穿越北脊风井。",
+        "source": "正文获得"
+      },
+      {
+        "id": "one-ring-joint-turn",
+        "name": "一环共同转向",
+        "description": "当镜翅兽自愿持续回应、且双方处于可见的近程飞行范围时，沈舟可借心环与它同时调整方向，并分担一次侧风、落点偏移或短促碰撞带来的冲击。现在可用于港内近程飞行、乱风边缘的转向和协助小型云兽避险；限制：一次强冲击后心环需要恢复，不能强迫云兽回应，不能代替镜翅兽飞行或承受北脊风井持续乱风。",
+        "source": "正文获得"
+      },
+      {
+        "id": "realm-2",
+        "name": "一环驭手行动空间",
+        "description": "心环能分担一次冲击，人与兽可在乱风中同时改变方向。",
+        "source": "境界突破"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      },
+      {
+        "id": "wing-membrane-cloud-salt",
+        "name": "补羽膜云盐",
+        "description": "两片薄如鳞膜的专用云盐，其中一片已取少量调入温水供弥娅敷治镜翅兽翅根；其余仍须密封避潮，可再完成一次完整养护。",
+        "qty": 2
+      },
+      {
+        "id": "red-moss-silver-sand-sample",
+        "name": "带银砂红苔样本",
+        "description": "从红苔黑岛外缘温热石缝采下的红苔，根部混有细亮银砂；可供弥娅与港主公开比对镜翅兽伤口残留，油纸包裹，需避潮保存。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "信任"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "信任"
+      },
+      {
+        "id": "luo-cen",
+        "name": "洛岑",
+        "attitude": "中立"
+      },
+      {
+        "id": "a-he",
+        "name": "阿赫",
+        "attitude": "中立"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "mirrorwing-care-access",
+          "kind": "access",
+          "name": "镜翅兽照护准入",
+          "effect": "沈舟可在弥娅安排下进入木笼区协助照护镜翅兽，并继续争取它的自愿回应。",
+          "scope": "仅限镜翅兽养伤期间的木笼区；不得单独触碰伤口或带离幼兽。",
+          "status": "active",
+          "acquiredAtTurn": 7,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "north-drift-co-discoverer",
+          "kind": "identity",
+          "name": "北漂旧航路共同申报者",
+          "effect": "沈舟可凭共同申报者身份报名护送、取样或探路航次，并以协作者身份参与事先谈定的成果分成。",
+          "scope": "仅限已获港口承认的北漂旧航路及相关航次；不授予独自领航、进入北脊风井或无条件登船的权利。",
+          "status": "active",
+          "acquiredAtTurn": 18,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "north-drift-voyage-token",
+          "kind": "access",
+          "name": "北漂航次牌",
+          "effect": "沈舟可在幼兽港航路申报处以协作者身份提出或接受北漂航路相关的护送、取样和探路航次。",
+          "scope": "需由航次主持人与港口规则认可，具体报酬、风险与船位须逐次议定。",
+          "status": "active",
+          "acquiredAtTurn": 18,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "kunge-first-crossing",
+          "name": "昆戈的第一段跨缝同行",
+          "payoff": "若与昆戈实际穿过第一段乱风并完成协作，沈舟可获得可重复使用的跨岛行动本领或天空行动资源。",
+          "approach": "在迁徙钟停前与昆戈谈妥同行条件，登上小风帆并在航行中承担真实协作。",
+          "status": "fulfilled",
+          "offeredAtTurn": 5,
+          "materialized": true,
+          "result": "沈舟与昆戈实际穿过第一段乱风，掌握在有领航员和系风绳条件下协助稳帆的动作，并抵达系风礁。",
+          "settledAtTurn": 6
+        },
+        {
+          "id": "mirrorwing-wing-salt",
+          "name": "镜翅兽的补羽膜云盐",
+          "payoff": "若取得合用云盐并完成弥娅的后续治疗，镜翅兽可更快恢复飞行能力，沈舟可争取更完整的空中协作。",
+          "approach": "向弥娅查明云盐来源，并以交易、劳动、航路行动或其他实际方式取得；镜翅兽是否愿意继续协作仍取决于它自身意愿。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟拆回废旧吊架的一整组定风轮，以劳动换得两片补羽膜云盐；已可带回给弥娅进行镜翅兽的后续治疗。",
+          "settledAtTurn": 11
+        },
+        {
+          "id": "red-moss-black-isle-pursuit",
+          "name": "红苔黑岛的追航",
+          "payoff": "若实际追上红苔黑岛并安全登临，可查明镜翅兽伤口红苔的来源，并争取获得北漂航路的实物证据或先手。",
+          "approach": "趁低风窗口随昆戈的小风帆越过第一段断桥后继续追向东北；镜翅兽需留在弥娅处养伤，不能承担远航。",
+          "status": "fulfilled",
+          "offeredAtTurn": 13,
+          "materialized": true,
+          "result": "沈舟与昆戈实际追至红苔黑岛外缘，确认镜翅兽伤口红苔确来自该岛，并取得带银砂红苔样本及已核验的旧航路标记证据。",
+          "settledAtTurn": 14
+        },
+        {
+          "id": "fogroot-mother-isle-route",
+          "name": "雾根母岛的航线先手",
+          "payoff": "若实际穿过北脊风井并抵达雾根母岛，可查明红苔黑岛的崩脱原因，争取取得雷海外缘航路与兽群动向的先手。",
+          "approach": "先带雾根印记回港争取人手与船只，或在具备分担乱风冲击的稳定协作能力后，随昆戈由黑岛北侧低云槽进入北脊风井。",
+          "status": "fulfilled",
+          "offeredAtTurn": 15,
+          "materialized": true,
+          "result": "已取得从黑岛北侧断缆岩脊经低云槽抵达小礁台的实航路线先手；若要进入北脊风井，仍须取得能分担乱风冲击的驭手或结伴船队。",
+          "settledAtTurn": 18
+        }
+      ]
+    },
+    "changes": [
+      "掌握能力: 一环共同转向",
+      "境界提升为 一环驭手",
+      "掌握能力: 一环驭手行动空间",
+      "沈舟与镜翅兽在木笼区外训练吊架间完成侧风中的共同转向；镜翅兽主动回应，沈舟的心环实际分担了一次短促冲击。",
+      "弥娅检查确认镜翅兽此次训练未重新撕伤翅根；它仍只能进行港内近程飞行，不能远飞或载人。"
+    ]
+  },
+  {
+    "turn": 20,
+    "action": "去找昆戈商议结伴船队，说明我能和镜翅兽共同转向，先谈清报酬、风险和进入北脊风井外沿的撤退条件。",
+    "realm": {
+      "name": "一环驭手",
+      "rank": 2,
+      "benchmark": "心环能分担一次冲击，人与兽可在乱风中同时改变方向。",
+      "unlock": "可进入雷海外缘，独立护送或追猎。",
+      "progress": 0
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当镜翅兽或其他自愿持续对视的云兽在近距离短飞时，沈舟可稳定共享其实际看见的近处视野、方向感、托风、侧风与疲乏，并据此为港内近程飞行预留落点、调整小风帆靠近位置或举起可抓停的横环。限制：不能夺取控制或得知视野外信息；对象受惊、疼痛、闭眼或中断回望时共享立刻中断，镜翅兽仍不能远飞或载人。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      },
+      {
+        "id": "tether-wind-handling",
+        "name": "系风绳借风",
+        "description": "在有经验领航员指挥、且身处配有系风绳的小型风帆或固定风具上时，沈舟能根据帆角抖动和绳索回弹调整站位、稳住帆角，协助穿过第一段乱风。限制：不能独自领航，不能用于无固定索具的高空滑翔，遇到陌生风暴仍需判断。",
+        "source": "正文获得"
+      },
+      {
+        "id": "realm-1",
+        "name": "缚风学徒行动空间",
+        "description": "可与一只小型云兽共享一种感官，短途跨越岛缝。",
+        "source": "境界突破"
+      },
+      {
+        "id": "low-cloud-channel-survey",
+        "name": "低云槽测向",
+        "description": "在有固定系风桩、系风绳或小风帆，并能对照明确岩脊、云形等地标时，沈舟可结合缆绳回弹、帆角抖动与云层下压，判断低云槽的安全入槽角、近处暂泊位置及原路返航余地。限制：只能用于已实地观察过的近程风域；不能预测雷海外缘突发乱风，也不能替代领航员带船穿越北脊风井。",
+        "source": "正文获得"
+      },
+      {
+        "id": "one-ring-joint-turn",
+        "name": "一环共同转向",
+        "description": "当镜翅兽自愿持续回应、且双方处于可见的近程飞行范围时，沈舟可借心环与它同时调整方向，并分担一次侧风、落点偏移或短促碰撞带来的冲击。现在可用于港内近程飞行、乱风边缘的转向和协助小型云兽避险；限制：一次强冲击后心环需要恢复，不能强迫云兽回应，不能代替镜翅兽飞行或承受北脊风井持续乱风。",
+        "source": "正文获得"
+      },
+      {
+        "id": "realm-2",
+        "name": "一环驭手行动空间",
+        "description": "心环能分担一次冲击，人与兽可在乱风中同时改变方向。",
+        "source": "境界突破"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "剩下一块，多数幼年云兽愿意闻一闻",
+        "qty": 1
+      },
+      {
+        "id": "wing-membrane-cloud-salt",
+        "name": "补羽膜云盐",
+        "description": "两片薄如鳞膜的专用云盐，其中一片已取少量调入温水供弥娅敷治镜翅兽翅根；其余仍须密封避潮，可再完成一次完整养护。",
+        "qty": 2
+      },
+      {
+        "id": "red-moss-silver-sand-sample",
+        "name": "带银砂红苔样本",
+        "description": "从红苔黑岛外缘温热石缝采下的红苔，根部混有细亮银砂；可供弥娅与港主公开比对镜翅兽伤口残留，油纸包裹，需避潮保存。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "信任"
+      },
+      {
+        "id": "mirrorwing",
+        "name": "镜翅兽",
+        "attitude": "信任"
+      },
+      {
+        "id": "luo-cen",
+        "name": "洛岑",
+        "attitude": "中立"
+      },
+      {
+        "id": "a-he",
+        "name": "阿赫",
+        "attitude": "中立"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "mirrorwing-care-access",
+          "kind": "access",
+          "name": "镜翅兽照护准入",
+          "effect": "沈舟可在弥娅安排下进入木笼区协助照护镜翅兽，并继续争取它的自愿回应。",
+          "scope": "仅限镜翅兽养伤期间的木笼区；不得单独触碰伤口或带离幼兽。",
+          "status": "active",
+          "acquiredAtTurn": 7,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "north-drift-co-discoverer",
+          "kind": "identity",
+          "name": "北漂旧航路共同申报者",
+          "effect": "沈舟可凭共同申报者身份报名护送、取样或探路航次，并以协作者身份参与事先谈定的成果分成。",
+          "scope": "仅限已获港口承认的北漂旧航路及相关航次；不授予独自领航、进入北脊风井或无条件登船的权利。",
+          "status": "active",
+          "acquiredAtTurn": 18,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "north-drift-voyage-token",
+          "kind": "access",
+          "name": "北漂航次牌",
+          "effect": "沈舟可在幼兽港航路申报处以协作者身份提出或接受北漂航路相关的护送、取样和探路航次。",
+          "scope": "需由航次主持人与港口规则认可，具体报酬、风险与船位须逐次议定。",
+          "status": "active",
+          "acquiredAtTurn": 18,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-first-response",
+          "name": "镜翅兽的第一次回应",
+          "payoff": "若救治中获得它自愿回应，沈舟可争取与它建立共享感官并获得真正的天空行动机会。",
+          "approach": "在弥娅指导下让幼兽主动接受甜苔与上药，不能强迫或夺取控制。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "镜翅兽在救治中自愿回应，沈舟成功使用共天眼看见其记忆中的红苔岛方向；它尚未结契，不能带他飞行。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "kunge-first-crossing",
+          "name": "昆戈的第一段跨缝同行",
+          "payoff": "若与昆戈实际穿过第一段乱风并完成协作，沈舟可获得可重复使用的跨岛行动本领或天空行动资源。",
+          "approach": "在迁徙钟停前与昆戈谈妥同行条件，登上小风帆并在航行中承担真实协作。",
+          "status": "fulfilled",
+          "offeredAtTurn": 5,
+          "materialized": true,
+          "result": "沈舟与昆戈实际穿过第一段乱风，掌握在有领航员和系风绳条件下协助稳帆的动作，并抵达系风礁。",
+          "settledAtTurn": 6
+        },
+        {
+          "id": "mirrorwing-wing-salt",
+          "name": "镜翅兽的补羽膜云盐",
+          "payoff": "若取得合用云盐并完成弥娅的后续治疗，镜翅兽可更快恢复飞行能力，沈舟可争取更完整的空中协作。",
+          "approach": "向弥娅查明云盐来源，并以交易、劳动、航路行动或其他实际方式取得；镜翅兽是否愿意继续协作仍取决于它自身意愿。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟拆回废旧吊架的一整组定风轮，以劳动换得两片补羽膜云盐；已可带回给弥娅进行镜翅兽的后续治疗。",
+          "settledAtTurn": 11
+        },
+        {
+          "id": "red-moss-black-isle-pursuit",
+          "name": "红苔黑岛的追航",
+          "payoff": "若实际追上红苔黑岛并安全登临，可查明镜翅兽伤口红苔的来源，并争取获得北漂航路的实物证据或先手。",
+          "approach": "趁低风窗口随昆戈的小风帆越过第一段断桥后继续追向东北；镜翅兽需留在弥娅处养伤，不能承担远航。",
+          "status": "fulfilled",
+          "offeredAtTurn": 13,
+          "materialized": true,
+          "result": "沈舟与昆戈实际追至红苔黑岛外缘，确认镜翅兽伤口红苔确来自该岛，并取得带银砂红苔样本及已核验的旧航路标记证据。",
+          "settledAtTurn": 14
+        },
+        {
+          "id": "fogroot-mother-isle-route",
+          "name": "雾根母岛的航线先手",
+          "payoff": "若实际穿过北脊风井并抵达雾根母岛，可查明红苔黑岛的崩脱原因，争取取得雷海外缘航路与兽群动向的先手。",
+          "approach": "先带雾根印记回港争取人手与船只，或在具备分担乱风冲击的稳定协作能力后，随昆戈由黑岛北侧低云槽进入北脊风井。",
+          "status": "fulfilled",
+          "offeredAtTurn": 15,
+          "materialized": true,
+          "result": "已取得从黑岛北侧断缆岩脊经低云槽抵达小礁台的实航路线先手；若要进入北脊风井，仍须取得能分担乱风冲击的驭手或结伴船队。",
+          "settledAtTurn": 18
+        },
+        {
+          "id": "north-spine-outer-rim-convoy",
+          "name": "北脊风井外沿结伴航次",
+          "payoff": "可实际抵达北脊风井外沿，取得雾根母岛方向的可核验证据或外沿测风成果，并争取航次分成或十二风铢与署名记录。",
+          "approach": "以北漂航次牌寻得第二艘愿意结伴的小风帆，并与昆戈向洛岑取得临时出航簿；航次须遵守已谈定的撤退条件。",
+          "status": "open",
+          "offeredAtTurn": 20
+        }
+      ]
+    },
+    "changes": [
+      "可争取的成长: 北脊风井外沿结伴航次",
+      "昆戈提出北脊风井外沿结伴航次：需两艘小风帆同行，只到低云槽小礁台和风井外沿，不进入雷云深处。",
+      "昆戈说明撤退条件：任一船主帆受损、镜翅兽中断回应，或沈舟已分担第一记乱风冲击时，船队即按南斜角撤回红苔黑岛断缆岩脊。",
+      "昆戈提出报酬：若带回雾根母岛的可核验航标、兽群踪迹或通行记录，按事前签定份额分成；若只完成外沿测风，沈舟获十二风铢与署名记录。"
+    ]
+  }
+]

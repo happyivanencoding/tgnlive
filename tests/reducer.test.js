@@ -28,10 +28,15 @@ test("reducer rejects any unapplied delta", () => {
   }), { code: "REJECTED_DELTA" });
 });
 
-test("reducer prevents premature realm advance", () => {
-  assert.throws(() => reduceState(state(), {
-    narrative: "他试着冲关，却没有足够积累。",
+test("preparation alone never changes realm identity", () => {
+  // The old assertion enforced XP=100, which rejected already-mastered Canon.
+  // Semantic attainment is assessed in the generation contract and real-play
+  // review, not by pretending a numeric threshold verifies narrative truth.
+  const before = state(); before.realm.progress = 100;
+  const result = reduceState(before, {
+    narrative: "积累已经足够，但尚未完成本境的实际突破。",
     choices: [{ id: "a", label: "甲" }, { id: "b", label: "乙" }, { id: "c", label: "丙" }],
-    delta: { realmAdvance: "引气一层" },
-  }), { code: "REJECTED_DELTA" });
+    delta: {},
+  });
+  assert.equal(result.state.realm.rank, before.realm.rank);
 });

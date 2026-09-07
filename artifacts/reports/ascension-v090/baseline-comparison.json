@@ -1,0 +1,1708 @@
+{
+  "generatedAt": "2026-09-07T14:48:00.637Z",
+  "samples": [
+    {
+      "label": "ascension-baseline-hunt-20-v080-r2",
+      "transport": "api",
+      "requestedTurns": 20,
+      "completedTurns": 20,
+      "attempts": 24,
+      "failedAttempts": 4,
+      "status": "completed",
+      "fatal": null,
+      "models": {
+        "narrator": [
+          "gpt-5.6-terra/low"
+        ],
+        "planner": [
+          "gpt-5.6-sol/medium"
+        ],
+        "repair": [],
+        "world": []
+      },
+      "server": {
+        "firstNarrativeSse": {
+          "n": 20,
+          "medianMs": 6553,
+          "p95Ms": 30575,
+          "maxMs": 46651,
+          "meanMs": 10433.75
+        },
+        "completion": {
+          "n": 20,
+          "medianMs": 23923.5,
+          "p95Ms": 51462,
+          "maxMs": 59630,
+          "meanMs": 25990.95
+        },
+        "failureCompletion": {
+          "n": 4,
+          "medianMs": 20019,
+          "p95Ms": 123030,
+          "maxMs": 123030,
+          "meanMs": 45771
+        },
+        "allAttempts": {
+          "n": 24,
+          "medianMs": 23289,
+          "p95Ms": 59630,
+          "maxMs": 123030,
+          "meanMs": 29287.625
+        },
+        "repairCalls": 0,
+        "stages": {
+          "acp_narrator_effort_select": {
+            "n": 21,
+            "medianMs": 7,
+            "p95Ms": 9,
+            "maxMs": 15,
+            "meanMs": 7.238095238095238
+          },
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 24,
+            "medianMs": 681,
+            "p95Ms": 20015,
+            "maxMs": 20018,
+            "meanMs": 3100.3333333333335
+          },
+          "acp_narrator_mcp_initialize": {
+            "n": 24,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 263,
+            "meanMs": 10.958333333333334
+          },
+          "acp_narrator_model_select": {
+            "n": 21,
+            "medianMs": 7,
+            "p95Ms": 30,
+            "maxMs": 112,
+            "meanMs": 13.857142857142858
+          },
+          "acp_narrator_read_only_mode": {
+            "n": 21,
+            "medianMs": 10,
+            "p95Ms": 68,
+            "maxMs": 149,
+            "meanMs": 20.571428571428573
+          },
+          "acp_narrator_session_new": {
+            "n": 24,
+            "medianMs": 641.5,
+            "p95Ms": 20015,
+            "maxMs": 20016,
+            "meanMs": 3052.2916666666665
+          },
+          "acp_planner_effort_select": {
+            "n": 2,
+            "medianMs": 14.5,
+            "p95Ms": 23,
+            "maxMs": 23,
+            "meanMs": 14.5
+          },
+          "acp_planner_initialize_auth_session_model_setup": {
+            "n": 2,
+            "medianMs": 642.5,
+            "p95Ms": 670,
+            "maxMs": 670,
+            "meanMs": 642.5
+          },
+          "acp_planner_mcp_initialize": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "acp_planner_model_select": {
+            "n": 2,
+            "medianMs": 6.5,
+            "p95Ms": 7,
+            "maxMs": 7,
+            "meanMs": 6.5
+          },
+          "acp_planner_read_only_mode": {
+            "n": 2,
+            "medianMs": 31.5,
+            "p95Ms": 54,
+            "maxMs": 54,
+            "meanMs": 31.5
+          },
+          "acp_planner_session_new": {
+            "n": 2,
+            "medianMs": 590,
+            "p95Ms": 631,
+            "maxMs": 631,
+            "meanMs": 590
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 1
+          },
+          "context_assembly": {
+            "n": 24,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 0.16666666666666666
+          },
+          "http_input_validation": {
+            "n": 24,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 0.20833333333333334
+          },
+          "narrative_generation": {
+            "n": 24,
+            "medianMs": 22737.5,
+            "p95Ms": 26322,
+            "maxMs": 123026,
+            "meanMs": 26433.958333333332
+          },
+          "parse": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 0.2
+          },
+          "parse_validate": {
+            "n": 20,
+            "medianMs": 1,
+            "p95Ms": 2,
+            "maxMs": 4,
+            "meanMs": 0.95
+          },
+          "persistence": {
+            "n": 20,
+            "medianMs": 7,
+            "p95Ms": 56,
+            "maxMs": 91,
+            "meanMs": 18
+          },
+          "plan": {
+            "n": 2,
+            "medianMs": 34015.5,
+            "p95Ms": 42015,
+            "maxMs": 42015,
+            "meanMs": 34015.5
+          },
+          "planner_context_assembly": {
+            "n": 2,
+            "medianMs": 0.5,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 0.5
+          },
+          "reducer_validation": {
+            "n": 20,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 3,
+            "meanMs": 0.7
+          },
+          "request_validation": {
+            "n": 24,
+            "medianMs": 2,
+            "p95Ms": 3,
+            "maxMs": 10,
+            "meanMs": 2.375
+          }
+        },
+        "successStages": {
+          "acp_narrator_effort_select": {
+            "n": 20,
+            "medianMs": 7,
+            "p95Ms": 9,
+            "maxMs": 15,
+            "meanMs": 7.3
+          },
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 20,
+            "medianMs": 671,
+            "p95Ms": 812,
+            "maxMs": 942,
+            "meanMs": 682.8
+          },
+          "acp_narrator_mcp_initialize": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 263,
+            "meanMs": 13.15
+          },
+          "acp_narrator_model_select": {
+            "n": 20,
+            "medianMs": 7,
+            "p95Ms": 30,
+            "maxMs": 112,
+            "meanMs": 14.15
+          },
+          "acp_narrator_read_only_mode": {
+            "n": 20,
+            "medianMs": 10,
+            "p95Ms": 68,
+            "maxMs": 149,
+            "meanMs": 21.05
+          },
+          "acp_narrator_session_new": {
+            "n": 20,
+            "medianMs": 631,
+            "p95Ms": 743,
+            "maxMs": 748,
+            "meanMs": 626.6
+          },
+          "acp_planner_effort_select": {
+            "n": 2,
+            "medianMs": 14.5,
+            "p95Ms": 23,
+            "maxMs": 23,
+            "meanMs": 14.5
+          },
+          "acp_planner_initialize_auth_session_model_setup": {
+            "n": 2,
+            "medianMs": 642.5,
+            "p95Ms": 670,
+            "maxMs": 670,
+            "meanMs": 642.5
+          },
+          "acp_planner_mcp_initialize": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "acp_planner_model_select": {
+            "n": 2,
+            "medianMs": 6.5,
+            "p95Ms": 7,
+            "maxMs": 7,
+            "meanMs": 6.5
+          },
+          "acp_planner_read_only_mode": {
+            "n": 2,
+            "medianMs": 31.5,
+            "p95Ms": 54,
+            "maxMs": 54,
+            "meanMs": 31.5
+          },
+          "acp_planner_session_new": {
+            "n": 2,
+            "medianMs": 590,
+            "p95Ms": 631,
+            "maxMs": 631,
+            "meanMs": 590
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 1
+          },
+          "context_assembly": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 0.2
+          },
+          "http_input_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 0.25
+          },
+          "narrative_generation": {
+            "n": 20,
+            "medianMs": 23236.5,
+            "p95Ms": 26313,
+            "maxMs": 26322,
+            "meanMs": 22567.1
+          },
+          "parse": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 0.2
+          },
+          "parse_validate": {
+            "n": 20,
+            "medianMs": 1,
+            "p95Ms": 2,
+            "maxMs": 4,
+            "meanMs": 0.95
+          },
+          "persistence": {
+            "n": 20,
+            "medianMs": 7,
+            "p95Ms": 56,
+            "maxMs": 91,
+            "meanMs": 18
+          },
+          "plan": {
+            "n": 2,
+            "medianMs": 34015.5,
+            "p95Ms": 42015,
+            "maxMs": 42015,
+            "meanMs": 34015.5
+          },
+          "planner_context_assembly": {
+            "n": 2,
+            "medianMs": 0.5,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 0.5
+          },
+          "reducer_validation": {
+            "n": 20,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 3,
+            "meanMs": 0.7
+          },
+          "request_validation": {
+            "n": 20,
+            "medianMs": 2,
+            "p95Ms": 3,
+            "maxMs": 10,
+            "meanMs": 2.45
+          }
+        },
+        "failureStages": {
+          "acp_narrator_effort_select": {
+            "n": 1,
+            "medianMs": 6,
+            "p95Ms": 6,
+            "maxMs": 6,
+            "meanMs": 6
+          },
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 4,
+            "medianMs": 20014.5,
+            "p95Ms": 20018,
+            "maxMs": 20018,
+            "meanMs": 15188
+          },
+          "acp_narrator_mcp_initialize": {
+            "n": 4,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "acp_narrator_model_select": {
+            "n": 1,
+            "medianMs": 8,
+            "p95Ms": 8,
+            "maxMs": 8,
+            "meanMs": 8
+          },
+          "acp_narrator_read_only_mode": {
+            "n": 1,
+            "medianMs": 11,
+            "p95Ms": 11,
+            "maxMs": 11,
+            "meanMs": 11
+          },
+          "acp_narrator_session_new": {
+            "n": 4,
+            "medianMs": 20013.5,
+            "p95Ms": 20016,
+            "maxMs": 20016,
+            "meanMs": 15180.75
+          },
+          "acp_planner_effort_select": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_planner_initialize_auth_session_model_setup": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_planner_mcp_initialize": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_planner_model_select": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_planner_read_only_mode": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_planner_session_new": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "authored_opening_plan": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "context_assembly": {
+            "n": 4,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "http_input_validation": {
+            "n": 4,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "narrative_generation": {
+            "n": 4,
+            "medianMs": 20016.5,
+            "p95Ms": 123026,
+            "maxMs": 123026,
+            "meanMs": 45768.25
+          },
+          "parse": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "parse_validate": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "persistence": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "plan": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "planner_context_assembly": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "reducer_validation": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "request_validation": {
+            "n": 4,
+            "medianMs": 2,
+            "p95Ms": 2,
+            "maxMs": 2,
+            "meanMs": 2
+          }
+        },
+        "checkpoints": [
+          {
+            "requestId": "3e9d8dba-f032-4b00-a184-c13248e0f222",
+            "status": "complete",
+            "turn": 9,
+            "firstNarrativeSseMs": 30575,
+            "completeMs": 51462,
+            "planningMs": 26016,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          },
+          {
+            "requestId": "dcb40c65-87fe-491e-b4ff-a7f22b3c6ba1",
+            "status": "complete",
+            "turn": 17,
+            "firstNarrativeSseMs": 46651,
+            "completeMs": 59630,
+            "planningMs": 42015,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          }
+        ],
+        "contextCharacters": {
+          "n": 24,
+          "values": [
+            7686,
+            7299,
+            8250,
+            9406,
+            10226,
+            10722,
+            11133,
+            11502,
+            12175,
+            13116,
+            13836,
+            14417,
+            14627,
+            14617,
+            14403,
+            14365,
+            14365,
+            14365,
+            14365,
+            14365,
+            14454,
+            14673,
+            15357,
+            15813
+          ]
+        }
+      },
+      "failedPlayers": [],
+      "wallElapsedMs": 2164862,
+      "wallNote": "Includes outage/recovery and operator reading gaps; not the sum of app latency.",
+      "client": {
+        "firstByte": {
+          "n": 20,
+          "medianMs": 4.612050000003364,
+          "p95Ms": 5.9363999999986845,
+          "maxMs": 12.335199999972247,
+          "meanMs": 5.11397500000016
+        },
+        "firstNarrativeReceipt": {
+          "n": 20,
+          "medianMs": 6555.517800000001,
+          "p95Ms": 30577.574300000007,
+          "maxMs": 46653.32809999999,
+          "meanMs": 10436.598729999996
+        },
+        "completionReceipt": {
+          "n": 20,
+          "medianMs": 23942.02059999999,
+          "p95Ms": 51476.77980000002,
+          "maxMs": 59646.5188,
+          "meanMs": 26011.820934999996
+        },
+        "playerDecision": {
+          "n": 19,
+          "medianMs": 6307.1393999999855,
+          "p95Ms": 8724.768199999991,
+          "maxMs": 8724.768199999991,
+          "meanMs": 6580.006194736836
+        },
+        "browserFeedbackPaint": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null,
+          "meanMs": null
+        },
+        "browserNarrativePaint": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null,
+          "meanMs": null
+        },
+        "browserChoicesPaint": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null,
+          "meanMs": null
+        }
+      },
+      "limits": [
+        "Unpaired autonomous trajectories; no causal retention claim",
+        "n<20 p95 nearest-rank is max; not a stable population tail",
+        "Stage durations are inclusive; ACP setup is inside model stages",
+        "API/SSE receipt and browser rAF paint approximation use different origins",
+        "Player deliberation is excluded from app waits",
+        "No physical phone or WAN measurements; provider queue/cost unknown"
+      ],
+      "finalAccount": {
+        "realm": {
+          "name": "初醒一级",
+          "rank": 0,
+          "benchmark": "本命形态刚能显现，维持不满半刻。",
+          "unlock": "能使用形态最基础的身体或器物特性一次。",
+          "progress": 17
+        },
+        "coins": 16,
+        "capabilities": [
+          "双相本命",
+          "显现本命形态"
+        ],
+        "leverage": [
+          {
+            "id": "du-heng-evacuation-trust",
+            "kind": "relationship",
+            "name": "杜衡认可的撤离判断",
+            "effect": "沈舟可向杜衡直接报告后山封口与学院动向，并在村庄撤离安排中提出具体建议。",
+            "scope": "限青栎村本次撤离与后山危机期间；杜衡仍以村民安全为先。",
+            "sourceId": "du-heng",
+            "status": "active",
+            "acquiredAtTurn": 7,
+            "lastUsedAtTurn": 17,
+            "useCount": 1
+          },
+          {
+            "id": "bai-yan-night-net-ban",
+            "kind": "access",
+            "name": "白砚的今夜禁网命令",
+            "effect": "沈舟可要求白砚所属猎手在三日内停止捕捉雷角兽，并以封口安全为由制止其靠近石坡；山下守卫每日接收青栎村撤离与封口消息。",
+            "scope": "限未来三日及白砚所属猎手；三日后由白砚依封口稳定、撤离进度和学院回函重新裁定，不等于学院永久撤销捕兽命令。",
+            "sourceId": "bai-yan",
+            "status": "active",
+            "acquiredAtTurn": 9,
+            "lastUsedAtTurn": null,
+            "useCount": 0,
+            "updatedAtTurn": 20
+          },
+          {
+            "id": "bai-yan-archive-witness",
+            "kind": "access",
+            "name": "后山封口档案见证",
+            "effect": "沈舟可在明早持黑铜哨牌前往学院外档房，见证并核对后山封口完整巡检册中与铁钉、雷角兽群和封口变故有关的记录。",
+            "scope": "限本次后山封口调查及学院外档房；不得擅闯内库，完整档案是否调出由白砚负责。",
+            "sourceId": "bai-yan",
+            "status": "active",
+            "acquiredAtTurn": 10,
+            "lastUsedAtTurn": 11,
+            "useCount": 1
+          }
+        ],
+        "opportunities": [
+          {
+            "id": "thunder-horn-trust",
+            "name": "雷角兽的回应",
+            "payoff": "若能帮助雷角兽守住裂缝并获得其认可，沈舟可争取了解残缺兽印的用途，并获得接近第一枚印记的机会。",
+            "approach": "先处理裂缝外泄的威胁，且不得把雷角兽当作单纯猎物袭击。",
+            "status": "open",
+            "offeredAtTurn": 2
+          },
+          {
+            "id": "bai-yan-seal-verification",
+            "name": "让学院亲见封口危机",
+            "payoff": "若能在不扩大黑雾风险的前提下让白砚确认裂缝与引雷楔的作用，可争取学院今夜停止对雷角兽下网。",
+            "approach": "天黑前带白砚核验封口、引雷楔和黑雾，且不得借机隐瞒或破坏现场。",
+            "status": "fulfilled",
+            "offeredAtTurn": 8,
+            "materialized": true,
+            "result": "白砚现场确认封口危机与雷角兽导雷作用，已下达今夜禁网命令；沈舟获得可据此争取修补材料、查阅旧猎区记录与继续协作的学院见证。",
+            "settledAtTurn": 9
+          },
+          {
+            "id": "old-seal-records",
+            "name": "追查旧封口记录",
+            "payoff": "核对完整巡检册后，可获得能指向铁钉布设者、封口变故或后续修补方法的具体记录。",
+            "approach": "明早持黑铜哨牌到学院外档房，与白砚共同查阅调取的后山封口巡检册；不得擅闯内库或伪造记录。",
+            "status": "fulfilled",
+            "offeredAtTurn": 10,
+            "materialized": true,
+            "result": "沈舟与白砚核对完整巡检册，确认旧铁钉的封口用途、十七年前未完成修补的领队韩铎，以及可立即执行的外层修补方法；韩铎未完成修补的具体原因仍待查明。",
+            "settledAtTurn": 11
+          },
+          {
+            "id": "han-duo-repair-trail",
+            "name": "追查韩铎修补队",
+            "payoff": "若查明韩铎修补队的去向与山火记录，可进一步判断封口为何未完成复位，并获得处理旧铁钉或逆雷裂纹的线索。",
+            "approach": "由白砚依学院程序申请查阅韩铎修补队档案；沈舟可提供封口现状与巡检册抄录，不得擅闯学院内库。",
+            "status": "open",
+            "offeredAtTurn": 11
+          },
+          {
+            "id": "guided-lightning-support",
+            "name": "分担封口导雷",
+            "payoff": "若能在雷角兽认可下把部分导雷稳定分入外层坡石，沈舟可获得一套可重复使用的封口协作方法，并进一步争取雷角兽展示残缺兽印的用途。",
+            "approach": "保持安全距离，在阿迟观察黑雾变化时，依雷角兽留下的浅痕布置压石；不得触碰引雷楔、拔除旧铁钉或强迫雷角兽导雷。",
+            "status": "fulfilled",
+            "offeredAtTurn": 12,
+            "materialized": true,
+            "result": "沈舟依雷角兽浅痕布置压石，在阿迟观察下成功将一次导雷的部分冲击分入外层坡石；他获得可重复使用的封口协作方法，雷角兽也以踏定石槽回应认可。",
+            "settledAtTurn": 13
+          },
+          {
+            "id": "outer-slope-reinforcement",
+            "name": "外坡泄势加固",
+            "payoff": "若按已核定承力点完成加固并承受一次真实余雷，沈舟可让观察与承力轮换，减少亲自硬扛末段震势，并取得可供村民执行的封口协作办法。",
+            "approach": "从山路外侧取用石板、沙袋、木桩和长绳；不得封堵低洼碎石泄势通道、不得带铁器越过安全线、不得触碰引雷楔，施工须等待雷角兽导雷时序。",
+            "status": "fulfilled",
+            "offeredAtTurn": 18,
+            "materialized": true,
+            "result": "沈舟等人按已核定的硬土坡承力点完成外坡加固，并承受住一次真实余雷；村中现有可重复执行的观察、承力与撤离协作法，沈舟可轮换观察手，减少亲自硬扛末段震势。",
+            "settledAtTurn": 19
+          }
+        ]
+      },
+      "errorCount": 4
+    },
+    {
+      "label": "ascension-baseline-martial-20-v080-r2",
+      "transport": "api",
+      "requestedTurns": 20,
+      "completedTurns": 20,
+      "attempts": 20,
+      "failedAttempts": 0,
+      "status": "completed",
+      "fatal": null,
+      "models": {
+        "narrator": [
+          "gpt-5.6-terra/low"
+        ],
+        "planner": [
+          "gpt-5.6-sol/medium"
+        ],
+        "repair": [
+          "gpt-5.6-terra/low"
+        ],
+        "world": []
+      },
+      "server": {
+        "firstNarrativeSse": {
+          "n": 20,
+          "medianMs": 4980.5,
+          "p95Ms": 28903,
+          "maxMs": 32708,
+          "meanMs": 7579.75
+        },
+        "completion": {
+          "n": 20,
+          "medianMs": 20330.5,
+          "p95Ms": 45600,
+          "maxMs": 46649,
+          "meanMs": 22578.95
+        },
+        "failureCompletion": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null,
+          "meanMs": null
+        },
+        "allAttempts": {
+          "n": 20,
+          "medianMs": 20330.5,
+          "p95Ms": 45600,
+          "maxMs": 46649,
+          "meanMs": 22578.95
+        },
+        "repairCalls": 1,
+        "stages": {
+          "acp_narrator_effort_select": {
+            "n": 20,
+            "medianMs": 7,
+            "p95Ms": 20,
+            "maxMs": 30,
+            "meanMs": 8.55
+          },
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 20,
+            "medianMs": 643.5,
+            "p95Ms": 834,
+            "maxMs": 1072,
+            "meanMs": 671.75
+          },
+          "acp_narrator_mcp_initialize": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "acp_narrator_model_select": {
+            "n": 20,
+            "medianMs": 7,
+            "p95Ms": 34,
+            "maxMs": 46,
+            "meanMs": 12.3
+          },
+          "acp_narrator_read_only_mode": {
+            "n": 20,
+            "medianMs": 10,
+            "p95Ms": 45,
+            "maxMs": 46,
+            "meanMs": 13.2
+          },
+          "acp_narrator_session_new": {
+            "n": 20,
+            "medianMs": 598.5,
+            "p95Ms": 811,
+            "maxMs": 1049,
+            "meanMs": 637.35
+          },
+          "acp_planner_effort_select": {
+            "n": 2,
+            "medianMs": 6.5,
+            "p95Ms": 7,
+            "maxMs": 7,
+            "meanMs": 6.5
+          },
+          "acp_planner_initialize_auth_session_model_setup": {
+            "n": 2,
+            "medianMs": 625.5,
+            "p95Ms": 654,
+            "maxMs": 654,
+            "meanMs": 625.5
+          },
+          "acp_planner_mcp_initialize": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "acp_planner_model_select": {
+            "n": 2,
+            "medianMs": 7,
+            "p95Ms": 7,
+            "maxMs": 7,
+            "meanMs": 7
+          },
+          "acp_planner_read_only_mode": {
+            "n": 2,
+            "medianMs": 9,
+            "p95Ms": 9,
+            "maxMs": 9,
+            "meanMs": 9
+          },
+          "acp_planner_session_new": {
+            "n": 2,
+            "medianMs": 603,
+            "p95Ms": 632,
+            "maxMs": 632,
+            "meanMs": 603
+          },
+          "acp_repair_effort_select": {
+            "n": 1,
+            "medianMs": 41,
+            "p95Ms": 41,
+            "maxMs": 41,
+            "meanMs": 41
+          },
+          "acp_repair_initialize_auth_session_model_setup": {
+            "n": 1,
+            "medianMs": 727,
+            "p95Ms": 727,
+            "maxMs": 727,
+            "meanMs": 727
+          },
+          "acp_repair_mcp_initialize": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "acp_repair_model_select": {
+            "n": 1,
+            "medianMs": 65,
+            "p95Ms": 65,
+            "maxMs": 65,
+            "meanMs": 65
+          },
+          "acp_repair_read_only_mode": {
+            "n": 1,
+            "medianMs": 9,
+            "p95Ms": 9,
+            "maxMs": 9,
+            "meanMs": 9
+          },
+          "acp_repair_session_new": {
+            "n": 1,
+            "medianMs": 611,
+            "p95Ms": 611,
+            "maxMs": 611,
+            "meanMs": 611
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "context_assembly": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 0.15
+          },
+          "http_input_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "narrative_generation": {
+            "n": 20,
+            "medianMs": 19681.5,
+            "p95Ms": 23378,
+            "maxMs": 23631,
+            "meanMs": 19421
+          },
+          "parse": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 0.25
+          },
+          "parse_validate": {
+            "n": 20,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 0.6
+          },
+          "persistence": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 27,
+            "maxMs": 30,
+            "meanMs": 9.05
+          },
+          "plan": {
+            "n": 2,
+            "medianMs": 23198,
+            "p95Ms": 24186,
+            "maxMs": 24186,
+            "meanMs": 23198
+          },
+          "planner_context_assembly": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "reducer_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 0.35
+          },
+          "repair": {
+            "n": 1,
+            "medianMs": 16493,
+            "p95Ms": 16493,
+            "maxMs": 16493,
+            "meanMs": 16493
+          },
+          "repair_parse": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "repair_reducer_validation": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "request_validation": {
+            "n": 20,
+            "medianMs": 2,
+            "p95Ms": 3,
+            "maxMs": 25,
+            "meanMs": 3.2
+          }
+        },
+        "successStages": {
+          "acp_narrator_effort_select": {
+            "n": 20,
+            "medianMs": 7,
+            "p95Ms": 20,
+            "maxMs": 30,
+            "meanMs": 8.55
+          },
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 20,
+            "medianMs": 643.5,
+            "p95Ms": 834,
+            "maxMs": 1072,
+            "meanMs": 671.75
+          },
+          "acp_narrator_mcp_initialize": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "acp_narrator_model_select": {
+            "n": 20,
+            "medianMs": 7,
+            "p95Ms": 34,
+            "maxMs": 46,
+            "meanMs": 12.3
+          },
+          "acp_narrator_read_only_mode": {
+            "n": 20,
+            "medianMs": 10,
+            "p95Ms": 45,
+            "maxMs": 46,
+            "meanMs": 13.2
+          },
+          "acp_narrator_session_new": {
+            "n": 20,
+            "medianMs": 598.5,
+            "p95Ms": 811,
+            "maxMs": 1049,
+            "meanMs": 637.35
+          },
+          "acp_planner_effort_select": {
+            "n": 2,
+            "medianMs": 6.5,
+            "p95Ms": 7,
+            "maxMs": 7,
+            "meanMs": 6.5
+          },
+          "acp_planner_initialize_auth_session_model_setup": {
+            "n": 2,
+            "medianMs": 625.5,
+            "p95Ms": 654,
+            "maxMs": 654,
+            "meanMs": 625.5
+          },
+          "acp_planner_mcp_initialize": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "acp_planner_model_select": {
+            "n": 2,
+            "medianMs": 7,
+            "p95Ms": 7,
+            "maxMs": 7,
+            "meanMs": 7
+          },
+          "acp_planner_read_only_mode": {
+            "n": 2,
+            "medianMs": 9,
+            "p95Ms": 9,
+            "maxMs": 9,
+            "meanMs": 9
+          },
+          "acp_planner_session_new": {
+            "n": 2,
+            "medianMs": 603,
+            "p95Ms": 632,
+            "maxMs": 632,
+            "meanMs": 603
+          },
+          "acp_repair_effort_select": {
+            "n": 1,
+            "medianMs": 41,
+            "p95Ms": 41,
+            "maxMs": 41,
+            "meanMs": 41
+          },
+          "acp_repair_initialize_auth_session_model_setup": {
+            "n": 1,
+            "medianMs": 727,
+            "p95Ms": 727,
+            "maxMs": 727,
+            "meanMs": 727
+          },
+          "acp_repair_mcp_initialize": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "acp_repair_model_select": {
+            "n": 1,
+            "medianMs": 65,
+            "p95Ms": 65,
+            "maxMs": 65,
+            "meanMs": 65
+          },
+          "acp_repair_read_only_mode": {
+            "n": 1,
+            "medianMs": 9,
+            "p95Ms": 9,
+            "maxMs": 9,
+            "meanMs": 9
+          },
+          "acp_repair_session_new": {
+            "n": 1,
+            "medianMs": 611,
+            "p95Ms": 611,
+            "maxMs": 611,
+            "meanMs": 611
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "context_assembly": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 0.15
+          },
+          "http_input_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "narrative_generation": {
+            "n": 20,
+            "medianMs": 19681.5,
+            "p95Ms": 23378,
+            "maxMs": 23631,
+            "meanMs": 19421
+          },
+          "parse": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 0.25
+          },
+          "parse_validate": {
+            "n": 20,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 0.6
+          },
+          "persistence": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 27,
+            "maxMs": 30,
+            "meanMs": 9.05
+          },
+          "plan": {
+            "n": 2,
+            "medianMs": 23198,
+            "p95Ms": 24186,
+            "maxMs": 24186,
+            "meanMs": 23198
+          },
+          "planner_context_assembly": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "reducer_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1,
+            "meanMs": 0.35
+          },
+          "repair": {
+            "n": 1,
+            "medianMs": 16493,
+            "p95Ms": 16493,
+            "maxMs": 16493,
+            "meanMs": 16493
+          },
+          "repair_parse": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "repair_reducer_validation": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0,
+            "meanMs": 0
+          },
+          "request_validation": {
+            "n": 20,
+            "medianMs": 2,
+            "p95Ms": 3,
+            "maxMs": 25,
+            "meanMs": 3.2
+          }
+        },
+        "failureStages": {
+          "acp_narrator_effort_select": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_narrator_mcp_initialize": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_narrator_model_select": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_narrator_read_only_mode": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_narrator_session_new": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_planner_effort_select": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_planner_initialize_auth_session_model_setup": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_planner_mcp_initialize": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_planner_model_select": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_planner_read_only_mode": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_planner_session_new": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_repair_effort_select": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_repair_initialize_auth_session_model_setup": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_repair_mcp_initialize": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_repair_model_select": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_repair_read_only_mode": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "acp_repair_session_new": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "authored_opening_plan": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "context_assembly": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "http_input_validation": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "narrative_generation": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "parse": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "parse_validate": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "persistence": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "plan": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "planner_context_assembly": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "reducer_validation": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "repair": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "repair_parse": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "repair_reducer_validation": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          },
+          "request_validation": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null,
+            "meanMs": null
+          }
+        },
+        "checkpoints": [
+          {
+            "requestId": "900d83e6-88f7-44fc-acdd-9b72ce4b5e20",
+            "status": "complete",
+            "turn": 9,
+            "firstNarrativeSseMs": 32708,
+            "completeMs": 45600,
+            "planningMs": 22210,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          },
+          {
+            "requestId": "b1f7bd66-ebec-4ad4-b524-5740da8b36ee",
+            "status": "complete",
+            "turn": 17,
+            "firstNarrativeSseMs": 28903,
+            "completeMs": 46649,
+            "planningMs": 24186,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          }
+        ],
+        "contextCharacters": {
+          "n": 20,
+          "values": [
+            9516,
+            8962,
+            10185,
+            11305,
+            11987,
+            12468,
+            12493,
+            12704,
+            12505,
+            12564,
+            12459,
+            12932,
+            13540,
+            13366,
+            13370,
+            13565,
+            13627,
+            14075,
+            14909,
+            15305
+          ]
+        }
+      },
+      "failedPlayers": [
+        {
+          "run": "ascension-baseline-martial-20-v080-r1",
+          "file": "player-15.meta.json",
+          "error": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20019.8189,
+          "sessionId": null,
+          "model": "gpt-5.6-luna",
+          "effort": "low"
+        },
+        {
+          "run": "ascension-baseline-martial-20-v080",
+          "file": "player-15.meta.json",
+          "error": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20004.61869999999,
+          "sessionId": null,
+          "model": "gpt-5.6-luna",
+          "effort": "low"
+        }
+      ],
+      "wallElapsedMs": 2092111,
+      "wallNote": "Includes outage/recovery and operator reading gaps; not the sum of app latency.",
+      "client": {
+        "firstByte": {
+          "n": 20,
+          "medianMs": 4.502499999995052,
+          "p95Ms": 18.12349999998696,
+          "maxMs": 27.78190000000177,
+          "meanMs": 6.342264999998912
+        },
+        "firstNarrativeReceipt": {
+          "n": 20,
+          "medianMs": 4982.722750000015,
+          "p95Ms": 28905.975400000003,
+          "maxMs": 32710.57679999998,
+          "meanMs": 7583.33031
+        },
+        "completionReceipt": {
+          "n": 20,
+          "medianMs": 20349.979850000003,
+          "p95Ms": 45613.095899999986,
+          "maxMs": 46663.39400000001,
+          "meanMs": 22595.870374999995
+        },
+        "playerDecision": {
+          "n": 19,
+          "medianMs": 6414.562700000002,
+          "p95Ms": 8089.4216000000015,
+          "maxMs": 8089.4216000000015,
+          "meanMs": 6411.292615789469
+        },
+        "browserFeedbackPaint": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null,
+          "meanMs": null
+        },
+        "browserNarrativePaint": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null,
+          "meanMs": null
+        },
+        "browserChoicesPaint": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null,
+          "meanMs": null
+        }
+      },
+      "limits": [
+        "Unpaired autonomous trajectories; no causal retention claim",
+        "n<20 p95 nearest-rank is max; not a stable population tail",
+        "Stage durations are inclusive; ACP setup is inside model stages",
+        "API/SSE receipt and browser rAF paint approximation use different origins",
+        "Player deliberation is excluded from app waits",
+        "No physical phone or WAN measurements; provider queue/cost unknown"
+      ],
+      "finalAccount": {
+        "realm": {
+          "name": "锻身段",
+          "rank": 0,
+          "benchmark": "身体略强于普通成年人，能完成基础负重，但连续爆发会迅速力竭。",
+          "unlock": "可使用公共训练器械、购买基础补给，并申请一次城内公开测试。",
+          "progress": 27
+        },
+        "coins": 102,
+        "capabilities": [
+          "净炉身",
+          "标准锻身操",
+          "辨认荒带标识"
+        ],
+        "leverage": [
+          {
+            "id": "south-yard-equipment-discount",
+            "kind": "access",
+            "name": "南场基础器械九成价使用权",
+            "effect": "可凭本次体测记录以九成价使用南场训练厅的基础器械。",
+            "scope": "仅限折钢城南场基础器械，持续有效，训练费用仍需自行支付。",
+            "sourceId": "hou-ling",
+            "status": "active",
+            "acquiredAtTurn": 2,
+            "lastUsedAtTurn": null,
+            "useCount": 0
+          },
+          {
+            "id": "ren-li-common-heat-material-buyer",
+            "kind": "enterprise",
+            "name": "任砺的常见热材验货收购渠道",
+            "effect": "可将从低危荒带带回、根皮完好且已刮净裂泥的常见热材交给任砺验货并按品质出售。",
+            "scope": "限任砺实际收购的常见热材；价格随品质与市况当面议定，不保证收购所有材料。",
+            "sourceId": "ren-li",
+            "status": "active",
+            "acquiredAtTurn": 7,
+            "lastUsedAtTurn": 16,
+            "useCount": 2
+          },
+          {
+            "id": "old-forge-drying-rack-access",
+            "kind": "access",
+            "name": "旧冶坊后巷阴干架使用权",
+            "effect": "可在后天午后前将一束火绒藤放在最里面两层冷却架上阴干。",
+            "scope": "仅限一束火绒藤；须每日扫净架面、自行看管，遇雨立即收走，鲁阿伯不负责保管。",
+            "sourceId": "lu-foreman",
+            "status": "active",
+            "acquiredAtTurn": 19,
+            "lastUsedAtTurn": 20,
+            "useCount": 1
+          }
+        ],
+        "opportunities": [
+          {
+            "id": "intact-heat-shell-root-value",
+            "name": "完整热壳根的处置",
+            "payoff": "可出售为现金，或经正确处理后转为基础训练补给。",
+            "approach": "将现有完整热壳根卖给任砺，或自行寻找合适的净化与烹制条件。",
+            "status": "fulfilled",
+            "offeredAtTurn": 3,
+            "materialized": true,
+            "result": "完整热壳根已被处理为两份基础药餐；沈舟留一份自用，另一份委托任砺按十八武券售出，尚未成交。",
+            "settledAtTurn": 5
+          },
+          {
+            "id": "dried-fire-floss-vine-order",
+            "name": "后天前的一束合格火绒藤",
+            "payoff": "交出藤芯完整、晒透未返潮的一束火绒藤，可由任砺按十武券验货收购。",
+            "approach": "先取得可用的背风阴干条件，再在低危荒带采到完整火绒藤并于后天午前交给任砺验货。",
+            "status": "open",
+            "offeredAtTurn": 18
+          }
+        ]
+      },
+      "errorCount": 1
+    }
+  ]
+}

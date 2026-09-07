@@ -1,0 +1,138 @@
+{
+  "realm": {
+    "name": "成印十级",
+    "rank": 1,
+    "benchmark": "形态可稳定战斗，并承载第一枚印记。",
+    "unlock": "获得第一项真正印技，进入正式猎区与学院考核。",
+    "progress": 4
+  },
+  "coins": 16,
+  "capabilities": [
+    {
+      "id": "power-dual-aspect",
+      "name": "双相本命",
+      "description": "本命形态已显出两种固定模样：铁背獾影可在十余息内稳住下盘并硬扛一次同级冲撞；乌棱短锥可刺入木缝、石隙并用于撬动或攀附。两形态不能同时维持，切换会中断当前动作；现阶段都无法持续战斗或破开厚甲。",
+      "source": "开局天赋"
+    },
+    {
+      "id": "manifest-form",
+      "name": "显现本命形态",
+      "description": "能让所选形态显现十余息，并使用其最基础特性。",
+      "source": "初醒一级"
+    },
+    {
+      "id": "thunderhorn-first-mark",
+      "name": "雷角一印",
+      "description": "切换为铁背獾影时，可在十余息内将雷意压入一次短距离冲撞或顶撑，使同级冲力更难撼动下盘；顶撑结束后可迅速切换乌棱短锥，把残余雷意导入已接触的石缝、木缝或金属接点，辅助震松卡死处并为同伴打开通路。两种用法不能同时维持，切换会中断当前动作，不能隔空放雷、连续强攻或击穿厚甲。",
+      "source": "正文获得"
+    },
+    {
+      "id": "realm-1",
+      "name": "成印十级行动空间",
+      "description": "形态可稳定战斗，并承载第一枚印记。",
+      "source": "境界突破"
+    }
+  ],
+  "inventory": [
+    {
+      "id": "training-brace",
+      "name": "训练护臂",
+      "description": "能承受一次初醒形态失控的冲击",
+      "qty": 1
+    },
+    {
+      "id": "salted-meat",
+      "name": "盐肉干",
+      "description": "进山一日口粮，也可用来引开普通野兽",
+      "qty": 2
+    },
+    {
+      "id": "spent-thunder-slate",
+      "name": "熄雷石片",
+      "description": "从焦黑古木裂缝中撬出的灰白石片，边缘留有熄灭的雷痕；可作为辨认地下雷意来源的实物线索，不能充当印核或直接施展力量。",
+      "qty": 1
+    }
+  ],
+  "relationships": [
+    {
+      "id": "du-heng",
+      "name": "杜衡",
+      "role": "青栎村长",
+      "attitude": "陌生"
+    },
+    {
+      "id": "a-chi",
+      "name": "阿迟",
+      "role": "年轻猎人",
+      "attitude": "亲近"
+    },
+    {
+      "id": "adult-thunderhorn",
+      "name": "成年雷角兽",
+      "attitude": "信任"
+    },
+    {
+      "id": "stone-mane-ram",
+      "name": "岩鬃羊",
+      "attitude": "好奇"
+    }
+  ],
+  "progression": {
+    "version": 1,
+    "leverage": [],
+    "opportunities": [
+      {
+        "id": "thunder-spring-approach",
+        "name": "接近石坡下的雷意印泉",
+        "payoff": "查明地下异动，并有机会在雷角兽的意愿下接触与第一枚印记有关的线索。",
+        "approach": "从旧排水道进入，或先找到协助雷角兽压住裂缝的办法。",
+        "status": "answered",
+        "offeredAtTurn": 3,
+        "materialized": false,
+        "result": "已查明地下异动：雷意印泉附近困着一头被锁兽钩束缚的雷角兽幼兽，成年雷角兽正在压制它引发的裂缝。",
+        "settledAtTurn": 6
+      },
+      {
+        "id": "rescue-thunderhorn-calf",
+        "name": "协助雷角兽母子脱险",
+        "payoff": "若能安全解除锁兽钩并稳住裂缝，可争取成年雷角兽的信任与一枚自愿印记的机会。",
+        "approach": "在成年雷角兽压住主裂缝时，从旧排水道接近幼兽；拆钩时须避免让幼兽挣动或使主裂缝失控。",
+        "status": "fulfilled",
+        "offeredAtTurn": 6,
+        "materialized": true,
+        "result": "沈舟与阿迟已安全拆除锁兽钩，雷角兽幼兽脱险；成年雷角兽当场自愿交出雷角印核，沈舟现在可自行决定是否承接。",
+        "settledAtTurn": 9
+      },
+      {
+        "id": "accept-voluntary-thunderhorn-mark",
+        "name": "承接自愿雷角印记",
+        "payoff": "若双相本命能够稳定承载，可获得第一项雷角印技并迈入成印十级。",
+        "approach": "在成年雷角兽面前承接它已交出的银白雷角印核，以双相本命完成稳定融合。",
+        "status": "fulfilled",
+        "offeredAtTurn": 9,
+        "materialized": true,
+        "result": "沈舟已在成年雷角兽面前稳定承接自愿雷角印核，获得雷角一印并迈入成印十级。",
+        "settledAtTurn": 10
+      },
+      {
+        "id": "escort-thunderhorn-deepwood",
+        "name": "护送雷角兽母子迁入深山",
+        "payoff": "摆脱浅泉旁短暂藏身处，让幼兽在可活动的山林中休养，并继续保有与成年雷角兽合作的机会。",
+        "approach": "趁猎手仍集中在石坡，跟随成年雷角兽指向的西北碎岩脊进入深山；途经无遮掩山脊，需自行选择绕避或面对追踪。",
+        "status": "answered",
+        "offeredAtTurn": 13,
+        "materialized": false,
+        "result": "沈舟与阿迟已护送雷角兽母子越过西北碎岩脊，抵达有细泉、倒木遮掩和干燥地面的深山凹地；幼兽获得可继续休养的落脚处。",
+        "settledAtTurn": 14
+      },
+      {
+        "id": "stone-mane-second-mark",
+        "name": "争取岩鬃羊的相合印记",
+        "payoff": "若获得其自愿印记，沈舟可尝试形成以稳住地形与近身顶撑为核心的第二项印技，迈向双印二十级。",
+        "approach": "带阿迟回到北缘岩坎，先观察岩鬃羊守地与进食规律，以不逼近、不破坏其领地的方式争取交流；它尚未表示同意。",
+        "status": "open",
+        "offeredAtTurn": 19
+      }
+    ]
+  }
+}

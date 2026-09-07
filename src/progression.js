@@ -107,12 +107,18 @@ export function growthHorizon(world, state, plan) {
     uniqueAdvantage: state.power?.growth,
     worldGrammar: world.growthGrammar || null,
     currentStage: plan?.growth || null,
+    // Deterministic projection of existing authority, not a second power database.
+    powerIdentity: {
+      current: world.powerSystem.realms.find(realm => realm.rank === state.realm.rank),
+      next: world.powerSystem.realms.find(realm => realm.rank === state.realm.rank + 1) || null,
+      preparation: state.realm.progress,
+    },
   };
 }
 
 export function progressionContractText() {
   return `长期成长记录（只写本轮正文实际发生的变化，不按回合送奖）：
-技能仍用capabilityOps，随身物仍用inventoryOps，态度仍用relationshipChanges。已获得的可复用帮助、准入、身份、经营渠道或产业，才用leverageOps；潜在邀请/友善本身不是权利。
+技能仍用capabilityOps，随身物仍用inventoryOps，态度仍用relationshipChanges。地图、普通路线、已掌握的操作边界记facts或capability，不逐段变成leverage。已获得的可复用人物帮助、组织准入、身份、独占渠道、产业或产权才用leverageOps；潜在邀请/友善本身不是权利。relationship要写这个人以后会实际帮什么，access要有谁授予什么资格；enterprise是自己可持续经营的资源来源，不是有人愿意收一件货。旧路线记录无需删除或迁移；实际取得更完整的同一渠道时更新旧项，不拆成许多小入口。
 leverageOps至多3项：{op:"add",id,kind:"relationship|access|identity|enterprise|property",name,effect:"以后具体能做什么",scope:"地点/次数/互惠条件等边界",sourceId:"relationship须给已知NPC的id"}；实质改变{op:"update",id,effect,scope}；后来实际利用{op:"use",id}；确实失去{op:"revoke",id}。不会自动生钱、升级或让NPC无条件服务。
 opportunityOps至多3项：向角色明确展示能争取的能力/财富/服务等收益才{op:"open",id,name,payoff,approach:"当前已知取得条件"}，不把每条待查线索当成长机会；同时至多6项。结果已发生后{op:"fulfill",id,result}，在对应状态字段记真实收获；知识性解答会记为answered而非物质成长，不得为了满足格式凭空增加奖励。放弃或机会消失{op:"close",id,result}。条件既已达成不要又新增一道验证；世界事件确实改变条件就关闭旧机会，不重开同id。promisesAdd/Resolve只记角色真正许下的诺言。`;
 }

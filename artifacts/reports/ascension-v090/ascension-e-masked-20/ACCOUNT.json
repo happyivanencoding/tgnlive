@@ -1,0 +1,198 @@
+{
+  "realm": {
+    "name": "并式师",
+    "rank": 2,
+    "benchmark": "两个相容刻式可以前后衔接，身体能承受一次配方偏差。",
+    "unlock": "可改良低阶配方、制作复合成品，并进入受控材料市与跨港货舱。",
+    "progress": 0
+  },
+  "coins": 70,
+  "capabilities": [
+    {
+      "id": "power-fault-taster",
+      "name": "错味校准",
+      "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤，识出偏差不等于越阶改方成功。",
+      "source": "开局天赋"
+    },
+    {
+      "id": "basic-batch-brewing",
+      "name": "小批配墨",
+      "description": "能按完整公开方操作蒸瓶并判断常见的温度与沉淀变化；陌生方仍需逐步验证。",
+      "source": "公共工坊训练"
+    },
+    {
+      "id": "mist-breath-form",
+      "name": "雾息式",
+      "description": "能以入身潮墨把呼吸热气与衣声收进贴身薄雾，在紧张移动中稳定维持数分钟；现可与折潮步前后衔接，在急转或跨狭口时让薄雾顺真实落脚方向偏开半步。配合衣领内侧的定雾扣后，可撑过逆风快走、急转与短促跨越。限制：不能完全隐形，近距离目视仍会暴露；持续强风或全力奔跑会加重胸闷，薄雾仍可能漏散。",
+      "source": "正文获得"
+    },
+    {
+      "id": "realm-1",
+      "name": "一式匠行动空间",
+      "description": "能稳定承载一个刻式，在紧张行动中连续使用数分钟。",
+      "source": "境界突破"
+    },
+    {
+      "id": "mist-stabilizer-crafting",
+      "name": "定雾扣刻制",
+      "description": "能依完整抄方以雾骨盐、回潮苔胶和合用黄铜扣刻制定雾扣，并识别压盐纹等常见偏差。现在可为自己或他人制作这一低阶器物支式；仍需齐全材料与公共火台，不能据此改良陌生配方或制作第二道入身刻式。",
+      "source": "本轮刻制"
+    },
+    {
+      "id": "folding-tide-step",
+      "name": "折潮步",
+      "description": "能在雾息式已起效时，于急转或跨过狭口的真实落脚瞬间，将贴身薄雾顺落脚方向牵开半步，使普通追踪者更难依据新近声息判断去向。限制：必须先稳住脚步与呼吸；不能制造假身或改变真实足迹，持续强风、全力长跑和胸闷会使衔接崩散。",
+      "source": "东栈风桥受控入身与实走练习"
+    },
+    {
+      "id": "realm-2",
+      "name": "并式师行动空间",
+      "description": "两个相容刻式可以前后衔接，身体能承受一次配方偏差。",
+      "source": "境界突破"
+    }
+  ],
+  "inventory": [
+    {
+      "id": "folding-retort",
+      "name": "便携蒸瓶",
+      "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+      "qty": 1
+    },
+    {
+      "id": "cool-mist-recipe",
+      "name": "两用公开入门方",
+      "description": "合法完整抄本：凉雾墨用于密封包三日保鲜；雾息入身墨含安全入身与练习步骤，可收住呼吸热气和衣声。两者共用一份原料，只能制成其中一批；照方成墨不等于身体已经掌握刻式",
+      "qty": 1
+    },
+    {
+      "id": "mist-stabilizer-recipe",
+      "name": "定雾扣完整抄方",
+      "description": "防潮纸套中的低阶器物支式完整步骤。需雾骨盐、回潮苔胶和合用黄铜扣；制成后刻在衣领内侧，可在逆风、急转或短促发力时帮助雾息式维持片刻，不能替代第二道入身刻式或消除胸闷。",
+      "qty": 1
+    },
+    {
+      "id": "mist-stabilizer-clasp",
+      "name": "定雾扣",
+      "description": "已刻制并缝在衣领内侧的低阶器物支式。雾息式遇逆风、急转或短促发力时，可帮助贴身薄雾的边缘多维持片刻；不能替代第二道入身刻式，不能消除胸闷，也挡不住近距离目视。",
+      "qty": 1
+    },
+    {
+      "id": "folding-tide-step-recipe",
+      "name": "折潮步入身方",
+      "description": "与雾息式相容的第二道入身刻式完整抄方。需潮筋脂、碎鸣贝粉与压脚砂，于有风折阶完成受控入身和实际移动练习；可在急转或跨过狭口时牵引贴身薄雾偏向真实落脚方向半步。",
+      "qty": 1
+    }
+  ],
+  "relationships": [
+    {
+      "id": "luo-sha",
+      "name": "洛纱",
+      "role": "配方掮客",
+      "attitude": "友善"
+    },
+    {
+      "id": "ou-lan",
+      "name": "欧岚",
+      "role": "邮船记账员",
+      "attitude": "信任"
+    },
+    {
+      "id": "nan-di-ship-doctor",
+      "name": "岑医",
+      "role": "南堤船医",
+      "attitude": "好奇"
+    }
+  ],
+  "progression": {
+    "version": 1,
+    "leverage": [
+      {
+        "id": "gray-sail-subaccount-access",
+        "kind": "access",
+        "name": "灰帆账会副账引介",
+        "effect": "可凭引介与合法委托进入鸥背港灰帆账会的受控货舱区，接触该区认可的货主、配方与器物交易。",
+        "scope": "仅限鸥背港灰帆账会受控货舱区；入内仍须遵守账会登记、委托与货舱规则，不等于隐市通行或任意取货。",
+        "status": "active",
+        "acquiredAtTurn": 20,
+        "lastUsedAtTurn": null,
+        "useCount": 0
+      }
+    ],
+    "opportunities": [
+      {
+        "id": "ou-lan-night-passage",
+        "name": "欧岚的夜航交易",
+        "payoff": "可取得夜航仓位与八潮券，或取得十八潮券的递送报酬",
+        "approach": "闭市钟前选择支付十二潮券登船，或承接巡守、药箱递送中的一项明确工作；未选择前不发生交易",
+        "status": "fulfilled",
+        "offeredAtTurn": 3,
+        "materialized": true,
+        "result": "完成夜航巡守，取得本次夜航仓位与八潮券。",
+        "settledAtTurn": 4
+      },
+      {
+        "id": "lanpeng-tide-moss-watch",
+        "name": "潮苔苗夜间巡记",
+        "payoff": "完成四次巡记后取得十四潮券，并留下可由药行账房核验的一次港口履约记录。",
+        "approach": "傍晚前向欧岚签字领铃；入夜后沿三段公开栈桥巡守潮苔苗密封匣，异常时敲指定铜铃并守住通道。",
+        "status": "fulfilled",
+        "offeredAtTurn": 5,
+        "materialized": true,
+        "result": "完成四次夜间巡记，三只潮苔苗密封匣安全入库；取得十四潮券与一次可由药行账房核验的港口履约记录。",
+        "settledAtTurn": 6
+      },
+      {
+        "id": "lanpeng-cold-courier",
+        "name": "北栈药行冷程递运",
+        "payoff": "完成单次低温药材短驳可得二十二或四十潮券；连续六趟无货损可取得药行固定递运名额与高价低温货优先权。",
+        "approach": "在半刻钟内核对契纸后报名；首趟预交两潮券封蜡与铃记耗材，按时验收即退回。",
+        "status": "open",
+        "offeredAtTurn": 7
+      },
+      {
+        "id": "mist-breath-stabilizer",
+        "name": "定雾扣支式",
+        "payoff": "制成后可在逆风、急转或短促发力时帮助雾息式维持片刻，为日后练习刻式衔接打下实际基础。",
+        "approach": "向洛纱购入齐料与抄方，或购买抄方后自行备齐雾骨盐、回潮苔胶与黄铜扣，再按步骤刻制并进行实际使用。",
+        "status": "fulfilled",
+        "offeredAtTurn": 11,
+        "materialized": true,
+        "result": "定雾扣已刻入衣领并在外防潮堤逆风实测成功，可在逆风、急转或短促发力时帮助雾息式维持片刻。",
+        "settledAtTurn": 14
+      },
+      {
+        "id": "folding-tide-step",
+        "name": "折潮步入身刻式",
+        "payoff": "取得并练成后，可在急转或跨过狭口时牵引贴身薄雾偏向落脚方向，为与雾息式衔接的第二道入身刻式打下实际基础。",
+        "approach": "向洛纱支付十五潮券购买完整抄方，再以二十一潮券备齐潮筋脂、碎鸣贝粉等材料，于有风折阶完成受控入身与实际移动练习。",
+        "status": "fulfilled",
+        "offeredAtTurn": 15,
+        "materialized": true,
+        "result": "折潮步已完成受控入身与东栈风桥实走，沈舟稳定掌握与雾息式衔接的第二道入身刻式，并晋升为并式师。",
+        "settledAtTurn": 17
+      },
+      {
+        "id": "ship-doctor-stabilizer-commission",
+        "name": "南堤船医的定雾扣委托",
+        "payoff": "完成两枚定雾扣并通过风廊试用，可得十八潮券。",
+        "approach": "接受洛纱牵线后，使用船医提供的材料在半日内完成两枚定雾扣，并让船医的雾息学徒实际通过风廊试用。",
+        "status": "fulfilled",
+        "offeredAtTurn": 15,
+        "materialized": true,
+        "result": "沈舟完成两枚定雾扣刻制，船医的两名雾息学徒均通过风廊试用；船医收下成品并支付十八潮券。",
+        "settledAtTurn": 18
+      },
+      {
+        "id": "ou-lan-gray-sail-run",
+        "name": "盐隼号潮图蜡版递送",
+        "payoff": "完成后可得三十二潮券，并由欧岚向鸥背港灰帆账会写出副账引介，争取受控货舱区的身份机会。",
+        "approach": "三日后以临时副账身份登上盐隼号，在两次靠泊间将潮图蜡版交给鸥背港指定账房；交接时刻与货匣安全由本人负责。",
+        "status": "fulfilled",
+        "offeredAtTurn": 19,
+        "materialized": true,
+        "result": "沈舟以临时副账身份完成潮图蜡版递送，取得三十二潮券；欧岚的引介已获灰帆账会账房收录，可据此进入受控货舱区。",
+        "settledAtTurn": 20
+      }
+    ]
+  }
+}
