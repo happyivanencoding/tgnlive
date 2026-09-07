@@ -1,0 +1,274 @@
+<resources>
+  <string name="meta_title" formatted="false">"TGN Live · Enter the Story"</string>
+  <string name="meta_description" formatted="false">"TGN Live: playable progression worlds that remember every choice."</string>
+  <string name="skip" formatted="false">"Skip to main content"</string>
+  <string name="brand_home" formatted="false">"Return to Discover"</string>
+  <string name="brand_name" formatted="false">"TGN Live"</string>
+  <string name="theme_toggle" formatted="false">"Toggle light or dark theme"</string>
+  <string name="language_label" formatted="false">"Interface language"</string>
+  <string name="connection_message" formatted="false">"Connection lost or login expired. Saved content is safe."</string>
+  <string name="connection_retry" formatted="false">"Reconnect"</string>
+  <string name="nav_aria" formatted="false">"Main areas"</string>
+  <string name="nav_discover" formatted="false">"Discover"</string>
+  <string name="nav_create" formatted="false">"Create"</string>
+  <string name="nav_shelf" formatted="false">"Library"</string>
+  <string name="continue_aria" formatted="false">"Continue recent story"</string>
+  <string name="discover_kicker" formatted="false">"PLAYABLE PROGRESSION FICTION"</string>
+  <string name="discover_title" formatted="false">"The world will not wait,\nbut it will remember."</string>
+  <string name="discover_lede" formatted="false">"Choose a world and earn your first power from a humble beginning."</string>
+  <string name="discover_new" formatted="false">"Begin a new path"</string>
+  <string name="create_calloutu4bicker" formatted="false">"CREATE YOUR WORLD"</string>
+  <string name="create_calloutu54itle" formatted="false">"One idea. Your world."</string>
+  <string name="create_calloutu54ext" formatted="false">"Describe an era, a crisis, or a rule of power. The forge builds the rest."</string>
+  <string name="create_start" formatted="false">"Start creating"</string>
+  <string name="worlds_kicker" formatted="false">"FEATURED WORLDS"</string>
+  <string name="worlds_title" formatted="false">"Discover worlds"</string>
+  <string name="worlds_note" formatted="false">"Choose a world, then choose your talent"</string>
+  <string name="worlds_filtersu41ria" formatted="false">"Filter world types"</string>
+  <string name="worlds_loading" formatted="false">"Opening the worlds…"</string>
+  <string name="create_back" formatted="false">"Back to Discover"</string>
+  <string name="create_kicker" formatted="false">"WORLD FORGE"</string>
+  <string name="create_title" formatted="false">"What world do you want to enter?"</string>
+  <string name="create_lede" formatted="false">"One sentence is enough. Describe an era, an opening crisis, the cost of power, or simply an idea."</string>
+  <string name="create_promptu4cabel" formatted="false">"World idea"</string>
+  <string name="create_promptu50laceholder" formatted="false">"Example: A beast-taming dynasty on floating islands, where I grow alongside a cub everyone says can never evolve."</string>
+  <string name="create_examplesu41ria" formatted="false">"Prompt examples"</string>
+  <string name="prompt_beasts_label" formatted="false">"Sky-island beasts"</string>
+  <string name="prompt_beasts" formatted="false">"A beast-taming dynasty on floating islands, where I grow alongside a cub everyone says can never evolve."</string>
+  <string name="prompt_stars_label" formatted="false">"Star-sea cultivation"</string>
+  <string name="prompt_stars" formatted="false">"The star sea is the immortal realm. Ancient orders cross the heavens in fleets, and I awaken inside a sleeping star core."</string>
+  <string name="prompt_ninja_label" formatted="false">"Ninja-inspired"</string>
+  <string name="prompt_ninja" formatted="false">"Unofficial fan-inspired setting: a familiar hot-blooded ninja-style world, with entirely original characters, factions, and story."</string>
+  <string name="create_generate" formatted="false">"Forge world"</string>
+  <string name="create_building" formatted="false">"Building"</string>
+  <string name="create_connecting" formatted="false">"Connecting to the world writer"</string>
+  <string name="create_elapsed" formatted="false">"Elapsed {time}"</string>
+  <string name="create_stop" formatted="false">"Stop generation"</string>
+  <string name="create_failedu54itle" formatted="false">"The world was not completed"</string>
+  <string name="common_retry" formatted="false">"Retry"</string>
+  <string name="create_edit" formatted="false">"Edit description"</string>
+  <string name="shelf_kicker" formatted="false">"YOUR STORIES"</string>
+  <string name="shelf_title" formatted="false">"My library"</string>
+  <string name="shelf_discover" formatted="false">"Discover a new world"</string>
+  <string name="shelf_loading" formatted="false">"Loading your stories…"</string>
+  <string name="onboarding_back" formatted="false">"Back"</string>
+  <string name="onboarding_kicker" formatted="false">"CHOOSE YOUR PATH"</string>
+  <string name="onboarding_title" formatted="false">"Whose name will enter this world?"</string>
+  <string name="onboarding_name" formatted="false">"Protagonist name"</string>
+  <string name="onboarding_nameu50laceholder" formatted="false">"Example: Mira Vale"</string>
+  <string name="onboarding_hint" formatted="false">"2–24 characters, saved in your private story."</string>
+  <string name="onboarding_world" formatted="false">"Current world"</string>
+  <string name="onboarding_power" formatted="false">"Choose one starting talent"</string>
+  <string name="onboarding_loading" formatted="false">"Loading the power system…"</string>
+  <string name="onboarding_adult" formatted="false">"I am at least 18 and understand that the story is generated live by AI."</string>
+  <string name="onboarding_enter" formatted="false">"Enter this world"</string>
+  <string name="story_leave" formatted="false">"Leave story"</string>
+  <string name="story_locationu55nknown" formatted="false">"Beyond the threshold"</string>
+  <string name="story_titleu46allback" formatted="false">"Your story"</string>
+  <string name="story_readeru45nter" formatted="false">"Enter reading mode"</string>
+  <string name="story_readeru45xit" formatted="false">"Exit reading mode"</string>
+  <string name="story_more" formatted="false">"More story actions"</string>
+  <string name="story_reading" formatted="false">"Reading settings"</string>
+  <string name="story_export" formatted="false">"Export story"</string>
+  <string name="story_text" formatted="false">"Plain text"</string>
+  <string name="story_logs" formatted="false">"Generation log"</string>
+  <string name="story_unfinished" formatted="false">"To be continued"</string>
+  <string name="story_latest" formatted="false">"Back to latest"</string>
+  <string name="actions_title" formatted="false">"Next move"</string>
+  <string name="actions_status" formatted="false">"Status"</string>
+  <string name="actions_free" formatted="false">"Free action"</string>
+  <string name="actions_placeholder" formatted="false">"Write what you truly want to do…"</string>
+  <string name="actions_submit" formatted="false">"Submit action"</string>
+  <string name="actions_draftu49dle" formatted="false">"The world will answer your action"</string>
+  <string name="actions_retry" formatted="false">"Retry action"</string>
+  <string name="sheet_status" formatted="false">"Cultivation status"</string>
+  <string name="sheet_closeu53tatus" formatted="false">"Close status"</string>
+  <string name="sheet_reading" formatted="false">"Reading settings"</string>
+  <string name="sheet_closeu52eading" formatted="false">"Close reading settings"</string>
+  <string name="sheet_logs" formatted="false">"Generation log"</string>
+  <string name="sheet_closeu4cogs" formatted="false">"Close generation log"</string>
+  <string name="provider_connecting" formatted="false">"Connecting"</string>
+  <string name="provider_ready" formatted="false">"Narrative service ready"</string>
+  <string name="provider_available" formatted="false">"Ready to begin"</string>
+  <string name="provider_unavailable" formatted="false">"Unable to connect"</string>
+  <string name="error_login" formatted="false">"Your login may have expired. Please reconnect."</string>
+  <string name="error_request" formatted="false">"Request failed ({status})"</string>
+  <string name="error_stream" formatted="false">"This browser did not provide a readable event stream."</string>
+  <string name="error_streamu45nded" formatted="false">"The event stream ended before completion."</string>
+  <string name="world_sourceu4dine" formatted="false">"Your original world"</string>
+  <string name="world_sourceu4friginal" formatted="false">"Original world"</string>
+  <string name="world_all" formatted="false">"All"</string>
+  <string name="world_emptyu46ilter" formatted="false">"No worlds in this category yet."</string>
+  <string name="world_unnamed" formatted="false">"Untitled world"</string>
+  <string name="world_growth" formatted="false">"Progression world"</string>
+  <string name="world_fallback" formatted="false">"Once you enter, every choice becomes part of this world."</string>
+  <string name="world_view" formatted="false">"View world: {title}"</string>
+  <string name="world_none" formatted="false">"No worlds are available right now."</string>
+  <string name="world_loadu45rror" formatted="false">"The worlds did not answer: {message}"</string>
+  <string name="common_reload" formatted="false">"Reload"</string>
+  <string name="library_empty" formatted="false">"Your library is empty. Discover a world and write your first turn."</string>
+  <string name="library_unnamed" formatted="false">"Unnamed hero"</string>
+  <string name="library_scroll" formatted="false">"story"</string>
+  <string name="library_bodyu46allback" formatted="false">"Mortal"</string>
+  <string name="library_turn" formatted="false">"Turn {number}"</string>
+  <string name="library_continue" formatted="false">"Continue reading"</string>
+  <string name="library_loadu45rror" formatted="false">"Could not load the library: {message}"</string>
+  <string name="library_language" formatted="false">"Language: {language}"</string>
+  <string name="world_poweru53ummary" formatted="false">"Power comes from choices, costs, and accumulation—not from nowhere."</string>
+  <string name="world_poweru47rowth" formatted="false">"Begin as a mortal and earn real growth through the story."</string>
+  <string name="world_destiny" formatted="false">"A path waiting for you"</string>
+  <string name="world_previewu46allback" formatted="false">"The world unfolds through your actions and remembers what happened."</string>
+  <string name="world_current" formatted="false">"Current world"</string>
+  <string name="world_nou50owers" formatted="false">"This world has no available talents yet."</string>
+  <string name="world_poweru55nnamed" formatted="false">"Unnamed talent"</string>
+  <string name="world_poweru46allback" formatted="false">"Its limits and cost will become clear in the world."</string>
+  <string name="world_select" formatted="false">"Choose"</string>
+  <string name="world_selected" formatted="false">"Selected ✓"</string>
+  <string name="onboarding_invalid" formatted="false">"Complete the name, talent, and adult confirmation."</string>
+  <string name="onboarding_creating" formatted="false">"Opening your story…"</string>
+  <string name="action_startu53tory" formatted="false">"Begin my story"</string>
+  <string name="stage_queued" formatted="false">"Waiting for a narrative slot"</string>
+  <string name="stage_validating" formatted="false">"Checking your description"</string>
+  <string name="stage_context_assembly" formatted="false">"Organizing world rules"</string>
+  <string name="stage_world_generation" formatted="false">"Building the world and power system"</string>
+  <string name="stage_world_validation" formatted="false">"Checking world rules"</string>
+  <string name="stage_world_persistence" formatted="false">"Saving the new world"</string>
+  <string name="stage_authored_opening_plan" formatted="false">"Opening the first scene"</string>
+  <string name="stage_plan" formatted="false">"Organizing what comes next"</string>
+  <string name="stage_narrative_generation" formatted="false">"Continuing your action"</string>
+  <string name="stage_parse_validate" formatted="false">"Checking the result"</string>
+  <string name="stage_repair" formatted="false">"Repairing the result"</string>
+  <string name="stage_persistence" formatted="false">"Writing canon"</string>
+  <string name="stage_acp" formatted="false">"Connecting to the narrative model"</string>
+  <string name="stage_sent" formatted="false">"Request sent"</string>
+  <string name="stage_realu4fnly" formatted="false">"Real stages only; no estimated percentage"</string>
+  <string name="world_invalidu52esult" formatted="false">"The generated world is incomplete."</string>
+  <string name="world_failed" formatted="false">"World generation failed."</string>
+  <string name="world_cancelled" formatted="false">"Stopped. Nothing was saved; edit the description or retry."</string>
+  <string name="world_cancelledu53hort" formatted="false">"Generation stopped."</string>
+  <string name="status_realm" formatted="false">"Current realm"</string>
+  <string name="status_realmu4deaning" formatted="false">"What this realm means"</string>
+  <string name="status_abilities" formatted="false">"Learned abilities"</string>
+  <string name="status_itemsu45mpty" formatted="false">"No important items"</string>
+  <string name="status_peopleu45mpty" formatted="false">"No recorded relationships"</string>
+  <string name="status_realmu55nknown" formatted="false">"Unknown realm"</string>
+  <string name="status_rank" formatted="false">"Rank {rank}"</string>
+  <string name="status_ranku55nknown" formatted="false">"Rank not recorded"</string>
+  <string name="status_progress" formatted="false">"{progress}%"</string>
+  <string name="status_progressu55nknown" formatted="false">"Progress not recorded"</string>
+  <string name="status_progressu41ria" formatted="false">"Realm progress {progress}%"</string>
+  <string name="status_power" formatted="false">"Core talent"</string>
+  <string name="status_notu52ecorded" formatted="false">"Not recorded"</string>
+  <string name="status_location" formatted="false">"Location"</string>
+  <string name="status_locationu55nknown" formatted="false">"Location not recorded"</string>
+  <string name="status_currency" formatted="false">"Coins"</string>
+  <string name="status_goal" formatted="false">"Current goal"</string>
+  <string name="status_goalu45mpty" formatted="false">"No goal set"</string>
+  <string name="status_items" formatted="false">"Important items"</string>
+  <string name="status_itemu55nnamed" formatted="false">"Unnamed item"</string>
+  <string name="status_people" formatted="false">"Important people"</string>
+  <string name="status_personu55nnamed" formatted="false">"Unnamed person"</string>
+  <string name="status_facts" formatted="false">"Known facts"</string>
+  <string name="turn_meta" formatted="false">"Turn {number} · {date}"</string>
+  <string name="turn_action" formatted="false">"You chose: {action}"</string>
+  <string name="turn_awaiting" formatted="false">"Your story is ready. The first live scene appears after the opening action."</string>
+  <string name="turn_provisional" formatted="false">"Generating · not yet canon"</string>
+  <string name="turn_waiting" formatted="false">"Waiting for the first narrative text…"</string>
+  <string name="turn_choice" formatted="false">"Choice {number}"</string>
+  <string name="turn_choiceu55nnamed" formatted="false">"Unnamed action"</string>
+  <string name="turn_writeu4fwn" formatted="false">"You can write your own action."</string>
+  <string name="turn_stop" formatted="false">"Stop"</string>
+  <string name="turn_processing" formatted="false">"Processing"</string>
+  <string name="turn_notu43anon" formatted="false">"Not written to canon"</string>
+  <string name="turn_failed" formatted="false">"The narrative service returned an error."</string>
+  <string name="turn_saved" formatted="false">"This turn is now canon."</string>
+  <string name="growth_close" formatted="false">"Close growth changes"</string>
+  <string name="growth_title" formatted="false">"This action changed something"</string>
+  <string name="logs_note" formatted="false">"Shows only client events and backend fields, never the model’s private reasoning."</string>
+  <string name="logs_model" formatted="false">"Model: {model}"</string>
+  <string name="logs_total" formatted="false">"Total turn time: {time}"</string>
+  <string name="logs_none" formatted="false">"No records yet"</string>
+  <string name="logs_notu52eported" formatted="false">"Not reported"</string>
+  <string name="logs_modelu4dissing" formatted="false">"Service did not report"</string>
+  <string name="logs_browseru54iming" formatted="false">"Browser interaction timing"</string>
+  <string name="logs_browseru41pprox" formatted="false">"Observed with browser performance and the next frame; not physical-phone pixel timing."</string>
+  <string name="logs_feedbacku50aint" formatted="false">"Immediate feedback paint"</string>
+  <string name="logs_firstu4earrativeu50aint" formatted="false">"First narrative paint"</string>
+  <string name="logs_canonicalu43omplete" formatted="false">"Canonical complete received"</string>
+  <string name="logs_choicesu52eady" formatted="false">"Next choices actionable"</string>
+  <string name="logs_pending" formatted="false">"Pending"</string>
+  <string name="reading_font" formatted="false">"Text size"</string>
+  <string name="reading_leading" formatted="false">"Line spacing"</string>
+  <string name="reading_background" formatted="false">"Page background"</string>
+  <string name="reading_dark" formatted="false">"Ink night"</string>
+  <string name="reading_light" formatted="false">"Paper"</string>
+  <string name="reading_system" formatted="false">"Follow theme"</string>
+  <string name="game_openu45rror" formatted="false">"Could not open the story: {message}"</string>
+  <string name="turn_cancelu57on" formatted="false">"The turn completed and was saved before the stop arrived."</string>
+  <string name="turn_cancelled" formatted="false">"Stopped. No new turn was saved."</string>
+  <string name="turn_cancelu50ending" formatted="false">"There is no new turn yet. The save will be checked before retrying."</string>
+  <string name="turn_cancelu55nknown" formatted="false">"Stop status is unconfirmed: {message}. Refresh and check the story before retrying."</string>
+  <string name="turn_restored" formatted="false">"Recovered the previously completed turn without repeating the action."</string>
+  <string name="turn_checku45rror" formatted="false">"Could not check the save: {message}"</string>
+  <string name="draft_saved" formatted="false">"Draft saved for this story"</string>
+  <string name="draft_restored" formatted="false">"Draft restored for this story"</string>
+  <string name="time_unknown" formatted="false">"Time not recorded"</string>
+  <string name="time_ms" formatted="false">"{value} ms"</string>
+  <string name="time_sec" formatted="false">"{value} sec"</string>
+  <string name="enum_u964cu751f" formatted="false">"Stranger"</string>
+  <string name="enum_u8b66u60d5" formatted="false">"Wary"</string>
+  <string name="enum_u4e2du7acb" formatted="false">"Neutral"</string>
+  <string name="enum_u53cbu5584" formatted="false">"Friendly"</string>
+  <string name="enum_u4fe1u4efb" formatted="false">"Trusting"</string>
+  <string name="enum_u654cu5bf9" formatted="false">"Hostile"</string>
+  <string name="enum_u4ec7u6068" formatted="false">"Hateful"</string>
+  <string name="enum_u5c0au656c" formatted="false">"Respectful"</string>
+  <string name="enum_u76dfu53cb" formatted="false">"Ally"</string>
+  <string name="world_poweru48eading" formatted="false">"POWER SYSTEM"</string>
+  <string name="enum_u654cu89c6" formatted="false">"Hostile"</string>
+  <string name="enum_u6212u5907" formatted="false">"Wary"</string>
+  <string name="enum_u597du5947" formatted="false">"Curious"</string>
+  <string name="enum_u4eb2u8fd1" formatted="false">"Close"</string>
+  <string name="status_leverage" formatted="false">"Lasting advantages"</string>
+  <string name="status_offers" formatted="false">"Within reach"</string>
+  <string name="status_fulfilled" formatted="false">"Gains secured"</string>
+  <string name="status_reused" formatted="false">"Used in later actions {count} times"</string>
+  <string name="stage_planner_context_assembly" formatted="false">"Preparing growth context"</string>
+  <string name="stage_parse" formatted="false">"Checking the result"</string>
+  <string name="stage_reducer_validation" formatted="false">"Checking world state"</string>
+  <string name="stage_repair_parse" formatted="false">"Checking the result"</string>
+  <string name="stage_repair_reducer_validation" formatted="false">"Checking world state"</string>
+  <string name="error_provideru53etup" formatted="false">"The model connection timed out. No new turn was saved; you can retry."</string>
+  <string name="error_provideru54imeout" formatted="false">"Generation timed out. This turn was not saved; you can retry."</string>
+  <string name="app_name" formatted="false">"TGN Live"</string>
+  <string name="native_settings" formatted="false">"Settings"</string>
+  <string name="native_login" formatted="false">"Sign in with browser"</string>
+  <string name="native_loginu57aiting" formatted="false">"Complete browser sign-in, then return to the app"</string>
+  <string name="native_cancel" formatted="false">"Cancel"</string>
+  <string name="native_logout" formatted="false">"Sign out and clear local story cache"</string>
+  <string name="native_offline" formatted="false">"Offline or sign-in expired · cached reading only"</string>
+  <string name="native_reconcile" formatted="false">"Check the server save before retrying"</string>
+  <string name="native_busy" formatted="false">"An action is still running. Check again shortly"</string>
+  <string name="native_responding" formatted="false">"The world is responding…"</string>
+  <string name="native_organizing" formatted="false">"Organizing this page…"</string>
+  <string name="native_continuing" formatted="false">"Continuing the story…"</string>
+  <string name="native_haptics" formatted="false">"Haptic feedback"</string>
+  <string name="native_close" formatted="false">"Close"</string>
+  <string name="native_updated" formatted="false">"Updated {date}"</string>
+  <string name="native_empty" formatted="false">"Nothing recorded yet"</string>
+  <string name="native_growth" formatted="false">"New power is now part of your story"</string>
+  <string name="native_export" formatted="false">"Export local timing records"</string>
+  <string name="native_timingu4eote" formatted="false">"Visible frames use viewport checks and later frames, not physical display timestamps"</string>
+  <string name="native_account" formatted="false">"Private library"</string>
+  <string name="native_error" formatted="false">"Connection incomplete. Check again; your draft is kept."</string>
+  <string name="native_contextu43hanged" formatted="false">"The story changed. This action was not sent. Read the update before your next move."</string>
+  <string name="native_creationu55nknown" formatted="false">"Your story may already exist. Check the library before creating another."</string>
+  <string name="native_inspectu53helf" formatted="false">"Check library"</string>
+  <string name="native_creationu52eviewed" formatted="false">"Library checked; allow a new creation"</string>
+  <string name="native_choiceu45dit" formatted="false">"Tap to edit the full action"</string>
+  <string name="native_font0" formatted="false">"Very small"</string>
+  <string name="native_font1" formatted="false">"Small"</string>
+  <string name="native_font2" formatted="false">"Default"</string>
+  <string name="native_font3" formatted="false">"Large"</string>
+  <string name="native_font4" formatted="false">"Very large"</string>
+</resources>

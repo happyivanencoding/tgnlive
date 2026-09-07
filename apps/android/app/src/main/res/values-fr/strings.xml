@@ -1,0 +1,274 @@
+<resources>
+  <string name="meta_title" formatted="false">"TGN Live · Entrez dans le récit"</string>
+  <string name="meta_description" formatted="false">"TGN Live : des mondes de progression jouables qui se souviennent de chaque choix."</string>
+  <string name="skip" formatted="false">"Aller au contenu principal"</string>
+  <string name="brand_home" formatted="false">"Retour à Découvrir"</string>
+  <string name="brand_name" formatted="false">"TGN Live"</string>
+  <string name="theme_toggle" formatted="false">"Changer le thème clair ou sombre"</string>
+  <string name="language_label" formatted="false">"Langue de l’interface"</string>
+  <string name="connection_message" formatted="false">"Connexion interrompue ou session expirée. Le contenu enregistré est intact."</string>
+  <string name="connection_retry" formatted="false">"Reconnecter"</string>
+  <string name="nav_aria" formatted="false">"Zones principales"</string>
+  <string name="nav_discover" formatted="false">"Découvrir"</string>
+  <string name="nav_create" formatted="false">"Créer"</string>
+  <string name="nav_shelf" formatted="false">"Bibliothèque"</string>
+  <string name="continue_aria" formatted="false">"Continuer le récit récent"</string>
+  <string name="discover_kicker" formatted="false">"ROMANS DE PROGRESSION JOUABLES"</string>
+  <string name="discover_title" formatted="false">"Le monde ne vous attend pas,\nmais il se souvient."</string>
+  <string name="discover_lede" formatted="false">"Choisissez un monde et gagnez votre premier pouvoir en partant de peu."</string>
+  <string name="discover_new" formatted="false">"Commencer une voie"</string>
+  <string name="create_calloutu4bicker" formatted="false">"CRÉEZ VOTRE MONDE"</string>
+  <string name="create_calloutu54itle" formatted="false">"Une idée. Votre monde."</string>
+  <string name="create_calloutu54ext" formatted="false">"Décrivez une époque, une crise ou une règle de pouvoir. La forge crée le reste."</string>
+  <string name="create_start" formatted="false">"Commencer à créer"</string>
+  <string name="worlds_kicker" formatted="false">"MONDES À DÉCOUVRIR"</string>
+  <string name="worlds_title" formatted="false">"Découvrir des mondes"</string>
+  <string name="worlds_note" formatted="false">"Choisissez un monde, puis un talent"</string>
+  <string name="worlds_filtersu41ria" formatted="false">"Filtrer les types de mondes"</string>
+  <string name="worlds_loading" formatted="false">"Ouverture des mondes…"</string>
+  <string name="create_back" formatted="false">"Retour à Découvrir"</string>
+  <string name="create_kicker" formatted="false">"CRÉATION DE MONDE"</string>
+  <string name="create_title" formatted="false">"Dans quel monde voulez-vous entrer ?"</string>
+  <string name="create_lede" formatted="false">"Une phrase suffit : époque, crise initiale, coût du pouvoir ou simple idée."</string>
+  <string name="create_promptu4cabel" formatted="false">"Idée de monde"</string>
+  <string name="create_promptu50laceholder" formatted="false">"Exemple : une dynastie de dompteurs sur des îles flottantes, où je grandis avec un petit que tous jugent incapable d’évoluer."</string>
+  <string name="create_examplesu41ria" formatted="false">"Exemples d’idées"</string>
+  <string name="prompt_beasts_label" formatted="false">"Bêtes des îles"</string>
+  <string name="prompt_beasts" formatted="false">"Une dynastie de dompteurs sur des îles flottantes, où je grandis avec un petit que tous jugent incapable d’évoluer."</string>
+  <string name="prompt_stars_label" formatted="false">"Culture stellaire"</string>
+  <string name="prompt_stars" formatted="false">"La mer d’étoiles est le royaume immortel. D’anciens ordres traversent les cieux en flottes, et je m’éveille dans un noyau stellaire endormi."</string>
+  <string name="prompt_ninja_label" formatted="false">"Inspiration ninja"</string>
+  <string name="prompt_ninja" formatted="false">"Univers officieux inspiré des récits ninja : personnages, factions et histoire entièrement originaux."</string>
+  <string name="create_generate" formatted="false">"Forger le monde"</string>
+  <string name="create_building" formatted="false">"Construction"</string>
+  <string name="create_connecting" formatted="false">"Connexion à l’auteur du monde"</string>
+  <string name="create_elapsed" formatted="false">"Temps écoulé : {time}"</string>
+  <string name="create_stop" formatted="false">"Arrêter"</string>
+  <string name="create_failedu54itle" formatted="false">"Le monde n’a pas été terminé"</string>
+  <string name="common_retry" formatted="false">"Réessayer"</string>
+  <string name="create_edit" formatted="false">"Modifier la description"</string>
+  <string name="shelf_kicker" formatted="false">"YOUR STORIES"</string>
+  <string name="shelf_title" formatted="false">"Ma bibliothèque"</string>
+  <string name="shelf_discover" formatted="false">"Découvrir un monde"</string>
+  <string name="shelf_loading" formatted="false">"Chargement de vos récits…"</string>
+  <string name="onboarding_back" formatted="false">"Retour"</string>
+  <string name="onboarding_kicker" formatted="false">"CHOOSE YOUR PATH"</string>
+  <string name="onboarding_title" formatted="false">"Quel nom entrera dans ce monde ?"</string>
+  <string name="onboarding_name" formatted="false">"Nom du protagoniste"</string>
+  <string name="onboarding_nameu50laceholder" formatted="false">"Exemple : Maël Dorne"</string>
+  <string name="onboarding_hint" formatted="false">"2 à 24 caractères, enregistrés dans votre récit privé."</string>
+  <string name="onboarding_world" formatted="false">"Monde actuel"</string>
+  <string name="onboarding_power" formatted="false">"Choisissez un talent initial"</string>
+  <string name="onboarding_loading" formatted="false">"Chargement du système de pouvoir…"</string>
+  <string name="onboarding_adult" formatted="false">"J’ai au moins 18 ans et je comprends que le récit est généré en direct par IA."</string>
+  <string name="onboarding_enter" formatted="false">"Entrer dans ce monde"</string>
+  <string name="story_leave" formatted="false">"Quitter le récit"</string>
+  <string name="story_locationu55nknown" formatted="false">"Au seuil du monde"</string>
+  <string name="story_titleu46allback" formatted="false">"Votre récit"</string>
+  <string name="story_readeru45nter" formatted="false">"Activer le mode lecture"</string>
+  <string name="story_readeru45xit" formatted="false">"Quitter le mode lecture"</string>
+  <string name="story_more" formatted="false">"Plus d’actions"</string>
+  <string name="story_reading" formatted="false">"Réglages de lecture"</string>
+  <string name="story_export" formatted="false">"Exporter le récit"</string>
+  <string name="story_text" formatted="false">"Texte brut"</string>
+  <string name="story_logs" formatted="false">"Journal de génération"</string>
+  <string name="story_unfinished" formatted="false">"À suivre"</string>
+  <string name="story_latest" formatted="false">"Revenir au plus récent"</string>
+  <string name="actions_title" formatted="false">"Prochaine action"</string>
+  <string name="actions_status" formatted="false">"État"</string>
+  <string name="actions_free" formatted="false">"Action libre"</string>
+  <string name="actions_placeholder" formatted="false">"Écrivez ce que vous voulez vraiment faire…"</string>
+  <string name="actions_submit" formatted="false">"Envoyer l’action"</string>
+  <string name="actions_draftu49dle" formatted="false">"Le monde répondra à votre action"</string>
+  <string name="actions_retry" formatted="false">"Réessayer"</string>
+  <string name="sheet_status" formatted="false">"État de progression"</string>
+  <string name="sheet_closeu53tatus" formatted="false">"Fermer l’état"</string>
+  <string name="sheet_reading" formatted="false">"Réglages de lecture"</string>
+  <string name="sheet_closeu52eading" formatted="false">"Fermer les réglages"</string>
+  <string name="sheet_logs" formatted="false">"Journal de génération"</string>
+  <string name="sheet_closeu4cogs" formatted="false">"Fermer le journal"</string>
+  <string name="provider_connecting" formatted="false">"Connexion"</string>
+  <string name="provider_ready" formatted="false">"Service narratif prêt"</string>
+  <string name="provider_available" formatted="false">"Prêt à commencer"</string>
+  <string name="provider_unavailable" formatted="false">"Connexion impossible"</string>
+  <string name="error_login" formatted="false">"Votre session a peut-être expiré. Reconnectez-vous."</string>
+  <string name="error_request" formatted="false">"Échec de la requête ({status})"</string>
+  <string name="error_stream" formatted="false">"Ce navigateur ne fournit pas de flux d’événements lisible."</string>
+  <string name="error_streamu45nded" formatted="false">"Le flux s’est arrêté avant la fin."</string>
+  <string name="world_sourceu4dine" formatted="false">"Votre monde original"</string>
+  <string name="world_sourceu4friginal" formatted="false">"Monde original"</string>
+  <string name="world_all" formatted="false">"Tous"</string>
+  <string name="world_emptyu46ilter" formatted="false">"Aucun monde dans cette catégorie."</string>
+  <string name="world_unnamed" formatted="false">"Monde sans titre"</string>
+  <string name="world_growth" formatted="false">"Monde de progression"</string>
+  <string name="world_fallback" formatted="false">"Chaque choix devient un fait de ce monde."</string>
+  <string name="world_view" formatted="false">"Voir le monde : {title}"</string>
+  <string name="world_none" formatted="false">"Aucun monde disponible."</string>
+  <string name="world_loadu45rror" formatted="false">"Les mondes ne répondent pas : {message}"</string>
+  <string name="common_reload" formatted="false">"Recharger"</string>
+  <string name="library_empty" formatted="false">"Votre bibliothèque est vide. Découvrez un monde et écrivez votre premier tour."</string>
+  <string name="library_unnamed" formatted="false">"Héros sans nom"</string>
+  <string name="library_scroll" formatted="false">"récit"</string>
+  <string name="library_bodyu46allback" formatted="false">"Mortel"</string>
+  <string name="library_turn" formatted="false">"Tour {number}"</string>
+  <string name="library_continue" formatted="false">"Continuer la lecture"</string>
+  <string name="library_loadu45rror" formatted="false">"Bibliothèque indisponible : {message}"</string>
+  <string name="library_language" formatted="false">"Langue : {language}"</string>
+  <string name="world_poweru53ummary" formatted="false">"Le pouvoir vient des choix, des coûts et de l’accumulation."</string>
+  <string name="world_poweru47rowth" formatted="false">"Commencez mortel et progressez réellement dans le récit."</string>
+  <string name="world_destiny" formatted="false">"Une voie qui vous attend"</string>
+  <string name="world_previewu46allback" formatted="false">"Le monde se révèle par vos actes et se souvient de ce qui arrive."</string>
+  <string name="world_current" formatted="false">"Monde actuel"</string>
+  <string name="world_nou50owers" formatted="false">"Ce monde n’a pas encore de talent disponible."</string>
+  <string name="world_poweru55nnamed" formatted="false">"Talent sans nom"</string>
+  <string name="world_poweru46allback" formatted="false">"Ses limites et son coût se révéleront dans le monde."</string>
+  <string name="world_select" formatted="false">"Choisir"</string>
+  <string name="world_selected" formatted="false">"Choisi ✓"</string>
+  <string name="onboarding_invalid" formatted="false">"Complétez le nom, le talent et la confirmation d’âge."</string>
+  <string name="onboarding_creating" formatted="false">"Ouverture du récit…"</string>
+  <string name="action_startu53tory" formatted="false">"Commencer mon récit"</string>
+  <string name="stage_queued" formatted="false">"Attente d’une place narrative"</string>
+  <string name="stage_validating" formatted="false">"Vérification de la description"</string>
+  <string name="stage_context_assembly" formatted="false">"Organisation des règles du monde"</string>
+  <string name="stage_world_generation" formatted="false">"Création du monde et des pouvoirs"</string>
+  <string name="stage_world_validation" formatted="false">"Vérification des règles"</string>
+  <string name="stage_world_persistence" formatted="false">"Enregistrement du monde"</string>
+  <string name="stage_authored_opening_plan" formatted="false">"Ouverture de la première scène"</string>
+  <string name="stage_plan" formatted="false">"Préparation de la suite"</string>
+  <string name="stage_narrative_generation" formatted="false">"Suite de votre action"</string>
+  <string name="stage_parse_validate" formatted="false">"Vérification du résultat"</string>
+  <string name="stage_repair" formatted="false">"Correction du résultat"</string>
+  <string name="stage_persistence" formatted="false">"Écriture dans le canon"</string>
+  <string name="stage_acp" formatted="false">"Connexion au modèle narratif"</string>
+  <string name="stage_sent" formatted="false">"Requête envoyée"</string>
+  <string name="stage_realu4fnly" formatted="false">"Étapes réelles uniquement, sans pourcentage estimé"</string>
+  <string name="world_invalidu52esult" formatted="false">"Le monde généré est incomplet."</string>
+  <string name="world_failed" formatted="false">"Échec de la génération du monde."</string>
+  <string name="world_cancelled" formatted="false">"Arrêté. Rien n’a été enregistré ; modifiez ou réessayez."</string>
+  <string name="world_cancelledu53hort" formatted="false">"Génération arrêtée."</string>
+  <string name="status_realm" formatted="false">"Royaume actuel"</string>
+  <string name="status_realmu4deaning" formatted="false">"Ce que signifie ce royaume"</string>
+  <string name="status_abilities" formatted="false">"Capacités acquises"</string>
+  <string name="status_itemsu45mpty" formatted="false">"Aucun objet important"</string>
+  <string name="status_peopleu45mpty" formatted="false">"Aucune relation enregistrée"</string>
+  <string name="status_realmu55nknown" formatted="false">"Royaume inconnu"</string>
+  <string name="status_rank" formatted="false">"Rang {rank}"</string>
+  <string name="status_ranku55nknown" formatted="false">"Rang non indiqué"</string>
+  <string name="status_progress" formatted="false">"{progress} %"</string>
+  <string name="status_progressu55nknown" formatted="false">"Progression non indiquée"</string>
+  <string name="status_progressu41ria" formatted="false">"Progression du royaume : {progress} %"</string>
+  <string name="status_power" formatted="false">"Talent essentiel"</string>
+  <string name="status_notu52ecorded" formatted="false">"Non indiqué"</string>
+  <string name="status_location" formatted="false">"Lieu"</string>
+  <string name="status_locationu55nknown" formatted="false">"Lieu non indiqué"</string>
+  <string name="status_currency" formatted="false">"Pièces"</string>
+  <string name="status_goal" formatted="false">"Objectif actuel"</string>
+  <string name="status_goalu45mpty" formatted="false">"Aucun objectif"</string>
+  <string name="status_items" formatted="false">"Objets importants"</string>
+  <string name="status_itemu55nnamed" formatted="false">"Objet sans nom"</string>
+  <string name="status_people" formatted="false">"Personnes importantes"</string>
+  <string name="status_personu55nnamed" formatted="false">"Personne sans nom"</string>
+  <string name="status_facts" formatted="false">"Faits connus"</string>
+  <string name="turn_meta" formatted="false">"Tour {number} · {date}"</string>
+  <string name="turn_action" formatted="false">"Votre choix : {action}"</string>
+  <string name="turn_awaiting" formatted="false">"Votre récit est prêt. La première scène apparaîtra après l’action initiale."</string>
+  <string name="turn_provisional" formatted="false">"Génération · pas encore canon"</string>
+  <string name="turn_waiting" formatted="false">"Attente du premier texte narratif…"</string>
+  <string name="turn_choice" formatted="false">"Choix {number}"</string>
+  <string name="turn_choiceu55nnamed" formatted="false">"Action sans nom"</string>
+  <string name="turn_writeu4fwn" formatted="false">"Vous pouvez écrire votre propre action."</string>
+  <string name="turn_stop" formatted="false">"Arrêter"</string>
+  <string name="turn_processing" formatted="false">"Traitement"</string>
+  <string name="turn_notu43anon" formatted="false">"Non inscrit au canon"</string>
+  <string name="turn_failed" formatted="false">"Le service narratif a renvoyé une erreur."</string>
+  <string name="turn_saved" formatted="false">"Ce tour est inscrit au canon."</string>
+  <string name="growth_close" formatted="false">"Fermer les changements"</string>
+  <string name="growth_title" formatted="false">"Cette action a changé quelque chose"</string>
+  <string name="logs_note" formatted="false">"Affiche seulement les événements du client et les champs du serveur, jamais le raisonnement privé du modèle."</string>
+  <string name="logs_model" formatted="false">"Modèle : {model}"</string>
+  <string name="logs_total" formatted="false">"Temps total du tour : {time}"</string>
+  <string name="logs_none" formatted="false">"Aucun journal"</string>
+  <string name="logs_notu52eported" formatted="false">"Non indiqué"</string>
+  <string name="logs_modelu4dissing" formatted="false">"Non indiqué par le service"</string>
+  <string name="logs_browseru54iming" formatted="false">"Mesures d’interaction du navigateur"</string>
+  <string name="logs_browseru41pprox" formatted="false">"Observation approximative par performance et l’image suivante, pas un temps de pixel sur téléphone physique."</string>
+  <string name="logs_feedbacku50aint" formatted="false">"Affichage du retour immédiat"</string>
+  <string name="logs_firstu4earrativeu50aint" formatted="false">"Premier affichage narratif"</string>
+  <string name="logs_canonicalu43omplete" formatted="false">"Fin canonique reçue"</string>
+  <string name="logs_choicesu52eady" formatted="false">"Choix suivants utilisables"</string>
+  <string name="logs_pending" formatted="false">"En attente"</string>
+  <string name="reading_font" formatted="false">"Taille du texte"</string>
+  <string name="reading_leading" formatted="false">"Interligne"</string>
+  <string name="reading_background" formatted="false">"Fond de page"</string>
+  <string name="reading_dark" formatted="false">"Nuit d’encre"</string>
+  <string name="reading_light" formatted="false">"Papier"</string>
+  <string name="reading_system" formatted="false">"Suivre le thème"</string>
+  <string name="game_openu45rror" formatted="false">"Impossible d’ouvrir le récit : {message}"</string>
+  <string name="turn_cancelu57on" formatted="false">"Le tour a été terminé et enregistré avant l’arrêt."</string>
+  <string name="turn_cancelled" formatted="false">"Arrêt confirmé. Aucun nouveau tour enregistré."</string>
+  <string name="turn_cancelu50ending" formatted="false">"Aucun nouveau tour ; l’enregistrement sera vérifié avant de réessayer."</string>
+  <string name="turn_cancelu55nknown" formatted="false">"Arrêt non confirmé : {message}. Actualisez et vérifiez avant de réessayer."</string>
+  <string name="turn_restored" formatted="false">"Tour terminé récupéré sans répéter l’action."</string>
+  <string name="turn_checku45rror" formatted="false">"Impossible de vérifier l’enregistrement : {message}"</string>
+  <string name="draft_saved" formatted="false">"Brouillon enregistré pour ce récit"</string>
+  <string name="draft_restored" formatted="false">"Brouillon restauré pour ce récit"</string>
+  <string name="time_unknown" formatted="false">"Heure non indiquée"</string>
+  <string name="time_ms" formatted="false">"{value} ms"</string>
+  <string name="time_sec" formatted="false">"{value} s"</string>
+  <string name="enum_u964cu751f" formatted="false">"Inconnu"</string>
+  <string name="enum_u8b66u60d5" formatted="false">"Méfiant"</string>
+  <string name="enum_u4e2du7acb" formatted="false">"Neutre"</string>
+  <string name="enum_u53cbu5584" formatted="false">"Amical"</string>
+  <string name="enum_u4fe1u4efb" formatted="false">"Confiant"</string>
+  <string name="enum_u654cu5bf9" formatted="false">"Hostile"</string>
+  <string name="enum_u4ec7u6068" formatted="false">"Haineux"</string>
+  <string name="enum_u5c0au656c" formatted="false">"Respectueux"</string>
+  <string name="enum_u76dfu53cb" formatted="false">"Allié"</string>
+  <string name="world_poweru48eading" formatted="false">"SYSTÈME DE POUVOIRS"</string>
+  <string name="enum_u654cu89c6" formatted="false">"Hostile"</string>
+  <string name="enum_u6212u5907" formatted="false">"Méfiant"</string>
+  <string name="enum_u597du5947" formatted="false">"Curieux"</string>
+  <string name="enum_u4eb2u8fd1" formatted="false">"Proche"</string>
+  <string name="status_leverage" formatted="false">"Atouts durables"</string>
+  <string name="status_offers" formatted="false">"À votre portée"</string>
+  <string name="status_fulfilled" formatted="false">"Gains concrétisés"</string>
+  <string name="status_reused" formatted="false">"Utilisé dans {count} actions ultérieures"</string>
+  <string name="stage_planner_context_assembly" formatted="false">"Préparation de la progression"</string>
+  <string name="stage_parse" formatted="false">"Vérification du résultat"</string>
+  <string name="stage_reducer_validation" formatted="false">"Vérification de l’état du monde"</string>
+  <string name="stage_repair_parse" formatted="false">"Vérification du résultat"</string>
+  <string name="stage_repair_reducer_validation" formatted="false">"Vérification de l’état du monde"</string>
+  <string name="error_provideru53etup" formatted="false">"La connexion au modèle a expiré. Aucun nouveau tour n’a été enregistré ; vous pouvez réessayer."</string>
+  <string name="error_provideru54imeout" formatted="false">"La génération a expiré. Ce tour n’a pas été enregistré ; vous pouvez réessayer."</string>
+  <string name="app_name" formatted="false">"TGN Live"</string>
+  <string name="native_settings" formatted="false">"Réglages"</string>
+  <string name="native_login" formatted="false">"Connexion par navigateur"</string>
+  <string name="native_loginu57aiting" formatted="false">"Terminez la connexion dans le navigateur, puis revenez"</string>
+  <string name="native_cancel" formatted="false">"Annuler"</string>
+  <string name="native_logout" formatted="false">"Déconnexion et suppression du cache local"</string>
+  <string name="native_offline" formatted="false">"Hors ligne ou session expirée · cache en lecture seule"</string>
+  <string name="native_reconcile" formatted="false">"Vérifier la sauvegarde avant de réessayer"</string>
+  <string name="native_busy" formatted="false">"Une action est en cours. Vérifiez à nouveau bientôt"</string>
+  <string name="native_responding" formatted="false">"Le monde vous répond…"</string>
+  <string name="native_organizing" formatted="false">"Mise en ordre de cette page…"</string>
+  <string name="native_continuing" formatted="false">"La suite prend forme…"</string>
+  <string name="native_haptics" formatted="false">"Retour haptique"</string>
+  <string name="native_close" formatted="false">"Fermer"</string>
+  <string name="native_updated" formatted="false">"Mis à jour : {date}"</string>
+  <string name="native_empty" formatted="false">"Aucune entrée"</string>
+  <string name="native_growth" formatted="false">"Un nouveau pouvoir entre dans votre histoire"</string>
+  <string name="native_export" formatted="false">"Exporter les mesures locales"</string>
+  <string name="native_timingu4eote" formatted="false">"Visibilité estimée par la fenêtre et les images suivantes, pas par les pixels physiques"</string>
+  <string name="native_account" formatted="false">"Bibliothèque privée"</string>
+  <string name="native_error" formatted="false">"Connexion interrompue. Vérifiez à nouveau ; le brouillon est conservé."</string>
+  <string name="native_contextu43hanged" formatted="false">"L’histoire a changé. Cette action n’a pas été envoyée. Lisez la suite avant de choisir."</string>
+  <string name="native_creationu55nknown" formatted="false">"Votre histoire existe peut-être déjà. Vérifiez la bibliothèque avant de la recréer."</string>
+  <string name="native_inspectu53helf" formatted="false">"Vérifier la bibliothèque"</string>
+  <string name="native_creationu52eviewed" formatted="false">"Bibliothèque vérifiée ; autoriser une nouvelle création"</string>
+  <string name="native_choiceu45dit" formatted="false">"Touchez pour modifier le texte complet"</string>
+  <string name="native_font0" formatted="false">"Très petit"</string>
+  <string name="native_font1" formatted="false">"Petit"</string>
+  <string name="native_font2" formatted="false">"Standard"</string>
+  <string name="native_font3" formatted="false">"Grand"</string>
+  <string name="native_font4" formatted="false">"Très grand"</string>
+</resources>

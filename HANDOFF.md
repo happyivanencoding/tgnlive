@@ -1,3 +1,13 @@
+## Android Native 候选 · 2026-09-07
+
+新增同产品原生客户端 `apps/android/`，Android `0.8.0-android.1` / `8001`。移动隔离 worktree `C:\dev\tgn_live_android`、短期分支 `mobile/android-native`；此段不表示 Android 已通过生产验收或主线 Web 已升级。核心开发的未提交更改不属于本次 Native patch。
+
+Kotlin/Compose、真实 JSON/SSE、书架/创建/阅读/状态、五语/RTL、主题/字号/草稿/恢复已实现候选代码；复用原后端与 Canon，没有修改共享 API、Cloudflare policy、生成逻辑或 JingYou。登录采用 Cloudflare 官方加密 CLI transfer + 原生 Keystore，**实际浏览器→App 生产登录仍未验证**。
+
+Debug 构建和 JVM 测试已有通过记录；最终计数、各构建状态和 APK 哈希以 `artifacts/reports/android-native-v0801/RESULTS.json` 为准，不沿用中间19/27项结果。Android15 模拟器已启动桌面，但调试授权确认被工具拦截，未完成 App 安装/真实 UI 验证；已停止该授权尝试，不改 keys 或绕过。**Native production 回合数0；手机端耗时 NOT_MEASURED；Emulator 游戏/登录/输入/滚动等 PENDING_EMULATOR_VALIDATION；硬件专属项 PENDING_PHYSICAL_DEVICE_VALIDATION。** 不把这些写成 PASS。
+
+先读 `docs/ANDROID_APP.md`、`docs/NATIVE_MOBILE_AUTH.md`、`docs/NATIVE_MOBILE_DESIGN.md`、`docs/NATIVE_MOBILE_TESTS.md`。后续从已授权 Android 的生产 vertical slice 与实际截图/流式/多回合验证继续，不重造后端。稳定接受后先 fetch 最新 main、解决真实冲突再合并；禁止 force/reset/夹带核心工作。诊断脚本在 `apps/android/scripts/device-pass.ps1`，默认 APK 连接现有公网，不依赖 localhost。
+
 ## 当前主线：v0.8.0 · 2026-09-07
 
 项目 `C:\dev\tgn_live`；唯一发布分支 **main**，远端 **happyivanencoding/tgnlive**。继续开发前先读本节、`docs/V080_RESULTS.md`、`docs/PROGRESSION_ITERATION.md`、当前代码和实验正文。以下旧 v0.7.0 历史不覆盖本节。v0.8.0 已部署到现有生产入口并通过存档完整性与访问控制复核；正式回执为 `artifacts/reports/progression-v080/DEPLOYMENT.json`。旧版25个存档与121个回合内容保持不变。

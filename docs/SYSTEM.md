@@ -1,3 +1,11 @@
+## Android Native 候选客户端（尚未完成端到端接受）
+
+`apps/android/` 是同一 TGN Live 的 Kotlin/Jetpack Compose 客户端，Android `0.8.0-android.1` / code `8001`。同一 owner-only Cloudflare Access、API、世界、书架、存档和 Canon；没有移动专属 backend/state/SQLite，也没有改生成流程或公网认证策略。Web 的生产版本和运行入口不因候选工程加入而变化。
+
+候选代码位于短期 `mobile/android-native` / `C:\dev\tgn_live_android`，与同时修改 main 的核心任务隔离。构建、JVM 测试、五语资源和 APK 的最终机器证据读 `artifacts/reports/android-native-v0801/RESULTS.json`；生产登录和真实 Android 游玩不由这些测试代替。当前 Native 生产回合数为0，客户端耗时 NOT_MEASURED。模拟器已启动，但调试授权确认被工具拦截，实际 App 验证仍 PENDING_EMULATOR_VALIDATION；实体手感/OEM等另列 PENDING_PHYSICAL_DEVICE_VALIDATION。不能把短期候选分支称为已接受或已上线的原生生产版本。
+
+架构、合法浏览器登录、阅读设计及后续接受流程分别见 `ANDROID_APP.md`、`NATIVE_MOBILE_AUTH.md`、`NATIVE_MOBILE_DESIGN.md`、`NATIVE_MOBILE_TESTS.md`。通过真实接受后才同步最新 main 解决冲突并合并，不覆盖核心开发的未提交更改。
+
 ## v0.8.0 当前约定（优先于下方历史）
 
 见 [本轮真实结果](V080_RESULTS.md)、[成长机制与否决记录](PROGRESSION_ITERATION.md)、[移动端证据](V080_INDEPENDENT_REVIEW.md)。当前新增可复用筹码/待兑现机会状态、世界独立growthGrammar、阶段欲望与短计划；没有新增每回合模型。七个预设中两个新世界的实际覆盖须按报告读取，不能用schema通过代替长测。

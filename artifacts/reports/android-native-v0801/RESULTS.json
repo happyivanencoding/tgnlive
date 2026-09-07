@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-07T15:42:07.5103991Z",
+  "product": "TGN Live",
+  "candidate": "0.8.0-android.1",
+  "versionCode": 8001,
+  "productionBaseline": "26fc8e1d241aebf8ee798c6f186d5a079cd2afe0",
+  "branch": "mobile/android-native",
+  "mainIntegration": "NOT_MERGED_PENDING_NATIVE_ACCEPTANCE",
+  "productionDeploymentChanged": false,
+  "sharedBackendApiChanged": false,
+  "separateCanonCreated": false,
+  "status": "NATIVE_CANDIDATE_NOT_PRODUCTION_ACCEPTED",
+  "build": {
+    "debugApk": "PASS",
+    "debugAndroidTestApk": "BUILT_NOT_EXECUTED",
+    "releaseApk": "BUILT_UNSIGNED_NOT_RELEASE_READY",
+    "minSdk": 26,
+    "targetSdk": 36,
+    "abi": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "x86",
+      "x86_64"
+    ],
+    "evaluatedConfiguration": "PASS_BUNDLED_LANGUAGES_AND_RELEASE_PRODUCTION_HTTPS",
+    "endpoint": "https://live.thegreatnovel.com"
+  },
+  "tests": {
+    "tests": 30,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "deterministicJvmTests": 29,
+    "liveReadOnlyAdapterTests": 1,
+    "suites": [
+      {
+        "name": "com.thegreatnovel.tgnlive.auth.AccessJwtVerifierTest",
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.thegreatnovel.tgnlive.auth.CfTransferTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.thegreatnovel.tgnlive.HttpCancellationTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.thegreatnovel.tgnlive.LiveBackendContractTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.thegreatnovel.tgnlive.OperationAndDraftTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.thegreatnovel.tgnlive.StreamRecoveryTest",
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ]
+  },
+  "lint": {
+    "blockingErrors": 0,
+    "warnings": 3,
+    "issues": [
+      {
+        "id": "AppBundleLocaleChanges",
+        "severity": "Warning"
+      },
+      {
+        "id": "AndroidGradlePluginVersion",
+        "severity": "Warning"
+      },
+      {
+        "id": "ObsoleteSdkInt",
+        "severity": "Warning"
+      }
+    ]
+  },
+  "resources": {
+    "languages": [
+      "zh",
+      "en",
+      "fr",
+      "es",
+      "ar"
+    ],
+    "keysPerLanguage": 272,
+    "staticIndexAndKeyParity": "PASS",
+    "visualRtlAndTranslationAcceptance": "PENDING_EMULATOR_VALIDATION"
+  },
+  "readOnlyLiveContract": {
+    "capturedAt": "2026-09-07T15:33:32.453Z",
+    "backendVersion": "0.8.0",
+    "existingSaves": 26,
+    "existingHistoricalTurns": 126,
+    "worldsPerLanguage": 9,
+    "nativeModelsActuallyExecutedOnJvm": true,
+    "mutatingRequests": 0,
+    "nativeUiPlay": false,
+    "rawPrivateSnapshotCommitted": false
+  },
+  "apk": {
+    "file": "TGN-Live-0.8.0-android.1-debug.apk",
+    "relativeBuildPath": "apps/android/app/build/outputs/apk/debug/app-debug.apk",
+    "bytes": 12655354,
+    "sha256": "06fcc8961c353a8958b0a56c46f6d7306845c6943692c94c6b16a7e1e28cc001",
+    "signature": "VERIFIED_APK_V2_DEBUG_SIGNATURE",
+    "releaseSigningConfigured": false
+  },
+  "nativeEndToEnd": {
+    "installedToAndroid": false,
+    "productionLogin": "PENDING_EMULATOR_VALIDATION",
+    "realShelfAndPlayUi": "PENDING_EMULATOR_VALIDATION",
+    "productionTurnsPlayed": 0,
+    "emulator": "Android 15 / API 35 / 1080x2400 / density 420",
+    "emulatorBoot": "DESKTOP_REACHED",
+    "blocker": "TOOL_BLOCKED_DEBUG_AUTHORIZATION",
+    "physicalDevice": null,
+    "physicalAcceptance": "PENDING_PHYSICAL_DEVICE_VALIDATION"
+  },
+  "clientMeasurements": {
+    "status": "NOT_MEASURED",
+    "launchMs": null,
+    "homeInteractiveMs": null,
+    "bookshelfLoadMs": null,
+    "openStoryMs": null,
+    "tapToFeedbackMs": null,
+    "tapToFirstSseMs": null,
+    "tapToFirstVisibleNarrativeMs": null,
+    "tapToCompleteMs": null,
+    "choicesReadyMs": null
+  },
+  "evidenceLogs": [
+    ".runtime/android/candidate-verified-build.log",
+    ".runtime/android/live-contract-verified.log",
+    ".runtime/android/native-config-verified.log"
+  ],
+  "remainingRisks": [
+    "Actual Android installation, browser login and production play were not executed.",
+    "Input/IME, stable scrolling, lifecycle, network recovery and RTL still need Android observation.",
+    "Physical haptics, screen comfort, OEM behavior and Wi-Fi/5G switching are unvalidated.",
+    "Launch/home/shelf/open-story metrics require completion and device measurement.",
+    "Candidate is on an isolated short-lived branch, not merged into main.",
+    "Pinned toolchain reports non-blocking lint/SDK/Gradle deprecation warnings."
+  ]
+}

@@ -1,0 +1,274 @@
+<resources>
+  <string name="meta_title" formatted="false">"TGN Live · ادخل الحكاية"</string>
+  <string name="meta_description" formatted="false">"TGN Live: عوالم تقدم قابلة للعب تتذكر كل اختيار."</string>
+  <string name="skip" formatted="false">"انتقل إلى المحتوى الرئيسي"</string>
+  <string name="brand_home" formatted="false">"العودة إلى الاكتشاف"</string>
+  <string name="brand_name" formatted="false">"كتاب القدر"</string>
+  <string name="theme_toggle" formatted="false">"تبديل المظهر الفاتح والداكن"</string>
+  <string name="language_label" formatted="false">"لغة الواجهة"</string>
+  <string name="connection_message" formatted="false">"انقطع الاتصال أو انتهت الجلسة. المحتوى المحفوظ آمن."</string>
+  <string name="connection_retry" formatted="false">"إعادة الاتصال"</string>
+  <string name="nav_aria" formatted="false">"الأقسام الرئيسية"</string>
+  <string name="nav_discover" formatted="false">"اكتشف"</string>
+  <string name="nav_create" formatted="false">"أنشئ"</string>
+  <string name="nav_shelf" formatted="false">"المكتبة"</string>
+  <string name="continue_aria" formatted="false">"متابعة أحدث حكاية"</string>
+  <string name="discover_kicker" formatted="false">"حكايات تقدم قابلة للعب"</string>
+  <string name="discover_title" formatted="false">"العالم لن ينتظرك،\nلكنه سيتذكرك."</string>
+  <string name="discover_lede" formatted="false">"اختر عالماً وانتزع قوتك الأولى من بداية متواضعة."</string>
+  <string name="discover_new" formatted="false">"ابدأ مساراً جديداً"</string>
+  <string name="create_calloutu4bicker" formatted="false">"أنشئ عالمك"</string>
+  <string name="create_calloutu54itle" formatted="false">"فكرة واحدة. عالمك."</string>
+  <string name="create_calloutu54ext" formatted="false">"صف عصراً أو أزمة أو قاعدة للقوة، وسيتولى مسبك العوالم الباقي."</string>
+  <string name="create_start" formatted="false">"ابدأ الإنشاء"</string>
+  <string name="worlds_kicker" formatted="false">"عوالم مختارة"</string>
+  <string name="worlds_title" formatted="false">"اكتشف العوالم"</string>
+  <string name="worlds_note" formatted="false">"اختر عالماً ثم موهبتك"</string>
+  <string name="worlds_filtersu41ria" formatted="false">"تصفية أنواع العوالم"</string>
+  <string name="worlds_loading" formatted="false">"جارٍ فتح العوالم…"</string>
+  <string name="create_back" formatted="false">"العودة إلى الاكتشاف"</string>
+  <string name="create_kicker" formatted="false">"إنشاء عالم"</string>
+  <string name="create_title" formatted="false">"أي عالم تريد دخوله؟"</string>
+  <string name="create_lede" formatted="false">"تكفي جملة واحدة: عصر أو مأزق افتتاحي أو ثمن للقوة أو مجرد فكرة."</string>
+  <string name="create_promptu4cabel" formatted="false">"فكرة العالم"</string>
+  <string name="create_promptu50laceholder" formatted="false">"مثال: سلالة تروّض الوحوش فوق جزر طافية، وأنمو مع صغير يراه الجميع عاجزاً عن التطور."</string>
+  <string name="create_examplesu41ria" formatted="false">"أمثلة للأفكار"</string>
+  <string name="prompt_beasts_label" formatted="false">"وحوش الجزر"</string>
+  <string name="prompt_beasts" formatted="false">"سلالة تروّض الوحوش فوق جزر طافية، وأنمو مع صغير يراه الجميع عاجزاً عن التطور."</string>
+  <string name="prompt_stars_label" formatted="false">"ارتقاء نجمي"</string>
+  <string name="prompt_stars" formatted="false">"بحر النجوم هو عالم الخالدين. تعبر الطوائف القديمة السماوات بأساطيل، وأستيقظ داخل نواة نجمية نائمة."</string>
+  <string name="prompt_ninja_label" formatted="false">"إلهام نينجا"</string>
+  <string name="prompt_ninja" formatted="false">"عالم غير رسمي مستلهم من حكايات النينجا الحماسية، بشخصيات وفصائل وقصة أصلية بالكامل."</string>
+  <string name="create_generate" formatted="false">"اصنع العالم"</string>
+  <string name="create_building" formatted="false">"جارٍ البناء"</string>
+  <string name="create_connecting" formatted="false">"جارٍ الاتصال بكاتب العالم"</string>
+  <string name="create_elapsed" formatted="false">"الوقت المنقضي: {time}"</string>
+  <string name="create_stop" formatted="false">"إيقاف التوليد"</string>
+  <string name="create_failedu54itle" formatted="false">"لم يكتمل العالم"</string>
+  <string name="common_retry" formatted="false">"إعادة المحاولة"</string>
+  <string name="create_edit" formatted="false">"تعديل الوصف"</string>
+  <string name="shelf_kicker" formatted="false">"YOUR STORIES"</string>
+  <string name="shelf_title" formatted="false">"مكتبتي"</string>
+  <string name="shelf_discover" formatted="false">"اكتشف عالماً جديداً"</string>
+  <string name="shelf_loading" formatted="false">"جارٍ تحميل حكاياتك…"</string>
+  <string name="onboarding_back" formatted="false">"رجوع"</string>
+  <string name="onboarding_kicker" formatted="false">"CHOOSE YOUR PATH"</string>
+  <string name="onboarding_title" formatted="false">"بأي اسم ستدخل هذا العالم؟"</string>
+  <string name="onboarding_name" formatted="false">"اسم البطل"</string>
+  <string name="onboarding_nameu50laceholder" formatted="false">"مثال: ليان نور"</string>
+  <string name="onboarding_hint" formatted="false">"من 2 إلى 24 حرفاً، محفوظة في حكايتك الخاصة."</string>
+  <string name="onboarding_world" formatted="false">"العالم الحالي"</string>
+  <string name="onboarding_power" formatted="false">"اختر موهبة بداية واحدة"</string>
+  <string name="onboarding_loading" formatted="false">"جارٍ تحميل نظام القوة…"</string>
+  <string name="onboarding_adult" formatted="false">"عمري 18 عاماً على الأقل وأفهم أن الذكاء الاصطناعي يولّد النص مباشرة."</string>
+  <string name="onboarding_enter" formatted="false">"ادخل هذا العالم"</string>
+  <string name="story_leave" formatted="false">"مغادرة الحكاية"</string>
+  <string name="story_locationu55nknown" formatted="false">"عند العتبة"</string>
+  <string name="story_titleu46allback" formatted="false">"حكايتك"</string>
+  <string name="story_readeru45nter" formatted="false">"دخول وضع القراءة"</string>
+  <string name="story_readeru45xit" formatted="false">"الخروج من وضع القراءة"</string>
+  <string name="story_more" formatted="false">"مزيد من خيارات الحكاية"</string>
+  <string name="story_reading" formatted="false">"إعدادات القراءة"</string>
+  <string name="story_export" formatted="false">"تصدير الحكاية"</string>
+  <string name="story_text" formatted="false">"نص عادي"</string>
+  <string name="story_logs" formatted="false">"سجل التوليد"</string>
+  <string name="story_unfinished" formatted="false">"يتبع"</string>
+  <string name="story_latest" formatted="false">"العودة إلى الأحدث"</string>
+  <string name="actions_title" formatted="false">"الخطوة التالية"</string>
+  <string name="actions_status" formatted="false">"الحالة"</string>
+  <string name="actions_free" formatted="false">"فعل حر"</string>
+  <string name="actions_placeholder" formatted="false">"اكتب ما تريد فعله حقاً…"</string>
+  <string name="actions_submit" formatted="false">"إرسال الفعل"</string>
+  <string name="actions_draftu49dle" formatted="false">"سيرد العالم على فعلك"</string>
+  <string name="actions_retry" formatted="false">"إعادة الفعل"</string>
+  <string name="sheet_status" formatted="false">"حالة التقدم"</string>
+  <string name="sheet_closeu53tatus" formatted="false">"إغلاق الحالة"</string>
+  <string name="sheet_reading" formatted="false">"إعدادات القراءة"</string>
+  <string name="sheet_closeu52eading" formatted="false">"إغلاق إعدادات القراءة"</string>
+  <string name="sheet_logs" formatted="false">"سجل التوليد"</string>
+  <string name="sheet_closeu4cogs" formatted="false">"إغلاق سجل التوليد"</string>
+  <string name="provider_connecting" formatted="false">"جارٍ الاتصال"</string>
+  <string name="provider_ready" formatted="false">"خدمة السرد جاهزة"</string>
+  <string name="provider_available" formatted="false">"جاهز للبدء"</string>
+  <string name="provider_unavailable" formatted="false">"تعذر الاتصال"</string>
+  <string name="error_login" formatted="false">"ربما انتهت جلستك. أعد الاتصال."</string>
+  <string name="error_request" formatted="false">"فشل الطلب ({status})"</string>
+  <string name="error_stream" formatted="false">"لم يوفر المتصفح تدفق أحداث قابلاً للقراءة."</string>
+  <string name="error_streamu45nded" formatted="false">"انتهى تدفق الأحداث قبل الاكتمال."</string>
+  <string name="world_sourceu4dine" formatted="false">"عالمك الأصلي"</string>
+  <string name="world_sourceu4friginal" formatted="false">"عالم أصلي"</string>
+  <string name="world_all" formatted="false">"الكل"</string>
+  <string name="world_emptyu46ilter" formatted="false">"لا توجد عوالم في هذه الفئة بعد."</string>
+  <string name="world_unnamed" formatted="false">"عالم بلا عنوان"</string>
+  <string name="world_growth" formatted="false">"عالم تقدم"</string>
+  <string name="world_fallback" formatted="false">"كل اختيار تتخذه يصبح جزءاً من حقائق هذا العالم."</string>
+  <string name="world_view" formatted="false">"عرض العالم: {title}"</string>
+  <string name="world_none" formatted="false">"لا توجد عوالم متاحة الآن."</string>
+  <string name="world_loadu45rror" formatted="false">"لم تستجب العوالم: {message}"</string>
+  <string name="common_reload" formatted="false">"إعادة التحميل"</string>
+  <string name="library_empty" formatted="false">"مكتبتك فارغة. اكتشف عالماً واكتب دورك الأول."</string>
+  <string name="library_unnamed" formatted="false">"بطل بلا اسم"</string>
+  <string name="library_scroll" formatted="false">"حكاية"</string>
+  <string name="library_bodyu46allback" formatted="false">"بشري"</string>
+  <string name="library_turn" formatted="false">"الدور {number}"</string>
+  <string name="library_continue" formatted="false">"متابعة القراءة"</string>
+  <string name="library_loadu45rror" formatted="false">"تعذر تحميل المكتبة: {message}"</string>
+  <string name="library_language" formatted="false">"اللغة: {language}"</string>
+  <string name="world_poweru53ummary" formatted="false">"تأتي القوة من الاختيارات والأثمان والتراكم، لا من الفراغ."</string>
+  <string name="world_poweru47rowth" formatted="false">"ابدأ بشرياً واكسب تقدماً حقيقياً داخل الحكاية."</string>
+  <string name="world_destiny" formatted="false">"مسار ينتظر دخولك"</string>
+  <string name="world_previewu46allback" formatted="false">"ينكشف العالم عبر أفعالك ويتذكر ما وقع."</string>
+  <string name="world_current" formatted="false">"العالم الحالي"</string>
+  <string name="world_nou50owers" formatted="false">"لا توجد مواهب متاحة في هذا العالم بعد."</string>
+  <string name="world_poweru55nnamed" formatted="false">"موهبة بلا اسم"</string>
+  <string name="world_poweru46allback" formatted="false">"ستظهر حدودها وكلفتها داخل العالم."</string>
+  <string name="world_select" formatted="false">"اختر"</string>
+  <string name="world_selected" formatted="false">"تم الاختيار ✓"</string>
+  <string name="onboarding_invalid" formatted="false">"أكمل الاسم والموهبة وتأكيد العمر."</string>
+  <string name="onboarding_creating" formatted="false">"جارٍ فتح الحكاية…"</string>
+  <string name="action_startu53tory" formatted="false">"ابدأ حكايتي"</string>
+  <string name="stage_queued" formatted="false">"انتظار مساحة للسرد"</string>
+  <string name="stage_validating" formatted="false">"فحص الوصف"</string>
+  <string name="stage_context_assembly" formatted="false">"ترتيب قواعد العالم"</string>
+  <string name="stage_world_generation" formatted="false">"بناء العالم ونظام القوة"</string>
+  <string name="stage_world_validation" formatted="false">"فحص قواعد العالم"</string>
+  <string name="stage_world_persistence" formatted="false">"حفظ العالم الجديد"</string>
+  <string name="stage_authored_opening_plan" formatted="false">"فتح المشهد الأول"</string>
+  <string name="stage_plan" formatted="false">"ترتيب ما سيأتي"</string>
+  <string name="stage_narrative_generation" formatted="false">"متابعة فعلك"</string>
+  <string name="stage_parse_validate" formatted="false">"فحص النتيجة"</string>
+  <string name="stage_repair" formatted="false">"إصلاح النتيجة"</string>
+  <string name="stage_persistence" formatted="false">"تسجيلها في القانون"</string>
+  <string name="stage_acp" formatted="false">"الاتصال بنموذج السرد"</string>
+  <string name="stage_sent" formatted="false">"أُرسل الطلب"</string>
+  <string name="stage_realu4fnly" formatted="false">"مراحل حقيقية فقط، بلا نسبة تقديرية"</string>
+  <string name="world_invalidu52esult" formatted="false">"العالم الناتج غير مكتمل."</string>
+  <string name="world_failed" formatted="false">"فشل توليد العالم."</string>
+  <string name="world_cancelled" formatted="false">"تم الإيقاف. لم يُحفظ شيء؛ عدّل الوصف أو أعد المحاولة."</string>
+  <string name="world_cancelledu53hort" formatted="false">"توقف التوليد."</string>
+  <string name="status_realm" formatted="false">"المرتبة الحالية"</string>
+  <string name="status_realmu4deaning" formatted="false">"ما الذي تعنيه هذه المرتبة"</string>
+  <string name="status_abilities" formatted="false">"القدرات المكتسبة"</string>
+  <string name="status_itemsu45mpty" formatted="false">"لا توجد أشياء مهمة"</string>
+  <string name="status_peopleu45mpty" formatted="false">"لا توجد علاقات مسجلة"</string>
+  <string name="status_realmu55nknown" formatted="false">"مرتبة مجهولة"</string>
+  <string name="status_rank" formatted="false">"الرتبة {rank}"</string>
+  <string name="status_ranku55nknown" formatted="false">"الرتبة غير مسجلة"</string>
+  <string name="status_progress" formatted="false">"{progress}٪"</string>
+  <string name="status_progressu55nknown" formatted="false">"التقدم غير مسجل"</string>
+  <string name="status_progressu41ria" formatted="false">"تقدم المرتبة {progress}٪"</string>
+  <string name="status_power" formatted="false">"الموهبة الجوهرية"</string>
+  <string name="status_notu52ecorded" formatted="false">"غير مسجل"</string>
+  <string name="status_location" formatted="false">"الموقع"</string>
+  <string name="status_locationu55nknown" formatted="false">"الموقع غير مسجل"</string>
+  <string name="status_currency" formatted="false">"العملات"</string>
+  <string name="status_goal" formatted="false">"الهدف الحالي"</string>
+  <string name="status_goalu45mpty" formatted="false">"لا يوجد هدف"</string>
+  <string name="status_items" formatted="false">"الأشياء المهمة"</string>
+  <string name="status_itemu55nnamed" formatted="false">"شيء بلا اسم"</string>
+  <string name="status_people" formatted="false">"الشخصيات المهمة"</string>
+  <string name="status_personu55nnamed" formatted="false">"شخص بلا اسم"</string>
+  <string name="status_facts" formatted="false">"الحقائق المعروفة"</string>
+  <string name="turn_meta" formatted="false">"الدور {number} · {date}"</string>
+  <string name="turn_action" formatted="false">"اخترت: {action}"</string>
+  <string name="turn_awaiting" formatted="false">"حكايتك جاهزة. يظهر المشهد الأول بعد فعل البداية."</string>
+  <string name="turn_provisional" formatted="false">"جارٍ التوليد · لم يصبح قانوناً بعد"</string>
+  <string name="turn_waiting" formatted="false">"انتظار أول نص سردي…"</string>
+  <string name="turn_choice" formatted="false">"الخيار {number}"</string>
+  <string name="turn_choiceu55nnamed" formatted="false">"فعل بلا اسم"</string>
+  <string name="turn_writeu4fwn" formatted="false">"يمكنك كتابة فعل من اختيارك."</string>
+  <string name="turn_stop" formatted="false">"إيقاف"</string>
+  <string name="turn_processing" formatted="false">"جارٍ المعالجة"</string>
+  <string name="turn_notu43anon" formatted="false">"لم يُكتب في القانون"</string>
+  <string name="turn_failed" formatted="false">"أعادت خدمة السرد خطأ."</string>
+  <string name="turn_saved" formatted="false">"أصبح هذا الدور جزءاً من القانون."</string>
+  <string name="growth_close" formatted="false">"إغلاق تغييرات النمو"</string>
+  <string name="growth_title" formatted="false">"ترك هذا الفعل تغييرات"</string>
+  <string name="logs_note" formatted="false">"يعرض أحداث العميل وحقول الخادم فقط، ولا يعرض تفكير النموذج الخاص."</string>
+  <string name="logs_model" formatted="false">"النموذج: {model}"</string>
+  <string name="logs_total" formatted="false">"الوقت الكلي للدور: {time}"</string>
+  <string name="logs_none" formatted="false">"لا سجلات بعد"</string>
+  <string name="logs_notu52eported" formatted="false">"غير مبلّغ"</string>
+  <string name="logs_modelu4dissing" formatted="false">"لم تبلّغ الخدمة"</string>
+  <string name="logs_browseru54iming" formatted="false">"توقيت تفاعل المتصفح"</string>
+  <string name="logs_browseru41pprox" formatted="false">"رصد تقريبي عبر performance والإطار التالي، وليس زمناً لبكسلات هاتف فعلي."</string>
+  <string name="logs_feedbacku50aint" formatted="false">"ظهور الاستجابة الفورية"</string>
+  <string name="logs_firstu4earrativeu50aint" formatted="false">"ظهور أول نص سردي"</string>
+  <string name="logs_canonicalu43omplete" formatted="false">"استلام اكتمال القانون"</string>
+  <string name="logs_choicesu52eady" formatted="false">"الخيارات التالية قابلة للاستخدام"</string>
+  <string name="logs_pending" formatted="false">"قيد الانتظار"</string>
+  <string name="reading_font" formatted="false">"حجم النص"</string>
+  <string name="reading_leading" formatted="false">"تباعد السطور"</string>
+  <string name="reading_background" formatted="false">"خلفية الصفحة"</string>
+  <string name="reading_dark" formatted="false">"ليل الحبر"</string>
+  <string name="reading_light" formatted="false">"ورق"</string>
+  <string name="reading_system" formatted="false">"حسب المظهر"</string>
+  <string name="game_openu45rror" formatted="false">"تعذر فتح الحكاية: {message}"</string>
+  <string name="turn_cancelu57on" formatted="false">"اكتمل الدور وحُفظ قبل وصول الإيقاف."</string>
+  <string name="turn_cancelled" formatted="false">"تأكد الإيقاف ولم يُحفظ دور جديد."</string>
+  <string name="turn_cancelu50ending" formatted="false">"لا يوجد دور جديد؛ سيفحص الحفظ قبل الإعادة."</string>
+  <string name="turn_cancelu55nknown" formatted="false">"حالة الإيقاف غير مؤكدة: {message}. حدّث وافحص الحكاية قبل الإعادة."</string>
+  <string name="turn_restored" formatted="false">"استعيد الدور المكتمل من دون تكرار الفعل."</string>
+  <string name="turn_checku45rror" formatted="false">"تعذر فحص الحفظ: {message}"</string>
+  <string name="draft_saved" formatted="false">"حُفظت المسودة لهذه الحكاية"</string>
+  <string name="draft_restored" formatted="false">"استعيدت مسودة هذه الحكاية"</string>
+  <string name="time_unknown" formatted="false">"الوقت غير مسجل"</string>
+  <string name="time_ms" formatted="false">"{value} مللي ثانية"</string>
+  <string name="time_sec" formatted="false">"{value} ثانية"</string>
+  <string name="enum_u964cu751f" formatted="false">"غريب"</string>
+  <string name="enum_u8b66u60d5" formatted="false">"حذر"</string>
+  <string name="enum_u4e2du7acb" formatted="false">"محايد"</string>
+  <string name="enum_u53cbu5584" formatted="false">"ودود"</string>
+  <string name="enum_u4fe1u4efb" formatted="false">"واثق"</string>
+  <string name="enum_u654cu5bf9" formatted="false">"عدائي"</string>
+  <string name="enum_u4ec7u6068" formatted="false">"حاقد"</string>
+  <string name="enum_u5c0au656c" formatted="false">"محترم"</string>
+  <string name="enum_u76dfu53cb" formatted="false">"حليف"</string>
+  <string name="world_poweru48eading" formatted="false">"نظام القوى"</string>
+  <string name="enum_u654cu89c6" formatted="false">"عدائي"</string>
+  <string name="enum_u6212u5907" formatted="false">"متحفظ"</string>
+  <string name="enum_u597du5947" formatted="false">"فضولي"</string>
+  <string name="enum_u4eb2u8fd1" formatted="false">"مقرّب"</string>
+  <string name="status_leverage" formatted="false">"مزايا دائمة"</string>
+  <string name="status_offers" formatted="false">"في متناولك"</string>
+  <string name="status_fulfilled" formatted="false">"مكاسب تحققت"</string>
+  <string name="status_reused" formatted="false">"استُخدمت في {count} أفعال لاحقة"</string>
+  <string name="stage_planner_context_assembly" formatted="false">"إعداد مسار التطور"</string>
+  <string name="stage_parse" formatted="false">"التحقق من النتيجة"</string>
+  <string name="stage_reducer_validation" formatted="false">"التحقق من حالة العالم"</string>
+  <string name="stage_repair_parse" formatted="false">"التحقق من النتيجة"</string>
+  <string name="stage_repair_reducer_validation" formatted="false">"التحقق من حالة العالم"</string>
+  <string name="error_provideru53etup" formatted="false">"انتهت مهلة الاتصال بالنموذج. لم يُحفظ دور جديد ويمكنك المحاولة مجددًا."</string>
+  <string name="error_provideru54imeout" formatted="false">"انتهت مهلة التوليد. لم يُحفظ هذا الدور ويمكنك المحاولة مجددًا."</string>
+  <string name="app_name" formatted="false">"TGN Live"</string>
+  <string name="native_settings" formatted="false">"الإعدادات"</string>
+  <string name="native_login" formatted="false">"الدخول عبر المتصفح"</string>
+  <string name="native_loginu57aiting" formatted="false">"أكمل الدخول في المتصفح ثم عُد إلى التطبيق"</string>
+  <string name="native_cancel" formatted="false">"إلغاء"</string>
+  <string name="native_logout" formatted="false">"الخروج ومسح ذاكرة الحكايات المحلية"</string>
+  <string name="native_offline" formatted="false">"دون اتصال أو انتهت الجلسة · قراءة النسخة المحفوظة فقط"</string>
+  <string name="native_reconcile" formatted="false">"تحقق من الحفظ على الخادم قبل المحاولة"</string>
+  <string name="native_busy" formatted="false">"هناك فعل قيد التنفيذ. تحقق مجددًا بعد قليل"</string>
+  <string name="native_responding" formatted="false">"العالم يستجيب…"</string>
+  <string name="native_organizing" formatted="false">"جارٍ ترتيب هذه الصفحة…"</string>
+  <string name="native_continuing" formatted="false">"تتواصل الحكاية…"</string>
+  <string name="native_haptics" formatted="false">"استجابة لمسية"</string>
+  <string name="native_close" formatted="false">"إغلاق"</string>
+  <string name="native_updated" formatted="false">"آخر تحديث: {date}"</string>
+  <string name="native_empty" formatted="false">"لا سجلات بعد"</string>
+  <string name="native_growth" formatted="false">"أصبحت قوة جديدة جزءًا من حكايتك"</string>
+  <string name="native_export" formatted="false">"تصدير قياسات الوقت المحلية"</string>
+  <string name="native_timingu4eote" formatted="false">"الرؤية مقاسة ضمن النافذة والإطارات التالية وليست توقيت الشاشة المادي"</string>
+  <string name="native_account" formatted="false">"مكتبة خاصة"</string>
+  <string name="native_error" formatted="false">"لم يكتمل الاتصال. تحقق مجددًا؛ المسودة محفوظة."</string>
+  <string name="native_contextu43hanged" formatted="false">"تغيرت الحكاية ولم يُرسل هذا الفعل. اقرأ المستجدات قبل خطوتك التالية."</string>
+  <string name="native_creationu55nknown" formatted="false">"قد تكون الحكاية أُنشئت بالفعل. تحقق من المكتبة قبل إنشاء أخرى."</string>
+  <string name="native_inspectu53helf" formatted="false">"تحقق من المكتبة"</string>
+  <string name="native_creationu52eviewed" formatted="false">"راجعت المكتبة؛ السماح بإنشاء جديد"</string>
+  <string name="native_choiceu45dit" formatted="false">"اضغط لتحرير الفعل كاملًا"</string>
+  <string name="native_font0" formatted="false">"صغير جدًا"</string>
+  <string name="native_font1" formatted="false">"صغير"</string>
+  <string name="native_font2" formatted="false">"افتراضي"</string>
+  <string name="native_font3" formatted="false">"كبير"</string>
+  <string name="native_font4" formatted="false">"كبير جدًا"</string>
+</resources>

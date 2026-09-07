@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'org.jetbrains.kotlin.plugin.compose'
+def production = 'https://live.thegreatnovel.com'
+def debugEndpoint = providers.gradleProperty('tgnBackendUrl').getOrElse(production)
+if (!(debugEndpoint in [production, 'http://127.0.0.1:4317'])) throw new GradleException('Only production or explicit debug loopback is allowed')
+android {
+    namespace 'com.thegreatnovel.tgnlive'
+    compileSdk 36
+    defaultConfig {
+        applicationId 'com.thegreatnovel.tgnlive'
+        minSdk 26
+        targetSdk 36
+        versionCode 8001
+        versionName '0.8.0-android.1'
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+    buildTypes {
+        debug { applicationIdSuffix '.debug'; buildConfigField 'String', 'BACKEND_URL', '"' + debugEndpoint + '"' }
+        release { minifyEnabled false; buildConfigField 'String', 'BACKEND_URL', '"' + production + '"' }
+    }
+    // All five UI languages must remain available after an in-app switch, even offline.
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+    buildFeatures { compose true; buildConfig true }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    kotlinOptions { jvmTarget = '17' }
+    packaging { resources.excludes += '/META-INF/{AL2.0,LGPL2.1}' }
+}
+dependencies {
+    def bom = platform('androidx.compose:compose-bom:2026.04.01')
+    implementation bom
+    androidTestImplementation bom
+    implementation 'androidx.activity:activity-compose:1.11.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-compose:2.9.3'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.9.3'
+    implementation 'androidx.lifecycle:lifecycle-process:2.9.3'
+    implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.compose.foundation:foundation'
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.core:core-ktx:1.17.0'
+    implementation 'androidx.browser:browser:1.9.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'org.purejava:tweetnacl-java:1.1.3'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.json:json:20250517'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+    androidTestImplementation 'androidx.test:runner:1.7.0'
+    // Align Compose's Espresso transitive baseline with the installed AndroidX test runner.
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-idling-resource:3.7.0'
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
+}
+
+// Build-time production invariants. This does not pretend to exercise Android UI or login.
+tasks.register('verifyNativeConfiguration') {
+    doLast {
+        if (android.bundle.language.enableSplit != false) throw new GradleException('All five languages must remain bundled')
+        if (android.buildTypes.release.buildConfigFields.get('BACKEND_URL').value != '"https://live.thegreatnovel.com"') throw new GradleException('Release must use the existing production backend')
+        if (android.defaultConfig.minSdkVersion.apiLevel != 26) throw new GradleException('Unexpected Android minimum')
+        println('NATIVE_CONFIG_PASS: bundled languages; release production HTTPS; minSdk26')
+    }
+}
