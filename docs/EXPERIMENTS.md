@@ -1,3 +1,17 @@
+# 2026-09-07 v0.5.0 远程验收补充
+
+用户授权 private remote play 后，部署 https://live.thegreatnovel.com；原本机限定是历史版本范围。Cloudflare Access 本人登录和 origin JWT 验证同时生效。其他 Tunnel 路由逐项相同，原 12 份存档切换前后 hash 相同。
+
+- 26/26 单元测试通过，含独立签名、过期/错误aud/错误owner/伪造签名/转发Host/JWKS故障边界。
+- 6/6 实际HTTP检查：公共Host无JWT与伪JWT为401，伪转发loopback为403；本机200；外网页面/API匿名请求302到Access。
+- 真实Chrome以Cloudflare已登录身份进入公共HTTPS，390×844下创建验证书卷，提交开局与一条自由修炼行动。两次Terra/low均提交，无repair：首段5781/3923ms，完整14042/14127ms。准确stage/session/run保留在本地证据。
+- 刷新保留两回合，三条建议、状态抽屉、远程Markdown下载和阅读模式通过。修复手机阅读入口与退出控件。未把浏览器窄屏测试说成实体手机测试。
+- Windows用户登录启动项已写入并读回验证；现服务脱离AgentDock 24小时命令会话。未实际重启Windows或声称完成开机耐久性测试。
+
+证据在 `artifacts/remote-v050/`；复现 `npm test`、`node scripts/verify-remote.mjs`。详细部署见 `REMOTE_ACCESS.md`。下方报告为此前 v0.4.0 历史基线。
+
+---
+
 # TGN Live MVP：实现与实测报告
 
 生成时间：2026-09-06T23:12:33.280Z。目录：`C:\dev\tgn_live`。仅本地私用，当前运行入口以README及handoff为准。

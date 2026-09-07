@@ -1,3 +1,7 @@
+# v0.5.0 远程部署补充
+
+手机 HTTPS → Cloudflare Access（本人）→ 既有 Tunnel → loopback Node 4317 → SQLite + AgentDock ACP。`src/access.js` 统一保护页面/API，可信本机请求需 loopback Host 且没有转发头；远程请求必须验证独立 Access JWT，写入须同源。`docs/REMOTE_ACCESS.md` 为当前部署说明；下方本地架构历史说明继续适用核心生成/存档链路。
+
 # TGN Live 架构与运行边界
 
 适用：0.4.0，本地 `C:\dev\tgn_live`。实现独立于原 TGN 批量长篇生产流程。以实际代码及实验 trace 为准。

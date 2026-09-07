@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#101513" />
     <meta name="description" content="TGN Live：一部会记住你所有选择的修仙小说。" />
     <title>TGN Live · 入书修行</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles.css?v=0.5.0" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">跳至正文</a>
@@ -15,10 +15,11 @@
       <a class="brand" href="#library" aria-label="TGN Live 书库">
         <span class="brand-seal">天</span><span>TGN <em>Live</em></span>
       </a>
-      <div class="provider-chip" id="provider-chip" aria-live="polite">正在连接本地叙事服务</div>
+      <div class="provider-chip" id="provider-chip" aria-live="polite">正在连接叙事服务</div>
       <button class="icon-button" id="theme-toggle" type="button" aria-label="切换明暗主题" title="切换明暗主题">◐</button>
     </header>
 
+    <div id="connection-notice" class="connection-notice" role="alert" hidden>连接中断或登录过期。<a href="/">重新连接 / 登录</a>，核对已保存的书卷后继续。</div>
     <main id="main-content" tabindex="-1">
       <section class="screen active" id="library-screen" aria-labelledby="library-title">
         <div class="hero-copy">
@@ -53,7 +54,7 @@
               <legend>你握有的，唯一不对称之力</legend>
               <div id="power-options" class="power-options"><p class="empty-state">先选择世界。</p></div>
             </fieldset>
-            <label class="check-row"><input id="adult-confirmation" type="checkbox" required /><span>我已年满 18 周岁，并理解这是 AI 生成的本地私人原型。</span></label>
+            <label class="check-row"><input id="adult-confirmation" type="checkbox" required /><span>我已年满 18 周岁，并理解这是 AI 生成的私人原型。</span></label>
             <p class="form-error" id="creation-error" role="alert"></p>
             <button class="primary-button" id="create-game-button" type="submit" disabled>踏入此世 <span>→</span></button>
           </form>
@@ -100,6 +101,6 @@
     <aside class="drawer" id="status-drawer" aria-label="修行状态" aria-hidden="true" tabindex="-1"></aside>
     <aside class="drawer observability" id="observability-panel" aria-label="运行记录" aria-hidden="true" tabindex="-1"></aside>
     <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
-    <script type="module" src="/app.js"></script>
+    <script type="module" src="/app.js?v=0.5.0"></script>
   </body>
 </html>

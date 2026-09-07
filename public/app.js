@@ -38,8 +38,17 @@ function saveSession() { localStorage.setItem(storageKey, JSON.stringify({ gameI
 function readSession() { try { return JSON.parse(localStorage.getItem(storageKey)) || {}; } catch { return {}; } }
 function requestId() { return globalThis.crypto?.randomUUID?.() || `ui-${Date.now()}-${Math.random().toString(16).slice(2)}`; }
 
+function checkLogin(response, expectedType) {
+  const type = response.headers.get('content-type') || '';
+  if (response.status === 401 || response.status === 403 || response.redirected || type.includes('text/html')) {
+    document.querySelector('#connection-notice').hidden = false;
+    throw new Error('登录已过期，请点击“重新连接 / 登录”，然后核对存档再继续。');
+  }
+  if (response.ok && !type.includes(expectedType)) throw new Error('服务响应异常，请稍后重新连接。');
+}
 async function fetchJson(path, options = {}) {
   const response = await fetch(`${API}${path}`, { headers: { Accept:'application/json', ...(options.headers || {}) }, ...options });
+  checkLogin(response, 'application/json');
   const contentType = response.headers.get('content-type') || '';
   const payload = contentType.includes('application/json') ? await response.json().catch(() => ({})) : {};
   if (!response.ok) throw Object.assign(new Error(payload.message || `请求失败（${response.status}）`), { status: response.status, payload });
@@ -56,10 +65,10 @@ function toast(message) { const node = document.createElement('p'); node.classNa
 function record(name, details = '') { app.events.unshift({ name, details, at: new Date().toISOString() }); app.events = app.events.slice(0, 40); renderObservability(); }
 function setProvider(health) {
   const provider = health?.provider;
-  if (!provider) { els.provider.textContent = '本地私人原型 · 服务未连接'; els.provider.className = 'provider-chip error'; return; }
+  if (!provider) { els.provider.textContent = '私人原型 · 服务未连接'; els.provider.className = 'provider-chip error'; return; }
   const status = provider.status || 'unknown';
   const label = `${provider.name || 'ACP'} · ${provider.model || '未报告模型'} · ${status}`;
-  els.provider.textContent = `AI 生成 · 本地私人 · ${label}`;
+  els.provider.textContent = `AI 生成 · 私人 · ${label}`;
   els.provider.className = `provider-chip ${health.ok ? 'ok' : 'error'}`;
   els.provider.title = provider.warning || label;
 }
@@ -73,7 +82,7 @@ async function refreshLibrary() {
 }
 async function refreshWorlds() {
   try { const payload = await fetchJson('/worlds'); app.worlds = safeArray(payload.worlds); renderWorlds(); els.worldPicker.disabled = !app.worlds.length; }
-  catch (error) { els.worldOptions.innerHTML = `<p class="empty-state">世界尚不可用：${escapeHtml(error.message)}</p>`; els.creationError.textContent = '无法取得世界设定，请确认本地服务已启动。'; record('worlds-error', error.message); }
+  catch (error) { els.worldOptions.innerHTML = `<p class="empty-state">世界尚不可用：${escapeHtml(error.message)}</p>`; els.creationError.textContent = '无法取得世界设定，请确认家中电脑已联网且服务已启动。'; record('worlds-error', error.message); }
 }
 function renderLibrary() {
   els.gameCount.textContent = app.games.length ? `${app.games.length} 卷` : '';
@@ -166,6 +175,7 @@ function handleSseEvent(name, data) {
   if (name === 'error') { failTurn(data?.message || '叙事服务返回错误。', data); }
 }
 async function consumeSse(response) {
+  checkLogin(response, 'text/event-stream');
   if (!response.ok) { const payload = await response.json().catch(() => ({})); throw new Error(payload.message || `行动请求失败（${response.status}）`); }
   if (!response.body) throw new Error('浏览器未提供可读取的流。');
   const reader = response.body.getReader(); const decoder = new TextDecoder(); let buffer = ''; let eventName = 'message'; let dataLines = [];
@@ -215,7 +225,7 @@ function bindEvents() {
   $('#back-to-library').addEventListener('click', () => showScreen('library')); els.creationForm.addEventListener('submit', createGame); els.heroName.addEventListener('input', validateCreation); els.adult.addEventListener('change', validateCreation);
   els.libraryList.addEventListener('keydown', (event) => { if (event.key === 'Enter' && event.target.dataset.gameId) loadGame(event.target.dataset.gameId); });
   els.actionForm.addEventListener('submit', (event) => { event.preventDefault(); submitAction(); });
-  els.customAction.addEventListener('keydown', (event) => { if (event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); submitAction(); } });
+  els.customAction.addEventListener('keydown', (event) => { if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) { event.preventDefault(); submitAction(); } });
   els.customAction.addEventListener('input', () => { els.customAction.style.height = 'auto'; els.customAction.style.height = `${Math.min(112, els.customAction.scrollHeight)}px`; });
   els.retry.addEventListener('click', retryTurn); els.openStatus.addEventListener('click', () => openDrawer('status')); els.openObservability.addEventListener('click', () => openDrawer('observability')); els.drawerScrim.addEventListener('click', closeDrawer);
   els.exportMenu.addEventListener('click', () => { const open = els.exportOptions.hidden; els.exportOptions.hidden = !open; els.exportMenu.setAttribute('aria-expanded', String(open)); });
@@ -227,6 +237,8 @@ function bindEvents() {
   window.addEventListener('beforeunload', () => { if (app.stream && app.game?.id) navigator.sendBeacon?.(`${API}/games/${encodeURIComponent(app.game.id)}/cancel`); });
 }
 async function initialize() {
+  window.addEventListener('offline', () => { document.querySelector('#connection-notice').hidden = false; setProvider(null); });
+  window.addEventListener('online', refreshHealth);
   bindEvents(); renderObservability(); await refreshHealth(); await refreshLibrary(); const session = readSession(); if (session.gameId) { app.pendingAction = session.pendingAction ? { ...session.pendingAction, stage:'页面刷新前的生成未确认' } : null; await loadGame(session.gameId); if (app.pendingAction) { els.turnError.textContent = '页面刷新前的生成状态未知；请确认书卷后重试，未确认文本不会视为正史。'; els.retryRow.hidden = false; renderNarrative(); } }
   if (location.hash === '#new') $('#new-game-button').click();
 }

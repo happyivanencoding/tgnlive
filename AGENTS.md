@@ -14,7 +14,7 @@ Read `docs/MVP_SPEC.md`, `DEEP_CONTEXT_HANDOFF.md`, and the current experiment r
 - Never substitute fixture prose after a live provider error. Demo, deterministic fixtures, replay and real adaptive ACP play are separate experiment modes.
 
 ## Runtime and safety
-- Local trusted-user prototype only, default loopback port 4317. Do not expose public tunnels, relax global AgentDock policy or terminate unrelated agents.
+- Trusted single-owner prototype, default loopback port 4317. The user authorized remote play on 2026-09-07: only `live.thegreatnovel.com` through the existing Cloudflare Tunnel and owner-only Access. Validate Access JWTs at the origin. Do not expose anonymous routes, relax global AgentDock policy or terminate unrelated agents.
 - Read the actual advertised ACP configuration and verify a real call. In the initial environment, Astra was advertised but incompatible with the installed Codex; Sol/Luna actual probes passed.
 - Set reasoning explicitly: narrator/player low, planner/judge medium by default. Inherited ultra is not acceptable for real-time benchmarks.
 - Observed ACP global concurrent prompt limit is two. Bound concurrency, queue/retry and total time. Release owned sessions on all outcomes.

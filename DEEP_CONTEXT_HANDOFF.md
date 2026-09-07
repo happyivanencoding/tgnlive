@@ -1,3 +1,18 @@
+# 2026-09-07 远程手机网页版 v0.5.0
+
+当前入口 **https://live.thegreatnovel.com**；本机仍为 http://127.0.0.1:4317。此次用户明确授权 Cloudflare/域名远程部署，覆盖下方历史版本的禁止公网发布限制，仍限本人登录。详细运行/恢复见 `docs/REMOTE_ACCESS.md`。
+
+已复用现有 healthy TGN Tunnel，只增加 Live ingress 和 proxied DNS。新增独立 Access app，沿用 diary 的唯一 owner email；origin 验证 RS256/JWKS、issuer、audience、expiry/nbf、owner。API credential 沿用 Windows 用户环境，仅部署时使用；没有新 token、没有改动其他项目文件/路由/策略。`.runtime/remote.json`、部署前备份、数据库和证据被 Git 忽略。
+
+原 AgentDock 24h 服务会话已验证归属后停止，现由 `start-local.ps1` 隐藏启动，PID 20772（实时以 `.runtime/server.json` 为准）。已验证 HKCU Run/TGNLive 当前用户登录启动项。该方式没有开发会话 24h 时限，也不是登录前的系统服务或自动崩溃重启器。电脑需开机、联网、未睡眠，AgentDock/Codex 可用。
+
+验证：26/26 单测；6/6 origin/public 边界检查；切换前后原 12 份 games 行 hash 完全一致。Chrome 经真实 Cloudflare 登录，用公共 HTTPS 地址在 390×844 下创建“远程验证”，连续两个真实 Terra/low 回合完成，刷新保留第2回，三个建议、自由输入、状态抽屉、Markdown 下载和阅读模式通过。API首段 5781/3923ms，完成 14042/14127ms；首回合客户端正文处理事件 5824ms、完成14092ms，不称作精确屏幕绘制时间。未测试实体手机键盘/首次登录。新增 15秒 SSE 心跳、过期/断网提示、中文IME Enter保护、窄屏阅读入口与退出按钮。
+
+证据 `artifacts/remote-v050/`（boundary.json、live-game.json、live-metrics.json、mobile.png），单个验证存档保留供检查。复现 `npm test`、`node scripts/verify-remote.mjs`；Cloudflare 查询 `python scripts/configure-cloudflare.py inspect`。无远端 Git push。
+
+---
+以下为 v0.4.0 历史交接，部署入口和进程信息以上方为准。
+
 # TGN Live — 当前交接文件
 
 更新：2026-09-06 23:13 UTC / 巴黎2026-09-07。当前版本 **0.4.0**。工作目录 **C:\dev\tgn_live**。本次任务 **tsk_9a52649bc5df2fe4**，用户明确授权独立搭建、ACP实际游玩、分阶段计时和反复改进。原 `C:\dev\tgn-story-mvp` 未改动；本地Git已建立，未设置或推送远端。

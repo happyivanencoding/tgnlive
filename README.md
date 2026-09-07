@@ -1,10 +1,12 @@
 # TGN Live · 可玩的修仙小说
 
-独立 Windows 本地 Web MVP，项目目录 `C:\dev\tgn_live`。它没有修改原来的 `tgn-story-mvp` 生产流水线。当前版本 **0.4.0**；最终已验证运行结果以 `docs/EXPERIMENTS.md` 与 `artifacts/reports/MEASUREMENTS.md` 为准。
+独立 Windows 本地 Web MVP，项目目录 `C:\dev\tgn_live`。它没有修改原来的 `tgn-story-mvp` 生产流水线。当前版本 **0.5.0**；最终已验证运行结果以 `docs/EXPERIMENTS.md` 与 `artifacts/reports/MEASUREMENTS.md` 为准。
 
 ## 打开与启动
 
-在这台电脑的浏览器打开 **http://127.0.0.1:4317**。这是电脑本机地址，不是手机远程访问地址。
+手机或远程浏览器打开 **https://live.thegreatnovel.com**，使用本人 Cloudflare Access 登录。电脑本机仍可打开 **http://127.0.0.1:4317**。两处共用原有存档。
+
+已启用当前 Windows 用户登录后后台启动；电脑需保持开机、联网、未睡眠，AgentDock 可用。详见 [远程访问与恢复](docs/REMOTE_ACCESS.md)。
 
 服务未运行时，在普通 PowerShell 终端执行：
 

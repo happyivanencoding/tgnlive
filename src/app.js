@@ -5,21 +5,26 @@ import { AppError, publicError } from "./errors.js";
 import { createId } from "./ids.js";
 import { TurnTrace } from "./telemetry.js";
 import { createSeedState, getPower, getWorld, publicWorlds } from "./worlds.js";
+import { createRequestGuard } from './access.js';
 
 const JSON_HEADERS = { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" };
 
 export function createApp({ config, store, generationService }) {
   const inFlight = new Map();
+  const guard = createRequestGuard(config.remote);
 
   const server = createServer(async (request, response) => {
     try {
       const url = new URL(request.url, `http://${request.headers.host || `${config.host}:${config.port}`}`);
-      validateLocalRequest(request);
+      await guard(request);
+      response.setHeader('X-Content-Type-Options', 'nosniff');
+      response.setHeader('Referrer-Policy', 'same-origin');
       if (request.method === "GET" && url.pathname === "/api/health") {
         const health = generationService.providerHealth();
         return sendJson(response, 200, {
           ok: true,
           version: config.version,
+          access: { mode: config.remote ? 'owner-only' : 'local-only', publicUrl: config.remote?.publicUrl || null },
           architecture: { openingPlanStrategy: config.openingPlanStrategy, plannerInterval: config.plannerInterval, chapterTurns: config.chapterTurns },
           provider: {
             name: "AgentDock ACP",
@@ -35,7 +40,7 @@ export function createApp({ config, store, generationService }) {
             },
             ...(health.warning ? { warning: health.warning } : {}),
           },
-          limitations: ["local-only prototype", "read-only ACP mode is not a hostile multi-tenant sandbox guarantee", "AI illustrations are not implemented"],
+          limitations: ["private single-owner prototype; home PC must remain awake", "read-only ACP mode is not a hostile multi-tenant sandbox guarantee", "AI illustrations are not implemented"],
         });
       }
       if (request.method === "GET" && url.pathname === "/api/worlds") {
@@ -133,6 +138,7 @@ export function createApp({ config, store, generationService }) {
     }
 
     const controller = new AbortController();
+    const heartbeat = setInterval(() => { if (!response.destroyed) response.write(': keepalive\n\n'); }, 15000);
     inFlight.set(gameId, { controller, requestId, traceId: trace.id });
     response.on("close", () => {
       if (!response.writableEnded) controller.abort(new Error("client disconnected"));
@@ -182,32 +188,14 @@ export function createApp({ config, store, generationService }) {
       writeSse(response, "error", { ...safe, traceId: trace.id });
       response.end();
     } finally {
+      clearInterval(heartbeat);
       if (inFlight.get(gameId)?.requestId === requestId) inFlight.delete(gameId);
     }
   }
 
   return { server, inFlight };
 
-  function validateLocalRequest(request) {
-    const host = request.headers.host || "";
-    let hostUrl;
-    try { hostUrl = new URL(`http://${host}`); } catch {
-      throw new AppError("Host 无效", { code: "INVALID_HOST", status: 403 });
-    }
-    if (!new Set(["127.0.0.1", "localhost", "[::1]"]).has(hostUrl.hostname)) {
-      throw new AppError("只接受本机 Host", { code: "INVALID_HOST", status: 403 });
-    }
-    if (request.method === "GET" || request.method === "HEAD") return;
-    const origin = request.headers.origin;
-    if (!origin) return;
-    let originUrl;
-    try { originUrl = new URL(origin); } catch {
-      throw new AppError("Origin 无效", { code: "INVALID_ORIGIN", status: 403 });
-    }
-    if (!new Set(["127.0.0.1", "localhost", "[::1]"]).has(originUrl.hostname) || originUrl.host !== host) {
-      throw new AppError("拒绝跨来源写入", { code: "CROSS_ORIGIN_MUTATION", status: 403 });
-    }
-  }
+
 }
 
 function getWorldByGame(store, gameId) {

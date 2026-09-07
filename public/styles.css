@@ -34,3 +34,11 @@ body.light { color-scheme:light; --ink:#f0f0e7; --ink-raised:#e3e7dc; --paper:#1
 #main-content:focus { outline:none; }
 .provisional p { white-space:pre-wrap; }
 .power-status p { color:var(--mist); }
+
+.connection-notice { margin:12px 18px; padding:12px; border:1px solid var(--gold); color:var(--paper); font:14px/1.7 system-ui,sans-serif; }
+.connection-notice a { color:var(--jade-bright); }
+@media(max-width:760px) { .story-header { flex-wrap:wrap; } .story-header-actions { flex-wrap:wrap; } .text-button { min-height:44px; padding:8px; } .site-header { padding-top:max(12px,env(safe-area-inset-top)); } }
+@media(max-width:410px) { .story-header-actions #reader-toggle { display:inline-block; } }
+
+body.reader-mode .story-header-actions { display:flex; }
+body.reader-mode .story-header-actions > :not(#reader-toggle) { display:none; }

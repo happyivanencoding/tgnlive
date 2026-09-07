@@ -1,5 +1,7 @@
 # TGN Live MVP — execution contract
 
+2026-09-07 scope update: user authorized private remote phone/browser play through Cloudflare and thegreatnovel.com. The original local-only release restriction below is historical; owner-only `live.thegreatnovel.com` is now permitted. Other projects remain read-only, and no remote Git push is authorized. See `REMOTE_ACCESS.md`.
+
 Task: tsk_9a52649bc5df2fe4. Workspace: C:\dev\tgn_live. Source: docs/sources/shared_conversation.md (active branch, read the final substantive answer and original user request). The user has authorized building a working MVP, real ACP playtests, measuring stages, and repeated evidence-based improvements. This is NOT the production novel pipeline and NOT a generic character chat UI.
 
 ## Boundaries
