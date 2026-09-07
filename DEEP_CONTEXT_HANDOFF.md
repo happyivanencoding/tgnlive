@@ -1,3 +1,11 @@
+# 2026-09-07 v0.6 development in progress
+
+Task `tsk_6614789049f9adb3`: user authorized repository `happyivanencoding/tgnlive`, automatic commit/push for each accepted code/version update, mobile-first redesign, preset and prompt-created worlds, source-informed progression improvements and real ACP timing. Read `docs/SYSTEM.md` and `docs/LIVE_V060_CONTRACT.md`. The verified running release remains v0.5.0 until integration; new functionality is not yet declared delivered. Current clean baseline `059386f`, five-turn real ACP evidence `artifacts/eval/baseline-mobile-worlds-v050/`. Development sessions `acps_85999b1415dfdbb4a1819369` (mobile), see `artifacts/bootstrap/worlds_run.json` (backend); do not leave these running after delivery.
+
+Older no-push wording below is historical and overridden. Raw libraries, downloaded prompts, telemetry, databases and secrets stay outside Git. Original TGN files are read-only.
+
+---
+
 # 2026-09-07 远程手机网页版 v0.5.0
 
 当前入口 **https://live.thegreatnovel.com**；本机仍为 http://127.0.0.1:4317。此次用户明确授权 Cloudflare/域名远程部署，覆盖下方历史版本的禁止公网发布限制，仍限本人登录。详细运行/恢复见 `docs/REMOTE_ACCESS.md`。

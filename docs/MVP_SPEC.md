@@ -1,3 +1,7 @@
+# Current scope update — 2026-09-07
+
+The user now authorizes ongoing commit/push to `happyivanencoding/tgnlive` (`main`) and mobile-first, prompt-created multi-world expansion. This overrides historical no-push/single-world restrictions below. Current authority: `SYSTEM.md`, `LIVE_V060_CONTRACT.md`, and the current handoff. Owner-only Cloudflare deployment remains unchanged.
+
 # TGN Live MVP — execution contract
 
 2026-09-07 scope update: user authorized private remote phone/browser play through Cloudflare and thegreatnovel.com. The original local-only release restriction below is historical; owner-only `live.thegreatnovel.com` is now permitted. Other projects remain read-only, and no remote Git push is authorized. See `REMOTE_ACCESS.md`.

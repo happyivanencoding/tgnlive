@@ -2,6 +2,10 @@
 
 独立 Windows 本地 Web MVP，项目目录 `C:\dev\tgn_live`。它没有修改原来的 `tgn-story-mvp` 生产流水线。当前版本 **0.5.0**；最终已验证运行结果以 `docs/EXPERIMENTS.md` 与 `artifacts/reports/MEASUREMENTS.md` 为准。
 
+## 开发与版本同步
+
+源码仓库：`happyivanencoding/tgnlive`，主分支 `main`。用户已授权每次接受的代码/版本更新同步 handoff 与系统 docs 后自动 commit/push；不提交运行数据库、账号凭证、本地原著或实验原始个人数据。当前体系说明见 [SYSTEM](docs/SYSTEM.md)。
+
 ## 打开与启动
 
 手机或远程浏览器打开 **https://live.thegreatnovel.com**，使用本人 Cloudflare Access 登录。电脑本机仍可打开 **http://127.0.0.1:4317**。两处共用原有存档。
