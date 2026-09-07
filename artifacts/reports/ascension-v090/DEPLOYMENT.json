@@ -1,0 +1,156 @@
+{
+  "verifiedAt": "2026-09-07T17:21:29.182Z",
+  "deployed": true,
+  "version": "0.9.0",
+  "codeCommit": "6b59581a123494cfe393d68030369822735445d5",
+  "publicUrl": "https://live.thegreatnovel.com",
+  "listen": "127.0.0.1:4317",
+  "process": {
+    "pid": 6332
+  },
+  "plannerStrategy": "prefetch",
+  "previousVersion": "0.8.0",
+  "previousCodeCommit": "26fc8e1d241aebf8ee798c6f186d5a079cd2afe0",
+  "backup": {
+    "relativePath": ".runtime/v090-release-final-backup/tgn-live.sqlite",
+    "capturedAt": "2026-09-07T17:12:51.789825+00:00",
+    "rowCounts": {
+      "games": 28,
+      "worlds": 2,
+      "game_worlds": 13,
+      "turns": 131,
+      "requests": 140,
+      "canon_ledger": 131,
+      "story_plans": 29,
+      "traces": 142
+    },
+    "privateFileExcludedFromGit": true
+  },
+  "beforeDeployment": {
+    "verifiedAt": "2026-09-07T17:19:55.063352+00:00",
+    "passed": true,
+    "sameTables": {
+      "games": true,
+      "worlds": true,
+      "game_worlds": true,
+      "turns": true,
+      "requests": true,
+      "canon_ledger": true,
+      "story_plans": true,
+      "traces": true
+    },
+    "checks": {
+      "integrity": [
+        "ok"
+      ],
+      "foreignKeyViolations": 0,
+      "pendingRequests": 0
+    }
+  },
+  "afterDeployment": {
+    "verifiedAt": "2026-09-07T17:21:28.652056+00:00",
+    "passed": true,
+    "sameTables": {
+      "games": true,
+      "worlds": true,
+      "game_worlds": true,
+      "turns": true,
+      "requests": true,
+      "canon_ledger": true,
+      "story_plans": true,
+      "traces": true
+    },
+    "checks": {
+      "integrity": [
+        "ok"
+      ],
+      "foreignKeyViolations": 0,
+      "pendingRequests": 0
+    }
+  },
+  "liveReadOnly": {
+    "at": "2026-09-07T17:21:28.221Z",
+    "version": "0.9.0",
+    "health": {
+      "access": {
+        "mode": "owner-only",
+        "publicUrl": "https://live.thegreatnovel.com"
+      },
+      "architecture": {
+        "openingPlanStrategy": "authored",
+        "plannerStrategy": "prefetch",
+        "plannerInterval": 8,
+        "chapterTurns": 6
+      }
+    },
+    "oldBooksReadable": 28,
+    "oldTurnsReadable": 131,
+    "newWorldCatalogUsesV090": true,
+    "staticAssetsVersionPinned": "0.9.0",
+    "android": {
+      "head": "c21d1a3d0ef4a55808a8cd75b145fef0dc6b8880",
+      "branch": "mobile/android-native",
+      "branchHeadUnchanged": true,
+      "worktreeUntouchedByThisRelease": true,
+      "clean": false,
+      "concurrentStatus": " M apps/android/app/src/main/java/com/thegreatnovel/tgnlive/LiveViewModel.kt\n M apps/android/app/src/main/java/com/thegreatnovel/tgnlive/NativePerf.kt\n?? apps/android/app/src/androidTest/java/com/thegreatnovel/tgnlive/PhysicalPlayTest.kt\n?? apps/android/app/src/main/java/com/thegreatnovel/tgnlive/NativeTurnUi.kt\n",
+      "note": "Concurrent native development added files after the initial read. They are preserved; cleanliness is not a release requirement."
+    },
+    "productionTurnsAddedByVerification": 0
+  },
+  "accessBoundary": {
+    "at": "2026-09-07T17:21:28.439Z",
+    "version": "0.9.0",
+    "checks": [
+      {
+        "headers": [
+          "host"
+        ],
+        "expected": 401,
+        "actual": 401
+      },
+      {
+        "headers": [
+          "host",
+          "cf-access-jwt-assertion"
+        ],
+        "expected": 401,
+        "actual": 401
+      },
+      {
+        "headers": [
+          "host",
+          "cf-connecting-ip"
+        ],
+        "expected": 403,
+        "actual": 403
+      },
+      {
+        "headers": [
+          "host"
+        ],
+        "expected": 200,
+        "actual": 200
+      },
+      {
+        "publicPath": "/",
+        "anonymous": "login-required",
+        "status": 302
+      },
+      {
+        "publicPath": "/api/games",
+        "anonymous": "login-required",
+        "status": 302
+      }
+    ]
+  },
+  "codePushedToOriginMain": true,
+  "verificationAddedUserTurns": 0,
+  "explicitlyRecordedPreReleaseChange": "One historical uncommitted request from the previous process was marked interrupted, with one missing diagnostic trace added; no historical Canon or prose changed. A separate real user turn committed during preparation, so final backup contains131 turns. Compare release against this final backup, not the earlier130-turn snapshot.",
+  "limits": [
+    "Local production health and remote anonymous Access redirects verified; no new authenticated WAN model turn was appended to private books.",
+    "Real old-save continuation and new-world opening used a private database copy, reported in RELEASE_EVIDENCE.json.",
+    "Android worktree was only read; its branch head is preserved and concurrently added native files are left intact.",
+    "A following evidence-only commit records this deployed code commit without changing running source."
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "at": "2026-09-07T17:15:00.354Z",
-  "stage": "accepted-for-release-not-yet-deployed",
+  "stage": "released-and-verified",
   "version": "0.9.0",
   "baseline": "26fc8e1d241aebf8ee798c6f186d5a079cd2afe0",
   "tests": {
@@ -109,5 +109,7 @@
     "Two ACP release probes are not counted in 200 quality submissions.",
     "A real production turn committed during release preparation; final backup has131 turns, not the earlier130.",
     "Actual deployment and post-release verification will be recorded separately in DEPLOYMENT.json."
-  ]
+  ],
+  "deploymentReceipt": "DEPLOYMENT.json",
+  "deployedCodeCommit": "6b59581a123494cfe393d68030369822735445d5"
 }
