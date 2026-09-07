@@ -1,0 +1,120 @@
+{
+  "fiveLanguage": {
+    "source": "artifacts/ui/i18n-contract-1788800615816/result.json",
+    "status": "passed",
+    "checks": {
+      "defaultChinese": true,
+      "fiveOptions": true,
+      "zhRootLanguage": true,
+      "zhDirection": true,
+      "zhTopRight": true,
+      "zhNoOverflow": true,
+      "enRootLanguage": true,
+      "enDirection": true,
+      "enTopRight": true,
+      "enNoOverflow": true,
+      "enNoChineseHomeText": true,
+      "frRootLanguage": true,
+      "frDirection": true,
+      "frTopRight": true,
+      "frNoOverflow": true,
+      "frNoChineseHomeText": true,
+      "esRootLanguage": true,
+      "esDirection": true,
+      "esTopRight": true,
+      "esNoOverflow": true,
+      "esNoChineseHomeText": true,
+      "arRootLanguage": true,
+      "arDirection": true,
+      "arTopRight": true,
+      "arNoOverflow": true,
+      "arNoChineseHomeText": true,
+      "preferencePersists": true,
+      "selectionPreserved": true,
+      "namePreserved": true,
+      "consentPreserved": true,
+      "previewFrench": true,
+      "onboardingFits360": true,
+      "onboardingFits390": true,
+      "onboardingFits430": true,
+      "onboardingFits844": true,
+      "languageLockedDuringTurn": true,
+      "arabicRequest": true,
+      "arabicProse": true,
+      "arabicInput": true,
+      "imeEnterDoesNotSubmit": true,
+      "draftRetainedAcrossLanguage": true,
+      "pastArabicAndNewFrench": true,
+      "oldArabicDirection": true,
+      "newFrenchDirection": true,
+      "statusDrawerVisible": true,
+      "noJavascriptErrors": true
+    },
+    "errors": [],
+    "viewports": {
+      "360x800": {
+        "width": 360,
+        "scrollWidth": 360
+      },
+      "390x844": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "430x900": {
+        "width": 430,
+        "scrollWidth": 430
+      },
+      "844x390": {
+        "width": 844,
+        "scrollWidth": 844
+      }
+    },
+    "mode": "isolated-browser-fixture-no-model-calls"
+  },
+  "mobile": {
+    "source": "artifacts/ui/ascension-v090-final-mobile/result.json",
+    "passed": true,
+    "checks": {
+      "historyNodeSurvivesSubmit": true,
+      "stopFocusSurvivesTimer": true,
+      "sameParagraphGeometry": true,
+      "dockStableAcrossGeneration": true,
+      "historyNodeSurvivesCommit": true,
+      "independentBrowserRecorder": true,
+      "upwardNearBottomPauses": true,
+      "longChoicesDoNotPullReader": true,
+      "latestButtonAfterUserPause": true,
+      "explicitLatestWorks": true,
+      "oldParagraphAnchor": true,
+      "offscreenNotCountedByRecorder": true,
+      "productOffscreenTimingHonest": true,
+      "recorderSeesTextAfterExplicitLatest": true,
+      "smallReadable-360": true,
+      "targets-360": true,
+      "noOverflow-360": true,
+      "fontPersists-360": true,
+      "smallReadable-390": true,
+      "targets-390": true,
+      "noOverflow-390": true,
+      "fontPersists-390": true,
+      "smallReadable-430": true,
+      "targets-430": true,
+      "noOverflow-430": true,
+      "fontPersists-430": true,
+      "arabicRetained": true,
+      "arabicDraftRetained": true,
+      "compactLandscape": true,
+      "imePreserved": true,
+      "keyboardVisible": true,
+      "reducedMotion": true
+    },
+    "limits": [
+      "Desktop Chrome viewports and synthetic viewport/gesture events, not physical Android/iOS.",
+      "Replayed text is real earlier ACP output, but all replay timings are synthetic and never model latency.",
+      "Animation-frame visibility is a browser observation, not hardware display paint timing."
+    ]
+  },
+  "limits": [
+    "Fixture/replayed browser tests verify UI behavior only, not model quality or live latency."
+  ]
+}

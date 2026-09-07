@@ -1,5 +1,24 @@
 ## v0.8.0 当前约定（优先于下方历史）
 
+## v0.9.0 当前生产契约（2026-09-07）
+
+本节覆盖下方历史版本说明；实际部署状态与代码提交以 `artifacts/reports/ascension-v090/DEPLOYMENT.json` 回执为准。仍是原来的 TGN Live / 4317 / owner-only Access，同一书架、同一Canon，没有第二产品。详见 `docs/V090_RESULTS.md` 与 `docs/ASCENSION_ITERATION.md`。
+
+首次入场直接释放现有World的世界规则、当前/下一力量阶段、行动空间、稀缺目标与天赋优势；局势明显改变后可直接重述人物位置、公开利益、结果与可走路径。三个建议说明争取什么，不要求每条都奖励。有限POV可整理公开信息，不能泄漏隐秘事实。
+
+阶段身份服从Canon中稳定的核心能力与必要资源，不受XP100阻挡；仍限世界快照中的精确相邻阶段，时间、满进度和一次特殊借力不能自动突破。身体能力记录benchmark，不自动授予组织权利。旧存档与worldSnapshot不迁移。`update.qty` 为剩余件数，省略qty保留部分使用的包/瓶；update不得增加件数。提案为回合结束净状态，询价不等于授权付款，已售货物不留库存。
+
+Story Brain沿用Sol/medium，计划只增加可选graduated/transition，记录已掌握普通环节与真正的阶段条件。成熟操作可在玩家授权范围内整段结算；不追加同义核验前置。leverage用于真实可反复调用的人、身份、组织资格、独占渠道/产业，普通路线用facts/capabilities，不批量改旧记录。
+
+默认 `TGN_PLANNER_STRATEGY=prefetch`：已提交第6/14回合后基于当时Canon准备第8/16版本计划，下一次点击不等规划；就绪且游戏/语言/阶段/目标版本一致才用，未就绪/失败/过期/冷启动直接继续当前Canon与可用旧计划。当前行动优先，未发生的提前计划不是Canon。取消、过期、换游戏/阶段和退出会回收本任务；后台计划不写角色状态。`checkpoint` 环境开关保留为对照/回退。没有每回合judge、二次rewrite或更低effort。
+
+主要质量实验必须20+唯一成功提交回合，同Canon恢复且失败原样保留；读全文/动作/建议/状态/显式Player意图。浏览器帧计时与服务端SSE分开，后台规划成本、Player思考、失败长尾单列。原移动布局/12–24px/滚动锁/preview同构/Stop/IME/RTL不改；本版仅更新静态缓存版本。
+
+---
+
+## 以下为历史设计与实验记录
+
+
 见 [本轮真实结果](V080_RESULTS.md)、[成长机制与否决记录](PROGRESSION_ITERATION.md)、[移动端证据](V080_INDEPENDENT_REVIEW.md)。当前新增可复用筹码/待兑现机会状态、世界独立growthGrammar、阶段欲望与短计划；没有新增每回合模型。七个预设中两个新世界的实际覆盖须按报告读取，不能用schema通过代替长测。
 
 API server firstNarrativeSseMs与浏览器可见帧严格区分；ACP五个准备子阶段在原model阶段内，20s准备预算与120s正文预算分离。只允许叙事输出，命令目录元数据例外不等于允许工具。默认模型仍Terra低/Narrator、Sol中/Brain、Luna中/Forge；完整等待未证明变快。

@@ -1,0 +1,453 @@
+{
+  "generatedAt": "2026-09-07T17:11:49.156Z",
+  "trajectories": [
+    {
+      "label": "ascension-baseline-hunt-20-v080-r2",
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 6553,
+        "firstSseP95Ms": 30575,
+        "completeMedianMs": 23923.5,
+        "completeP95Ms": 51462
+      },
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "live-story-brain",
+          "planMs": 26016,
+          "firstSseMs": 30575,
+          "totalMs": 51462,
+          "prefetch": null
+        },
+        {
+          "turn": 17,
+          "planSource": "live-story-brain",
+          "planMs": 42015,
+          "firstSseMs": 46651,
+          "totalMs": 59630,
+          "prefetch": null
+        }
+      ],
+      "browser": null,
+      "wallMs": 2164862,
+      "successfulServerSumMs": 519819,
+      "failedServerSumMs": 183084,
+      "successfulPlayerSumMs": 125020
+    },
+    {
+      "label": "ascension-baseline-martial-20-v080-r2",
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 4980.5,
+        "firstSseP95Ms": 28903,
+        "completeMedianMs": 20330.5,
+        "completeP95Ms": 45600
+      },
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "live-story-brain",
+          "planMs": 22210,
+          "firstSseMs": 32708,
+          "totalMs": 45600,
+          "prefetch": null
+        },
+        {
+          "turn": 17,
+          "planSource": "live-story-brain",
+          "planMs": 24186,
+          "firstSseMs": 28903,
+          "totalMs": 46649,
+          "prefetch": null
+        }
+      ],
+      "browser": null,
+      "wallMs": 2092111,
+      "successfulServerSumMs": 451579,
+      "failedServerSumMs": 0,
+      "successfulPlayerSumMs": 121815
+    },
+    {
+      "label": "ascension-a-hunt-20-r3",
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 6193,
+        "firstSseP95Ms": 33037,
+        "completeMedianMs": 21921,
+        "completeP95Ms": 48270
+      },
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "live-story-brain",
+          "planMs": 47074,
+          "firstSseMs": 51155,
+          "totalMs": 64490,
+          "prefetch": null
+        },
+        {
+          "turn": 17,
+          "planSource": "live-story-brain",
+          "planMs": 27315,
+          "firstSseMs": 33037,
+          "totalMs": 48270,
+          "prefetch": null
+        }
+      ],
+      "browser": null,
+      "wallMs": 1761463,
+      "successfulServerSumMs": 539750,
+      "failedServerSumMs": 120041,
+      "successfulPlayerSumMs": 144061
+    },
+    {
+      "label": "ascension-a-beast-20-r3",
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 9114,
+        "firstSseP95Ms": 32972,
+        "completeMedianMs": 25616,
+        "completeP95Ms": 51557
+      },
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "live-story-brain",
+          "planMs": 27944,
+          "firstSseMs": 32972,
+          "totalMs": 51557,
+          "prefetch": null
+        },
+        {
+          "turn": 17,
+          "planSource": "live-story-brain",
+          "planMs": 30465,
+          "firstSseMs": 43427,
+          "totalMs": 58960,
+          "prefetch": null
+        }
+      ],
+      "browser": null,
+      "wallMs": 2811733,
+      "successfulServerSumMs": 566680,
+      "failedServerSumMs": 223111,
+      "successfulPlayerSumMs": 180850
+    },
+    {
+      "label": "ascension-b-hunt-20",
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 11588,
+        "firstSseP95Ms": 40894,
+        "completeMedianMs": 24361,
+        "completeP95Ms": 60269
+      },
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "live-story-brain",
+          "planMs": 35935,
+          "firstSseMs": 40894,
+          "totalMs": 60269,
+          "prefetch": null
+        },
+        {
+          "turn": 17,
+          "planSource": "live-story-brain",
+          "planMs": 79011,
+          "firstSseMs": 84724,
+          "totalMs": 97582,
+          "prefetch": null
+        }
+      ],
+      "browser": null,
+      "wallMs": 825164,
+      "successfulServerSumMs": 614026,
+      "failedServerSumMs": 0,
+      "successfulPlayerSumMs": 209234
+    },
+    {
+      "label": "ascension-b-martial-20",
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 7463.5,
+        "firstSseP95Ms": 36789,
+        "completeMedianMs": 23766,
+        "completeP95Ms": 52112
+      },
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "live-story-brain",
+          "planMs": 49606,
+          "firstSseMs": 54544,
+          "totalMs": 70477,
+          "prefetch": null
+        },
+        {
+          "turn": 17,
+          "planSource": "live-story-brain",
+          "planMs": 31698,
+          "firstSseMs": 36789,
+          "totalMs": 52112,
+          "prefetch": null
+        }
+      ],
+      "browser": null,
+      "wallMs": 711698,
+      "successfulServerSumMs": 518459,
+      "failedServerSumMs": 0,
+      "successfulPlayerSumMs": 191206
+    },
+    {
+      "label": "ascension-c-beast-browser-20-r2",
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 11688.5,
+        "firstSseP95Ms": 19450,
+        "completeMedianMs": 26216,
+        "completeP95Ms": 34974
+      },
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "existing-plan-nonblocking-fallback",
+          "planMs": null,
+          "firstSseMs": 4531,
+          "totalMs": 26051,
+          "prefetch": {
+            "status": "pending",
+            "basisVersion": 6,
+            "targetVersion": 8,
+            "traceId": "trace_6f341b7a4d8845a38af35538773d8c0a"
+          }
+        },
+        {
+          "turn": 17,
+          "planSource": "ready-prefetch-no-foreground-model-call",
+          "planMs": null,
+          "firstSseMs": 11360,
+          "totalMs": 25642,
+          "prefetch": {
+            "status": "ready",
+            "basisVersion": 14,
+            "targetVersion": 16,
+            "traceId": "trace_5efd202ce41542cbb2b0ca97a4796d3f",
+            "backgroundElapsedMs": 42664
+          }
+        }
+      ],
+      "browser": {
+        "samples": 19,
+        "feedback": {
+          "n": 19,
+          "medianMs": 25.7,
+          "p95Ms": 28,
+          "maxMs": 28
+        },
+        "firstVisible": {
+          "n": 19,
+          "medianMs": 11384.6,
+          "p95Ms": 23798.9,
+          "maxMs": 23798.9
+        },
+        "choicesReady": {
+          "n": 19,
+          "medianMs": 26141.7,
+          "p95Ms": 41126.7,
+          "maxMs": 41126.7
+        },
+        "sseReceipt": {
+          "n": 19,
+          "medianMs": 11367,
+          "p95Ms": 23783.5,
+          "maxMs": 23783.5
+        },
+        "completeReceipt": {
+          "n": 19,
+          "medianMs": 26077.2,
+          "p95Ms": 41080.3,
+          "maxMs": 41080.3
+        },
+        "limitation": "Real Chrome rAF visibility, not physical phone or hardware paint. Turn16 has no fabricated browser receipt."
+      },
+      "wallMs": 2410643,
+      "successfulServerSumMs": 541512,
+      "failedServerSumMs": 1153,
+      "successfulPlayerSumMs": 167503
+    },
+    {
+      "label": "ascension-d-masked-20",
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 9290.5,
+        "firstSseP95Ms": 44707,
+        "completeMedianMs": 22186,
+        "completeP95Ms": 55674
+      },
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "live-story-brain",
+          "planMs": 39928,
+          "firstSseMs": 44707,
+          "totalMs": 55674,
+          "prefetch": null
+        },
+        {
+          "turn": 17,
+          "planSource": "live-story-brain",
+          "planMs": 40006,
+          "firstSseMs": 54984,
+          "totalMs": 73573,
+          "prefetch": null
+        }
+      ],
+      "browser": null,
+      "wallMs": 723296,
+      "successfulServerSumMs": 560066,
+      "failedServerSumMs": 0,
+      "successfulPlayerSumMs": 161024
+    },
+    {
+      "label": "ascension-e-masked-20",
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 11622.5,
+        "firstSseP95Ms": 15788,
+        "completeMedianMs": 26840,
+        "completeP95Ms": 41836
+      },
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "existing-plan-nonblocking-fallback",
+          "planMs": null,
+          "firstSseMs": 9181,
+          "totalMs": 41836,
+          "prefetch": {
+            "status": "pending",
+            "basisVersion": 6,
+            "targetVersion": 8,
+            "traceId": "trace_203fa976cb1c429dbb36e52460ce6dd1"
+          }
+        },
+        {
+          "turn": 17,
+          "planSource": "ready-prefetch-no-foreground-model-call",
+          "planMs": null,
+          "firstSseMs": 9328,
+          "totalMs": 28196,
+          "prefetch": {
+            "status": "ready",
+            "basisVersion": 14,
+            "targetVersion": 16,
+            "traceId": "trace_acbcef8da3a44fd5a504f15a29780f63",
+            "backgroundElapsedMs": 56947
+          }
+        }
+      ],
+      "browser": null,
+      "wallMs": 731517,
+      "successfulServerSumMs": 556913,
+      "failedServerSumMs": 0,
+      "successfulPlayerSumMs": 166598
+    },
+    {
+      "label": "ascension-c-stars-20-r2",
+      "server": {
+        "samples": 20,
+        "firstSseMedianMs": 12895,
+        "firstSseP95Ms": 22973,
+        "completeMedianMs": 28924,
+        "completeP95Ms": 43462
+      },
+      "checkpoint": [
+        {
+          "turn": 9,
+          "planSource": "ready-prefetch-no-foreground-model-call",
+          "planMs": null,
+          "firstSseMs": 11777,
+          "totalMs": 26079,
+          "prefetch": {
+            "status": "ready",
+            "basisVersion": 6,
+            "targetVersion": 8,
+            "traceId": "trace_488da09ac06a44c2984e92b081eb5a05",
+            "backgroundElapsedMs": 45248
+          }
+        },
+        {
+          "turn": 17,
+          "planSource": "ready-prefetch-no-foreground-model-call",
+          "planMs": null,
+          "firstSseMs": 8970,
+          "totalMs": 27144,
+          "prefetch": {
+            "status": "ready",
+            "basisVersion": 14,
+            "targetVersion": 16,
+            "traceId": "trace_d56b0f4b594e4b949850b7632105d892",
+            "backgroundElapsedMs": 39738
+          }
+        }
+      ],
+      "browser": null,
+      "wallMs": 1653099,
+      "successfulServerSumMs": 589520,
+      "failedServerSumMs": 0,
+      "successfulPlayerSumMs": 185618
+    }
+  ],
+  "background": {
+    "jobs": [
+      {
+        "trajectory": "ascension-c-beast-browser-20-r2",
+        "id": "trace_6f341b7a4d8845a38af35538773d8c0a",
+        "totalMs": 82408,
+        "status": "complete",
+        "consumedAtCheckpoint": false
+      },
+      {
+        "trajectory": "ascension-c-beast-browser-20-r2",
+        "id": "trace_5efd202ce41542cbb2b0ca97a4796d3f",
+        "totalMs": 42664,
+        "status": "complete",
+        "consumedAtCheckpoint": true
+      },
+      {
+        "trajectory": "ascension-e-masked-20",
+        "id": "trace_203fa976cb1c429dbb36e52460ce6dd1",
+        "totalMs": 100092,
+        "status": "complete",
+        "consumedAtCheckpoint": false
+      },
+      {
+        "trajectory": "ascension-e-masked-20",
+        "id": "trace_acbcef8da3a44fd5a504f15a29780f63",
+        "totalMs": 56947,
+        "status": "complete",
+        "consumedAtCheckpoint": true
+      },
+      {
+        "trajectory": "ascension-c-stars-20-r2",
+        "id": "trace_488da09ac06a44c2984e92b081eb5a05",
+        "totalMs": 45248,
+        "status": "complete",
+        "consumedAtCheckpoint": true
+      },
+      {
+        "trajectory": "ascension-c-stars-20-r2",
+        "id": "trace_d56b0f4b594e4b949850b7632105d892",
+        "totalMs": 39738,
+        "status": "complete",
+        "consumedAtCheckpoint": true
+      }
+    ],
+    "allElapsedMs": 367097,
+    "consumed": 4,
+    "notConsumed": 2,
+    "notConsumedElapsedMs": 182500
+  },
+  "interpretation": "The six measured checkpoints in C-beast/E-masked/C-stars made zero foreground Brain calls: four ready reuses and two nonblocking fallbacks. No randomized overall-speed or retention claim. Nested model/setup spans are not additive. Background elapsed is not billed token cost."
+}

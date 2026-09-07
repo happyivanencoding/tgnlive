@@ -25,7 +25,7 @@ for (const world of WORLDS) {
     assert.equal(next.state.realm.name, world.powerSystem.realms[1].name);
     assert.equal(next.state.realm.rank, 1);
     assert.equal(state.realm.rank, 0, 'reducer must not mutate input');
-    assert.ok(next.state.capabilities.some(c => c.description === world.powerSystem.realms[1].unlock));
+    assert.ok(next.state.capabilities.some(c => c.description === world.powerSystem.realms[1].benchmark), 'breakthrough records attained ability, not unearned social access');
   });
 }
 

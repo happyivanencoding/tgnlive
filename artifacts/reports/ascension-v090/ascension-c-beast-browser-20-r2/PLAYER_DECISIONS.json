@@ -1,0 +1,168 @@
+[
+  {
+    "turn": 1,
+    "action": "开始我的故事",
+    "intent": "开始",
+    "continueReason": null,
+    "playerDecisionMs": null,
+    "recovery": null
+  },
+  {
+    "turn": 2,
+    "action": "我先向弥娅说明愿意帮忙救治镜翅兽，请她告诉我需要做什么，并趁机查看它伤口上的红苔。",
+    "intent": "协助救治幼兽并调查异常红苔",
+    "continueReason": "我想先建立信任，弄清伤势和危险来源，再决定是否争取它的回应。",
+    "playerDecisionMs": 8189.1479,
+    "recovery": null
+  },
+  {
+    "turn": 3,
+    "action": "取出一块甜苔饼，按弥娅的指引放在笼门左侧，耐心等镜翅兽主动靠近，再请她为它上药。",
+    "intent": "先取得幼兽信任并完成救治",
+    "continueReason": "我想先保护受伤的幼兽，再追查红苔来自哪座浮岛。",
+    "playerDecisionMs": 7017.2500999999975,
+    "recovery": null
+  },
+  {
+    "turn": 4,
+    "action": "把我从镜翅兽视野里看到的断续云桥、红苔黑岛和蓝边风帆标记告诉弥娅，请她用这份线索阻止猎团带走它。",
+    "intent": "用航路证据保护镜翅兽",
+    "continueReason": "我想先确保它不会落入猎团手里，再决定是否追查红苔岛。",
+    "playerDecisionMs": 8251.396099999998,
+    "recovery": null
+  },
+  {
+    "turn": 5,
+    "action": "赶到昆戈的小风帆前，告诉他我从镜翅兽视野里看见的断续云桥、红苔黑岛和蓝边风帆标记，请他当场核验旧航图。",
+    "intent": "请昆戈确认航路证据，争取保住镜翅兽。",
+    "continueReason": "线索还没核验，我想先阻止猎团带走它。",
+    "playerDecisionMs": 8456.035900000003,
+    "recovery": null
+  },
+  {
+    "turn": 6,
+    "action": "我愿意同行，但先说清楚：我要学习穿过第一段乱风的动作，也要确保弥娅能用盖印航图保住镜翅兽。条件谈妥我就上船。",
+    "intent": "争取天空行动本领，同时保护镜翅兽",
+    "continueReason": "我想亲自踏上新航路，也不愿丢下刚获得的证据",
+    "playerDecisionMs": 9234.681000000011,
+    "recovery": null
+  },
+  {
+    "turn": 7,
+    "action": "先和昆戈返回港口，用首段通行结果和盖印航图公开核验，确保弥娅能保住镜翅兽，再筹划追向红苔黑岛。",
+    "intent": "保护镜翅兽并稳固航路证据",
+    "continueReason": "我想先把同伴和证据保住，再继续争取真正的天空行动权。",
+    "playerDecisionMs": 9608.983500000002,
+    "recovery": null
+  },
+  {
+    "turn": 8,
+    "action": "留在弥娅处照护镜翅兽，先帮它养伤、建立信任，等它愿意回应后再考虑是否一起追向红苔黑岛。",
+    "intent": "照护幼兽并争取进一步建立自愿联系",
+    "continueReason": "我想先了解镜翅兽，而不是立刻为新航路冒险。",
+    "playerDecisionMs": 11246.253499999992,
+    "recovery": null
+  },
+  {
+    "turn": 9,
+    "action": "继续按弥娅的指导陪镜翅兽做短距扑飞，保持它能随时退开的距离，观察它是否愿意再次靠近或对视。",
+    "intent": "先训练幼兽并加深自愿信任",
+    "continueReason": "我想确认它恢复得更好，也想让下一次回应建立在它主动愿意的基础上。",
+    "playerDecisionMs": 9131.475800000015,
+    "recovery": null
+  },
+  {
+    "turn": 10,
+    "action": "我先向弥娅询问补羽膜云盐的来源，想通过劳动或交易为镜翅兽争取恢复资源，再继续陪它训练。",
+    "intent": "为镜翅兽寻找云盐，优先照护并建立信任",
+    "continueReason": "它还不能载人，先帮它恢复，比急着追航路更稳妥",
+    "playerDecisionMs": 9892.31329999998,
+    "recovery": null
+  },
+  {
+    "turn": 11,
+    "action": "去帆具行找阿赫，询问拆回废吊架定风轮的具体要求，谈妥后用劳动换取补羽膜云盐。",
+    "intent": "为镜翅兽取得云盐，优先推进照护和恢复。",
+    "continueReason": "我想先解决它的伤势，让之后的飞行协作更可靠。",
+    "playerDecisionMs": 7051.92220000003,
+    "recovery": null
+  },
+  {
+    "turn": 12,
+    "action": "带补羽膜云盐回木笼区，请弥娅为镜翅兽进行后续治疗，并继续陪它做安全的短距训练。",
+    "intent": "先帮助镜翅兽恢复伤翅和飞行能力。",
+    "continueReason": "已经取得治疗所需的云盐，想看看它恢复后是否愿意进一步协作。",
+    "playerDecisionMs": 7304.58269999997,
+    "recovery": null
+  },
+  {
+    "turn": 13,
+    "action": "先带镜翅兽前往外侧礁台，但不让它载人；与昆戈商定一次近程探航，借它共享的风向和落点协作核验红苔黑岛方位。",
+    "intent": "与昆戈同行探索，争取获得出港行动机会。",
+    "continueReason": "镜翅兽已能稳定短飞，我想趁航路封闭前把它看见的风变成可走的路线。",
+    "playerDecisionMs": 9830.915099999984,
+    "recovery": null
+  },
+  {
+    "turn": 14,
+    "action": "趁今夜低风随昆戈追向红苔黑岛外缘，镜翅兽留在弥娅处养伤；我想亲自核验黑岛位置并查清红苔来源。",
+    "intent": "追航探索，争取登岛调查",
+    "continueReason": "已经获得明确方位和行动窗口，想看看这条旧航路尽头藏着什么。",
+    "playerDecisionMs": 8750.453700000013,
+    "recovery": null
+  },
+  {
+    "turn": 15,
+    "action": "随昆戈继续沿黑岛北侧追查漂移痕迹，寻找红苔原岛和更大的航路线索。",
+    "intent": "继续探索并掌握北漂航路先机",
+    "continueReason": "已经确认红苔来源与黑岛位置，想趁线索还新鲜时追查下去",
+    "playerDecisionMs": 8233.119200000016,
+    "recovery": null
+  },
+  {
+    "turn": 16,
+    "action": "留在黑岛北侧与昆戈一起测定北脊风井的入槽方位，记录风向、云层和可停靠位置。",
+    "intent": "把北漂航路线索变成可执行的路线图",
+    "continueReason": "我想继续探索，但先掌握安全进入母岛航线的条件",
+    "playerDecisionMs": 10244.668900000048,
+    "recovery": {
+      "sourceRun": "ascension-c-beast-browser-20-r1",
+      "kind": "durable-commit-without-browser-receipt",
+      "traceId": "trace_adc8badf8b444b9082b07c09df46be1a",
+      "missingBrowserTimings": true,
+      "reason": "Original runner exited without finalization; server commit and exact ACP Player action match. No browser timing or paint is imputed."
+    }
+  },
+  {
+    "turn": 17,
+    "action": "沿已测出的低云槽推进到小礁台，核验暂泊点、入槽角度和回航余地，确认安全后立即返回。",
+    "intent": "有限风险验证北脊风井入口",
+    "continueReason": "已有航图但缺少实地核验，想把路线变成真正可执行的计划",
+    "playerDecisionMs": 12156.8526,
+    "recovery": null
+  },
+  {
+    "turn": 18,
+    "action": "随昆戈立即返港，提交红苔样本、雾根印记和低云槽实测结果，争取公开核验并换取进入北脊风井所需的人手与船只。",
+    "intent": "带证据回港，保住镜翅兽并争取远航资源",
+    "continueReason": "已确认小礁台与回航余地，继续深入会在无人分担乱风时承担过高风险。",
+    "playerDecisionMs": 8107.9139,
+    "recovery": null
+  },
+  {
+    "turn": 19,
+    "action": "留在港内陪镜翅兽做短距共同转向训练，先观察它在侧风和疲乏时的反应，再决定是否组队进入北脊风井。",
+    "intent": "加强与镜翅兽的协作",
+    "continueReason": "想先把已有能力练稳，再承担更大的乱风风险",
+    "playerDecisionMs": 6936.919399999999,
+    "recovery": null
+  },
+  {
+    "turn": 20,
+    "action": "去找昆戈商议结伴船队，说明我能和镜翅兽共同转向，先谈清报酬、风险和进入北脊风井外沿的撤退条件。",
+    "intent": "争取组队进入北脊风井外沿",
+    "continueReason": "刚掌握共同转向，想把能力用于真正的航次，但不愿在没有船队和撤退方案时冒险。",
+    "playerDecisionMs": 7858.606800000009,
+    "recovery": null
+  }
+]

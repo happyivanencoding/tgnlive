@@ -1,0 +1,3226 @@
+{
+  "label": "ascension-b-martial-20",
+  "requestedTurns": 20,
+  "committedTurns": 20,
+  "failedAttempts": 0,
+  "failedPlayers": [],
+  "fatal": null,
+  "continuedFrom": null,
+  "continuationReason": null,
+  "status": "completed",
+  "startedAt": "2026-09-07T15:21:57.254Z",
+  "endedAt": "2026-09-07T15:33:48.952Z",
+  "wallElapsedMs": 711698,
+  "source": "C:\\dev\\tgn_live\\.runtime\\progression-v080\\ascension-candidate-b-source",
+  "sourceHash": "5d020f4d19087bc0b47d120ae5c6a40f726a795bf20b5ea0f87a778fa8203046",
+  "server": {
+    "firstNarrativeSse": {
+      "n": 20,
+      "medianMs": 7463.5,
+      "p95Ms": 36789,
+      "maxMs": 54544
+    },
+    "complete": {
+      "n": 20,
+      "medianMs": 23766,
+      "p95Ms": 52112,
+      "maxMs": 70477
+    },
+    "allAttempts": {
+      "n": 20,
+      "medianMs": 23766,
+      "p95Ms": 52112,
+      "maxMs": 70477
+    },
+    "repairCalls": 0,
+    "phases": {
+      "acp_narrator_effort_select": {
+        "n": 20,
+        "medianMs": 6,
+        "p95Ms": 7,
+        "maxMs": 8
+      },
+      "acp_narrator_initialize_auth_session_model_setup": {
+        "n": 20,
+        "medianMs": 448.5,
+        "p95Ms": 535,
+        "maxMs": 551
+      },
+      "acp_narrator_mcp_initialize": {
+        "n": 20,
+        "medianMs": 0,
+        "p95Ms": 0,
+        "maxMs": 0
+      },
+      "acp_narrator_model_select": {
+        "n": 20,
+        "medianMs": 6,
+        "p95Ms": 7,
+        "maxMs": 7
+      },
+      "acp_narrator_read_only_mode": {
+        "n": 20,
+        "medianMs": 8,
+        "p95Ms": 12,
+        "maxMs": 23
+      },
+      "acp_narrator_session_new": {
+        "n": 20,
+        "medianMs": 429,
+        "p95Ms": 510,
+        "maxMs": 525
+      },
+      "acp_planner_effort_select": {
+        "n": 2,
+        "medianMs": 5,
+        "p95Ms": 6,
+        "maxMs": 6
+      },
+      "acp_planner_initialize_auth_session_model_setup": {
+        "n": 2,
+        "medianMs": 464,
+        "p95Ms": 498,
+        "maxMs": 498
+      },
+      "acp_planner_mcp_initialize": {
+        "n": 2,
+        "medianMs": 0,
+        "p95Ms": 0,
+        "maxMs": 0
+      },
+      "acp_planner_model_select": {
+        "n": 2,
+        "medianMs": 8,
+        "p95Ms": 9,
+        "maxMs": 9
+      },
+      "acp_planner_read_only_mode": {
+        "n": 2,
+        "medianMs": 19,
+        "p95Ms": 31,
+        "maxMs": 31
+      },
+      "acp_planner_session_new": {
+        "n": 2,
+        "medianMs": 432,
+        "p95Ms": 454,
+        "maxMs": 454
+      },
+      "authored_opening_plan": {
+        "n": 1,
+        "medianMs": 0,
+        "p95Ms": 0,
+        "maxMs": 0
+      },
+      "context_assembly": {
+        "n": 20,
+        "medianMs": 0,
+        "p95Ms": 0,
+        "maxMs": 1
+      },
+      "http_input_validation": {
+        "n": 20,
+        "medianMs": 0,
+        "p95Ms": 0,
+        "maxMs": 0
+      },
+      "narrative_generation": {
+        "n": 20,
+        "medianMs": 22552.5,
+        "p95Ms": 25082,
+        "maxMs": 28962
+      },
+      "parse": {
+        "n": 20,
+        "medianMs": 0,
+        "p95Ms": 1,
+        "maxMs": 1
+      },
+      "parse_validate": {
+        "n": 20,
+        "medianMs": 1,
+        "p95Ms": 1,
+        "maxMs": 1
+      },
+      "persistence": {
+        "n": 20,
+        "medianMs": 6,
+        "p95Ms": 13,
+        "maxMs": 17
+      },
+      "plan": {
+        "n": 2,
+        "medianMs": 40652,
+        "p95Ms": 49606,
+        "maxMs": 49606
+      },
+      "planner_context_assembly": {
+        "n": 2,
+        "medianMs": 0,
+        "p95Ms": 0,
+        "maxMs": 0
+      },
+      "reducer_validation": {
+        "n": 20,
+        "medianMs": 0,
+        "p95Ms": 1,
+        "maxMs": 1
+      },
+      "request_validation": {
+        "n": 20,
+        "medianMs": 2,
+        "p95Ms": 3,
+        "maxMs": 3
+      }
+    },
+    "checkpoints": [
+      {
+        "turn": 9,
+        "status": "complete",
+        "planningMs": 49606,
+        "firstNarrativeSseMs": 54544,
+        "totalMs": 70477,
+        "model": "gpt-5.6-sol",
+        "effort": "medium"
+      },
+      {
+        "turn": 17,
+        "status": "complete",
+        "planningMs": 31698,
+        "firstNarrativeSseMs": 36789,
+        "totalMs": 52112,
+        "model": "gpt-5.6-sol",
+        "effort": "medium"
+      }
+    ]
+  },
+  "client": {
+    "firstNarrativeReceipt": {
+      "n": 20,
+      "medianMs": 7466.081849999988,
+      "p95Ms": 36791.609200000064,
+      "maxMs": 54545.85519999996
+    },
+    "completeReceipt": {
+      "n": 20,
+      "medianMs": 23783.14830000003,
+      "p95Ms": 52126.14880000008,
+      "maxMs": 70490.6696
+    },
+    "playerDecision": {
+      "n": 19,
+      "medianMs": 9783.632400000002,
+      "p95Ms": 18313.69570000001,
+      "maxMs": 18313.69570000001
+    },
+    "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+    "feedbackVisibleFrame": {
+      "n": 0,
+      "medianMs": null,
+      "p95Ms": null,
+      "maxMs": null
+    },
+    "firstNarrativeVisibleFrame": {
+      "n": 0,
+      "medianMs": null,
+      "p95Ms": null,
+      "maxMs": null
+    },
+    "choicesVisibleFrame": {
+      "n": 0,
+      "medianMs": null,
+      "p95Ms": null,
+      "maxMs": null
+    }
+  },
+  "errors": [],
+  "backgroundPlanning": {
+    "attempts": 0,
+    "readyReuses": 0,
+    "fallbacks": 0,
+    "traces": []
+  },
+  "sourceHashes": {
+    "turns": "b2d4fd8d7aa11524ad962d21912aa3eb2a692ff15726cf11296e3621455d762b"
+  },
+  "limits": [
+    "Autonomous diverging paths, not a paired or randomized causal experiment",
+    "Counts are not human retention; no physical phone or WAN measurement",
+    "Nested ACP spans are included in model stage time; do not sum them twice",
+    "With fewer than20 observations nearest-rank p95 equals maximum",
+    "Only committed requests enter successful latency; failures retained separately",
+    "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+  ],
+  "turnTimings": [
+    {
+      "turn": 1,
+      "outcome": "completed",
+      "requestId": "40f93532-06a2-49d6-a3b1-6c9fc48342a0",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 14684.5311,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 28981.1194,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": null
+    },
+    {
+      "turn": 2,
+      "outcome": "completed",
+      "requestId": "ebde6426-e49c-414c-a914-6b507562ed66",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 6572.192999999999,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 24615.0547,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 7578.515799999997
+    },
+    {
+      "turn": 3,
+      "outcome": "completed",
+      "requestId": "b27831c0-d5e4-42a2-8485-55e5eaced8f3",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 4735.238800000006,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 19529.75140000001,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 9840.964000000007
+    },
+    {
+      "turn": 4,
+      "outcome": "completed",
+      "requestId": "3f389233-cfd1-4bd5-846c-1b5de4415fb4",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 5480.071800000005,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 20101.055800000002,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 6799.6927
+    },
+    {
+      "turn": 5,
+      "outcome": "completed",
+      "requestId": "794be345-1afa-4efa-a03c-29df8563f738",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 6181.200200000007,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 16860.1504,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 10625.376000000004
+    },
+    {
+      "turn": 6,
+      "outcome": "completed",
+      "requestId": "13b3b6b1-4e23-46b4-b890-b4c1d2864b71",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 7438.006099999999,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 22044.834699999978,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 6335.1201
+    },
+    {
+      "turn": 7,
+      "outcome": "completed",
+      "requestId": "fd38305e-9fe7-4428-b03f-c9013f0ca1f9",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 5484.810200000007,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 15773.150900000008,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 6547.378999999986
+    },
+    {
+      "turn": 8,
+      "outcome": "completed",
+      "requestId": "bcb4ca75-ac04-473c-831d-93ce094ea90f",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 5260.61129999999,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 15841.330799999996,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 6085.897200000007
+    },
+    {
+      "turn": 9,
+      "outcome": "completed",
+      "requestId": "f3e243e7-eec3-410b-8532-dc37602b67c6",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 54545.85519999996,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 70490.6696,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 18313.69570000001
+    },
+    {
+      "turn": 10,
+      "outcome": "completed",
+      "requestId": "30771b83-24c2-4f26-af45-bf4565a32c85",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 12183.870200000005,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 24185.138400000054,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 10192.111700000009
+    },
+    {
+      "turn": 11,
+      "outcome": "completed",
+      "requestId": "f3af1769-54e6-4e31-bc99-2507769e4af8",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 7494.157599999977,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 23106.450399999972,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 14030.921600000001
+    },
+    {
+      "turn": 12,
+      "outcome": "completed",
+      "requestId": "b7222fb6-6bd7-471b-8853-9f81f62ac88f",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 5228.545600000012,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 24060.708000000042,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 15953.06170000002
+    },
+    {
+      "turn": 13,
+      "outcome": "completed",
+      "requestId": "6a3c055f-3b10-41b2-9d63-757330867366",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 8113.12089999998,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 21690.39870000002,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 15609.508999999962
+    },
+    {
+      "turn": 14,
+      "outcome": "completed",
+      "requestId": "3e7c6832-5f86-4e41-827a-47b99f8503d8",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 14791.328100000042,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 25116.564699999988,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 14058.4179
+    },
+    {
+      "turn": 15,
+      "outcome": "completed",
+      "requestId": "55d05938-6c20-49e9-a917-b4c646191f74",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 7361.4613000000245,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 17148.78250000003,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 10199.136100000003
+    },
+    {
+      "turn": 16,
+      "outcome": "completed",
+      "requestId": "b1fb0703-d77c-49b4-81a7-841027802170",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 8450.042400000035,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 25055.004399999976,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 6505.043000000005
+    },
+    {
+      "turn": 17,
+      "outcome": "completed",
+      "requestId": "7eda5e9b-d7e7-4bcb-9457-412ed1cd073a",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 36791.609200000064,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 52126.14880000008,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 9708.691999999923
+    },
+    {
+      "turn": 18,
+      "outcome": "completed",
+      "requestId": "0cb964a2-c276-4e7a-a630-d3564dc8a9bd",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 4991.872399999993,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 24292.807499999995,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 6365.481499999994
+    },
+    {
+      "turn": 19,
+      "outcome": "completed",
+      "requestId": "b8da689e-2a50-4167-bb9a-5ceac8f22a0b",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 9484.882100000046,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 23505.588600000017,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 6673.007800000021
+    },
+    {
+      "turn": 20,
+      "outcome": "completed",
+      "requestId": "28142c2e-1aeb-44db-8596-cb43bffe16be",
+      "sourceRun": "ascension-b-martial-20",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 9429.344599999953,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": 24237.041399999987,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": null,
+      "playerDecisionMs": 9783.632400000002
+    }
+  ],
+  "phaseTrace": [
+    {
+      "requestId": "40f93532-06a2-49d6-a3b1-6c9fc48342a0",
+      "status": "complete",
+      "firstNarrativeSseMs": 14681,
+      "totalMs": 28969,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:21:57.304Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:21:57.304Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:21:57.304Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:21:57.305Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "authored_opening_plan",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:21:57.305Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:21:57.306Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:21:57.306Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:21:57.306Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:21:57.306Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:22:26.269Z",
+          "elapsedMs": 28962
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:21:57.306Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:21:57.712Z",
+          "elapsedMs": 407
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:21:57.306Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:21:57.306Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:21:57.306Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:21:57.695Z",
+          "elapsedMs": 389
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:21:57.695Z",
+          "startMs": 391,
+          "endedAt": "2026-09-07T15:21:57.702Z",
+          "elapsedMs": 7
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:21:57.702Z",
+          "startMs": 398,
+          "endedAt": "2026-09-07T15:21:57.708Z",
+          "elapsedMs": 6
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:21:57.708Z",
+          "startMs": 404,
+          "endedAt": "2026-09-07T15:21:57.712Z",
+          "elapsedMs": 5
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:26.269Z",
+          "startMs": 28964,
+          "endedAt": "2026-09-07T15:22:26.269Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:26.269Z",
+          "startMs": 28964,
+          "endedAt": "2026-09-07T15:22:26.269Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:26.269Z",
+          "startMs": 28965,
+          "endedAt": "2026-09-07T15:22:26.269Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:26.269Z",
+          "startMs": 28965,
+          "endedAt": "2026-09-07T15:22:26.273Z",
+          "elapsedMs": 4
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_c9642539f2608c74b2a0bf58",
+          "runId": "acpr_842382fe7483aae32644010d"
+        }
+      }
+    },
+    {
+      "requestId": "ebde6426-e49c-414c-a914-6b507562ed66",
+      "status": "complete",
+      "firstNarrativeSseMs": 6570,
+      "totalMs": 24602,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:33.880Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:22:33.880Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:33.880Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:22:33.882Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:33.882Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:22:33.882Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:33.882Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:22:58.475Z",
+          "elapsedMs": 24593
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:33.882Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:22:34.337Z",
+          "elapsedMs": 455
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:33.883Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:22:33.883Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:33.883Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:22:34.316Z",
+          "elapsedMs": 433
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:34.316Z",
+          "startMs": 436,
+          "endedAt": "2026-09-07T15:22:34.324Z",
+          "elapsedMs": 8
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:34.324Z",
+          "startMs": 444,
+          "endedAt": "2026-09-07T15:22:34.331Z",
+          "elapsedMs": 7
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:34.331Z",
+          "startMs": 451,
+          "endedAt": "2026-09-07T15:22:34.337Z",
+          "elapsedMs": 6
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:58.476Z",
+          "startMs": 24596,
+          "endedAt": "2026-09-07T15:22:58.476Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:58.476Z",
+          "startMs": 24596,
+          "endedAt": "2026-09-07T15:22:58.476Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:58.476Z",
+          "startMs": 24596,
+          "endedAt": "2026-09-07T15:22:58.476Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:22:58.476Z",
+          "startMs": 24596,
+          "endedAt": "2026-09-07T15:22:58.482Z",
+          "elapsedMs": 6
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_dc36b8b78f1e3d90b67ec2d8",
+          "runId": "acpr_82c2f27609c31020f3646687"
+        }
+      }
+    },
+    {
+      "requestId": "b27831c0-d5e4-42a2-8485-55e5eaced8f3",
+      "status": "complete",
+      "firstNarrativeSseMs": 4732,
+      "totalMs": 19518,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:08.360Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:23:08.360Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:08.360Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:23:08.362Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:08.362Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:23:08.362Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:08.362Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:23:27.865Z",
+          "elapsedMs": 19502
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:08.362Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:23:08.793Z",
+          "elapsedMs": 431
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:08.362Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:23:08.362Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:08.362Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:23:08.771Z",
+          "elapsedMs": 409
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:08.771Z",
+          "startMs": 411,
+          "endedAt": "2026-09-07T15:23:08.781Z",
+          "elapsedMs": 10
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:08.781Z",
+          "startMs": 421,
+          "endedAt": "2026-09-07T15:23:08.788Z",
+          "elapsedMs": 7
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:08.788Z",
+          "startMs": 428,
+          "endedAt": "2026-09-07T15:23:08.793Z",
+          "elapsedMs": 5
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:27.865Z",
+          "startMs": 19504,
+          "endedAt": "2026-09-07T15:23:27.866Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:27.865Z",
+          "startMs": 19504,
+          "endedAt": "2026-09-07T15:23:27.865Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:27.865Z",
+          "startMs": 19504,
+          "endedAt": "2026-09-07T15:23:27.866Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:27.866Z",
+          "startMs": 19505,
+          "endedAt": "2026-09-07T15:23:27.879Z",
+          "elapsedMs": 13
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_32d94effbbd72e100a0bcab7",
+          "runId": "acpr_815ea2c392c4a087c8d4d523"
+        }
+      }
+    },
+    {
+      "requestId": "3f389233-cfd1-4bd5-846c-1b5de4415fb4",
+      "status": "complete",
+      "firstNarrativeSseMs": 5477,
+      "totalMs": 20090,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:34.714Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:23:34.714Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:34.714Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:23:34.715Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:34.716Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:23:34.716Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:34.716Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:23:54.798Z",
+          "elapsedMs": 20082
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:34.716Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:23:35.163Z",
+          "elapsedMs": 447
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:34.716Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:23:34.716Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:34.716Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:23:35.145Z",
+          "elapsedMs": 429
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:35.145Z",
+          "startMs": 431,
+          "endedAt": "2026-09-07T15:23:35.153Z",
+          "elapsedMs": 8
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:35.153Z",
+          "startMs": 439,
+          "endedAt": "2026-09-07T15:23:35.158Z",
+          "elapsedMs": 5
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:35.158Z",
+          "startMs": 444,
+          "endedAt": "2026-09-07T15:23:35.163Z",
+          "elapsedMs": 5
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:54.798Z",
+          "startMs": 20084,
+          "endedAt": "2026-09-07T15:23:54.799Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:54.798Z",
+          "startMs": 20084,
+          "endedAt": "2026-09-07T15:23:54.798Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:54.799Z",
+          "startMs": 20085,
+          "endedAt": "2026-09-07T15:23:54.799Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:23:54.799Z",
+          "startMs": 20085,
+          "endedAt": "2026-09-07T15:23:54.804Z",
+          "elapsedMs": 5
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_e06b87b16d6b23c12f7c1529",
+          "runId": "acpr_f51e06c8444d4888c0a9eac7"
+        }
+      }
+    },
+    {
+      "requestId": "794be345-1afa-4efa-a03c-29df8563f738",
+      "status": "complete",
+      "firstNarrativeSseMs": 6178,
+      "totalMs": 16837,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:05.471Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:24:05.471Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:05.471Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:24:05.473Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:05.473Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:24:05.473Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:05.473Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:24:22.296Z",
+          "elapsedMs": 16823
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:05.473Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:24:05.920Z",
+          "elapsedMs": 447
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:05.473Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:24:05.474Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:05.474Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:24:05.900Z",
+          "elapsedMs": 427
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:05.900Z",
+          "startMs": 429,
+          "endedAt": "2026-09-07T15:24:05.908Z",
+          "elapsedMs": 8
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:05.908Z",
+          "startMs": 437,
+          "endedAt": "2026-09-07T15:24:05.914Z",
+          "elapsedMs": 6
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:05.914Z",
+          "startMs": 443,
+          "endedAt": "2026-09-07T15:24:05.920Z",
+          "elapsedMs": 6
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:22.296Z",
+          "startMs": 16825,
+          "endedAt": "2026-09-07T15:24:22.297Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:22.296Z",
+          "startMs": 16826,
+          "endedAt": "2026-09-07T15:24:22.296Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:22.297Z",
+          "startMs": 16826,
+          "endedAt": "2026-09-07T15:24:22.297Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:22.297Z",
+          "startMs": 16826,
+          "endedAt": "2026-09-07T15:24:22.308Z",
+          "elapsedMs": 11
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_b2e951074cc1ef63c1f64d9f",
+          "runId": "acpr_dd9062d4d7ecc3bd98a1dde8"
+        }
+      }
+    },
+    {
+      "requestId": "13b3b6b1-4e23-46b4-b890-b4c1d2864b71",
+      "status": "complete",
+      "firstNarrativeSseMs": 7436,
+      "totalMs": 22032,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:28.702Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:24:28.702Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:28.702Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:24:28.704Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:28.704Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:24:28.704Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:28.704Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:24:50.728Z",
+          "elapsedMs": 22024
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:28.704Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:24:29.144Z",
+          "elapsedMs": 440
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:28.704Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:24:28.704Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:28.704Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:24:29.125Z",
+          "elapsedMs": 421
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:29.125Z",
+          "startMs": 423,
+          "endedAt": "2026-09-07T15:24:29.133Z",
+          "elapsedMs": 8
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:29.133Z",
+          "startMs": 431,
+          "endedAt": "2026-09-07T15:24:29.139Z",
+          "elapsedMs": 6
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:29.139Z",
+          "startMs": 437,
+          "endedAt": "2026-09-07T15:24:29.144Z",
+          "elapsedMs": 5
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:50.728Z",
+          "startMs": 22026,
+          "endedAt": "2026-09-07T15:24:50.729Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:50.728Z",
+          "startMs": 22026,
+          "endedAt": "2026-09-07T15:24:50.728Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:50.728Z",
+          "startMs": 22026,
+          "endedAt": "2026-09-07T15:24:50.729Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:50.729Z",
+          "startMs": 22027,
+          "endedAt": "2026-09-07T15:24:50.734Z",
+          "elapsedMs": 5
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_daa2d6454b013f4bef509eb6",
+          "runId": "acpr_c183d4e13b9e64f11c5fcb48"
+        }
+      }
+    },
+    {
+      "requestId": "fd38305e-9fe7-4428-b03f-c9013f0ca1f9",
+      "status": "complete",
+      "firstNarrativeSseMs": 5482,
+      "totalMs": 15761,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:57.335Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:24:57.335Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:57.335Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:24:57.337Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:57.338Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:24:57.338Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:57.338Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:25:13.094Z",
+          "elapsedMs": 15755
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:57.338Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:24:57.770Z",
+          "elapsedMs": 432
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:57.338Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:24:57.338Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:57.338Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:24:57.749Z",
+          "elapsedMs": 411
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:57.749Z",
+          "startMs": 414,
+          "endedAt": "2026-09-07T15:24:57.759Z",
+          "elapsedMs": 9
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:57.759Z",
+          "startMs": 423,
+          "endedAt": "2026-09-07T15:24:57.765Z",
+          "elapsedMs": 6
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:24:57.765Z",
+          "startMs": 429,
+          "endedAt": "2026-09-07T15:24:57.770Z",
+          "elapsedMs": 6
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:13.094Z",
+          "startMs": 15758,
+          "endedAt": "2026-09-07T15:25:13.094Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:13.094Z",
+          "startMs": 15758,
+          "endedAt": "2026-09-07T15:25:13.094Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:13.094Z",
+          "startMs": 15758,
+          "endedAt": "2026-09-07T15:25:13.094Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:13.094Z",
+          "startMs": 15758,
+          "endedAt": "2026-09-07T15:25:13.098Z",
+          "elapsedMs": 3
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_6654427ffb3a7ab1b0637d49",
+          "runId": "acpr_6f5156541dbec77d9057d9c7"
+        }
+      }
+    },
+    {
+      "requestId": "bcb4ca75-ac04-473c-831d-93ce094ea90f",
+      "status": "complete",
+      "firstNarrativeSseMs": 5258,
+      "totalMs": 15828,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:19.239Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:25:19.239Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:19.239Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:25:19.240Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:19.241Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:25:19.241Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:19.241Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:25:35.061Z",
+          "elapsedMs": 15820
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:19.241Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:25:19.684Z",
+          "elapsedMs": 443
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:19.241Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:25:19.241Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:19.241Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:25:19.663Z",
+          "elapsedMs": 422
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:19.663Z",
+          "startMs": 424,
+          "endedAt": "2026-09-07T15:25:19.671Z",
+          "elapsedMs": 8
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:19.671Z",
+          "startMs": 432,
+          "endedAt": "2026-09-07T15:25:19.676Z",
+          "elapsedMs": 5
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:19.676Z",
+          "startMs": 437,
+          "endedAt": "2026-09-07T15:25:19.684Z",
+          "elapsedMs": 8
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:35.061Z",
+          "startMs": 15822,
+          "endedAt": "2026-09-07T15:25:35.061Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:35.061Z",
+          "startMs": 15822,
+          "endedAt": "2026-09-07T15:25:35.061Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:35.061Z",
+          "startMs": 15822,
+          "endedAt": "2026-09-07T15:25:35.061Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:35.061Z",
+          "startMs": 15822,
+          "endedAt": "2026-09-07T15:25:35.066Z",
+          "elapsedMs": 6
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_f31d51a9a4bbdd715be2978a",
+          "runId": "acpr_ff674bf02c69b2c90501eefa"
+        }
+      }
+    },
+    {
+      "requestId": "f3e243e7-eec3-410b-8532-dc37602b67c6",
+      "status": "complete",
+      "firstNarrativeSseMs": 54544,
+      "totalMs": 70477,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:53.448Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:25:53.448Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:53.448Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:25:53.450Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "planner_context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:53.450Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:25:53.450Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "plan",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:53.450Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:26:43.056Z",
+          "elapsedMs": 49606
+        },
+        {
+          "name": "acp_planner_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:53.450Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:25:53.881Z",
+          "elapsedMs": 430
+        },
+        {
+          "name": "acp_planner_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:53.450Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:25:53.451Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_planner_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:53.451Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:25:53.860Z",
+          "elapsedMs": 410
+        },
+        {
+          "name": "acp_planner_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:53.860Z",
+          "startMs": 413,
+          "endedAt": "2026-09-07T15:25:53.867Z",
+          "elapsedMs": 7
+        },
+        {
+          "name": "acp_planner_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:53.868Z",
+          "startMs": 420,
+          "endedAt": "2026-09-07T15:25:53.877Z",
+          "elapsedMs": 9
+        },
+        {
+          "name": "acp_planner_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:25:53.877Z",
+          "startMs": 429,
+          "endedAt": "2026-09-07T15:25:53.881Z",
+          "elapsedMs": 4
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:26:43.056Z",
+          "startMs": 49608,
+          "endedAt": "2026-09-07T15:26:43.056Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:26:43.056Z",
+          "startMs": 49608,
+          "endedAt": "2026-09-07T15:27:03.916Z",
+          "elapsedMs": 20860
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:26:43.056Z",
+          "startMs": 49608,
+          "endedAt": "2026-09-07T15:26:43.485Z",
+          "elapsedMs": 428
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:26:43.056Z",
+          "startMs": 49608,
+          "endedAt": "2026-09-07T15:26:43.057Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:26:43.057Z",
+          "startMs": 49608,
+          "endedAt": "2026-09-07T15:26:43.465Z",
+          "elapsedMs": 409
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:26:43.465Z",
+          "startMs": 50017,
+          "endedAt": "2026-09-07T15:26:43.474Z",
+          "elapsedMs": 9
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:26:43.474Z",
+          "startMs": 50026,
+          "endedAt": "2026-09-07T15:26:43.480Z",
+          "elapsedMs": 5
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:26:43.480Z",
+          "startMs": 50031,
+          "endedAt": "2026-09-07T15:26:43.484Z",
+          "elapsedMs": 5
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:03.916Z",
+          "startMs": 70468,
+          "endedAt": "2026-09-07T15:27:03.917Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:03.916Z",
+          "startMs": 70468,
+          "endedAt": "2026-09-07T15:27:03.917Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:03.917Z",
+          "startMs": 70468,
+          "endedAt": "2026-09-07T15:27:03.917Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:03.917Z",
+          "startMs": 70469,
+          "endedAt": "2026-09-07T15:27:03.925Z",
+          "elapsedMs": 8
+        }
+      ],
+      "providers": {
+        "planner": {
+          "model": "gpt-5.6-sol",
+          "effort": "medium",
+          "sessionId": "acps_75963b43c386a648a5efd332",
+          "runId": "acpr_1ca3ee221349f390def8d33a"
+        },
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_38218032b1e764fb8651d63d",
+          "runId": "acpr_c77bb8783997386ab4341449"
+        }
+      }
+    },
+    {
+      "requestId": "30771b83-24c2-4f26-af45-bf4565a32c85",
+      "status": "complete",
+      "firstNarrativeSseMs": 12182,
+      "totalMs": 24172,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:14.196Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:27:14.196Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:14.196Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:27:14.198Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:14.198Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:27:14.198Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:14.198Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:27:38.362Z",
+          "elapsedMs": 24165
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:14.198Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:27:14.650Z",
+          "elapsedMs": 452
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:14.198Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:27:14.198Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:14.198Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:27:14.631Z",
+          "elapsedMs": 433
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:14.631Z",
+          "startMs": 436,
+          "endedAt": "2026-09-07T15:27:14.638Z",
+          "elapsedMs": 6
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:14.638Z",
+          "startMs": 442,
+          "endedAt": "2026-09-07T15:27:14.645Z",
+          "elapsedMs": 7
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:14.645Z",
+          "startMs": 449,
+          "endedAt": "2026-09-07T15:27:14.650Z",
+          "elapsedMs": 5
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:38.362Z",
+          "startMs": 24167,
+          "endedAt": "2026-09-07T15:27:38.363Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:38.363Z",
+          "startMs": 24167,
+          "endedAt": "2026-09-07T15:27:38.363Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:38.363Z",
+          "startMs": 24167,
+          "endedAt": "2026-09-07T15:27:38.363Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:38.363Z",
+          "startMs": 24167,
+          "endedAt": "2026-09-07T15:27:38.367Z",
+          "elapsedMs": 5
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_dd5fe6b742898b9752b26c2b",
+          "runId": "acpr_065453419d41d73454326810"
+        }
+      }
+    },
+    {
+      "requestId": "f3af1769-54e6-4e31-bc99-2507769e4af8",
+      "status": "complete",
+      "firstNarrativeSseMs": 7491,
+      "totalMs": 23088,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:52.478Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:27:52.478Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:52.478Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:27:52.480Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:52.480Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:27:52.480Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:52.480Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:28:15.560Z",
+          "elapsedMs": 23081
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:52.480Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:27:52.886Z",
+          "elapsedMs": 405
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:52.480Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:27:52.480Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:52.480Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:27:52.868Z",
+          "elapsedMs": 388
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:52.868Z",
+          "startMs": 390,
+          "endedAt": "2026-09-07T15:27:52.875Z",
+          "elapsedMs": 6
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:52.875Z",
+          "startMs": 397,
+          "endedAt": "2026-09-07T15:27:52.880Z",
+          "elapsedMs": 4
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:27:52.880Z",
+          "startMs": 401,
+          "endedAt": "2026-09-07T15:27:52.886Z",
+          "elapsedMs": 6
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:15.560Z",
+          "startMs": 23083,
+          "endedAt": "2026-09-07T15:28:15.561Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:15.560Z",
+          "startMs": 23083,
+          "endedAt": "2026-09-07T15:28:15.560Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:15.560Z",
+          "startMs": 23083,
+          "endedAt": "2026-09-07T15:28:15.561Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:15.561Z",
+          "startMs": 23083,
+          "endedAt": "2026-09-07T15:28:15.565Z",
+          "elapsedMs": 5
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_33184a8f07dde9a7a4fbc103",
+          "runId": "acpr_c815502e6a48fe2e4bcf04ce"
+        }
+      }
+    },
+    {
+      "requestId": "b7222fb6-6bd7-471b-8853-9f81f62ac88f",
+      "status": "complete",
+      "firstNarrativeSseMs": 5226,
+      "totalMs": 24039,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:31.619Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:28:31.619Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:31.619Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:28:31.621Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:31.621Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:28:31.621Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:31.621Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:28:55.652Z",
+          "elapsedMs": 24030
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:31.621Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:28:32.064Z",
+          "elapsedMs": 443
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:31.621Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:28:31.621Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:31.621Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:28:32.044Z",
+          "elapsedMs": 423
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:32.044Z",
+          "startMs": 425,
+          "endedAt": "2026-09-07T15:28:32.054Z",
+          "elapsedMs": 10
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:32.054Z",
+          "startMs": 435,
+          "endedAt": "2026-09-07T15:28:32.059Z",
+          "elapsedMs": 5
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:32.059Z",
+          "startMs": 440,
+          "endedAt": "2026-09-07T15:28:32.064Z",
+          "elapsedMs": 5
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:55.652Z",
+          "startMs": 24033,
+          "endedAt": "2026-09-07T15:28:55.652Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:55.652Z",
+          "startMs": 24033,
+          "endedAt": "2026-09-07T15:28:55.652Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:55.652Z",
+          "startMs": 24033,
+          "endedAt": "2026-09-07T15:28:55.652Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:28:55.652Z",
+          "startMs": 24033,
+          "endedAt": "2026-09-07T15:28:55.658Z",
+          "elapsedMs": 6
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_12fb2942b98c5133545e9e81",
+          "runId": "acpr_8c549b274b5c6be4fb08a126"
+        }
+      }
+    },
+    {
+      "requestId": "6a3c055f-3b10-41b2-9d63-757330867366",
+      "status": "complete",
+      "firstNarrativeSseMs": 8110,
+      "totalMs": 21676,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:11.367Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:29:11.367Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:11.367Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:29:11.369Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:11.369Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:29:11.369Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:11.369Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:29:33.038Z",
+          "elapsedMs": 21667
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:11.369Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:29:11.882Z",
+          "elapsedMs": 513
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:11.370Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:29:11.370Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:11.370Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:29:11.862Z",
+          "elapsedMs": 492
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:11.862Z",
+          "startMs": 495,
+          "endedAt": "2026-09-07T15:29:11.870Z",
+          "elapsedMs": 8
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:11.870Z",
+          "startMs": 503,
+          "endedAt": "2026-09-07T15:29:11.876Z",
+          "elapsedMs": 6
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:11.876Z",
+          "startMs": 509,
+          "endedAt": "2026-09-07T15:29:11.882Z",
+          "elapsedMs": 6
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:33.038Z",
+          "startMs": 21669,
+          "endedAt": "2026-09-07T15:29:33.039Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:33.038Z",
+          "startMs": 21669,
+          "endedAt": "2026-09-07T15:29:33.038Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:33.038Z",
+          "startMs": 21669,
+          "endedAt": "2026-09-07T15:29:33.039Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:33.039Z",
+          "startMs": 21670,
+          "endedAt": "2026-09-07T15:29:33.045Z",
+          "elapsedMs": 6
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_5b2298f7a3ec68e441885012",
+          "runId": "acpr_e1c2e959a52b57efeaa948d7"
+        }
+      }
+    },
+    {
+      "requestId": "3e7c6832-5f86-4e41-827a-47b99f8503d8",
+      "status": "complete",
+      "firstNarrativeSseMs": 14789,
+      "totalMs": 25090,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:47.246Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:29:47.246Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:47.246Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:29:47.248Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:47.248Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:29:47.248Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:47.248Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:30:12.331Z",
+          "elapsedMs": 25082
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:47.248Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:29:47.756Z",
+          "elapsedMs": 507
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:47.248Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:29:47.248Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:47.248Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:29:47.734Z",
+          "elapsedMs": 486
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:47.734Z",
+          "startMs": 489,
+          "endedAt": "2026-09-07T15:29:47.743Z",
+          "elapsedMs": 8
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:47.743Z",
+          "startMs": 497,
+          "endedAt": "2026-09-07T15:29:47.750Z",
+          "elapsedMs": 7
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:29:47.750Z",
+          "startMs": 504,
+          "endedAt": "2026-09-07T15:29:47.756Z",
+          "elapsedMs": 6
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:12.331Z",
+          "startMs": 25085,
+          "endedAt": "2026-09-07T15:30:12.331Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:12.331Z",
+          "startMs": 25085,
+          "endedAt": "2026-09-07T15:30:12.331Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:12.331Z",
+          "startMs": 25085,
+          "endedAt": "2026-09-07T15:30:12.331Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:12.331Z",
+          "startMs": 25086,
+          "endedAt": "2026-09-07T15:30:12.336Z",
+          "elapsedMs": 4
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_baef7e5b26ea9d7b22802ce0",
+          "runId": "acpr_60d7b96a1018092ff38b846b"
+        }
+      }
+    },
+    {
+      "requestId": "55d05938-6c20-49e9-a917-b4c646191f74",
+      "status": "complete",
+      "firstNarrativeSseMs": 7359,
+      "totalMs": 17132,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:22.666Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:30:22.667Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:22.667Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:30:22.669Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:22.669Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:30:22.669Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:22.669Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:30:39.792Z",
+          "elapsedMs": 17123
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:22.669Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:30:23.144Z",
+          "elapsedMs": 474
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:22.669Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:30:22.669Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:22.669Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:30:23.123Z",
+          "elapsedMs": 454
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:23.123Z",
+          "startMs": 457,
+          "endedAt": "2026-09-07T15:30:23.131Z",
+          "elapsedMs": 8
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:23.131Z",
+          "startMs": 465,
+          "endedAt": "2026-09-07T15:30:23.138Z",
+          "elapsedMs": 7
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:23.138Z",
+          "startMs": 472,
+          "endedAt": "2026-09-07T15:30:23.144Z",
+          "elapsedMs": 5
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:39.792Z",
+          "startMs": 17126,
+          "endedAt": "2026-09-07T15:30:39.793Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:39.792Z",
+          "startMs": 17126,
+          "endedAt": "2026-09-07T15:30:39.792Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:39.792Z",
+          "startMs": 17126,
+          "endedAt": "2026-09-07T15:30:39.792Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:39.793Z",
+          "startMs": 17126,
+          "endedAt": "2026-09-07T15:30:39.799Z",
+          "elapsedMs": 6
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_6f63a8d533397a021f46331b",
+          "runId": "acpr_73714dea25b6c0e2131e2f3c"
+        }
+      }
+    },
+    {
+      "requestId": "b1fb0703-d77c-49b4-81a7-841027802170",
+      "status": "complete",
+      "firstNarrativeSseMs": 8447,
+      "totalMs": 25040,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:46.451Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:30:46.451Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:46.451Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:30:46.453Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:46.453Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:30:46.453Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:46.453Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:31:11.484Z",
+          "elapsedMs": 25030
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:46.453Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:30:46.988Z",
+          "elapsedMs": 535
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:46.453Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:30:46.453Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:46.453Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:30:46.963Z",
+          "elapsedMs": 510
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:46.963Z",
+          "startMs": 513,
+          "endedAt": "2026-09-07T15:30:46.975Z",
+          "elapsedMs": 11
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:46.975Z",
+          "startMs": 524,
+          "endedAt": "2026-09-07T15:30:46.981Z",
+          "elapsedMs": 7
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:30:46.981Z",
+          "startMs": 531,
+          "endedAt": "2026-09-07T15:30:46.988Z",
+          "elapsedMs": 7
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:11.484Z",
+          "startMs": 25033,
+          "endedAt": "2026-09-07T15:31:11.485Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:11.484Z",
+          "startMs": 25033,
+          "endedAt": "2026-09-07T15:31:11.484Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:11.484Z",
+          "startMs": 25034,
+          "endedAt": "2026-09-07T15:31:11.485Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:11.485Z",
+          "startMs": 25034,
+          "endedAt": "2026-09-07T15:31:11.491Z",
+          "elapsedMs": 6
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_0056b3bf61f4f884daf3b65e",
+          "runId": "acpr_1f9abd5d3f9398a140b663ad"
+        }
+      }
+    },
+    {
+      "requestId": "7eda5e9b-d7e7-4bcb-9457-412ed1cd073a",
+      "status": "complete",
+      "firstNarrativeSseMs": 36789,
+      "totalMs": 52112,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:21.331Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:31:21.331Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:21.331Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:31:21.333Z",
+          "elapsedMs": 3
+        },
+        {
+          "name": "planner_context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:21.334Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:31:21.334Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "plan",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:21.334Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:31:53.032Z",
+          "elapsedMs": 31698
+        },
+        {
+          "name": "acp_planner_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:21.334Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:31:21.832Z",
+          "elapsedMs": 498
+        },
+        {
+          "name": "acp_planner_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:21.334Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:31:21.334Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_planner_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:21.334Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:31:21.788Z",
+          "elapsedMs": 454
+        },
+        {
+          "name": "acp_planner_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:21.788Z",
+          "startMs": 457,
+          "endedAt": "2026-09-07T15:31:21.819Z",
+          "elapsedMs": 31
+        },
+        {
+          "name": "acp_planner_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:21.819Z",
+          "startMs": 488,
+          "endedAt": "2026-09-07T15:31:21.826Z",
+          "elapsedMs": 7
+        },
+        {
+          "name": "acp_planner_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:21.826Z",
+          "startMs": 495,
+          "endedAt": "2026-09-07T15:31:21.832Z",
+          "elapsedMs": 6
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:53.032Z",
+          "startMs": 31701,
+          "endedAt": "2026-09-07T15:31:53.032Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:53.032Z",
+          "startMs": 31701,
+          "endedAt": "2026-09-07T15:32:13.435Z",
+          "elapsedMs": 20403
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:53.032Z",
+          "startMs": 31701,
+          "endedAt": "2026-09-07T15:31:53.583Z",
+          "elapsedMs": 551
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:53.033Z",
+          "startMs": 31701,
+          "endedAt": "2026-09-07T15:31:53.033Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:53.033Z",
+          "startMs": 31701,
+          "endedAt": "2026-09-07T15:31:53.557Z",
+          "elapsedMs": 525
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:53.557Z",
+          "startMs": 32226,
+          "endedAt": "2026-09-07T15:31:53.569Z",
+          "elapsedMs": 12
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:53.569Z",
+          "startMs": 32238,
+          "endedAt": "2026-09-07T15:31:53.576Z",
+          "elapsedMs": 7
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:31:53.576Z",
+          "startMs": 32245,
+          "endedAt": "2026-09-07T15:31:53.583Z",
+          "elapsedMs": 7
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:13.435Z",
+          "startMs": 52104,
+          "endedAt": "2026-09-07T15:32:13.436Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:13.435Z",
+          "startMs": 52104,
+          "endedAt": "2026-09-07T15:32:13.436Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:13.436Z",
+          "startMs": 52104,
+          "endedAt": "2026-09-07T15:32:13.436Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:13.436Z",
+          "startMs": 52105,
+          "endedAt": "2026-09-07T15:32:13.444Z",
+          "elapsedMs": 7
+        }
+      ],
+      "providers": {
+        "planner": {
+          "model": "gpt-5.6-sol",
+          "effort": "medium",
+          "sessionId": "acps_ee9370482cf28b0fee63885d",
+          "runId": "acpr_3bb9a7fe4c66e7e1ead04803"
+        },
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_e3f74c80658f49fb6c291419",
+          "runId": "acpr_50c73fdd257471a46b11ed94"
+        }
+      }
+    },
+    {
+      "requestId": "0cb964a2-c276-4e7a-a630-d3564dc8a9bd",
+      "status": "complete",
+      "firstNarrativeSseMs": 4990,
+      "totalMs": 24280,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:19.926Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:32:19.926Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:19.926Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:32:19.927Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:19.927Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:32:19.927Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:19.927Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:32:44.187Z",
+          "elapsedMs": 24260
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:19.927Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:32:20.431Z",
+          "elapsedMs": 504
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:19.928Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:32:19.928Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:19.928Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:32:20.396Z",
+          "elapsedMs": 468
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:20.396Z",
+          "startMs": 470,
+          "endedAt": "2026-09-07T15:32:20.419Z",
+          "elapsedMs": 23
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:20.419Z",
+          "startMs": 493,
+          "endedAt": "2026-09-07T15:32:20.424Z",
+          "elapsedMs": 6
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:20.424Z",
+          "startMs": 499,
+          "endedAt": "2026-09-07T15:32:20.431Z",
+          "elapsedMs": 7
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:44.187Z",
+          "startMs": 24262,
+          "endedAt": "2026-09-07T15:32:44.188Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:44.187Z",
+          "startMs": 24262,
+          "endedAt": "2026-09-07T15:32:44.187Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:44.187Z",
+          "startMs": 24262,
+          "endedAt": "2026-09-07T15:32:44.188Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:44.188Z",
+          "startMs": 24263,
+          "endedAt": "2026-09-07T15:32:44.206Z",
+          "elapsedMs": 17
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_6eaf50b62581af9e4337a232",
+          "runId": "acpr_81da17a20cbb9eb1212640cf"
+        }
+      }
+    },
+    {
+      "requestId": "b8da689e-2a50-4167-bb9a-5ceac8f22a0b",
+      "status": "complete",
+      "firstNarrativeSseMs": 9482,
+      "totalMs": 23493,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:50.999Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:32:50.999Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:50.999Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:32:51.001Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:51.001Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T15:32:51.001Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:51.001Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:33:14.484Z",
+          "elapsedMs": 23482
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:51.001Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:32:51.461Z",
+          "elapsedMs": 459
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:51.002Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:32:51.002Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:51.002Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:32:51.438Z",
+          "elapsedMs": 437
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:51.438Z",
+          "startMs": 440,
+          "endedAt": "2026-09-07T15:32:51.448Z",
+          "elapsedMs": 9
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:51.448Z",
+          "startMs": 449,
+          "endedAt": "2026-09-07T15:32:51.454Z",
+          "elapsedMs": 6
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:32:51.454Z",
+          "startMs": 455,
+          "endedAt": "2026-09-07T15:32:51.461Z",
+          "elapsedMs": 7
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:14.484Z",
+          "startMs": 23485,
+          "endedAt": "2026-09-07T15:33:14.485Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:14.484Z",
+          "startMs": 23485,
+          "endedAt": "2026-09-07T15:33:14.484Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:14.484Z",
+          "startMs": 23485,
+          "endedAt": "2026-09-07T15:33:14.485Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:14.485Z",
+          "startMs": 23486,
+          "endedAt": "2026-09-07T15:33:14.491Z",
+          "elapsedMs": 7
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_06b3a3e19005044f6ec54c8a",
+          "runId": "acpr_95ca39d2e8adced2616c150c"
+        }
+      }
+    },
+    {
+      "requestId": "28142c2e-1aeb-44db-8596-cb43bffe16be",
+      "status": "complete",
+      "firstNarrativeSseMs": 9426,
+      "totalMs": 24223,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:24.430Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:33:24.431Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:24.431Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T15:33:24.433Z",
+          "elapsedMs": 3
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:24.434Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:33:24.434Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:24.434Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:33:48.647Z",
+          "elapsedMs": 24213
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:24.434Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:33:24.883Z",
+          "elapsedMs": 450
+        },
+        {
+          "name": "acp_narrator_mcp_initialize",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:24.434Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:33:24.434Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "acp_narrator_session_new",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:24.434Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T15:33:24.862Z",
+          "elapsedMs": 429
+        },
+        {
+          "name": "acp_narrator_read_only_mode",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:24.862Z",
+          "startMs": 432,
+          "endedAt": "2026-09-07T15:33:24.870Z",
+          "elapsedMs": 8
+        },
+        {
+          "name": "acp_narrator_model_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:24.870Z",
+          "startMs": 440,
+          "endedAt": "2026-09-07T15:33:24.878Z",
+          "elapsedMs": 7
+        },
+        {
+          "name": "acp_narrator_effort_select",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:24.878Z",
+          "startMs": 447,
+          "endedAt": "2026-09-07T15:33:24.883Z",
+          "elapsedMs": 5
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:48.647Z",
+          "startMs": 24216,
+          "endedAt": "2026-09-07T15:33:48.648Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:48.647Z",
+          "startMs": 24216,
+          "endedAt": "2026-09-07T15:33:48.647Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:48.647Z",
+          "startMs": 24216,
+          "endedAt": "2026-09-07T15:33:48.648Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T15:33:48.648Z",
+          "startMs": 24216,
+          "endedAt": "2026-09-07T15:33:48.654Z",
+          "elapsedMs": 7
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_38a9992a636c71e6cafba4e3",
+          "runId": "acpr_04198e135a5bfe59aac77361"
+        }
+      }
+    }
+  ]
+}

@@ -58,6 +58,18 @@ test("compact checkpoint keeps stage intent without restating the canonical ledg
   assert.equal(result.reduced.state.turnNumber,9);
 });
 
+test('stage planning retains bounded graduation and transition without minting rights', async () => {
+  const snapshot = game(); snapshot.state.turnNumber = 8; snapshot.version = 8;
+  const growth = {want:'完成第一境界的实际掌握',payoff:'完成资源与训练闭环',afterUse:'已有伙伴依据亲见结果作出邀请',graduated:'普通配方已连续正确完成，同类批次只需结算。',transition:'还缺在移动中稳定施术，不重复配墨测试。'};
+  const planner = adapter('planner', [JSON.stringify({pressure:'原有风险已解除',npcMoves:[],growth})], 'medium');
+  const narrator = adapter('narrator', [VALID_NARRATOR_OUTPUT], 'low');
+  const trace = new TurnTrace({gameId:snapshot.id,requestId:'graduation-contract'});
+  const result = await new GenerationService({narrator,planner}).execute({game:snapshot,world:WORLDS[0],action:'继续训练',trace});
+  assert.deepEqual(result.plan.growth,growth);
+  assert.equal(result.reduced.state.realm.rank,0,'plans do not advance the state');
+  assert.equal(result.reduced.state.progression.leverage.length,0,'plans do not grant social rights');
+});
+
 test("compact plans do not accept a malformed NPC list or silently lose missing growth", async () => {
   const snapshot = game(); snapshot.state.turnNumber = 8;
   for(const plan of [{pressure:'缺少计划内容'}, {npcMoves:{bad:true},growth:{want:'测试'}}]) {

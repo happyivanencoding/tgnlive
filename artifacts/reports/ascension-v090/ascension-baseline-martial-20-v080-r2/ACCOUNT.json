@@ -1,0 +1,126 @@
+{
+  "realm": {
+    "name": "锻身段",
+    "rank": 0,
+    "benchmark": "身体略强于普通成年人，能完成基础负重，但连续爆发会迅速力竭。",
+    "unlock": "可使用公共训练器械、购买基础补给，并申请一次城内公开测试。",
+    "progress": 27
+  },
+  "coins": 102,
+  "capabilities": [
+    {
+      "id": "power-clean-forge-body",
+      "name": "净炉身",
+      "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+      "source": "开局天赋"
+    },
+    {
+      "id": "standard-body-drill",
+      "name": "标准锻身操",
+      "description": "能独立完成热身、负重、冲刺和恢复记录；完成适量拖架训练后，可用沉胯收腹、脚掌踩实与短促呼气稳住卸重后的第一步，并接上短程冲刺。低危荒带携带一小包材料时，仍可用换气、转角换手和停歇调整保持重心。限制：仍处于锻身段，连续爆发、长坡或超出承受的重量会迅速力竭；手腕刺痛或步子散开时必须减载停止。",
+      "source": "城市公共训练课"
+    },
+    {
+      "id": "read-frontier-markers",
+      "name": "辨认荒带标识",
+      "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+      "source": "通行票安全课"
+    }
+  ],
+  "inventory": [
+    {
+      "id": "three-day-rations",
+      "name": "三日训练补给",
+      "description": "已用去两份高营养食物，剩余量足够支撑两日普通活动或一次轻度恢复",
+      "qty": 1
+    },
+    {
+      "id": "shock-wraps",
+      "name": "护震绑带",
+      "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+      "qty": 1
+    },
+    {
+      "id": "fresh-fire-floss-vine-bundle",
+      "name": "鲜火绒藤一束",
+      "description": "藤芯完整，已在旧冶坊后巷最里面两层冷却架上摊开阴干；尚未晒透，遇雨或夜间返潮时必须及时收走，当前不能按合格干藤交售。",
+      "qty": 1
+    }
+  ],
+  "relationships": [
+    {
+      "id": "hou-ling",
+      "name": "侯铃",
+      "role": "南场训练厅主",
+      "attitude": "友善"
+    },
+    {
+      "id": "ren-li",
+      "name": "任砺",
+      "role": "荒材商",
+      "attitude": "好奇"
+    }
+  ],
+  "progression": {
+    "version": 1,
+    "leverage": [
+      {
+        "id": "south-yard-equipment-discount",
+        "kind": "access",
+        "name": "南场基础器械九成价使用权",
+        "effect": "可凭本次体测记录以九成价使用南场训练厅的基础器械。",
+        "scope": "仅限折钢城南场基础器械，持续有效，训练费用仍需自行支付。",
+        "sourceId": "hou-ling",
+        "status": "active",
+        "acquiredAtTurn": 2,
+        "lastUsedAtTurn": null,
+        "useCount": 0
+      },
+      {
+        "id": "ren-li-common-heat-material-buyer",
+        "kind": "enterprise",
+        "name": "任砺的常见热材验货收购渠道",
+        "effect": "可将从低危荒带带回、根皮完好且已刮净裂泥的常见热材交给任砺验货并按品质出售。",
+        "scope": "限任砺实际收购的常见热材；价格随品质与市况当面议定，不保证收购所有材料。",
+        "sourceId": "ren-li",
+        "status": "active",
+        "acquiredAtTurn": 7,
+        "lastUsedAtTurn": 16,
+        "useCount": 2
+      },
+      {
+        "id": "old-forge-drying-rack-access",
+        "kind": "access",
+        "name": "旧冶坊后巷阴干架使用权",
+        "effect": "可在后天午后前将一束火绒藤放在最里面两层冷却架上阴干。",
+        "scope": "仅限一束火绒藤；须每日扫净架面、自行看管，遇雨立即收走，鲁阿伯不负责保管。",
+        "sourceId": "lu-foreman",
+        "status": "active",
+        "acquiredAtTurn": 19,
+        "lastUsedAtTurn": 20,
+        "useCount": 1
+      }
+    ],
+    "opportunities": [
+      {
+        "id": "intact-heat-shell-root-value",
+        "name": "完整热壳根的处置",
+        "payoff": "可出售为现金，或经正确处理后转为基础训练补给。",
+        "approach": "将现有完整热壳根卖给任砺，或自行寻找合适的净化与烹制条件。",
+        "status": "fulfilled",
+        "offeredAtTurn": 3,
+        "materialized": true,
+        "result": "完整热壳根已被处理为两份基础药餐；沈舟留一份自用，另一份委托任砺按十八武券售出，尚未成交。",
+        "settledAtTurn": 5
+      },
+      {
+        "id": "dried-fire-floss-vine-order",
+        "name": "后天前的一束合格火绒藤",
+        "payoff": "交出藤芯完整、晒透未返潮的一束火绒藤，可由任砺按十武券验货收购。",
+        "approach": "先取得可用的背风阴干条件，再在低危荒带采到完整火绒藤并于后天午前交给任砺验货。",
+        "status": "open",
+        "offeredAtTurn": 18
+      }
+    ]
+  }
+}

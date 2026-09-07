@@ -1,0 +1,183 @@
+{
+  "realm": {
+    "name": "通劲段",
+    "rank": 1,
+    "benchmark": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+    "unlock": "可学习正式招式、进入低危荒带，并获得基础材料的个人携出权。",
+    "progress": 20
+  },
+  "coins": 81,
+  "capabilities": [
+    {
+      "id": "power-clean-forge-body",
+      "name": "净炉身",
+      "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+      "source": "开局天赋"
+    },
+    {
+      "id": "standard-body-drill",
+      "name": "标准锻身操",
+      "description": "能独立完成热身、负重、短冲、推击与恢复记录，并把木槌抗击、短冲折返和控息站桩组成连续训练。现在能在连续六次中等强度受击后维持架势，完成两趟短冲折返，再以长吐息逐步压稳呼吸；可用于持续锻炼抗击后的落脚、呼吸与恢复。限制：第七次及更重的冲击仍会使骨节发麻，高速追逐后的恢复不足，不能据此承受真正重击或越阶硬拼。",
+      "source": "城市公共训练课"
+    },
+    {
+      "id": "read-frontier-markers",
+      "name": "辨认荒带标识",
+      "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+      "source": "通行票安全课"
+    },
+    {
+      "id": "realm-1",
+      "name": "通劲段行动空间",
+      "description": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+      "source": "境界突破"
+    },
+    {
+      "id": "close-quarters-stance",
+      "name": "贴身架势",
+      "description": "能在三步内观察对手落脚与逼近方向，侧身进位，用前臂格开直撞后以腰背锁力完成短推。已在灰裂沟外圈对试探扑近的裂鼠实际使用，可为转身、撤离或继续采集争出短暂空档；面对连续围攻、长兵器、明显更强的力量或狭窄到无法侧移的地形仍有很大风险。",
+      "source": "正文获得"
+    },
+    {
+      "id": "rift-vine-handling",
+      "name": "裂石藤辨采与保药处理",
+      "description": "能在灰裂沟外圈白纹岩西侧碎壁辨认裂石藤的石纹、黄汁和辛气；可在根上方两寸断开，逐根剥离附壁细须并用湿布保住主皮药性，取得三尺以上合格藤段。限制：仅适用于已知低危碎壁；藤皮破损、黄汁干涸、壁面松动或天气旗变红时应停止采集并折返。",
+      "source": "正文获得"
+    }
+  ],
+  "inventory": [
+    {
+      "id": "shock-wraps",
+      "name": "护震绑带",
+      "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+      "qty": 1
+    },
+    {
+      "id": "sang-tuo-old-map",
+      "name": "桑拓的旧路线图",
+      "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+      "qty": 1
+    },
+    {
+      "id": "hard-skin-moss-bundle",
+      "name": "硬皮苔",
+      "description": "从灰裂沟外圈完整剥离的一捆硬皮苔，可作为荒材出售；当前已由任砺验货并收购，不再由沈舟携带。",
+      "qty": 1
+    },
+    {
+      "id": "rift-vine-recovery-base",
+      "name": "裂石藤恢复膏底料",
+      "description": "由裂石藤与任砺按一比一配成的恢复膏底料，现余约三成；可在高强度训练后的恢复阶段配合净炉身缓解肌肉酸痛并补回部分消耗，不能替代睡眠、进食或修复骨伤。",
+      "qty": 1
+    }
+  ],
+  "relationships": [
+    {
+      "id": "hou-ling",
+      "name": "侯铃",
+      "role": "南场训练厅主",
+      "attitude": "友善"
+    },
+    {
+      "id": "ren-li",
+      "name": "任砺",
+      "role": "荒材商",
+      "attitude": "友善"
+    }
+  ],
+  "progression": {
+    "version": 1,
+    "leverage": [
+      {
+        "id": "south-yard-basic-discount",
+        "kind": "access",
+        "name": "南场基础器械九折价",
+        "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+        "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+        "status": "active",
+        "acquiredAtTurn": 2,
+        "lastUsedAtTurn": null,
+        "useCount": 0
+      },
+      {
+        "id": "ren-li-moss-preorder-access",
+        "kind": "access",
+        "name": "任砺的硬皮苔预收位",
+        "effect": "以后可在午前通知任砺启用预收位，在天黑前交付两捆合格硬皮苔并按当日市价结算，每捆保底八枚武券。",
+        "scope": "仅限灰裂沟外圈硬皮苔；每日两捆、每捆至少三十片且根部完整、无咬痕和泥沙霉斑。暂停须在午前通知任砺。",
+        "status": "active",
+        "acquiredAtTurn": 16,
+        "lastUsedAtTurn": null,
+        "useCount": 0
+      }
+    ],
+    "opportunities": [
+      {
+        "id": "south-yard-test",
+        "name": "南场最后一次公开体测",
+        "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+        "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+        "status": "fulfilled",
+        "offeredAtTurn": 1,
+        "materialized": true,
+        "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+        "settledAtTurn": 2
+      },
+      {
+        "id": "gray-rift-root",
+        "name": "灰裂沟热壳根采集",
+        "payoff": "获得可自用或出售的完整热壳根",
+        "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+        "status": "fulfilled",
+        "offeredAtTurn": 1,
+        "materialized": true,
+        "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+        "settledAtTurn": 4
+      },
+      {
+        "id": "sang-tuo-map",
+        "name": "桑拓的旧路线图",
+        "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+        "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+        "status": "fulfilled",
+        "offeredAtTurn": 1,
+        "materialized": true,
+        "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+        "settledAtTurn": 3
+      },
+      {
+        "id": "south-yard-close-combat-class",
+        "name": "南场贴身架势课",
+        "payoff": "学会在近距离移动、格挡与短推中运用稳定贯力，获得可用于低危荒带自保的正式基础招式。",
+        "approach": "明晚开课前向侯铃交六枚武券报名，连续参加三晚训练并完成课内对练。",
+        "status": "fulfilled",
+        "offeredAtTurn": 10,
+        "materialized": true,
+        "result": "沈舟交费并完成连续三晚训练与课内对练，学会贴身架势的三步进身、格开直撞和短推贯力。",
+        "settledAtTurn": 11
+      },
+      {
+        "id": "ren-li-moss-preorder",
+        "name": "任砺的硬皮苔三日预收单",
+        "payoff": "连续三天完成标准交货后，取得由任砺保留的硬皮苔小批量预收渠道；合格货每捆按当日市价结算且保底八枚武券。",
+        "approach": "决定接单后，在三日内每日天黑前带回两捆各不少于三十片、根部完整且无咬痕、泥沙霉斑的硬皮苔，交任砺当面验货。",
+        "status": "fulfilled",
+        "offeredAtTurn": 13,
+        "materialized": true,
+        "result": "沈舟连续三天按标准交付两捆合格硬皮苔；任砺兑现约定，为他保留可自主启用或暂停的小批量预收位。",
+        "settledAtTurn": 16
+      },
+      {
+        "id": "ren-li-rift-vine",
+        "name": "裂石藤采集与处理",
+        "payoff": "获得可出售的高价裂石藤，或保留一段作为恢复膏底料。",
+        "approach": "沿旧路线至裂黑石北侧，找到白纹岩西八码的碎壁；辨认藤皮石纹与黄汁，完整剥取三尺以上藤段并用湿布包回城验货。",
+        "status": "fulfilled",
+        "offeredAtTurn": 17,
+        "materialized": true,
+        "result": "沈舟在白纹岩西侧碎壁完整采得约四尺裂石藤并安全带回；任砺验货报价十六枚武券，沈舟保留藤段并配成一罐可用于训练恢复的膏底料。",
+        "settledAtTurn": 18
+      }
+    ]
+  }
+}

@@ -3,14 +3,91 @@ import { StreamingNarratorParser, extractJsonObject } from "./output-parser.js";
 import { buildNarratorPrompt, buildPlannerPrompt, buildRepairPrompt } from "./prompts.js";
 import { reduceState } from "./reducer.js";
 import { authoredOpeningPlan } from "./opening-plan.js";
+import { TurnTrace } from './telemetry.js';
+import { createId } from './ids.js';
 
 export class GenerationService {
-  constructor({ narrator, planner, plannerInterval = 8, openingPlanStrategy = "authored" }) {
+  constructor({ narrator, planner, plannerInterval = 8, openingPlanStrategy = "authored", plannerStrategy = "checkpoint" }) {
     if (!["authored", "live"].includes(openingPlanStrategy)) throw new Error("openingPlanStrategy must be authored or live");
+    if (!['checkpoint', 'prefetch'].includes(plannerStrategy)) throw new Error('plannerStrategy must be checkpoint or prefetch');
     this.openingPlanStrategy = openingPlanStrategy;
+    this.plannerStrategy = plannerStrategy;
+    this.ahead = null;
+    this.prefetchJobs = new Set();
     this.narrator = narrator;
     this.planner = planner;
     this.plannerInterval = plannerInterval;
+  }
+
+  // One owned, bounded speculative plan, never an asynchronous Canon mutation.
+  // Two ordinary turns give the existing planner time while the player reads.
+  afterCommit({ game, world, existingPlan, language = game.language || 'zh', onTrace }) {
+    if (this.plannerStrategy !== 'prefetch') return;
+    const previous = this.ahead;
+    if (previous && (previous.gameId !== game.id || game.version > previous.targetVersion
+        || previous.realmRank !== game.state.realm.rank || previous.language !== language)) {
+      previous.controller.abort(new Error('prefetch basis no longer applicable'));
+      this.ahead = null;
+    }
+    if (game.version % this.plannerInterval !== this.plannerInterval - 2 || this.ahead) return;
+    const controller = new AbortController();
+    const trace = new TurnTrace({ gameId: game.id, requestId: createId('plan') });
+    trace.value.kind = 'planner-prefetch';
+    trace.value.basisVersion = game.version;
+    trace.value.targetVersion = game.version + 2;
+    const job = { gameId: game.id, basisVersion: game.version, targetVersion: game.version + 2,
+      realmRank: game.state.realm.rank, basisNearBreakthrough: game.state.realm.progress >= 90,
+      language, controller, trace, status: 'pending', used: false };
+    const deadline = setTimeout(() => controller.abort(new Error('prefetch deadline exceeded')), 120000);
+    deadline.unref?.();
+    this.ahead = job;
+    this.prefetchJobs.add(job);
+    job.promise = (async () => {
+      try {
+        const prompt = await stage(trace, null, 'planner_context_assembly', async () => buildPlannerPrompt({
+          game, world, existingPlan, language,
+          action: '这是基于已提交Canon的提前规划。玩家尚未提交下一行动；只准备可复用的阶段方向与人物自主行动，不假定玩家会接受任何路线。',
+        }));
+        trace.value.promptChars.planner = prompt.length;
+        const result = await stage(trace, null, 'plan', async () => {
+          beginSetupStage(trace, null, 'planner');
+          return this.planner.run(prompt, { signal: controller.signal,
+            onEvent: event => recordProviderEvent(trace, null, 'planner', event) });
+        });
+        trace.value.provider.planner = providerResult(this.planner, result);
+        controller.signal.throwIfAborted();
+        job.plan = { ...validatePlan(extractJsonObject(result.text)),
+          basisRealmRank: job.realmRank, basisNearBreakthrough: job.basisNearBreakthrough,
+          basisGameVersion: job.basisVersion, targetGameVersion: job.targetVersion,
+          speculative: true };
+        job.status = 'ready';
+        trace.value.prefetchDisposition = this.ahead === job ? 'ready' : 'discarded';
+        trace.finish('complete');
+      } catch (error) {
+        job.status = controller.signal.aborted ? 'cancelled' : 'failed';
+        trace.value.errors.push({ phase: 'planner-prefetch', code: error.code || error.name, message: error.message });
+        trace.finish(job.status);
+      } finally {
+        clearTimeout(deadline);
+        // Trace persistence is observational; a failed optional plan must never
+        // change a committed turn or become an unhandled rejection on shutdown.
+        try { onTrace?.(trace.value); } catch { /* database may already be closing */ }
+        this.prefetchJobs.delete(job);
+      }
+    })();
+  }
+
+  async close() {
+    this.ahead = null;
+    const jobs = [...this.prefetchJobs];
+    for (const job of jobs) job.controller.abort(new Error('game service shutting down'));
+    await Promise.allSettled(jobs.map(job => job.promise));
+  }
+
+  cancelPrefetch(gameId) {
+    if (this.ahead?.gameId !== gameId) return;
+    this.ahead.controller.abort(new Error('player stopped this game'));
+    this.ahead = null;
   }
 
   providerHealth() {
@@ -34,7 +111,29 @@ export class GenerationService {
         trace.value.planSource = "authored-world-seed-no-model-call";
       });
     }
-    if (this.shouldPlan(game, existingPlan)) {
+    if (this.shouldPlan(game, existingPlan) && this.plannerStrategy === 'prefetch' && game.state.turnNumber > 0) {
+      const job = this.ahead;
+      const applicable = job?.gameId === game.id && job.targetVersion === game.version
+        && job.realmRank === game.state.realm.rank && job.language === language;
+      trace.value.prefetch = { status: applicable ? job.status : 'missing-or-stale',
+        basisVersion: job?.basisVersion ?? null, targetVersion: job?.targetVersion ?? null,
+        traceId: job?.trace.value.id ?? null };
+      if (applicable && job.status === 'ready') {
+        freshPlan = structuredClone(job.plan);
+        plan = freshPlan;
+        job.used = true;
+        trace.value.planSource = 'ready-prefetch-no-foreground-model-call';
+        trace.value.prefetch.backgroundElapsedMs = job.trace.value.totalElapsedMs;
+      } else {
+        // A cold restart, failure or slow planner cannot double the player's wait.
+        // The narrator still receives authoritative current Canon and current action.
+        trace.value.planSource = 'existing-plan-nonblocking-fallback';
+        if (plan?.basisRealmRank !== undefined && plan.basisRealmRank !== game.state.realm.rank) {
+          plan = null;
+          trace.value.prefetch.discardedOldStagePlan = true;
+        }
+      }
+    } else if (this.shouldPlan(game, existingPlan)) {
       trace.value.planSource = "live-story-brain";
       const plannerPrompt = await stage(trace, onStage, "planner_context_assembly", async () => buildPlannerPrompt({ game, world, action, existingPlan, language }));
       trace.value.promptChars.planner = plannerPrompt.length;
@@ -192,7 +291,7 @@ function validatePlan(plan) {
     }
   }
   const growth = plan.growth && typeof plan.growth === 'object' && !Array.isArray(plan.growth)
-    ? Object.fromEntries(['want', 'payoff', 'afterUse'].map(key => [key, String(plan.growth[key] || '').slice(0, 400)])) : undefined;
+    ? Object.fromEntries(['want', 'payoff', 'afterUse', 'graduated', 'transition'].filter(key => ['want', 'payoff', 'afterUse'].includes(key) || plan.growth[key] !== undefined).map(key => [key, String(plan.growth[key] || '').slice(0, 400)])) : undefined;
   return {
     pressure: String(plan.pressure || "").slice(0, 300),
     npcMoves: plan.npcMoves.slice(0, 6),

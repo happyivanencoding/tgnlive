@@ -1,0 +1,2836 @@
+{
+  "generatedAt": "2026-09-07T17:06:22.773Z",
+  "samples": [
+    {
+      "label": "ascension-baseline-hunt-20-v080-r2",
+      "requestedTurns": 20,
+      "committedTurns": 20,
+      "failedAttempts": 4,
+      "failedPlayers": [],
+      "fatal": null,
+      "continuedFrom": "ascension-baseline-hunt-20-v080-r1",
+      "continuationReason": "Continue same Canon after ACP session creation recovered. Controlled setup probe found original config 795ms and no-tools 632-731ms; no infrastructure/config change accepted. All prior failures retained.",
+      "status": "completed",
+      "startedAt": "2026-09-07T13:51:47.595Z",
+      "endedAt": "2026-09-07T14:27:52.457Z",
+      "wallElapsedMs": 2164862,
+      "source": null,
+      "sourceHash": null,
+      "server": {
+        "firstNarrativeSse": {
+          "n": 20,
+          "medianMs": 6553,
+          "p95Ms": 30575,
+          "maxMs": 46651
+        },
+        "complete": {
+          "n": 20,
+          "medianMs": 23923.5,
+          "p95Ms": 51462,
+          "maxMs": 59630
+        },
+        "allAttempts": {
+          "n": 24,
+          "medianMs": 23289,
+          "p95Ms": 59630,
+          "maxMs": 123030
+        },
+        "repairCalls": 0,
+        "phases": {
+          "acp_narrator_effort_select": {
+            "n": 20,
+            "medianMs": 7,
+            "p95Ms": 9,
+            "maxMs": 15
+          },
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 20,
+            "medianMs": 671,
+            "p95Ms": 812,
+            "maxMs": 942
+          },
+          "acp_narrator_mcp_initialize": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 263
+          },
+          "acp_narrator_model_select": {
+            "n": 20,
+            "medianMs": 7,
+            "p95Ms": 30,
+            "maxMs": 112
+          },
+          "acp_narrator_read_only_mode": {
+            "n": 20,
+            "medianMs": 10,
+            "p95Ms": 68,
+            "maxMs": 149
+          },
+          "acp_narrator_session_new": {
+            "n": 20,
+            "medianMs": 631,
+            "p95Ms": 743,
+            "maxMs": 748
+          },
+          "acp_planner_effort_select": {
+            "n": 2,
+            "medianMs": 14.5,
+            "p95Ms": 23,
+            "maxMs": 23
+          },
+          "acp_planner_initialize_auth_session_model_setup": {
+            "n": 2,
+            "medianMs": 642.5,
+            "p95Ms": 670,
+            "maxMs": 670
+          },
+          "acp_planner_mcp_initialize": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_planner_model_select": {
+            "n": 2,
+            "medianMs": 6.5,
+            "p95Ms": 7,
+            "maxMs": 7
+          },
+          "acp_planner_read_only_mode": {
+            "n": 2,
+            "medianMs": 31.5,
+            "p95Ms": 54,
+            "maxMs": 54
+          },
+          "acp_planner_session_new": {
+            "n": 2,
+            "medianMs": 590,
+            "p95Ms": 631,
+            "maxMs": 631
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "context_assembly": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "http_input_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "narrative_generation": {
+            "n": 20,
+            "medianMs": 23236.5,
+            "p95Ms": 26313,
+            "maxMs": 26322
+          },
+          "parse": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "parse_validate": {
+            "n": 20,
+            "medianMs": 1,
+            "p95Ms": 2,
+            "maxMs": 4
+          },
+          "persistence": {
+            "n": 20,
+            "medianMs": 7,
+            "p95Ms": 56,
+            "maxMs": 91
+          },
+          "plan": {
+            "n": 2,
+            "medianMs": 34015.5,
+            "p95Ms": 42015,
+            "maxMs": 42015
+          },
+          "planner_context_assembly": {
+            "n": 2,
+            "medianMs": 0.5,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "reducer_validation": {
+            "n": 20,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 3
+          },
+          "request_validation": {
+            "n": 20,
+            "medianMs": 2,
+            "p95Ms": 3,
+            "maxMs": 10
+          }
+        },
+        "checkpoints": [
+          {
+            "turn": 9,
+            "status": "complete",
+            "planningMs": 26016,
+            "firstNarrativeSseMs": 30575,
+            "totalMs": 51462,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          },
+          {
+            "turn": 17,
+            "status": "complete",
+            "planningMs": 42015,
+            "firstNarrativeSseMs": 46651,
+            "totalMs": 59630,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          }
+        ]
+      },
+      "client": {
+        "firstNarrativeReceipt": {
+          "n": 20,
+          "medianMs": 6555.517800000001,
+          "p95Ms": 30577.574300000007,
+          "maxMs": 46653.32809999999
+        },
+        "completeReceipt": {
+          "n": 20,
+          "medianMs": 23942.02059999999,
+          "p95Ms": 51476.77980000002,
+          "maxMs": 59646.5188
+        },
+        "playerDecision": {
+          "n": 19,
+          "medianMs": 6307.1393999999855,
+          "p95Ms": 8724.768199999991,
+          "maxMs": 8724.768199999991
+        },
+        "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+        "feedbackVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "firstNarrativeVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "choicesVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        }
+      },
+      "errors": [
+        {
+          "requestId": "3248944e-5466-4cde-b517-8b6e9f84c3dc",
+          "code": "PROVIDER_TIMEOUT",
+          "message": "生成超时",
+          "totalMs": 123030
+        },
+        {
+          "requestId": "f7927fc9-e25e-4897-a4d7-9b0fd038e691",
+          "code": "PROVIDER_SETUP_TIMEOUT",
+          "message": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20016
+        },
+        {
+          "requestId": "913276da-dece-475c-9239-4a08362a6fa2",
+          "code": "PROVIDER_SETUP_TIMEOUT",
+          "message": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20017
+        },
+        {
+          "requestId": "5d9d7da2-ea75-444b-b2ee-8b0788466543",
+          "code": "PROVIDER_SETUP_TIMEOUT",
+          "message": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20021
+        }
+      ],
+      "backgroundPlanning": {
+        "attempts": 0,
+        "readyReuses": 0,
+        "fallbacks": 0,
+        "traces": []
+      },
+      "sourceHashes": {
+        "turns": "03841cf805142c398356185e3de4199f8836995b9ef80e8cc23bfab941b64218"
+      },
+      "limits": [
+        "Autonomous diverging paths, not a paired or randomized causal experiment",
+        "Counts are not human retention; no physical phone or WAN measurement",
+        "Nested ACP spans are included in model stage time; do not sum them twice",
+        "With fewer than20 observations nearest-rank p95 equals maximum",
+        "Only committed requests enter successful latency; failures retained separately",
+        "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+      ]
+    },
+    {
+      "label": "ascension-baseline-martial-20-v080-r2",
+      "requestedTurns": 20,
+      "committedTurns": 20,
+      "failedAttempts": 0,
+      "failedPlayers": [
+        {
+          "run": "ascension-baseline-martial-20-v080-r1",
+          "file": "player-15.meta.json",
+          "error": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20019.8189
+        },
+        {
+          "run": "ascension-baseline-martial-20-v080",
+          "file": "player-15.meta.json",
+          "error": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20004.61869999999
+        }
+      ],
+      "fatal": null,
+      "continuedFrom": "ascension-baseline-martial-20-v080-r1",
+      "continuationReason": "Continue same Canon and original role configuration after provider recovered; controlled setup probe does not justify claiming a plugin fix. Earlier Player setup failures retained and not counted as submitted turns.",
+      "status": "completed",
+      "startedAt": "2026-09-07T13:53:18.964Z",
+      "endedAt": "2026-09-07T14:28:11.075Z",
+      "wallElapsedMs": 2092111,
+      "source": null,
+      "sourceHash": null,
+      "server": {
+        "firstNarrativeSse": {
+          "n": 20,
+          "medianMs": 4980.5,
+          "p95Ms": 28903,
+          "maxMs": 32708
+        },
+        "complete": {
+          "n": 20,
+          "medianMs": 20330.5,
+          "p95Ms": 45600,
+          "maxMs": 46649
+        },
+        "allAttempts": {
+          "n": 20,
+          "medianMs": 20330.5,
+          "p95Ms": 45600,
+          "maxMs": 46649
+        },
+        "repairCalls": 1,
+        "phases": {
+          "acp_narrator_effort_select": {
+            "n": 20,
+            "medianMs": 7,
+            "p95Ms": 20,
+            "maxMs": 30
+          },
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 20,
+            "medianMs": 643.5,
+            "p95Ms": 834,
+            "maxMs": 1072
+          },
+          "acp_narrator_mcp_initialize": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_narrator_model_select": {
+            "n": 20,
+            "medianMs": 7,
+            "p95Ms": 34,
+            "maxMs": 46
+          },
+          "acp_narrator_read_only_mode": {
+            "n": 20,
+            "medianMs": 10,
+            "p95Ms": 45,
+            "maxMs": 46
+          },
+          "acp_narrator_session_new": {
+            "n": 20,
+            "medianMs": 598.5,
+            "p95Ms": 811,
+            "maxMs": 1049
+          },
+          "acp_planner_effort_select": {
+            "n": 2,
+            "medianMs": 6.5,
+            "p95Ms": 7,
+            "maxMs": 7
+          },
+          "acp_planner_initialize_auth_session_model_setup": {
+            "n": 2,
+            "medianMs": 625.5,
+            "p95Ms": 654,
+            "maxMs": 654
+          },
+          "acp_planner_mcp_initialize": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_planner_model_select": {
+            "n": 2,
+            "medianMs": 7,
+            "p95Ms": 7,
+            "maxMs": 7
+          },
+          "acp_planner_read_only_mode": {
+            "n": 2,
+            "medianMs": 9,
+            "p95Ms": 9,
+            "maxMs": 9
+          },
+          "acp_planner_session_new": {
+            "n": 2,
+            "medianMs": 603,
+            "p95Ms": 632,
+            "maxMs": 632
+          },
+          "acp_repair_effort_select": {
+            "n": 1,
+            "medianMs": 41,
+            "p95Ms": 41,
+            "maxMs": 41
+          },
+          "acp_repair_initialize_auth_session_model_setup": {
+            "n": 1,
+            "medianMs": 727,
+            "p95Ms": 727,
+            "maxMs": 727
+          },
+          "acp_repair_mcp_initialize": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_repair_model_select": {
+            "n": 1,
+            "medianMs": 65,
+            "p95Ms": 65,
+            "maxMs": 65
+          },
+          "acp_repair_read_only_mode": {
+            "n": 1,
+            "medianMs": 9,
+            "p95Ms": 9,
+            "maxMs": 9
+          },
+          "acp_repair_session_new": {
+            "n": 1,
+            "medianMs": 611,
+            "p95Ms": 611,
+            "maxMs": 611
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "context_assembly": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "http_input_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "narrative_generation": {
+            "n": 20,
+            "medianMs": 19681.5,
+            "p95Ms": 23378,
+            "maxMs": 23631
+          },
+          "parse": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "parse_validate": {
+            "n": 20,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "persistence": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 27,
+            "maxMs": 30
+          },
+          "plan": {
+            "n": 2,
+            "medianMs": 23198,
+            "p95Ms": 24186,
+            "maxMs": 24186
+          },
+          "planner_context_assembly": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "reducer_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "repair": {
+            "n": 1,
+            "medianMs": 16493,
+            "p95Ms": 16493,
+            "maxMs": 16493
+          },
+          "repair_parse": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "repair_reducer_validation": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "request_validation": {
+            "n": 20,
+            "medianMs": 2,
+            "p95Ms": 3,
+            "maxMs": 25
+          }
+        },
+        "checkpoints": [
+          {
+            "turn": 9,
+            "status": "complete",
+            "planningMs": 22210,
+            "firstNarrativeSseMs": 32708,
+            "totalMs": 45600,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          },
+          {
+            "turn": 17,
+            "status": "complete",
+            "planningMs": 24186,
+            "firstNarrativeSseMs": 28903,
+            "totalMs": 46649,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          }
+        ]
+      },
+      "client": {
+        "firstNarrativeReceipt": {
+          "n": 20,
+          "medianMs": 4982.722750000015,
+          "p95Ms": 28905.975400000003,
+          "maxMs": 32710.57679999998
+        },
+        "completeReceipt": {
+          "n": 20,
+          "medianMs": 20349.979850000003,
+          "p95Ms": 45613.095899999986,
+          "maxMs": 46663.39400000001
+        },
+        "playerDecision": {
+          "n": 19,
+          "medianMs": 6414.562700000002,
+          "p95Ms": 8089.4216000000015,
+          "maxMs": 8089.4216000000015
+        },
+        "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+        "feedbackVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "firstNarrativeVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "choicesVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        }
+      },
+      "errors": [
+        {
+          "requestId": "b57cc05e-591a-44c7-a693-e7be8dffc02e",
+          "code": "INVALID_PROGRESSION",
+          "message": "opportunity intact-heat-shell-root-value 不存在或已关闭",
+          "totalMs": 35854
+        }
+      ],
+      "backgroundPlanning": {
+        "attempts": 0,
+        "readyReuses": 0,
+        "fallbacks": 0,
+        "traces": []
+      },
+      "sourceHashes": {
+        "turns": "bc417a9f26c4a34e0ca739f99f893ca8f014bdc5cad4c3305f81ff3bf91df2b7"
+      },
+      "limits": [
+        "Autonomous diverging paths, not a paired or randomized causal experiment",
+        "Counts are not human retention; no physical phone or WAN measurement",
+        "Nested ACP spans are included in model stage time; do not sum them twice",
+        "With fewer than20 observations nearest-rank p95 equals maximum",
+        "Only committed requests enter successful latency; failures retained separately",
+        "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+      ]
+    },
+    {
+      "label": "ascension-a-hunt-20-r3",
+      "requestedTurns": 20,
+      "committedTurns": 20,
+      "failedAttempts": 6,
+      "failedPlayers": [],
+      "fatal": null,
+      "continuedFrom": "ascension-a-hunt-20-r2",
+      "continuationReason": "Same Canon/source resumed serially after verified-idle shared ACP worker process recovery. No session files or saved game data deleted. Rejected eval-only plugin profile removed; original model/effort/config retained.",
+      "status": "completed",
+      "startedAt": "2026-09-07T14:28:22.467Z",
+      "endedAt": "2026-09-07T14:57:43.930Z",
+      "wallElapsedMs": 1761463,
+      "source": "C:\\dev\\tgn_live\\.runtime\\ascension-v090\\candidate-a-source",
+      "sourceHash": "aeb7fa475792d8bea7013a2cb9193f4bb7ef059a077bfcd56a5335d6d78b583d",
+      "server": {
+        "firstNarrativeSse": {
+          "n": 20,
+          "medianMs": 6193,
+          "p95Ms": 33037,
+          "maxMs": 51155
+        },
+        "complete": {
+          "n": 20,
+          "medianMs": 21921,
+          "p95Ms": 48270,
+          "maxMs": 64490
+        },
+        "allAttempts": {
+          "n": 26,
+          "medianMs": 20635.5,
+          "p95Ms": 48270,
+          "maxMs": 64490
+        },
+        "repairCalls": 1,
+        "phases": {
+          "acp_narrator_effort_select": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 8,
+            "maxMs": 34
+          },
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 20,
+            "medianMs": 616.5,
+            "p95Ms": 924,
+            "maxMs": 1446
+          },
+          "acp_narrator_mcp_initialize": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 345
+          },
+          "acp_narrator_model_select": {
+            "n": 20,
+            "medianMs": 7,
+            "p95Ms": 13,
+            "maxMs": 16
+          },
+          "acp_narrator_read_only_mode": {
+            "n": 20,
+            "medianMs": 10,
+            "p95Ms": 13,
+            "maxMs": 37
+          },
+          "acp_narrator_session_new": {
+            "n": 20,
+            "medianMs": 554.5,
+            "p95Ms": 815,
+            "maxMs": 1394
+          },
+          "acp_planner_effort_select": {
+            "n": 2,
+            "medianMs": 11.5,
+            "p95Ms": 17,
+            "maxMs": 17
+          },
+          "acp_planner_initialize_auth_session_model_setup": {
+            "n": 2,
+            "medianMs": 645.5,
+            "p95Ms": 730,
+            "maxMs": 730
+          },
+          "acp_planner_mcp_initialize": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_planner_model_select": {
+            "n": 2,
+            "medianMs": 20,
+            "p95Ms": 33,
+            "maxMs": 33
+          },
+          "acp_planner_read_only_mode": {
+            "n": 2,
+            "medianMs": 19.5,
+            "p95Ms": 30,
+            "maxMs": 30
+          },
+          "acp_planner_session_new": {
+            "n": 2,
+            "medianMs": 594,
+            "p95Ms": 650,
+            "maxMs": 650
+          },
+          "acp_repair_effort_select": {
+            "n": 1,
+            "medianMs": 7,
+            "p95Ms": 7,
+            "maxMs": 7
+          },
+          "acp_repair_initialize_auth_session_model_setup": {
+            "n": 1,
+            "medianMs": 649,
+            "p95Ms": 649,
+            "maxMs": 649
+          },
+          "acp_repair_mcp_initialize": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_repair_model_select": {
+            "n": 1,
+            "medianMs": 8,
+            "p95Ms": 8,
+            "maxMs": 8
+          },
+          "acp_repair_read_only_mode": {
+            "n": 1,
+            "medianMs": 9,
+            "p95Ms": 9,
+            "maxMs": 9
+          },
+          "acp_repair_session_new": {
+            "n": 1,
+            "medianMs": 624,
+            "p95Ms": 624,
+            "maxMs": 624
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "context_assembly": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "http_input_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "narrative_generation": {
+            "n": 20,
+            "medianMs": 20943.5,
+            "p95Ms": 29964,
+            "maxMs": 32636
+          },
+          "parse": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "parse_validate": {
+            "n": 20,
+            "medianMs": 1,
+            "p95Ms": 2,
+            "maxMs": 3
+          },
+          "persistence": {
+            "n": 20,
+            "medianMs": 7,
+            "p95Ms": 39,
+            "maxMs": 58
+          },
+          "plan": {
+            "n": 2,
+            "medianMs": 37194.5,
+            "p95Ms": 47074,
+            "maxMs": 47074
+          },
+          "planner_context_assembly": {
+            "n": 2,
+            "medianMs": 0.5,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "reducer_validation": {
+            "n": 20,
+            "medianMs": 0.5,
+            "p95Ms": 1,
+            "maxMs": 2
+          },
+          "repair": {
+            "n": 1,
+            "medianMs": 23435,
+            "p95Ms": 23435,
+            "maxMs": 23435
+          },
+          "repair_parse": {
+            "n": 1,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "repair_reducer_validation": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "request_validation": {
+            "n": 20,
+            "medianMs": 2,
+            "p95Ms": 7,
+            "maxMs": 74
+          }
+        },
+        "checkpoints": [
+          {
+            "turn": 9,
+            "status": "complete",
+            "planningMs": 47074,
+            "firstNarrativeSseMs": 51155,
+            "totalMs": 64490,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          },
+          {
+            "turn": 17,
+            "status": "complete",
+            "planningMs": 27315,
+            "firstNarrativeSseMs": 33037,
+            "totalMs": 48270,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          }
+        ]
+      },
+      "client": {
+        "firstNarrativeReceipt": {
+          "n": 20,
+          "medianMs": 6199.115450000005,
+          "p95Ms": 33039.61419999998,
+          "maxMs": 51157.335300000006
+        },
+        "completeReceipt": {
+          "n": 20,
+          "medianMs": 21934.68620000001,
+          "p95Ms": 48286.66189999998,
+          "maxMs": 64502.67519999997
+        },
+        "playerDecision": {
+          "n": 19,
+          "medianMs": 7027.840500000006,
+          "p95Ms": 12302.8468,
+          "maxMs": 12302.8468
+        },
+        "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+        "feedbackVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "firstNarrativeVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "choicesVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        }
+      },
+      "errors": [
+        {
+          "requestId": "53518aa2-1df6-4965-99ca-956f9f7985a8",
+          "code": "PROVIDER_SETUP_TIMEOUT",
+          "message": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20008
+        },
+        {
+          "requestId": "d88e8b2d-ded8-41e6-a107-954c89b8a481",
+          "code": "PROVIDER_SETUP_TIMEOUT",
+          "message": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20005
+        },
+        {
+          "requestId": "f4b44043-6e11-47c0-b892-da1be2996134",
+          "code": "PROVIDER_SETUP_TIMEOUT",
+          "message": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20007
+        },
+        {
+          "requestId": "e8a4599e-60d5-4982-b504-ecdc4bc34803",
+          "code": "PROVIDER_SETUP_TIMEOUT",
+          "message": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20005
+        },
+        {
+          "requestId": "670fa699-5c70-4bc0-9f89-42ba7b4f40ca",
+          "code": "PROVIDER_SETUP_TIMEOUT",
+          "message": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20004
+        },
+        {
+          "requestId": "43354ce2-6dd3-4e76-ac4e-121f511263eb",
+          "code": "PROVIDER_SETUP_TIMEOUT",
+          "message": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20012
+        },
+        {
+          "requestId": "82b922c0-ead5-4627-bca0-2ebe867e977b",
+          "code": "INVALID_PROGRESSION",
+          "message": "不支持opportunity操作 update",
+          "totalMs": 45255
+        }
+      ],
+      "backgroundPlanning": {
+        "attempts": 0,
+        "readyReuses": 0,
+        "fallbacks": 0,
+        "traces": []
+      },
+      "sourceHashes": {
+        "turns": "191a35de9d77fb1e7358cdf8aacdd9fa3e602fcb4be36d3c6e67deffb2270514"
+      },
+      "limits": [
+        "Autonomous diverging paths, not a paired or randomized causal experiment",
+        "Counts are not human retention; no physical phone or WAN measurement",
+        "Nested ACP spans are included in model stage time; do not sum them twice",
+        "With fewer than20 observations nearest-rank p95 equals maximum",
+        "Only committed requests enter successful latency; failures retained separately",
+        "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+      ]
+    },
+    {
+      "label": "ascension-a-beast-20-r3",
+      "requestedTurns": 20,
+      "committedTurns": 20,
+      "failedAttempts": 6,
+      "failedPlayers": [],
+      "fatal": null,
+      "continuedFrom": "ascension-a-beast-20-r2",
+      "continuationReason": "Same game/Canon/code/model/effort, recover idle shared ACP worker with verified-effective eval-only no-tools profile present at clean start. Earlier profile-on-damaged-worker test failed; this is a distinct infrastructure trial, not a narrative treatment.",
+      "status": "completed",
+      "startedAt": "2026-09-07T14:28:58.711Z",
+      "endedAt": "2026-09-07T15:15:50.444Z",
+      "wallElapsedMs": 2811733,
+      "source": "C:\\dev\\tgn_live\\.runtime\\ascension-v090\\candidate-a-source",
+      "sourceHash": "aeb7fa475792d8bea7013a2cb9193f4bb7ef059a077bfcd56a5335d6d78b583d",
+      "server": {
+        "firstNarrativeSse": {
+          "n": 20,
+          "medianMs": 9114,
+          "p95Ms": 32972,
+          "maxMs": 43427
+        },
+        "complete": {
+          "n": 20,
+          "medianMs": 25616,
+          "p95Ms": 51557,
+          "maxMs": 58960
+        },
+        "allAttempts": {
+          "n": 26,
+          "medianMs": 23136,
+          "p95Ms": 58960,
+          "maxMs": 123039
+        },
+        "repairCalls": 0,
+        "phases": {
+          "acp_narrator_effort_select": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 17,
+            "maxMs": 69
+          },
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 20,
+            "medianMs": 555.5,
+            "p95Ms": 944,
+            "maxMs": 1206
+          },
+          "acp_narrator_mcp_initialize": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "acp_narrator_model_select": {
+            "n": 20,
+            "medianMs": 7.5,
+            "p95Ms": 53,
+            "maxMs": 64
+          },
+          "acp_narrator_read_only_mode": {
+            "n": 20,
+            "medianMs": 9.5,
+            "p95Ms": 44,
+            "maxMs": 77
+          },
+          "acp_narrator_session_new": {
+            "n": 20,
+            "medianMs": 532.5,
+            "p95Ms": 751,
+            "maxMs": 1183
+          },
+          "acp_planner_effort_select": {
+            "n": 2,
+            "medianMs": 6.5,
+            "p95Ms": 7,
+            "maxMs": 7
+          },
+          "acp_planner_initialize_auth_session_model_setup": {
+            "n": 2,
+            "medianMs": 539.5,
+            "p95Ms": 594,
+            "maxMs": 594
+          },
+          "acp_planner_mcp_initialize": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_planner_model_select": {
+            "n": 2,
+            "medianMs": 6,
+            "p95Ms": 7,
+            "maxMs": 7
+          },
+          "acp_planner_read_only_mode": {
+            "n": 2,
+            "medianMs": 18.5,
+            "p95Ms": 27,
+            "maxMs": 27
+          },
+          "acp_planner_session_new": {
+            "n": 2,
+            "medianMs": 508,
+            "p95Ms": 552,
+            "maxMs": 552
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "context_assembly": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 1
+          },
+          "http_input_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "narrative_generation": {
+            "n": 20,
+            "medianMs": 24119,
+            "p95Ms": 32412,
+            "maxMs": 32594
+          },
+          "parse": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "parse_validate": {
+            "n": 20,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 2
+          },
+          "persistence": {
+            "n": 20,
+            "medianMs": 7.5,
+            "p95Ms": 30,
+            "maxMs": 42
+          },
+          "plan": {
+            "n": 2,
+            "medianMs": 29204.5,
+            "p95Ms": 30465,
+            "maxMs": 30465
+          },
+          "planner_context_assembly": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "reducer_validation": {
+            "n": 20,
+            "medianMs": 0.5,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "request_validation": {
+            "n": 20,
+            "medianMs": 2,
+            "p95Ms": 14,
+            "maxMs": 26
+          }
+        },
+        "checkpoints": [
+          {
+            "turn": 9,
+            "status": "failed",
+            "planningMs": 123028,
+            "firstNarrativeSseMs": null,
+            "totalMs": 123039,
+            "model": null,
+            "effort": null
+          },
+          {
+            "turn": 9,
+            "status": "failed",
+            "planningMs": 20007,
+            "firstNarrativeSseMs": null,
+            "totalMs": 20011,
+            "model": null,
+            "effort": null
+          },
+          {
+            "turn": 9,
+            "status": "complete",
+            "planningMs": 27944,
+            "firstNarrativeSseMs": 32972,
+            "totalMs": 51557,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          },
+          {
+            "turn": 17,
+            "status": "complete",
+            "planningMs": 30465,
+            "firstNarrativeSseMs": 43427,
+            "totalMs": 58960,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          }
+        ]
+      },
+      "client": {
+        "firstNarrativeReceipt": {
+          "n": 20,
+          "medianMs": 9116.882000000005,
+          "p95Ms": 32978.4546,
+          "maxMs": 43429.562999999995
+        },
+        "completeReceipt": {
+          "n": 20,
+          "medianMs": 25637.66055,
+          "p95Ms": 51583.2618,
+          "maxMs": 58977.815
+        },
+        "playerDecision": {
+          "n": 19,
+          "medianMs": 7128.240699999995,
+          "p95Ms": 37089.604699999996,
+          "maxMs": 37089.604699999996
+        },
+        "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+        "feedbackVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "firstNarrativeVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "choicesVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        }
+      },
+      "errors": [
+        {
+          "requestId": "562fbc43-189f-45d3-af11-3c2b313de3e6",
+          "code": "PROVIDER_TIMEOUT",
+          "message": "生成超时",
+          "totalMs": 123039
+        },
+        {
+          "requestId": "e52da18a-d954-4b88-b182-d7ea97ff9e99",
+          "code": "PROVIDER_SETUP_TIMEOUT",
+          "message": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20011
+        },
+        {
+          "requestId": "57e6c5ea-2ec0-4d9d-9ac9-3f7fb1d387a6",
+          "code": "PROVIDER_SETUP_TIMEOUT",
+          "message": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20016
+        },
+        {
+          "requestId": "174a68ef-48b4-47ed-81a4-ea3ff3870031",
+          "code": "PROVIDER_SETUP_TIMEOUT",
+          "message": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20014
+        },
+        {
+          "requestId": "b6e01459-925f-45d9-be63-2e7b7908b900",
+          "code": "PROVIDER_SETUP_TIMEOUT",
+          "message": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20016
+        },
+        {
+          "requestId": "7c9837c2-9c09-40fb-b754-7d077117e5b7",
+          "code": "PROVIDER_SETUP_TIMEOUT",
+          "message": "连接模型超时，本轮没有提交存档，可稍后重试",
+          "totalMs": 20015
+        }
+      ],
+      "backgroundPlanning": {
+        "attempts": 0,
+        "readyReuses": 0,
+        "fallbacks": 0,
+        "traces": []
+      },
+      "sourceHashes": {
+        "turns": "5228f171b62ff5c48010c55f76ba283aaae4f0d0feb4d30b08ed09ca09d597f4"
+      },
+      "limits": [
+        "Autonomous diverging paths, not a paired or randomized causal experiment",
+        "Counts are not human retention; no physical phone or WAN measurement",
+        "Nested ACP spans are included in model stage time; do not sum them twice",
+        "With fewer than20 observations nearest-rank p95 equals maximum",
+        "Only committed requests enter successful latency; failures retained separately",
+        "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+      ]
+    },
+    {
+      "label": "ascension-b-hunt-20",
+      "requestedTurns": 20,
+      "committedTurns": 20,
+      "failedAttempts": 0,
+      "failedPlayers": [],
+      "fatal": null,
+      "continuedFrom": null,
+      "continuationReason": null,
+      "status": "completed",
+      "startedAt": "2026-09-07T15:15:50.574Z",
+      "endedAt": "2026-09-07T15:29:35.738Z",
+      "wallElapsedMs": 825164,
+      "source": "C:\\dev\\tgn_live\\.runtime\\progression-v080\\ascension-candidate-b-source",
+      "sourceHash": "5d020f4d19087bc0b47d120ae5c6a40f726a795bf20b5ea0f87a778fa8203046",
+      "server": {
+        "firstNarrativeSse": {
+          "n": 20,
+          "medianMs": 11588,
+          "p95Ms": 40894,
+          "maxMs": 84724
+        },
+        "complete": {
+          "n": 20,
+          "medianMs": 24361,
+          "p95Ms": 60269,
+          "maxMs": 97582
+        },
+        "allAttempts": {
+          "n": 20,
+          "medianMs": 24361,
+          "p95Ms": 60269,
+          "maxMs": 97582
+        },
+        "repairCalls": 0,
+        "phases": {
+          "acp_narrator_effort_select": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 8,
+            "maxMs": 8
+          },
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 20,
+            "medianMs": 450,
+            "p95Ms": 558,
+            "maxMs": 704
+          },
+          "acp_narrator_mcp_initialize": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 270
+          },
+          "acp_narrator_model_select": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 7,
+            "maxMs": 7
+          },
+          "acp_narrator_read_only_mode": {
+            "n": 20,
+            "medianMs": 9.5,
+            "p95Ms": 12,
+            "maxMs": 15
+          },
+          "acp_narrator_session_new": {
+            "n": 20,
+            "medianMs": 428,
+            "p95Ms": 531,
+            "maxMs": 532
+          },
+          "acp_planner_effort_select": {
+            "n": 2,
+            "medianMs": 5,
+            "p95Ms": 6,
+            "maxMs": 6
+          },
+          "acp_planner_initialize_auth_session_model_setup": {
+            "n": 2,
+            "medianMs": 454,
+            "p95Ms": 463,
+            "maxMs": 463
+          },
+          "acp_planner_mcp_initialize": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_planner_model_select": {
+            "n": 2,
+            "medianMs": 5.5,
+            "p95Ms": 6,
+            "maxMs": 6
+          },
+          "acp_planner_read_only_mode": {
+            "n": 2,
+            "medianMs": 8,
+            "p95Ms": 9,
+            "maxMs": 9
+          },
+          "acp_planner_session_new": {
+            "n": 2,
+            "medianMs": 435.5,
+            "p95Ms": 446,
+            "maxMs": 446
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "context_assembly": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "http_input_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "narrative_generation": {
+            "n": 20,
+            "medianMs": 23769,
+            "p95Ms": 38684,
+            "maxMs": 42204
+          },
+          "parse": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "parse_validate": {
+            "n": 20,
+            "medianMs": 1,
+            "p95Ms": 2,
+            "maxMs": 2
+          },
+          "persistence": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 14,
+            "maxMs": 20
+          },
+          "plan": {
+            "n": 2,
+            "medianMs": 57473,
+            "p95Ms": 79011,
+            "maxMs": 79011
+          },
+          "planner_context_assembly": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "reducer_validation": {
+            "n": 20,
+            "medianMs": 0.5,
+            "p95Ms": 1,
+            "maxMs": 2
+          },
+          "request_validation": {
+            "n": 20,
+            "medianMs": 2,
+            "p95Ms": 2,
+            "maxMs": 3
+          }
+        },
+        "checkpoints": [
+          {
+            "turn": 9,
+            "status": "complete",
+            "planningMs": 35935,
+            "firstNarrativeSseMs": 40894,
+            "totalMs": 60269,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          },
+          {
+            "turn": 17,
+            "status": "complete",
+            "planningMs": 79011,
+            "firstNarrativeSseMs": 84724,
+            "totalMs": 97582,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          }
+        ]
+      },
+      "client": {
+        "firstNarrativeReceipt": {
+          "n": 20,
+          "medianMs": 11590.993799999997,
+          "p95Ms": 40897.2464,
+          "maxMs": 84726.46100000001
+        },
+        "completeReceipt": {
+          "n": 20,
+          "medianMs": 24371.759799999993,
+          "p95Ms": 60287.01289999997,
+          "maxMs": 97596.45589999994
+        },
+        "playerDecision": {
+          "n": 19,
+          "medianMs": 10571.491200000004,
+          "p95Ms": 20385.9007,
+          "maxMs": 20385.9007
+        },
+        "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+        "feedbackVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "firstNarrativeVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "choicesVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        }
+      },
+      "errors": [],
+      "backgroundPlanning": {
+        "attempts": 0,
+        "readyReuses": 0,
+        "fallbacks": 0,
+        "traces": []
+      },
+      "sourceHashes": {
+        "turns": "e46efc3e0bf9696782b6751de81e34d8183fb094739a740caa71db9a3591a781"
+      },
+      "limits": [
+        "Autonomous diverging paths, not a paired or randomized causal experiment",
+        "Counts are not human retention; no physical phone or WAN measurement",
+        "Nested ACP spans are included in model stage time; do not sum them twice",
+        "With fewer than20 observations nearest-rank p95 equals maximum",
+        "Only committed requests enter successful latency; failures retained separately",
+        "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+      ]
+    },
+    {
+      "label": "ascension-b-martial-20",
+      "requestedTurns": 20,
+      "committedTurns": 20,
+      "failedAttempts": 0,
+      "failedPlayers": [],
+      "fatal": null,
+      "continuedFrom": null,
+      "continuationReason": null,
+      "status": "completed",
+      "startedAt": "2026-09-07T15:21:57.254Z",
+      "endedAt": "2026-09-07T15:33:48.952Z",
+      "wallElapsedMs": 711698,
+      "source": "C:\\dev\\tgn_live\\.runtime\\progression-v080\\ascension-candidate-b-source",
+      "sourceHash": "5d020f4d19087bc0b47d120ae5c6a40f726a795bf20b5ea0f87a778fa8203046",
+      "server": {
+        "firstNarrativeSse": {
+          "n": 20,
+          "medianMs": 7463.5,
+          "p95Ms": 36789,
+          "maxMs": 54544
+        },
+        "complete": {
+          "n": 20,
+          "medianMs": 23766,
+          "p95Ms": 52112,
+          "maxMs": 70477
+        },
+        "allAttempts": {
+          "n": 20,
+          "medianMs": 23766,
+          "p95Ms": 52112,
+          "maxMs": 70477
+        },
+        "repairCalls": 0,
+        "phases": {
+          "acp_narrator_effort_select": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 7,
+            "maxMs": 8
+          },
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 20,
+            "medianMs": 448.5,
+            "p95Ms": 535,
+            "maxMs": 551
+          },
+          "acp_narrator_mcp_initialize": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_narrator_model_select": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 7,
+            "maxMs": 7
+          },
+          "acp_narrator_read_only_mode": {
+            "n": 20,
+            "medianMs": 8,
+            "p95Ms": 12,
+            "maxMs": 23
+          },
+          "acp_narrator_session_new": {
+            "n": 20,
+            "medianMs": 429,
+            "p95Ms": 510,
+            "maxMs": 525
+          },
+          "acp_planner_effort_select": {
+            "n": 2,
+            "medianMs": 5,
+            "p95Ms": 6,
+            "maxMs": 6
+          },
+          "acp_planner_initialize_auth_session_model_setup": {
+            "n": 2,
+            "medianMs": 464,
+            "p95Ms": 498,
+            "maxMs": 498
+          },
+          "acp_planner_mcp_initialize": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_planner_model_select": {
+            "n": 2,
+            "medianMs": 8,
+            "p95Ms": 9,
+            "maxMs": 9
+          },
+          "acp_planner_read_only_mode": {
+            "n": 2,
+            "medianMs": 19,
+            "p95Ms": 31,
+            "maxMs": 31
+          },
+          "acp_planner_session_new": {
+            "n": 2,
+            "medianMs": 432,
+            "p95Ms": 454,
+            "maxMs": 454
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "context_assembly": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 1
+          },
+          "http_input_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "narrative_generation": {
+            "n": 20,
+            "medianMs": 22552.5,
+            "p95Ms": 25082,
+            "maxMs": 28962
+          },
+          "parse": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "parse_validate": {
+            "n": 20,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "persistence": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 13,
+            "maxMs": 17
+          },
+          "plan": {
+            "n": 2,
+            "medianMs": 40652,
+            "p95Ms": 49606,
+            "maxMs": 49606
+          },
+          "planner_context_assembly": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "reducer_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "request_validation": {
+            "n": 20,
+            "medianMs": 2,
+            "p95Ms": 3,
+            "maxMs": 3
+          }
+        },
+        "checkpoints": [
+          {
+            "turn": 9,
+            "status": "complete",
+            "planningMs": 49606,
+            "firstNarrativeSseMs": 54544,
+            "totalMs": 70477,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          },
+          {
+            "turn": 17,
+            "status": "complete",
+            "planningMs": 31698,
+            "firstNarrativeSseMs": 36789,
+            "totalMs": 52112,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          }
+        ]
+      },
+      "client": {
+        "firstNarrativeReceipt": {
+          "n": 20,
+          "medianMs": 7466.081849999988,
+          "p95Ms": 36791.609200000064,
+          "maxMs": 54545.85519999996
+        },
+        "completeReceipt": {
+          "n": 20,
+          "medianMs": 23783.14830000003,
+          "p95Ms": 52126.14880000008,
+          "maxMs": 70490.6696
+        },
+        "playerDecision": {
+          "n": 19,
+          "medianMs": 9783.632400000002,
+          "p95Ms": 18313.69570000001,
+          "maxMs": 18313.69570000001
+        },
+        "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+        "feedbackVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "firstNarrativeVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "choicesVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        }
+      },
+      "errors": [],
+      "backgroundPlanning": {
+        "attempts": 0,
+        "readyReuses": 0,
+        "fallbacks": 0,
+        "traces": []
+      },
+      "sourceHashes": {
+        "turns": "b2d4fd8d7aa11524ad962d21912aa3eb2a692ff15726cf11296e3621455d762b"
+      },
+      "limits": [
+        "Autonomous diverging paths, not a paired or randomized causal experiment",
+        "Counts are not human retention; no physical phone or WAN measurement",
+        "Nested ACP spans are included in model stage time; do not sum them twice",
+        "With fewer than20 observations nearest-rank p95 equals maximum",
+        "Only committed requests enter successful latency; failures retained separately",
+        "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+      ]
+    },
+    {
+      "label": "ascension-c-beast-browser-20-r2",
+      "requestedTurns": 20,
+      "committedTurns": 20,
+      "failedAttempts": 1,
+      "failedPlayers": [],
+      "fatal": null,
+      "continuedFrom": "ascension-c-beast-browser-20-r1",
+      "continuationReason": "Original runner exited after turn16 committed but before writing its record/summary. Exact Player16 action matches saved turn16 and completed trace; recover that commit once with missing browser timing explicitly null, then continue17–20. No Canon/code/model/effort changes.",
+      "status": "completed",
+      "startedAt": "2026-09-07T15:27:07.434Z",
+      "endedAt": "2026-09-07T16:07:18.077Z",
+      "wallElapsedMs": 2410643,
+      "source": "C:\\dev\\tgn_live\\.runtime\\progression-v080\\ascension-candidate-c-source",
+      "sourceHash": "69c4cc630284e4ddb8cff9e30d8b80a2b865545c83695c64150a30d18aa7e98e",
+      "server": {
+        "firstNarrativeSse": {
+          "n": 20,
+          "medianMs": 11688.5,
+          "p95Ms": 19450,
+          "maxMs": 23779
+        },
+        "complete": {
+          "n": 20,
+          "medianMs": 26216,
+          "p95Ms": 34974,
+          "maxMs": 41071
+        },
+        "allAttempts": {
+          "n": 21,
+          "medianMs": 26051,
+          "p95Ms": 34974,
+          "maxMs": 41071
+        },
+        "repairCalls": 0,
+        "phases": {
+          "acp_narrator_effort_select": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 8,
+            "maxMs": 16
+          },
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 20,
+            "medianMs": 457,
+            "p95Ms": 552,
+            "maxMs": 581
+          },
+          "acp_narrator_mcp_initialize": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_narrator_model_select": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 9,
+            "maxMs": 17
+          },
+          "acp_narrator_prompt_slot_wait": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "acp_narrator_read_only_mode": {
+            "n": 20,
+            "medianMs": 9,
+            "p95Ms": 29,
+            "maxMs": 31
+          },
+          "acp_narrator_session_new": {
+            "n": 20,
+            "medianMs": 427.5,
+            "p95Ms": 520,
+            "maxMs": 533
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "context_assembly": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "http_input_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 4
+          },
+          "narrative_generation": {
+            "n": 20,
+            "medianMs": 26205.5,
+            "p95Ms": 34943,
+            "maxMs": 41063
+          },
+          "parse": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "parse_validate": {
+            "n": 20,
+            "medianMs": 1,
+            "p95Ms": 2,
+            "maxMs": 4
+          },
+          "persistence": {
+            "n": 20,
+            "medianMs": 7,
+            "p95Ms": 30,
+            "maxMs": 196
+          },
+          "reducer_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 3
+          },
+          "request_validation": {
+            "n": 20,
+            "medianMs": 2,
+            "p95Ms": 23,
+            "maxMs": 74
+          }
+        },
+        "checkpoints": []
+      },
+      "client": {
+        "firstNarrativeReceipt": {
+          "n": 19,
+          "medianMs": 11367,
+          "p95Ms": 23783.5,
+          "maxMs": 23783.5
+        },
+        "completeReceipt": {
+          "n": 19,
+          "medianMs": 26077.2,
+          "p95Ms": 41080.3,
+          "maxMs": 41080.3
+        },
+        "playerDecision": {
+          "n": 19,
+          "medianMs": 8456.035900000003,
+          "p95Ms": 12156.8526,
+          "maxMs": 12156.8526
+        },
+        "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+        "feedbackVisibleFrame": {
+          "n": 19,
+          "medianMs": 25.7,
+          "p95Ms": 28,
+          "maxMs": 28
+        },
+        "firstNarrativeVisibleFrame": {
+          "n": 19,
+          "medianMs": 11384.6,
+          "p95Ms": 23798.9,
+          "maxMs": 23798.9
+        },
+        "choicesVisibleFrame": {
+          "n": 19,
+          "medianMs": 26141.7,
+          "p95Ms": 41126.7,
+          "maxMs": 41126.7
+        }
+      },
+      "errors": [
+        {
+          "requestId": "e1dd1335-9112-48bf-b802-e0b9012af5e8",
+          "code": "PROVIDER_TOOL_ERROR",
+          "message": "AgentDock 工具 acp_prompt 返回错误",
+          "totalMs": 1153
+        }
+      ],
+      "backgroundPlanning": {
+        "attempts": 2,
+        "readyReuses": 1,
+        "fallbacks": 1,
+        "traces": [
+          {
+            "id": "trace_6f341b7a4d8845a38af35538773d8c0a",
+            "kind": "planner-prefetch",
+            "basisVersion": 6,
+            "targetVersion": 8,
+            "status": "complete",
+            "totalMs": 82408,
+            "errors": []
+          },
+          {
+            "id": "trace_5efd202ce41542cbb2b0ca97a4796d3f",
+            "kind": "planner-prefetch",
+            "basisVersion": 14,
+            "targetVersion": 16,
+            "status": "complete",
+            "totalMs": 42664,
+            "errors": []
+          }
+        ]
+      },
+      "sourceHashes": {
+        "turns": "2fd07521835ca70f6c495e0404c632ebbd5d9fdc1d53195d107eac8d6e4c6993"
+      },
+      "limits": [
+        "Autonomous diverging paths, not a paired or randomized causal experiment",
+        "Counts are not human retention; no physical phone or WAN measurement",
+        "Nested ACP spans are included in model stage time; do not sum them twice",
+        "With fewer than20 observations nearest-rank p95 equals maximum",
+        "Only committed requests enter successful latency; failures retained separately",
+        "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+      ]
+    },
+    {
+      "label": "ascension-d-masked-20",
+      "requestedTurns": 20,
+      "committedTurns": 20,
+      "failedAttempts": 0,
+      "failedPlayers": [],
+      "fatal": null,
+      "continuedFrom": null,
+      "continuationReason": null,
+      "status": "completed",
+      "startedAt": "2026-09-07T15:55:17.867Z",
+      "endedAt": "2026-09-07T16:07:21.163Z",
+      "wallElapsedMs": 723296,
+      "source": "C:\\dev\\tgn_live\\.runtime\\progression-v080\\ascension-candidate-d-source",
+      "sourceHash": "7e4bd8f23533d7738214e3c750c7a3f0b6ef27774b6b32e116c16997ea1b551d",
+      "server": {
+        "firstNarrativeSse": {
+          "n": 20,
+          "medianMs": 9290.5,
+          "p95Ms": 44707,
+          "maxMs": 54984
+        },
+        "complete": {
+          "n": 20,
+          "medianMs": 22186,
+          "p95Ms": 55674,
+          "maxMs": 73573
+        },
+        "allAttempts": {
+          "n": 20,
+          "medianMs": 22186,
+          "p95Ms": 55674,
+          "maxMs": 73573
+        },
+        "repairCalls": 0,
+        "phases": {
+          "acp_narrator_effort_select": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 29,
+            "maxMs": 31
+          },
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 20,
+            "medianMs": 492.5,
+            "p95Ms": 685,
+            "maxMs": 2629
+          },
+          "acp_narrator_mcp_initialize": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 331
+          },
+          "acp_narrator_model_select": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 19,
+            "maxMs": 24
+          },
+          "acp_narrator_prompt_slot_wait": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "acp_narrator_read_only_mode": {
+            "n": 20,
+            "medianMs": 9,
+            "p95Ms": 31,
+            "maxMs": 33
+          },
+          "acp_narrator_session_new": {
+            "n": 20,
+            "medianMs": 453.5,
+            "p95Ms": 666,
+            "maxMs": 2269
+          },
+          "acp_planner_effort_select": {
+            "n": 2,
+            "medianMs": 7,
+            "p95Ms": 7,
+            "maxMs": 7
+          },
+          "acp_planner_initialize_auth_session_model_setup": {
+            "n": 2,
+            "medianMs": 484.5,
+            "p95Ms": 539,
+            "maxMs": 539
+          },
+          "acp_planner_mcp_initialize": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_planner_model_select": {
+            "n": 2,
+            "medianMs": 5,
+            "p95Ms": 5,
+            "maxMs": 5
+          },
+          "acp_planner_prompt_slot_wait": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_planner_read_only_mode": {
+            "n": 2,
+            "medianMs": 8,
+            "p95Ms": 8,
+            "maxMs": 8
+          },
+          "acp_planner_session_new": {
+            "n": 2,
+            "medianMs": 463.5,
+            "p95Ms": 518,
+            "maxMs": 518
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "context_assembly": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "http_input_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "narrative_generation": {
+            "n": 20,
+            "medianMs": 21117.5,
+            "p95Ms": 33510,
+            "maxMs": 39875
+          },
+          "parse": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "parse_validate": {
+            "n": 20,
+            "medianMs": 1,
+            "p95Ms": 2,
+            "maxMs": 2
+          },
+          "persistence": {
+            "n": 20,
+            "medianMs": 16.5,
+            "p95Ms": 33,
+            "maxMs": 105
+          },
+          "plan": {
+            "n": 2,
+            "medianMs": 39967,
+            "p95Ms": 40006,
+            "maxMs": 40006
+          },
+          "planner_context_assembly": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "reducer_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 2
+          },
+          "request_validation": {
+            "n": 20,
+            "medianMs": 2,
+            "p95Ms": 27,
+            "maxMs": 29
+          }
+        },
+        "checkpoints": [
+          {
+            "turn": 9,
+            "status": "complete",
+            "planningMs": 39928,
+            "firstNarrativeSseMs": 44707,
+            "totalMs": 55674,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          },
+          {
+            "turn": 17,
+            "status": "complete",
+            "planningMs": 40006,
+            "firstNarrativeSseMs": 54984,
+            "totalMs": 73573,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          }
+        ]
+      },
+      "client": {
+        "firstNarrativeReceipt": {
+          "n": 20,
+          "medianMs": 9292.542700000049,
+          "p95Ms": 44709.41499999998,
+          "maxMs": 54986.42099999997
+        },
+        "completeReceipt": {
+          "n": 20,
+          "medianMs": 22200.693050000016,
+          "p95Ms": 55687.13260000001,
+          "maxMs": 73612.66039999994
+        },
+        "playerDecision": {
+          "n": 19,
+          "medianMs": 8055.569900000002,
+          "p95Ms": 12932.844999999972,
+          "maxMs": 12932.844999999972
+        },
+        "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+        "feedbackVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "firstNarrativeVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "choicesVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        }
+      },
+      "errors": [],
+      "backgroundPlanning": {
+        "attempts": 0,
+        "readyReuses": 0,
+        "fallbacks": 0,
+        "traces": []
+      },
+      "sourceHashes": {
+        "turns": "95a02ef6013c8cfe22df2b53b6ac44afead4eeb128e49b7c8b59f1593fc36a92"
+      },
+      "limits": [
+        "Autonomous diverging paths, not a paired or randomized causal experiment",
+        "Counts are not human retention; no physical phone or WAN measurement",
+        "Nested ACP spans are included in model stage time; do not sum them twice",
+        "With fewer than20 observations nearest-rank p95 equals maximum",
+        "Only committed requests enter successful latency; failures retained separately",
+        "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+      ]
+    },
+    {
+      "label": "ascension-e-masked-20",
+      "requestedTurns": 20,
+      "committedTurns": 20,
+      "failedAttempts": 0,
+      "failedPlayers": [],
+      "fatal": null,
+      "continuedFrom": null,
+      "continuationReason": null,
+      "status": "completed",
+      "startedAt": "2026-09-07T16:18:36.967Z",
+      "endedAt": "2026-09-07T16:30:48.484Z",
+      "wallElapsedMs": 731517,
+      "source": "C:\\dev\\tgn_live\\.runtime\\progression-v080\\ascension-candidate-e-source",
+      "sourceHash": "50a3774662c8bec8b017307544c52ceae1357642efe46636742e5bb9bf261e8f",
+      "server": {
+        "firstNarrativeSse": {
+          "n": 20,
+          "medianMs": 11622.5,
+          "p95Ms": 15788,
+          "maxMs": 30396
+        },
+        "complete": {
+          "n": 20,
+          "medianMs": 26840,
+          "p95Ms": 41836,
+          "maxMs": 49648
+        },
+        "allAttempts": {
+          "n": 20,
+          "medianMs": 26840,
+          "p95Ms": 41836,
+          "maxMs": 49648
+        },
+        "repairCalls": 2,
+        "phases": {
+          "acp_narrator_effort_select": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 31,
+            "maxMs": 32
+          },
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 20,
+            "medianMs": 581.5,
+            "p95Ms": 892,
+            "maxMs": 1009
+          },
+          "acp_narrator_mcp_initialize": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 324
+          },
+          "acp_narrator_model_select": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 33,
+            "maxMs": 33
+          },
+          "acp_narrator_prompt_slot_wait": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_narrator_read_only_mode": {
+            "n": 20,
+            "medianMs": 10,
+            "p95Ms": 33,
+            "maxMs": 35
+          },
+          "acp_narrator_session_new": {
+            "n": 20,
+            "medianMs": 522,
+            "p95Ms": 622,
+            "maxMs": 986
+          },
+          "acp_repair_effort_select": {
+            "n": 2,
+            "medianMs": 5.5,
+            "p95Ms": 6,
+            "maxMs": 6
+          },
+          "acp_repair_initialize_auth_session_model_setup": {
+            "n": 2,
+            "medianMs": 539,
+            "p95Ms": 625,
+            "maxMs": 625
+          },
+          "acp_repair_mcp_initialize": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_repair_model_select": {
+            "n": 2,
+            "medianMs": 27.5,
+            "p95Ms": 48,
+            "maxMs": 48
+          },
+          "acp_repair_prompt_slot_wait": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_repair_read_only_mode": {
+            "n": 2,
+            "medianMs": 19,
+            "p95Ms": 31,
+            "maxMs": 31
+          },
+          "acp_repair_session_new": {
+            "n": 2,
+            "medianMs": 487,
+            "p95Ms": 541,
+            "maxMs": 541
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "context_assembly": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 1
+          },
+          "http_input_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "narrative_generation": {
+            "n": 20,
+            "medianMs": 25163,
+            "p95Ms": 31329,
+            "maxMs": 49612
+          },
+          "parse": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "parse_validate": {
+            "n": 20,
+            "medianMs": 1,
+            "p95Ms": 2,
+            "maxMs": 3
+          },
+          "persistence": {
+            "n": 20,
+            "medianMs": 14.5,
+            "p95Ms": 91,
+            "maxMs": 109
+          },
+          "reducer_validation": {
+            "n": 19,
+            "medianMs": 1,
+            "p95Ms": 2,
+            "maxMs": 2
+          },
+          "repair": {
+            "n": 2,
+            "medianMs": 17495,
+            "p95Ms": 18474,
+            "maxMs": 18474
+          },
+          "repair_parse": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "repair_reducer_validation": {
+            "n": 2,
+            "medianMs": 0.5,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "request_validation": {
+            "n": 20,
+            "medianMs": 2,
+            "p95Ms": 25,
+            "maxMs": 27
+          }
+        },
+        "checkpoints": []
+      },
+      "client": {
+        "firstNarrativeReceipt": {
+          "n": 20,
+          "medianMs": 11624.96070000001,
+          "p95Ms": 15792.310900000011,
+          "maxMs": 30398.6507
+        },
+        "completeReceipt": {
+          "n": 20,
+          "medianMs": 26851.74305000002,
+          "p95Ms": 41868.89279999997,
+          "maxMs": 49664.56919999997
+        },
+        "playerDecision": {
+          "n": 19,
+          "medianMs": 8708.667799999996,
+          "p95Ms": 11466.150199999975,
+          "maxMs": 11466.150199999975
+        },
+        "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+        "feedbackVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "firstNarrativeVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "choicesVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        }
+      },
+      "errors": [
+        {
+          "requestId": "5a6c0274-449e-4306-8f13-4b1907c20bcc",
+          "code": "INVALID_OUTPUT",
+          "message": "模型返回的 JSON 无法解析",
+          "totalMs": 41836
+        },
+        {
+          "requestId": "07e36fcc-6a13-49ac-acb7-23ffdcf7dfcf",
+          "code": "INVALID_PROGRESSION",
+          "message": "不支持opportunity操作 update",
+          "totalMs": 38434
+        }
+      ],
+      "backgroundPlanning": {
+        "attempts": 2,
+        "readyReuses": 1,
+        "fallbacks": 1,
+        "traces": [
+          {
+            "id": "trace_203fa976cb1c429dbb36e52460ce6dd1",
+            "kind": "planner-prefetch",
+            "basisVersion": 6,
+            "targetVersion": 8,
+            "status": "complete",
+            "totalMs": 100092,
+            "errors": []
+          },
+          {
+            "id": "trace_acbcef8da3a44fd5a504f15a29780f63",
+            "kind": "planner-prefetch",
+            "basisVersion": 14,
+            "targetVersion": 16,
+            "status": "complete",
+            "totalMs": 56947,
+            "errors": []
+          }
+        ]
+      },
+      "sourceHashes": {
+        "turns": "caa8050653263b9bd07329efec2ddc44ee033f3caba1eea07057dcab33f6b47b"
+      },
+      "limits": [
+        "Autonomous diverging paths, not a paired or randomized causal experiment",
+        "Counts are not human retention; no physical phone or WAN measurement",
+        "Nested ACP spans are included in model stage time; do not sum them twice",
+        "With fewer than20 observations nearest-rank p95 equals maximum",
+        "Only committed requests enter successful latency; failures retained separately",
+        "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+      ]
+    },
+    {
+      "label": "ascension-c-stars-20-r2",
+      "requestedTurns": 20,
+      "committedTurns": 20,
+      "failedAttempts": 0,
+      "failedPlayers": [
+        {
+          "run": "ascension-c-stars-20-r1",
+          "file": "player-07.meta.json",
+          "error": "AgentDock 工具 acp_prompt 返回错误",
+          "totalMs": 728.6404999999795
+        }
+      ],
+      "fatal": null,
+      "continuedFrom": "ascension-c-stars-20-r1",
+      "continuationReason": "Continue same Canon and immutable source after other quality trajectory finished; original independent Player failure retained, inherited six successful turns counted once. No code, model or effort change.",
+      "status": "completed",
+      "startedAt": "2026-09-07T16:15:04.170Z",
+      "endedAt": "2026-09-07T16:42:37.269Z",
+      "wallElapsedMs": 1653099,
+      "source": "C:\\dev\\tgn_live\\.runtime\\progression-v080\\ascension-candidate-c-source",
+      "sourceHash": "69c4cc630284e4ddb8cff9e30d8b80a2b865545c83695c64150a30d18aa7e98e",
+      "server": {
+        "firstNarrativeSse": {
+          "n": 20,
+          "medianMs": 12895,
+          "p95Ms": 22973,
+          "maxMs": 24876
+        },
+        "complete": {
+          "n": 20,
+          "medianMs": 28924,
+          "p95Ms": 43462,
+          "maxMs": 43907
+        },
+        "allAttempts": {
+          "n": 20,
+          "medianMs": 28924,
+          "p95Ms": 43462,
+          "maxMs": 43907
+        },
+        "repairCalls": 1,
+        "phases": {
+          "acp_narrator_effort_select": {
+            "n": 20,
+            "medianMs": 5.5,
+            "p95Ms": 7,
+            "maxMs": 42
+          },
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 20,
+            "medianMs": 488.5,
+            "p95Ms": 563,
+            "maxMs": 622
+          },
+          "acp_narrator_mcp_initialize": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_narrator_model_select": {
+            "n": 20,
+            "medianMs": 6,
+            "p95Ms": 8,
+            "maxMs": 32
+          },
+          "acp_narrator_prompt_slot_wait": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_narrator_read_only_mode": {
+            "n": 20,
+            "medianMs": 9,
+            "p95Ms": 38,
+            "maxMs": 58
+          },
+          "acp_narrator_session_new": {
+            "n": 20,
+            "medianMs": 464.5,
+            "p95Ms": 518,
+            "maxMs": 540
+          },
+          "acp_repair_effort_select": {
+            "n": 1,
+            "medianMs": 6,
+            "p95Ms": 6,
+            "maxMs": 6
+          },
+          "acp_repair_initialize_auth_session_model_setup": {
+            "n": 1,
+            "medianMs": 526,
+            "p95Ms": 526,
+            "maxMs": 526
+          },
+          "acp_repair_mcp_initialize": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_repair_model_select": {
+            "n": 1,
+            "medianMs": 7,
+            "p95Ms": 7,
+            "maxMs": 7
+          },
+          "acp_repair_prompt_slot_wait": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_repair_read_only_mode": {
+            "n": 1,
+            "medianMs": 8,
+            "p95Ms": 8,
+            "maxMs": 8
+          },
+          "acp_repair_session_new": {
+            "n": 1,
+            "medianMs": 504,
+            "p95Ms": 504,
+            "maxMs": 504
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "context_assembly": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "http_input_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 2
+          },
+          "narrative_generation": {
+            "n": 20,
+            "medianMs": 27952.5,
+            "p95Ms": 43413,
+            "maxMs": 43801
+          },
+          "parse": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "parse_validate": {
+            "n": 20,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "persistence": {
+            "n": 20,
+            "medianMs": 12.5,
+            "p95Ms": 46,
+            "maxMs": 102
+          },
+          "reducer_validation": {
+            "n": 20,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "repair": {
+            "n": 1,
+            "medianMs": 19474,
+            "p95Ms": 19474,
+            "maxMs": 19474
+          },
+          "repair_parse": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "repair_reducer_validation": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "request_validation": {
+            "n": 20,
+            "medianMs": 2,
+            "p95Ms": 9,
+            "maxMs": 26
+          }
+        },
+        "checkpoints": []
+      },
+      "client": {
+        "firstNarrativeReceipt": {
+          "n": 20,
+          "medianMs": 12898.529000000002,
+          "p95Ms": 22974.581000000006,
+          "maxMs": 24878.867999999988
+        },
+        "completeReceipt": {
+          "n": 20,
+          "medianMs": 28938.741,
+          "p95Ms": 43699.375299999985,
+          "maxMs": 43920.43590000004
+        },
+        "playerDecision": {
+          "n": 19,
+          "medianMs": 9966.853199999998,
+          "p95Ms": 17405.3934,
+          "maxMs": 17405.3934
+        },
+        "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+        "feedbackVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "firstNarrativeVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "choicesVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        }
+      },
+      "errors": [
+        {
+          "requestId": "40fdfe39-996d-40c0-8187-1131358b4172",
+          "code": "INVALID_PROGRESSION",
+          "message": "不支持opportunity操作 update",
+          "totalMs": 41018
+        }
+      ],
+      "backgroundPlanning": {
+        "attempts": 2,
+        "readyReuses": 2,
+        "fallbacks": 0,
+        "traces": [
+          {
+            "id": "trace_488da09ac06a44c2984e92b081eb5a05",
+            "kind": "planner-prefetch",
+            "basisVersion": 6,
+            "targetVersion": 8,
+            "status": "complete",
+            "totalMs": 45248,
+            "errors": []
+          },
+          {
+            "id": "trace_d56b0f4b594e4b949850b7632105d892",
+            "kind": "planner-prefetch",
+            "basisVersion": 14,
+            "targetVersion": 16,
+            "status": "complete",
+            "totalMs": 39738,
+            "errors": []
+          }
+        ]
+      },
+      "sourceHashes": {
+        "turns": "107ba3cc18ef8eb005e16a3c353b7b81b2138322245b5f7e3982a54ccff1c22a"
+      },
+      "limits": [
+        "Autonomous diverging paths, not a paired or randomized causal experiment",
+        "Counts are not human retention; no physical phone or WAN measurement",
+        "Nested ACP spans are included in model stage time; do not sum them twice",
+        "With fewer than20 observations nearest-rank p95 equals maximum",
+        "Only committed requests enter successful latency; failures retained separately",
+        "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+      ]
+    }
+  ]
+}

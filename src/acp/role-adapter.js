@@ -76,7 +76,10 @@ export function createAcpRoleAdapter({
     async run(prompt, { signal, onText, onEvent } = {}) {
       if (typeof prompt !== "string" || !prompt.trim()) throw new Error("prompt is required");
       verifyEmptyWorkspace(workspace);
+      const queuedAt = performance.now();
+      onEvent?.({ type: 'acp_setup_step', role, step: 'prompt_slot_wait', status: 'start' });
       const release = await promptSlots.acquire(signal);
+      onEvent?.({ type: 'acp_setup_step', role, step: 'prompt_slot_wait', status: 'complete', elapsedMs: performance.now() - queuedAt });
       let sessionId;
       let runId;
       const startedAt = Date.now();

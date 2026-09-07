@@ -1,0 +1,2879 @@
+[
+  {
+    "turn": 1,
+    "action": "开始我的故事",
+    "realm": {
+      "name": "锻身段",
+      "rank": 0,
+      "benchmark": "身体略强于普通成年人，能完成基础负重，但连续爆发会迅速力竭。",
+      "unlock": "可使用公共训练器械、购买基础补给，并申请一次城内公开测试。",
+      "progress": 0
+    },
+    "coins": 35,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、冲刺和恢复记录；无补给时只能维持普通强度。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "three-day-rations",
+        "name": "三日训练补给",
+        "description": "你已付清的高营养食物，足够支撑一次强化训练或三日普通活动",
+        "qty": 1
+      },
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "low-risk-pass",
+        "name": "低危荒带通行票",
+        "description": "登记在你名下的一次性票，可独自进入灰裂沟外圈并携出基础材料",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "陌生"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "open",
+          "offeredAtTurn": 1
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "open",
+          "offeredAtTurn": 1
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "open",
+          "offeredAtTurn": 1
+        }
+      ]
+    },
+    "changes": [
+      "可争取的成长: 南场最后一次公开体测",
+      "可争取的成长: 灰裂沟热壳根采集",
+      "可争取的成长: 桑拓的旧路线图",
+      "沈舟的净炉身在空腹触到补给时会在脐下显出一圈温热、微微收缩的淡白纹路；当天第一次吸收补给时，它能排出其中一种主要杂质。"
+    ]
+  },
+  {
+    "turn": 2,
+    "action": "我先吃下三日补给，按标准锻身操热身，然后报名参加今晚的公开体测，争取留下真实成绩。",
+    "realm": {
+      "name": "锻身段",
+      "rank": 0,
+      "benchmark": "身体略强于普通成年人，能完成基础负重，但连续爆发会迅速力竭。",
+      "unlock": "可使用公共训练器械、购买基础补给，并申请一次城内公开测试。",
+      "progress": 6
+    },
+    "coins": 43,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并在一次完整训练中把腿腰发力接入基础拳击。现在可更稳定地完成锻身段的常规训练；连续爆发仍会迅速力竭，尚不能把全身力量稳定贯入单次重击。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "low-risk-pass",
+        "name": "低危荒带通行票",
+        "description": "登记在你名下的一次性票，可独自进入灰裂沟外圈并携出基础材料",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "陌生"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "open",
+          "offeredAtTurn": 1
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "open",
+          "offeredAtTurn": 1
+        }
+      ]
+    },
+    "changes": [
+      "武券+8",
+      "失去 三日训练补给",
+      "侯铃: 友善",
+      "能力提升: 标准锻身操",
+      "修行进度 +6",
+      "获得长期筹码: 南场基础器械九折价",
+      "成长兑现: 南场最后一次公开体测",
+      "沈舟完成南场公开体测：力量项击裂两指厚木板，百步短冲列今晚第七，负重耐力列第九。",
+      "侯铃当场支付沈舟八枚武券；南场木榜留下了他的真实体测记录。",
+      "沈舟使用净炉身吸收三日训练补给，排出了其中主要伤胃杂质；补给已作为本次强化训练的消耗用尽。",
+      "侯铃授予沈舟南场训练厅基础器械九折使用价，作为今晚真实体测记录的后续待遇。"
+    ]
+  },
+  {
+    "turn": 3,
+    "action": "我先和桑拓谈谈旧路线图，愿意用少量武券或提供互惠条件交换可靠的低危行动信息。",
+    "realm": {
+      "name": "锻身段",
+      "rank": 0,
+      "benchmark": "身体略强于普通成年人，能完成基础负重，但连续爆发会迅速力竭。",
+      "unlock": "可使用公共训练器械、购买基础补给，并申请一次城内公开测试。",
+      "progress": 6
+    },
+    "coins": 40,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并在一次完整训练中把腿腰发力接入基础拳击。现在可更稳定地完成锻身段的常规训练；连续爆发仍会迅速力竭，尚不能把全身力量稳定贯入单次重击。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "low-risk-pass",
+        "name": "低危荒带通行票",
+        "description": "登记在你名下的一次性票，可独自进入灰裂沟外圈并携出基础材料",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "陌生"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "open",
+          "offeredAtTurn": 1
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        }
+      ]
+    },
+    "changes": [
+      "武券-3",
+      "获得 桑拓的旧路线图",
+      "成长兑现: 桑拓的旧路线图",
+      "桑拓说明：灰裂沟外圈沿返程箭头至裂黑石后向东二十步的暖土坡常有热壳根；黄昏的小型裂鼠通常避人，闻血才会扑近。",
+      "桑拓提醒直跨滑坡的近路对刚完成体测、腿腰疲劳的沈舟风险较高。",
+      "沈舟以三枚武券取得桑拓去年走过的灰裂沟外圈旧路线图；天气旗变红或返程箭头被毁时应自行折返。"
+    ]
+  },
+  {
+    "turn": 4,
+    "action": "买下旧路线图，沿返程箭头和裂黑石往暖土坡走，采到完整热壳根就立刻按原路返回，不为省时间走滑坡近路。",
+    "realm": {
+      "name": "锻身段",
+      "rank": 0,
+      "benchmark": "身体略强于普通成年人，能完成基础负重，但连续爆发会迅速力竭。",
+      "unlock": "可使用公共训练器械、购买基础补给，并申请一次城内公开测试。",
+      "progress": 6
+    },
+    "coins": 40,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并在一次完整训练中把腿腰发力接入基础拳击。现在可更稳定地完成锻身段的常规训练；连续爆发仍会迅速力竭，尚不能把全身力量稳定贯入单次重击。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      },
+      {
+        "id": "intact-heat-shell-root",
+        "name": "完整热壳根",
+        "description": "从灰裂沟外圈暖土坡采得的两株完整热壳根，根须未断，可出售给任砺或作为基础训练补给的原料。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "陌生"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        }
+      ]
+    },
+    "changes": [
+      "抵达 折钢城南门内的荒材交易摊前",
+      "失去 低危荒带通行票",
+      "获得 完整热壳根",
+      "成长兑现: 灰裂沟热壳根采集",
+      "沈舟使用低危荒带通行票，沿返程箭头和裂黑石东侧的旧路线进入灰裂沟外圈暖土坡，并避开了滑坡近路。",
+      "沈舟在暖土坡采得两株根须完整的热壳根；一株因拔取时根须断裂留在原地。",
+      "沈舟未受伤，裂鼠未因血腥靠近；他已在城门关闭前按原路返回折钢城。",
+      "任砺当面报价：完整热壳根每株六枚武券，或可用一株换一份配好比例的基础训练药餐。"
+    ]
+  },
+  {
+    "turn": 5,
+    "action": "把两株完整热壳根卖给任砺，换取十二枚武券，先积累资金再安排下一次训练。",
+    "realm": {
+      "name": "锻身段",
+      "rank": 0,
+      "benchmark": "身体略强于普通成年人，能完成基础负重，但连续爆发会迅速力竭。",
+      "unlock": "可使用公共训练器械、购买基础补给，并申请一次城内公开测试。",
+      "progress": 6
+    },
+    "coins": 52,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并在一次完整训练中把腿腰发力接入基础拳击。现在可更稳定地完成锻身段的常规训练；连续爆发仍会迅速力竭，尚不能把全身力量稳定贯入单次重击。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        }
+      ]
+    },
+    "changes": [
+      "武券+12",
+      "失去 完整热壳根",
+      "任砺: 好奇",
+      "沈舟将两株完整热壳根卖给任砺，获得十二枚武券；热壳根已由任砺收走。",
+      "任砺表示，若沈舟日后在天黑前带来完整荒材，他会按市价先验货报价，不以空话拖延交易。"
+    ]
+  },
+  {
+    "turn": 6,
+    "action": "回住处休整一夜，明日买基础补给，再完成针对腿腰与推击的完整训练。",
+    "realm": {
+      "name": "锻身段",
+      "rank": 0,
+      "benchmark": "身体略强于普通成年人，能完成基础负重，但连续爆发会迅速力竭。",
+      "unlock": "可使用公共训练器械、购买基础补给，并申请一次城内公开测试。",
+      "progress": 14
+    },
+    "coins": 44,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并在完整训练中让脚掌蹬地、髋腰转动和肩臂推出连成一线。现在可在短冲后更稳定地完成一次基础推击；连续爆发仍会迅速力竭，尚不能把全身力量稳定贯入足以击裂厚木板的单次重击。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        }
+      ]
+    },
+    "changes": [
+      "抵达 折钢城南场训练厅外",
+      "武券-8",
+      "能力提升: 标准锻身操",
+      "修行进度 +8",
+      "沈舟休整一夜后，以八枚武券购入并消耗一份基础训练补给，在南场完成半日腿腰与推击训练。",
+      "净炉身排出该份基础训练补给中的主要苦涩杂质；训练热量被用于本次负重、短冲与推击练习。",
+      "沈舟已能在短冲后更稳定地把脚掌、髋腰和肩臂的力量送入一次基础推击，但尚未具备通劲段的稳定贯力。",
+      "任砺今日公开收购灰裂沟外圈的硬皮苔，可按批量验货报价。"
+    ]
+  },
+  {
+    "turn": 7,
+    "action": "向侯铃询问针对推击的公开复测安排，先确认标准和时间，再决定是否参加。",
+    "realm": {
+      "name": "锻身段",
+      "rank": 0,
+      "benchmark": "身体略强于普通成年人，能完成基础负重，但连续爆发会迅速力竭。",
+      "unlock": "可使用公共训练器械、购买基础补给，并申请一次城内公开测试。",
+      "progress": 14
+    },
+    "coins": 44,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并在完整训练中让脚掌蹬地、髋腰转动和肩臂推出连成一线。现在可在短冲后更稳定地完成一次基础推击；连续爆发仍会迅速力竭，尚不能把全身力量稳定贯入足以击裂厚木板的单次重击。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        }
+      ]
+    },
+    "changes": [
+      "侯铃说明南场推击公开复测：站线后三步内击中测力桩桩心，铜片需连续亮至第三格，且手腕、肩与腰不能散；这项记录不等同于通劲段突破。",
+      "南场推击复测今日酉初前可报名，报名费两枚武券；通过会补入沈舟既有体测记录，不额外发放奖金或正式招式。"
+    ]
+  },
+  {
+    "turn": 8,
+    "action": "花两枚武券报名南场推击复测，按侯铃说的标准全力打一击，看看新练出的发力能否补入公开记录。",
+    "realm": {
+      "name": "锻身段",
+      "rank": 0,
+      "benchmark": "身体略强于普通成年人，能完成基础负重，但连续爆发会迅速力竭。",
+      "unlock": "可使用公共训练器械、购买基础补给，并申请一次城内公开测试。",
+      "progress": 14
+    },
+    "coins": 42,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并在完整训练中让脚掌蹬地、髋腰转动和肩臂推出连成一线。现在可在短冲后更稳定地完成一次基础推击；连续爆发仍会迅速力竭，尚不能把全身力量稳定贯入足以击裂厚木板的单次重击。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        }
+      ]
+    },
+    "changes": [
+      "武券-2",
+      "沈舟报名并完成南场推击公开复测，三步内击中测力桩桩心；第三格铜片仅短暂闪亮，未达到通过标准。",
+      "侯铃现场指出沈舟的三步节奏已成形，但击中后腰背比肩臂更早松开，力量未能稳定留在桩心；此次尝试未补入通过记录。"
+    ]
+  },
+  {
+    "turn": 9,
+    "action": "留在南场做一段针对腰背锁力与三步推击的完整练习，先把这次暴露出的发力缺口练扎实。",
+    "realm": {
+      "name": "通劲段",
+      "rank": 1,
+      "benchmark": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+      "unlock": "可学习正式招式、进入低危荒带，并获得基础材料的个人携出权。",
+      "progress": 0
+    },
+    "coins": 42,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并将脚掌蹬地、髋腰转动、腰背锁力和肩臂推出连成完整发力。现在可在三步接近后稳定把全身力量贯入一次推击，足以击裂厚木板并保持短距离冲刺；连续高强度爆发仍会消耗很快，尚未具备离体护层或远距离冲击。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      },
+      {
+        "id": "realm-1",
+        "name": "通劲段行动空间",
+        "description": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+        "source": "境界突破"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        }
+      ]
+    },
+    "changes": [
+      "能力提升: 标准锻身操",
+      "修行进度 +20",
+      "境界提升为 通劲段",
+      "掌握能力: 通劲段行动空间",
+      "沈舟留在南场完成一段针对腰背锁力与三步推击的完整练习；经多轮锁力、推击与恢复循环后，连续六次稳定完成完整发力。",
+      "沈舟练习后以相同发力击中南场测力桩桩心，第三格铜片稳定亮起；侯铃据实确认其腰背锁力短板已补上。",
+      "沈舟已有击裂两指厚木板、百步短冲与稳定三步贯力的实际记录，身体能力达到通劲段基准，境界晋为通劲段。"
+    ]
+  },
+  {
+    "turn": 10,
+    "action": "向侯铃询问正式招式课的报名条件与近期安排，看看如何把稳定贯力转成实战技巧。",
+    "realm": {
+      "name": "通劲段",
+      "rank": 1,
+      "benchmark": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+      "unlock": "可学习正式招式、进入低危荒带，并获得基础材料的个人携出权。",
+      "progress": 0
+    },
+    "coins": 42,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并将脚掌蹬地、髋腰转动、腰背锁力和肩臂推出连成完整发力。现在可在三步接近后稳定把全身力量贯入一次推击，足以击裂厚木板并保持短距离冲刺；连续高强度爆发仍会消耗很快，尚未具备离体护层或远距离冲击。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      },
+      {
+        "id": "realm-1",
+        "name": "通劲段行动空间",
+        "description": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+        "source": "境界突破"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "south-yard-close-combat-class",
+          "name": "南场贴身架势课",
+          "payoff": "学会在近距离移动、格挡与短推中运用稳定贯力，获得可用于低危荒带自保的正式基础招式。",
+          "approach": "明晚开课前向侯铃交六枚武券报名，连续参加三晚训练并完成课内对练。",
+          "status": "open",
+          "offeredAtTurn": 10
+        }
+      ]
+    },
+    "changes": [
+      "抵达 折钢城南场训练厅内",
+      "可争取的成长: 南场贴身架势课",
+      "侯铃说明：南场正式招式课的本期内容为贴身架势，教授三步内进身、格开直撞与短推贯力的实战动作。",
+      "侯铃确认沈舟凭已稳定亮起第三格的桩心记录即可报名本期正式招式课，无须重复入门复测。",
+      "南场本期贴身架势课明晚开课，连续三晚、每晚一个时辰，报名费六枚武券；缺席不补。"
+    ]
+  },
+  {
+    "turn": 11,
+    "action": "交六枚武券报名三晚贴身架势课，明晚按时参加，先把三步进身、格挡和短推贯力练成能应对移动目标的动作。",
+    "realm": {
+      "name": "通劲段",
+      "rank": 1,
+      "benchmark": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+      "unlock": "可学习正式招式、进入低危荒带，并获得基础材料的个人携出权。",
+      "progress": 0
+    },
+    "coins": 36,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并将脚掌蹬地、髋腰转动、腰背锁力和肩臂推出连成完整发力。现在可在三步接近后稳定把全身力量贯入一次推击，足以击裂厚木板并保持短距离冲刺；连续高强度爆发仍会消耗很快，尚未具备离体护层或远距离冲击。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      },
+      {
+        "id": "realm-1",
+        "name": "通劲段行动空间",
+        "description": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+        "source": "境界突破"
+      },
+      {
+        "id": "close-quarters-stance",
+        "name": "贴身架势",
+        "description": "能在三步内观察对手落脚与逼近方向，侧身进位，用前臂格开直撞后以腰背锁力完成短推。可用于低危荒带避开裂鼠等小型目标的正面扑撞，或在近距离争路时创造脱身空间；面对连续围攻、长兵器、明显更强的力量或狭窄到无法侧移的地形仍有很大风险。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "south-yard-close-combat-class",
+          "name": "南场贴身架势课",
+          "payoff": "学会在近距离移动、格挡与短推中运用稳定贯力，获得可用于低危荒带自保的正式基础招式。",
+          "approach": "明晚开课前向侯铃交六枚武券报名，连续参加三晚训练并完成课内对练。",
+          "status": "fulfilled",
+          "offeredAtTurn": 10,
+          "materialized": true,
+          "result": "沈舟交费并完成连续三晚训练与课内对练，学会贴身架势的三步进身、格开直撞和短推贯力。",
+          "settledAtTurn": 11
+        }
+      ]
+    },
+    "changes": [
+      "武券-6",
+      "掌握能力: 贴身架势",
+      "成长兑现: 南场贴身架势课",
+      "沈舟交六枚武券报名并连续参加南场贴身架势课三晚训练。",
+      "沈舟完成贴身架势课的移动对练，能在三步内侧身进位、格开直撞并以稳定贯力完成短推。",
+      "侯铃据课内对练确认，沈舟已掌握可用于移动目标的基础近身架势；这不代表他能独自应付强敌或成群裂兽。"
+    ]
+  },
+  {
+    "turn": 12,
+    "action": "明日按旧路线进入灰裂沟外圈采集硬皮苔，带上护震绑带，遇到异常就按标识折返，顺便试试刚学的贴身架势。",
+    "realm": {
+      "name": "通劲段",
+      "rank": 1,
+      "benchmark": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+      "unlock": "可学习正式招式、进入低危荒带，并获得基础材料的个人携出权。",
+      "progress": 0
+    },
+    "coins": 45,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并将脚掌蹬地、髋腰转动、腰背锁力和肩臂推出连成完整发力。现在可在三步接近后稳定把全身力量贯入一次推击，足以击裂厚木板并保持短距离冲刺；连续高强度爆发仍会消耗很快，尚未具备离体护层或远距离冲击。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      },
+      {
+        "id": "realm-1",
+        "name": "通劲段行动空间",
+        "description": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+        "source": "境界突破"
+      },
+      {
+        "id": "close-quarters-stance",
+        "name": "贴身架势",
+        "description": "能在三步内观察对手落脚与逼近方向，侧身进位，用前臂格开直撞后以腰背锁力完成短推。已在灰裂沟外圈对试探扑近的裂鼠实际使用，可为转身、撤离或继续采集争出短暂空档；面对连续围攻、长兵器、明显更强的力量或狭窄到无法侧移的地形仍有很大风险。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      },
+      {
+        "id": "hard-skin-moss-bundle",
+        "name": "硬皮苔",
+        "description": "从灰裂沟外圈完整剥离的一捆硬皮苔，可作为荒材出售；当前已由任砺验货并收购，不再由沈舟携带。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "south-yard-close-combat-class",
+          "name": "南场贴身架势课",
+          "payoff": "学会在近距离移动、格挡与短推中运用稳定贯力，获得可用于低危荒带自保的正式基础招式。",
+          "approach": "明晚开课前向侯铃交六枚武券报名，连续参加三晚训练并完成课内对练。",
+          "status": "fulfilled",
+          "offeredAtTurn": 10,
+          "materialized": true,
+          "result": "沈舟交费并完成连续三晚训练与课内对练，学会贴身架势的三步进身、格开直撞和短推贯力。",
+          "settledAtTurn": 11
+        }
+      ]
+    },
+    "changes": [
+      "武券+9",
+      "获得 硬皮苔",
+      "能力提升: 贴身架势",
+      "沈舟按桑拓旧路线进入灰裂沟外圈，在天气旗正常、返程箭头完好的情况下采得一捆完整硬皮苔，并按原路返回。",
+      "三只裂鼠在暖土坡附近试探靠近；沈舟以贴身架势格开最前一只的扑撞、短推争出撤离空档，未追击，未受伤。",
+      "任砺验收沈舟带回的完整硬皮苔，当场支付九枚武券并收走货物。",
+      "任砺表示，若沈舟日后能稳定在天黑前带回完整硬皮苔，他可提供按当日市价结算的小批量预收单；这是任砺当面提出的交易意向。"
+    ]
+  },
+  {
+    "turn": 13,
+    "action": "去任砺摊前询问硬皮苔小批量预收单的具体数量、验货标准和结算方式，再决定是否继续采集。",
+    "realm": {
+      "name": "通劲段",
+      "rank": 1,
+      "benchmark": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+      "unlock": "可学习正式招式、进入低危荒带，并获得基础材料的个人携出权。",
+      "progress": 0
+    },
+    "coins": 45,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并将脚掌蹬地、髋腰转动、腰背锁力和肩臂推出连成完整发力。现在可在三步接近后稳定把全身力量贯入一次推击，足以击裂厚木板并保持短距离冲刺；连续高强度爆发仍会消耗很快，尚未具备离体护层或远距离冲击。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      },
+      {
+        "id": "realm-1",
+        "name": "通劲段行动空间",
+        "description": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+        "source": "境界突破"
+      },
+      {
+        "id": "close-quarters-stance",
+        "name": "贴身架势",
+        "description": "能在三步内观察对手落脚与逼近方向，侧身进位，用前臂格开直撞后以腰背锁力完成短推。已在灰裂沟外圈对试探扑近的裂鼠实际使用，可为转身、撤离或继续采集争出短暂空档；面对连续围攻、长兵器、明显更强的力量或狭窄到无法侧移的地形仍有很大风险。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      },
+      {
+        "id": "hard-skin-moss-bundle",
+        "name": "硬皮苔",
+        "description": "从灰裂沟外圈完整剥离的一捆硬皮苔，可作为荒材出售；当前已由任砺验货并收购，不再由沈舟携带。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "south-yard-close-combat-class",
+          "name": "南场贴身架势课",
+          "payoff": "学会在近距离移动、格挡与短推中运用稳定贯力，获得可用于低危荒带自保的正式基础招式。",
+          "approach": "明晚开课前向侯铃交六枚武券报名，连续参加三晚训练并完成课内对练。",
+          "status": "fulfilled",
+          "offeredAtTurn": 10,
+          "materialized": true,
+          "result": "沈舟交费并完成连续三晚训练与课内对练，学会贴身架势的三步进身、格开直撞和短推贯力。",
+          "settledAtTurn": 11
+        },
+        {
+          "id": "ren-li-moss-preorder",
+          "name": "任砺的硬皮苔三日预收单",
+          "payoff": "连续三天完成标准交货后，取得由任砺保留的硬皮苔小批量预收渠道；合格货每捆按当日市价结算且保底八枚武券。",
+          "approach": "决定接单后，在三日内每日天黑前带回两捆各不少于三十片、根部完整且无咬痕、泥沙霉斑的硬皮苔，交任砺当面验货。",
+          "status": "open",
+          "offeredAtTurn": 13
+        }
+      ]
+    },
+    "changes": [
+      "可争取的成长: 任砺的硬皮苔三日预收单",
+      "任砺说明硬皮苔小批量预收单条件：每日两捆，每捆至少三十片，须根部完整、无裂鼠咬痕、无泥沙霉斑，并在天黑前送达验货。",
+      "任砺说明合格预收货按当日市价结算且每捆保底八枚武券；不合格货不扣钱，改按零散荒材报价。",
+      "任砺说明连续三天按标准交货后才会为沈舟保留预收单；沈舟可在午前通知暂停，不构成强制雇佣。"
+    ]
+  },
+  {
+    "turn": 14,
+    "action": "接受三日小批量预收单，明日按标准采两捆硬皮苔，天黑前带回验货；若路线或身体状况异常就及时暂停。",
+    "realm": {
+      "name": "通劲段",
+      "rank": 1,
+      "benchmark": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+      "unlock": "可学习正式招式、进入低危荒带，并获得基础材料的个人携出权。",
+      "progress": 0
+    },
+    "coins": 63,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并将脚掌蹬地、髋腰转动、腰背锁力和肩臂推出连成完整发力。现在可在三步接近后稳定把全身力量贯入一次推击，足以击裂厚木板并保持短距离冲刺；连续高强度爆发仍会消耗很快，尚未具备离体护层或远距离冲击。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      },
+      {
+        "id": "realm-1",
+        "name": "通劲段行动空间",
+        "description": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+        "source": "境界突破"
+      },
+      {
+        "id": "close-quarters-stance",
+        "name": "贴身架势",
+        "description": "能在三步内观察对手落脚与逼近方向，侧身进位，用前臂格开直撞后以腰背锁力完成短推。已在灰裂沟外圈对试探扑近的裂鼠实际使用，可为转身、撤离或继续采集争出短暂空档；面对连续围攻、长兵器、明显更强的力量或狭窄到无法侧移的地形仍有很大风险。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      },
+      {
+        "id": "hard-skin-moss-bundle",
+        "name": "硬皮苔",
+        "description": "从灰裂沟外圈完整剥离的一捆硬皮苔，可作为荒材出售；当前已由任砺验货并收购，不再由沈舟携带。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "south-yard-close-combat-class",
+          "name": "南场贴身架势课",
+          "payoff": "学会在近距离移动、格挡与短推中运用稳定贯力，获得可用于低危荒带自保的正式基础招式。",
+          "approach": "明晚开课前向侯铃交六枚武券报名，连续参加三晚训练并完成课内对练。",
+          "status": "fulfilled",
+          "offeredAtTurn": 10,
+          "materialized": true,
+          "result": "沈舟交费并完成连续三晚训练与课内对练，学会贴身架势的三步进身、格开直撞和短推贯力。",
+          "settledAtTurn": 11
+        },
+        {
+          "id": "ren-li-moss-preorder",
+          "name": "任砺的硬皮苔三日预收单",
+          "payoff": "连续三天完成标准交货后，取得由任砺保留的硬皮苔小批量预收渠道；合格货每捆按当日市价结算且保底八枚武券。",
+          "approach": "决定接单后，在三日内每日天黑前带回两捆各不少于三十片、根部完整且无咬痕、泥沙霉斑的硬皮苔，交任砺当面验货。",
+          "status": "open",
+          "offeredAtTurn": 13
+        }
+      ]
+    },
+    "changes": [
+      "武券+18",
+      "沈舟接受任砺的硬皮苔三日小批量预收单，明日采集作为第一日交货。",
+      "沈舟按旧路线在灰裂沟外圈采得两捆合格硬皮苔，每捆均超过三十片、根部完整且无咬痕、泥沙霉斑，并在天黑前交任砺验货。",
+      "任砺按当日市价每捆九枚武券收购两捆合格硬皮苔，当场支付沈舟十八枚武券；货物已由任砺收走。",
+      "沈舟已完成硬皮苔预收单第一日标准交货，尚需连续两日合格交货才可取得任砺保留的预收渠道。"
+    ]
+  },
+  {
+    "turn": 15,
+    "action": "明日继续按旧路线采集两捆硬皮苔，优先保证根部完整和无泥沙，若天气旗变红或身体不适就立即折返。",
+    "realm": {
+      "name": "通劲段",
+      "rank": 1,
+      "benchmark": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+      "unlock": "可学习正式招式、进入低危荒带，并获得基础材料的个人携出权。",
+      "progress": 0
+    },
+    "coins": 81,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并将脚掌蹬地、髋腰转动、腰背锁力和肩臂推出连成完整发力。现在可在三步接近后稳定把全身力量贯入一次推击，足以击裂厚木板并保持短距离冲刺；连续高强度爆发仍会消耗很快，尚未具备离体护层或远距离冲击。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      },
+      {
+        "id": "realm-1",
+        "name": "通劲段行动空间",
+        "description": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+        "source": "境界突破"
+      },
+      {
+        "id": "close-quarters-stance",
+        "name": "贴身架势",
+        "description": "能在三步内观察对手落脚与逼近方向，侧身进位，用前臂格开直撞后以腰背锁力完成短推。已在灰裂沟外圈对试探扑近的裂鼠实际使用，可为转身、撤离或继续采集争出短暂空档；面对连续围攻、长兵器、明显更强的力量或狭窄到无法侧移的地形仍有很大风险。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      },
+      {
+        "id": "hard-skin-moss-bundle",
+        "name": "硬皮苔",
+        "description": "从灰裂沟外圈完整剥离的一捆硬皮苔，可作为荒材出售；当前已由任砺验货并收购，不再由沈舟携带。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "south-yard-close-combat-class",
+          "name": "南场贴身架势课",
+          "payoff": "学会在近距离移动、格挡与短推中运用稳定贯力，获得可用于低危荒带自保的正式基础招式。",
+          "approach": "明晚开课前向侯铃交六枚武券报名，连续参加三晚训练并完成课内对练。",
+          "status": "fulfilled",
+          "offeredAtTurn": 10,
+          "materialized": true,
+          "result": "沈舟交费并完成连续三晚训练与课内对练，学会贴身架势的三步进身、格开直撞和短推贯力。",
+          "settledAtTurn": 11
+        },
+        {
+          "id": "ren-li-moss-preorder",
+          "name": "任砺的硬皮苔三日预收单",
+          "payoff": "连续三天完成标准交货后，取得由任砺保留的硬皮苔小批量预收渠道；合格货每捆按当日市价结算且保底八枚武券。",
+          "approach": "决定接单后，在三日内每日天黑前带回两捆各不少于三十片、根部完整且无咬痕、泥沙霉斑的硬皮苔，交任砺当面验货。",
+          "status": "open",
+          "offeredAtTurn": 13
+        }
+      ]
+    },
+    "changes": [
+      "武券+18",
+      "沈舟按桑拓旧路线完成硬皮苔预收单第二日采集：两捆均超过三十片，根部完整且无裂鼠咬痕、泥沙霉斑。",
+      "沈舟在天气旗正常、身体无不适的情况下于天黑前返回折钢城，任砺验货后按每捆九枚武券支付十八枚武券并收走货物。",
+      "沈舟已连续两日完成硬皮苔预收单标准交货；再完成一日合格交货即可取得任砺保留的预收渠道。"
+    ]
+  },
+  {
+    "turn": 16,
+    "action": "明日按旧路线完成第三日预收交货，采满两捆合格硬皮苔；若天气旗变红或身体不适就立即折返。",
+    "realm": {
+      "name": "通劲段",
+      "rank": 1,
+      "benchmark": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+      "unlock": "可学习正式招式、进入低危荒带，并获得基础材料的个人携出权。",
+      "progress": 0
+    },
+    "coins": 99,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并将脚掌蹬地、髋腰转动、腰背锁力和肩臂推出连成完整发力。现在可在三步接近后稳定把全身力量贯入一次推击，足以击裂厚木板并保持短距离冲刺；连续高强度爆发仍会消耗很快，尚未具备离体护层或远距离冲击。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      },
+      {
+        "id": "realm-1",
+        "name": "通劲段行动空间",
+        "description": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+        "source": "境界突破"
+      },
+      {
+        "id": "close-quarters-stance",
+        "name": "贴身架势",
+        "description": "能在三步内观察对手落脚与逼近方向，侧身进位，用前臂格开直撞后以腰背锁力完成短推。已在灰裂沟外圈对试探扑近的裂鼠实际使用，可为转身、撤离或继续采集争出短暂空档；面对连续围攻、长兵器、明显更强的力量或狭窄到无法侧移的地形仍有很大风险。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      },
+      {
+        "id": "hard-skin-moss-bundle",
+        "name": "硬皮苔",
+        "description": "从灰裂沟外圈完整剥离的一捆硬皮苔，可作为荒材出售；当前已由任砺验货并收购，不再由沈舟携带。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "友善"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "ren-li-moss-preorder-access",
+          "kind": "access",
+          "name": "任砺的硬皮苔预收位",
+          "effect": "以后可在午前通知任砺启用预收位，在天黑前交付两捆合格硬皮苔并按当日市价结算，每捆保底八枚武券。",
+          "scope": "仅限灰裂沟外圈硬皮苔；每日两捆、每捆至少三十片且根部完整、无咬痕和泥沙霉斑。暂停须在午前通知任砺。",
+          "status": "active",
+          "acquiredAtTurn": 16,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "south-yard-close-combat-class",
+          "name": "南场贴身架势课",
+          "payoff": "学会在近距离移动、格挡与短推中运用稳定贯力，获得可用于低危荒带自保的正式基础招式。",
+          "approach": "明晚开课前向侯铃交六枚武券报名，连续参加三晚训练并完成课内对练。",
+          "status": "fulfilled",
+          "offeredAtTurn": 10,
+          "materialized": true,
+          "result": "沈舟交费并完成连续三晚训练与课内对练，学会贴身架势的三步进身、格开直撞和短推贯力。",
+          "settledAtTurn": 11
+        },
+        {
+          "id": "ren-li-moss-preorder",
+          "name": "任砺的硬皮苔三日预收单",
+          "payoff": "连续三天完成标准交货后，取得由任砺保留的硬皮苔小批量预收渠道；合格货每捆按当日市价结算且保底八枚武券。",
+          "approach": "决定接单后，在三日内每日天黑前带回两捆各不少于三十片、根部完整且无咬痕、泥沙霉斑的硬皮苔，交任砺当面验货。",
+          "status": "fulfilled",
+          "offeredAtTurn": 13,
+          "materialized": true,
+          "result": "沈舟连续三天按标准交付两捆合格硬皮苔；任砺兑现约定，为他保留可自主启用或暂停的小批量预收位。",
+          "settledAtTurn": 16
+        }
+      ]
+    },
+    "changes": [
+      "抵达 折钢城任砺荒材摊前",
+      "武券+18",
+      "任砺: 友善",
+      "获得长期筹码: 任砺的硬皮苔预收位",
+      "成长兑现: 任砺的硬皮苔三日预收单",
+      "沈舟完成硬皮苔预收单第三日标准交货：两捆均超过三十片，根部完整且无裂鼠咬痕、泥沙霉斑。",
+      "任砺验货后按当日市价每捆九枚武券支付十八枚武券，并收走两捆硬皮苔。",
+      "任砺兑现约定，为沈舟保留可由其午前通知启用或暂停的硬皮苔小批量预收位；合格货按当日市价结算，每捆保底八枚武券。",
+      "任砺提出裂石藤可作为恢复膏底料，处理合格后价值高于普通硬皮苔；其具体采集和验货条件尚待沈舟询问。"
+    ]
+  },
+  {
+    "turn": 17,
+    "action": "向任砺询问裂石藤的采集位置、辨认方法、验货标准和收购价，再决定是否尝试这条更高价值的荒材路线。",
+    "realm": {
+      "name": "通劲段",
+      "rank": 1,
+      "benchmark": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+      "unlock": "可学习正式招式、进入低危荒带，并获得基础材料的个人携出权。",
+      "progress": 0
+    },
+    "coins": 99,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并将脚掌蹬地、髋腰转动、腰背锁力和肩臂推出连成完整发力。现在可在三步接近后稳定把全身力量贯入一次推击，足以击裂厚木板并保持短距离冲刺；连续高强度爆发仍会消耗很快，尚未具备离体护层或远距离冲击。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      },
+      {
+        "id": "realm-1",
+        "name": "通劲段行动空间",
+        "description": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+        "source": "境界突破"
+      },
+      {
+        "id": "close-quarters-stance",
+        "name": "贴身架势",
+        "description": "能在三步内观察对手落脚与逼近方向，侧身进位，用前臂格开直撞后以腰背锁力完成短推。已在灰裂沟外圈对试探扑近的裂鼠实际使用，可为转身、撤离或继续采集争出短暂空档；面对连续围攻、长兵器、明显更强的力量或狭窄到无法侧移的地形仍有很大风险。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      },
+      {
+        "id": "hard-skin-moss-bundle",
+        "name": "硬皮苔",
+        "description": "从灰裂沟外圈完整剥离的一捆硬皮苔，可作为荒材出售；当前已由任砺验货并收购，不再由沈舟携带。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "友善"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "ren-li-moss-preorder-access",
+          "kind": "access",
+          "name": "任砺的硬皮苔预收位",
+          "effect": "以后可在午前通知任砺启用预收位，在天黑前交付两捆合格硬皮苔并按当日市价结算，每捆保底八枚武券。",
+          "scope": "仅限灰裂沟外圈硬皮苔；每日两捆、每捆至少三十片且根部完整、无咬痕和泥沙霉斑。暂停须在午前通知任砺。",
+          "status": "active",
+          "acquiredAtTurn": 16,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "south-yard-close-combat-class",
+          "name": "南场贴身架势课",
+          "payoff": "学会在近距离移动、格挡与短推中运用稳定贯力，获得可用于低危荒带自保的正式基础招式。",
+          "approach": "明晚开课前向侯铃交六枚武券报名，连续参加三晚训练并完成课内对练。",
+          "status": "fulfilled",
+          "offeredAtTurn": 10,
+          "materialized": true,
+          "result": "沈舟交费并完成连续三晚训练与课内对练，学会贴身架势的三步进身、格开直撞和短推贯力。",
+          "settledAtTurn": 11
+        },
+        {
+          "id": "ren-li-moss-preorder",
+          "name": "任砺的硬皮苔三日预收单",
+          "payoff": "连续三天完成标准交货后，取得由任砺保留的硬皮苔小批量预收渠道；合格货每捆按当日市价结算且保底八枚武券。",
+          "approach": "决定接单后，在三日内每日天黑前带回两捆各不少于三十片、根部完整且无咬痕、泥沙霉斑的硬皮苔，交任砺当面验货。",
+          "status": "fulfilled",
+          "offeredAtTurn": 13,
+          "materialized": true,
+          "result": "沈舟连续三天按标准交付两捆合格硬皮苔；任砺兑现约定，为他保留可自主启用或暂停的小批量预收位。",
+          "settledAtTurn": 16
+        },
+        {
+          "id": "ren-li-rift-vine",
+          "name": "裂石藤采集与处理",
+          "payoff": "获得可出售的高价裂石藤，或保留一段作为恢复膏底料。",
+          "approach": "沿旧路线至裂黑石北侧，找到白纹岩西八码的碎壁；辨认藤皮石纹与黄汁，完整剥取三尺以上藤段并用湿布包回城验货。",
+          "status": "open",
+          "offeredAtTurn": 17
+        }
+      ]
+    },
+    "changes": [
+      "可争取的成长: 裂石藤采集与处理",
+      "任砺说明裂石藤位于灰裂沟外圈裂黑石以北、白纹岩以西八码的碎壁附近；其藤皮有细碎石纹，掐开内里发黄并带辛气。",
+      "任砺说明裂石藤须在根上方两寸断开、逐根剥离附壁细须，并以湿布包裹带回；主皮受损或黄汁干涸会明显降价。",
+      "任砺报价：三尺以上、主皮不断且黄汁未干的裂石藤，每段按品相收十二至十八枚武券；沈舟也可留一段与任砺按一比一配成恢复膏底料。"
+    ]
+  },
+  {
+    "turn": 18,
+    "action": "带上旧路线图前往白纹岩附近，寻找并尝试完整采下一段裂石藤；发现藤皮破损、位置过险或天气变红就立即折返。",
+    "realm": {
+      "name": "通劲段",
+      "rank": 1,
+      "benchmark": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+      "unlock": "可学习正式招式、进入低危荒带，并获得基础材料的个人携出权。",
+      "progress": 0
+    },
+    "coins": 99,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并将脚掌蹬地、髋腰转动、腰背锁力和肩臂推出连成完整发力。现在可在三步接近后稳定把全身力量贯入一次推击，足以击裂厚木板并保持短距离冲刺；连续高强度爆发仍会消耗很快，尚未具备离体护层或远距离冲击。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      },
+      {
+        "id": "realm-1",
+        "name": "通劲段行动空间",
+        "description": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+        "source": "境界突破"
+      },
+      {
+        "id": "close-quarters-stance",
+        "name": "贴身架势",
+        "description": "能在三步内观察对手落脚与逼近方向，侧身进位，用前臂格开直撞后以腰背锁力完成短推。已在灰裂沟外圈对试探扑近的裂鼠实际使用，可为转身、撤离或继续采集争出短暂空档；面对连续围攻、长兵器、明显更强的力量或狭窄到无法侧移的地形仍有很大风险。",
+        "source": "正文获得"
+      },
+      {
+        "id": "rift-vine-handling",
+        "name": "裂石藤辨采与保药处理",
+        "description": "能在灰裂沟外圈白纹岩西侧碎壁辨认裂石藤的石纹、黄汁和辛气；可在根上方两寸断开，逐根剥离附壁细须并用湿布保住主皮药性，取得三尺以上合格藤段。限制：仅适用于已知低危碎壁；藤皮破损、黄汁干涸、壁面松动或天气旗变红时应停止采集并折返。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      },
+      {
+        "id": "hard-skin-moss-bundle",
+        "name": "硬皮苔",
+        "description": "从灰裂沟外圈完整剥离的一捆硬皮苔，可作为荒材出售；当前已由任砺验货并收购，不再由沈舟携带。",
+        "qty": 1
+      },
+      {
+        "id": "rift-vine-recovery-base",
+        "name": "裂石藤恢复膏底料",
+        "description": "由一段完整裂石藤与任砺按一比一配成的恢复膏底料，可在高强度训练后的恢复阶段配合净炉身使用，帮助缓解肌肉酸痛并补回部分消耗；不能替代睡眠、进食或修复骨伤，现有一罐。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "友善"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "ren-li-moss-preorder-access",
+          "kind": "access",
+          "name": "任砺的硬皮苔预收位",
+          "effect": "以后可在午前通知任砺启用预收位，在天黑前交付两捆合格硬皮苔并按当日市价结算，每捆保底八枚武券。",
+          "scope": "仅限灰裂沟外圈硬皮苔；每日两捆、每捆至少三十片且根部完整、无咬痕和泥沙霉斑。暂停须在午前通知任砺。",
+          "status": "active",
+          "acquiredAtTurn": 16,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "south-yard-close-combat-class",
+          "name": "南场贴身架势课",
+          "payoff": "学会在近距离移动、格挡与短推中运用稳定贯力，获得可用于低危荒带自保的正式基础招式。",
+          "approach": "明晚开课前向侯铃交六枚武券报名，连续参加三晚训练并完成课内对练。",
+          "status": "fulfilled",
+          "offeredAtTurn": 10,
+          "materialized": true,
+          "result": "沈舟交费并完成连续三晚训练与课内对练，学会贴身架势的三步进身、格开直撞和短推贯力。",
+          "settledAtTurn": 11
+        },
+        {
+          "id": "ren-li-moss-preorder",
+          "name": "任砺的硬皮苔三日预收单",
+          "payoff": "连续三天完成标准交货后，取得由任砺保留的硬皮苔小批量预收渠道；合格货每捆按当日市价结算且保底八枚武券。",
+          "approach": "决定接单后，在三日内每日天黑前带回两捆各不少于三十片、根部完整且无咬痕、泥沙霉斑的硬皮苔，交任砺当面验货。",
+          "status": "fulfilled",
+          "offeredAtTurn": 13,
+          "materialized": true,
+          "result": "沈舟连续三天按标准交付两捆合格硬皮苔；任砺兑现约定，为他保留可自主启用或暂停的小批量预收位。",
+          "settledAtTurn": 16
+        },
+        {
+          "id": "ren-li-rift-vine",
+          "name": "裂石藤采集与处理",
+          "payoff": "获得可出售的高价裂石藤，或保留一段作为恢复膏底料。",
+          "approach": "沿旧路线至裂黑石北侧，找到白纹岩西八码的碎壁；辨认藤皮石纹与黄汁，完整剥取三尺以上藤段并用湿布包回城验货。",
+          "status": "fulfilled",
+          "offeredAtTurn": 17,
+          "materialized": true,
+          "result": "沈舟在白纹岩西侧碎壁完整采得约四尺裂石藤并安全带回；任砺验货报价十六枚武券，沈舟保留藤段并配成一罐可用于训练恢复的膏底料。",
+          "settledAtTurn": 18
+        }
+      ]
+    },
+    "changes": [
+      "获得 裂石藤恢复膏底料",
+      "掌握能力: 裂石藤辨采与保药处理",
+      "成长兑现: 裂石藤采集与处理",
+      "沈舟沿旧路线在白纹岩西侧碎壁辨认并完整采得一段约四尺长的裂石藤；途中松石滑落后未深入壁缝，随后安全折返。",
+      "任砺验收该段裂石藤，主皮完整且黄汁未干，报价十六枚武券；沈舟选择不出售，按一比一配成一罐裂石藤恢复膏底料。"
+    ]
+  },
+  {
+    "turn": 19,
+    "action": "带恢复膏底料去南场，安排连续抗击、呼吸与恢复训练，重点提升连续承受能力和体力余量。",
+    "realm": {
+      "name": "通劲段",
+      "rank": 1,
+      "benchmark": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+      "unlock": "可学习正式招式、进入低危荒带，并获得基础材料的个人携出权。",
+      "progress": 8
+    },
+    "coins": 93,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并将脚掌蹬地、髋腰转动、腰背锁力和肩臂推出连成完整发力。现在还能把木槌抗击、短冲折返与控息站桩组成连续训练：在数次中等强度受击后保持落脚不散，并以较长吐息压回短冲后的胸闷。限制：骨骼尚不能承受真正重击，高速追逐后的恢复仍不足，不能据此越阶硬拼。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      },
+      {
+        "id": "realm-1",
+        "name": "通劲段行动空间",
+        "description": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+        "source": "境界突破"
+      },
+      {
+        "id": "close-quarters-stance",
+        "name": "贴身架势",
+        "description": "能在三步内观察对手落脚与逼近方向，侧身进位，用前臂格开直撞后以腰背锁力完成短推。已在灰裂沟外圈对试探扑近的裂鼠实际使用，可为转身、撤离或继续采集争出短暂空档；面对连续围攻、长兵器、明显更强的力量或狭窄到无法侧移的地形仍有很大风险。",
+        "source": "正文获得"
+      },
+      {
+        "id": "rift-vine-handling",
+        "name": "裂石藤辨采与保药处理",
+        "description": "能在灰裂沟外圈白纹岩西侧碎壁辨认裂石藤的石纹、黄汁和辛气；可在根上方两寸断开，逐根剥离附壁细须并用湿布保住主皮药性，取得三尺以上合格藤段。限制：仅适用于已知低危碎壁；藤皮破损、黄汁干涸、壁面松动或天气旗变红时应停止采集并折返。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      },
+      {
+        "id": "hard-skin-moss-bundle",
+        "name": "硬皮苔",
+        "description": "从灰裂沟外圈完整剥离的一捆硬皮苔，可作为荒材出售；当前已由任砺验货并收购，不再由沈舟携带。",
+        "qty": 1
+      },
+      {
+        "id": "rift-vine-recovery-base",
+        "name": "裂石藤恢复膏底料",
+        "description": "由裂石藤与任砺按一比一配成的恢复膏底料，现余约七成；可在高强度训练后的恢复阶段配合净炉身缓解肌肉酸痛并补回部分消耗，不能替代睡眠、进食或修复骨伤。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "友善"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "ren-li-moss-preorder-access",
+          "kind": "access",
+          "name": "任砺的硬皮苔预收位",
+          "effect": "以后可在午前通知任砺启用预收位，在天黑前交付两捆合格硬皮苔并按当日市价结算，每捆保底八枚武券。",
+          "scope": "仅限灰裂沟外圈硬皮苔；每日两捆、每捆至少三十片且根部完整、无咬痕和泥沙霉斑。暂停须在午前通知任砺。",
+          "status": "active",
+          "acquiredAtTurn": 16,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "south-yard-close-combat-class",
+          "name": "南场贴身架势课",
+          "payoff": "学会在近距离移动、格挡与短推中运用稳定贯力，获得可用于低危荒带自保的正式基础招式。",
+          "approach": "明晚开课前向侯铃交六枚武券报名，连续参加三晚训练并完成课内对练。",
+          "status": "fulfilled",
+          "offeredAtTurn": 10,
+          "materialized": true,
+          "result": "沈舟交费并完成连续三晚训练与课内对练，学会贴身架势的三步进身、格开直撞和短推贯力。",
+          "settledAtTurn": 11
+        },
+        {
+          "id": "ren-li-moss-preorder",
+          "name": "任砺的硬皮苔三日预收单",
+          "payoff": "连续三天完成标准交货后，取得由任砺保留的硬皮苔小批量预收渠道；合格货每捆按当日市价结算且保底八枚武券。",
+          "approach": "决定接单后，在三日内每日天黑前带回两捆各不少于三十片、根部完整且无咬痕、泥沙霉斑的硬皮苔，交任砺当面验货。",
+          "status": "fulfilled",
+          "offeredAtTurn": 13,
+          "materialized": true,
+          "result": "沈舟连续三天按标准交付两捆合格硬皮苔；任砺兑现约定，为他保留可自主启用或暂停的小批量预收位。",
+          "settledAtTurn": 16
+        },
+        {
+          "id": "ren-li-rift-vine",
+          "name": "裂石藤采集与处理",
+          "payoff": "获得可出售的高价裂石藤，或保留一段作为恢复膏底料。",
+          "approach": "沿旧路线至裂黑石北侧，找到白纹岩西八码的碎壁；辨认藤皮石纹与黄汁，完整剥取三尺以上藤段并用湿布包回城验货。",
+          "status": "fulfilled",
+          "offeredAtTurn": 17,
+          "materialized": true,
+          "result": "沈舟在白纹岩西侧碎壁完整采得约四尺裂石藤并安全带回；任砺验货报价十六枚武券，沈舟保留藤段并配成一罐可用于训练恢复的膏底料。",
+          "settledAtTurn": 18
+        }
+      ]
+    },
+    "changes": [
+      "武券-6",
+      "裂石藤恢复膏底料: 由裂石藤与任砺按一比一配成的恢复膏底料，现余约七成；可在高强度训练后的恢复阶段配合净炉身缓解肌肉酸痛并补回部分消耗，不能替代睡眠、进食或修复骨伤。",
+      "能力提升: 标准锻身操",
+      "修行进度 +8",
+      "沈舟在南场完成半日连续抗击、短冲折返与控息恢复训练，重点开始锻炼连续受击后的落脚、呼吸与恢复能力。",
+      "沈舟为本次南场基础器械训练支付六枚武券，并使用约三成裂石藤恢复膏底料辅助训练后恢复。"
+    ]
+  },
+  {
+    "turn": 20,
+    "action": "继续在南场安排两日抗击、短冲与控息恢复训练，训练后按需使用剩余恢复膏底料，并保证睡眠恢复。",
+    "realm": {
+      "name": "通劲段",
+      "rank": 1,
+      "benchmark": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+      "unlock": "可学习正式招式、进入低危荒带，并获得基础材料的个人携出权。",
+      "progress": 20
+    },
+    "coins": 81,
+    "capabilities": [
+      {
+        "id": "power-clean-forge-body",
+        "name": "净炉身",
+        "description": "每天第一次吸收训练食物或药材时，身体会排出其中最主要的一种杂质，并把有效部分稳定用于恢复或锻炼。 边界: 不会增加原料总量，也不能替代训练和睡眠；未知剧毒、过量服用或跨阶药材仍会伤身。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "standard-body-drill",
+        "name": "标准锻身操",
+        "description": "能独立完成热身、负重、短冲、推击与恢复记录，并把木槌抗击、短冲折返和控息站桩组成连续训练。现在能在连续六次中等强度受击后维持架势，完成两趟短冲折返，再以长吐息逐步压稳呼吸；可用于持续锻炼抗击后的落脚、呼吸与恢复。限制：第七次及更重的冲击仍会使骨节发麻，高速追逐后的恢复不足，不能据此承受真正重击或越阶硬拼。",
+        "source": "城市公共训练课"
+      },
+      {
+        "id": "read-frontier-markers",
+        "name": "辨认荒带标识",
+        "description": "能看懂低危区的返程箭头、裂兽警记和天气旗，但不知道未标区域的安全情况。",
+        "source": "通行票安全课"
+      },
+      {
+        "id": "realm-1",
+        "name": "通劲段行动空间",
+        "description": "能把全身力量贯入一击，击裂厚木板并保持短距离冲刺。",
+        "source": "境界突破"
+      },
+      {
+        "id": "close-quarters-stance",
+        "name": "贴身架势",
+        "description": "能在三步内观察对手落脚与逼近方向，侧身进位，用前臂格开直撞后以腰背锁力完成短推。已在灰裂沟外圈对试探扑近的裂鼠实际使用，可为转身、撤离或继续采集争出短暂空档；面对连续围攻、长兵器、明显更强的力量或狭窄到无法侧移的地形仍有很大风险。",
+        "source": "正文获得"
+      },
+      {
+        "id": "rift-vine-handling",
+        "name": "裂石藤辨采与保药处理",
+        "description": "能在灰裂沟外圈白纹岩西侧碎壁辨认裂石藤的石纹、黄汁和辛气；可在根上方两寸断开，逐根剥离附壁细须并用湿布保住主皮药性，取得三尺以上合格藤段。限制：仅适用于已知低危碎壁；藤皮破损、黄汁干涸、壁面松动或天气旗变红时应停止采集并折返。",
+        "source": "正文获得"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "shock-wraps",
+        "name": "护震绑带",
+        "description": "你的旧护具，可减少一次负重或重击训练对手腕的损伤",
+        "qty": 1
+      },
+      {
+        "id": "sang-tuo-old-map",
+        "name": "桑拓的旧路线图",
+        "description": "标出从城门到灰裂沟外圈暖土坡的稳妥旧路、滑坡近路和返程判断点。基于桑拓去年经验；天气旗变红或返程箭头被毁时不应继续依图深入。",
+        "qty": 1
+      },
+      {
+        "id": "hard-skin-moss-bundle",
+        "name": "硬皮苔",
+        "description": "从灰裂沟外圈完整剥离的一捆硬皮苔，可作为荒材出售；当前已由任砺验货并收购，不再由沈舟携带。",
+        "qty": 1
+      },
+      {
+        "id": "rift-vine-recovery-base",
+        "name": "裂石藤恢复膏底料",
+        "description": "由裂石藤与任砺按一比一配成的恢复膏底料，现余约三成；可在高强度训练后的恢复阶段配合净炉身缓解肌肉酸痛并补回部分消耗，不能替代睡眠、进食或修复骨伤。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "hou-ling",
+        "name": "侯铃",
+        "role": "南场训练厅主",
+        "attitude": "友善"
+      },
+      {
+        "id": "ren-li",
+        "name": "任砺",
+        "role": "荒材商",
+        "attitude": "友善"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "south-yard-basic-discount",
+          "kind": "access",
+          "name": "南场基础器械九折价",
+          "effect": "以后可在折钢城南体测场按九折价格使用基础负重、冲刺和恢复器械。",
+          "scope": "仅限南场基础器械；由侯铃依据沈舟今晚留下的真实体测记录授予。",
+          "status": "active",
+          "acquiredAtTurn": 2,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "ren-li-moss-preorder-access",
+          "kind": "access",
+          "name": "任砺的硬皮苔预收位",
+          "effect": "以后可在午前通知任砺启用预收位，在天黑前交付两捆合格硬皮苔并按当日市价结算，每捆保底八枚武券。",
+          "scope": "仅限灰裂沟外圈硬皮苔；每日两捆、每捆至少三十片且根部完整、无咬痕和泥沙霉斑。暂停须在午前通知任砺。",
+          "status": "active",
+          "acquiredAtTurn": 16,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "south-yard-test",
+          "name": "南场最后一次公开体测",
+          "payoff": "取得真实榜位记录、奖金，并可能获得训练厅后续折扣",
+          "approach": "在傍晚测试结束前报名，完成实际力量、速度与耐力项目。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟完成力量、速度与耐力三项公开体测，取得南场木榜真实记录、八枚武券和南场基础器械九折价。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "gray-rift-root",
+          "name": "灰裂沟热壳根采集",
+          "payoff": "获得可自用或出售的完整热壳根",
+          "approach": "使用登记在沈舟名下的低危荒带通行票，沿标识进入外圈并在城门关闭前返程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟独自进入灰裂沟外圈暖土坡，采得两株完整热壳根并在城门关闭前安全返回。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "sang-tuo-map",
+          "name": "桑拓的旧路线图",
+          "payoff": "获得一条可供低危荒带行动参考的旧路线信息",
+          "approach": "在桑拓离城前与他谈价、交易，或提出双方认可的互惠条件。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以三枚武券购得桑拓去年走过的灰裂沟外圈旧路线图，得到可直接用于低危行动的路线、滑坡风险和折返判断信息。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "south-yard-close-combat-class",
+          "name": "南场贴身架势课",
+          "payoff": "学会在近距离移动、格挡与短推中运用稳定贯力，获得可用于低危荒带自保的正式基础招式。",
+          "approach": "明晚开课前向侯铃交六枚武券报名，连续参加三晚训练并完成课内对练。",
+          "status": "fulfilled",
+          "offeredAtTurn": 10,
+          "materialized": true,
+          "result": "沈舟交费并完成连续三晚训练与课内对练，学会贴身架势的三步进身、格开直撞和短推贯力。",
+          "settledAtTurn": 11
+        },
+        {
+          "id": "ren-li-moss-preorder",
+          "name": "任砺的硬皮苔三日预收单",
+          "payoff": "连续三天完成标准交货后，取得由任砺保留的硬皮苔小批量预收渠道；合格货每捆按当日市价结算且保底八枚武券。",
+          "approach": "决定接单后，在三日内每日天黑前带回两捆各不少于三十片、根部完整且无咬痕、泥沙霉斑的硬皮苔，交任砺当面验货。",
+          "status": "fulfilled",
+          "offeredAtTurn": 13,
+          "materialized": true,
+          "result": "沈舟连续三天按标准交付两捆合格硬皮苔；任砺兑现约定，为他保留可自主启用或暂停的小批量预收位。",
+          "settledAtTurn": 16
+        },
+        {
+          "id": "ren-li-rift-vine",
+          "name": "裂石藤采集与处理",
+          "payoff": "获得可出售的高价裂石藤，或保留一段作为恢复膏底料。",
+          "approach": "沿旧路线至裂黑石北侧，找到白纹岩西八码的碎壁；辨认藤皮石纹与黄汁，完整剥取三尺以上藤段并用湿布包回城验货。",
+          "status": "fulfilled",
+          "offeredAtTurn": 17,
+          "materialized": true,
+          "result": "沈舟在白纹岩西侧碎壁完整采得约四尺裂石藤并安全带回；任砺验货报价十六枚武券，沈舟保留藤段并配成一罐可用于训练恢复的膏底料。",
+          "settledAtTurn": 18
+        }
+      ]
+    },
+    "changes": [
+      "武券-12",
+      "裂石藤恢复膏底料: 由裂石藤与任砺按一比一配成的恢复膏底料，现余约三成；可在高强度训练后的恢复阶段配合净炉身缓解肌肉酸痛并补回部分消耗，不能替代睡眠、进食或修复骨伤。",
+      "能力提升: 标准锻身操",
+      "修行进度 +12",
+      "沈舟在南场完成两日连续抗击、短冲与控息恢复训练，并按时进食睡眠；他已能在连续六次中等强度受击后维持架势、完成两趟短冲折返并收稳呼吸。"
+    ]
+  }
+]

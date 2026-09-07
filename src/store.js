@@ -329,16 +329,24 @@ export class GameStore {
     if (!this.getGameRow(gameId)) return null;
     const rows = this.db.prepare("SELECT trace_json FROM traces WHERE game_id = ? ORDER BY created_at").all(gameId);
     const turns = rows.map((row) => parseJson(row.trace_json, {}));
-    const completed = turns.filter((trace) => trace.status === "complete");
+    const foreground = turns.filter((trace) => trace.kind !== 'planner-prefetch');
+    const background = turns.filter((trace) => trace.kind === 'planner-prefetch');
+    const completed = foreground.filter((trace) => trace.status === "complete");
     const totals = completed.map((trace) => trace.totalElapsedMs).filter(Number.isFinite);
     const firstVisible = completed.map((trace) => trace.firstReaderVisibleMs).filter(Number.isFinite);
     return {
       turns,
       summary: {
-        requests: turns.length,
+        requests: foreground.length,
         completed: completed.length,
-        failed: turns.filter((trace) => trace.status === "failed").length,
-        cancelled: turns.filter((trace) => trace.status === "cancelled").length,
+        failed: foreground.filter((trace) => trace.status === "failed").length,
+        cancelled: foreground.filter((trace) => trace.status === "cancelled").length,
+        backgroundPlanning: {
+          requests: background.length,
+          completed: background.filter(trace => trace.status === 'complete').length,
+          failed: background.filter(trace => trace.status === 'failed').length,
+          cancelled: background.filter(trace => trace.status === 'cancelled').length,
+        },
         averageTotalMs: average(totals),
         averageFirstVisibleMs: average(firstVisible),
         usageTokens: null,
