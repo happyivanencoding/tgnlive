@@ -267,15 +267,18 @@ try {
   if (!existsSync(path.join(ROOT, 'artifacts', 'bootstrap', 'BASELINE_READY.json')) && !cli['allow-unfrozen']) throw new Error('Missing BASELINE_READY.json: controller must freeze and verify app before live evaluation');
   const health = await jsonRequest('/api/health');
   const { worlds } = await jsonRequest('/api/worlds');
-  const world = worlds.find(x => x.id === cli.world) || worlds[0];
+  const world = cli.world ? worlds.find(x => x.id === cli.world) : worlds[0];
+  if (cli.world && !world) throw new Error(`Requested world not found: ${cli.world}; refusing a silent fallback to another world`);
   if (!world?.powers?.length) throw new Error('No playable world/powers returned');
-  const power = world.powers.find(x => x.id === cli.power) || world.powers[0];
+  const power = cli.power ? world.powers.find(x => x.id === cli.power) : world.powers[0];
+  if (cli.power && !power) throw new Error(`Requested power not found in selected world: ${cli.power}`);
   const created = await jsonRequest('/api/games', { method: 'POST', body: JSON.stringify({ name: String(cli.name || '沈舟'), worldId: world.id, powerId: power.id }) });
   game = created.game;
   if (!game?.id) throw new Error('No game returned by create');
   const replay = cli.replay ? JSON.parse(await readFile(path.resolve(ROOT, String(cli.replay)), 'utf8')) : null;
   const revision = await execFileAsync('git', ['rev-parse', 'HEAD'], { cwd: ROOT, windowsHide: true, encoding: 'utf8' }).then(r => r.stdout.trim()).catch(() => null);
-  manifest = { codeRevision: revision, startedAt, label, taskId: 'tsk_9a52649bc5df2fe4', app: health, node: process.version, mode: replay ? 'fixed-action-replay' : 'adaptive-acp-player', playerModel: replay ? null : playerModel, playerReasoning: replay ? null : 'low', persona, selectedWorld: world.id, selectedPower: power.id, gameId: game.id, initialGame: game, requestedTurns: budgetTurns, replaySource: cli.replay || null, timingCaveat: 'Client API timings measure actual SSE receipt, not browser DOM paint. Player deliberation is separate. Provider-internal compute/queue and billable costs are not inferred.' };
+  const workingTreeChanges = await execFileAsync('git', ['status', '--porcelain', '--', 'src', 'public', 'package.json', 'eval/play.mjs'], { cwd: ROOT, windowsHide: true, encoding: 'utf8' }).then(r => r.stdout.trim().split('\n').filter(Boolean)).catch(() => null);
+  manifest = { codeRevision: revision, sourceRevisionScope: 'Workspace HEAD at evaluation time; app.version identifies the running server, which can predate uncommitted source edits', workingTreeChanges, startedAt, label, taskId: String(cli['task-id'] || process.env.AGENTDOCK_TASK_ID || '' ) || null, app: health, node: process.version, mode: replay ? 'fixed-action-replay' : 'adaptive-acp-player', playerModel: replay ? null : playerModel, playerReasoning: replay ? null : 'low', persona, selectedWorld: world.id, selectedPower: power.id, gameId: game.id, initialGame: game, requestedTurns: budgetTurns, replaySource: cli.replay || null, timingCaveat: 'Client API timings measure actual SSE receipt, not browser DOM paint. Player deliberation is separate. Provider-internal compute/queue and billable costs are not inferred.' };
   await save('manifest.json', manifest);
   await checkpoint('running');
   for (let i = 1; i <= budgetTurns && (!replay || i <= replay.length); i++) {

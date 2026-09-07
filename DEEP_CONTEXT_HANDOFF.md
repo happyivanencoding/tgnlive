@@ -2,6 +2,8 @@
 
 Task `tsk_6614789049f9adb3`: user authorized repository `happyivanencoding/tgnlive`, automatic commit/push for each accepted code/version update, mobile-first redesign, preset and prompt-created worlds, source-informed progression improvements and real ACP timing. Read `docs/SYSTEM.md` and `docs/LIVE_V060_CONTRACT.md`. The verified running release remains v0.5.0 until integration; new functionality is not yet declared delivered. Current clean baseline `059386f`, five-turn real ACP evidence `artifacts/eval/baseline-mobile-worlds-v050/`. Development sessions `acps_85999b1415dfdbb4a1819369` (mobile), see `artifacts/bootstrap/worlds_run.json` (backend); do not leave these running after delivery.
 
+Evaluator update: explicit unknown world/power selections now fail before creating a game instead of silently falling back; actual negative check `invalid-world-selection-v060` made zero turns/model calls. Manifests record task ID and working-tree changes; HEAD is explicitly not proof of running-server code. `eval/compare-growth.mjs` is a single evidence-based blind comparison helper, not a scoring gate; real comparison still pending. Source receipt and baseline report: `docs/V060_RESEARCH_AND_EXPERIMENTS.md`.
+
 Older no-push wording below is historical and overridden. Raw libraries, downloaded prompts, telemetry, databases and secrets stay outside Git. Original TGN files are read-only.
 
 ---
