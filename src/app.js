@@ -176,6 +176,7 @@ export function createApp({ config, store, generationService, worldForge }) {
         trace,
         onStage: (stageInfo) => writeSse(response, "stage", stageInfo),
         onText: (delta) => writeSse(response, "text", { delta }),
+        onNarrativeComplete: (boundary) => writeSse(response, "narrative_end", boundary),
       });
 
       controller.signal.throwIfAborted();
@@ -366,6 +367,7 @@ function publicMetrics(trace) {
     firstReaderVisibleMs: trace.firstReaderVisibleMs,
     firstNarrativeSseMs: trace.firstNarrativeSseMs ?? trace.firstReaderVisibleMs,
     apiCompleteMs: trace.apiCompleteMs,
+    narrativeCompleteMs: trace.narrativeCompleteMs ?? null,
     browserFirstNarrativePaintMs: null,
     browserChoicesVisibleMs: null,
     stages: trace.stages,

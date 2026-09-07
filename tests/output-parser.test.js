@@ -19,3 +19,29 @@ test("stream parser rejects output without delimiter", () => {
   parser.push("只有正文");
   assert.throws(() => parser.finish(), { code: "INVALID_OUTPUT" });
 });
+
+
+test("narrative-end fires once after the last visible character, before metadata is complete", () => {
+  const events=[];
+  const parser=new StreamingNarratorParser(text=>events.push({type:"text",text}),info=>events.push({type:"end",...info}));
+  const divider="\n<TGN_DELTA_JSON>\n";
+  const body="世界正在改变。\n你决定向前。";
+  for(const character of body+divider) parser.push(character);
+  assert.equal(events.filter(e=>e.type==="end").length,1);
+  assert.equal(events.at(-1).type,"end");
+  assert.equal(events.at(-1).characters,body.length);
+  assert.equal(events.filter(e=>e.type==="text").map(e=>e.text).join(""),body);
+  assert.throws(()=>parser.finish(),{code:"INVALID_OUTPUT"});
+  parser.push('{"choices":[],"delta":{}}');
+  assert.equal(parser.finish().narrative,body);
+  assert.equal(events.filter(e=>e.type==="end").length,1);
+});
+
+test("a chunk pause or missing delimiter never invents narrative completion", () => {
+  let ended=false;
+  const parser=new StreamingNarratorParser(()=>{},()=>{ended=true});
+  parser.push("这只是暂时停顿的正文。");parser.push("");
+  assert.equal(ended,false);
+  assert.throws(()=>parser.finish(),{code:"INVALID_OUTPUT"});
+  assert.equal(ended,false);
+});

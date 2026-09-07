@@ -134,3 +134,30 @@ test("cancellation leaves game state untouched and records cancellation", async 
     await stopRuntime(runtime);
   }
 });
+
+
+test("narrative_end is provisional and cannot authorize the next turn before commit", async () => {
+  let release;
+  const held=new Promise(resolve=>{release=resolve});
+  const narrator=fakeAdapter("narrator",VALID_NARRATOR_OUTPUT,"low");
+  const run=narrator.run.bind(narrator);
+  narrator.run=async(...args)=>{const result=await run(...args);await held;return result;};
+  const runtime=createTgnLive({configOverrides:{databasePath:":memory:",port:0},narrator,planner:fakeAdapter("planner",JSON.stringify({pressure:"test",npcMoves:[],openings:[],continuity:[],milestone:""}),"medium")});
+  await new Promise(resolve=>runtime.server.listen(0,"127.0.0.1",resolve));
+  const base=`http://127.0.0.1:${runtime.server.address().port}`;
+  try {
+    const game=await createGame(base);
+    const response=await fetch(`${base}/api/games/${game.id}/turns`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"开始我的故事",expectedVersion:0,requestId:"native-boundary-test"}),signal:AbortSignal.timeout(8000)});
+    const reader=response.body.getReader();const decoder=new TextDecoder();let stream="";
+    while(!stream.includes("event: narrative_end")){const chunk=await reader.read();assert.equal(chunk.done,false);stream+=decoder.decode(chunk.value,{stream:true});}
+    assert.match(stream,/"provisional":true/);
+    assert.doesNotMatch(stream,/event: complete/);
+    assert.equal((await (await fetch(`${base}/api/games/${game.id}`)).json()).game.version,0);
+    release();
+    while(true){const chunk=await reader.read();if(chunk.done)break;stream+=decoder.decode(chunk.value,{stream:true});}
+    assert.equal((stream.match(/event: narrative_end/g)||[]).length,1);
+    assert.match(stream,/event: complete/);
+    const saved=(await (await fetch(`${base}/api/games/${game.id}`)).json()).game;
+    assert.equal(saved.version,1);assert.equal(saved.turns.length,1);
+  } finally {release();await stopRuntime(runtime);}
+});

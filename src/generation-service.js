@@ -100,7 +100,7 @@ export class GenerationService {
       || (game.state.realm.progress >= 90 && (!existingPlan?.basisNearBreakthrough || existingPlan.basisRealmRank !== game.state.realm.rank));
   }
 
-  async execute({ game, world, action, language = game.language || "zh", existingPlan, signal, trace, onStage, onText }) {
+  async execute({ game, world, action, language = game.language || "zh", existingPlan, signal, trace, onStage, onText, onNarrativeComplete }) {
     let plan = existingPlan;
     let freshPlan = null;
     trace.value.openingPlanStrategy = this.openingPlanStrategy;
@@ -164,6 +164,10 @@ export class GenerationService {
       parser = new StreamingNarratorParser((delta) => {
         trace.firstVisible();
         onText?.(delta);
+      }, ({ characters }) => {
+        trace.value.narrativeCompleteMs = trace.elapsed();
+        trace.point("narrative_complete", { characters });
+        onNarrativeComplete?.({ elapsedMs: trace.value.narrativeCompleteMs, characters, provisional: true });
       });
       const result = await this.narrator.run(narratorPrompt, {
         signal,

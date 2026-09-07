@@ -3,8 +3,9 @@ import { AppError } from "./errors.js";
 export const DELIMITER = "\n<TGN_DELTA_JSON>\n";
 
 export class StreamingNarratorParser {
-  constructor(onNarrative) {
+  constructor(onNarrative, onNarrativeComplete) {
     this.onNarrative = onNarrative;
+    this.onNarrativeComplete = onNarrativeComplete;
     this.mode = "narrative";
     this.buffer = "";
     this.narrative = "";
@@ -24,6 +25,8 @@ export class StreamingNarratorParser {
       this.structured += this.buffer.slice(delimiterIndex + DELIMITER.length);
       this.buffer = "";
       this.mode = "structured";
+      // Visible prose is finished; metadata is still unvalidated and is NOT Canon.
+      this.onNarrativeComplete?.({ characters: this.narrative.length });
       return;
     }
     const safeLength = Math.max(0, this.buffer.length - DELIMITER.length + 1);

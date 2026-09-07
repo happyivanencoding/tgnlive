@@ -99,3 +99,10 @@ API server firstNarrativeSseMs与浏览器可见帧严格区分；ACP五个准�
 当前Node测试45/45。已有NPC可只给id更新态度，名称读Canon，不调用模型补一个已知值；未知NPC仍必须命名。原始两个真实无姓名提案已离线重放通过。作者职责与采纳边界见研究报告最终节：v0.6.2重复奖励约束被否决，v0.6.3职责调整有两个真实样本与独立盲读的有限正向证据，不能声称所有题材/长篇成熟。
 
 最终远程边界证据位于 `artifacts/remote-v064/boundary.json`。此前remote-v061路径属于中间开发文档，当前以本段为准。手机8项真实功能检查通过但有1个Chrome网络收尾警告，仍标issues_found；没有把生成和保存完成伪装成浏览器全绿。
+
+
+## Native 回合交接协议（v0.9 原生迭代）
+
+新增只读SSE边界 `narrative_end`：发生于正文分隔符已确认、最后一段text发出后；内容只有characters/elapsedMs/provisional:true。**这不是commit，不授权下一次行动**。结构化JSON、校验、可能的repair和存档仍由既有生成链完成，只有原`complete`返回正式game。Web可忽略新增事件；Native据此收起旧操作、展示确认阶段并允许仅编辑下一步草稿，不自动发送。
+
+共享补丁仅output-parser/generation-service/app各少量行，不改prompt/reducer/progression/auth/store。`publicMetrics.narrativeCompleteMs`区分正文边界和API完成；29项旧Native确定性测试不替代真机新测试。本轮新增13项相关Node测试通过（包括边界在commit之前、不得将未校验状态当Canon）。实现理由与后续真机耗时见 `docs/NATIVE_TURN_HANDOFF.md`。

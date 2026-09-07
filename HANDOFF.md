@@ -46,3 +46,9 @@ D隐潮第一式更早可得，但后二式准备仍服务化，否决为完整�
 `node --test`；`powershell -File scripts/start-local.ps1` / `stop-local.ps1` 仅管理本项目Web计划任务，静态资源每次按版本冻结。部署前用 `python scripts/sqlite-release-snapshot.py capture .runtime/<new-private-directory>` 通过SQLite backup API备份；停止旧服务后、启动后分别verify对应snapshot.json，比较所有旧表内容hash/行数，发现变化先检查不要覆盖。恢复可用已冻结源和私有备份；勿用实验库覆盖生产库。
 
 原始数据库、corpus、原著全文、token/账号/隐藏推理不提交。只读学习 `C:\GoogleDrive\笔记\50_Corpora\TGN` 和旧TGN，不能照搬旧生产pipeline。主要研究失败必须有因果价值，不为凑PASS改Player路线或judge。完成修改同步docs/handoff并commit/push origin/main。
+
+## Native 回合交接协议（v0.9 原生迭代）
+
+新增只读SSE边界 `narrative_end`：发生于正文分隔符已确认、最后一段text发出后；内容只有characters/elapsedMs/provisional:true。**这不是commit，不授权下一次行动**。结构化JSON、校验、可能的repair和存档仍由既有生成链完成，只有原`complete`返回正式game。Web可忽略新增事件；Native据此收起旧操作、展示确认阶段并允许仅编辑下一步草稿，不自动发送。
+
+共享补丁仅output-parser/generation-service/app各少量行，不改prompt/reducer/progression/auth/store。`publicMetrics.narrativeCompleteMs`区分正文边界和API完成；29项旧Native确定性测试不替代真机新测试。本轮新增13项相关Node测试通过（包括边界在commit之前、不得将未校验状态当Canon）。实现理由与后续真机耗时见 `docs/NATIVE_TURN_HANDOFF.md`。

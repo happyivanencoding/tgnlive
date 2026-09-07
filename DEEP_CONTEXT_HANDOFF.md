@@ -186,3 +186,9 @@ v0.6.4修复其中两次无谓NPC姓名修复：两份未经改写的真实原�
 仍为私有MVP，没有公共注册/多用户隔离、付费、图片、语音、视频、社区或运行时全库检索。世界通常先定义5阶，事实/技能/NPC有MVP容量；没有数百回合自动长期记忆/力量扩展证明。读者模型不是留存或真人质量保证。本轮结束后只保留Web服务，未承诺无限后台自动开发。
 
 发布完整性：package.json、src/config.js与运行health版本均为0.6.4；最终交付须同时确认工作区干净及origin/main与HEAD一致。
+
+## Native 回合交接协议（v0.9 原生迭代）
+
+新增只读SSE边界 `narrative_end`：发生于正文分隔符已确认、最后一段text发出后；内容只有characters/elapsedMs/provisional:true。**这不是commit，不授权下一次行动**。结构化JSON、校验、可能的repair和存档仍由既有生成链完成，只有原`complete`返回正式game。Web可忽略新增事件；Native据此收起旧操作、展示确认阶段并允许仅编辑下一步草稿，不自动发送。
+
+共享补丁仅output-parser/generation-service/app各少量行，不改prompt/reducer/progression/auth/store。`publicMetrics.narrativeCompleteMs`区分正文边界和API完成；29项旧Native确定性测试不替代真机新测试。本轮新增13项相关Node测试通过（包括边界在commit之前、不得将未校验状态当Canon）。实现理由与后续真机耗时见 `docs/NATIVE_TURN_HANDOFF.md`。
