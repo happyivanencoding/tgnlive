@@ -4,13 +4,14 @@ import { createServer } from "node:http";
 import { AppError, publicError } from "./errors.js";
 import { createId } from "./ids.js";
 import { TurnTrace } from "./telemetry.js";
-import { createSeedState, getPower, getWorld, publicWorlds } from "./worlds.js";
+import { createSeedState, getPower, publicWorld, publicWorlds } from "./worlds.js";
 import { createRequestGuard } from './access.js';
 
 const JSON_HEADERS = { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" };
 
-export function createApp({ config, store, generationService }) {
+export function createApp({ config, store, generationService, worldForge }) {
   const inFlight = new Map();
+  const worldInFlight = new Map();
   const guard = createRequestGuard(config.remote);
 
   const server = createServer(async (request, response) => {
@@ -35,6 +36,7 @@ export function createApp({ config, store, generationService }) {
               planner: { model: config.plannerModel, reasoningEffort: config.plannerReasoning },
               player: { model: config.playerModel, reasoningEffort: config.playerReasoning },
               judge: { model: config.judgeModel, reasoningEffort: config.judgeReasoning },
+              world: { model: config.worldModel, reasoningEffort: config.worldReasoning },
               mode: "read-only",
               acpPromptConcurrencyLimit: 2,
             },
@@ -44,7 +46,10 @@ export function createApp({ config, store, generationService }) {
         });
       }
       if (request.method === "GET" && url.pathname === "/api/worlds") {
-        return sendJson(response, 200, { worlds: publicWorlds() });
+        return sendJson(response, 200, { worlds: publicWorlds(store.listWorlds()) });
+      }
+      if (request.method === "POST" && url.pathname === "/api/worlds/custom") {
+        return await handleWorld({ request, response });
       }
       if (request.method === "GET" && url.pathname === "/api/games") {
         return sendJson(response, 200, { games: store.listGames() });
@@ -52,7 +57,7 @@ export function createApp({ config, store, generationService }) {
       if (request.method === "POST" && url.pathname === "/api/games") {
         const body = await readJson(request);
         const name = validateName(body.name);
-        const world = getWorld(body.worldId);
+        const world = store.getWorld(body.worldId);
         const power = getPower(world, body.powerId);
         if (!world || !power) throw new AppError("世界或异能不存在", { code: "INVALID_GAME_SELECTION", status: 400 });
         const game = store.createGame({
@@ -60,6 +65,7 @@ export function createApp({ config, store, generationService }) {
           title: `${name}的《${world.title}》`,
           worldId: world.id,
           powerId: power.id,
+          world,
           state: createSeedState(world, power),
         });
         return sendJson(response, 201, { game });
@@ -193,14 +199,60 @@ export function createApp({ config, store, generationService }) {
     }
   }
 
-  return { server, inFlight };
+  async function handleWorld({ request, response }) {
+    const body = await readJson(request);
+    const requestId = validateRequestId(body.requestId);
+    const prompt = typeof body.prompt === 'string' ? body.prompt.trim() : '';
+    if (!prompt || prompt.length > 2000) throw new AppError('世界描述需为1—2000个字符', { code: 'INVALID_WORLD_PROMPT', status: 400 });
+    const previous = store.getWorldRequest(requestId);
+    if (previous) {
+      if (previous.prompt !== prompt) throw new AppError('这个requestId已经用于另一份世界描述', { code: 'IDEMPOTENCY_CONFLICT', status: 409 });
+      startSse(response);
+      writeSse(response, 'complete', { world: publicWorld(previous.world), metrics: previous.metrics, idempotentReplay: true });
+      return response.end();
+    }
+    if (worldInFlight.has(requestId)) throw new AppError('这个世界仍在生成', { code: 'REQUEST_IN_PROGRESS', status: 409, retryable: true });
+    if (!worldForge) throw new AppError('世界生成服务未配置', { code: 'WORLD_FORGE_UNAVAILABLE', status: 503 });
+    const controller = new AbortController();
+    const trace = new TurnTrace({ gameId: null, requestId });
+    trace.value.kind = 'world-creation';
+    worldInFlight.set(requestId, controller);
+    startSse(response);
+    const heartbeat = setInterval(() => { if (!response.destroyed) response.write(': keepalive\n\n'); }, 15000);
+    response.on('close', () => { if (!response.writableEnded) controller.abort(new Error('client disconnected')); });
+    try {
+      const world = await worldForge.generate({ prompt, signal: controller.signal, trace, onStage: info => writeSse(response, 'stage', info) });
+      controller.signal.throwIfAborted();
+      trace.startStage('world_persistence');
+      writeSse(response, 'stage', { name: 'world_persistence', status: 'running', elapsedMs: trace.elapsed() });
+      store.saveWorld({ world, prompt, requestId });
+      trace.endStage('world_persistence', 'complete');
+      const finished = trace.finish('complete');
+      store.insertTrace(finished, 'complete');
+      const metrics = publicMetrics(finished);
+      store.saveWorldMetrics(world.id, metrics);
+      writeSse(response, 'complete', { world: publicWorld(world), metrics });
+      response.end();
+    } catch (error) {
+      const cancelled = controller.signal.aborted || error.code === 'CANCELLED';
+      const safe = cancelled ? { message: '世界生成已停止，未完成世界没有保存', code: 'CANCELLED', retryable: true } : publicError(error);
+      trace.value.errors.push({ phase: 'world', code: safe.code, message: safe.message });
+      store.insertTrace(trace.finish(cancelled ? 'cancelled' : 'failed'));
+      writeSse(response, 'error', { ...safe, traceId: trace.id });
+      response.end();
+    } finally {
+      clearInterval(heartbeat);
+      worldInFlight.delete(requestId);
+    }
+  }
+
+  return { server, inFlight, worldInFlight };
 
 
 }
 
 function getWorldByGame(store, gameId) {
-  const row = store.getGameRow(gameId);
-  return row ? getWorld(row.world_id) : null;
+  return store.getGameWorld(gameId);
 }
 
 function validateName(value) {

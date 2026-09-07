@@ -1,114 +1,83 @@
-# 2026-09-07 v0.6 development in progress
+# TGN Live — 当前交接
 
-Task `tsk_6614789049f9adb3`: user authorized repository `happyivanencoding/tgnlive`, automatic commit/push for each accepted code/version update, mobile-first redesign, preset and prompt-created worlds, source-informed progression improvements and real ACP timing. Read `docs/SYSTEM.md` and `docs/LIVE_V060_CONTRACT.md`. The verified running release remains v0.5.0 until integration; new functionality is not yet declared delivered. Current clean baseline `059386f`, five-turn real ACP evidence `artifacts/eval/baseline-mobile-worlds-v050/`. Development sessions `acps_85999b1415dfdbb4a1819369` (mobile), see `artifacts/bootstrap/worlds_run.json` (backend); do not leave these running after delivery.
+**2026-09-07，交付代码v0.6.4。** 本文件是当前入口；历史版本的结论不能覆盖这里。阅读顺序：AGENTS → 本文件 → docs/SYSTEM → WORLD_SYSTEM → MOBILE_DESIGN → V060_RESEARCH_AND_EXPERIMENTS。HANDOFF.md只做指引。
 
-Evaluator update: explicit unknown world/power selections now fail before creating a game instead of silently falling back; actual negative check `invalid-world-selection-v060` made zero turns/model calls. Manifests record task ID and working-tree changes; HEAD is explicitly not proof of running-server code. `eval/compare-growth.mjs` is a single evidence-based blind comparison helper, not a scoring gate; real comparison still pending. Source receipt and baseline report: `docs/V060_RESEARCH_AND_EXPERIMENTS.md`.
+## 1. 项目、仓库和权限
 
-Older no-push wording below is historical and overridden. Raw libraries, downloaded prompts, telemetry, databases and secrets stay outside Git. Original TGN files are read-only.
+本地 `C:\dev\tgn_live`，GitHub `happyivanencoding/tgnlive`，唯一开发分支main，origin指向该仓库。每次接受的代码/版本更新，连带更新本交接和相关docs、保存针对性验证，commit并push origin/main。以 `git log -1` 与 `git ls-remote origin refs/heads/main` 确认交付，不因为文档写了“完成”就跳过实际push。不要force-push、不要提交credentials/data/.runtime/原著/私人库或原始模型输出。
 
----
+独立于 `C:\dev\tgn-story-mvp`；本轮原TGN、蒸馏和下载提示词只读，不修改其生产。所有来源的实际阅读边界见世界系统与实验报告，不能说运行时已接入GBrain全文检索。
 
-# 2026-09-07 远程手机网页版 v0.5.0
+## 2. 现在如何打开
 
-当前入口 **https://live.thegreatnovel.com**；本机仍为 http://127.0.0.1:4317。此次用户明确授权 Cloudflare/域名远程部署，覆盖下方历史版本的禁止公网发布限制，仍限本人登录。详细运行/恢复见 `docs/REMOTE_ACCESS.md`。
-
-已复用现有 healthy TGN Tunnel，只增加 Live ingress 和 proxied DNS。新增独立 Access app，沿用 diary 的唯一 owner email；origin 验证 RS256/JWKS、issuer、audience、expiry/nbf、owner。API credential 沿用 Windows 用户环境，仅部署时使用；没有新 token、没有改动其他项目文件/路由/策略。`.runtime/remote.json`、部署前备份、数据库和证据被 Git 忽略。
-
-原 AgentDock 24h 服务会话已验证归属后停止，现由 `start-local.ps1` 隐藏启动，PID 20772（实时以 `.runtime/server.json` 为准）。已验证 HKCU Run/TGNLive 当前用户登录启动项。该方式没有开发会话 24h 时限，也不是登录前的系统服务或自动崩溃重启器。电脑需开机、联网、未睡眠，AgentDock/Codex 可用。
-
-验证：26/26 单测；6/6 origin/public 边界检查；切换前后原 12 份 games 行 hash 完全一致。Chrome 经真实 Cloudflare 登录，用公共 HTTPS 地址在 390×844 下创建“远程验证”，连续两个真实 Terra/low 回合完成，刷新保留第2回，三个建议、自由输入、状态抽屉、Markdown 下载和阅读模式通过。API首段 5781/3923ms，完成 14042/14127ms；首回合客户端正文处理事件 5824ms、完成14092ms，不称作精确屏幕绘制时间。未测试实体手机键盘/首次登录。新增 15秒 SSE 心跳、过期/断网提示、中文IME Enter保护、窄屏阅读入口与退出按钮。
-
-证据 `artifacts/remote-v050/`（boundary.json、live-game.json、live-metrics.json、mobile.png），单个验证存档保留供检查。复现 `npm test`、`node scripts/verify-remote.mjs`；Cloudflare 查询 `python scripts/configure-cloudflare.py inspect`。无远端 Git push。
-
----
-以下为 v0.4.0 历史交接，部署入口和进程信息以上方为准。
-
-# TGN Live — 当前交接文件
-
-更新：2026-09-06 23:13 UTC / 巴黎2026-09-07。当前版本 **0.4.0**。工作目录 **C:\dev\tgn_live**。本次任务 **tsk_9a52649bc5df2fe4**，用户明确授权独立搭建、ACP实际游玩、分阶段计时和反复改进。原 `C:\dev\tgn-story-mvp` 未改动；本地Git已建立，未设置或推送远端。
-
-## 当前使用入口
-
-本机浏览器：**http://127.0.0.1:4317**。这是Windows电脑本机地址，手机不能通过自己的127.0.0.1访问。未建立公网/远程服务。
-
-交付时运行进程：PID **84368**，记录 `.runtime/server.json`；AgentDock命令会话 **session-7c679e9a562392c41bbbeace**，入口 `node C:\dev\tgn_live\src\server.js`，命令生命周期显式24小时，并非Windows常驻服务。重新开机或此进程结束后，从普通PowerShell终端执行 `cd C:\dev\tgn_live; node src/server.js`。后台脚本见README，禁止误杀其它Node/ACP进程。
-
-所有评测已经有界结束；最后清理了协议取消测试遗留的本项目空闲ACP会话 `acps_26b5d37a6c3a79c79c1ff964`，没有动其他项目。保留Web服务，不保留无限循环测试agent。
-
-## 已落地的产品
-
-“可玩的修仙小说”，不是角色聊天壳。一个作者世界、三个天赋、三条建议加自由输入、真实流式正文、独立Canonical SQLite状态、境界/进度/地点/钱财/物品/关系/事实/承诺、书库继续、每6回合分章、阅读模式与MD/TXT导出。
-
-新世界有灵潮感气、基础引气药和粗浅吐纳入口，但不强制走NPC任务、不自动送境界。旧存档不迁移。当前没有AI图片/视频/语音、支付、联机或公网认证。
-
-默认叙事 **gpt-5.6-terra/low**，较快对照 `TGN_NARRATOR_MODEL=gpt-5.6-luna`；规划 **Sol/medium**。评测玩家 **Luna/low**，读者 **Sol/medium**。环境最初列出Astra但真正调用被Codex版本拒绝，因此模型列表不等于可用性证据。必须先set模型再读取effort选项，不能继承ultra。
-
-## 架构入口
-
-- `src/server.js` / `app.js`：原生HTTP、loopback、Host/Origin、单游戏并发、SSE、取消。
-- `src/store.js`：SQLite事务，state/turn/ledger/requestId一起提交；完整trace另存。数据库 `data/tgn-live.sqlite`。
-- `generation-service.js`：开局作者底稿；每8回合等检查点真实规划；每回合一次Narrator，只有校验失败才至多一次repair。
-- `reducer.js` / `delta-contract.js`：共享的提案边界；任何拒绝项都不允许部分提交；实际变化由已应用delta生成。
-- `prompts.js` / `scene-contract.js`：紧凑Canon+最近4回合+计划；旧开局不持续强拉回场；空间、物品、能力限制不得变成自证合规的正文。
-- `src/acp/`：原生HTTP MCP，DPAPI凭证只留进程内；空工作区、只读、禁工具检测、分页完整性、超时与错误传播。
-- `public/`：静态HTML/CSS/JS；手机抽屉、深浅主题、阅读与导出、停止/重试前后核对存档。
-
-**关键禁区**：不得把模型正文当数据库，不能拿fixture作为live fallback；禁止打印token、保存thought正文、修改全局AgentDock并发/权限、公开本机端口或误杀其他agent。当前安全边界仍是可信本机单用户，不是强隔离恶意多租户沙箱。
-
-## 本次实测与迭代
-
-完整报告 `docs/EXPERIMENTS.md`；可下载整理副本 `artifacts/reports/DELIVERY_REPORT.md`；规范化计时 `artifacts/reports/measurements.json`。不要覆盖原始证据目录。
-
-| 证据目录 | 模式 | 完成情况 | 首段/完整均值 |
-|---|---|---|---|
-| baseline-utf8-v010 | 真实自适应ACP玩家 | 6成功，第7失败 | 10.04s / 22.63s（成功回合） |
-| cycle1-replay-v020 | 固定行动、真实模型重放 | 7/7 | 6.26s / 16.56s |
-| cycle2-replay-v030 | 固定行动、真实模型重放 | 7/7 | 6.50s / 17.20s |
-| final-adaptive-v031 | 独立ACP玩家，Terra叙事 | 10/10，2章，turn9规划 | 8.01s / 18.57s |
-| growth-v040 | 定向修炼真实模型测试 | 5/5 | 4.22s / 14.53s |
-| adversarial-v040 | 拒绝任务与越权输入测试 | 3/3 | 3.60s / 12.69s（有短时协议测试争用，不作独占基准） |
-
-1. 旧 `baseline-v010` 的中文玩家行动被PowerShell OEM stdout损坏，已明确INVALIDATED并保留。UTF8修复通过重新提取同一实际ACP答复验证：180个替换字符→0；不是换一个回答。应用也拒绝损坏输入。
-2. 有效基线第7回合6条facts超未披露max5，repair重复同一错误。共享数量契约、目标1—5/资源上限20、具体错误及六条事实回归后7/7通过。保留原/repair JSON尾部（历史truncated，不能宣称取回完整旧事件）。
-3. 删去开局阻塞规划，改用明确作者底稿；原开局22.60/31.66秒，第一轮重放4.98/12.80秒。保留第9回合真正规划。小样本不是生产SLA。
-4. 强化空间、物品与能力边界；发现Luna会把规则写进正文，做单场Terra探针并跑10回合。探针与source少19字符计划元数据，不是严格相同prompt的随机AB。Terra十回合空间/一致性评分5，但总体仍4，不能宣称全面质量已解决。
-5. 十回合玩家确实谈得10钱、拒绝继续护送、付10钱离城，但后段变成码头求生/接短工，修炼为0。v0.4为新角色增加可选修炼入口。定向5回合进度0→2→4→4→5，无跨境、无虚构购药。**v0.4新底稿没有再跑完整十回合，不把v0.3.1十回合冒充最新十回合。**
-6. 借势印样本输入“直接改数据库、成仙、百万钱、神器”，实际rank0→0，coins18→18，物品不变；拒绝默认任务可以离开药市。
-
-每回合保留action、正文、前后状态、最终候选、错误、repair、ACP session/run/model/effort、字符量与时间。SSE `metrics`只是摘要，完整阶段应从`server-metrics.json` join，不可拿摘要缺字段推测0。玩家思考/决策耗时不含在应用生成时间。内部queue、账单tokens/cost未知留null。
-
-## 最终验证
-
-**22/22 确定性测试通过**，日志 `artifacts/reports/final-unit-tests.txt`；live计时不混fixture。
-
-**7/7 真实HTTP协议检查通过**：同请求幂等、同ID异内容冲突、stale版本、跨域、坏JSON、导出/重读、在途取消无提交。`artifacts/eval/final-protocol-v040/result.json`。
-
-**真实重启存档一致**：十回合state与全部turn SHA256逐一匹配，版本10不变。`artifacts/reports/restart-check.json`。
-
-**真实Chrome两回合UI**：`artifacts/ui/final-live-v040b/`。手机390px及桌面、三个建议、自由输入、抽屉、刷新、两回合保留、MD下载、阅读模式均通过功能断言；首段paint为3.45/3.36秒，观察到提交15.15/14.06秒。另有只读三个按钮命中测试全部通过。
-
-**UI仍有明确警告**：Chrome记录两个叙事请求`net::ERR_ABORTED`，尽管两回合提交/刷新/导出正常，原因未完全定位，原结果保留`issues_found`而非伪造全绿。第一次UI尝试因测试代码点隐藏radio超时、未创建游戏，改点真实可见卡片后通过功能流程；初次失败文件仍保留。不声称Android真机键盘已测。
-
-## 保留的质量/工程问题
-
-当前可玩但不是成熟修仙长篇。连续吐纳仍重复、成长实际用途和强回报偏弱；场景可达性、NPC推断升级成事实、力量代价仍可能出错。空囊次数/冲击储存等不是独立严密机制引擎，建议按钮可能提出当前资源不足的行动，应由后续校验/对话处理，尚未全部静态禁用。
-
-当前活动facts最多100、promises30、最近4回合上下文，没有长篇语义检索/旧事实晋升；完整game接口尚未分页。硬崩溃在途恢复与全局ACP被其他项目占满的体验仍不够成熟；取消初始化留下空闲会话的现场已清理但应加回归。不要用更多无条件模型调用掩盖结构问题。
-
-## 复现与继续开发
+线上：`https://live.thegreatnovel.com`，仍需现有本人的Cloudflare Access登录。本机：`http://127.0.0.1:4317`。二者同一SQLite，不是匿名多用户服务。
 
 ```powershell
 cd C:\dev\tgn_live
-npm test
-node src/server.js
-# 另一个终端，必须使用新label
-node eval/play.mjs --label next-adaptive --turns 10 --persona progression --judge --max-minutes 20
-node eval/play.mjs --label next-growth --turns 5 --replay eval/growth-actions.json --judge
-node eval/protocol.mjs final-adaptive-v031 next-protocol
-node eval/summarize.mjs baseline-utf8-v010 cycle1-replay-v020 cycle2-replay-v030 final-adaptive-v031 growth-v040 adversarial-v040
-node eval/write-report.mjs
+pwsh -NoProfile -File scripts/start-local.ps1
+# 停止仅属于本项目的服务
+pwsh -NoProfile -File scripts/stop-local.ps1
 ```
 
-AgentDock执行长任务必须显式设置timeout；不能用默认约30秒命令生成常驻子进程。`tools/apply-cycle1.py`和`apply-cycle2.py`只是本次一次性迁移记录，不应再次执行。所有数据和原始trace在Git忽略项，不能丢掉后再假装Git可还原实验数据。
+Node24、AgentDock/Codex已登录且本机开机联网。start-local通过当前用户Limited Interactive的 `TGNLive-Web` 计划任务运行run-local，避免有限AgentDock命令把子Node一起回收。HKCU登录启动TGNLive仍调用start-local。没有修改电源/睡眠策略，不声称关机、注销也继续。
 
-源码提交里程碑：dc313660基线，78fb1b2编码，c428cd2速度/契约，197265b语义/UI，a42255e模型取舍，a96c26c成长入口，后续交付提交含当前报告。新改动后更新本交接文件，先验证实测问题再接受为改善。
+状态 `.runtime/server.json`，日志 `.runtime/server.out.log`、`.runtime/server-error.log`；受限的环境传递在server-bootstrap.json，不能提交或打印凭据。正式接入仍按 `docs/REMOTE_ACCESS.md` 现有JWT/来源检查，不开放新公网端口。
+
+## 3. 已经实现并可游玩
+
+五套预设：烬河照夜、云背群岛、灰塔星契（原创）；赤曜药州、万相猎庭（明确标注非官方同人灵感，关联斗破苍穹/斗罗大陆的成长机制，新人物新开局，不是官方或原著完整复刻）。
+
+一句话/1—2000字符prompt → 一次World Forge → 背景、力量来源、每阶能力用途、三个天赋、人物利害和开局 → 完成才保存 → 玩家预览、选天赋、命名开书。旧世界不会套进每个新故事；每本新书有不可变定义快照，旧烬河存档按legacy读取，不重新写其事实。
+
+手机发现/创作/书架分开，正文为主，底部行动坞、建议/自由行动、IME/键盘适配、真实阶段等待、草稿按书恢复、回到最新、字号行距底色、状态与观测sheet、停止/重试、Markdown/TXT导出。刷新到发现页，点击“继续阅读”回原书并还原草稿，这是本版真实流程，不是自动跳进正文。
+
+常规回合仍是一次Narrator，开局作者底稿，每8回合等检查点才规划；只有实际无效提案才至多一次修复。预览不是Canon，complete后才事务保存。capabilities保存具体学会/强化的技能；物品update保留半包/半瓶余量，整件用尽才remove。已有NPC更新可只给现有id+attitude，名称沿用Canon，新NPC仍必须给真实名称。
+
+## 4. 模型、ACP与成本口径
+
+正文gpt-5.6-terra/low；World Forge=gpt-5.6-luna/medium；Story Brain=gpt-5.6-sol/medium；自主测试玩家=Luna/low，独立盲读=Sol/medium。以真实trace的model/effort/session/run为准。全局ACP并发2，不抢其它项目或杀它们的agents。
+
+cancel/close各3秒独立清理预算，失败留下 `acp_cleanup_incomplete` 的session/run并释放应用槽。根因是实际断连后finally无限等close，已用针对性测试验证；这不是保证ACP永远不会掉线。
+
+阶段时间分开：世界创建一次性等待、首段正文、整回合、规划、条件修复、保存；ACP准备属于生成内部子阶段。玩家决策不算用户等正文。未知token账单/成本/内部排队保留null。
+
+## 5. 本轮证据和冻结边界
+
+已接受：手机流程/状态反馈、独立世界快照与力量体系、短世界底稿、持久技能与修炼时间压缩、作者可在既有规则中创造尚未规定的事实。不是照搬提示词，更不是宣称顶级男频已完成。
+
+已否决：v0.6.2只补“奖励别变下一扇门”的重复提示，真实10回合没有显著改善，该段已删除，不冻结。
+
+正向证据：v0.5与v0.6同五行动，后者将体感变成可复用定息能力，盲读偏好后者；最新v0.6.3同一星图世界8回合中，追痕/斜照/道具/有限借重形成设伏、制住对手，独立盲读偏好B并判materialImprovement。后一个比较是10对8回合、动作分叉、非随机小样本；不能把优势全部归因于prompt或推广到所有题材。
+
+剩余质量问题必须保留：新技巧从失败到成功的学习节点偏略、关系标签提升较快，星砂与核心尚未完成吸收/长线兑现，天赋与通用技巧的区分仍需更精确的世界设计。不要以增加通用审阅链或成长评分器代替改这些真实问题。
+
+速度：相同世界prompt一次生成60.824→47.799秒（各1样本，同Luna/medium）；相同五行动v0.5首段8.229/完成19.371秒，v0.6.3首段6.216/完成20.179秒。最新8回合首段8.037/完成29.584秒，其中3次条件修复。不能宣传所有回合已变快。
+
+v0.6.4修复其中两次无谓NPC姓名修复：两份未经改写的真实原始提案离线重放均成功，不调用模型，原本各耗19.966/18.044秒修复。离线重放不是新测8回合均值。第三次真正缺分隔符仍需条件修复，未放宽到猜测Canon。
+
+失败 `treatment-growth-v061` 原样保留：计划5、尝试3、成功2，第3断连/无限清理，5分钟预算耗尽。不能报5/5或填造缺失server-metrics。
+
+## 6. 完成的验证
+
+45/45 Node测试；29/29移动UI契约fixture；7/7真实已有存档只读；真实Chrome390×844两回合8/8功能检查；当前8回合游戏与7个世界定义重启前后深比较完全一致。具体时间与文件在研究报告。
+
+最新真实浏览器2回合第一段paint6.404/17.315秒，完成15.601/50.667秒；第二回慢在模型生成50.615秒，不在数据库，也没有修复调用。无JS pageerror；仍有1个 `net::ERR_ABORTED`，没有观察到提交/存档丢失，但原因未完全定位，因此浏览器总结果保留issues_found，不粉饰全绿。上一轮真实浏览器测试错误地假设刷新自动进正文，脚本后来改为真实“继续阅读”流程；失败文件未删除。
+
+以上是桌面Chrome视口/VisualViewport/composition模拟，不是Android/iPhone真机或APK验收。远程Access边界验证是现有6个用例，不是公共平台安全审计。
+
+## 7. 从哪里复核
+
+`docs/V060_RESEARCH_AND_EXPERIMENTS.md` 汇总各轮、阶段时间、实际原因与最后验收；`artifacts/reports/v063-stage-measurements.md` 是模型长测完整表。
+
+代表正文：
+- `artifacts/eval/stars-authority-v063/novel.md`：星图世界8回合（自主ACP玩家）。
+- `artifacts/eval/treatment-growth-v063/novel.md`：烬河五行动固定重放，真实分次用药与技能成长。
+- `artifacts/ui/mobile-v064-live/browser-export.md`：另一同人灵感预设的真实浏览器2回合。
+
+证据：`v064-unit-tests.txt`、`v064-relationship-replay.json`、`v064-restart-check.json`；UI `artifacts/ui/mobile-v064-live/result.json`。fixture目录名仍mobile-v060，最新文件时间2026-09-07 08:28 UTC对应v0.6.4验收，不把目录名当运行版本。
+
+重跑使用新label，别覆盖旧失败；`eval/play.mjs --replay`是固定重放，不叫自主游玩；`eval/replay-relationship-incidents.mjs`只离线解析真实旧提案，不改在线Canon。测试数据库现存样本保留，可在书架阅读；不要无授权批量清理。
+
+## 8. 未实现/未证明
+
+仍为私有MVP，没有公共注册/多用户隔离、付费、图片、语音、视频、社区或运行时全库检索。世界通常先定义5阶，事实/技能/NPC有MVP容量；没有数百回合自动长期记忆/力量扩展证明。读者模型不是留存或真人质量保证。本轮结束后只保留Web服务，未承诺无限后台自动开发。

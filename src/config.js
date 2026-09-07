@@ -18,7 +18,7 @@ export function loadConfig(overrides = {}) {
   const runtimeDir = path.resolve(rootDir, process.env.TGN_RUNTIME_DIR || ".runtime");
   const remotePath = path.join(runtimeDir, 'remote.json');
   return {
-    version: "0.5.0",
+    version: "0.6.4",
     remote: fs.existsSync(remotePath) ? JSON.parse(fs.readFileSync(remotePath, 'utf8')) : null,
     openingPlanStrategy: process.env.TGN_OPENING_PLAN || "authored",
     host: process.env.TGN_HOST || "127.0.0.1",
@@ -33,6 +33,8 @@ export function loadConfig(overrides = {}) {
     plannerModel: process.env.TGN_PLANNER_MODEL || "gpt-5.6-sol",
     playerModel: process.env.TGN_PLAYER_MODEL || "gpt-5.6-luna",
     judgeModel: process.env.TGN_JUDGE_MODEL || "gpt-5.6-sol",
+    worldModel: process.env.TGN_WORLD_MODEL || "gpt-5.6-luna",
+    worldReasoning: process.env.TGN_WORLD_REASONING || "medium",
     narratorReasoning: process.env.TGN_NARRATOR_REASONING || "low",
     plannerReasoning: process.env.TGN_PLANNER_REASONING || "medium",
     playerReasoning: process.env.TGN_PLAYER_REASONING || "low",

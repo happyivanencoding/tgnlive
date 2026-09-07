@@ -1,4 +1,12 @@
-# v0.5.0 远程部署补充
+# v0.6.4 当前架构入口
+
+当前实现以 `SYSTEM.md` 与 `WORLD_SYSTEM.md` 为准：增加一句话 World Forge、每本书独立世界快照、世界自己的境界与技能状态，手机界面重建。常规回合仍只调用一次Narrator，世界创建只付一次；没有搬入原TGN批量流水线。`inventoryOps=update`保存部分消耗余量。ACP取消/关闭各自有3秒上限，清理失败留下session/run事件，不能无限扣住错误响应与并发槽。
+
+当前常驻入口由当前用户 `TGNLive-Web` 计划任务托管，`scripts/start-local.ps1` 可安全从有时限的AgentDock命令启动。此处安全指进程寿命管理，不代表对抗式公共服务。
+
+下方保留v0.4—0.5设计理由和历史边界；不得把历史“单世界/旧版”描述当作当前功能清单。最新实验、速度与冻结决定见 `V060_RESEARCH_AND_EXPERIMENTS.md`。
+
+## v0.5.0 远程部署补充（历史）
 
 手机 HTTPS → Cloudflare Access（本人）→ 既有 Tunnel → loopback Node 4317 → SQLite + AgentDock ACP。`src/access.js` 统一保护页面/API，可信本机请求需 loopback Host 且没有转发头；远程请求必须验证独立 Access JWT，写入须同源。`docs/REMOTE_ACCESS.md` 为当前部署说明；下方本地架构历史说明继续适用核心生成/存档链路。
 

@@ -5,6 +5,7 @@ import { loadConfig } from "./config.js";
 import { GenerationService } from "./generation-service.js";
 import { buildJudgePrompt, buildPlayerObservationPrompt } from "./prompts.js";
 import { GameStore } from "./store.js";
+import { WorldForge } from "./world-forge.js";
 
 export function createTgnLive(options = {}) {
   const config = options.config || loadConfig(options.configOverrides);
@@ -29,8 +30,14 @@ export function createTgnLive(options = {}) {
     mcpClient,
   });
   const generationService = options.generationService || new GenerationService({ narrator, planner, plannerInterval: config.plannerInterval, openingPlanStrategy: config.openingPlanStrategy });
-  const app = createApp({ config, store, generationService });
-  return { ...app, config, store, generationService, narrator, planner };
+  const worldAdapter = options.worldAdapter || createAcpRoleAdapter({
+    role: "world", model: config.worldModel, reasoningEffort: config.worldReasoning,
+    workspace: config.narratorWorkspace, agentDockUrl: config.agentDockUrl,
+    timeoutMs: config.providerTimeoutMs, mcpClient,
+  });
+  const worldForge = options.worldForge || new WorldForge({ adapter: worldAdapter });
+  const app = createApp({ config, store, generationService, worldForge });
+  return { ...app, config, store, generationService, narrator, planner, worldForge };
 }
 
 export function createPlaytestRoleAdapter({ role, config = loadConfig(), ...options }) {

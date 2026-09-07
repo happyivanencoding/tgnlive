@@ -76,6 +76,17 @@ function applyInventory(state, operations, applied, rejected) {
       applied.push({ field: "inventory", op: "add", name, qty });
       continue;
     }
+    if (op === "update") {
+      if (existingIndex < 0) {
+        rejected.push({ field: "inventory", op, id: itemId, name, reason: "missing_item" });
+        continue;
+      }
+      const existing = state.inventory[existingIndex];
+      const description = shortText(operation.description, `inventoryOps[${index}].description`, { required: true, max: 180 });
+      existing.description = description;
+      applied.push({ field: "inventory", op, name: existing.name, description });
+      continue;
+    }
     if (op === "remove") {
       if (existingIndex < 0) {
         rejected.push({ field: "inventory", op: "remove", id: itemId, name, reason: "missing_item" });
@@ -102,7 +113,8 @@ function applyRelationships(state, changes, applied) {
     throw new AppError("relationshipChanges 格式无效", { code: "INVALID_DELTA", status: 422 });
   }
   for (const [index, change] of changes.entries()) {
-    const name = shortText(change?.name, `relationshipChanges[${index}].name`, { required: true, max: 60 });
+    const known = change?.id ? state.relationships.find(item => item.id === change.id) : undefined;
+    const name = shortText(change?.name || known?.name, `relationshipChanges[${index}].name`, { required: true, max: 60 });
     const attitude = shortText(change.attitude, `relationshipChanges[${index}].attitude`, { required: true, max: 20 });
     if (!ATTITUDES.has(attitude)) {
       throw new AppError(`关系态度 ${attitude} 不受支持`, { code: "INVALID_DELTA", status: 422 });
@@ -120,7 +132,50 @@ function applyRelationships(state, changes, applied) {
   }
 }
 
-function applyRealm(state, delta, applied, rejected) {
+function applyCapabilities(state, operations, applied, rejected) {
+  if (operations === undefined) return;
+  if (!Array.isArray(operations) || operations.length > 3) {
+    throw new AppError("capabilityOps 格式无效", { code: "INVALID_DELTA", status: 422 });
+  }
+  state.capabilities ||= [];
+  for (const [index, operation] of operations.entries()) {
+    if (!operation || typeof operation !== "object") {
+      throw new AppError(`capabilityOps[${index}] 格式无效`, { code: "INVALID_DELTA", status: 422 });
+    }
+    const op = operation.op;
+    const id = shortText(operation.id, `capabilityOps[${index}].id`, { required: true, max: 80 });
+    const name = shortText(operation.name, `capabilityOps[${index}].name`, { required: true, max: 60 });
+    const description = shortText(operation.description, `capabilityOps[${index}].description`, { required: true, max: 240 });
+    const existing = state.capabilities.find((ability) => ability.id === id || ability.name === name);
+    if (op === "add") {
+      if (existing) {
+        rejected.push({ field: "capabilities", op, id, reason: "capability_exists" });
+        continue;
+      }
+      if (state.capabilities.length >= 30) {
+        rejected.push({ field: "capabilities", op, id, reason: "capability_capacity" });
+        continue;
+      }
+      state.capabilities.push({ id, name, description, source: shortText(operation.source, `capabilityOps[${index}].source`, { max: 80 }) || "正文获得" });
+      applied.push({ field: "capability", op, name, description });
+      continue;
+    }
+    if (op === "improve") {
+      if (!existing) {
+        rejected.push({ field: "capabilities", op, id, reason: "missing_capability" });
+        continue;
+      }
+      existing.name = name;
+      existing.description = description;
+      existing.source = shortText(operation.source, `capabilityOps[${index}].source`, { max: 80 }) || existing.source;
+      applied.push({ field: "capability", op, name, description });
+      continue;
+    }
+    throw new AppError(`不支持的能力操作 ${op}`, { code: "INVALID_DELTA", status: 422 });
+  }
+}
+
+function applyRealm(state, delta, world, applied, rejected) {
   const progressDelta = boundedInteger(delta.realmProgressDelta, "realmProgressDelta", 0, 20, 0);
   if (progressDelta) {
     state.realm.progress = Math.min(100, state.realm.progress + progressDelta);
@@ -131,13 +186,22 @@ function applyRealm(state, delta, applied, rejected) {
     rejected.push({ field: "realm", reason: "insufficient_progress" });
     return;
   }
-  const expected = REALMS.find((realm) => realm.rank === state.realm.rank + 1);
+  const realms = world?.powerSystem?.realms || REALMS;
+  const expected = realms.find((realm) => realm.rank === state.realm.rank + 1);
   if (!expected || delta.realmAdvance !== expected.name) {
     rejected.push({ field: "realm", reason: "invalid_next_realm", proposed: delta.realmAdvance });
     return;
   }
   state.realm = { ...expected, progress: 0 };
   applied.push({ field: "realm", value: expected.name });
+  if (expected.unlock) {
+    state.capabilities ||= [];
+    const id = `realm-${expected.rank}`;
+    if (!state.capabilities.some((ability) => ability.id === id)) {
+      state.capabilities.push({ id, name: `${expected.name}行动空间`, description: expected.unlock, source: "境界突破" });
+      applied.push({ field: "capability", op: "add", name: `${expected.name}行动空间`, description: expected.unlock });
+    }
+  }
 }
 
 export function validateNarratorProposal(proposal) {
@@ -167,7 +231,7 @@ export function validateNarratorProposal(proposal) {
   return { narrative, choices, delta: proposal.delta || {}, changes: uniqueStrings(proposal.changes, "changes", 8) };
 }
 
-export function reduceState(currentState, rawProposal) {
+export function reduceState(currentState, rawProposal, world) {
   const proposal = validateNarratorProposal(rawProposal);
   const state = clone(currentState);
   const delta = proposal.delta;
@@ -186,13 +250,14 @@ export function reduceState(currentState, rawProposal) {
       rejected.push({ field: "coins", reason: "insufficient_coins", proposedDelta: coinDelta });
     } else {
       state.coins += coinDelta;
-      applied.push({ field: "coins", delta: coinDelta, value: state.coins });
+      applied.push({ field: "coins", delta: coinDelta, value: state.coins, currencyName: state.currencyName || "铜钱" });
     }
   }
 
   applyInventory(state, delta.inventoryOps, applied, rejected);
   applyRelationships(state, delta.relationshipChanges, applied);
-  applyRealm(state, delta, applied, rejected);
+  applyCapabilities(state, delta.capabilityOps, applied, rejected);
+  applyRealm(state, delta, world, applied, rejected);
 
   const goal = shortText(delta.goal, "goal", { max: 180 });
   if (goal && goal !== state.goal) {
@@ -238,10 +303,12 @@ export function reduceState(currentState, rawProposal) {
 }
 
 function formatAppliedChange(change) {
-  if (change.field === "coins") return `灵钱${change.delta > 0 ? "+" : ""}${change.delta}`;
+  if (change.field === "coins") return `${change.currencyName}${change.delta > 0 ? "+" : ""}${change.delta}`;
   if (change.field === "realm.progress") return `修行进度 +${change.delta}`;
   if (change.field === "realm") return `境界提升为${change.value}`;
+  if (change.field === "capability") return `${change.op === "improve" ? "能力提升" : "掌握能力"}：${change.name}`;
   if (change.field === "location") return `抵达${change.value}`;
+  if (change.field === "inventory" && change.op === "update") return `${change.name}：${change.description}`;
   if (change.field === "inventory") return `${change.op === "add" ? "获得" : "失去"}${change.name}`;
   if (change.field === "relationship") return `${change.name}：${change.attitude}`;
   if (change.field === "goal") return `目标：${change.value}`;

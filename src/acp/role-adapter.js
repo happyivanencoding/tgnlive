@@ -165,7 +165,7 @@ export function createAcpRoleAdapter({
         throw error;
       } finally {
         clearTimeout(timer);
-        if (sessionId) await safeClose(client, sessionId);
+        if (sessionId && !(await safeClose(client, sessionId))) onEvent?.({ type: "acp_cleanup_incomplete", sessionId, runId });
         release();
       }
     },
@@ -208,11 +208,14 @@ function detectEmbeddedProviderError(output) {
 }
 
 async function safeCancel(client, runId) {
-  try { await client.callTool("acp_prompt", { action: "cancel", run_id: runId }); } catch {}
+  try { await client.callTool("acp_prompt", { action: "cancel", run_id: runId }, { signal: AbortSignal.timeout(3000) }); } catch {}
 }
 
 async function safeClose(client, sessionId) {
-  try { await client.callTool("acp_session", { action: "close", session_id: sessionId }); } catch {}
+  try {
+    await client.callTool("acp_session", { action: "close", session_id: sessionId }, { signal: AbortSignal.timeout(3000) });
+    return true;
+  } catch { return false; }
 }
 
 export const acpConcurrencyLimit = 2;

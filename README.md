@@ -1,65 +1,57 @@
-# TGN Live · 可玩的修仙小说
+# 天命书 · TGN Live
 
-独立 Windows 本地 Web MVP，项目目录 `C:\dev\tgn_live`。它没有修改原来的 `tgn-story-mvp` 生产流水线。当前版本 **0.5.0**；最终已验证运行结果以 `docs/EXPERIMENTS.md` 与 `artifacts/reports/MEASUREMENTS.md` 为准。
+可玩的男频成长幻想小说。独立项目 `C:\dev\tgn_live`，当前代码 **v0.6.4**；没有修改原 `tgn-story-mvp` 生产系统。玩家从作者预设开始，也能用一句话或2000字以内prompt创建自己的修仙、玄幻、驭兽或魔法世界，再选择天赋与主角进入。
 
-## 开发与版本同步
+## 打开与运行
 
-源码仓库：`happyivanencoding/tgnlive`，主分支 `main`。用户已授权每次接受的代码/版本更新同步 handoff 与系统 docs 后自动 commit/push；不提交运行数据库、账号凭证、本地原著或实验原始个人数据。当前体系说明见 [SYSTEM](docs/SYSTEM.md)。
+私有线上入口：**https://live.thegreatnovel.com**，用现有本人Cloudflare Access账号登录。本机：**http://127.0.0.1:4317**。两处使用同一存档，仍是单owner，不是匿名开放的多用户平台。
 
-## 打开与启动
-
-手机或远程浏览器打开 **https://live.thegreatnovel.com**，使用本人 Cloudflare Access 登录。电脑本机仍可打开 **http://127.0.0.1:4317**。两处共用原有存档。
-
-已启用当前 Windows 用户登录后后台启动；电脑需保持开机、联网、未睡眠，AgentDock 可用。详见 [远程访问与恢复](docs/REMOTE_ACCESS.md)。
-
-服务未运行时，在普通 PowerShell 终端执行：
+要求 Node24、已登录的本机AgentDock/Codex ACP、电脑开机联网且未睡眠。没有运行时npm依赖。
 
 ```powershell
 cd C:\dev\tgn_live
-node src/server.js
+pwsh -NoProfile -File scripts/start-local.ps1
+# 停止本项目自己的服务
+pwsh -NoProfile -File scripts/stop-local.ps1
 ```
 
-保持窗口打开，按 Ctrl+C 停止。后台启动可用 `pwsh -NoProfile -File scripts/start-local.ps1`，停止用 `pwsh -NoProfile -File scripts/stop-local.ps1`；停止脚本会核对项目入口的完整路径，拒绝终止无法确认归属的 PID。后台启动应从普通 Windows 终端执行；AgentDock 的短时命令会在命令超时后回收子进程，不能把它当常驻服务管理器。
+后台脚本通过当前用户的 `TGNLive-Web` 计划任务托管服务，不再依附有时限的AgentDock命令进程。当前用户登录启动配置仍保留。普通终端调试可直接 `node src/server.js` 并保持窗口打开。详见 [运行与远程恢复](docs/REMOTE_ACCESS.md)。
 
-要求 Node 24、当前 Windows 用户可用的 AgentDock/Codex ACP 登录，以及运行中的本地 AgentDock MCP。无运行时 npm 依赖，无需先安装前端框架。模型失败会明确报错，不会拿测试故事冒充真实生成。
+## 可以做什么
 
-## 已实现的玩法
+发现页提供 `烬河照夜`、`云背群岛`、`灰塔星契`，以及分别借鉴《斗破苍穹》《斗罗大陆》成长机制的 `赤曜药州`、`万相猎庭`。后两者明确标注非官方同人灵感，人物与开局重新创作，不是完整复刻原著或官方授权声明。
 
-创建成年主角，选择烬息、借势印或空囊界，从“烬河照夜”的药市风波开始。每回合有三个建议，也可自由输入：帮人、拒绝、交易、逃走、试探和训练都可以尝试。正文真实流式显示，未完成段落明确标为预览；校验成功后才进入正史。
+创作页将描述转成背景、独立力量体系、境界用途、三个天赋、人物欲望和可玩的开局。完成后先预览再开始，不把结构化世界定义伪装成流式正文。每本新书保存自己的世界快照；之后修改目录不会改写旧故事。
 
-SQLite 保存角色境界与进度、地点、钱财、重要物品、人物关系、事实、承诺及事件记录。书库可以继续旧故事，每6个已接受回合分章，提供阅读模式和 Markdown/TXT 导出。界面含手机窄屏布局、状态抽屉、天赋限制、亮暗切换、阶段耗时、停止和重试。重新提交同一请求不会重复领取结果。
+正文实时生成，每回合三个建议，也可自由行动、拒绝、谈判、逃离、冒险或修炼。校验并保存后才成为正史。境界、技能、钱财、物品余量、人物关系、事实与承诺持久保存；每6回合分章，可继续旧书或导出Markdown/TXT。
 
-## 模型与速度
+手机端分为发现、创作、书架与沉浸阅读。底部行动坞、按书保存草稿、中文输入法保护、键盘避让、回到最新、字号/行距/阅读底色、状态与生成记录sheet、真实阶段耗时和停止/重试均已实现。视口模拟不等同于实体手机验收。
 
-默认叙事 **gpt-5.6-terra / low**，用于后续连续质量测试；快速对照配置为 **gpt-5.6-luna / low**。独立试玩玩家使用 Luna/low，短程规划与盲读者使用 Sol/medium。所有配置均经过实际 ACP 调用，而不是只看下拉列表。
+## 生成架构与速度
 
-```powershell
-$env:TGN_NARRATOR_MODEL='gpt-5.6-luna'  # 快速叙事对照
-$env:TGN_NARRATOR_REASONING='low'
-node src/server.js
-```
+默认正文 **Terra/low**，世界创建 **Luna/medium**，低频Story Brain **Sol/medium**；独立测试玩家为Luna/low。具体完整模型标识和环境变量在 `src/config.js`。
 
-开局直接使用预先编写的局势底稿，不额外等待规划模型；它不是伪装成模型输出的正文。第9回合等检查点仍会调用真正的 Story Brain。默认每8回合检查，每6回合成章；配置见 `src/config.js`。环境变量 `TGN_OPENING_PLAN=live` 可恢复开局实时规划用于对照。
+选预设不调用世界生成。开局使用该世界作者底稿，第一段正文仍是实时模型生成。后续主要是一轮Narrator，通常每8回合检查点才追加规划；只有明确格式/状态错误才最多一次修复，没有常驻第二个改写模型。
 
-## 检查与复现
+世界创建、首段正文、整回合完成、测试玩家决策分别计时；ACP准备是生成内部子阶段，不重复相加。账单token、成本与提供方内部队列没有可靠数据就为null。版本结果、真实失败和冻结范围见 [本轮研究与实测](docs/V060_RESEARCH_AND_EXPERIMENTS.md)，不能把功能测试通过当成顶级小说质量证明。
+
+## 测试与证据
 
 ```powershell
 npm test
-node scripts/smoke.mjs
-node eval/play.mjs --label new-adaptive-run --turns 10 --persona progression --judge --max-minutes 20
-node eval/play.mjs --label new-fixed-replay --turns 7 --replay artifacts/eval/baseline-utf8-v010/actions.json --judge
-node eval/protocol.mjs final-adaptive-v031 new-protocol-check
-node eval/summarize.mjs
+node scripts/verify-remote.mjs
+node eval/play.mjs --label fresh-run --world sky-beast-isles --turns 10 --persona explorer --allow-unfrozen --max-minutes 15
+node eval/world-create.mjs fresh-world eval/world-prompt-stars.txt
 ```
 
-每次使用新的 label，避免覆盖证据。`play.mjs` 首回合为固定启动，之后由独立 ACP 玩家读取真实观察自主选择；`--replay` 则明确是固定行动重放。代理决策耗时与应用生成耗时分开。长测试通过 AgentDock 运行时须显式给足 `timeout_ms`。
+必须使用新label保留旧证据。`play.mjs`首回合为固定启动，之后是独立ACP玩家；`--replay`明确标记固定行动重放。指定不存在的世界/天赋会停止，不会默默回到第一个世界。全局ACP并发上限为2，长测试从AgentDock执行时须给足命令超时，不挤占其他项目会话。
 
-原始证据保存在 `artifacts/eval/`：逐回合 JSONL、完整游玩文本、行动、ACP session/run、实际模型与思考等级、阶段时间、失败、修复、导出与独立读者意见。`server-metrics.json` 是完整后端 trace；SSE complete 携带的是摘要，不可把摘要当完整阶段数据。`artifacts/ui/` 保存浏览器截图及测试结果。所有此类本地数据与数据库均已被 Git 忽略。
+`artifacts/eval` 保存行动、正文、前后状态、实际模型/思考等级、session/run ID、逐阶段时间、错误与修复；`artifacts/ui`保存浏览器截图与结果。原始数据和SQLite留本地，不进入Git；提交的研究报告包含必要摘要与路径。
 
-## 边界
+## 接手和版本同步
 
-这是可信单用户的 **loopback-only 原型**，不是可公开运营的安全服务。只读 ACP 工作区与禁工具检测不等同于对抗式多租户沙箱。不要直接加公网隧道；正式上线前需独立认证、隔离、限流、配额与内容治理。
+仓库 **happyivanencoding/tgnlive**，分支 **main**。每次接受的代码/版本更新都更新handoff与系统文档，commit并push `origin main`，验证成功后再宣称交付。不是监视每次敲键盘自动提交，也不force-push。
 
-目前没有 AI 插画生成、视频、语音、支付或多用户联机。能力边界和故事语义仍部分依赖模型，不能把几个样本成功当作完全确定的规则引擎；长篇记忆、数百回合稳定性和真人留存未验证。提供方未可靠返回的账单 token、成本与内部排队时间记为未知，不估算成零。
+接手顺序：`AGENTS.md` → [交接](DEEP_CONTEXT_HANDOFF.md) → [系统总览](docs/SYSTEM.md) → [世界系统](docs/WORLD_SYSTEM.md) → [移动端设计](docs/MOBILE_DESIGN.md) → [本轮实测](docs/V060_RESEARCH_AND_EXPERIMENTS.md)。历史迭代仍见 `docs/EXPERIMENTS.md`。
 
-后续开发先读 `AGENTS.md`、`DEEP_CONTEXT_HANDOFF.md`、`docs/ARCHITECTURE.md`、`docs/EXPERIMENTS.md`。本地 Git 已建立，未绑定或推送远端。
+尚未实现图片/语音/视频、支付、多人社交或匿名开放服务。长篇记忆容量与技能语义仍需实测，不把十回合成功说成数百回合稳定，也不声称AI读者能证明真人留存。

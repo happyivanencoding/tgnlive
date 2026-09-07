@@ -8,9 +8,9 @@ test('post-opening prompt uses current canon instead of replaying opening instru
   const game={name:'沈舟',version:4,turns:[],state:{...createSeedState(world,world.powers[0]),turnNumber:4,location:'河边'}};
   const prompt=buildNarratorPrompt({game,world,action:'继续'});
   assert.doesNotMatch(prompt,/"opening":\{/);
-  assert.match(prompt,/触摸自己的铜钱不能读取远处药柜/);
-  assert.match(prompt,/不能制造先前未出现物品|不代表此物真的存在/);
-  assert.match(prompt,/先兑现本次具体行动的结果/);
+  assert.match(prompt,/触摸自己的物品不自动知道远处发生了什么/);
+  assert.match(prompt,/移交、扣留、消耗不能被玩家口头确认推翻/);
+  assert.match(prompt,/先兑现这次行动/);
 });
 test('encoding-damaged action fails before invoking provider and leaves canon untouched',async()=>{
   let calls=0;const adapter={role:'narrator',health:{status:'test-fixture'},async run(){calls++;throw new Error('must not run');}};

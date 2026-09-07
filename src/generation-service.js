@@ -82,14 +82,14 @@ export class GenerationService {
     let reduced;
     try {
       await stage(trace, onStage, "parse_validate", async () => {
-        reduced = reduceState(game.state, parser.finish());
+        reduced = reduceState(game.state, parser.finish(), world);
       });
     } catch (firstError) {
       trace.value.repairAttempts = 1;
       trace.value.errors.push({ phase: "parse_validate", code: firstError.code || "INVALID_OUTPUT", message: firstError.message });
       await stage(trace, onStage, "repair", async () => {
         beginSetupStage(trace, onStage, "repair");
-        const repairPrompt = buildRepairPrompt({ game, action, invalidOutput: rawOutput, reason: firstError.message });
+        const repairPrompt = buildRepairPrompt({ game, world, action, invalidOutput: rawOutput, reason: firstError.message });
         trace.value.promptChars.repair = repairPrompt.length;
         let repairedOutput = "";
         const repairedParser = new StreamingNarratorParser();
@@ -104,7 +104,7 @@ export class GenerationService {
         trace.value.provider.repair = providerResult(this.narrator, repairResult);
         trace.value.outputChars += repairedOutput.length;
         trace.value.candidateOutputs.push({ role: "repair", finalText: repairedOutput });
-        reduced = reduceState(game.state, repairedParser.finish());
+        reduced = reduceState(game.state, repairedParser.finish(), world);
       });
     }
 
@@ -141,6 +141,10 @@ function recordProviderEvent(trace, onStage, role, event) {
     const completed = trace.endStage(name, "complete");
     if (completed) onStage?.({ name, status: "complete", elapsedMs: completed.elapsedMs });
     trace.point("acp_session_model_setup", { role, sessionId: event.sessionId, model: event.model, reasoningEffort: event.reasoningEffort, mode: event.mode });
+    return;
+  }
+  if (event.type === "acp_cleanup_incomplete") {
+    trace.point("acp_cleanup_incomplete", { role, sessionId: event.sessionId, runId: event.runId });
     return;
   }
   if (event.type === "acp_run_started") {

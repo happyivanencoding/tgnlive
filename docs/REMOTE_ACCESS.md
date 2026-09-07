@@ -28,3 +28,11 @@ pwsh -NoProfile -File scripts/start-on-login.ps1 -Disable
 应用端校验签名、RS256、issuer、独立 audience、有效期和 owner email。带转发头的 loopback 请求不能走本机免登录通道。远程 POST 必须匹配 HTTPS Origin。密钥从固定 team JWKS 端点获取并缓存 5 分钟，获取失败时拒绝登录；轮换后的未知 key 最多等待缓存过期。实现依据 [Cloudflare application token 文档](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/application-token/)。
 
 API、正文和存档不由 service worker 离线缓存。本版是响应式网页，未制作原生 App。
+
+## v0.6.4运行补充
+
+当前版本v0.6.4，线上URL/owner Cloudflare Access/Tunnel保持原样，不是匿名公开多用户。`start-local.ps1`现通过当前用户Limited Interactive计划任务 `TGNLive-Web` 运行 `run-local.ps1`，不再让后台Node依附有超时的AgentDock命令进程。HKCU登录启动原本就调用start-local，继续有效。不要重启/修改其它项目的Tunnel或AgentDock。
+
+实际重启后完整8回合游戏及7个世界定义深比较一致，证据 `artifacts/reports/v064-restart-check.json`。进程与bootstrap环境在.runtime，不提交凭据。登录启动/电脑睡眠仍是本机依赖，没有声称云端常驻。
+
+边界脚本 `node scripts/verify-remote.mjs` 输出 `artifacts/remote-v064/boundary.json`；6个现有owner/来源边界用例，不是对抗式公共平台审计。

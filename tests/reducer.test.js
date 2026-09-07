@@ -15,7 +15,7 @@ test("reducer preserves prose paragraphs and derives visible changes", () => {
     delta: { coinsDelta: 3, factsAdd: ["确认的新事实"] },
   });
   assert.equal(result.proposal.narrative, "第一段。\n\n第二段。");
-  assert.deepEqual(result.changes, ["灵钱+3", "确认的新事实"]);
+  assert.deepEqual(result.changes, ["铜钱+3", "确认的新事实"]);
   assert.equal(result.state.coins, 21);
   assert.equal(result.state.turnNumber, 1);
 });

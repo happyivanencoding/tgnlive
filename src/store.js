@@ -3,6 +3,7 @@ import path from "node:path";
 import { DatabaseSync } from "node:sqlite";
 import { AppError } from "./errors.js";
 import { createId } from "./ids.js";
+import { getWorld, getLegacyWorld, publicWorld } from "./worlds.js";
 
 function parseJson(value, fallback) {
   if (!value) return fallback;
@@ -34,6 +35,18 @@ export class GameStore {
         state_json TEXT NOT NULL,
         created_at TEXT NOT NULL,
         updated_at TEXT NOT NULL
+      );
+      CREATE TABLE IF NOT EXISTS worlds (
+        id TEXT PRIMARY KEY,
+        request_id TEXT NOT NULL UNIQUE,
+        prompt TEXT NOT NULL,
+        definition_json TEXT NOT NULL,
+        metrics_json TEXT,
+        created_at TEXT NOT NULL
+      );
+      CREATE TABLE IF NOT EXISTS game_worlds (
+        game_id TEXT PRIMARY KEY REFERENCES games(id) ON DELETE CASCADE,
+        definition_json TEXT NOT NULL
       );
       CREATE TABLE IF NOT EXISTS turns (
         id TEXT PRIMARY KEY,
@@ -110,14 +123,47 @@ export class GameStore {
     }
   }
 
-  createGame({ name, title, worldId, powerId, state }) {
+  createGame({ name, title, worldId, powerId, state, world = getWorld(worldId) }) {
     const id = createId("game");
     const createdAt = nowIso();
-    this.db.prepare(`
-      INSERT INTO games (id, name, title, world_id, power_id, version, state_json, created_at, updated_at)
-      VALUES (?, ?, ?, ?, ?, 0, ?, ?, ?)
-    `).run(id, name, title, worldId, powerId, JSON.stringify(state), createdAt, createdAt);
-    return this.getGame(id);
+    return this.transaction(() => {
+      this.db.prepare(`
+        INSERT INTO games (id, name, title, world_id, power_id, version, state_json, created_at, updated_at)
+        VALUES (?, ?, ?, ?, ?, 0, ?, ?, ?)
+      `).run(id, name, title, worldId, powerId, JSON.stringify(state), createdAt, createdAt);
+      if (world) this.db.prepare("INSERT INTO game_worlds (game_id, definition_json) VALUES (?, ?)").run(id, JSON.stringify(world));
+      return this.getGame(id);
+    });
+  }
+
+  listWorlds() {
+    return this.db.prepare("SELECT definition_json FROM worlds ORDER BY created_at DESC").all().map(row => JSON.parse(row.definition_json));
+  }
+
+  getWorld(worldId) {
+    const row = this.db.prepare("SELECT definition_json FROM worlds WHERE id = ?").get(worldId);
+    return row ? JSON.parse(row.definition_json) : getWorld(worldId);
+  }
+
+  getWorldRequest(requestId) {
+    const row = this.db.prepare("SELECT * FROM worlds WHERE request_id = ?").get(requestId);
+    return row ? { prompt: row.prompt, world: JSON.parse(row.definition_json), metrics: parseJson(row.metrics_json, null) } : null;
+  }
+
+  saveWorld({ world, prompt, requestId }) {
+    this.db.prepare("INSERT INTO worlds (id, request_id, prompt, definition_json, created_at) VALUES (?, ?, ?, ?, ?)")
+      .run(world.id, requestId, prompt, JSON.stringify(world), world.createdAt || nowIso());
+  }
+
+  saveWorldMetrics(worldId, metrics) {
+    this.db.prepare("UPDATE worlds SET metrics_json = ? WHERE id = ?").run(JSON.stringify(metrics), worldId);
+  }
+
+  getGameWorld(gameId) {
+    const snapshot = this.db.prepare("SELECT definition_json FROM game_worlds WHERE game_id = ?").get(gameId);
+    if (snapshot) return JSON.parse(snapshot.definition_json);
+    const row = this.getGameRow(gameId);
+    return row ? getLegacyWorld(row.world_id) : null;
   }
 
   listGames() {
@@ -153,7 +199,8 @@ export class GameStore {
       updatedAt: row.updated_at,
       state: parseJson(row.state_json, {}),
       turns,
-      chapters: groupChapters(turns),
+      world: publicWorld(this.getGameWorld(gameId)),
+      chapters: groupChapters(turns, this.getGameWorld(gameId)?.opening?.chapterTitle),
     };
   }
 
@@ -317,7 +364,7 @@ function mapTurn(row) {
   };
 }
 
-function groupChapters(turns) {
+function groupChapters(turns, openingTitle = "烬河倒流") {
   const groups = new Map();
   for (const turn of turns) {
     if (!groups.has(turn.chapterIndex)) groups.set(turn.chapterIndex, []);
@@ -325,7 +372,7 @@ function groupChapters(turns) {
   }
   return [...groups.entries()].map(([index, chapterTurns]) => ({
     index,
-    title: chapterTurns[0]?.index === 1 ? "烬河倒流" : `第${chapterTurns[0]?.index}回起`,
+    title: chapterTurns[0]?.index === 1 ? openingTitle : `第${chapterTurns[0]?.index}回起`,
     turns: chapterTurns,
   }));
 }
