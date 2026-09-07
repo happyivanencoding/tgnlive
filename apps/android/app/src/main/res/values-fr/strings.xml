@@ -271,4 +271,22 @@
   <string name="native_font2" formatted="false">"Standard"</string>
   <string name="native_font3" formatted="false">"Grand"</string>
   <string name="native_font4" formatted="false">"Très grand"</string>
+  <string name="native_charactertab" formatted="false">"Personnage"</string>
+  <string name="native_abilitiestab" formatted="false">"Capacités"</string>
+  <string name="native_itemstab" formatted="false">"Objets et biens"</string>
+  <string name="native_peopletab" formatted="false">"Relations"</string>
+  <string name="native_leveragetab" formatted="false">"Atouts durables"</string>
+  <string name="native_opportunitiestab" formatted="false">"Opportunités"</string>
+  <string name="native_nextrealm" formatted="false">"Prochain palier"</string>
+  <string name="native_stateempty" formatted="false">"Rien de confirmé ici pour le moment. Votre histoire laissera ses traces."</string>
+  <string name="native_mybooks" formatted="false">"Mes livres"</string>
+  <string name="native_bookcount" formatted="false">"{count} livres · Un monde à poursuivre dans chacun"</string>
+  <string name="native_waitrepair" formatted="false">"Vérification du résultat de ce tour"</string>
+  <string name="native_waitconfirm" formatted="false">"Le récit est écrit. Confirmation du tour."</string>
+  <string name="native_submitted" formatted="false">"Action envoyée"</string>
+  <string name="native_confirmhint" formatted="false">"Le prochain tour attend la confirmation. Vous pouvez préparer votre action."</string>
+  <string name="native_cancelturn" formatted="false">"Annuler ce tour"</string>
+  <string name="native_preparenext" formatted="false">"Préparer mon action"</string>
+  <string name="native_draftonly" formatted="false">"Brouillon · Aucun envoi automatique"</string>
+  <string name="native_turnready" formatted="false">"À vous de jouer"</string>
 </resources>

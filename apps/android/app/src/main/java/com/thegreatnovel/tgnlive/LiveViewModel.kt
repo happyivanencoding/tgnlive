@@ -10,6 +10,9 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.emitAll
+import kotlinx.coroutines.flow.retryWhen
 import org.json.JSONObject
 import java.util.UUID
 
@@ -22,7 +25,8 @@ data class LiveState(
     val loginWaiting: Boolean = false, val error: String? = null, val pending: Pending? = null,
     val preview: List<Paragraph> = emptyList(), val stage: String = "native.responding", val growth: Boolean = false,
     val follow: Boolean = true, val initialIndex: Int = 0, val initialOffset: Int = 0, val anchorKey: String? = null,
-    val sheet: String? = null, val creationUncertain: Boolean = false
+    val sheet: String? = null, val creationUncertain: Boolean = false,
+    val narrativeEnded: Boolean = false, val repairing: Boolean = false, val previewCharacters: Int = 0
 )
 
 class LiveViewModel(application: Application): AndroidViewModel(application) {
@@ -187,13 +191,13 @@ class LiveViewModel(application: Application): AndroidViewModel(application) {
         val op=nextOperation()
         stopped=false
         // Synchronous feedback before any disk/network work; native click haptic is at the UI event.
-        mutable.update { it.copy(busy=true,error=null,preview=emptyList(),stage="native.responding",growth=false) }
+        mutable.update { it.copy(busy=true,error=null,pending=p,preview=emptyList(),previewCharacters=0,narrativeEnded=false,repairing=false,stage="native.responding",growth=false) }
         perf.start(p,game.state.optInt("turnNumber")+1)
         work = viewModelScope.launch {
             var buffer = ""; var displayedBuffer = ""; var terminalFrame = false
             val flush = launch { while(isActive) { delay(40); if(buffer.isNotEmpty() && buffer != displayedBuffer) {
                 displayedBuffer=buffer
-                mutable.update { it.copy(preview=paragraphs(game.id,game.state.optInt("turnNumber")+1,buffer,p.language)) }
+                mutable.update { it.copy(preview=paragraphs(game.id,game.state.optInt("turnNumber")+1,buffer,p.language),previewCharacters=buffer.length) }
             } } }
             try {
                 val current = withContext(Dispatchers.IO) { repository.game(game.id) }; checkOperation(op); adopt(current)
@@ -202,15 +206,44 @@ class LiveViewModel(application: Application): AndroidViewModel(application) {
                 if(p.requestId != perf.requestId) perf.rebind(p)
                 withContext(Dispatchers.IO) { cache.write("pending-${game.id}",p.stored()); saveDraft(game.id,state.value.draft) }
                 mutable.update { it.copy(pending=p) }
-                repository.stream("/api/games/${game.id}/turns",p.body()).collect { event ->
+                flow { emitAll(repository.stream("/api/games/${game.id}/turns",p.body())) }
+                    .retryWhen { cause, attempt ->
+                        // Only an explicit retry, and only after the server proves the old receipt terminal.
+                        // Network uncertainty / busy / version conflicts never authorize a fresh action.
+                        if(retry && attempt == 0L && cause is ApiFailure && cause.code == "REQUEST_ID_REUSED" && cause.status == 409) {
+                            p=p.copy(requestId=UUID.randomUUID().toString(),action=s.draft.text.trim().ifBlank { p.action },language=s.settings.language,terminal=false)
+                            perf.rebind(p); perf.mark("confirmedTerminalRetry")
+                            withContext(Dispatchers.IO) { cache.write("pending-${game.id}",p.stored()) }
+                            mutable.update { it.copy(pending=p) }
+                            true
+                        } else false
+                    }.collect { event ->
                     checkOperation(op)
                     if(event.type == "receipt") perf.mark("firstSSE",event.receivedAt)
                     when(event.type) {
-                        "stage" -> mutable.update { it.copy(stage=stage(event.data.str("name"))) }
-                        "text" -> buffer += event.data.str("delta")
+                        "stage" -> {
+                            val name=event.data.str("name"); val status=event.data.str("status")
+                            val end=name=="narrative_complete" || (name=="narrative_generation" && status=="complete")
+                            if(name=="narrative_complete") perf.mark("narrativeEndSignal",event.receivedAt)
+                            if(name=="narrative_generation" && status=="complete") perf.mark("providerComplete",event.receivedAt)
+                            if(name=="repair" && status=="running") perf.mark("repairStarted",event.receivedAt)
+                            if(end) {
+                                if(!state.value.narrativeEnded && buffer.isNotBlank() && state.value.draft.text == p.action) draft(TextFieldValue(""))
+                                displayedBuffer=buffer
+                                mutable.update { it.copy(preview=paragraphs(game.id,game.state.optInt("turnNumber")+1,buffer,p.language),previewCharacters=buffer.length) }
+                            }
+                            mutable.update { it.copy(stage=stage(name),narrativeEnded=it.narrativeEnded || end,repairing=it.repairing || (name=="repair" && status=="running")) }
+                        }
+                        "narrative_end" -> {
+                            if(!state.value.narrativeEnded && buffer.isNotBlank() && state.value.draft.text == p.action) draft(TextFieldValue(""))
+                            perf.mark("narrativeEndSignal",event.receivedAt)
+                            displayedBuffer=buffer
+                            mutable.update { it.copy(narrativeEnded=buffer.isNotBlank(),preview=paragraphs(game.id,game.state.optInt("turnNumber")+1,buffer,p.language),previewCharacters=buffer.length) }
+                        }
+                        "text" -> { buffer += event.data.str("delta"); perf.textReceived(buffer.length,event.receivedAt) }
                         "error" -> { terminalFrame=true; throw ApiFailure(event.data.str("code")) }
                         "complete" -> {
-                            flush.cancel(); perf.mark("complete",event.receivedAt); perf.outcome("complete")
+                            flush.cancel(); perf.mark("complete",event.receivedAt); perf.mark("suggestionsReady",event.receivedAt); perf.outcome("complete")
                             val updated = Game(event.data.obj("game")); require(updated.id == game.id && updated.version > p.expectedVersion && updated.turns.any { it.index == game.state.optInt("turnNumber")+1 })
                             val growth = hasMajorGrowth(game.state,updated.state,event.data.obj("metrics"))
                             draftJob?.cancelAndJoin()

@@ -53,11 +53,23 @@ class NativePerf(context: Context) {
         record = json("interactionId" to interactionId,"kind" to "turn","requestId" to p.requestId,"gameId" to p.gameId,"turn" to index,"tap" to SystemClock.elapsedRealtime(),"feedbackFrame" to null,"firstSSE" to null,"firstVisibleNarrativeFrame" to null,"complete" to null,"choicesReady" to null)
         persist()
     }
+    @Synchronized fun textReceived(characters: Int, at: Long) {
+        record?.put("lastTextReceipt",at)?.put("narrativeCharacters",characters)
+    }
+    @Synchronized fun tailPaint(characters: Int, canonical: Boolean, at: Long=SystemClock.elapsedRealtime()) {
+        if(!acceptsFrames) return
+        val r=record ?: return
+        val count=if(canonical) "canonicalPaintCharacters" else "provisionalPaintCharacters"
+        if(r.optInt(count,-1)==characters) return
+        r.put(count,characters).put(if(canonical) "canonicalLastNarrativePaint" else "lastNarrativePaint",at)
+        // Per-chunk updates stay in memory; final/readiness events flush the bounded record.
+        if(canonical || !r.isNull("complete")) persist()
+    }
     @Synchronized fun rebind(p: Pending) { requestId=p.requestId; record?.put("requestId",p.requestId); persist() }
     @Synchronized fun mark(name: String, at: Long=SystemClock.elapsedRealtime()): Boolean {
         val r = record ?: return false
         if(!r.isNull(name)) return false
-        if((name.endsWith("Frame") || name == "choicesReady") && !acceptsFrames) return false
+        if((name.endsWith("Frame") || name == "choicesReady" || name == "inputReady" || name == "draftReady") && !acceptsFrames) return false
         r.put(name,at); persist(); return true
     }
     @Synchronized fun outcome(value: String) { record?.put("outcome",value); if(value != "complete") acceptsFrames=false; persist() }

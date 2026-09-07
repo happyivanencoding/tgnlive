@@ -271,4 +271,22 @@
   <string name="native_font2" formatted="false">"Default"</string>
   <string name="native_font3" formatted="false">"Large"</string>
   <string name="native_font4" formatted="false">"Very large"</string>
+  <string name="native_charactertab" formatted="false">"Character"</string>
+  <string name="native_abilitiestab" formatted="false">"Abilities"</string>
+  <string name="native_itemstab" formatted="false">"Items &amp; assets"</string>
+  <string name="native_peopletab" formatted="false">"People"</string>
+  <string name="native_leveragetab" formatted="false">"Lasting advantages"</string>
+  <string name="native_opportunitiestab" formatted="false">"Opportunities"</string>
+  <string name="native_nextrealm" formatted="false">"Next realm"</string>
+  <string name="native_stateempty" formatted="false">"Nothing confirmed here yet. Your story will leave its mark."</string>
+  <string name="native_mybooks" formatted="false">"My books"</string>
+  <string name="native_bookcount" formatted="false">"{count} books · Each is an ongoing world"</string>
+  <string name="native_waitrepair" formatted="false">"Checking this turn’s result"</string>
+  <string name="native_waitconfirm" formatted="false">"Story written. Confirming this turn."</string>
+  <string name="native_submitted" formatted="false">"Action submitted"</string>
+  <string name="native_confirmhint" formatted="false">"The next turn waits for confirmation. You can draft now."</string>
+  <string name="native_cancelturn" formatted="false">"Cancel turn"</string>
+  <string name="native_preparenext" formatted="false">"Draft my next move"</string>
+  <string name="native_draftonly" formatted="false">"Draft only · Never sent automatically"</string>
+  <string name="native_turnready" formatted="false">"Your turn"</string>
 </resources>

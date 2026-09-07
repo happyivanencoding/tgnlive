@@ -89,7 +89,17 @@ class Repository(val auth: AccessAuth, val cache: SnapshotCache, val base: Strin
         json
     }
     suspend fun worlds(lang: String): List<World> { val j = jsonGet("/api/worlds?language=$lang"); currentCoroutineContext().ensureActive(); cache.write("worlds-$lang",j); return j.objects("worlds").map(::World) }
-    suspend fun shelf(): List<JSONObject> { val j = jsonGet("/api/games"); currentCoroutineContext().ensureActive(); cache.write("shelf",j); return j.objects("games") }
+    suspend fun shelf(): List<JSONObject> {
+        val j=jsonGet("/api/games"); currentCoroutineContext().ensureActive()
+        j.objects("games").forEach { summary ->
+            val cached=cache.read(summary.str("id"))?.optJSONObject("game")
+            if(cached != null) {
+                summary.put("worldTitle",cached.obj("world").str("title"))
+                if(cached.obj("state").optInt("turnNumber") == summary.optInt("turnNumber")) summary.put("goal",cached.obj("state").str("goal"))
+            }
+        }
+        cache.write("shelf",j); return j.objects("games")
+    }
     suspend fun game(id: String): Game { require(id.matches(Regex("[A-Za-z0-9_-]+"))); val j = jsonGet("/api/games/$id"); val game = Game(j.obj("game")); currentCoroutineContext().ensureActive(); cache.write(id,j); return game }
     fun stream(path: String, body: JSONObject): Flow<ServerEvent> = flow {
         val call = client.newCall(request(path, body)); streamCall = call

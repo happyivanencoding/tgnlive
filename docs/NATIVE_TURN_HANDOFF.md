@@ -20,13 +20,13 @@ data: {"characters":477,"elapsedMs":24600,"provisional":true}
 
 ## Native交互
 
-提交后立即pending和轻反馈，旧建议/输入淡出下收，键盘退出，正文接管空间。真正首段前小范围呼吸点反馈持续；首段后退出。narrative_end后不再伪装“仍在写正文”，提示正在确认；允许明确的下一步草稿，但不自动排队/发送。服务器正式complete后新建议/输入自然上移淡入并轻反馈；停止自己的请求仍可用，不能误停别的客户端。
+提交后立即pending和轻反馈，旧建议/输入淡出下收，键盘退出，正文接管空间。真正首段前小范围呼吸点反馈持续；首段后退出。narrative_end后不再伪装“仍在写正文”，提示正在确认；自动展开同一个下一步草稿输入；从暂定结束到正式完成不卸载该输入框，不自动排队/发送。服务器正式complete后新建议/输入自然上移淡入并轻反馈；停止自己的请求仍可用，不能误停别的客户端。
 
 设备记录分别是tap、feedbackFrame、firstSSE、firstVisibleNarrativeFrame、lastTextReceipt、lastNarrativePaint、narrativeEndSignal、providerComplete、suggestionsReady、complete、choicesReady、inputReady、canonicalLastNarrativePaint。末字计时只在该字的布局包围框真实位于阅读viewport且窗口前台连续两帧时成立；缺失保持缺失。正式正文被repair替换时单独计canonical尾帧，不覆盖之前用户已经读完的暂定尾帧。
 
 ## 接受状态
 
-代码级13个相关Node测试通过（parse、generation、HTTP）；真机全流程仍在本轮执行。用户设备为Samsung SM-S928U1/Android16，已真实安装和读取既有生产书架、生成自己的测试开场；不把历史126回合当本轮真机生成。后续以NATIVE_MOBILE_TESTS与physical结果文件为准。
+代码级17个相关Node测试通过（parse、generation、HTTP、store）；真实物理结果与7个成功回合见当前NATIVE_MOBILE_TESTS和physical报告。用户设备为Samsung SM-S928U1/Android16，已真实安装和读取既有生产书架、生成自己的测试开场；不把历史126回合当本轮真机生成。后续以NATIVE_MOBILE_TESTS与physical结果文件为准。
 
 不改变原Web的表现；前端忽略未知SSE类型的原行为继续有效。正式部署前使用既有SQLite snapshot工具检查没有活跃请求，按现有stop/start脚本切换；不重启任何其他Agent服务。
 
@@ -36,3 +36,8 @@ data: {"characters":477,"elapsedMs":24600,"provisional":true}
 在本轮受控升级窗口中，自己的Native测试书恰有一条新请求在快照之后进入，进程退出前未提交Canon。原服务重启后requests.running会永久保留，导致同requestId持续REQUEST_IN_PROGRESS；这不是虚构边界。新增`GameStore.recoverInterruptedRequests()`，仅由生产server成功取得监听端口后的同步启动回调执行，将死进程遗留的running收据置为failed/SERVER_RESTARTED。保留请求身份与失败原因，不重放动作，不改games/turns/ledger/worlds。没有放在store构造器中，避免一个启动失败的第二进程误伤现有请求。
 
 客户端仍先GET权威存档；服务证明旧requestId已终止后才允许显式重试取得新ID。未提交草稿不自动发送。原快照的一致性回执因这条请求入场而为false，原件保留，不能覆盖为全表PASS；所有Canon表仍一致。后续真实重试及设备证据见physical报告。
+
+
+## 9003最后实测
+
+自动草稿在最后一个可见字之后129ms可用；发送仍在后台结果确认后才开放，完整差值9531ms，确认→发送115ms。草稿输入和提交后就绪共用同一TextField，真实Gboard未提交候选“你好”跨确认保留，并在之后正常选中。不因临时草稿而修改Canon或抢跑下一回合。最终打包另收起确认阶段正文末尾重复的“正在生成”提示，避免与确认状态矛盾。

@@ -11,8 +11,8 @@ android {
         applicationId 'com.thegreatnovel.tgnlive'
         minSdk 26
         targetSdk 36
-        versionCode 8001
-        versionName '0.8.0-android.1'
+        versionCode 9003
+        versionName '0.9.0-android.3'
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     buildTypes {

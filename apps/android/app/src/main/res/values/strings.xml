@@ -271,4 +271,22 @@
   <string name="native_font2" formatted="false">"标准"</string>
   <string name="native_font3" formatted="false">"大"</string>
   <string name="native_font4" formatted="false">"很大"</string>
+  <string name="native_charactertab" formatted="false">"角色"</string>
+  <string name="native_abilitiestab" formatted="false">"能力"</string>
+  <string name="native_itemstab" formatted="false">"物品 / 资产"</string>
+  <string name="native_peopletab" formatted="false">"人物 / 关系"</string>
+  <string name="native_leveragetab" formatted="false">"长期筹码"</string>
+  <string name="native_opportunitiestab" formatted="false">"机会"</string>
+  <string name="native_nextrealm" formatted="false">"下一境界"</string>
+  <string name="native_stateempty" formatted="false">"这里还没有已确认的记录。新的收获会随着故事自然留下。"</string>
+  <string name="native_mybooks" formatted="false">"我的书"</string>
+  <string name="native_bookcount" formatted="false">"{count} 本书 · 每一本都是持续的世界"</string>
+  <string name="native_waitrepair" formatted="false">"正在校正本轮结果"</string>
+  <string name="native_waitconfirm" formatted="false">"正文已写完，正在确认本轮结果"</string>
+  <string name="native_submitted" formatted="false">"行动已提交"</string>
+  <string name="native_confirmhint" formatted="false">"确认前不会开始新回合，草稿可以先写。"</string>
+  <string name="native_cancelturn" formatted="false">"取消本轮"</string>
+  <string name="native_preparenext" formatted="false">"先写下一步"</string>
+  <string name="native_draftonly" formatted="false">"下一步草稿 · 不会自动发送"</string>
+  <string name="native_turnready" formatted="false">"轮到你了"</string>
 </resources>

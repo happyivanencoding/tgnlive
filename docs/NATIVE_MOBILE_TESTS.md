@@ -1,87 +1,87 @@
-# Native Mobile：验证记录与接受门槛
+# Native Android 真机验证
 
-## 本轮结论
+## 当前阶段：v0.9.0-android.3 / 9003
 
-**原生候选工程已经形成；不能把“能构建”写成“已经在 Android 上真实游玩通过”。** 最终构建、JVM 测试、资源检查和 APK 哈希保存到 `artifacts/reports/android-native-v0801/RESULTS.json`。该报告不包含用户正文、存档、Cookie、签名私钥或账户数据。
+本轮已在 **Samsung SM-S928U1 / Android 16（API36）** 上安装并使用默认生产 HTTPS 客户端。屏幕1440×3120、density600；开始时系统font scale为0.8。本轮没有把实体设备测试写成模拟器测试，也没有把上一阶段的“未连接手机”继续当作当前状态。
 
-| 项目 | 当前证据与边界 |
-| --- | --- |
-| 生产 API/代码理解 | 已读 v0.8.0 / 26fc8e1 实现；Android 模型在 JVM 中解析同一 backend 的26份真实存档、126个历史回合、五语各9个世界；0变更请求；不是 Native UI 测试 |
-| Debug 构建 | 已有成功构建与 APK；最终重建以 RESULTS.json 为准 |
-| JVM 测试 | 最终30项通过，0失败/0错误/0跳过：29项确定性测试 + 1项真实后端只读数据适配测试 |
-| Lint / 配置 | 0阻断错误、3条警告；实际 Gradle 配置检查确认五语不拆分、Release 固定生产 HTTPS、minSdk26 |
-| 五语资源 | zh/en/fr/es/ar 每种272个键，静态索引检查通过；不等于实际翻译/RTL界面验收 |
-| AndroidTest | 真实 Activity 的测试已编写；构建测试 APK 不等于执行测试 |
-| Android Emulator | 自有 Android15 / API35 / 1080×2400 / 420dpi 实际启动到桌面；App 尚未完成安装/运行验收 |
-| Emulator 调试连接 | `TOOL_BLOCKED_DEBUG_AUTHORIZATION`：确认标准调试授权的工具调用被拦截，已停止尝试，不改密钥/不绕过 |
-| Native Cloudflare 登录 | `PENDING_EMULATOR_VALIDATION`，未用开发 token、预置 Cookie 或 loopback 冒充生产登录 |
-| Native 真实书架/打开存档 | `PENDING_EMULATOR_VALIDATION` |
-| Native 真实生成/新建世界 | `PENDING_EMULATOR_VALIDATION`；实际 Native production 已玩回合数 **0** |
-| 输入/滚动/生命周期/网络 | 实现与部分确定性测试已有，实际 Android 行为仍 `PENDING_EMULATOR_VALIDATION` |
-| Native 首反馈/首正文/完成时间 | **NOT_MEASURED**；不能填入编译耗时、宿主机 HTTP 耗时或服务端 trace 代替 |
-| 实体设备 | 无连接；所有硬件专属项目 `PENDING_PHYSICAL_DEVICE_VALIDATION` |
+真实数据源仍是既有 `live.thegreatnovel.com`。采用手机已有的合法 owner 会话，没有预置凭据、匿名公网 API 或另一套 Canon。首次清除会话后的浏览器登录未重跑，不能由本轮会话复用代替。
 
-## 已做的确定性验证
+最终汇总以 `artifacts/reports/android-native-v090-physical/MEASUREMENTS.json`、`RESULTS.md` 为准；本地完整证据在 `.runtime/android/physical-20260907/`。旧 `android-native-v0801` 报告是上一阶段历史，不代表当前仍为0回合/无实体机。
 
-JVM 测试集中覆盖临时密钥/NaCl box 解密与篡改拒绝、签名/issuer/audience/有效期/异常 JWT、SSE 分片/UTF-8/CRLF/心跳/严格 EOF、无正文的完成重放、请求收据恢复、稳定段落键、错误分类、迟到操作隔离、提交后新草稿保留、重大成长条件和紧凑屏幕布局策略。新增 HTTP 回归只使用测试进程的 synthetic localhost response，验证收到 headers 后取消能否关闭卡住的 body；**不是 TGN backend、Native UI 或真实生成测试**。
+## 测试书与真实回合
 
-审查后修订了快速切书的旧 GET 覆盖、创建请求结果不明时重复建书风险、世界创建停止后恢复、SSE EOF 伪造完成、HTML 5xx 误判登录、草稿延迟保存覆盖、计时 IO 阻塞、旧书触发新正文触觉、横屏 IME 占满视口等路径。源代码修复不直接等价于模拟器 PASS。
+本轮最终服务端确认 **7个唯一成功回合**；独立通过的实际设备测试包括连续两轮、Stop/Retry、Gboard九键候选提交、后台/系统返回，以及9003自动草稿跨确认保留IME候选。
 
-日志留在 `.runtime/android/`：`coordinator-build.log` 为首次成功构建；`build-delivery.log` 为开发复核27项；`final-build.log` 等失败记录保留。并行 Gradle 争用曾导致编译错误，不删除失败记录或把后续重跑伪装成第一次成功。最终只能由一个进程执行打包验证，不改共享 Gradle ACL、清理其他项目缓存或终止核心 Agent。
+唯一用于本轮主动提交动作的专门测试书：`Native device2`，gameId `game_a943b8e8080644c0835a646a1c2bf109`。从 Native 的预设选择、天赋、命名、开场开始；随后经过自由行动、实际建议填入再提交、恢复/取消/重试。每一轮都走既有生产 Narrator/校验/Canon 提交，未使用固定fixture替代真实游玩。
 
-## 最终只读后端契约验证
+不要把真实库中的历史136回合当本轮Native新生成。成功回合数必须取这本测试书最终服务端version/turns，并与设备timing和requestId关联；取消、未知提交结果和失败尝试分开计算。
 
-`LiveBackendContractTest` 在本轮显式启用，使用当时刚从现有4317 backend取得的真实数据，执行 Android 当前 `World/Game/Turn` 和段落模型：保留历史文本/语言/选择、唯一段落键、状态不改写。这是实际数据适配检查，不是 Android 界面截图、生产登录或SSE新生成。
+已完成的 `device4-physical.log` 为一段真正通过的、连续两轮的实体机测试，覆盖自由行动、建议、SSE、新一轮操作区和顶部状态打开/关闭。其前后的恢复、输入及系统路径见各独立日志，不能因为一个用例失败就抹去已经验证的路径，也不能把整体失败日志改称PASS。
 
-运行方法（后端已在线时）：
+## 这次查出的等待原因
 
-```powershell
-cd C:\dev\tgn_live_android\apps\android
-node scripts/capture-live-contract.mjs
-$env:TGN_NATIVE_LIVE_SNAPSHOT='C:\dev\tgn_live_android\.runtime\android\contract\live-snapshot.json'
-.\gradlew.bat :app:testDebugUnitTest :app:verifyNativeConfiguration :app:lintDebug --no-daemon
-```
+正文之后仍在生成结构化choices/delta；必要时还会repair。用户的两份旧生产trace分别有约21.99s和22.35s修复耗时。旧Native已响应SSE complete，不是单纯错误等待HTTP EOF。
 
-未显式启用时这1项测试按 assume 跳过，而不是伪造真实数据 PASS。本轮最终报告中的跳过数为0。私有快照只在被 Git 忽略的 `.runtime/android/contract/`；报告仅包含数量和状态，不含故事正文。
+新增 `narrative_end` 仅标记暂定正文结束。正式 `complete` 仍为提交权威。Native将“接收行动→正文→确认结果→下一轮”分开：旧操作区收起，首段前呼吸点；正文后明确确认/校正，并自动展开同一个原生编辑器供写不自动发送的下一步草稿；只有正式提交后新建议和发送权限才出现。
 
-最终签名校验确认 Debug APK 为v2签名、支持arm64-v8a/armeabi-v7a/x86/x86_64；Release产物仍未签名。剩余3条Lint警告是工具链版本提示、AppBundleLocaleChanges提示、minSdk26下冗余的v26资源限定。语言不拆分已由实际Gradle属性断言验证，但运行时语言切换仍需Android验收；不以关闭Lint代替检查。SDK XML版本与Gradle9兼容性警告保留在构建日志中。
+前五个设备计时回合的首次反馈109–144ms、正式提交到输入就绪114–159ms；这是各实际trial数据，不是受控AB结论。最终9003回合的暂定正文尾字→自动草稿可用 **129ms**，发送仍等正式确认：尾字→发送可用9531ms；正式确认→发送可用115ms。前后输出长度和core版本不同，不能据此宣称某个百分比性能提升。最终更多回合见机器报告，缺失字段保持null。
 
-## Emulator Acceptance Pass（未执行部分）
+## 物理测试驱动与证据口径
 
-在调试连接已由合法授权建立后，先默认生产 HTTPS APK 登录并读取已有书架，只读打开一个历史故事。随后使用清晰命名的 Native 接受测试书卷做真实生成，不在用户珍贵存档上随意操作，也不同时挤占核心实验的 ACP 槽位。
+`PhysicalDeviceJourneyTest.kt` 使用 Android UiAutomation、真实elapsedRealtime和真实触摸事件，不使用Compose测试的虚拟动画时钟做设备耗时结论。服务端和手机端时钟不混减；通过requestId关联。
 
-必须实际走通：Discover → preset preview → power/name → opening → 自由输入 → 可编辑建议 → SSE正文 → State Sheet → stop/reconcile → explicit retry；另走 custom world SSE 创建。通过 Web 与 Native 回读同一个 gameId、version 和历史回合，核对不存在第二 Canon 或重复提交。
+主要接受方法：
 
-尺寸/系统矩阵至少包含常见约360dp、412dp、宽屏，以及紧凑横屏；密度、font scale 1.0/1.3/1.5/2.0，五档阅读字体、五语与 Arabic RTL、Light/Dark/System、手势导航。中文/法语/西语/阿语必须用真实支持该语言的 Android IME，`adb input text` 或 Compose performTextInput 不能冒充 composition 体验。
+- `realDeviceRealClockJourney`：专门测试书的真实生产连续回合。
+- `readingControlsAndLifecycle`：六个状态分类、主题/五语、阅读锚点、键盘与后台草稿。原先自动化在收尾返回步骤被窗口动画/前台切换打断，逐步结果与失败日志保留。
+- `resumeAndBackGestureOnly`：只补测后台恢复和系统返回，不机械重复已走过的状态/主题检查。
+- `explicitStopAndRetry`：真实请求已收到SSE后停止，再显式重试；要求最终target turn不增加两次。
+- `chineseNineKeyComposition`：当前手机实际Gboard九键布局的物理按键与候选提交，不把ACTION_SET_TEXT或adb input text当中文组词。它是特定已观察布局的测试，不宣称适用于所有IME。
 
-正文观察需覆盖：正在底部跟随、主动向上读历史、回到最新、completion前后同一段落的坐标、choices出现、状态sheet、开关键盘、旋转、退后台/恢复、断网/恢复、SSE中断、进程杀死后重开和跨客户端版本前进。保留截图/录屏/geometry；最终正文未提交不得保留成 Canon。长 session 至少实际10分钟，再拉长至半小时，不用静态长文截图替代。
+测试开始前设备必须正常授权且用户暂时不切换应用。驱动发现前台已不是TGN时不再注入触摸或保存其他应用截图；不读取其它App内容、清空用户数据、绕过锁屏或修改全局输入法。截图有意等待短暂系统转场稳定；这个等待不参与Narrative性能指标。
 
-## 诊断工具与证据
-
-`apps/android/scripts/device-pass.ps1` 提供显式设备序列号的 Install / Info / Logs / Screenshot / Record，先检查设备已授权，否则立即报错。脚本不自动确认调试、不修改 adb keys、不重启全局 adb、不选择其它设备。当前不因工具阻塞改走旁路。
+每次只运行一个UI控制器。不要在Instrumentation执行时另起uiautomator dump或其它触摸脚本。真实录屏可并行，因为它只观察屏幕。不要让静态Node/JVM fixture测试冒充真机。
 
 ```powershell
 cd C:\dev\tgn_live_android\apps\android
-# 仅在设备已正常、合法授权以后执行。
-.\scripts\device-pass.ps1 -Action Install -Serial <serial>
-.\scripts\device-pass.ps1 -Action Info -Serial <serial>
-.\scripts\device-pass.ps1 -Action Logs -Serial <serial>
-.\scripts\device-pass.ps1 -Action Screenshot -Serial <serial>
-.\scripts\device-pass.ps1 -Action Record -Serial <serial> -Seconds 20
+.\gradlew.bat :app:assembleDebug :app:assembleDebugAndroidTest --no-daemon
+$adb="$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe"
+& $adb -s <serial> install -r app\build\outputs\apk\debug\app-debug.apk
+& $adb -s <serial> install -r app\build\outputs\apk\androidTest\debug\app-debug-androidTest.apk
+& $adb -s <serial> shell am instrument --user 0 -w -r `
+  -e class 'com.thegreatnovel.tgnlive.PhysicalDeviceJourneyTest#realDeviceRealClockJourney' `
+  -e tgnPhysicalPlay yes -e tgnGameId <dedicated-acceptance-game> -e tgnRounds 2 `
+  com.thegreatnovel.tgnlive.debug.test/androidx.test.runner.AndroidJUnitRunner
 ```
 
-产物仅落入 `.runtime/android/device-pass/`。截图/录屏可能包含个人故事或账户，审查后才分享，不整体提交 Git。默认生产客户端不依赖 adb reverse；loopback debug 的显式构建命令见 `ANDROID_APP.md`。
+不带明确授权参数时真实生产测试应跳过，不自动发起昂贵生成。不要在用户珍贵存档上随意做测试。
 
-## 手机端时间记录
+## 设备计时定义
 
-已有每次用户操作的 `interactionId` 与服务端 requestId 区分；本地单调时钟记录 tap、feedbackFrame、firstSSE、firstVisibleNarrativeFrame、complete、choicesReady。首 SSE 是 IO 首批数据到达，不等同于首正文；首正文是前台/窗口有焦点且段落与 viewport 相交的可见帧近似，不冒充物理屏幕光子时间。计时只保存24个近期操作，不记录正文/草稿/token，Debug 标签 `TGNNativePerf` 可导出。
+`tap`是实际发送回调进入；`feedbackFrame`是pending反馈可见帧；`firstSSE`是IO接收；`firstVisibleNarrativeFrame`是当前回合正文在前台窗口的实际可见帧近似。
 
-开始读历史、切书或后台后不把旧正文重新计成新回合。一次重试有新 interactionId；服务器 requestId 可复用，不能把两者混为一谈。App launch、home interactive、shelf load、open story 的完整设备级测量仍待补齐；`am start -W` 只能辅助启动，不代替正文绘制时间。
+9003的`draftReady`表示自动草稿输入达到至少44dp可见高度、连续两帧且可编辑，不授予发送权限；同一个输入实例跨正式确认保留，`inputReady`表示提交已确认后可开始下一次发送。
 
-最终实测表应分列：网络路径、设备/API、操作ID、客户端 tap→feedback、tap→firstSSE、tap→first visible prose、tap→complete、choicesReady、服务端生成trace。失败/取消/无正文重放独立列示，不塞进成功平均数。当前这些设备结果均未采集。
+`lastNarrativePaint`要求当前正文最后一个glyph包围框真正处于阅读viewport，连续两个系统帧可见；用户正在读历史时不能虚构该值。`narrativeEndSignal`是服务端分隔符边界到达，`providerComplete`是Narrator调用结束，`complete`是正式回合到达，`choicesReady`/`inputReady`是相应Native控件可见。repair替换正文后的尾帧单列 `canonicalLastNarrativePaint`。
 
-## 等待实体 Android 手机复核的项目
+关键两个差值分别是“暂定正文尾字→输入就绪”和“正式提交→输入就绪”。二者不能混为一谈。记录仅包含操作ID、计时和状态，不包括草稿、正文、token、Cookie或隐藏模型计划。
 
-以下全部 **PENDING_PHYSICAL_DEVICE_VALIDATION**，不是 FAIL，也不是模拟器 PASS：实际振动与触摸手感；真实屏幕对比度与半小时阅读疲劳；120Hz/高刷新率观感；Gboard/Samsung Keyboard 长时间 composition/selection；真实系统返回手势；状态栏/导航栏与开孔区域；Wi-Fi/5G切换；实体设备后台回收、锁屏、电源管理和 OEM 行为。
+## 实际观察与失败记录
 
-Physical Device Acceptance Pass 应聚焦以上硬件差异，以及此前 Emulator 尚未完成的关键生产路径。对于已被确定性测试充分证明且不随硬件变化的解析/密钥/JWT测试，不机械重复整套低价值操作。记录发现的具体体验问题后再改，不重设计账号、Canon 或客户端架构。
+有真实90秒屏幕录制及解码帧，已观察旧操作区消失、正文流动、确认阶段与状态sheet。六分类从横向隐藏末项改成窄屏两排直接可见；宽屏可在一排展示。亮/暗和Arabic历史中文混排均留有设备截图。
+
+`draft-pass2.log`验证了实际Gboard：确认前候选“你好”尚未选中，确认后同一候选仍在，继续选中后输入变成“下一步草稿：你好”，期间没有第二次提交。Gboard九键把未完成拼音保存在IME候选区，不一定写进TextFieldValue.composition；初次使用后者断言的失败保留为测试口径错误，后续直接检查真实候选。
+
+第一轮keyboardGeometry的窗口坐标在IME进入动画中取得（窗口下界超过物理屏幕），不作为稳定几何数值证据；“输入未被键盘遮挡”由真实截图/拼音操作和后续同一编辑器测试支持，而不是把错误坐标当严格PASS。
+
+初期测试失败包括：旧Compose测试驱动的未组合节点、缺失测试类、过期无障碍节点、独立Modal窗口tag、横向分类发现困难、Samsung窗口还在返回动画时过早注入系统手势，以及用户切换到其他App。这些不是同一种故障。失败日志保留；旧虚拟时钟驱动已移除，当前测试不靠伪造正文通过。
+
+部署窗口还暴露了死进程遗留running请求。最小修复为成功占有服务端口后将遗留收据置failed/SERVER_RESTARTED，不重放动作、不改Canon。原快照比较的requests差异回执仍为false；games/worlds/game_worlds/turns/canon_ledger/story_plans/traces保持一致。详情见 `NATIVE_TURN_HANDOFF.md`。
+
+## 仍不能自动宣称通过的项目
+
+实际振动强弱是否合手、实体屏幕半小时阅读疲劳、真实120Hz观感，仍需用户主观确认。OS触觉调用/设备截图不能替代人的手与眼。
+
+本轮没有完整覆盖Samsung Keyboard长期组词、所有系统font scale/OEM、Wi-Fi与5G真实切换、系统强制回收/省电策略、长时间弱网和半小时不间断用户阅读。这些继续标 `PENDING_PHYSICAL_DEVICE_VALIDATION`，不要混入已经通过的基础实体机路径。
+
+首次浏览器登录、其它语言的本轮新故事生成、完整设备冷启动benchmark也不要由已有会话/五语UI/历史读取冒充。默认生产APK与签名、源码提交和本轮精确接受结果见交付报告。

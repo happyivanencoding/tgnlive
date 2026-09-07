@@ -1,12 +1,11 @@
-## Android Native 候选客户端（尚未完成端到端接受）
+## Android Native 当前状态（2026-09-07）
 
-`apps/android/` 是同一 TGN Live 的 Kotlin/Jetpack Compose 客户端，Android `0.8.0-android.1` / code `8001`。同一 owner-only Cloudflare Access、API、世界、书架、存档和 Canon；没有移动专属 backend/state/SQLite，也没有改生成流程或公网认证策略。Web 的生产版本和运行入口不因候选工程加入而变化。
+现有Android已更新为 **0.9.0-android.3 /9003**，源码在 `apps/android/`，同一生产账号/书架/存档/Canon/API。实体Samsung SM-S928U1 /Android16上已有7个专门测试书的真实成功回合；连续自由/建议、停止重试、Gboard九键“你好”、后台恢复及系统返回的独立用例通过。六分类状态、五语UI/RTL、亮暗色与历史滚动有真实操作/截图证据；未把整体早期失败日志改成PASS。
 
-候选代码位于短期 `mobile/android-native` / `C:\dev\tgn_live_android`，与同时修改 main 的核心任务隔离。构建、JVM 测试、五语资源和 APK 的最终机器证据读 `artifacts/reports/android-native-v0801/RESULTS.json`；生产登录和真实 Android 游玩不由这些测试代替。当前 Native 生产回合数为0，客户端耗时 NOT_MEASURED。模拟器已启动，但调试授权确认被工具拦截，实际 App 验证仍 PENDING_EMULATOR_VALIDATION；实体手感/OEM等另列 PENDING_PHYSICAL_DEVICE_VALIDATION。不能把短期候选分支称为已接受或已上线的原生生产版本。
+提交后旧操作下收、首段前呼吸点；`narrative_end`后自动出现同一个草稿编辑器，发送仍等正式`complete`。最后一轮正文尾字到草稿可用129ms；后台确认仍有真实约9.5s成本，确认到可发送115ms。实际Gboard未选候选跨确认保留并可继续选中；无自动提交/第二Canon。顶部状态按钮与窄屏六分类全可见；书架按长期game/书组织，不另建数据库。
 
-架构、合法浏览器登录、阅读设计及后续接受流程分别见 `ANDROID_APP.md`、`NATIVE_MOBILE_AUTH.md`、`NATIVE_MOBILE_DESIGN.md`、`NATIVE_MOBILE_TESTS.md`。通过真实接受后才同步最新 main 解决冲突并合并，不覆盖核心开发的未提交更改。
+共享变更只有必要的正文边界/trace，以及成功占有端口后恢复重启遗留running收据；见 `docs/NATIVE_TURN_HANDOFF.md`。原重启快照requests差异失败回执保留，Canon表一致；不宣称全表相同。构建/30项JVM/17项相关Node及精确真机结果见 `docs/NATIVE_MOBILE_TESTS.md`、`artifacts/reports/android-native-v090-physical/`。手机手感/120Hz/半小时疲劳、完整OEM/5G与首次浏览器登录仍需复核；不要将本轮基础设备通过写成所有场景通过。
 
-## v0.8.0 当前约定（优先于下方历史）
 
 ## v0.9.0 当前生产契约（2026-09-07）
 
@@ -101,15 +100,5 @@ API server firstNarrativeSseMs与浏览器可见帧严格区分；ACP五个准�
 最终远程边界证据位于 `artifacts/remote-v064/boundary.json`。此前remote-v061路径属于中间开发文档，当前以本段为准。手机8项真实功能检查通过但有1个Chrome网络收尾警告，仍标issues_found；没有把生成和保存完成伪装成浏览器全绿。
 
 
-## Native 回合交接协议（v0.9 原生迭代）
 
-新增只读SSE边界 `narrative_end`：发生于正文分隔符已确认、最后一段text发出后；内容只有characters/elapsedMs/provisional:true。**这不是commit，不授权下一次行动**。结构化JSON、校验、可能的repair和存档仍由既有生成链完成，只有原`complete`返回正式game。Web可忽略新增事件；Native据此收起旧操作、展示确认阶段并允许仅编辑下一步草稿，不自动发送。
-
-共享补丁仅output-parser/generation-service/app各少量行，不改prompt/reducer/progression/auth/store。`publicMetrics.narrativeCompleteMs`区分正文边界和API完成；29项旧Native确定性测试不替代真机新测试。本轮新增13项相关Node测试通过（包括边界在commit之前、不得将未校验状态当Canon）。实现理由与后续真机耗时见 `docs/NATIVE_TURN_HANDOFF.md`。
-
-
-### 真机暴露的服务重启恢复缺口
-
-在本轮受控升级窗口中，自己的Native测试书恰有一条新请求在快照之后进入，进程退出前未提交Canon。原服务重启后requests.running会永久保留，导致同requestId持续REQUEST_IN_PROGRESS；这不是虚构边界。新增`GameStore.recoverInterruptedRequests()`，仅由生产server成功取得监听端口后的同步启动回调执行，将死进程遗留的running收据置为failed/SERVER_RESTARTED。保留请求身份与失败原因，不重放动作，不改games/turns/ledger/worlds。没有放在store构造器中，避免一个启动失败的第二进程误伤现有请求。
-
-客户端仍先GET权威存档；服务证明旧requestId已终止后才允许显式重试取得新ID。未提交草稿不自动发送。原快照的一致性回执因这条请求入场而为false，原件保留，不能覆盖为全表PASS；所有Canon表仍一致。后续真实重试及设备证据见physical报告。
+Native协议/重启恢复细节与真实失败回执见 `docs/NATIVE_TURN_HANDOFF.md`，不重复列流水账。

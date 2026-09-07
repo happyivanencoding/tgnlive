@@ -271,4 +271,22 @@
   <string name="native_font2" formatted="false">"افتراضي"</string>
   <string name="native_font3" formatted="false">"كبير"</string>
   <string name="native_font4" formatted="false">"كبير جدًا"</string>
+  <string name="native_charactertab" formatted="false">"الشخصية"</string>
+  <string name="native_abilitiestab" formatted="false">"القدرات"</string>
+  <string name="native_itemstab" formatted="false">"الأغراض والممتلكات"</string>
+  <string name="native_peopletab" formatted="false">"العلاقات"</string>
+  <string name="native_leveragetab" formatted="false">"مكاسب دائمة"</string>
+  <string name="native_opportunitiestab" formatted="false">"الفرص"</string>
+  <string name="native_nextrealm" formatted="false">"المرحلة التالية"</string>
+  <string name="native_stateempty" formatted="false">"لا توجد سجلات مؤكدة هنا بعد. ستترك قصتك أثرها مع تقدمها."</string>
+  <string name="native_mybooks" formatted="false">"كتبي"</string>
+  <string name="native_bookcount" formatted="false">"{count} كتب · كل كتاب عالم مستمر"</string>
+  <string name="native_waitrepair" formatted="false">"مراجعة نتيجة هذه الجولة"</string>
+  <string name="native_waitconfirm" formatted="false">"اكتمل السرد. جارٍ تأكيد الجولة."</string>
+  <string name="native_submitted" formatted="false">"تم إرسال التصرف"</string>
+  <string name="native_confirmhint" formatted="false">"تنتظر الجولة التالية التأكيد. يمكنك كتابة مسودة الآن."</string>
+  <string name="native_cancelturn" formatted="false">"إلغاء الجولة"</string>
+  <string name="native_preparenext" formatted="false">"كتابة التصرف التالي"</string>
+  <string name="native_draftonly" formatted="false">"مسودة فقط · لن تُرسل تلقائيًا"</string>
+  <string name="native_turnready" formatted="false">"حان دورك"</string>
 </resources>

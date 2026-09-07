@@ -275,6 +275,24 @@ internal object NativeStringResources {
         "native_font1" to R.string.native_font1,
         "native_font2" to R.string.native_font2,
         "native_font3" to R.string.native_font3,
-        "native_font4" to R.string.native_font4
+        "native_font4" to R.string.native_font4,
+        "native_charactertab" to R.string.native_charactertab,
+        "native_abilitiestab" to R.string.native_abilitiestab,
+        "native_itemstab" to R.string.native_itemstab,
+        "native_peopletab" to R.string.native_peopletab,
+        "native_leveragetab" to R.string.native_leveragetab,
+        "native_opportunitiestab" to R.string.native_opportunitiestab,
+        "native_nextrealm" to R.string.native_nextrealm,
+        "native_stateempty" to R.string.native_stateempty,
+        "native_mybooks" to R.string.native_mybooks,
+        "native_bookcount" to R.string.native_bookcount,
+        "native_waitrepair" to R.string.native_waitrepair,
+        "native_waitconfirm" to R.string.native_waitconfirm,
+        "native_submitted" to R.string.native_submitted,
+        "native_confirmhint" to R.string.native_confirmhint,
+        "native_cancelturn" to R.string.native_cancelturn,
+        "native_preparenext" to R.string.native_preparenext,
+        "native_draftonly" to R.string.native_draftonly,
+        "native_turnready" to R.string.native_turnready
     )
 }

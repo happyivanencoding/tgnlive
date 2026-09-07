@@ -271,4 +271,22 @@
   <string name="native_font2" formatted="false">"Predeterminada"</string>
   <string name="native_font3" formatted="false">"Grande"</string>
   <string name="native_font4" formatted="false">"Muy grande"</string>
+  <string name="native_charactertab" formatted="false">"Personaje"</string>
+  <string name="native_abilitiestab" formatted="false">"Habilidades"</string>
+  <string name="native_itemstab" formatted="false">"Objetos y bienes"</string>
+  <string name="native_peopletab" formatted="false">"Relaciones"</string>
+  <string name="native_leveragetab" formatted="false">"Ventajas duraderas"</string>
+  <string name="native_opportunitiestab" formatted="false">"Oportunidades"</string>
+  <string name="native_nextrealm" formatted="false">"Siguiente nivel"</string>
+  <string name="native_stateempty" formatted="false">"Todavía no hay nada confirmado aquí. Tu historia dejará su huella."</string>
+  <string name="native_mybooks" formatted="false">"Mis libros"</string>
+  <string name="native_bookcount" formatted="false">"{count} libros · Cada uno es un mundo que continúa"</string>
+  <string name="native_waitrepair" formatted="false">"Revisando el resultado de este turno"</string>
+  <string name="native_waitconfirm" formatted="false">"Relato escrito. Confirmando este turno."</string>
+  <string name="native_submitted" formatted="false">"Acción enviada"</string>
+  <string name="native_confirmhint" formatted="false">"El siguiente turno espera la confirmación. Puedes preparar un borrador."</string>
+  <string name="native_cancelturn" formatted="false">"Cancelar turno"</string>
+  <string name="native_preparenext" formatted="false">"Preparar mi acción"</string>
+  <string name="native_draftonly" formatted="false">"Borrador · No se envía automáticamente"</string>
+  <string name="native_turnready" formatted="false">"Tu turno"</string>
 </resources>

@@ -1,6 +1,6 @@
 # Native Cloudflare Access 登录
 
-**状态：代码与密码学/JWT 单元测试已有实现；实际 Android → 浏览器 → Cloudflare → 原生会话的端到端登录尚未验收。不得用编译、合成 JWT 测试或本地 loopback 访问冒充生产登录成功。**
+**当前已在实体Samsung/Android16使用手机已有合法owner会话，通过默认生产HTTPS读取书架并提交真实回合；没有注入开发凭据。本轮未清空会话重测“首次浏览器登录”，因此首次登录、拒绝/过期/登出全矩阵仍是独立待验收项，不能用会话复用代替。**
 
 ## 为什么不新增登录后端
 
@@ -40,4 +40,4 @@
 
 必须在已获调试授权的 Emulator/设备上，点击 Native 登录，完成浏览器正常 Access 流程，返回原生页面后看到现有真实书架。退出 App 重开应能使用仍有效的会话；过期、取消、拒绝、网络失败、再登录和 logout 均需实际检查。
 
-这条路径目前 **PENDING_EMULATOR_VALIDATION**。实际 APK 的浏览器交接兼容性、Cloudflare 当前策略行为、Keystore 真正落盘及重新打开行为不能由 JVM 的合成测试代替。没有使用 service token、预置 cookie 或改公网 guard 来消除这个待验收项。
+首次浏览器登录与完整认证失败矩阵目前 **PENDING_FRESH_LOGIN_VALIDATION**。本轮真实设备反复安装更新/重开后使用已有合法会话的生产访问已实际成立；但它不能证明首次认证、会话到期或拒绝路径都通过。没有使用service token、预置cookie或修改公网guard来消除待验收项。
