@@ -2,6 +2,7 @@ import { AppError } from "./errors.js";
 import { REALMS } from "./worlds.js";
 import { DELTA_LIMITS } from "./delta-contract.js";
 import { canonicalAttitude, formatChange, normalizeLanguage, seedLabels } from "./i18n.js";
+import { applyProgression } from './progression.js';
 
 const ATTITUDES = new Set(["敌视", "戒备", "陌生", "中立", "好奇", "友善", "信任", "亲近"]);
 const MAX_TEXT = 320;
@@ -262,6 +263,7 @@ export function reduceState(currentState, rawProposal, world, language = "zh") {
   applyRelationships(state, delta.relationshipChanges, applied);
   applyCapabilities(state, delta.capabilityOps, applied, rejected, code);
   applyRealm(state, delta, world, applied, rejected, code);
+  applyProgression(state, delta, proposal.narrative, applied);
 
   const goal = shortText(delta.goal, "goal", { max: 320 });
   if (goal && goal !== state.goal) {

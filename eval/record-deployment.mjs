@@ -1,0 +1,16 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {createHash} from 'node:crypto';
+const root=process.cwd(),out=path.join(root,'artifacts/reports/progression-v080');
+const integrity=JSON.parse(fs.readFileSync(path.join(root,'artifacts/progression-v080/v080-release-integrity.json'),'utf8'));
+const boundary=JSON.parse(fs.readFileSync(path.join(root,'artifacts/remote-v080/boundary.json'),'utf8'));
+if(!integrity.passed||integrity.after.version!=='0.8.0'||boundary.version!=='0.8.0'||boundary.checks.length!==6)throw Error('Release verification incomplete');
+const health=await(await fetch('http://127.0.0.1:4317/api/health')).json();
+const worlds=await(await fetch('http://127.0.0.1:4317/api/worlds?language=zh')).json();
+const index=await(await fetch('http://127.0.0.1:4317/')).text();
+const script=await(await fetch('http://127.0.0.1:4317/app.js?v=0.8.0')).text();
+if(health.version!=='0.8.0'||health.access?.mode!=='owner-only'||!index.includes('v=0.8.0')||!worlds.worlds.some(w=>w.id==='masked-tides')||!worlds.worlds.some(w=>w.id==='martial-frontier'))throw Error('Deployed release/catalog/assets mismatch');
+const normalized=s=>s.replace(/\r\n/g,'\n');
+if(normalized(script)!==normalized(fs.readFileSync(path.join(root,'public/app.js'),'utf8')))throw Error('Deployed public asset differs from release source');
+const result={verifiedAt:new Date().toISOString(),passed:true,version:health.version,productionOrigin:'http://127.0.0.1:4317',publicOrigin:'https://live.thegreatnovel.com',access:health.access,canonicalDataUnchanged:integrity.passed,integrityTables:Object.keys(integrity.after.tables),originalGames:integrity.after.tables.games.rows,originalTurns:integrity.after.tables.turns.rows,privateBackup:'Retained under ignored .runtime/v080-before-deploy; not included in evidence bundle',deployedPublicAssetSha256:createHash('sha256').update(script).digest('hex'),publicAssetsPinned:true,boundaryChecks:boundary.checks,worldCatalogue:worlds.worlds.map(w=>({id:w.id,title:w.title})),limitations:['Public anonymous requests verified to require Access login; no fresh authenticated phone session was impersonated','Synthetic tests run on isolated databases; no private saves exported','Martial inspiration preset has schema/language validation but no completed real long play']};
+fs.writeFileSync(path.join(out,'DEPLOYMENT.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result,null,2));

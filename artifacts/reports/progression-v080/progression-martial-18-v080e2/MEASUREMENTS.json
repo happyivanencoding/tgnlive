@@ -1,0 +1,280 @@
+{
+  "label": "progression-martial-18-v080e2",
+  "requestedTurns": 18,
+  "committedTurns": 0,
+  "failedAttempts": 2,
+  "fatal": "Turn 1 failed twice; evidence retained",
+  "continuedFrom": null,
+  "continuationReason": null,
+  "status": "stopped-with-error",
+  "server": {
+    "firstNarrativeSse": {
+      "n": 0,
+      "medianMs": null,
+      "p95Ms": null,
+      "maxMs": null
+    },
+    "complete": {
+      "n": 0,
+      "medianMs": null,
+      "p95Ms": null,
+      "maxMs": null
+    },
+    "allAttempts": {
+      "n": 2,
+      "medianMs": 120014.5,
+      "p95Ms": 120019,
+      "maxMs": 120019
+    },
+    "repairCalls": 0,
+    "phases": {
+      "acp_narrator_initialize_auth_session_model_setup": {
+        "n": 0,
+        "medianMs": null,
+        "p95Ms": null,
+        "maxMs": null
+      },
+      "authored_opening_plan": {
+        "n": 0,
+        "medianMs": null,
+        "p95Ms": null,
+        "maxMs": null
+      },
+      "context_assembly": {
+        "n": 0,
+        "medianMs": null,
+        "p95Ms": null,
+        "maxMs": null
+      },
+      "http_input_validation": {
+        "n": 0,
+        "medianMs": null,
+        "p95Ms": null,
+        "maxMs": null
+      },
+      "narrative_generation": {
+        "n": 0,
+        "medianMs": null,
+        "p95Ms": null,
+        "maxMs": null
+      },
+      "request_validation": {
+        "n": 0,
+        "medianMs": null,
+        "p95Ms": null,
+        "maxMs": null
+      }
+    },
+    "checkpoints": []
+  },
+  "client": {
+    "firstNarrativeReceipt": {
+      "n": 0,
+      "medianMs": null,
+      "p95Ms": null,
+      "maxMs": null
+    },
+    "completeReceipt": {
+      "n": 0,
+      "medianMs": null,
+      "p95Ms": null,
+      "maxMs": null
+    },
+    "playerDecision": {
+      "n": 0,
+      "medianMs": null,
+      "p95Ms": null,
+      "maxMs": null
+    },
+    "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+    "feedbackVisibleFrame": {
+      "n": 0,
+      "medianMs": null,
+      "p95Ms": null,
+      "maxMs": null
+    },
+    "firstNarrativeVisibleFrame": {
+      "n": 0,
+      "medianMs": null,
+      "p95Ms": null,
+      "maxMs": null
+    },
+    "choicesVisibleFrame": {
+      "n": 0,
+      "medianMs": null,
+      "p95Ms": null,
+      "maxMs": null
+    }
+  },
+  "errors": [
+    {
+      "requestId": "cccd1d69-b530-4598-b9e0-2aad6842fb38",
+      "code": "PROVIDER_TIMEOUT",
+      "message": "生成超时",
+      "totalMs": 120019
+    },
+    {
+      "requestId": "69a2d6d3-79c5-47df-8c04-16022e7c62c4",
+      "code": "PROVIDER_TIMEOUT",
+      "message": "生成超时",
+      "totalMs": 120010
+    }
+  ],
+  "sourceHashes": {
+    "turns": "23b3fdc827defe254fe4a276f58c8fe05b49fc816103f9fbc8286aa8a258d92f"
+  },
+  "limits": [
+    "Autonomous diverging paths, not a paired or randomized causal experiment",
+    "Counts are not human retention; no physical phone or WAN measurement",
+    "Nested ACP spans are included in model stage time; do not sum them twice",
+    "With fewer than20 observations nearest-rank p95 equals maximum",
+    "Only committed requests enter successful latency; failures retained separately",
+    "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+  ],
+  "turnTimings": [
+    {
+      "turn": 1,
+      "outcome": "failed",
+      "requestId": "cccd1d69-b530-4598-b9e0-2aad6842fb38",
+      "sourceRun": "progression-martial-18-v080e2",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": null,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": null,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": 120038.90000000596,
+      "playerDecisionMs": null
+    },
+    {
+      "turn": 1,
+      "outcome": "failed",
+      "requestId": "69a2d6d3-79c5-47df-8c04-16022e7c62c4",
+      "sourceRun": "progression-martial-18-v080e2",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": null,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": null,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": 120020.5,
+      "playerDecisionMs": null
+    }
+  ],
+  "phaseTrace": [
+    {
+      "requestId": "cccd1d69-b530-4598-b9e0-2aad6842fb38",
+      "status": "failed",
+      "firstNarrativeSseMs": null,
+      "totalMs": 120019,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T12:13:47.744Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T12:13:47.746Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T12:13:47.746Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T12:13:47.748Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "authored_opening_plan",
+          "status": "complete",
+          "startedAt": "2026-09-07T12:13:47.749Z",
+          "startMs": 5,
+          "endedAt": "2026-09-07T12:13:47.749Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T12:13:47.749Z",
+          "startMs": 5,
+          "endedAt": "2026-09-07T12:13:47.750Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "failed",
+          "startedAt": "2026-09-07T12:13:47.750Z",
+          "startMs": 5,
+          "endedAt": "2026-09-07T12:15:47.765Z",
+          "elapsedMs": 120014,
+          "errorCode": "PROVIDER_TIMEOUT"
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "failed",
+          "startedAt": "2026-09-07T12:13:47.750Z",
+          "startMs": 6,
+          "endedAt": "2026-09-07T12:15:47.765Z",
+          "elapsedMs": 120013
+        }
+      ],
+      "providers": {}
+    },
+    {
+      "requestId": "69a2d6d3-79c5-47df-8c04-16022e7c62c4",
+      "status": "failed",
+      "firstNarrativeSseMs": null,
+      "totalMs": 120010,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T12:15:47.852Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T12:15:47.853Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T12:15:47.853Z",
+          "startMs": 1,
+          "endedAt": "2026-09-07T12:15:47.857Z",
+          "elapsedMs": 4
+        },
+        {
+          "name": "authored_opening_plan",
+          "status": "complete",
+          "startedAt": "2026-09-07T12:15:47.858Z",
+          "startMs": 5,
+          "endedAt": "2026-09-07T12:15:47.858Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T12:15:47.858Z",
+          "startMs": 5,
+          "endedAt": "2026-09-07T12:15:47.858Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "failed",
+          "startedAt": "2026-09-07T12:15:47.858Z",
+          "startMs": 5,
+          "endedAt": "2026-09-07T12:17:47.863Z",
+          "elapsedMs": 120005,
+          "errorCode": "PROVIDER_TIMEOUT"
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "failed",
+          "startedAt": "2026-09-07T12:15:47.858Z",
+          "startMs": 5,
+          "endedAt": "2026-09-07T12:17:47.863Z",
+          "elapsedMs": 120005
+        }
+      ],
+      "providers": {}
+    }
+  ]
+}

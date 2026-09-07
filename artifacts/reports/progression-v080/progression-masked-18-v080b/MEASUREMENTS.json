@@ -1,0 +1,1274 @@
+{
+  "label": "progression-masked-18-v080b",
+  "requestedTurns": 18,
+  "committedTurns": 7,
+  "failedAttempts": 1,
+  "fatal": "ACP cancelled",
+  "continuedFrom": null,
+  "continuationReason": null,
+  "status": "stopped-with-error",
+  "server": {
+    "firstNarrativeSse": {
+      "n": 7,
+      "medianMs": 5473,
+      "p95Ms": 67973,
+      "maxMs": 67973
+    },
+    "complete": {
+      "n": 7,
+      "medianMs": 38850,
+      "p95Ms": 105029,
+      "maxMs": 105029
+    },
+    "allAttempts": {
+      "n": 8,
+      "medianMs": 37967,
+      "p95Ms": 105029,
+      "maxMs": 105029
+    },
+    "repairCalls": 6,
+    "phases": {
+      "acp_narrator_initialize_auth_session_model_setup": {
+        "n": 7,
+        "medianMs": 737,
+        "p95Ms": 1015,
+        "maxMs": 1015
+      },
+      "acp_repair_initialize_auth_session_model_setup": {
+        "n": 5,
+        "medianMs": 773,
+        "p95Ms": 916,
+        "maxMs": 916
+      },
+      "authored_opening_plan": {
+        "n": 1,
+        "medianMs": 0,
+        "p95Ms": 0,
+        "maxMs": 0
+      },
+      "context_assembly": {
+        "n": 7,
+        "medianMs": 0,
+        "p95Ms": 1,
+        "maxMs": 1
+      },
+      "http_input_validation": {
+        "n": 7,
+        "medianMs": 0,
+        "p95Ms": 1,
+        "maxMs": 1
+      },
+      "narrative_generation": {
+        "n": 7,
+        "medianMs": 20150,
+        "p95Ms": 85200,
+        "maxMs": 85200
+      },
+      "parse": {
+        "n": 7,
+        "medianMs": 0,
+        "p95Ms": 1,
+        "maxMs": 1
+      },
+      "parse_validate": {
+        "n": 7,
+        "medianMs": 0,
+        "p95Ms": 1,
+        "maxMs": 1
+      },
+      "persistence": {
+        "n": 7,
+        "medianMs": 15,
+        "p95Ms": 65,
+        "maxMs": 65
+      },
+      "reducer_validation": {
+        "n": 7,
+        "medianMs": 0,
+        "p95Ms": 1,
+        "maxMs": 1
+      },
+      "repair": {
+        "n": 5,
+        "medianMs": 19819,
+        "p95Ms": 21723,
+        "maxMs": 21723
+      },
+      "repair_parse": {
+        "n": 5,
+        "medianMs": 0,
+        "p95Ms": 0,
+        "maxMs": 0
+      },
+      "repair_reducer_validation": {
+        "n": 5,
+        "medianMs": 1,
+        "p95Ms": 1,
+        "maxMs": 1
+      },
+      "request_validation": {
+        "n": 7,
+        "medianMs": 2,
+        "p95Ms": 6,
+        "maxMs": 6
+      }
+    },
+    "checkpoints": []
+  },
+  "client": {
+    "firstNarrativeReceipt": {
+      "n": 7,
+      "medianMs": 5476.200000017881,
+      "p95Ms": 67974.90000000596,
+      "maxMs": 67974.90000000596
+    },
+    "completeReceipt": {
+      "n": 7,
+      "medianMs": 38908.90000000596,
+      "p95Ms": 105086.20000001788,
+      "maxMs": 105086.20000001788
+    },
+    "playerDecision": {
+      "n": 6,
+      "medianMs": 7045.906900000002,
+      "p95Ms": 9472.282600000006,
+      "maxMs": 9472.282600000006
+    },
+    "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+    "feedbackVisibleFrame": {
+      "n": 7,
+      "medianMs": 8.5,
+      "p95Ms": 8.899999976158142,
+      "maxMs": 8.899999976158142
+    },
+    "firstNarrativeVisibleFrame": {
+      "n": 7,
+      "medianMs": 5489.199999988079,
+      "p95Ms": 67988.5,
+      "maxMs": 67988.5
+    },
+    "choicesVisibleFrame": {
+      "n": 7,
+      "medianMs": 38928.59999999404,
+      "p95Ms": 105098.70000001788,
+      "maxMs": 105098.70000001788
+    }
+  },
+  "errors": [
+    {
+      "requestId": "2a264896-c752-4ed1-bc87-81988d887b78",
+      "code": "INVALID_PROGRESSION",
+      "message": "evidence 须逐字摘自本轮正文中的实际授予/使用/兑现/失去，4—240字符",
+      "totalMs": 37084
+    },
+    {
+      "requestId": "2a264896-c752-4ed1-bc87-81988d887b78",
+      "code": "INVALID_PROGRESSION",
+      "message": "evidence 须逐字摘自本轮正文中的实际授予/使用/兑现/失去，4—240字符",
+      "totalMs": 37084
+    },
+    {
+      "requestId": "26b8a2b0-729a-40ed-941f-5ecbea38c854",
+      "code": "INVALID_PROGRESSION",
+      "message": "evidence 须逐字摘自本轮正文中的实际授予/使用/兑现/失去，4—240字符",
+      "totalMs": 105029
+    },
+    {
+      "requestId": "cab0edf0-9d8b-486a-8061-5683e1d32068",
+      "code": "INVALID_PROGRESSION",
+      "message": "evidence 须逐字摘自本轮正文中的实际授予/使用/兑现/失去，4—240字符",
+      "totalMs": 34333
+    },
+    {
+      "requestId": "f1fb95fe-8746-4b74-bc09-8fa9ca9dd476",
+      "code": "INVALID_PROGRESSION",
+      "message": "evidence 须逐字摘自本轮正文中的实际授予/使用/兑现/失去，4—240字符",
+      "totalMs": 42179
+    },
+    {
+      "requestId": "258ce22b-f498-4961-97ab-5b12b3e87a9c",
+      "code": "INVALID_PROGRESSION",
+      "message": "evidence 须逐字摘自本轮正文中的实际授予/使用/兑现/失去，4—240字符",
+      "totalMs": 38850
+    },
+    {
+      "requestId": "df5b69b4-15ce-4ff4-a28c-1450d058bdcb",
+      "code": "INVALID_PROGRESSION",
+      "message": "evidence 须逐字摘自本轮正文中的实际授予/使用/兑现/失去，4—240字符",
+      "totalMs": 48070
+    }
+  ],
+  "sourceHashes": {
+    "turns": "14f436196e1caae910e1c5c8cbc81c0839447147433efa4cad5826ae5e7c3acf"
+  },
+  "limits": [
+    "Autonomous diverging paths, not a paired or randomized causal experiment",
+    "Counts are not human retention; no physical phone or WAN measurement",
+    "Nested ACP spans are included in model stage time; do not sum them twice",
+    "With fewer than20 observations nearest-rank p95 equals maximum",
+    "Only committed requests enter successful latency; failures retained separately",
+    "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+  ],
+  "turnTimings": [
+    {
+      "turn": 1,
+      "outcome": "failed",
+      "requestId": "14507457-e87f-493b-9002-125f709ed93b",
+      "sourceRun": "progression-masked-18-v080b",
+      "feedbackVisibleFrameMs": null,
+      "firstNarrativeSseReceiptMs": 6449.5999999940395,
+      "firstNarrativeVisibleFrameMs": null,
+      "completeReceiptMs": null,
+      "choicesVisibleFrameMs": null,
+      "failedWaitMs": 37106.90000000596,
+      "playerDecisionMs": null
+    },
+    {
+      "turn": 1,
+      "outcome": "completed",
+      "requestId": "142faa6b-95dd-4eb1-adeb-a22ce58ae5d4",
+      "sourceRun": "progression-masked-18-v080b",
+      "feedbackVisibleFrameMs": 8.5,
+      "firstNarrativeSseReceiptMs": 4583.799999982119,
+      "firstNarrativeVisibleFrameMs": 4595.699999988079,
+      "completeReceiptMs": 12351.399999976158,
+      "choicesVisibleFrameMs": 12359.5,
+      "failedWaitMs": null,
+      "playerDecisionMs": null
+    },
+    {
+      "turn": 2,
+      "outcome": "completed",
+      "requestId": "26b8a2b0-729a-40ed-941f-5ecbea38c854",
+      "sourceRun": "progression-masked-18-v080b",
+      "feedbackVisibleFrameMs": 7.600000023841858,
+      "firstNarrativeSseReceiptMs": 67974.90000000596,
+      "firstNarrativeVisibleFrameMs": 67988.5,
+      "completeReceiptMs": 105086.20000001788,
+      "choicesVisibleFrameMs": 105098.70000001788,
+      "failedWaitMs": null,
+      "playerDecisionMs": 5785.229299999999
+    },
+    {
+      "turn": 3,
+      "outcome": "completed",
+      "requestId": "cab0edf0-9d8b-486a-8061-5683e1d32068",
+      "sourceRun": "progression-masked-18-v080b",
+      "feedbackVisibleFrameMs": 7.299999982118607,
+      "firstNarrativeSseReceiptMs": 3990,
+      "firstNarrativeVisibleFrameMs": 3995,
+      "completeReceiptMs": 34380.79999998212,
+      "choicesVisibleFrameMs": 34392.19999998808,
+      "failedWaitMs": null,
+      "playerDecisionMs": 9472.282600000006
+    },
+    {
+      "turn": 4,
+      "outcome": "completed",
+      "requestId": "f1fb95fe-8746-4b74-bc09-8fa9ca9dd476",
+      "sourceRun": "progression-masked-18-v080b",
+      "feedbackVisibleFrameMs": 8.899999976158142,
+      "firstNarrativeSseReceiptMs": 5491.0999999940395,
+      "firstNarrativeVisibleFrameMs": 5503.0999999940395,
+      "completeReceiptMs": 42233.5,
+      "choicesVisibleFrameMs": 42244.39999997616,
+      "failedWaitMs": null,
+      "playerDecisionMs": 8102.877700000012
+    },
+    {
+      "turn": 5,
+      "outcome": "completed",
+      "requestId": "f4f8551b-28e2-4a8e-9e9a-075aaf55a93c",
+      "sourceRun": "progression-masked-18-v080b",
+      "feedbackVisibleFrameMs": 8.700000017881393,
+      "firstNarrativeSseReceiptMs": 4105.5999999940395,
+      "firstNarrativeVisibleFrameMs": 4116,
+      "completeReceiptMs": 16291.799999982119,
+      "choicesVisibleFrameMs": 16302.800000011921,
+      "failedWaitMs": null,
+      "playerDecisionMs": 5644.591200000024
+    },
+    {
+      "turn": 6,
+      "outcome": "completed",
+      "requestId": "258ce22b-f498-4961-97ab-5b12b3e87a9c",
+      "sourceRun": "progression-masked-18-v080b",
+      "feedbackVisibleFrameMs": 8.5,
+      "firstNarrativeSseReceiptMs": 5476.200000017881,
+      "firstNarrativeVisibleFrameMs": 5489.199999988079,
+      "completeReceiptMs": 38908.90000000596,
+      "choicesVisibleFrameMs": 38928.59999999404,
+      "failedWaitMs": null,
+      "playerDecisionMs": 5988.936099999992
+    },
+    {
+      "turn": 7,
+      "outcome": "completed",
+      "requestId": "df5b69b4-15ce-4ff4-a28c-1450d058bdcb",
+      "sourceRun": "progression-masked-18-v080b",
+      "feedbackVisibleFrameMs": 8.800000011920929,
+      "firstNarrativeSseReceiptMs": 10711.200000017881,
+      "firstNarrativeVisibleFrameMs": 10716.90000000596,
+      "completeReceiptMs": 48136.80000001192,
+      "choicesVisibleFrameMs": 48150.30000001192,
+      "failedWaitMs": null,
+      "playerDecisionMs": 9388.712200000009
+    }
+  ],
+  "phaseTrace": [
+    {
+      "requestId": "2a264896-c752-4ed1-bc87-81988d887b78",
+      "status": "failed",
+      "firstNarrativeSseMs": 6447,
+      "totalMs": 37084,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:02.827Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T11:28:02.828Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:02.828Z",
+          "startMs": 1,
+          "endedAt": "2026-09-07T11:28:02.830Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "authored_opening_plan",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:02.831Z",
+          "startMs": 4,
+          "endedAt": "2026-09-07T11:28:02.831Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:02.831Z",
+          "startMs": 4,
+          "endedAt": "2026-09-07T11:28:02.831Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:02.831Z",
+          "startMs": 4,
+          "endedAt": "2026-09-07T11:28:21.355Z",
+          "elapsedMs": 18524
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:02.831Z",
+          "startMs": 4,
+          "endedAt": "2026-09-07T11:28:03.911Z",
+          "elapsedMs": 1080
+        },
+        {
+          "name": "parse_validate",
+          "status": "failed",
+          "startedAt": "2026-09-07T11:28:21.355Z",
+          "startMs": 18528,
+          "endedAt": "2026-09-07T11:28:21.357Z",
+          "elapsedMs": 2,
+          "errorCode": "INVALID_PROGRESSION"
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:21.355Z",
+          "startMs": 18528,
+          "endedAt": "2026-09-07T11:28:21.355Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "failed",
+          "startedAt": "2026-09-07T11:28:21.355Z",
+          "startMs": 18528,
+          "endedAt": "2026-09-07T11:28:21.357Z",
+          "elapsedMs": 2,
+          "errorCode": "INVALID_PROGRESSION"
+        },
+        {
+          "name": "repair",
+          "status": "failed",
+          "startedAt": "2026-09-07T11:28:21.357Z",
+          "startMs": 18530,
+          "endedAt": "2026-09-07T11:28:39.911Z",
+          "elapsedMs": 18553,
+          "errorCode": "INVALID_PROGRESSION"
+        },
+        {
+          "name": "acp_repair_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:21.358Z",
+          "startMs": 18530,
+          "endedAt": "2026-09-07T11:28:22.552Z",
+          "elapsedMs": 1195
+        },
+        {
+          "name": "repair_parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:39.910Z",
+          "startMs": 37083,
+          "endedAt": "2026-09-07T11:28:39.910Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "repair_reducer_validation",
+          "status": "failed",
+          "startedAt": "2026-09-07T11:28:39.910Z",
+          "startMs": 37083,
+          "endedAt": "2026-09-07T11:28:39.911Z",
+          "elapsedMs": 0,
+          "errorCode": "INVALID_PROGRESSION"
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_04b74a41fb56cef5cd0e4d43",
+          "runId": "acpr_2fa11b0c9fa702622400cc46"
+        },
+        "repair": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_142e2a89a66873d8accb3ee9",
+          "runId": "acpr_7bb2c92097403aadf72f8e01"
+        }
+      }
+    },
+    {
+      "requestId": "142faa6b-95dd-4eb1-adeb-a22ce58ae5d4",
+      "status": "complete",
+      "firstNarrativeSseMs": 4581,
+      "totalMs": 12296,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:40.018Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T11:28:40.019Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:40.019Z",
+          "startMs": 1,
+          "endedAt": "2026-09-07T11:28:40.020Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "authored_opening_plan",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:40.021Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T11:28:40.021Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:40.021Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T11:28:40.021Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:40.021Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T11:28:52.299Z",
+          "elapsedMs": 12278
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:40.021Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T11:28:40.628Z",
+          "elapsedMs": 607
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:52.300Z",
+          "startMs": 12281,
+          "endedAt": "2026-09-07T11:28:52.300Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:52.300Z",
+          "startMs": 12281,
+          "endedAt": "2026-09-07T11:28:52.300Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:52.300Z",
+          "startMs": 12281,
+          "endedAt": "2026-09-07T11:28:52.300Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:52.300Z",
+          "startMs": 12282,
+          "endedAt": "2026-09-07T11:28:52.315Z",
+          "elapsedMs": 14
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_da007986f0133e5ec9827444",
+          "runId": "acpr_5db394a6a52e48d3e8d0da86"
+        }
+      }
+    },
+    {
+      "requestId": "26b8a2b0-729a-40ed-941f-5ecbea38c854",
+      "status": "complete",
+      "firstNarrativeSseMs": 67973,
+      "totalMs": 105029,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:58.328Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T11:28:58.329Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:58.329Z",
+          "startMs": 1,
+          "endedAt": "2026-09-07T11:28:58.330Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:58.330Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T11:28:58.331Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:58.331Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T11:30:23.531Z",
+          "elapsedMs": 85200
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:28:58.331Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T11:28:59.068Z",
+          "elapsedMs": 737
+        },
+        {
+          "name": "parse_validate",
+          "status": "failed",
+          "startedAt": "2026-09-07T11:30:23.531Z",
+          "startMs": 85203,
+          "endedAt": "2026-09-07T11:30:23.533Z",
+          "elapsedMs": 1,
+          "errorCode": "INVALID_PROGRESSION"
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:30:23.531Z",
+          "startMs": 85203,
+          "endedAt": "2026-09-07T11:30:23.532Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "failed",
+          "startedAt": "2026-09-07T11:30:23.532Z",
+          "startMs": 85203,
+          "endedAt": "2026-09-07T11:30:23.533Z",
+          "elapsedMs": 1,
+          "errorCode": "INVALID_PROGRESSION"
+        },
+        {
+          "name": "repair",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:30:23.533Z",
+          "startMs": 85204,
+          "endedAt": "2026-09-07T11:30:43.351Z",
+          "elapsedMs": 19819
+        },
+        {
+          "name": "acp_repair_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:30:23.533Z",
+          "startMs": 85204,
+          "endedAt": "2026-09-07T11:30:24.322Z",
+          "elapsedMs": 790
+        },
+        {
+          "name": "repair_parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:30:43.350Z",
+          "startMs": 105022,
+          "endedAt": "2026-09-07T11:30:43.351Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "repair_reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:30:43.351Z",
+          "startMs": 105022,
+          "endedAt": "2026-09-07T11:30:43.351Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:30:43.351Z",
+          "startMs": 105023,
+          "endedAt": "2026-09-07T11:30:43.357Z",
+          "elapsedMs": 6
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_80d6b3559bd2ffcab591dbfe",
+          "runId": "acpr_5b496d5def62bed8bbea5fe2"
+        },
+        "repair": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_060e25978f7c96a3c1d29485",
+          "runId": "acpr_4c9e3e0742808e9006fdf9c4"
+        }
+      }
+    },
+    {
+      "requestId": "cab0edf0-9d8b-486a-8061-5683e1d32068",
+      "status": "complete",
+      "firstNarrativeSseMs": 3987,
+      "totalMs": 34333,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:30:53.009Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T11:30:53.010Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:30:53.010Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T11:30:53.012Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:30:53.012Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T11:30:53.012Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:30:53.012Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T11:31:10.589Z",
+          "elapsedMs": 17577
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:30:53.012Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T11:30:53.850Z",
+          "elapsedMs": 838
+        },
+        {
+          "name": "parse_validate",
+          "status": "failed",
+          "startedAt": "2026-09-07T11:31:10.590Z",
+          "startMs": 17580,
+          "endedAt": "2026-09-07T11:31:10.590Z",
+          "elapsedMs": 1,
+          "errorCode": "INVALID_PROGRESSION"
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:31:10.590Z",
+          "startMs": 17580,
+          "endedAt": "2026-09-07T11:31:10.590Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "failed",
+          "startedAt": "2026-09-07T11:31:10.590Z",
+          "startMs": 17580,
+          "endedAt": "2026-09-07T11:31:10.590Z",
+          "elapsedMs": 1,
+          "errorCode": "INVALID_PROGRESSION"
+        },
+        {
+          "name": "repair",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:31:10.590Z",
+          "startMs": 17581,
+          "endedAt": "2026-09-07T11:31:27.308Z",
+          "elapsedMs": 16718
+        },
+        {
+          "name": "acp_repair_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:31:10.590Z",
+          "startMs": 17581,
+          "endedAt": "2026-09-07T11:31:11.363Z",
+          "elapsedMs": 773
+        },
+        {
+          "name": "repair_parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:31:27.308Z",
+          "startMs": 34298,
+          "endedAt": "2026-09-07T11:31:27.308Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "repair_reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:31:27.308Z",
+          "startMs": 34298,
+          "endedAt": "2026-09-07T11:31:27.308Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:31:27.308Z",
+          "startMs": 34299,
+          "endedAt": "2026-09-07T11:31:27.342Z",
+          "elapsedMs": 34
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_4aaa3d03a3f4ca57f31116a8",
+          "runId": "acpr_53225b431157bffe37e2c37f"
+        },
+        "repair": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_433a8706fcdafe38dc0d3cc2",
+          "runId": "acpr_16e7605e7d65404c55890eb5"
+        }
+      }
+    },
+    {
+      "requestId": "f1fb95fe-8746-4b74-bc09-8fa9ca9dd476",
+      "status": "complete",
+      "firstNarrativeSseMs": 5488,
+      "totalMs": 42179,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:31:35.625Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T11:31:35.626Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:31:35.626Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T11:31:35.627Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:31:35.627Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T11:31:35.627Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:31:35.627Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T11:31:56.600Z",
+          "elapsedMs": 20972
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:31:35.627Z",
+          "startMs": 2,
+          "endedAt": "2026-09-07T11:31:36.281Z",
+          "elapsedMs": 653
+        },
+        {
+          "name": "parse_validate",
+          "status": "failed",
+          "startedAt": "2026-09-07T11:31:56.600Z",
+          "startMs": 20974,
+          "endedAt": "2026-09-07T11:31:56.600Z",
+          "elapsedMs": 0,
+          "errorCode": "INVALID_PROGRESSION"
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:31:56.600Z",
+          "startMs": 20974,
+          "endedAt": "2026-09-07T11:31:56.600Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "failed",
+          "startedAt": "2026-09-07T11:31:56.600Z",
+          "startMs": 20974,
+          "endedAt": "2026-09-07T11:31:56.600Z",
+          "elapsedMs": 0,
+          "errorCode": "INVALID_PROGRESSION"
+        },
+        {
+          "name": "repair",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:31:56.600Z",
+          "startMs": 20975,
+          "endedAt": "2026-09-07T11:32:17.795Z",
+          "elapsedMs": 21195
+        },
+        {
+          "name": "acp_repair_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:31:56.600Z",
+          "startMs": 20975,
+          "endedAt": "2026-09-07T11:31:57.256Z",
+          "elapsedMs": 655
+        },
+        {
+          "name": "repair_parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:32:17.794Z",
+          "startMs": 42169,
+          "endedAt": "2026-09-07T11:32:17.795Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "repair_reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:32:17.795Z",
+          "startMs": 42169,
+          "endedAt": "2026-09-07T11:32:17.795Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:32:17.795Z",
+          "startMs": 42170,
+          "endedAt": "2026-09-07T11:32:17.805Z",
+          "elapsedMs": 9
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_a1d7a25b84531008cf0b2d87",
+          "runId": "acpr_484140d357442c0d4ad8b802"
+        },
+        "repair": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_4df1391875175f28f74c3d0b",
+          "runId": "acpr_507991f6133096acd02ee0e0"
+        }
+      }
+    },
+    {
+      "requestId": "f4f8551b-28e2-4a8e-9e9a-075aaf55a93c",
+      "status": "complete",
+      "firstNarrativeSseMs": 4104,
+      "totalMs": 16238,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:32:23.630Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T11:32:23.631Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:32:23.631Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T11:32:23.636Z",
+          "elapsedMs": 6
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:32:23.636Z",
+          "startMs": 6,
+          "endedAt": "2026-09-07T11:32:23.637Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:32:23.637Z",
+          "startMs": 6,
+          "endedAt": "2026-09-07T11:32:39.853Z",
+          "elapsedMs": 16216
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:32:23.637Z",
+          "startMs": 6,
+          "endedAt": "2026-09-07T11:32:24.652Z",
+          "elapsedMs": 1015
+        },
+        {
+          "name": "parse_validate",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:32:39.853Z",
+          "startMs": 16222,
+          "endedAt": "2026-09-07T11:32:39.853Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:32:39.853Z",
+          "startMs": 16222,
+          "endedAt": "2026-09-07T11:32:39.853Z",
+          "elapsedMs": 1
+        },
+        {
+          "name": "reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:32:39.853Z",
+          "startMs": 16223,
+          "endedAt": "2026-09-07T11:32:39.853Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:32:39.853Z",
+          "startMs": 16223,
+          "endedAt": "2026-09-07T11:32:39.869Z",
+          "elapsedMs": 15
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_5e7d7b48570c1511df45b4d6",
+          "runId": "acpr_e78792a00a4a6f228e988996"
+        }
+      }
+    },
+    {
+      "requestId": "258ce22b-f498-4961-97ab-5b12b3e87a9c",
+      "status": "complete",
+      "firstNarrativeSseMs": 5473,
+      "totalMs": 38850,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:32:46.060Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T11:32:46.061Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:32:46.061Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T11:32:46.063Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:32:46.063Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T11:32:46.063Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:32:46.063Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T11:33:06.214Z",
+          "elapsedMs": 20150
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:32:46.063Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T11:32:46.792Z",
+          "elapsedMs": 729
+        },
+        {
+          "name": "parse_validate",
+          "status": "failed",
+          "startedAt": "2026-09-07T11:33:06.214Z",
+          "startMs": 20153,
+          "endedAt": "2026-09-07T11:33:06.214Z",
+          "elapsedMs": 0,
+          "errorCode": "INVALID_PROGRESSION"
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:33:06.214Z",
+          "startMs": 20153,
+          "endedAt": "2026-09-07T11:33:06.214Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "failed",
+          "startedAt": "2026-09-07T11:33:06.214Z",
+          "startMs": 20153,
+          "endedAt": "2026-09-07T11:33:06.214Z",
+          "elapsedMs": 0,
+          "errorCode": "INVALID_PROGRESSION"
+        },
+        {
+          "name": "repair",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:33:06.214Z",
+          "startMs": 20154,
+          "endedAt": "2026-09-07T11:33:24.893Z",
+          "elapsedMs": 18678
+        },
+        {
+          "name": "acp_repair_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:33:06.214Z",
+          "startMs": 20154,
+          "endedAt": "2026-09-07T11:33:07.131Z",
+          "elapsedMs": 916
+        },
+        {
+          "name": "repair_parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:33:24.893Z",
+          "startMs": 38832,
+          "endedAt": "2026-09-07T11:33:24.893Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "repair_reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:33:24.893Z",
+          "startMs": 38832,
+          "endedAt": "2026-09-07T11:33:24.893Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:33:24.893Z",
+          "startMs": 38832,
+          "endedAt": "2026-09-07T11:33:24.910Z",
+          "elapsedMs": 18
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_7a6795eeb91b4f9a10809914",
+          "runId": "acpr_7481bc2ed26ab2a90f9e1879"
+        },
+        "repair": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_86bbe6542fa5cf03c50fa3aa",
+          "runId": "acpr_9a1fcb55e7e63b574182f07e"
+        }
+      }
+    },
+    {
+      "requestId": "df5b69b4-15ce-4ff4-a28c-1450d058bdcb",
+      "status": "complete",
+      "firstNarrativeSseMs": 10708,
+      "totalMs": 48070,
+      "stages": [
+        {
+          "name": "http_input_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:33:34.559Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T11:33:34.560Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "request_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:33:34.560Z",
+          "startMs": 0,
+          "endedAt": "2026-09-07T11:33:34.562Z",
+          "elapsedMs": 2
+        },
+        {
+          "name": "context_assembly",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:33:34.562Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T11:33:34.562Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "narrative_generation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:33:34.562Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T11:34:00.842Z",
+          "elapsedMs": 26279
+        },
+        {
+          "name": "acp_narrator_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:33:34.562Z",
+          "startMs": 3,
+          "endedAt": "2026-09-07T11:33:35.318Z",
+          "elapsedMs": 756
+        },
+        {
+          "name": "parse_validate",
+          "status": "failed",
+          "startedAt": "2026-09-07T11:34:00.842Z",
+          "startMs": 26282,
+          "endedAt": "2026-09-07T11:34:00.842Z",
+          "elapsedMs": 0,
+          "errorCode": "INVALID_PROGRESSION"
+        },
+        {
+          "name": "parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:34:00.842Z",
+          "startMs": 26282,
+          "endedAt": "2026-09-07T11:34:00.842Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "reducer_validation",
+          "status": "failed",
+          "startedAt": "2026-09-07T11:34:00.842Z",
+          "startMs": 26282,
+          "endedAt": "2026-09-07T11:34:00.842Z",
+          "elapsedMs": 0,
+          "errorCode": "INVALID_PROGRESSION"
+        },
+        {
+          "name": "repair",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:34:00.842Z",
+          "startMs": 26282,
+          "endedAt": "2026-09-07T11:34:22.565Z",
+          "elapsedMs": 21723
+        },
+        {
+          "name": "acp_repair_initialize_auth_session_model_setup",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:34:00.842Z",
+          "startMs": 26283,
+          "endedAt": "2026-09-07T11:34:01.476Z",
+          "elapsedMs": 633
+        },
+        {
+          "name": "repair_parse",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:34:22.565Z",
+          "startMs": 48005,
+          "endedAt": "2026-09-07T11:34:22.565Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "repair_reducer_validation",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:34:22.565Z",
+          "startMs": 48005,
+          "endedAt": "2026-09-07T11:34:22.565Z",
+          "elapsedMs": 0
+        },
+        {
+          "name": "persistence",
+          "status": "complete",
+          "startedAt": "2026-09-07T11:34:22.565Z",
+          "startMs": 48005,
+          "endedAt": "2026-09-07T11:34:22.630Z",
+          "elapsedMs": 65
+        }
+      ],
+      "providers": {
+        "narrator": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_6677a82adc42f3dfc7e0aa42",
+          "runId": "acpr_5395fc324d1b4db73d0a2146"
+        },
+        "repair": {
+          "model": "gpt-5.6-terra",
+          "effort": "low",
+          "sessionId": "acps_2c37042d90d39f4f08c6cbb6",
+          "runId": "acpr_8016a5f87815363d2d5bb942"
+        }
+      }
+    }
+  ]
+}

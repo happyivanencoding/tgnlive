@@ -108,6 +108,20 @@ export function exportLabels(language = "zh") {
 }
 
 export function formatChange(change, language = "zh") {
+  if (change.field === 'opportunity' && change.op === 'answer') {
+    const label = {zh:'问题已解答',en:'Question answered',fr:'Question résolue',es:'Pregunta resuelta',ar:'أُجيب عن السؤال'}[normalizeLanguage(language)];
+    return `${label}: ${change.name}`;
+  }
+  if (change.field === 'leverage' || change.field === 'opportunity') {
+    const terms = {
+      zh: { leverage: { add: '获得长期筹码', update: '筹码改变', use: '用上已有筹码', revoke: '失去筹码' }, opportunity: { open: '可争取的成长', fulfill: '成长兑现', close: '机会结束' } },
+      en: { leverage: { add: 'Lasting advantage gained', update: 'Advantage changed', use: 'Existing advantage used', revoke: 'Advantage lost' }, opportunity: { open: 'Growth opportunity', fulfill: 'Payoff secured', close: 'Opportunity closed' } },
+      fr: { leverage: { add: 'Atout durable acquis', update: 'Atout modifié', use: 'Atout existant utilisé', revoke: 'Atout perdu' }, opportunity: { open: 'Possibilité de progression', fulfill: 'Gain concrétisé', close: 'Possibilité close' } },
+      es: { leverage: { add: 'Ventaja duradera adquirida', update: 'Ventaja modificada', use: 'Ventaja existente utilizada', revoke: 'Ventaja perdida' }, opportunity: { open: 'Oportunidad de crecimiento', fulfill: 'Recompensa obtenida', close: 'Oportunidad cerrada' } },
+      ar: { leverage: { add: 'اكتسبت ميزة دائمة', update: 'تغيرت الميزة', use: 'استُخدمت ميزة مكتسبة', revoke: 'فُقدت الميزة' }, opportunity: { open: 'فرصة للتطور', fulfill: 'تحقق المكسب', close: 'انتهت الفرصة' } },
+    }[normalizeLanguage(language)];
+    return `${terms[change.field][change.op]}: ${change.name}`;
+  }
   const labels = LABELS[normalizeLanguage(language)].changes;
   if (change.field === "coins") return `${change.currencyName}${change.delta > 0 ? "+" : ""}${change.delta}`;
   if (change.field === "realm.progress") return `${labels.progress} +${change.delta}`;

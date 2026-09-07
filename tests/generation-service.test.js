@@ -44,3 +44,27 @@ test("generation repairs rejected delta and returns only repaired state", async 
   assert.doesNotMatch(result.reduced.changes.join(""), /神器/);
   assert.match(visible.join(""), /不存在的仙剑/);
 });
+
+test("compact checkpoint keeps stage intent without restating the canonical ledger", async () => {
+  const snapshot = game(); snapshot.state.turnNumber = 8; snapshot.version = 8;
+  const compact = { pressure: '天色将晚', npcMoves: [{name:'沈秋禾',nextMove:'以药材交换一次实际帮助'}], growth: {want:'取得可以独自行动的能力',payoff:'用已掌握的手法换一批可自用药材',afterUse:'不必再为每次练功借药'} };
+  const narrator = adapter('narrator', [VALID_NARRATOR_OUTPUT], 'low');
+  const planner = adapter('planner', [JSON.stringify(compact)], 'medium');
+  const trace = new TurnTrace({gameId:snapshot.id,requestId:'compact-plan'});
+  const result = await new GenerationService({narrator,planner}).execute({game:snapshot,world:WORLDS[0],action:'去练功',trace});
+  assert.equal(planner.calls,1); assert.equal(narrator.calls,1); assert.equal(trace.value.repairAttempts,0);
+  assert.deepEqual(result.plan.growth,compact.growth);
+  assert.deepEqual(result.plan.continuity,[]); assert.deepEqual(result.plan.openings,[]);
+  assert.equal(result.reduced.state.turnNumber,9);
+});
+
+test("compact plans do not accept a malformed NPC list or silently lose missing growth", async () => {
+  const snapshot = game(); snapshot.state.turnNumber = 8;
+  for(const plan of [{pressure:'缺少计划内容'}, {npcMoves:{bad:true},growth:{want:'测试'}}]) {
+    const narrator=adapter('narrator',[VALID_NARRATOR_OUTPUT],'low');
+    const planner=adapter('planner',[JSON.stringify(plan)],'medium');
+    const trace=new TurnTrace({gameId:snapshot.id,requestId:'invalid-compact'});
+    await assert.rejects(new GenerationService({narrator,planner}).execute({game:snapshot,world:WORLDS[0],action:'离开',trace}),{code:'INVALID_PLAN'});
+    assert.equal(narrator.calls,0);
+  }
+});

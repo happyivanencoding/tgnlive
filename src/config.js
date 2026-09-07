@@ -18,13 +18,13 @@ export function loadConfig(overrides = {}) {
   const runtimeDir = path.resolve(rootDir, process.env.TGN_RUNTIME_DIR || ".runtime");
   const remotePath = path.join(runtimeDir, 'remote.json');
   return {
-    version: "0.7.0",
+    version: "0.8.0",
     remote: fs.existsSync(remotePath) ? JSON.parse(fs.readFileSync(remotePath, 'utf8')) : null,
     openingPlanStrategy: process.env.TGN_OPENING_PLAN || "authored",
     host: process.env.TGN_HOST || "127.0.0.1",
     port: integerEnv("TGN_PORT", 4317, 1, 65535),
     rootDir,
-    publicDir: path.join(rootDir, "public"),
+    publicDir: process.env.TGN_PUBLIC_DIR ? path.resolve(process.env.TGN_PUBLIC_DIR) : path.join(rootDir, "public"),
     runtimeDir,
     databasePath: process.env.TGN_DATABASE_PATH || path.join(rootDir, "data", "tgn-live.sqlite"),
     narratorWorkspace: process.env.TGN_NARRATOR_WORKSPACE || path.join(runtimeDir, "narrator-workspace"),

@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { createServer } from "node:http";
+import { performance } from "node:perf_hooks";
 import { AppError, publicError } from "./errors.js";
 import { createId } from "./ids.js";
 import { TurnTrace } from "./telemetry.js";
@@ -16,6 +17,8 @@ export function createApp({ config, store, generationService, worldForge }) {
   const guard = createRequestGuard(config.remote);
 
   const server = createServer(async (request, response) => {
+    const receivedMono = performance.now();
+    const receivedAt = new Date().toISOString();
     try {
       const url = new URL(request.url, `http://${request.headers.host || `${config.host}:${config.port}`}`);
       await guard(request);
@@ -84,7 +87,7 @@ export function createApp({ config, store, generationService, worldForge }) {
 
       const turnsMatch = url.pathname.match(/^\/api\/games\/([^/]+)\/turns$/);
       if (request.method === "POST" && turnsMatch) {
-        return await handleTurn({ request, response, gameId: decodeURIComponent(turnsMatch[1]) });
+        return await handleTurn({ request, response, gameId: decodeURIComponent(turnsMatch[1]), receivedMono, receivedAt });
       }
 
       const cancelMatch = url.pathname.match(/^\/api\/games\/([^/]+)\/cancel$/);
@@ -129,14 +132,16 @@ export function createApp({ config, store, generationService, worldForge }) {
     }
   });
 
-  async function handleTurn({ request, response, gameId }) {
+  async function handleTurn({ request, response, gameId, receivedMono, receivedAt }) {
     const body = await readJson(request);
     const action = validateAction(body.action, config.maxActionChars);
     const expectedVersion = validateVersion(body.expectedVersion);
     const requestId = validateRequestId(body.requestId);
     const language = normalizeLanguage(body.language, { optional: true });
     if (inFlight.has(gameId)) throw new AppError("这段故事已有行动正在生成", { code: "GAME_BUSY", status: 409, retryable: true });
-    const trace = new TurnTrace({ gameId, requestId });
+    const trace = new TurnTrace({ gameId, requestId, startedMono: receivedMono, startedAt: receivedAt });
+    trace.startStage("http_input_validation", { startMs: 0, startedAt: receivedAt });
+    trace.endStage("http_input_validation");
     trace.startStage("request_validation");
     const reservation = store.reserveRequest({ gameId, requestId, expectedVersion, traceId: trace.id, action, language });
     trace.endStage("request_validation", "complete");
@@ -187,6 +192,9 @@ export function createApp({ config, store, generationService, worldForge }) {
         trace: provisionalTrace,
       });
       trace.endStage("persistence", "complete");
+      // Server completion boundary; browser paint/choice readiness is measured in the UI.
+      trace.value.apiCompleteMs = trace.elapsed();
+      trace.point("api_complete_dispatch");
       const finished = trace.finish("complete");
       store.insertTrace(finished, "complete");
       writeSse(response, "stage", { name: "persistence", status: "complete", elapsedMs: finished.stages.find((stage) => stage.name === "persistence")?.elapsedMs });
@@ -347,8 +355,13 @@ function publicMetrics(trace) {
     totalElapsedMs: trace.totalElapsedMs,
     firstFinalAnswerTokenMs: trace.firstFinalAnswerTokenMs,
     firstReaderVisibleMs: trace.firstReaderVisibleMs,
+    firstNarrativeSseMs: trace.firstNarrativeSseMs ?? trace.firstReaderVisibleMs,
+    apiCompleteMs: trace.apiCompleteMs,
+    browserFirstNarrativePaintMs: null,
+    browserChoicesVisibleMs: null,
     stages: trace.stages,
     provider: trace.provider,
     repairAttempts: trace.repairAttempts,
+    changeKinds: (trace.appliedDeltas || []).map(({field, op}) => ({field, op})),
   };
 }

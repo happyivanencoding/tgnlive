@@ -205,7 +205,11 @@ const OPENING_AND_SEED = {
   },
 };
 
+import { localizeProgressionWorld } from './progression-worlds.js';
+
 export function localizePreset(world, language) {
+  const progressionWorld = localizeProgressionWorld(world, language);
+  if (progressionWorld) return progressionWorld;
   if (language === "zh") return { ...structuredClone(world), language: "zh" };
   if (language === "en") return applyFullEnglish(world, PRESET_TRANSLATIONS.en[world.id]);
   const head = LANGUAGE_TERMS[language]?.[world.id];

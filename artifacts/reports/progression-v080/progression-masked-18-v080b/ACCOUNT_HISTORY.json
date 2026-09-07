@@ -1,0 +1,630 @@
+[
+  {
+    "turn": 1,
+    "action": "开始我的故事",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 0
+    },
+    "coins": 22,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶并判断常见的温度与沉淀变化；陌生方仍需逐步验证。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-materials",
+        "name": "凉雾墨原料包",
+        "description": "你已付清的一份原料，只够完成一小批",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "陌生"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": []
+    },
+    "changes": []
+  },
+  {
+    "turn": 2,
+    "action": "到公共工位按公开方炼制凉雾墨，并在关键步骤用错味校准检查偏差。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 8
+    },
+    "coins": 22,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，并处理常见的温度与沉淀变化；已能独立炼成一小批凉雾墨。陌生方仍需逐步验证，材料不足或步骤缺失时不能凭经验补全。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-ink",
+        "name": "凉雾墨",
+        "description": "沈舟刚炼成的一小批清亮潮墨，装在密封囊中；可使手掌大小的密封包保鲜三日，能用于交易、保存小件易坏物或后续低阶刻式练习。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "陌生"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "ou-lan-cool-mist-delivery",
+          "name": "邮船凉雾墨验货",
+          "payoff": "通过药箱现场验货后，可与欧岚谈定现金或夜航仓位报酬。",
+          "approach": "在旧邮市落闸前，将这袋凉雾墨带到邮船药箱交给欧岚验看。",
+          "status": "open",
+          "offeredAtTurn": 2
+        }
+      ]
+    },
+    "changes": [
+      "失去 凉雾墨原料包",
+      "获得 凉雾墨",
+      "能力提升: 小批配墨",
+      "修行进度 +8",
+      "可争取的成长: 邮船凉雾墨验货",
+      "沈舟在砾钟港旧邮市公共工位炼成一小批凉雾墨，成品已装入密封囊并由他随身携带。",
+      "炼制时，错味校准指出盐汁因火台余温过高而提前走快一息；沈舟撤炭等待后完成修正。",
+      "凉雾墨成品无沉渣与焦味，可使手掌大小的密封包保鲜三日。"
+    ]
+  },
+  {
+    "turn": 3,
+    "action": "带着凉雾墨去邮船药箱，请欧岚当场验货，并先问清现金报酬与夜航仓位的具体条件。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 8
+    },
+    "coins": 22,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，并处理常见的温度与沉淀变化；已能独立炼成一小批凉雾墨。陌生方仍需逐步验证，材料不足或步骤缺失时不能凭经验补全。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-ink",
+        "name": "凉雾墨",
+        "description": "沈舟刚炼成的一小批清亮潮墨，装在密封囊中；可使手掌大小的密封包保鲜三日，能用于交易、保存小件易坏物或后续低阶刻式练习。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "ou-lan-cool-mist-delivery",
+          "name": "邮船凉雾墨验货",
+          "payoff": "通过药箱现场验货后，可与欧岚谈定现金或夜航仓位报酬。",
+          "approach": "在旧邮市落闸前，将这袋凉雾墨带到邮船药箱交给欧岚验看。",
+          "status": "open",
+          "offeredAtTurn": 2
+        }
+      ]
+    },
+    "changes": [
+      "欧岚: 好奇",
+      "欧岚在邮船药箱以温雾槽现场验过凉雾墨：处理后的药包保持凉干，符合保鲜三日的要求。",
+      "欧岚明确报价：交出这袋凉雾墨可立得十八潮券，或换取今晚灰篷船至栖盐外港的单人随身行李仓位；二者只能选其一。"
+    ]
+  },
+  {
+    "turn": 4,
+    "action": "把凉雾墨交给欧岚，换取今晚灰篷船前往栖盐外港的单人仓位。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 8
+    },
+    "coins": 22,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，并处理常见的温度与沉淀变化；已能独立炼成一小批凉雾墨。陌生方仍需逐步验证，材料不足或步骤缺失时不能凭经验补全。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "友善"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "ou-lan-postal-counter-access",
+          "kind": "access",
+          "name": "邮船药箱议价入口",
+          "effect": "以后携带合格保鲜墨时，可凭铜扣到邮船药箱与欧岚商谈寄送或承运。",
+          "scope": "仅限欧岚当值或其认可的邮船药箱；不含免费寄送、固定价格或优先仓位。",
+          "sourceId": "ou-lan",
+          "status": "active",
+          "acquiredAtTurn": 4,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "ou-lan-cool-mist-delivery",
+          "name": "邮船凉雾墨验货",
+          "payoff": "通过药箱现场验货后，可与欧岚谈定现金或夜航仓位报酬。",
+          "approach": "在旧邮市落闸前，将这袋凉雾墨带到邮船药箱交给欧岚验看。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "result": "凉雾墨通过现场验货，沈舟选择并取得今晚灰篷船至栖盐外港的单人随身行李仓位。",
+          "settledAtTurn": 4
+        }
+      ]
+    },
+    "changes": [
+      "抵达 灰篷船甲板，正离开砾钟港驶往栖盐外港",
+      "失去 凉雾墨",
+      "欧岚: 友善",
+      "获得长期筹码: 邮船药箱议价入口",
+      "成长兑现: 邮船凉雾墨验货",
+      "目标: 抵达栖盐外港后，利用第一笔出港记录寻找可持续的配墨、交易或独行航路。",
+      "沈舟将一袋凉雾墨交给欧岚，换得今晚灰篷船前往栖盐外港的单人随身行李仓位。",
+      "欧岚交给沈舟一枚药箱纹样铜扣，并说明持有合格保鲜墨时可凭此到邮船药箱商谈寄送；具体价格与承运仍须另议。",
+      "沈舟已持登船签登上灰篷船，砾钟港旧邮市正在落闸。"
+    ]
+  },
+  {
+    "turn": 5,
+    "action": "向水手打听栖盐外港夜市里适合出售低阶潮墨的摊区、规矩和常见收货人。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 8
+    },
+    "coins": 22,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，并处理常见的温度与沉淀变化；已能独立炼成一小批凉雾墨。陌生方仍需逐步验证，材料不足或步骤缺失时不能凭经验补全。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "友善"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "ou-lan-postal-counter-access",
+          "kind": "access",
+          "name": "邮船药箱议价入口",
+          "effect": "以后携带合格保鲜墨时，可凭铜扣到邮船药箱与欧岚商谈寄送或承运。",
+          "scope": "仅限欧岚当值或其认可的邮船药箱；不含免费寄送、固定价格或优先仓位。",
+          "sourceId": "ou-lan",
+          "status": "active",
+          "acquiredAtTurn": 4,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "ou-lan-cool-mist-delivery",
+          "name": "邮船凉雾墨验货",
+          "payoff": "通过药箱现场验货后，可与欧岚谈定现金或夜航仓位报酬。",
+          "approach": "在旧邮市落闸前，将这袋凉雾墨带到邮船药箱交给欧岚验看。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "result": "凉雾墨通过现场验货，沈舟选择并取得今晚灰篷船至栖盐外港的单人随身行李仓位。",
+          "settledAtTurn": 4
+        }
+      ]
+    },
+    "changes": [
+      "灰篷船水手说明：栖盐外港南棚收低阶大路潮墨，潮井旁验墨台收可当场试验、封口完整且用途明确的保鲜、清洁或显色墨。",
+      "水手说明外港夜市规矩：熟货区忌混入来路不明的潮墨；首次摆卖需租半晚木格，费用为三潮券；也可在验墨台旁替人做现场校准并谈分账。",
+      "水手说明北栈桥的邮船药箱与邮契柜邻近夜市，沈舟可凭药箱纹样铜扣向欧岚商谈寄送，但铜扣不等于自由通行。"
+    ]
+  },
+  {
+    "turn": 6,
+    "action": "抵达栖盐外港后，凭药箱纹样铜扣去北栈桥邮船药箱，向欧岚询问保鲜墨的寄送、收货需求和可持续合作条件。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 8
+    },
+    "coins": 22,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，并处理常见的温度与沉淀变化；已能独立炼成一小批凉雾墨。陌生方仍需逐步验证，材料不足或步骤缺失时不能凭经验补全。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "友善"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "ou-lan-postal-counter-access",
+          "kind": "access",
+          "name": "邮船药箱议价入口",
+          "effect": "以后携带合格保鲜墨时，可凭铜扣到邮船药箱与欧岚商谈寄送或承运。",
+          "scope": "仅限欧岚当值或其认可的邮船药箱；不含免费寄送、固定价格或优先仓位。",
+          "sourceId": "ou-lan",
+          "status": "active",
+          "acquiredAtTurn": 4,
+          "lastUsedAtTurn": 6,
+          "useCount": 1
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "ou-lan-cool-mist-delivery",
+          "name": "邮船凉雾墨验货",
+          "payoff": "通过药箱现场验货后，可与欧岚谈定现金或夜航仓位报酬。",
+          "approach": "在旧邮市落闸前，将这袋凉雾墨带到邮船药箱交给欧岚验看。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "result": "凉雾墨通过现场验货，沈舟选择并取得今晚灰篷船至栖盐外港的单人随身行李仓位。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "outer-port-supply-six",
+          "name": "外港临时供墨人登记",
+          "payoff": "取得外港临时供墨人身份，可在北栈桥持续交付并查询本人的验货与结算记录。",
+          "approach": "在未来两夜内向北栈桥药箱交付六袋凉雾墨，且每袋均通过温雾槽的三日保鲜标准。",
+          "status": "open",
+          "offeredAtTurn": 6
+        }
+      ]
+    },
+    "changes": [
+      "用上已有筹码: 邮船药箱议价入口",
+      "可争取的成长: 外港临时供墨人登记",
+      "欧岚说明栖盐外港未来两夜有三趟前往雾铃礁和回砂湾的短线药船，每趟需要两到四袋合格保鲜墨。",
+      "欧岚提出：合格保鲜墨每袋九潮券；两夜内交满六袋且每袋通过三日标准，可登记为外港临时供墨人。",
+      "外港临时供墨人只可在北栈桥交货并查询本人验货和结算记录，不含赊料、包销或失败批次保障。"
+    ]
+  },
+  {
+    "turn": 7,
+    "action": "前往潮井验墨台，先为一份半成潮墨做现场校准，谈清分账条件，再决定是否用所得本钱采购凉雾墨原料。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 8
+    },
+    "coins": 26,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，并处理常见的温度与沉淀变化；已能独立炼成一小批凉雾墨。陌生方仍需逐步验证，材料不足或步骤缺失时不能凭经验补全。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "友善"
+      },
+      {
+        "id": "ruan-he",
+        "name": "阮禾",
+        "role": "潮井验墨台摊主",
+        "attitude": "友善"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "ou-lan-postal-counter-access",
+          "kind": "access",
+          "name": "邮船药箱议价入口",
+          "effect": "以后携带合格保鲜墨时，可凭铜扣到邮船药箱与欧岚商谈寄送或承运。",
+          "scope": "仅限欧岚当值或其认可的邮船药箱；不含免费寄送、固定价格或优先仓位。",
+          "sourceId": "ou-lan",
+          "status": "active",
+          "acquiredAtTurn": 4,
+          "lastUsedAtTurn": 6,
+          "useCount": 1
+        },
+        {
+          "id": "ruan-he-calibration-split",
+          "kind": "access",
+          "name": "验墨台校准分账入口",
+          "effect": "可在阮禾见证下，为货主的半成潮墨做一次现场校准并按事前谈定的分账收取报酬。",
+          "scope": "仅限栖盐外港潮井验墨台、阮禾在场时；每批只能指出一处主要偏差，报酬和是否接单仍须逐次谈定。",
+          "sourceId": "ruan-he",
+          "status": "active",
+          "acquiredAtTurn": 7,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "ou-lan-cool-mist-delivery",
+          "name": "邮船凉雾墨验货",
+          "payoff": "通过药箱现场验货后，可与欧岚谈定现金或夜航仓位报酬。",
+          "approach": "在旧邮市落闸前，将这袋凉雾墨带到邮船药箱交给欧岚验看。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "result": "凉雾墨通过现场验货，沈舟选择并取得今晚灰篷船至栖盐外港的单人随身行李仓位。",
+          "settledAtTurn": 4
+        },
+        {
+          "id": "outer-port-supply-six",
+          "name": "外港临时供墨人登记",
+          "payoff": "取得外港临时供墨人身份，可在北栈桥持续交付并查询本人的验货与结算记录。",
+          "approach": "在未来两夜内向北栈桥药箱交付六袋凉雾墨，且每袋均通过温雾槽的三日保鲜标准。",
+          "status": "open",
+          "offeredAtTurn": 6
+        }
+      ]
+    },
+    "changes": [
+      "抵达 栖盐外港潮井验墨台，夜市盐灯下",
+      "潮券+4",
+      "阮禾: 友善",
+      "获得长期筹码: 验墨台校准分账入口",
+      "目标: 在外港以配墨、现场校准或独行航路积累可持续本钱，并决定是否争取供墨人登记。",
+      "沈舟在栖盐外港潮井验墨台为一份半成潮墨完成现场校准，指出海藻汁在盐液余温未退时提前加入是其最主要偏差。",
+      "货主按沈舟指出的偏差撤火、滤沫并在降温后补入新榨海藻汁，潮墨通过验石显线试验。",
+      "验墨台摊主阮禾见证约定并付给沈舟四潮券；她说明此后可由摊主见证按同样条件接半成墨校准，但每批只许报一处主要偏差。"
+    ]
+  }
+]

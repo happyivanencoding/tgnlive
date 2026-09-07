@@ -1,3 +1,13 @@
+## v0.8.0 当前约定（优先于下方历史）
+
+见 [本轮真实结果](V080_RESULTS.md)、[成长机制与否决记录](PROGRESSION_ITERATION.md)、[移动端证据](V080_INDEPENDENT_REVIEW.md)。当前新增可复用筹码/待兑现机会状态、世界独立growthGrammar、阶段欲望与短计划；没有新增每回合模型。七个预设中两个新世界的实际覆盖须按报告读取，不能用schema通过代替长测。
+
+API server firstNarrativeSseMs与浏览器可见帧严格区分；ACP五个准备子阶段在原model阶段内，20s准备预算与120s正文预算分离。只允许叙事输出，命令目录元数据例外不等于允许工具。默认模型仍Terra低/Narrator、Sol中/Brain、Luna中/Forge；完整等待未证明变快。
+
+移动正文12–24px、默认16/input16；旧历史节点不重建，主动上滚锁定，预览/落盘同构段落与稳定dock。生产静态文件由启动脚本固定版本快照。原存档快照与owner-only安全边界不变。已否决exact quote gate与强制补奖；知识性结算不是物质成长。
+
+<!-- V080-CURRENT-END -->
+
 # v0.7.0 五语补充
 
 主页右上角语言选择、Arabic RTL、逐段语言方向和手机验证详见 `I18N_UI.md`；最新部署证据 `I18N_EXPERIMENTS.md`。下方是v0.6手机重设计历史，阅读/草稿等行为继续适用。

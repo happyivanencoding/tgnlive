@@ -1,0 +1,450 @@
+{
+  "at": "2026-09-07T12:50:33.652Z",
+  "offlineTests": {
+    "passed": 96,
+    "failed": 0
+  },
+  "mobileReplay": {
+    "source": "artifacts/ui/progression-mobile-release-v080/result.json",
+    "kind": "deterministic-browser-replay-of-recorded-ACP-prose-NO-new-model",
+    "checks": {
+      "historyNodeSurvivesSubmit": true,
+      "stopFocusSurvivesTimer": true,
+      "sameParagraphGeometry": true,
+      "dockStableAcrossGeneration": true,
+      "historyNodeSurvivesCommit": true,
+      "independentBrowserRecorder": true,
+      "upwardNearBottomPauses": true,
+      "longChoicesDoNotPullReader": true,
+      "latestButtonAfterUserPause": true,
+      "explicitLatestWorks": true,
+      "oldParagraphAnchor": true,
+      "offscreenNotCountedByRecorder": true,
+      "productOffscreenTimingHonest": true,
+      "recorderSeesTextAfterExplicitLatest": true,
+      "smallReadable-360": true,
+      "targets-360": true,
+      "noOverflow-360": true,
+      "fontPersists-360": true,
+      "smallReadable-390": true,
+      "targets-390": true,
+      "noOverflow-390": true,
+      "fontPersists-390": true,
+      "smallReadable-430": true,
+      "targets-430": true,
+      "noOverflow-430": true,
+      "fontPersists-430": true,
+      "arabicRetained": true,
+      "arabicDraftRetained": true,
+      "compactLandscape": true,
+      "imePreserved": true,
+      "keyboardVisible": true,
+      "reducedMotion": true
+    },
+    "measurements": {
+      "previewCommit": {
+        "idle": {
+          "y": 8504,
+          "height": 9348,
+          "viewport": 844,
+          "dock": 258.578125,
+          "provisional": null,
+          "last": 981.96875,
+          "latest": false
+        },
+        "waiting": {
+          "y": 8609,
+          "height": 9453,
+          "viewport": 844,
+          "dock": 258.578125,
+          "provisional": 168.484375,
+          "last": 168.484375,
+          "latest": false
+        },
+        "streaming": {
+          "y": 9404,
+          "height": 10248,
+          "viewport": 844,
+          "dock": 258.578125,
+          "provisional": 963.578125,
+          "last": 963.578125,
+          "latest": false
+        },
+        "committed": {
+          "y": 9662,
+          "height": 10506,
+          "viewport": 844,
+          "dock": 258.578125,
+          "provisional": null,
+          "last": 963.578125,
+          "latest": false
+        },
+        "blockHeightDelta": 0,
+        "dockStartDelta": 0,
+        "dockCommitDelta": 0
+      },
+      "recorder": {
+        "requestId": "2fe2fb7a-fd96-458a-bdfc-faa348cc16b1",
+        "startedAt": "2026-09-07T12:41:39.342Z",
+        "requestStartMs": 7.5,
+        "responseHeadersMs": 10.8,
+        "firstReadByteMs": 11.3,
+        "firstSseMs": 11.4,
+        "firstNarrativeSseMs": 694.5,
+        "firstNarrativeVisibleFrameMs": 715.1,
+        "feedbackVisibleFrameMs": 22.3,
+        "completeReceivedMs": 1493.7,
+        "choicesVisibleFrameMs": 1515,
+        "streamEndedMs": 1504.6,
+        "stages": [
+          {
+            "name": "context_assembly",
+            "status": "running",
+            "serverElapsedMs": 1,
+            "browserReceivedMs": 11.4
+          },
+          {
+            "name": "persistence",
+            "status": "running",
+            "serverElapsedMs": 2,
+            "browserReceivedMs": 1493.6
+          }
+        ],
+        "status": "complete",
+        "textEvents": 19,
+        "turnIndex": 10,
+        "traceId": null
+      },
+      "nearBottomPause": {
+        "paused": {
+          "y": 9018,
+          "height": 9982,
+          "viewport": 844,
+          "dock": 258.578125,
+          "provisional": 697.21875,
+          "last": 697.21875,
+          "latest": true
+        },
+        "after": {
+          "y": 9018,
+          "height": 10248,
+          "viewport": 844,
+          "dock": 258.578125,
+          "provisional": 963.578125,
+          "last": 963.578125,
+          "latest": true
+        },
+        "unexpectedY": 0,
+        "committed": {
+          "y": 9018,
+          "height": 10581,
+          "viewport": 844,
+          "dock": 333.953125,
+          "provisional": null,
+          "last": 963.578125,
+          "latest": true
+        }
+      },
+      "oldAnchor": {
+        "before": {
+          "top": 72.3125,
+          "y": 6992
+        },
+        "after": {
+          "connected": true,
+          "top": 72.3125,
+          "y": 6992
+        }
+      },
+      "offscreen": {
+        "newTurnTop": 8991.75,
+        "independentFirstVisible": null,
+        "applicationHasTiming": true,
+        "applicationFirstVisible": null
+      },
+      "afterExplicitLatest": {
+        "y": 9662,
+        "viewport": 844,
+        "lastParagraph": {
+          "x": 20,
+          "y": 95.75,
+          "width": 350,
+          "height": 98.390625,
+          "top": 95.75,
+          "right": 370,
+          "bottom": 194.140625,
+          "left": 20
+        },
+        "growth": {
+          "x": 16,
+          "y": 356.328125,
+          "width": 358,
+          "height": 177.15625,
+          "top": 356.328125,
+          "right": 374,
+          "bottom": 533.484375,
+          "left": 16
+        },
+        "dock": {
+          "x": 0,
+          "y": 585.421875,
+          "width": 390,
+          "height": 258.578125,
+          "top": 585.421875,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        }
+      },
+      "mobile-360": {
+        "width": 360,
+        "overflow": 0,
+        "body": 12,
+        "input": 16,
+        "targets": [
+          {
+            "selector": "#submit-action",
+            "height": 44,
+            "width": 44
+          },
+          {
+            "selector": "#open-status",
+            "height": 44,
+            "width": 48
+          },
+          {
+            "selector": "#leave-story",
+            "height": 44,
+            "width": 44
+          },
+          {
+            "selector": "#reader-toggle",
+            "height": 44,
+            "width": 44
+          },
+          {
+            "selector": "#story-menu",
+            "height": 44,
+            "width": 44
+          }
+        ]
+      },
+      "mobile-390": {
+        "width": 390,
+        "overflow": 0,
+        "body": 12,
+        "input": 16,
+        "targets": [
+          {
+            "selector": "#submit-action",
+            "height": 44,
+            "width": 44
+          },
+          {
+            "selector": "#open-status",
+            "height": 44,
+            "width": 48
+          },
+          {
+            "selector": "#leave-story",
+            "height": 44,
+            "width": 44
+          },
+          {
+            "selector": "#reader-toggle",
+            "height": 44,
+            "width": 44
+          },
+          {
+            "selector": "#story-menu",
+            "height": 44,
+            "width": 44
+          }
+        ]
+      },
+      "mobile-430": {
+        "width": 430,
+        "overflow": 0,
+        "body": 12,
+        "input": 16,
+        "targets": [
+          {
+            "selector": "#submit-action",
+            "height": 44,
+            "width": 44
+          },
+          {
+            "selector": "#open-status",
+            "height": 44,
+            "width": 48
+          },
+          {
+            "selector": "#leave-story",
+            "height": 44,
+            "width": 44
+          },
+          {
+            "selector": "#reader-toggle",
+            "height": 44,
+            "width": 44
+          },
+          {
+            "selector": "#story-menu",
+            "height": 44,
+            "width": 44
+          }
+        ]
+      },
+      "landscape": {
+        "y": 6268,
+        "height": 6658,
+        "viewport": 390,
+        "dock": 75,
+        "provisional": null,
+        "last": 691.9375,
+        "latest": false
+      },
+      "keyboard": {
+        "compact": true,
+        "bottom": 410,
+        "inputBottom": 390
+      }
+    }
+  },
+  "acceptedSource": {
+    "label": "candidate-f",
+    "sourceHash": "aa9fe3f6e74d6573620408f11a664cf076c1b536df32b209d66d2d39957e444f",
+    "files": [
+      {
+        "path": "package.json",
+        "sha256": "1b5e52fe76506b4d683347d35cd7df6593b4ddd97b33a6fdac1e5c0c23d5437b"
+      },
+      {
+        "path": "public/app.js",
+        "sha256": "aaef42027df37f74f8c62ea082d6b2492a0691a351621cf31e1a4e6cba7f90cf"
+      },
+      {
+        "path": "public/i18n.js",
+        "sha256": "6817437ebcca0a13fa7c4d654e32b204289609d8b7e1e1ac8a644f85e3bd15e9"
+      },
+      {
+        "path": "public/index.html",
+        "sha256": "39441f7c11bd1874abc10b0ffeb93b44f9a055719a01f29256b350dea991beb1"
+      },
+      {
+        "path": "public/styles.css",
+        "sha256": "8a702ae541254bd19472708c6a086ec415b0100918228a5cbbed94c6d448b63c"
+      },
+      {
+        "path": "src/access.js",
+        "sha256": "a4bf0c6f1f2d80a918ddae2cc294f10b76e1799feb781c442c12dcd49d7b9d3a"
+      },
+      {
+        "path": "src/acp/mcp-client.js",
+        "sha256": "52f9c2812323835fcbeba32fbb0fa9661847d4aae5fa6d4900b6969ebadd9132"
+      },
+      {
+        "path": "src/acp/role-adapter.js",
+        "sha256": "cc7e3e2e3eb16ccc6c6bc406412e8eb01fcb7ec617993dee9f6cadb8b80eb0d9"
+      },
+      {
+        "path": "src/app.js",
+        "sha256": "91b8c4a339247f8905de15c73f0290eb5005cf3bd88d8b885ad87e069759e98f"
+      },
+      {
+        "path": "src/config.js",
+        "sha256": "d6fd6ea7625f7806f8687b80c37960848baf2f191839b8f815cb763bc4ae7d42"
+      },
+      {
+        "path": "src/delta-contract.js",
+        "sha256": "9fe42ae657ddf6066f4039d11ae2f1c5fc1f2d552a7442709944082a29f7d083"
+      },
+      {
+        "path": "src/errors.js",
+        "sha256": "042a90f5211e539910aecf4adc21a9d33d759361273f7d27fcb4d355adf9d3f7"
+      },
+      {
+        "path": "src/generation-service.js",
+        "sha256": "93e265519ed6dc7936b05dd52cb3b9ea54db25a32b0dc4d8da095a676b25b784"
+      },
+      {
+        "path": "src/i18n.js",
+        "sha256": "537a40a86e9c6aff7ae0b54457e4e90cca7b28f487f2f87d5d76c7c833fef8a3"
+      },
+      {
+        "path": "src/ids.js",
+        "sha256": "7947e298697e30d0aed171b7917b079245bf0bed680fdc675c0ab8505636d506"
+      },
+      {
+        "path": "src/index.js",
+        "sha256": "0f7cb32b431040e10d3879762e6859650ef27a851dac06a031f1cb0c96e17513"
+      },
+      {
+        "path": "src/opening-plan.js",
+        "sha256": "01ff107602319a77f345605fad4ead0788066db3019ad51108ef4e8cd3e307f9"
+      },
+      {
+        "path": "src/output-parser.js",
+        "sha256": "866a7782c4d2e2c7eeeef3a8a0a4672cb04384b45699591366c0e3e9d9f6f01e"
+      },
+      {
+        "path": "src/preset-i18n.js",
+        "sha256": "488aeeef8a66cb27194199ba5e45ac89cad3d503db7a1356c93e24bf28ea358d"
+      },
+      {
+        "path": "src/progression-worlds.js",
+        "sha256": "a528d8a1f49e772cd5079915281b9597fc3179b88b2ef689177309e2289cd453"
+      },
+      {
+        "path": "src/progression.js",
+        "sha256": "f12846583c0314a6064a3118dd04f52bc45f9609bc286a8a33cf4f20bd580573"
+      },
+      {
+        "path": "src/prompts.js",
+        "sha256": "6842a82731c6199388c0a38e7c26fd38be6bbe89bc10cc87c0923c7757bb4c3d"
+      },
+      {
+        "path": "src/realm-i18n.js",
+        "sha256": "d66efc7e63238b956d871921dced9443f8bcfd24abbf6dbdd6ce37ecb3d009a6"
+      },
+      {
+        "path": "src/reducer.js",
+        "sha256": "b9d6e19de2dd433a88c01bea9c7493c1578a0d19c65ffebadeda00b6d3f5e215"
+      },
+      {
+        "path": "src/scene-contract.js",
+        "sha256": "648b41304a3f741c4ebdff99adb866a025997030e854691f68e9c85732b2dcfe"
+      },
+      {
+        "path": "src/server.js",
+        "sha256": "82ed678e10cf82dd87c52495ed0f615902e8e0ff7f24e51cecbdba92aa9f486f"
+      },
+      {
+        "path": "src/store.js",
+        "sha256": "4a2c02553734f0dd5d45db90c12efebf8f7702879fc3c95be268560a2a2aac68"
+      },
+      {
+        "path": "src/telemetry.js",
+        "sha256": "376de6483fa634e945c05c36e1471a913c2425b6e28aece4297b25776fd856fc"
+      },
+      {
+        "path": "src/world-forge.js",
+        "sha256": "090e24038fc994ad39899d6df4de638320f0aa7f7a9f8d01cb851ec48aecab3d"
+      },
+      {
+        "path": "src/world-rules-i18n.js",
+        "sha256": "c3f82e70e90018d282648d71af3df6868bc6fc1ead935baadd7dc221abf95d43"
+      },
+      {
+        "path": "src/worlds.js",
+        "sha256": "42a41efa12c836607ec28c118fea1a1b291044e4c5719b9e24ee5eb1e236b3f9"
+      }
+    ],
+    "comparison": "Only line-ending/trailing-space normalization permitted since frozen F"
+  },
+  "limits": [
+    "Offline fixtures are not ACP gameplay",
+    "Chrome emulation is not physical Android/iPhone or WAN",
+    "A successful preparation after an outage does not establish the upstream outage root cause"
+  ]
+}

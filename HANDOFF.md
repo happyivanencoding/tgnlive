@@ -1,3 +1,28 @@
+## 当前主线：v0.8.0 · 2026-09-07
+
+项目 `C:\dev\tgn_live`；唯一发布分支 **main**，远端 **happyivanencoding/tgnlive**。继续开发前先读本节、`docs/V080_RESULTS.md`、`docs/PROGRESSION_ITERATION.md`、当前代码和实验正文。以下旧 v0.7.0 历史不覆盖本节。v0.8.0 已部署到现有生产入口并通过存档完整性与访问控制复核；正式回执为 `artifacts/reports/progression-v080/DEPLOYMENT.json`。旧版25个存档与121个回合内容保持不变。
+
+本轮不是成长系统完成宣言。真实样本：旧星图18回合、成长版星图18回合、独立驭兽16回合、隐潮七港18回合。驭兽第17回合在模型准备阶段超时；新武道两次开局准备超时、没有提交回合，不能算通过了长测。保留所有失败和混合版本恢复记录，不能把重跑或单位测试数量当留存证据。
+
+### 接受的代码与运行规则
+
+1. 持久`state.progression`区分真实有边界的关系/通道/身份/产业筹码与待争取机会；技能、物品、态度和角色诺言仍走原字段。旧存档只在下一成功回合补空结构，不追赠奖励。阶段欲望不再随局部调查目标丢失，近突破不会同境界每回合重复触发规划。
+2. 逐字证据门槛和“兑现必须送资产”硬门槛被真实失败否决。旧`evidence`只作可选注释，知识性结果`answered/materialized:false`不冒充成长、不触发补奖重写。结构验证不是叙事语义证明；剩余库存分量/叙述支付一致性问题必须继续检查。
+3. 新预设：隐潮七港（诡秘之主机制，六阶）与裂陆武途（全球高武机制，七阶），全五语、原创人物专名情节。不要说两者都通过18回合；以逐样本证据为准。
+4. 手机12–24px（默认16、输入16），稳定历史节点/段落、用户上滚锁定、稳定dock/Stop按钮、轻量真实收益反馈。独立最终geometry-04重放：用户锚点、dock起止高度、预览转正文偏移均0；物理Android/iOS和WAN仍未测。
+5. Narrator Terra/low，Story Brain Sol/medium，World Forge Luna/medium，Player Luna/low。降低planner effort未证实足够收益，默认不换。短计划去掉重复Canon清单，仍有同步checkpoint长尾；不得承诺总体变快。
+6. ACP工具/权限/终端仍禁止；available_commands_update只是目录元数据，精确放行不执行。新增20秒准备预算、token/MCP取消和五个准备子阶段；正文总预算仍120秒。该措施限缩坏等待，未证明上游偶发阻塞根因已经修复。
+7. 生产4317、Cloudflare Access owner-only、原存档与原域名不变。启动脚本将public固定为.runtime/public-releases版本快照，避免开发时静态文件即时污染已部署UI。测试只用4318/4319独立DB；全局同时最多两个ACP生成，本轮故障复测采用单槽。
+
+### 接手优先事项
+
+先读星图中段重复谈条件、驭兽短路线反复验证、神秘世界低价值服务循环和资源消耗事件。下一轮要让已有优势支持更完整的行动结算、真正的身份/生活方式变化，而不是继续加“有payoff”的口号或每N回合突破。一次只能修改有真实样本支持的瓶颈。开发后更新双handoff、docs与必要证据，commit/push main；不提交私有SQLite、corpus、原著、token或账户文件。
+
+详细阶段统计：`artifacts/reports/progression-v080/COMPARISON.json`。可直接阅读的正文、动作和状态变化：同目录各样本的`READING.md`，本机全量失败trace仍在`artifacts/eval`。浏览器可见帧与服务端SSE分别计算，玩家决策时间不计入应用等待。
+
+
+<!-- V080-CURRENT-END -->
+
 # TGN Live 接手入口
 
 项目：`C:\dev\tgn_live`。仓库：`happyivanencoding/tgnlive`，分支`main`。当前代码v0.7.0。

@@ -2,19 +2,23 @@ import { performance } from "node:perf_hooks";
 import { createId } from "./ids.js";
 
 export class TurnTrace {
-  constructor({ gameId, requestId }) {
-    this.startedMono = performance.now();
+  constructor({ gameId, requestId, startedMono = performance.now(), startedAt = new Date().toISOString() }) {
+    this.startedMono = startedMono;
     this.openStages = new Map();
     this.value = {
       id: createId("trace"),
       gameId,
       requestId,
       status: "running",
-      startedAt: new Date().toISOString(),
+      startedAt,
       endedAt: null,
       totalElapsedMs: null,
       firstFinalAnswerTokenMs: null,
       firstReaderVisibleMs: null,
+      firstNarrativeSseMs: null,
+      apiCompleteMs: null,
+      browserFirstNarrativePaintMs: null,
+      browserChoicesVisibleMs: null,
       providerQueueMs: null,
       usage: null,
       cost: null,
@@ -65,7 +69,12 @@ export class TurnTrace {
   }
 
   firstVisible() {
-    if (this.value.firstReaderVisibleMs === null) this.value.firstReaderVisibleMs = this.elapsed();
+    if (this.value.firstNarrativeSseMs === null) {
+      this.value.firstNarrativeSseMs = this.elapsed();
+      // Historical API compatibility only: this is SERVER SSE dispatch, not browser paint.
+      this.value.firstReaderVisibleMs = this.value.firstNarrativeSseMs;
+      this.point("first_narrative_sse");
+    }
   }
 
   finish(status, details = {}) {

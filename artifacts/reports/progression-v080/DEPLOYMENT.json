@@ -1,0 +1,110 @@
+{
+  "verifiedAt": "2026-09-07T12:48:42.212Z",
+  "passed": true,
+  "version": "0.8.0",
+  "productionOrigin": "http://127.0.0.1:4317",
+  "publicOrigin": "https://live.thegreatnovel.com",
+  "access": {
+    "mode": "owner-only",
+    "publicUrl": "https://live.thegreatnovel.com"
+  },
+  "canonicalDataUnchanged": true,
+  "integrityTables": [
+    "games",
+    "worlds",
+    "game_worlds",
+    "turns",
+    "canon_ledger",
+    "story_plans"
+  ],
+  "originalGames": 25,
+  "originalTurns": 121,
+  "privateBackup": "Retained under ignored .runtime/v080-before-deploy; not included in evidence bundle",
+  "deployedPublicAssetSha256": "aaef42027df37f74f8c62ea082d6b2492a0691a351621cf31e1a4e6cba7f90cf",
+  "publicAssetsPinned": true,
+  "boundaryChecks": [
+    {
+      "headers": [
+        "host"
+      ],
+      "expected": 401,
+      "actual": 401
+    },
+    {
+      "headers": [
+        "host",
+        "cf-access-jwt-assertion"
+      ],
+      "expected": 401,
+      "actual": 401
+    },
+    {
+      "headers": [
+        "host",
+        "cf-connecting-ip"
+      ],
+      "expected": 403,
+      "actual": 403
+    },
+    {
+      "headers": [
+        "host"
+      ],
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "publicPath": "/",
+      "anonymous": "login-required",
+      "status": 302
+    },
+    {
+      "publicPath": "/api/games",
+      "anonymous": "login-required",
+      "status": 302
+    }
+  ],
+  "worldCatalogue": [
+    {
+      "id": "cinder-river",
+      "title": "烬河照夜"
+    },
+    {
+      "id": "sky-beast-isles",
+      "title": "云背群岛"
+    },
+    {
+      "id": "ashen-star-covenant",
+      "title": "灰塔星契"
+    },
+    {
+      "id": "crimson-cauldron",
+      "title": "赤曜药州"
+    },
+    {
+      "id": "myriad-mark-hunt",
+      "title": "万相猎庭"
+    },
+    {
+      "id": "masked-tides",
+      "title": "隐潮七港"
+    },
+    {
+      "id": "martial-frontier",
+      "title": "裂陆武途"
+    },
+    {
+      "id": "world-8c5aa99a-3568-4149-bbc6-29d6077c8f20",
+      "title": "陨港星图"
+    },
+    {
+      "id": "world-076764e6-1638-44c8-ae9c-22549ec1fcaf",
+      "title": "坠星海图"
+    }
+  ],
+  "limitations": [
+    "Public anonymous requests verified to require Access login; no fresh authenticated phone session was impersonated",
+    "Synthetic tests run on isolated databases; no private saves exported",
+    "Martial inspiration preset has schema/language validation but no completed real long play"
+  ]
+}

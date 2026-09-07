@@ -17,7 +17,7 @@ ${languageInstruction(code, "世界标题、介绍、题材、标签、来源、
  "opening":{"location":"2—60字明确地点","chapterTitle":"2—30字开局章名","goal":"20—100字主角自己值得争取的目标","situation":"120—350字眼前场景，写人名/位置/私欲/即将发生什么，不能替玩家作选择","npcMoves":[{"id":"npc-one","name":"姓名","role":"2—30字身份","desire":"10—60字欲望","nextMove":"10—80字无人干预时的动作"}],"opportunities":["3条具体可接近的不同成长/探索/夺利入口，每条15—90字"],"continuity":["2—5条持有物/方位/未确认信息等必须守住的事实，每条10—100字"],"milestone":"20—120字第一次真正可用收益的兑现方向，不预先保证选择或成功"},
  "seed":{"currencyName":"1—12字货币名","coins":20,"inventory":[{"id":"item-one","name":"物品名","description":"10—100字目前真实用途","qty":1}],"relationships":[{"id":"与对应npcMoves完全相同的id","name":"与该NPC同名","role":"同身份","attitude":"陌生"}],"capabilities":[{"id":"ability-one","name":"2—30字初始基础动作","description":"15—100字现在能做什么、限制什么","source":"2—40字来源"}],"facts":["2—6条已知真实事实，每条10—100字"],"promises":[]}
 }
-realms恰好5个，rank严格为0、1、2、3、4，主角从第0个开始；powers恰好3个；npcMoves为2或3个；opportunities恰好3条字符串；inventory为1—4项，qty整数1—10，coins整数0—1000；relationships至少1项且与npcMoves人物一致，attitude只能是敌视/戒备/陌生/中立/好奇/友善/信任/亲近；capabilities为0—2项。attitude是程序枚举而非读者正文，不翻译：陌生=stranger/غريب，戒备=wary/حذر，好奇=curious/فضولي；JSON必须写左侧的中文枚举原值，界面会另行显示目标语言。不要把数组说明句当成实际一项，也不要把只有1条示例误作规定数量。
+realms为4—8个，数量按本世界实际成长语法选择，不把所有世界套成五阶；rank从0连续递增，主角从第0个开始；powers恰好3个；npcMoves为2或3个；opportunities恰好3条字符串；inventory为1—4项，qty整数1—10，coins整数0—1000；relationships至少1项且与npcMoves人物一致，attitude只能是敌视/戒备/陌生/中立/好奇/友善/信任/亲近；capabilities为0—2项。attitude是程序枚举而非读者正文，不翻译：陌生=stranger/غريب，戒备=wary/حذر，好奇=curious/فضولي；JSON必须写左侧的中文枚举原值，界面会另行显示目标语言。不要把数组说明句当成实际一项，也不要把只有1条示例误作规定数量。
 玩家创意：${JSON.stringify(prompt)}`;
 }
 

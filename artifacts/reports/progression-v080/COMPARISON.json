@@ -1,0 +1,1444 @@
+{
+  "generatedAt": "2026-09-07T12:39:20.336Z",
+  "samples": [
+    {
+      "label": "progression-baseline-stars-18-v070",
+      "requestedTurns": 18,
+      "committedTurns": 18,
+      "failedAttempts": 0,
+      "fatal": null,
+      "continuedFrom": null,
+      "continuationReason": null,
+      "status": "completed",
+      "server": {
+        "firstNarrativeSse": {
+          "n": 18,
+          "medianMs": 5971,
+          "p95Ms": 41891,
+          "maxMs": 41891
+        },
+        "complete": {
+          "n": 18,
+          "medianMs": 21182,
+          "p95Ms": 58065,
+          "maxMs": 58065
+        },
+        "allAttempts": {
+          "n": 18,
+          "medianMs": 21182,
+          "p95Ms": 58065,
+          "maxMs": 58065
+        },
+        "repairCalls": 0,
+        "phases": {
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 18,
+            "medianMs": 699,
+            "p95Ms": 5423,
+            "maxMs": 5423
+          },
+          "acp_planner_initialize_auth_session_model_setup": {
+            "n": 2,
+            "medianMs": 811.5,
+            "p95Ms": 829,
+            "maxMs": 829
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "context_assembly": {
+            "n": 18,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "narrative_generation": {
+            "n": 18,
+            "medianMs": 20961.5,
+            "p95Ms": 30914,
+            "maxMs": 30914
+          },
+          "parse_validate": {
+            "n": 18,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "persistence": {
+            "n": 18,
+            "medianMs": 11.5,
+            "p95Ms": 29,
+            "maxMs": 29
+          },
+          "plan": {
+            "n": 2,
+            "medianMs": 33890,
+            "p95Ms": 35378,
+            "maxMs": 35378
+          },
+          "request_validation": {
+            "n": 18,
+            "medianMs": 5.5,
+            "p95Ms": 40,
+            "maxMs": 40
+          }
+        },
+        "checkpoints": [
+          {
+            "turn": 9,
+            "status": "complete",
+            "planningMs": 32402,
+            "firstNarrativeSseMs": 36752,
+            "totalMs": 51066,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          },
+          {
+            "turn": 17,
+            "status": "complete",
+            "planningMs": 35378,
+            "firstNarrativeSseMs": 41891,
+            "totalMs": 58065,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          }
+        ]
+      },
+      "client": {
+        "firstNarrativeReceipt": {
+          "n": 18,
+          "medianMs": 5974.907399999996,
+          "p95Ms": 41893.402,
+          "maxMs": 41893.402
+        },
+        "completeReceipt": {
+          "n": 18,
+          "medianMs": 21191.661999999982,
+          "p95Ms": 58079.6507,
+          "maxMs": 58079.6507
+        },
+        "playerDecision": {
+          "n": 17,
+          "medianMs": 6439.311800000025,
+          "p95Ms": 9379.79220000001,
+          "maxMs": 9379.79220000001
+        },
+        "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+        "feedbackVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "firstNarrativeVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "choicesVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        }
+      },
+      "errors": [],
+      "sourceHashes": {
+        "turns": "809e45e58bdce8e900ab75b2966a293c40319a67d5a7a61339b72ae0bbdb895a"
+      },
+      "limits": [
+        "Autonomous diverging paths, not a paired or randomized causal experiment",
+        "Counts are not human retention; no physical phone or WAN measurement",
+        "Nested ACP spans are included in model stage time; do not sum them twice",
+        "With fewer than20 observations nearest-rank p95 equals maximum",
+        "Only committed requests enter successful latency; failures retained separately",
+        "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+      ]
+    },
+    {
+      "label": "progression-treatment-stars-18-v080d",
+      "requestedTurns": 18,
+      "committedTurns": 18,
+      "failedAttempts": 2,
+      "fatal": null,
+      "continuedFrom": "progression-treatment-stars-18-v080c",
+      "continuationReason": "Continue identical Canon after ACP metadata false-positive fix and UI geometry changes; no growth prompt/reducer/model-effort change.",
+      "status": "completed",
+      "server": {
+        "firstNarrativeSse": {
+          "n": 18,
+          "medianMs": 6929,
+          "p95Ms": 55104,
+          "maxMs": 55104
+        },
+        "complete": {
+          "n": 18,
+          "medianMs": 25437.5,
+          "p95Ms": 74057,
+          "maxMs": 74057
+        },
+        "allAttempts": {
+          "n": 20,
+          "medianMs": 25437.5,
+          "p95Ms": 67325,
+          "maxMs": 74057
+        },
+        "repairCalls": 1,
+        "phases": {
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 18,
+            "medianMs": 730.5,
+            "p95Ms": 1259,
+            "maxMs": 1259
+          },
+          "acp_planner_initialize_auth_session_model_setup": {
+            "n": 2,
+            "medianMs": 961.5,
+            "p95Ms": 978,
+            "maxMs": 978
+          },
+          "acp_repair_initialize_auth_session_model_setup": {
+            "n": 1,
+            "medianMs": 893,
+            "p95Ms": 893,
+            "maxMs": 893
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "context_assembly": {
+            "n": 18,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "http_input_validation": {
+            "n": 18,
+            "medianMs": 0,
+            "p95Ms": 2,
+            "maxMs": 2
+          },
+          "narrative_generation": {
+            "n": 18,
+            "medianMs": 24558.5,
+            "p95Ms": 40510,
+            "maxMs": 40510
+          },
+          "parse": {
+            "n": 18,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "parse_validate": {
+            "n": 18,
+            "medianMs": 1,
+            "p95Ms": 3,
+            "maxMs": 3
+          },
+          "persistence": {
+            "n": 18,
+            "medianMs": 8,
+            "p95Ms": 60,
+            "maxMs": 60
+          },
+          "plan": {
+            "n": 2,
+            "medianMs": 35327,
+            "p95Ms": 37142,
+            "maxMs": 37142
+          },
+          "planner_context_assembly": {
+            "n": 2,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "reducer_validation": {
+            "n": 17,
+            "medianMs": 1,
+            "p95Ms": 3,
+            "maxMs": 3
+          },
+          "repair": {
+            "n": 1,
+            "medianMs": 16896,
+            "p95Ms": 16896,
+            "maxMs": 16896
+          },
+          "repair_parse": {
+            "n": 1,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "repair_reducer_validation": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "request_validation": {
+            "n": 18,
+            "medianMs": 2,
+            "p95Ms": 19,
+            "maxMs": 19
+          }
+        },
+        "checkpoints": [
+          {
+            "turn": null,
+            "status": "failed",
+            "planningMs": 34457,
+            "firstNarrativeSseMs": null,
+            "totalMs": 35282,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          },
+          {
+            "turn": null,
+            "status": "failed",
+            "planningMs": 984,
+            "firstNarrativeSseMs": null,
+            "totalMs": 987,
+            "model": null,
+            "effort": null
+          },
+          {
+            "turn": 9,
+            "status": "complete",
+            "planningMs": 33512,
+            "firstNarrativeSseMs": 55104,
+            "totalMs": 74057,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          },
+          {
+            "turn": 17,
+            "status": "complete",
+            "planningMs": 37142,
+            "firstNarrativeSseMs": 45155,
+            "totalMs": 67325,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          }
+        ]
+      },
+      "client": {
+        "firstNarrativeReceipt": {
+          "n": 18,
+          "medianMs": 6931.850000008941,
+          "p95Ms": 55106.20000001788,
+          "maxMs": 55106.20000001788
+        },
+        "completeReceipt": {
+          "n": 18,
+          "medianMs": 25492.69999998808,
+          "p95Ms": 74097.70000001788,
+          "maxMs": 74097.70000001788
+        },
+        "playerDecision": {
+          "n": 17,
+          "medianMs": 6193.002199999988,
+          "p95Ms": 7858.4366000000155,
+          "maxMs": 7858.4366000000155
+        },
+        "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+        "feedbackVisibleFrame": {
+          "n": 10,
+          "medianMs": 23.19999998807907,
+          "p95Ms": 27.599999994039536,
+          "maxMs": 27.599999994039536
+        },
+        "firstNarrativeVisibleFrame": {
+          "n": 10,
+          "medianMs": 7742.149999991059,
+          "p95Ms": 55120.80000001192,
+          "maxMs": 55120.80000001192
+        },
+        "choicesVisibleFrame": {
+          "n": 10,
+          "medianMs": 26015.65000000596,
+          "p95Ms": 74121.59999999404,
+          "maxMs": 74121.59999999404
+        }
+      },
+      "errors": [
+        {
+          "requestId": "b5737eaa-64fc-4837-bb9f-576f459b79bc",
+          "code": "INVALID_OUTPUT",
+          "message": "模型返回的 JSON 无法解析",
+          "totalMs": 34270
+        },
+        {
+          "requestId": "97b8a9f1-4c42-4013-917e-d5a4e9552ce2",
+          "code": "UNEXPECTED_PROVIDER_EVENT",
+          "message": "叙事会话出现禁止事件：available_commands_update",
+          "totalMs": 35282
+        },
+        {
+          "requestId": "ed0bc235-69f3-45b5-a24c-a02fc21479e3",
+          "code": "UNEXPECTED_PROVIDER_EVENT",
+          "message": "叙事会话出现禁止事件：available_commands_update",
+          "totalMs": 987
+        }
+      ],
+      "sourceHashes": {
+        "turns": "9f54ed85d2b06125ed8a227f9b3841b6833e762bf16e54f7175bfb766263c37d"
+      },
+      "limits": [
+        "Autonomous diverging paths, not a paired or randomized causal experiment",
+        "Counts are not human retention; no physical phone or WAN measurement",
+        "Nested ACP spans are included in model stage time; do not sum them twice",
+        "With fewer than20 observations nearest-rank p95 equals maximum",
+        "Only committed requests enter successful latency; failures retained separately",
+        "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+      ]
+    },
+    {
+      "label": "progression-browser-beast-18-v080d",
+      "requestedTurns": 18,
+      "committedTurns": 16,
+      "failedAttempts": 1,
+      "fatal": "Browser sse_error: 生成超时",
+      "continuedFrom": null,
+      "continuationReason": null,
+      "status": "stopped-with-error",
+      "server": {
+        "firstNarrativeSse": {
+          "n": 16,
+          "medianMs": 6609.5,
+          "p95Ms": 40001,
+          "maxMs": 40001
+        },
+        "complete": {
+          "n": 16,
+          "medianMs": 22364.5,
+          "p95Ms": 54058,
+          "maxMs": 54058
+        },
+        "allAttempts": {
+          "n": 17,
+          "medianMs": 22737,
+          "p95Ms": 120012,
+          "maxMs": 120012
+        },
+        "repairCalls": 0,
+        "phases": {
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 16,
+            "medianMs": 664.5,
+            "p95Ms": 1413,
+            "maxMs": 1413
+          },
+          "acp_planner_initialize_auth_session_model_setup": {
+            "n": 1,
+            "medianMs": 637,
+            "p95Ms": 637,
+            "maxMs": 637
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "context_assembly": {
+            "n": 16,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "http_input_validation": {
+            "n": 16,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "narrative_generation": {
+            "n": 16,
+            "medianMs": 21635.5,
+            "p95Ms": 32219,
+            "maxMs": 32219
+          },
+          "parse": {
+            "n": 16,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "parse_validate": {
+            "n": 16,
+            "medianMs": 1,
+            "p95Ms": 4,
+            "maxMs": 4
+          },
+          "persistence": {
+            "n": 16,
+            "medianMs": 7,
+            "p95Ms": 70,
+            "maxMs": 70
+          },
+          "plan": {
+            "n": 1,
+            "medianMs": 35523,
+            "p95Ms": 35523,
+            "maxMs": 35523
+          },
+          "planner_context_assembly": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "reducer_validation": {
+            "n": 16,
+            "medianMs": 0,
+            "p95Ms": 3,
+            "maxMs": 3
+          },
+          "request_validation": {
+            "n": 16,
+            "medianMs": 2,
+            "p95Ms": 24,
+            "maxMs": 24
+          }
+        },
+        "checkpoints": [
+          {
+            "turn": 9,
+            "status": "complete",
+            "planningMs": 35523,
+            "firstNarrativeSseMs": 40001,
+            "totalMs": 54058,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          },
+          {
+            "turn": null,
+            "status": "failed",
+            "planningMs": 120008,
+            "firstNarrativeSseMs": null,
+            "totalMs": 120012,
+            "model": null,
+            "effort": null
+          }
+        ]
+      },
+      "client": {
+        "firstNarrativeReceipt": {
+          "n": 16,
+          "medianMs": 6614.4,
+          "p95Ms": 40006.1,
+          "maxMs": 40006.1
+        },
+        "completeReceipt": {
+          "n": 16,
+          "medianMs": 22391.8,
+          "p95Ms": 54091.6,
+          "maxMs": 54091.6
+        },
+        "playerDecision": {
+          "n": 15,
+          "medianMs": 5904.774799999985,
+          "p95Ms": 7903.3736999999965,
+          "maxMs": 7903.3736999999965
+        },
+        "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+        "feedbackVisibleFrame": {
+          "n": 16,
+          "medianMs": 26.25,
+          "p95Ms": 31.8,
+          "maxMs": 31.8
+        },
+        "firstNarrativeVisibleFrame": {
+          "n": 16,
+          "medianMs": 6637.35,
+          "p95Ms": 40027,
+          "maxMs": 40027
+        },
+        "choicesVisibleFrame": {
+          "n": 16,
+          "medianMs": 22446.25,
+          "p95Ms": 54121.6,
+          "maxMs": 54121.6
+        }
+      },
+      "errors": [
+        {
+          "requestId": "78c9c56d-8dbf-410f-bac1-27faa4399eab",
+          "code": "PROVIDER_TIMEOUT",
+          "message": "生成超时",
+          "totalMs": 120012
+        }
+      ],
+      "sourceHashes": {
+        "turns": "1956ac64bc06fe11a3102fcc22d2c25681697cc2c5a11a35cd43deaab0b4cd45"
+      },
+      "limits": [
+        "Autonomous diverging paths, not a paired or randomized causal experiment",
+        "Counts are not human retention; no physical phone or WAN measurement",
+        "Nested ACP spans are included in model stage time; do not sum them twice",
+        "With fewer than20 observations nearest-rank p95 equals maximum",
+        "Only committed requests enter successful latency; failures retained separately",
+        "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+      ]
+    },
+    {
+      "label": "progression-masked-18-v080f",
+      "requestedTurns": 18,
+      "committedTurns": 18,
+      "failedAttempts": 0,
+      "fatal": null,
+      "continuedFrom": "progression-masked-18-v080c",
+      "continuationReason": "Same Canon resumes after preparation timeout; frozen F has measured bounded ACP setup and compact Story Brain, recorded as a mixed-version continuation rather than a paired A/B.",
+      "status": "completed",
+      "server": {
+        "firstNarrativeSse": {
+          "n": 18,
+          "medianMs": 6456.5,
+          "p95Ms": 31637,
+          "maxMs": 31637
+        },
+        "complete": {
+          "n": 18,
+          "medianMs": 21491.5,
+          "p95Ms": 68359,
+          "maxMs": 68359
+        },
+        "allAttempts": {
+          "n": 18,
+          "medianMs": 21491.5,
+          "p95Ms": 68359,
+          "maxMs": 68359
+        },
+        "repairCalls": 1,
+        "phases": {
+          "acp_narrator_effort_select": {
+            "n": 13,
+            "medianMs": 6,
+            "p95Ms": 35,
+            "maxMs": 35
+          },
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 18,
+            "medianMs": 666.5,
+            "p95Ms": 1586,
+            "maxMs": 1586
+          },
+          "acp_narrator_mcp_initialize": {
+            "n": 13,
+            "medianMs": 0,
+            "p95Ms": 277,
+            "maxMs": 277
+          },
+          "acp_narrator_model_select": {
+            "n": 13,
+            "medianMs": 7,
+            "p95Ms": 109,
+            "maxMs": 109
+          },
+          "acp_narrator_read_only_mode": {
+            "n": 13,
+            "medianMs": 10,
+            "p95Ms": 13,
+            "maxMs": 13
+          },
+          "acp_narrator_session_new": {
+            "n": 13,
+            "medianMs": 589,
+            "p95Ms": 791,
+            "maxMs": 791
+          },
+          "acp_planner_effort_select": {
+            "n": 2,
+            "medianMs": 6.5,
+            "p95Ms": 7,
+            "maxMs": 7
+          },
+          "acp_planner_initialize_auth_session_model_setup": {
+            "n": 2,
+            "medianMs": 617.5,
+            "p95Ms": 624,
+            "maxMs": 624
+          },
+          "acp_planner_mcp_initialize": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_planner_model_select": {
+            "n": 2,
+            "medianMs": 7.5,
+            "p95Ms": 8,
+            "maxMs": 8
+          },
+          "acp_planner_read_only_mode": {
+            "n": 2,
+            "medianMs": 9.5,
+            "p95Ms": 10,
+            "maxMs": 10
+          },
+          "acp_planner_session_new": {
+            "n": 2,
+            "medianMs": 594,
+            "p95Ms": 601,
+            "maxMs": 601
+          },
+          "acp_repair_effort_select": {
+            "n": 1,
+            "medianMs": 7,
+            "p95Ms": 7,
+            "maxMs": 7
+          },
+          "acp_repair_initialize_auth_session_model_setup": {
+            "n": 1,
+            "medianMs": 623,
+            "p95Ms": 623,
+            "maxMs": 623
+          },
+          "acp_repair_mcp_initialize": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "acp_repair_model_select": {
+            "n": 1,
+            "medianMs": 9,
+            "p95Ms": 9,
+            "maxMs": 9
+          },
+          "acp_repair_read_only_mode": {
+            "n": 1,
+            "medianMs": 9,
+            "p95Ms": 9,
+            "maxMs": 9
+          },
+          "acp_repair_session_new": {
+            "n": 1,
+            "medianMs": 597,
+            "p95Ms": 597,
+            "maxMs": 597
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "context_assembly": {
+            "n": 18,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "http_input_validation": {
+            "n": 18,
+            "medianMs": 0,
+            "p95Ms": 3,
+            "maxMs": 3
+          },
+          "narrative_generation": {
+            "n": 18,
+            "medianMs": 21325.5,
+            "p95Ms": 47492,
+            "maxMs": 47492
+          },
+          "parse": {
+            "n": 18,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "parse_validate": {
+            "n": 18,
+            "medianMs": 1,
+            "p95Ms": 3,
+            "maxMs": 3
+          },
+          "persistence": {
+            "n": 18,
+            "medianMs": 7.5,
+            "p95Ms": 54,
+            "maxMs": 54
+          },
+          "plan": {
+            "n": 2,
+            "medianMs": 25226,
+            "p95Ms": 26221,
+            "maxMs": 26221
+          },
+          "planner_context_assembly": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "reducer_validation": {
+            "n": 18,
+            "medianMs": 1,
+            "p95Ms": 3,
+            "maxMs": 3
+          },
+          "repair": {
+            "n": 1,
+            "medianMs": 20561,
+            "p95Ms": 20561,
+            "maxMs": 20561
+          },
+          "repair_parse": {
+            "n": 1,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "repair_reducer_validation": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "request_validation": {
+            "n": 18,
+            "medianMs": 2,
+            "p95Ms": 7,
+            "maxMs": 7
+          }
+        },
+        "checkpoints": [
+          {
+            "turn": 9,
+            "status": "complete",
+            "planningMs": 26221,
+            "firstNarrativeSseMs": 31637,
+            "totalMs": 68359,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          },
+          {
+            "turn": 17,
+            "status": "complete",
+            "planningMs": 24231,
+            "firstNarrativeSseMs": 29723,
+            "totalMs": 45665,
+            "model": "gpt-5.6-sol",
+            "effort": "medium"
+          }
+        ]
+      },
+      "client": {
+        "firstNarrativeReceipt": {
+          "n": 18,
+          "medianMs": 6459.550000011921,
+          "p95Ms": 31639.19999998808,
+          "maxMs": 31639.19999998808
+        },
+        "completeReceipt": {
+          "n": 18,
+          "medianMs": 21561.5,
+          "p95Ms": 68416.29999998212,
+          "maxMs": 68416.29999998212
+        },
+        "playerDecision": {
+          "n": 17,
+          "medianMs": 6446.254600000015,
+          "p95Ms": 10031.1308,
+          "maxMs": 10031.1308
+        },
+        "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+        "feedbackVisibleFrame": {
+          "n": 13,
+          "medianMs": 23.400000005960464,
+          "p95Ms": 26.299999982118607,
+          "maxMs": 26.299999982118607
+        },
+        "firstNarrativeVisibleFrame": {
+          "n": 13,
+          "medianMs": 5756.4000000059605,
+          "p95Ms": 31665.399999976158,
+          "maxMs": 31665.399999976158
+        },
+        "choicesVisibleFrame": {
+          "n": 13,
+          "medianMs": 23239.30000001192,
+          "p95Ms": 68438.69999998808,
+          "maxMs": 68438.69999998808
+        }
+      },
+      "errors": [
+        {
+          "requestId": "d7ed792d-c0fc-4806-bf62-1083b3fc063e",
+          "code": "INVALID_PROGRESSION",
+          "message": "不支持opportunity操作 update",
+          "totalMs": 68359
+        }
+      ],
+      "sourceHashes": {
+        "turns": "3947d02d317e2a1307a05ca155e7d26b12193d4ff535204c74df94b43c87a49a"
+      },
+      "limits": [
+        "Autonomous diverging paths, not a paired or randomized causal experiment",
+        "Counts are not human retention; no physical phone or WAN measurement",
+        "Nested ACP spans are included in model stage time; do not sum them twice",
+        "With fewer than20 observations nearest-rank p95 equals maximum",
+        "Only committed requests enter successful latency; failures retained separately",
+        "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+      ]
+    },
+    {
+      "label": "progression-treatment-stars-18-v080a",
+      "requestedTurns": 18,
+      "committedTurns": 2,
+      "failedAttempts": 2,
+      "fatal": "Turn 3 failed twice; evidence retained",
+      "continuedFrom": null,
+      "continuationReason": null,
+      "status": "stopped-with-error",
+      "server": {
+        "firstNarrativeSse": {
+          "n": 2,
+          "medianMs": 6098.5,
+          "p95Ms": 7976,
+          "maxMs": 7976
+        },
+        "complete": {
+          "n": 2,
+          "medianMs": 33173.5,
+          "p95Ms": 47684,
+          "maxMs": 47684
+        },
+        "allAttempts": {
+          "n": 4,
+          "medianMs": 49922,
+          "p95Ms": 54889,
+          "maxMs": 54889
+        },
+        "repairCalls": 3,
+        "phases": {
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 2,
+            "medianMs": 1531,
+            "p95Ms": 2235,
+            "maxMs": 2235
+          },
+          "acp_repair_initialize_auth_session_model_setup": {
+            "n": 1,
+            "medianMs": 624,
+            "p95Ms": 624,
+            "maxMs": 624
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "context_assembly": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "http_input_validation": {
+            "n": 2,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "narrative_generation": {
+            "n": 2,
+            "medianMs": 21663,
+            "p95Ms": 24681,
+            "maxMs": 24681
+          },
+          "parse": {
+            "n": 2,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "parse_validate": {
+            "n": 2,
+            "medianMs": 1.5,
+            "p95Ms": 2,
+            "maxMs": 2
+          },
+          "persistence": {
+            "n": 2,
+            "medianMs": 8,
+            "p95Ms": 8,
+            "maxMs": 8
+          },
+          "reducer_validation": {
+            "n": 2,
+            "medianMs": 1.5,
+            "p95Ms": 2,
+            "maxMs": 2
+          },
+          "repair": {
+            "n": 1,
+            "medianMs": 22990,
+            "p95Ms": 22990,
+            "maxMs": 22990
+          },
+          "repair_parse": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "repair_reducer_validation": {
+            "n": 1,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "request_validation": {
+            "n": 2,
+            "medianMs": 4,
+            "p95Ms": 7,
+            "maxMs": 7
+          }
+        },
+        "checkpoints": []
+      },
+      "client": {
+        "firstNarrativeReceipt": {
+          "n": 2,
+          "medianMs": 6101.29999999702,
+          "p95Ms": 7978.5999999940395,
+          "maxMs": 7978.5999999940395
+        },
+        "completeReceipt": {
+          "n": 2,
+          "medianMs": 33233.89999999106,
+          "p95Ms": 47730.89999997616,
+          "maxMs": 47730.89999997616
+        },
+        "playerDecision": {
+          "n": 1,
+          "medianMs": 5929.2376,
+          "p95Ms": 5929.2376,
+          "maxMs": 5929.2376
+        },
+        "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+        "feedbackVisibleFrame": {
+          "n": 2,
+          "medianMs": 9.149999991059303,
+          "p95Ms": 9.699999988079071,
+          "maxMs": 9.699999988079071
+        },
+        "firstNarrativeVisibleFrame": {
+          "n": 2,
+          "medianMs": 6108.999999985099,
+          "p95Ms": 7982.0999999940395,
+          "maxMs": 7982.0999999940395
+        },
+        "choicesVisibleFrame": {
+          "n": 2,
+          "medianMs": 33244.29999999702,
+          "p95Ms": 47741.40000000596,
+          "maxMs": 47741.40000000596
+        }
+      },
+      "errors": [
+        {
+          "requestId": "0f8a05a4-53b3-414d-b890-4e6ce6a46d34",
+          "code": "INVALID_PROGRESSION",
+          "message": "evidence 须逐字摘自本轮正文中的实际授予/使用/兑现/失去，4—240字符",
+          "totalMs": 47684
+        },
+        {
+          "requestId": "e5b9de63-c818-4a00-9df5-dc829f75c45d",
+          "code": "INVALID_PROGRESSION",
+          "message": "兑现成长机会必须同轮落实能力/物品/金钱/境界/长期筹码之一，不能只声明兑现",
+          "totalMs": 54889
+        },
+        {
+          "requestId": "e5b9de63-c818-4a00-9df5-dc829f75c45d",
+          "code": "INVALID_PROGRESSION",
+          "message": "evidence 须逐字摘自本轮正文中的实际授予/使用/兑现/失去，4—240字符",
+          "totalMs": 54889
+        },
+        {
+          "requestId": "7b8e3995-f565-4847-b61b-6a49e913e557",
+          "code": "INVALID_PROGRESSION",
+          "message": "兑现成长机会必须同轮落实能力/物品/金钱/境界/长期筹码之一，不能只声明兑现",
+          "totalMs": 52160
+        },
+        {
+          "requestId": "7b8e3995-f565-4847-b61b-6a49e913e557",
+          "code": "INVALID_PROGRESSION",
+          "message": "evidence 须逐字摘自本轮正文中的实际授予/使用/兑现/失去，4—240字符",
+          "totalMs": 52160
+        }
+      ],
+      "sourceHashes": {
+        "turns": "fd9609bf20934a55ca39b8ba4f85e0243cd5dfe7a45d7e54400c0319c28d6d87"
+      },
+      "limits": [
+        "Autonomous diverging paths, not a paired or randomized causal experiment",
+        "Counts are not human retention; no physical phone or WAN measurement",
+        "Nested ACP spans are included in model stage time; do not sum them twice",
+        "With fewer than20 observations nearest-rank p95 equals maximum",
+        "Only committed requests enter successful latency; failures retained separately",
+        "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+      ]
+    },
+    {
+      "label": "progression-masked-18-v080b",
+      "requestedTurns": 18,
+      "committedTurns": 7,
+      "failedAttempts": 1,
+      "fatal": "ACP cancelled",
+      "continuedFrom": null,
+      "continuationReason": null,
+      "status": "stopped-with-error",
+      "server": {
+        "firstNarrativeSse": {
+          "n": 7,
+          "medianMs": 5473,
+          "p95Ms": 67973,
+          "maxMs": 67973
+        },
+        "complete": {
+          "n": 7,
+          "medianMs": 38850,
+          "p95Ms": 105029,
+          "maxMs": 105029
+        },
+        "allAttempts": {
+          "n": 8,
+          "medianMs": 37967,
+          "p95Ms": 105029,
+          "maxMs": 105029
+        },
+        "repairCalls": 6,
+        "phases": {
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 7,
+            "medianMs": 737,
+            "p95Ms": 1015,
+            "maxMs": 1015
+          },
+          "acp_repair_initialize_auth_session_model_setup": {
+            "n": 5,
+            "medianMs": 773,
+            "p95Ms": 916,
+            "maxMs": 916
+          },
+          "authored_opening_plan": {
+            "n": 1,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "context_assembly": {
+            "n": 7,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "http_input_validation": {
+            "n": 7,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "narrative_generation": {
+            "n": 7,
+            "medianMs": 20150,
+            "p95Ms": 85200,
+            "maxMs": 85200
+          },
+          "parse": {
+            "n": 7,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "parse_validate": {
+            "n": 7,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "persistence": {
+            "n": 7,
+            "medianMs": 15,
+            "p95Ms": 65,
+            "maxMs": 65
+          },
+          "reducer_validation": {
+            "n": 7,
+            "medianMs": 0,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "repair": {
+            "n": 5,
+            "medianMs": 19819,
+            "p95Ms": 21723,
+            "maxMs": 21723
+          },
+          "repair_parse": {
+            "n": 5,
+            "medianMs": 0,
+            "p95Ms": 0,
+            "maxMs": 0
+          },
+          "repair_reducer_validation": {
+            "n": 5,
+            "medianMs": 1,
+            "p95Ms": 1,
+            "maxMs": 1
+          },
+          "request_validation": {
+            "n": 7,
+            "medianMs": 2,
+            "p95Ms": 6,
+            "maxMs": 6
+          }
+        },
+        "checkpoints": []
+      },
+      "client": {
+        "firstNarrativeReceipt": {
+          "n": 7,
+          "medianMs": 5476.200000017881,
+          "p95Ms": 67974.90000000596,
+          "maxMs": 67974.90000000596
+        },
+        "completeReceipt": {
+          "n": 7,
+          "medianMs": 38908.90000000596,
+          "p95Ms": 105086.20000001788,
+          "maxMs": 105086.20000001788
+        },
+        "playerDecision": {
+          "n": 6,
+          "medianMs": 7045.906900000002,
+          "p95Ms": 9472.282600000006,
+          "maxMs": 9472.282600000006
+        },
+        "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+        "feedbackVisibleFrame": {
+          "n": 7,
+          "medianMs": 8.5,
+          "p95Ms": 8.899999976158142,
+          "maxMs": 8.899999976158142
+        },
+        "firstNarrativeVisibleFrame": {
+          "n": 7,
+          "medianMs": 5489.199999988079,
+          "p95Ms": 67988.5,
+          "maxMs": 67988.5
+        },
+        "choicesVisibleFrame": {
+          "n": 7,
+          "medianMs": 38928.59999999404,
+          "p95Ms": 105098.70000001788,
+          "maxMs": 105098.70000001788
+        }
+      },
+      "errors": [
+        {
+          "requestId": "2a264896-c752-4ed1-bc87-81988d887b78",
+          "code": "INVALID_PROGRESSION",
+          "message": "evidence 须逐字摘自本轮正文中的实际授予/使用/兑现/失去，4—240字符",
+          "totalMs": 37084
+        },
+        {
+          "requestId": "2a264896-c752-4ed1-bc87-81988d887b78",
+          "code": "INVALID_PROGRESSION",
+          "message": "evidence 须逐字摘自本轮正文中的实际授予/使用/兑现/失去，4—240字符",
+          "totalMs": 37084
+        },
+        {
+          "requestId": "26b8a2b0-729a-40ed-941f-5ecbea38c854",
+          "code": "INVALID_PROGRESSION",
+          "message": "evidence 须逐字摘自本轮正文中的实际授予/使用/兑现/失去，4—240字符",
+          "totalMs": 105029
+        },
+        {
+          "requestId": "cab0edf0-9d8b-486a-8061-5683e1d32068",
+          "code": "INVALID_PROGRESSION",
+          "message": "evidence 须逐字摘自本轮正文中的实际授予/使用/兑现/失去，4—240字符",
+          "totalMs": 34333
+        },
+        {
+          "requestId": "f1fb95fe-8746-4b74-bc09-8fa9ca9dd476",
+          "code": "INVALID_PROGRESSION",
+          "message": "evidence 须逐字摘自本轮正文中的实际授予/使用/兑现/失去，4—240字符",
+          "totalMs": 42179
+        },
+        {
+          "requestId": "258ce22b-f498-4961-97ab-5b12b3e87a9c",
+          "code": "INVALID_PROGRESSION",
+          "message": "evidence 须逐字摘自本轮正文中的实际授予/使用/兑现/失去，4—240字符",
+          "totalMs": 38850
+        },
+        {
+          "requestId": "df5b69b4-15ce-4ff4-a28c-1450d058bdcb",
+          "code": "INVALID_PROGRESSION",
+          "message": "evidence 须逐字摘自本轮正文中的实际授予/使用/兑现/失去，4—240字符",
+          "totalMs": 48070
+        }
+      ],
+      "sourceHashes": {
+        "turns": "14f436196e1caae910e1c5c8cbc81c0839447147433efa4cad5826ae5e7c3acf"
+      },
+      "limits": [
+        "Autonomous diverging paths, not a paired or randomized causal experiment",
+        "Counts are not human retention; no physical phone or WAN measurement",
+        "Nested ACP spans are included in model stage time; do not sum them twice",
+        "With fewer than20 observations nearest-rank p95 equals maximum",
+        "Only committed requests enter successful latency; failures retained separately",
+        "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+      ]
+    },
+    {
+      "label": "progression-martial-18-v080e2",
+      "requestedTurns": 18,
+      "committedTurns": 0,
+      "failedAttempts": 2,
+      "fatal": "Turn 1 failed twice; evidence retained",
+      "continuedFrom": null,
+      "continuationReason": null,
+      "status": "stopped-with-error",
+      "server": {
+        "firstNarrativeSse": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "complete": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "allAttempts": {
+          "n": 2,
+          "medianMs": 120014.5,
+          "p95Ms": 120019,
+          "maxMs": 120019
+        },
+        "repairCalls": 0,
+        "phases": {
+          "acp_narrator_initialize_auth_session_model_setup": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null
+          },
+          "authored_opening_plan": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null
+          },
+          "context_assembly": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null
+          },
+          "http_input_validation": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null
+          },
+          "narrative_generation": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null
+          },
+          "request_validation": {
+            "n": 0,
+            "medianMs": null,
+            "p95Ms": null,
+            "maxMs": null
+          }
+        },
+        "checkpoints": []
+      },
+      "client": {
+        "firstNarrativeReceipt": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "completeReceipt": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "playerDecision": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "visibleFrameScope": "Independent recorder or non-inherited post-fix UI only; excludes inherited C visibility claims",
+        "feedbackVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "firstNarrativeVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        },
+        "choicesVisibleFrame": {
+          "n": 0,
+          "medianMs": null,
+          "p95Ms": null,
+          "maxMs": null
+        }
+      },
+      "errors": [
+        {
+          "requestId": "cccd1d69-b530-4598-b9e0-2aad6842fb38",
+          "code": "PROVIDER_TIMEOUT",
+          "message": "生成超时",
+          "totalMs": 120019
+        },
+        {
+          "requestId": "69a2d6d3-79c5-47df-8c04-16022e7c62c4",
+          "code": "PROVIDER_TIMEOUT",
+          "message": "生成超时",
+          "totalMs": 120010
+        }
+      ],
+      "sourceHashes": {
+        "turns": "23b3fdc827defe254fe4a276f58c8fe05b49fc816103f9fbc8286aa8a258d92f"
+      },
+      "limits": [
+        "Autonomous diverging paths, not a paired or randomized causal experiment",
+        "Counts are not human retention; no physical phone or WAN measurement",
+        "Nested ACP spans are included in model stage time; do not sum them twice",
+        "With fewer than20 observations nearest-rank p95 equals maximum",
+        "Only committed requests enter successful latency; failures retained separately",
+        "Model context tokens are not billed tokens; billable cost and upstream queue unknown"
+      ]
+    }
+  ]
+}

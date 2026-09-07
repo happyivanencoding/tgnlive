@@ -21,8 +21,8 @@ const seed=(language='zh')=>{const world=getWorld('cinder-river',language);retur
 test('default language is Chinese and unsupported language is rejected',()=>{
  assert.equal(normalizeLanguage(), 'zh');assert.equal(normalizeLanguage(null,{optional:true}),null);assert.throws(()=>normalizeLanguage('de'),{code:'INVALID_LANGUAGE'});
 });
-for(const language of languages)test(`${language}: all five presets retain IDs and realm ranks while localizing public data`,()=>{
- const catalogue=publicWorldsForLanguage([],language);assert.equal(catalogue.length,5);
+for(const language of languages)test(`${language}: original five and two progression presets retain IDs and realm ranks while localizing public data`,()=>{
+ const catalogue=publicWorldsForLanguage([],language);assert.deepEqual(catalogue.map(w=>w.id).sort(),['cinder-river','sky-beast-isles','ashen-star-covenant','crimson-cauldron','myriad-mark-hunt','masked-tides','martial-frontier'].sort());
  for(const original of WORLDS){const world=getWorld(original.id,language);assert.equal(world.language,language);assert.deepEqual(world.powers.map(p=>p.id),original.powers.map(p=>p.id));assert.deepEqual(world.powerSystem.realms.map(r=>r.rank),original.powerSystem.realms.map(r=>r.rank));assert.deepEqual(world.seed.inventory.map(i=>[i.id,i.qty]),original.seed.inventory.map(i=>[i.id,i.qty]));
   if(language!=='zh'){const visible=JSON.stringify({title:world.title,description:world.description,system:world.powerSystem,powers:world.powers});assert.doesNotMatch(visible,/\p{Script=Han}/u);}
   const state=createSeedState(world,world.powers[0]);assert.equal(state.realm.name,world.powerSystem.realms[0].name);assert.ok(!JSON.stringify(state).includes('undefined'));

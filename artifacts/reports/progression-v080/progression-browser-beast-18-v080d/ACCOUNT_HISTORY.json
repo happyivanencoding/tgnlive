@@ -1,0 +1,2094 @@
+[
+  {
+    "turn": 1,
+    "action": "开始我的故事",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 0
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "多数幼年云兽愿意闻一闻",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "陌生"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "陌生"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "mirrorwing-response",
+          "name": "镜翅兽的自愿回应",
+          "payoff": "获得一次俯瞰幼兽港的共享视野，确认它是否愿意继续接近。",
+          "approach": "在不强迫它的前提下，利用甜苔饼、安静动作或弥娅的协助让它主动对视。",
+          "status": "open",
+          "offeredAtTurn": 1
+        },
+        {
+          "id": "kunges-departure",
+          "name": "昆戈的抢航小艇",
+          "payoff": "争取离开封锁港口、进入第一段乱风的实际机会。",
+          "approach": "在钟停前说服昆戈带上沈舟，或用可交换的帮助证明自己不会拖累航程。",
+          "status": "open",
+          "offeredAtTurn": 1
+        }
+      ]
+    },
+    "changes": [
+      "可争取的成长: 镜翅兽的自愿回应",
+      "可争取的成长: 昆戈的抢航小艇"
+    ]
+  },
+  {
+    "turn": 2,
+    "action": "拿一块甜苔饼，放在吊笼边缘后安静蹲下，尽量让镜翅兽先看见我，不碰它也不逼它靠近。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 0
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "甜苔饼还剩1块；另一块放在镜翅兽吊笼边缘，尚未被取食。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "好奇"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "陌生"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "mirrorwing-response",
+          "name": "镜翅兽的自愿回应",
+          "payoff": "获得一次俯瞰幼兽港的共享视野，确认它是否愿意继续接近。",
+          "approach": "在不强迫它的前提下，利用甜苔饼、安静动作或弥娅的协助让它主动对视。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "镜翅兽主动对视，沈舟获得一次俯瞰幼兽港的共享视野，并确认它暂未抗拒继续接近。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "kunges-departure",
+          "name": "昆戈的抢航小艇",
+          "payoff": "争取离开封锁港口、进入第一段乱风的实际机会。",
+          "approach": "在钟停前说服昆戈带上沈舟，或用可交换的帮助证明自己不会拖累航程。",
+          "status": "open",
+          "offeredAtTurn": 1
+        }
+      ]
+    },
+    "changes": [
+      "甜苔饼: 甜苔饼还剩1块；另一块放在镜翅兽吊笼边缘，尚未被取食。",
+      "弥娅: 好奇",
+      "成长兑现: 镜翅兽的自愿回应",
+      "镜翅兽在甜苔饼与安静等待下主动与沈舟对视，沈舟借共天眼看见港口上空与背风水道。",
+      "沈舟从镜翅兽视野中看见高台后窄坡可绕至昆戈小艇的背风水道。",
+      "沈舟看见雷海方向有与镜翅兽伤口红苔同色的赤红浮光；这只是当下观察，来源未明。"
+    ]
+  },
+  {
+    "turn": 3,
+    "action": "把我看到的背风水道告诉弥娅，替她挡住港卫几息，让她先给镜翅兽止血。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 0
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "甜苔饼还剩1块；另一块放在镜翅兽吊笼边缘，尚未被取食。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "陌生"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "mirrorwing-response",
+          "name": "镜翅兽的自愿回应",
+          "payoff": "获得一次俯瞰幼兽港的共享视野，确认它是否愿意继续接近。",
+          "approach": "在不强迫它的前提下，利用甜苔饼、安静动作或弥娅的协助让它主动对视。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "镜翅兽主动对视，沈舟获得一次俯瞰幼兽港的共享视野，并确认它暂未抗拒继续接近。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "kunges-departure",
+          "name": "昆戈的抢航小艇",
+          "payoff": "争取离开封锁港口、进入第一段乱风的实际机会。",
+          "approach": "在钟停前说服昆戈带上沈舟，或用可交换的帮助证明自己不会拖累航程。",
+          "status": "open",
+          "offeredAtTurn": 1
+        }
+      ]
+    },
+    "changes": [
+      "弥娅: 友善",
+      "沈舟将背风水道的观察告诉弥娅，并用制造混乱的方式替她挡住港卫数息。",
+      "弥娅已为镜翅兽伤口施用止血囊，幼兽的出血暂时止住，能够自行进行短距离飞行。",
+      "镜翅兽割断了吊笼最后两缕笼索，笼门已半开；港卫正准备封锁栈桥。"
+    ]
+  },
+  {
+    "turn": 4,
+    "action": "趁港卫尚未合围，轻声引镜翅兽从半开的吊笼出来，沿背风水道撤离，不强拉它，随时停下等它回应。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 0
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "甜苔饼还剩1块；另一块放在镜翅兽吊笼边缘，尚未被取食。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "陌生"
+      },
+      {
+        "id": "mirrorwing-cub",
+        "name": "镜翅兽",
+        "role": "受伤幼兽",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "mirrorwing-response",
+          "name": "镜翅兽的自愿回应",
+          "payoff": "获得一次俯瞰幼兽港的共享视野，确认它是否愿意继续接近。",
+          "approach": "在不强迫它的前提下，利用甜苔饼、安静动作或弥娅的协助让它主动对视。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "镜翅兽主动对视，沈舟获得一次俯瞰幼兽港的共享视野，并确认它暂未抗拒继续接近。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "kunges-departure",
+          "name": "昆戈的抢航小艇",
+          "payoff": "争取离开封锁港口、进入第一段乱风的实际机会。",
+          "approach": "在钟停前说服昆戈带上沈舟，或用可交换的帮助证明自己不会拖累航程。",
+          "status": "open",
+          "offeredAtTurn": 1
+        }
+      ]
+    },
+    "changes": [
+      "镜翅兽: 好奇",
+      "镜翅兽自行从半开的吊笼出来，叼走吊笼边缘的甜苔饼后，跟随沈舟沿背风水道撤离。",
+      "沈舟与镜翅兽已抵达背风水道边缘；昆戈的小艇离岸约两丈，昆戈看见二人后尚未同意载他们离港。"
+    ]
+  },
+  {
+    "turn": 5,
+    "action": "我愿意用赤红浮光和背风水道的情报换船位：请带我和镜翅兽离港，途中我帮你认风向、找航路。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 0
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "甜苔饼还剩1块；另一块放在镜翅兽吊笼边缘，尚未被取食。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mirrorwing-cub",
+        "name": "镜翅兽",
+        "role": "受伤幼兽",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "kun-ge-passage",
+          "kind": "access",
+          "name": "昆戈小艇的临时船位",
+          "effect": "沈舟与镜翅兽可随昆戈的小艇离开折帆岛，并参与第一段乱风航行。",
+          "scope": "仅限本次抢航；沈舟须持续提供真实且有用的风向或航路协助，误导会失去船位。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-response",
+          "name": "镜翅兽的自愿回应",
+          "payoff": "获得一次俯瞰幼兽港的共享视野，确认它是否愿意继续接近。",
+          "approach": "在不强迫它的前提下，利用甜苔饼、安静动作或弥娅的协助让它主动对视。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "镜翅兽主动对视，沈舟获得一次俯瞰幼兽港的共享视野，并确认它暂未抗拒继续接近。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "kunges-departure",
+          "name": "昆戈的抢航小艇",
+          "payoff": "争取离开封锁港口、进入第一段乱风的实际机会。",
+          "approach": "在钟停前说服昆戈带上沈舟，或用可交换的帮助证明自己不会拖累航程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以背风水道与赤红浮光情报证明价值，昆戈同意暂载他和镜翅兽离港；小艇已驶入港外废帆阴影。",
+          "settledAtTurn": 5
+        }
+      ]
+    },
+    "changes": [
+      "抵达 昆戈的小艇，折帆岛背风水道外的废帆阴影",
+      "昆戈: 好奇",
+      "获得长期筹码: 昆戈小艇的临时船位",
+      "成长兑现: 昆戈的抢航小艇",
+      "沈舟以赤红浮光与背风水道的情报换得昆戈暂时载他和镜翅兽离港。",
+      "镜翅兽主动与沈舟短暂对视；沈舟看见断桩外暗流会把小艇推向港卫巡艇视线，并据此指出贴左岸的回风路线。",
+      "昆戈依照沈舟指出的路线驶入废帆阴影，暂时避开港口封锁视线。",
+      "镜翅兽借回风短距飞上昆戈小艇船尾，现与沈舟、昆戈一同离港。"
+    ]
+  },
+  {
+    "turn": 6,
+    "action": "在乱风口前先征求镜翅兽自愿对视，借它的视野辨认可通行的风眼，再把结果告诉昆戈。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 0
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感。 边界: 不能强迫、不夺取控制；恐惧或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "甜苔饼还剩1块；另一块放在镜翅兽吊笼边缘，尚未被取食。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mirrorwing-cub",
+        "name": "镜翅兽",
+        "role": "受伤幼兽",
+        "attitude": "友善"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "kun-ge-passage",
+          "kind": "access",
+          "name": "昆戈小艇的临时船位",
+          "effect": "沈舟与镜翅兽可随昆戈的小艇离开折帆岛，并参与第一段乱风航行。",
+          "scope": "仅限本次抢航；沈舟须持续提供真实且有用的风向或航路协助，误导会失去船位。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-response",
+          "name": "镜翅兽的自愿回应",
+          "payoff": "获得一次俯瞰幼兽港的共享视野，确认它是否愿意继续接近。",
+          "approach": "在不强迫它的前提下，利用甜苔饼、安静动作或弥娅的协助让它主动对视。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "镜翅兽主动对视，沈舟获得一次俯瞰幼兽港的共享视野，并确认它暂未抗拒继续接近。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "kunges-departure",
+          "name": "昆戈的抢航小艇",
+          "payoff": "争取离开封锁港口、进入第一段乱风的实际机会。",
+          "approach": "在钟停前说服昆戈带上沈舟，或用可交换的帮助证明自己不会拖累航程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以背风水道与赤红浮光情报证明价值，昆戈同意暂载他和镜翅兽离港；小艇已驶入港外废帆阴影。",
+          "settledAtTurn": 5
+        }
+      ]
+    },
+    "changes": [
+      "镜翅兽: 友善",
+      "镜翅兽再次自愿与沈舟对视；沈舟借共天眼确认乱风口左前方的淡金薄雾是一条可维持约一刻钟的上升风眼，穿过后可抵达风帆礁暂避追艇。",
+      "昆戈采纳沈舟指出的风眼路线，小艇已贴左侧礁壁驶入乱风口边缘。"
+    ]
+  },
+  {
+    "turn": 7,
+    "action": "劝昆戈立刻穿过左前方风眼，我继续观察镜翅兽的风势反馈，及时报出变化；若它明显恐惧，就立即减速撤出。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 8
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感，并辨认它面对局部风势时的紧张、指向与翼膜变化，及时为同行者报出可避开的冷涡或横风。边界: 只能解读当下共同看见的近处风况，不能强迫、不夺取控制；伙伴恐惧、分神或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "甜苔饼还剩1块；另一块放在镜翅兽吊笼边缘，尚未被取食。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "mirrorwing-cub",
+        "name": "镜翅兽",
+        "role": "受伤幼兽",
+        "attitude": "友善"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "kun-ge-passage",
+          "kind": "access",
+          "name": "昆戈小艇的临时船位",
+          "effect": "沈舟与镜翅兽可随昆戈的小艇离开折帆岛，并参与第一段乱风航行。",
+          "scope": "仅限本次抢航；沈舟须持续提供真实且有用的风向或航路协助，误导会失去船位。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 7,
+          "useCount": 1
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-response",
+          "name": "镜翅兽的自愿回应",
+          "payoff": "获得一次俯瞰幼兽港的共享视野，确认它是否愿意继续接近。",
+          "approach": "在不强迫它的前提下，利用甜苔饼、安静动作或弥娅的协助让它主动对视。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "镜翅兽主动对视，沈舟获得一次俯瞰幼兽港的共享视野，并确认它暂未抗拒继续接近。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "kunges-departure",
+          "name": "昆戈的抢航小艇",
+          "payoff": "争取离开封锁港口、进入第一段乱风的实际机会。",
+          "approach": "在钟停前说服昆戈带上沈舟，或用可交换的帮助证明自己不会拖累航程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以背风水道与赤红浮光情报证明价值，昆戈同意暂载他和镜翅兽离港；小艇已驶入港外废帆阴影。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "red-glow-route",
+          "name": "风帆礁的废航路",
+          "payoff": "确认是否存在通往赤红浮光方向的可航路线，并获得抢在他人前抵达失踪浮岛线索的先手。",
+          "approach": "登上风帆礁查看旧航标，结合昆戈的航海判断与镜翅兽对风势的自愿回应辨认航路。",
+          "status": "open",
+          "offeredAtTurn": 7
+        }
+      ]
+    },
+    "changes": [
+      "抵达 风帆礁背面的浅湾，小艇停在礁壁与旧航标之间",
+      "昆戈: 友善",
+      "能力提升: 共天眼",
+      "修行进度 +8",
+      "用上已有筹码: 昆戈小艇的临时船位",
+      "可争取的成长: 风帆礁的废航路",
+      "沈舟根据镜翅兽在自愿对视中的翼膜、羽毛与视线变化，连续报出冷涡和横风缝的位置；昆戈据此调整船速与船位。",
+      "昆戈的小艇穿过维持中的上升风眼，抵达风帆礁背面的浅湾；港卫巡艇暂被乱风隔在外侧。",
+      "镜翅兽在穿越乱风时虽紧张却未拒绝与沈舟短暂对视，沈舟已能将它对近处风势的本能反应转化为避风判断。",
+      "昆戈指出风帆礁上有半埋的旧航标，称废航路可能朝赤红浮光方向延伸；此说尚待核实。"
+    ]
+  },
+  {
+    "turn": 8,
+    "action": "先留在浅湾安顿镜翅兽，检查它的伤势和对风帆礁的反应，确认安全后再查看旧航标。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 8
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感，并辨认它面对局部风势时的紧张、指向与翼膜变化，及时为同行者报出可避开的冷涡或横风。边界: 只能解读当下共同看见的近处风况，不能强迫、不夺取控制；伙伴恐惧、分神或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "甜苔饼还剩1块；另一块已被镜翅兽在离开吊笼时取食。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "mirrorwing-cub",
+        "name": "镜翅兽",
+        "role": "受伤幼兽",
+        "attitude": "友善"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "kun-ge-passage",
+          "kind": "access",
+          "name": "昆戈小艇的临时船位",
+          "effect": "沈舟与镜翅兽可随昆戈的小艇离开折帆岛，并参与第一段乱风航行。",
+          "scope": "仅限本次抢航；沈舟须持续提供真实且有用的风向或航路协助，误导会失去船位。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 7,
+          "useCount": 1
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-response",
+          "name": "镜翅兽的自愿回应",
+          "payoff": "获得一次俯瞰幼兽港的共享视野，确认它是否愿意继续接近。",
+          "approach": "在不强迫它的前提下，利用甜苔饼、安静动作或弥娅的协助让它主动对视。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "镜翅兽主动对视，沈舟获得一次俯瞰幼兽港的共享视野，并确认它暂未抗拒继续接近。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "kunges-departure",
+          "name": "昆戈的抢航小艇",
+          "payoff": "争取离开封锁港口、进入第一段乱风的实际机会。",
+          "approach": "在钟停前说服昆戈带上沈舟，或用可交换的帮助证明自己不会拖累航程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以背风水道与赤红浮光情报证明价值，昆戈同意暂载他和镜翅兽离港；小艇已驶入港外废帆阴影。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "red-glow-route",
+          "name": "风帆礁的废航路",
+          "payoff": "确认是否存在通往赤红浮光方向的可航路线，并获得抢在他人前抵达失踪浮岛线索的先手。",
+          "approach": "登上风帆礁查看旧航标，结合昆戈的航海判断与镜翅兽对风势的自愿回应辨认航路。",
+          "status": "open",
+          "offeredAtTurn": 7
+        }
+      ]
+    },
+    "changes": [
+      "甜苔饼: 甜苔饼还剩1块；另一块已被镜翅兽在离开吊笼时取食。",
+      "沈舟在风帆礁浅湾检查镜翅兽：止血囊仍压住伤口，未见重新出血；幼兽虽疲惫，仍能自行完成短距离飞掠。",
+      "镜翅兽对风帆礁旧航标东北凹槽作出明显定向反应，并在自愿对视中让沈舟看见礁顶石钉通往一处可供小型云兽借上升风滑向云桥残端的旧引路。",
+      "旧航标的三道短线指向雷海方向，与沈舟先前看见赤红浮光的方向相合；昆戈判断这是一条旧探路兽引线，此判断尚待实地验证。"
+    ]
+  },
+  {
+    "turn": 9,
+    "action": "让镜翅兽先在帆下休息，我和昆戈拓下航标刻线，制定轻装穿越旧引路的方案；确认它恢复后再出发。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 8
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "只要一只云兽愿意与你对视，你就能短暂借用它的视野与方向感，并辨认它面对局部风势时的紧张、指向与翼膜变化，及时为同行者报出可避开的冷涡或横风。边界: 只能解读当下共同看见的近处风况，不能强迫、不夺取控制；伙伴恐惧、分神或背叛会立刻中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "甜苔饼还剩1块；另一块已被镜翅兽在离开吊笼时取食。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "友善"
+      },
+      {
+        "id": "mirrorwing-cub",
+        "name": "镜翅兽",
+        "role": "受伤幼兽",
+        "attitude": "友善"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "kun-ge-passage",
+          "kind": "access",
+          "name": "昆戈小艇的临时船位",
+          "effect": "沈舟与镜翅兽可随昆戈的小艇离开折帆岛，并参与第一段乱风航行。",
+          "scope": "仅限本次抢航；沈舟须持续提供真实且有用的风向或航路协助，误导会失去船位。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 7,
+          "useCount": 1
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-response",
+          "name": "镜翅兽的自愿回应",
+          "payoff": "获得一次俯瞰幼兽港的共享视野，确认它是否愿意继续接近。",
+          "approach": "在不强迫它的前提下，利用甜苔饼、安静动作或弥娅的协助让它主动对视。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "镜翅兽主动对视，沈舟获得一次俯瞰幼兽港的共享视野，并确认它暂未抗拒继续接近。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "kunges-departure",
+          "name": "昆戈的抢航小艇",
+          "payoff": "争取离开封锁港口、进入第一段乱风的实际机会。",
+          "approach": "在钟停前说服昆戈带上沈舟，或用可交换的帮助证明自己不会拖累航程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以背风水道与赤红浮光情报证明价值，昆戈同意暂载他和镜翅兽离港；小艇已驶入港外废帆阴影。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "red-glow-route",
+          "name": "风帆礁的废航路",
+          "payoff": "确认是否存在通往赤红浮光方向的可航路线，并获得抢在他人前抵达失踪浮岛线索的先手。",
+          "approach": "登上风帆礁查看旧航标，结合昆戈的航海判断与镜翅兽对风势的自愿回应辨认航路。",
+          "status": "open",
+          "offeredAtTurn": 7
+        },
+        {
+          "id": "old-guide-first-leg",
+          "name": "旧引路首段试航",
+          "payoff": "走通可重复使用的首段隐秘空中引线，并建立沈舟、镜翅兽与昆戈可执行的协作动作。",
+          "approach": "等镜翅兽主动愿意试飞后，沈舟按已确认的钉台落点使用旧滑翔索跨隙，昆戈岸上校风，三者依据即时风势完成首段通过。",
+          "status": "open",
+          "offeredAtTurn": 9
+        }
+      ]
+    },
+    "changes": [
+      "可争取的成长: 旧引路首段试航",
+      "沈舟与昆戈拓下旧航标刻线，并实测首段石钉引线：前六码可沿礁脊上行，随后需跨越约两丈裂隙。",
+      "首段引线的东北风口约每十余息出现一次上托风，可供轻装者借滑翔索越过裂隙，不足以承载小艇或重箱。",
+      "沈舟在裂隙对面钉台确认两处旧铁环可系滑翔索，并定下返回浅湾的退路。",
+      "镜翅兽在帆下休息后翼膜较先前舒展，正观察东北风口；是否试飞与同行仍由它自行决定。"
+    ]
+  },
+  {
+    "turn": 10,
+    "action": "等镜翅兽主动愿意试飞后，我和昆戈按定好的落点走通首段石钉引线；如果它退缩，就先撤回浅湾。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 20
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当一只云兽自愿对视并愿意同行时，沈舟可在短距飞行或滑翔中持续借其近处视野、方向感与对局部风势的本能反应，及时报出可执行的变向、压翼或落点；伙伴也能从他的动作和明确口令理解协作意图。边界: 仅适用于双方共同面对的近处风况与短暂行动，不能强迫云兽、夺取控制或感知远处；伙伴恐惧、受伤加重、分神或拒绝都会中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "甜苔饼还剩1块；另一块已被镜翅兽在离开吊笼时取食。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "信任"
+      },
+      {
+        "id": "mirrorwing-cub",
+        "name": "镜翅兽",
+        "role": "受伤幼兽",
+        "attitude": "信任"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "kun-ge-passage",
+          "kind": "access",
+          "name": "昆戈小艇的临时船位",
+          "effect": "沈舟与镜翅兽可随昆戈的小艇离开折帆岛，并参与第一段乱风航行。",
+          "scope": "仅限本次抢航；沈舟须持续提供真实且有用的风向或航路协助，误导会失去船位。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 7,
+          "useCount": 1
+        },
+        {
+          "id": "old-guide-first-leg-route",
+          "kind": "access",
+          "name": "旧引路首段通行权",
+          "effect": "沈舟可在已知东北上托风节奏下，带轻装同行者或自愿同行的小型云兽从风帆礁浅湾跨越首段裂隙抵达钉台。",
+          "scope": "仅限当前已实测的首段与轻装条件；需避开猛风，且云兽是否同行仍由其自行决定。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 10,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-response",
+          "name": "镜翅兽的自愿回应",
+          "payoff": "获得一次俯瞰幼兽港的共享视野，确认它是否愿意继续接近。",
+          "approach": "在不强迫它的前提下，利用甜苔饼、安静动作或弥娅的协助让它主动对视。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "镜翅兽主动对视，沈舟获得一次俯瞰幼兽港的共享视野，并确认它暂未抗拒继续接近。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "kunges-departure",
+          "name": "昆戈的抢航小艇",
+          "payoff": "争取离开封锁港口、进入第一段乱风的实际机会。",
+          "approach": "在钟停前说服昆戈带上沈舟，或用可交换的帮助证明自己不会拖累航程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以背风水道与赤红浮光情报证明价值，昆戈同意暂载他和镜翅兽离港；小艇已驶入港外废帆阴影。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "red-glow-route",
+          "name": "风帆礁的废航路",
+          "payoff": "确认是否存在通往赤红浮光方向的可航路线，并获得抢在他人前抵达失踪浮岛线索的先手。",
+          "approach": "登上风帆礁查看旧航标，结合昆戈的航海判断与镜翅兽对风势的自愿回应辨认航路。",
+          "status": "open",
+          "offeredAtTurn": 7
+        },
+        {
+          "id": "old-guide-first-leg",
+          "name": "旧引路首段试航",
+          "payoff": "走通可重复使用的首段隐秘空中引线，并建立沈舟、镜翅兽与昆戈可执行的协作动作。",
+          "approach": "等镜翅兽主动愿意试飞后，沈舟按已确认的钉台落点使用旧滑翔索跨隙，昆戈岸上校风，三者依据即时风势完成首段通过。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟、镜翅兽与昆戈实际通过首段石钉引线，建立了飞行中的同步报风与变向协作；首段隐秘通路已确认可重复使用。",
+          "settledAtTurn": 10
+        }
+      ]
+    },
+    "changes": [
+      "抵达 风帆礁东北侧旧引路的首段钉台，裂隙已在身后，浅湾小艇仍可沿原路返回",
+      "昆戈: 信任",
+      "镜翅兽: 信任",
+      "能力提升: 共天眼",
+      "修行进度 +12",
+      "获得长期筹码: 旧引路首段通行权",
+      "成长兑现: 旧引路首段试航",
+      "镜翅兽主动选择试飞，并与沈舟、昆戈依照已确认的石钉落点通过首段裂隙；伤口未重新出血。",
+      "沈舟在飞行中借镜翅兽自愿共享的即时风势判断，与它完成同步变向并落上对岸钉台。",
+      "昆戈检查对岸铁环后补刻风记，确认首段旧引路在当前东北上托风节奏下可供轻装者重复通过。"
+    ]
+  },
+  {
+    "turn": 11,
+    "action": "先在钉台观察镜翅兽的状态，确认它愿意继续后，再和昆戈沿云桥残端前行，遇到它退缩就停下撤回。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 20
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当一只云兽自愿对视并愿意同行时，沈舟可在短距飞行或滑翔中持续借其近处视野、方向感与对局部风势的本能反应，及时报出可执行的变向、压翼或落点；伙伴也能从他的动作和明确口令理解协作意图。边界: 仅适用于双方共同面对的近处风况与短暂行动，不能强迫云兽、夺取控制或感知远处；伙伴恐惧、受伤加重、分神或拒绝都会中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "甜苔饼还剩1块；另一块已被镜翅兽在离开吊笼时取食。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "信任"
+      },
+      {
+        "id": "mirrorwing-cub",
+        "name": "镜翅兽",
+        "role": "受伤幼兽",
+        "attitude": "信任"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "kun-ge-passage",
+          "kind": "access",
+          "name": "昆戈小艇的临时船位",
+          "effect": "沈舟与镜翅兽可随昆戈的小艇离开折帆岛，并参与第一段乱风航行。",
+          "scope": "仅限本次抢航；沈舟须持续提供真实且有用的风向或航路协助，误导会失去船位。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 7,
+          "useCount": 1
+        },
+        {
+          "id": "old-guide-first-leg-route",
+          "kind": "access",
+          "name": "旧引路首段通行权",
+          "effect": "沈舟可在已知东北上托风节奏下，带轻装同行者或自愿同行的小型云兽从风帆礁浅湾跨越首段裂隙抵达钉台。",
+          "scope": "仅限当前已实测的首段与轻装条件；需避开猛风，且云兽是否同行仍由其自行决定。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 10,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-response",
+          "name": "镜翅兽的自愿回应",
+          "payoff": "获得一次俯瞰幼兽港的共享视野，确认它是否愿意继续接近。",
+          "approach": "在不强迫它的前提下，利用甜苔饼、安静动作或弥娅的协助让它主动对视。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "镜翅兽主动对视，沈舟获得一次俯瞰幼兽港的共享视野，并确认它暂未抗拒继续接近。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "kunges-departure",
+          "name": "昆戈的抢航小艇",
+          "payoff": "争取离开封锁港口、进入第一段乱风的实际机会。",
+          "approach": "在钟停前说服昆戈带上沈舟，或用可交换的帮助证明自己不会拖累航程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以背风水道与赤红浮光情报证明价值，昆戈同意暂载他和镜翅兽离港；小艇已驶入港外废帆阴影。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "red-glow-route",
+          "name": "风帆礁的废航路",
+          "payoff": "确认是否存在通往赤红浮光方向的可航路线，并获得抢在他人前抵达失踪浮岛线索的先手。",
+          "approach": "登上风帆礁查看旧航标，结合昆戈的航海判断与镜翅兽对风势的自愿回应辨认航路。",
+          "status": "open",
+          "offeredAtTurn": 7
+        },
+        {
+          "id": "old-guide-first-leg",
+          "name": "旧引路首段试航",
+          "payoff": "走通可重复使用的首段隐秘空中引线，并建立沈舟、镜翅兽与昆戈可执行的协作动作。",
+          "approach": "等镜翅兽主动愿意试飞后，沈舟按已确认的钉台落点使用旧滑翔索跨隙，昆戈岸上校风，三者依据即时风势完成首段通过。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟、镜翅兽与昆戈实际通过首段石钉引线，建立了飞行中的同步报风与变向协作；首段隐秘通路已确认可重复使用。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "cloudwall-second-leg",
+          "name": "云壁后的旧引路续段",
+          "payoff": "若确认旧铜钉与风势可用，可把首段通路延伸至云桥残端之后，继续接近赤红浮光方向。",
+          "approach": "检查三枚铜钉的承力，并结合镜翅兽自愿共享的近处风势判断，决定系索试行、守风或撤回筹备。",
+          "status": "open",
+          "offeredAtTurn": 11
+        }
+      ]
+    },
+    "changes": [
+      "抵达 风帆礁东北侧旧引路的云桥残端前，身后可沿首段钉台返回浅湾",
+      "可争取的成长: 云壁后的旧引路续段",
+      "镜翅兽在首段钉台休息后主动望向云桥残端，并以稳定对视表示愿意在自身短距飞行能力内继续同行。",
+      "沈舟、昆戈与镜翅兽沿云桥残端左缘前进，确认右侧云砖已被季风掏空，左缘可供轻装者与小型云兽谨慎通过。",
+      "云桥残端尽头有一道向雷海斜吹细风的云壁，壁上三枚旧铜钉之一沾有干硬赤红苔屑；其来源与后续承力尚未确认。"
+    ]
+  },
+  {
+    "turn": 12,
+    "action": "让昆戈检查三枚旧铜钉的承力，我观察镜翅兽对风壁的反应，确认能否安全建立下一段系索。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 20
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当一只云兽自愿对视并愿意同行时，沈舟可在短距飞行或滑翔中持续借其近处视野、方向感与对局部风势的本能反应，及时报出可执行的变向、压翼或落点；伙伴也能从他的动作和明确口令理解协作意图。边界: 仅适用于双方共同面对的近处风况与短暂行动，不能强迫云兽、夺取控制或感知远处；伙伴恐惧、受伤加重、分神或拒绝都会中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "甜苔饼还剩1块；另一块已被镜翅兽在离开吊笼时取食。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "信任"
+      },
+      {
+        "id": "mirrorwing-cub",
+        "name": "镜翅兽",
+        "role": "受伤幼兽",
+        "attitude": "信任"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "kun-ge-passage",
+          "kind": "access",
+          "name": "昆戈小艇的临时船位",
+          "effect": "沈舟与镜翅兽可随昆戈的小艇离开折帆岛，并参与第一段乱风航行。",
+          "scope": "仅限本次抢航；沈舟须持续提供真实且有用的风向或航路协助，误导会失去船位。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 7,
+          "useCount": 1
+        },
+        {
+          "id": "old-guide-first-leg-route",
+          "kind": "access",
+          "name": "旧引路首段通行权",
+          "effect": "沈舟可在已知东北上托风节奏下，带轻装同行者或自愿同行的小型云兽从风帆礁浅湾跨越首段裂隙抵达钉台。",
+          "scope": "仅限当前已实测的首段与轻装条件；需避开猛风，且云兽是否同行仍由其自行决定。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 10,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-response",
+          "name": "镜翅兽的自愿回应",
+          "payoff": "获得一次俯瞰幼兽港的共享视野，确认它是否愿意继续接近。",
+          "approach": "在不强迫它的前提下，利用甜苔饼、安静动作或弥娅的协助让它主动对视。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "镜翅兽主动对视，沈舟获得一次俯瞰幼兽港的共享视野，并确认它暂未抗拒继续接近。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "kunges-departure",
+          "name": "昆戈的抢航小艇",
+          "payoff": "争取离开封锁港口、进入第一段乱风的实际机会。",
+          "approach": "在钟停前说服昆戈带上沈舟，或用可交换的帮助证明自己不会拖累航程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以背风水道与赤红浮光情报证明价值，昆戈同意暂载他和镜翅兽离港；小艇已驶入港外废帆阴影。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "red-glow-route",
+          "name": "风帆礁的废航路",
+          "payoff": "确认是否存在通往赤红浮光方向的可航路线，并获得抢在他人前抵达失踪浮岛线索的先手。",
+          "approach": "登上风帆礁查看旧航标，结合昆戈的航海判断与镜翅兽对风势的自愿回应辨认航路。",
+          "status": "open",
+          "offeredAtTurn": 7
+        },
+        {
+          "id": "old-guide-first-leg",
+          "name": "旧引路首段试航",
+          "payoff": "走通可重复使用的首段隐秘空中引线，并建立沈舟、镜翅兽与昆戈可执行的协作动作。",
+          "approach": "等镜翅兽主动愿意试飞后，沈舟按已确认的钉台落点使用旧滑翔索跨隙，昆戈岸上校风，三者依据即时风势完成首段通过。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟、镜翅兽与昆戈实际通过首段石钉引线，建立了飞行中的同步报风与变向协作；首段隐秘通路已确认可重复使用。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "cloudwall-second-leg",
+          "name": "云壁后的旧引路续段",
+          "payoff": "若确认旧铜钉与风势可用，可把首段通路延伸至云桥残端之后，继续接近赤红浮光方向。",
+          "approach": "检查三枚铜钉的承力，并结合镜翅兽自愿共享的近处风势判断，决定系索试行、守风或撤回筹备。",
+          "status": "open",
+          "offeredAtTurn": 11
+        }
+      ]
+    },
+    "changes": [
+      "昆戈检查云壁三枚旧铜钉：第一枚根部云质松散不可承力；第二枚可承受轻索与一人短暂借力；第三枚铜钉完好但钉后旧缝受猛拉可能撕开云壁。",
+      "镜翅兽在自愿对视中让沈舟确认：云壁后旧缝有不足两丈、可托起轻索与短距飞掠的斜坡风，但每次风息转换会猛偏向雷海。",
+      "沈舟与昆戈据此确定下一段可用方案：第二枚铜钉系主索，第三枚仅作方向定位；当前风势只适合一次轻装试行。"
+    ]
+  },
+  {
+    "turn": 13,
+    "action": "趁下一次风向初转，让昆戈用第二枚铜钉架设轻索，我与镜翅兽共同试过云壁后的短段风坡；若风势突变或它受惊，立即撤回。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 30
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当一只云兽自愿对视并愿意同行时，沈舟可在短距飞行、滑翔或系索试行中持续借其近处视野、方向感与局部风势本能，及时以口令和动作协调压翼、变向、落点或撤回；伙伴也能从他的明确动作理解协作意图。边界：仅限双方共同面对的近处风况与短暂行动，不能强迫云兽、夺取控制或感知远处；伙伴恐惧、伤势加重、分神或拒绝都会中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "甜苔饼还剩1块；另一块已被镜翅兽在离开吊笼时取食。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "信任"
+      },
+      {
+        "id": "mirrorwing-cub",
+        "name": "镜翅兽",
+        "role": "受伤幼兽",
+        "attitude": "信任"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "kun-ge-passage",
+          "kind": "access",
+          "name": "昆戈小艇的临时船位",
+          "effect": "沈舟与镜翅兽可随昆戈的小艇离开折帆岛，并参与第一段乱风航行。",
+          "scope": "仅限本次抢航；沈舟须持续提供真实且有用的风向或航路协助，误导会失去船位。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 7,
+          "useCount": 1
+        },
+        {
+          "id": "old-guide-first-leg-route",
+          "kind": "access",
+          "name": "旧引路首段通行权",
+          "effect": "沈舟可在已知东北上托风节奏下，带轻装同行者或自愿同行的小型云兽从风帆礁浅湾跨越首段裂隙抵达钉台。",
+          "scope": "仅限当前已实测的首段与轻装条件；需避开猛风，且云兽是否同行仍由其自行决定。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 10,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "cloudwall-short-slope-route",
+          "kind": "access",
+          "name": "云壁短段风坡通行权",
+          "effect": "沈舟可在风向初转、轻装且有自愿同行的小型云兽时，使用第二枚铜钉的轻索往返云壁后的半圆形风台。",
+          "scope": "仅限已试出的不足两丈短段；第三枚铜钉不得承力，风息突变或镜翅兽拒绝时必须撤回。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 13,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-response",
+          "name": "镜翅兽的自愿回应",
+          "payoff": "获得一次俯瞰幼兽港的共享视野，确认它是否愿意继续接近。",
+          "approach": "在不强迫它的前提下，利用甜苔饼、安静动作或弥娅的协助让它主动对视。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "镜翅兽主动对视，沈舟获得一次俯瞰幼兽港的共享视野，并确认它暂未抗拒继续接近。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "kunges-departure",
+          "name": "昆戈的抢航小艇",
+          "payoff": "争取离开封锁港口、进入第一段乱风的实际机会。",
+          "approach": "在钟停前说服昆戈带上沈舟，或用可交换的帮助证明自己不会拖累航程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以背风水道与赤红浮光情报证明价值，昆戈同意暂载他和镜翅兽离港；小艇已驶入港外废帆阴影。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "red-glow-route",
+          "name": "风帆礁的废航路",
+          "payoff": "确认是否存在通往赤红浮光方向的可航路线，并获得抢在他人前抵达失踪浮岛线索的先手。",
+          "approach": "登上风帆礁查看旧航标，结合昆戈的航海判断与镜翅兽对风势的自愿回应辨认航路。",
+          "status": "open",
+          "offeredAtTurn": 7
+        },
+        {
+          "id": "old-guide-first-leg",
+          "name": "旧引路首段试航",
+          "payoff": "走通可重复使用的首段隐秘空中引线，并建立沈舟、镜翅兽与昆戈可执行的协作动作。",
+          "approach": "等镜翅兽主动愿意试飞后，沈舟按已确认的钉台落点使用旧滑翔索跨隙，昆戈岸上校风，三者依据即时风势完成首段通过。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟、镜翅兽与昆戈实际通过首段石钉引线，建立了飞行中的同步报风与变向协作；首段隐秘通路已确认可重复使用。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "cloudwall-second-leg",
+          "name": "云壁后的旧引路续段",
+          "payoff": "若确认旧铜钉与风势可用，可把首段通路延伸至云桥残端之后，继续接近赤红浮光方向。",
+          "approach": "检查三枚铜钉的承力，并结合镜翅兽自愿共享的近处风势判断，决定系索试行、守风或撤回筹备。",
+          "status": "fulfilled",
+          "offeredAtTurn": 11,
+          "materialized": true,
+          "result": "沈舟、昆戈与镜翅兽实际试过云壁后的短段斜坡风并安全撤回，确认第二枚铜钉和半圆形风台可供当前条件下的轻装往返试行。",
+          "settledAtTurn": 13
+        }
+      ]
+    },
+    "changes": [
+      "抵达 风帆礁东北侧旧引路云桥残端前，已确认云壁后的短段斜坡风可往返试行",
+      "能力提升: 共天眼",
+      "修行进度 +10",
+      "获得长期筹码: 云壁短段风坡通行权",
+      "成长兑现: 云壁后的旧引路续段",
+      "沈舟、昆戈与镜翅兽趁风向初转，以第二枚铜钉的轻索通过云壁后不足两丈的斜坡风，并在风势突变前安全撤回云桥残端。",
+      "云壁后的半圆形风台可作为轻装者与小型云兽短段试行的落点；第二枚铜钉经本次短暂受力后仍可用，第三枚仅适合定位。",
+      "沈舟在本次试行中将镜翅兽看见的回卷白雾与风切变化即时转成压索、收翼和撤回口令，双方完成一次可执行的往返协作。"
+    ]
+  },
+  {
+    "turn": 14,
+    "action": "等镜翅兽再次主动回应后，我和昆戈从半圆形风台探看赤红浮光方向的下一处落点；风息突变、它受惊或撤意时立即返回。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 30
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当一只云兽自愿对视并愿意同行时，沈舟可在短距飞行、滑翔或系索试行中持续借其近处视野、方向感与局部风势本能，及时以口令和动作协调压翼、变向、落点或撤回；伙伴也能从他的明确动作理解协作意图。边界：仅限双方共同面对的近处风况与短暂行动，不能强迫云兽、夺取控制或感知远处；伙伴恐惧、伤势加重、分神或拒绝都会中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "甜苔饼还剩1块；另一块已被镜翅兽在离开吊笼时取食。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "友善"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "信任"
+      },
+      {
+        "id": "mirrorwing-cub",
+        "name": "镜翅兽",
+        "role": "受伤幼兽",
+        "attitude": "信任"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "kun-ge-passage",
+          "kind": "access",
+          "name": "昆戈小艇的临时船位",
+          "effect": "沈舟与镜翅兽可随昆戈的小艇离开折帆岛，并参与第一段乱风航行。",
+          "scope": "仅限本次抢航；沈舟须持续提供真实且有用的风向或航路协助，误导会失去船位。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 7,
+          "useCount": 1
+        },
+        {
+          "id": "old-guide-first-leg-route",
+          "kind": "access",
+          "name": "旧引路首段通行权",
+          "effect": "沈舟可在已知东北上托风节奏下，带轻装同行者或自愿同行的小型云兽从风帆礁浅湾跨越首段裂隙抵达钉台。",
+          "scope": "仅限当前已实测的首段与轻装条件；需避开猛风，且云兽是否同行仍由其自行决定。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 10,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "cloudwall-short-slope-route",
+          "kind": "access",
+          "name": "云壁短段风坡通行权",
+          "effect": "沈舟可在风向初转、轻装且有自愿同行的小型云兽时，使用第二枚铜钉的轻索往返云壁后的半圆形风台。",
+          "scope": "仅限已试出的不足两丈短段；第三枚铜钉不得承力，风息突变或镜翅兽拒绝时必须撤回。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 13,
+          "lastUsedAtTurn": 14,
+          "useCount": 1
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-response",
+          "name": "镜翅兽的自愿回应",
+          "payoff": "获得一次俯瞰幼兽港的共享视野，确认它是否愿意继续接近。",
+          "approach": "在不强迫它的前提下，利用甜苔饼、安静动作或弥娅的协助让它主动对视。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "镜翅兽主动对视，沈舟获得一次俯瞰幼兽港的共享视野，并确认它暂未抗拒继续接近。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "kunges-departure",
+          "name": "昆戈的抢航小艇",
+          "payoff": "争取离开封锁港口、进入第一段乱风的实际机会。",
+          "approach": "在钟停前说服昆戈带上沈舟，或用可交换的帮助证明自己不会拖累航程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以背风水道与赤红浮光情报证明价值，昆戈同意暂载他和镜翅兽离港；小艇已驶入港外废帆阴影。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "red-glow-route",
+          "name": "风帆礁的废航路",
+          "payoff": "确认是否存在通往赤红浮光方向的可航路线，并获得抢在他人前抵达失踪浮岛线索的先手。",
+          "approach": "登上风帆礁查看旧航标，结合昆戈的航海判断与镜翅兽对风势的自愿回应辨认航路。",
+          "status": "open",
+          "offeredAtTurn": 7
+        },
+        {
+          "id": "old-guide-first-leg",
+          "name": "旧引路首段试航",
+          "payoff": "走通可重复使用的首段隐秘空中引线，并建立沈舟、镜翅兽与昆戈可执行的协作动作。",
+          "approach": "等镜翅兽主动愿意试飞后，沈舟按已确认的钉台落点使用旧滑翔索跨隙，昆戈岸上校风，三者依据即时风势完成首段通过。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟、镜翅兽与昆戈实际通过首段石钉引线，建立了飞行中的同步报风与变向协作；首段隐秘通路已确认可重复使用。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "cloudwall-second-leg",
+          "name": "云壁后的旧引路续段",
+          "payoff": "若确认旧铜钉与风势可用，可把首段通路延伸至云桥残端之后，继续接近赤红浮光方向。",
+          "approach": "检查三枚铜钉的承力，并结合镜翅兽自愿共享的近处风势判断，决定系索试行、守风或撤回筹备。",
+          "status": "fulfilled",
+          "offeredAtTurn": 11,
+          "materialized": true,
+          "result": "沈舟、昆戈与镜翅兽实际试过云壁后的短段斜坡风并安全撤回，确认第二枚铜钉和半圆形风台可供当前条件下的轻装往返试行。",
+          "settledAtTurn": 13
+        },
+        {
+          "id": "red-glow-route-next-leg",
+          "name": "断裂云槽的旧引路后段",
+          "payoff": "探明赤红浮光附近的断裂云槽是否能继续通行，并取得可供后续护送或追踪使用的具体风口与落点。",
+          "approach": "携带更长索具，在镜翅兽自愿同行且风向初转时，从半圆形风台按校风台左缘稳定上升风抵达断裂云槽；若风息外翻立即撤回。",
+          "status": "open",
+          "offeredAtTurn": 14
+        }
+      ]
+    },
+    "changes": [
+      "用上已有筹码: 云壁短段风坡通行权",
+      "可争取的成长: 断裂云槽的旧引路后段",
+      "沈舟、昆戈与镜翅兽从云壁后的半圆形风台短距试抵赤红浮光方向约三十步外的灰白云礁校风台，并在风息外翻前安全撤回。",
+      "校风台左缘的上升风较稳，台边两枚旧铁环可供轻索短暂借力；该路线仍仅适合轻装与短距往返。",
+      "断裂云槽外沿留有新鲜爪痕和零碎红苔，显示近期有小型云兽在此停落；红苔来源仍未确认。",
+      "昆戈在校风台铁环上发现与旧航标一致的三短线刻痕，并已拓下，确认旧引路至少延续到断裂云槽前。",
+      "镜翅兽本次短距飞掠后伤口未重新出血，仍只适合短距离行动。"
+    ]
+  },
+  {
+    "turn": 15,
+    "action": "带镜翅兽和校风台刻线回浅湾找弥娅，先确认伤势，再用刻线换取后段通行装备。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 30
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当一只云兽自愿对视并愿意同行时，沈舟可在短距飞行、滑翔或系索试行中持续借其近处视野、方向感与局部风势本能，及时以口令和动作协调压翼、变向、落点或撤回；伙伴也能从他的明确动作理解协作意图。边界：仅限双方共同面对的近处风况与短暂行动，不能强迫云兽、夺取控制或感知远处；伙伴恐惧、伤势加重、分神或拒绝都会中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "甜苔饼还剩1块；另一块已被镜翅兽在离开吊笼时取食。",
+        "qty": 2
+      },
+      {
+        "id": "waxed-long-line",
+        "name": "浸蜡长索",
+        "description": "弥娅交付的一卷浸蜡长索，可在校风台左缘稳定上升风中配合铁环和软扣环建立一段轻装撤回索路；不能承载重物，风息外翻或锚点不稳时必须撤回。",
+        "qty": 1
+      },
+      {
+        "id": "soft-anchor-rings",
+        "name": "软扣环",
+        "description": "两枚用于把浸蜡长索固定在旧铁环或稳固索具上的软扣环，可减少拉扯云质；仅适合短时轻装借力。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "信任"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "信任"
+      },
+      {
+        "id": "mirrorwing-cub",
+        "name": "镜翅兽",
+        "role": "受伤幼兽",
+        "attitude": "信任"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "kun-ge-passage",
+          "kind": "access",
+          "name": "昆戈小艇的临时船位",
+          "effect": "沈舟与镜翅兽可随昆戈的小艇离开折帆岛，并参与第一段乱风航行。",
+          "scope": "仅限本次抢航；沈舟须持续提供真实且有用的风向或航路协助，误导会失去船位。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 7,
+          "useCount": 1
+        },
+        {
+          "id": "old-guide-first-leg-route",
+          "kind": "access",
+          "name": "旧引路首段通行权",
+          "effect": "沈舟可在已知东北上托风节奏下，带轻装同行者或自愿同行的小型云兽从风帆礁浅湾跨越首段裂隙抵达钉台。",
+          "scope": "仅限当前已实测的首段与轻装条件；需避开猛风，且云兽是否同行仍由其自行决定。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 10,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "cloudwall-short-slope-route",
+          "kind": "access",
+          "name": "云壁短段风坡通行权",
+          "effect": "沈舟可在风向初转、轻装且有自愿同行的小型云兽时，使用第二枚铜钉的轻索往返云壁后的半圆形风台。",
+          "scope": "仅限已试出的不足两丈短段；第三枚铜钉不得承力，风息突变或镜翅兽拒绝时必须撤回。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 13,
+          "lastUsedAtTurn": 14,
+          "useCount": 1
+        },
+        {
+          "id": "mi-ya-emergency-route-aid",
+          "kind": "relationship",
+          "name": "弥娅的伤兽撤路协助",
+          "effect": "沈舟可在确认安全风口后，向弥娅报告可用落点与撤回路线，并争取她为受伤小型云兽提供临时救护和索具建议。",
+          "scope": "互惠条件是提供真实、可复核的风口与落点信息；不保证弥娅或其他幼兽立即同行。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 15,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-response",
+          "name": "镜翅兽的自愿回应",
+          "payoff": "获得一次俯瞰幼兽港的共享视野，确认它是否愿意继续接近。",
+          "approach": "在不强迫它的前提下，利用甜苔饼、安静动作或弥娅的协助让它主动对视。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "镜翅兽主动对视，沈舟获得一次俯瞰幼兽港的共享视野，并确认它暂未抗拒继续接近。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "kunges-departure",
+          "name": "昆戈的抢航小艇",
+          "payoff": "争取离开封锁港口、进入第一段乱风的实际机会。",
+          "approach": "在钟停前说服昆戈带上沈舟，或用可交换的帮助证明自己不会拖累航程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以背风水道与赤红浮光情报证明价值，昆戈同意暂载他和镜翅兽离港；小艇已驶入港外废帆阴影。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "red-glow-route",
+          "name": "风帆礁的废航路",
+          "payoff": "确认是否存在通往赤红浮光方向的可航路线，并获得抢在他人前抵达失踪浮岛线索的先手。",
+          "approach": "登上风帆礁查看旧航标，结合昆戈的航海判断与镜翅兽对风势的自愿回应辨认航路。",
+          "status": "open",
+          "offeredAtTurn": 7
+        },
+        {
+          "id": "old-guide-first-leg",
+          "name": "旧引路首段试航",
+          "payoff": "走通可重复使用的首段隐秘空中引线，并建立沈舟、镜翅兽与昆戈可执行的协作动作。",
+          "approach": "等镜翅兽主动愿意试飞后，沈舟按已确认的钉台落点使用旧滑翔索跨隙，昆戈岸上校风，三者依据即时风势完成首段通过。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟、镜翅兽与昆戈实际通过首段石钉引线，建立了飞行中的同步报风与变向协作；首段隐秘通路已确认可重复使用。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "cloudwall-second-leg",
+          "name": "云壁后的旧引路续段",
+          "payoff": "若确认旧铜钉与风势可用，可把首段通路延伸至云桥残端之后，继续接近赤红浮光方向。",
+          "approach": "检查三枚铜钉的承力，并结合镜翅兽自愿共享的近处风势判断，决定系索试行、守风或撤回筹备。",
+          "status": "fulfilled",
+          "offeredAtTurn": 11,
+          "materialized": true,
+          "result": "沈舟、昆戈与镜翅兽实际试过云壁后的短段斜坡风并安全撤回，确认第二枚铜钉和半圆形风台可供当前条件下的轻装往返试行。",
+          "settledAtTurn": 13
+        },
+        {
+          "id": "red-glow-route-next-leg",
+          "name": "断裂云槽的旧引路后段",
+          "payoff": "探明赤红浮光附近的断裂云槽是否能继续通行，并取得可供后续护送或追踪使用的具体风口与落点。",
+          "approach": "携带更长索具，在镜翅兽自愿同行且风向初转时，从半圆形风台按校风台左缘稳定上升风抵达断裂云槽；若风息外翻立即撤回。",
+          "status": "open",
+          "offeredAtTurn": 14
+        }
+      ]
+    },
+    "changes": [
+      "抵达 风帆礁背面浅湾的药帆下；镜翅兽正在休息，昆戈的小艇仍停在近岸作为退路",
+      "获得 浸蜡长索",
+      "获得 软扣环",
+      "弥娅: 信任",
+      "获得长期筹码: 弥娅的伤兽撤路协助",
+      "沈舟、昆戈与镜翅兽已从校风台沿原路返回风帆礁背面浅湾，校风台三短线刻痕的拓片已带回。",
+      "弥娅检查确认镜翅兽伤口未新裂但因连续短掠发热发紧，已更换止血处理并要求它在夜风转凉前不得再跨越空隙。",
+      "弥娅辨认校风台三短线为旧时兽医与领航员共用的回巢标，标记受伤小型云兽可借风返回的缓冲台；她不能确认断裂云槽后的通道完整。",
+      "弥娅交付浸蜡长索与两枚软扣环，可供沈舟一行在校风台建立轻装短段撤回索路；设备原为吊笼急救所用。",
+      "弥娅希望沈舟一行若确认后段可走，带回真实风口与落点信息，为港内其他受伤幼兽争取撤离路线。"
+    ]
+  },
+  {
+    "turn": 16,
+    "action": "留在浅湾让镜翅兽休息，和昆戈根据回巢标与拓片推算断裂云槽后的首个落点。",
+    "realm": {
+      "name": "地行者",
+      "rank": 0,
+      "benchmark": "只能依靠器具短途滑翔，无法与云兽共享感知。",
+      "unlock": "能学习手势、气味与风向，争取第一只云兽回应。",
+      "progress": 30
+    },
+    "coins": 24,
+    "capabilities": [
+      {
+        "id": "power-shared-sky-eye",
+        "name": "共天眼",
+        "description": "当一只云兽自愿对视并愿意同行时，沈舟可在短距飞行、滑翔或系索试行中持续借其近处视野、方向感与局部风势本能，及时以口令和动作协调压翼、变向、落点或撤回；伙伴也能从他的明确动作理解协作意图。边界：仅限双方共同面对的近处风况与短暂行动，不能强迫云兽、夺取控制或感知远处；伙伴恐惧、伤势加重、分神或拒绝都会中断共享。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "short-glide",
+        "name": "短距滑翔",
+        "description": "借旧滑翔索从高处越过十余步落差；乱风中风险很高。",
+        "source": "旧滑翔索"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "glider-harness",
+        "name": "旧滑翔索",
+        "description": "能承受一次短距滑翔，磨损处需要避开猛风",
+        "qty": 1
+      },
+      {
+        "id": "sweet-moss",
+        "name": "甜苔饼",
+        "description": "甜苔饼还剩1块；另一块已被镜翅兽在离开吊笼时取食。",
+        "qty": 2
+      },
+      {
+        "id": "waxed-long-line",
+        "name": "浸蜡长索",
+        "description": "弥娅交付的一卷浸蜡长索，可在校风台左缘稳定上升风中配合铁环和软扣环建立一段轻装撤回索路；不能承载重物，风息外翻或锚点不稳时必须撤回。",
+        "qty": 1
+      },
+      {
+        "id": "soft-anchor-rings",
+        "name": "软扣环",
+        "description": "两枚用于把浸蜡长索固定在旧铁环或稳固索具上的软扣环，可减少拉扯云质；仅适合短时轻装借力。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "mi-ya",
+        "name": "弥娅",
+        "role": "云兽医",
+        "attitude": "信任"
+      },
+      {
+        "id": "kun-ge",
+        "name": "昆戈",
+        "role": "失势领航员",
+        "attitude": "信任"
+      },
+      {
+        "id": "mirrorwing-cub",
+        "name": "镜翅兽",
+        "role": "受伤幼兽",
+        "attitude": "信任"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "kun-ge-passage",
+          "kind": "access",
+          "name": "昆戈小艇的临时船位",
+          "effect": "沈舟与镜翅兽可随昆戈的小艇离开折帆岛，并参与第一段乱风航行。",
+          "scope": "仅限本次抢航；沈舟须持续提供真实且有用的风向或航路协助，误导会失去船位。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 5,
+          "lastUsedAtTurn": 7,
+          "useCount": 1
+        },
+        {
+          "id": "old-guide-first-leg-route",
+          "kind": "access",
+          "name": "旧引路首段通行权",
+          "effect": "沈舟可在已知东北上托风节奏下，带轻装同行者或自愿同行的小型云兽从风帆礁浅湾跨越首段裂隙抵达钉台。",
+          "scope": "仅限当前已实测的首段与轻装条件；需避开猛风，且云兽是否同行仍由其自行决定。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 10,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        },
+        {
+          "id": "cloudwall-short-slope-route",
+          "kind": "access",
+          "name": "云壁短段风坡通行权",
+          "effect": "沈舟可在风向初转、轻装且有自愿同行的小型云兽时，使用第二枚铜钉的轻索往返云壁后的半圆形风台。",
+          "scope": "仅限已试出的不足两丈短段；第三枚铜钉不得承力，风息突变或镜翅兽拒绝时必须撤回。",
+          "sourceId": "kun-ge",
+          "status": "active",
+          "acquiredAtTurn": 13,
+          "lastUsedAtTurn": 14,
+          "useCount": 1
+        },
+        {
+          "id": "mi-ya-emergency-route-aid",
+          "kind": "relationship",
+          "name": "弥娅的伤兽撤路协助",
+          "effect": "沈舟可在确认安全风口后，向弥娅报告可用落点与撤回路线，并争取她为受伤小型云兽提供临时救护和索具建议。",
+          "scope": "互惠条件是提供真实、可复核的风口与落点信息；不保证弥娅或其他幼兽立即同行。",
+          "sourceId": "mi-ya",
+          "status": "active",
+          "acquiredAtTurn": 15,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "mirrorwing-response",
+          "name": "镜翅兽的自愿回应",
+          "payoff": "获得一次俯瞰幼兽港的共享视野，确认它是否愿意继续接近。",
+          "approach": "在不强迫它的前提下，利用甜苔饼、安静动作或弥娅的协助让它主动对视。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "镜翅兽主动对视，沈舟获得一次俯瞰幼兽港的共享视野，并确认它暂未抗拒继续接近。",
+          "settledAtTurn": 2
+        },
+        {
+          "id": "kunges-departure",
+          "name": "昆戈的抢航小艇",
+          "payoff": "争取离开封锁港口、进入第一段乱风的实际机会。",
+          "approach": "在钟停前说服昆戈带上沈舟，或用可交换的帮助证明自己不会拖累航程。",
+          "status": "fulfilled",
+          "offeredAtTurn": 1,
+          "materialized": true,
+          "result": "沈舟以背风水道与赤红浮光情报证明价值，昆戈同意暂载他和镜翅兽离港；小艇已驶入港外废帆阴影。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "red-glow-route",
+          "name": "风帆礁的废航路",
+          "payoff": "确认是否存在通往赤红浮光方向的可航路线，并获得抢在他人前抵达失踪浮岛线索的先手。",
+          "approach": "登上风帆礁查看旧航标，结合昆戈的航海判断与镜翅兽对风势的自愿回应辨认航路。",
+          "status": "open",
+          "offeredAtTurn": 7
+        },
+        {
+          "id": "old-guide-first-leg",
+          "name": "旧引路首段试航",
+          "payoff": "走通可重复使用的首段隐秘空中引线，并建立沈舟、镜翅兽与昆戈可执行的协作动作。",
+          "approach": "等镜翅兽主动愿意试飞后，沈舟按已确认的钉台落点使用旧滑翔索跨隙，昆戈岸上校风，三者依据即时风势完成首段通过。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟、镜翅兽与昆戈实际通过首段石钉引线，建立了飞行中的同步报风与变向协作；首段隐秘通路已确认可重复使用。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "cloudwall-second-leg",
+          "name": "云壁后的旧引路续段",
+          "payoff": "若确认旧铜钉与风势可用，可把首段通路延伸至云桥残端之后，继续接近赤红浮光方向。",
+          "approach": "检查三枚铜钉的承力，并结合镜翅兽自愿共享的近处风势判断，决定系索试行、守风或撤回筹备。",
+          "status": "fulfilled",
+          "offeredAtTurn": 11,
+          "materialized": true,
+          "result": "沈舟、昆戈与镜翅兽实际试过云壁后的短段斜坡风并安全撤回，确认第二枚铜钉和半圆形风台可供当前条件下的轻装往返试行。",
+          "settledAtTurn": 13
+        },
+        {
+          "id": "red-glow-route-next-leg",
+          "name": "断裂云槽的旧引路后段",
+          "payoff": "探明赤红浮光附近的断裂云槽是否能继续通行，并取得可供后续护送或追踪使用的具体风口与落点。",
+          "approach": "携带更长索具，在镜翅兽自愿同行且风向初转时，从半圆形风台按校风台左缘稳定上升风抵达断裂云槽；若风息外翻立即撤回。",
+          "status": "open",
+          "offeredAtTurn": 14
+        },
+        {
+          "id": "mistback-platform",
+          "name": "雾背台的首个落点",
+          "payoff": "取得断裂云槽后的实际立足处，并观察窄缝与赤红浮光来源方向。",
+          "approach": "待镜翅兽自愿同行且风向初转时，从校风台左缘以浸蜡长索建立轻装撤回线，贴云槽左壁短距抵达；风息外翻即撤回。",
+          "status": "open",
+          "offeredAtTurn": 16
+        }
+      ]
+    },
+    "changes": [
+      "可争取的成长: 雾背台的首个落点",
+      "沈舟与昆戈根据回巢标和校风台拓片推得：断裂云槽后首个可争取落点是偏左约四十步的雾背台，风向初转时可由校风台左缘贴槽壁抵达。",
+      "雾背台可供轻装者与小型云兽短暂停落，浸蜡长索可建立撤回线；路线不能承载小艇、重物或多人拖带。",
+      "雾背台背后有一道向下凹的窄缝，拓片未标明其去向，抵达后可据此观察断裂云槽深处。"
+    ]
+  }
+]

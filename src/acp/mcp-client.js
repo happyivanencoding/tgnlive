@@ -15,30 +15,32 @@ export class McpHttpClient {
     this.initializePromise = null;
   }
 
-  async initialize() {
-    if (this.initializePromise) return this.initializePromise;
-    this.initializePromise = this.#initialize();
+  async initialize({ signal } = {}) {
+    signal?.throwIfAborted();
+    if (this.initializePromise) return abortable(this.initializePromise, signal);
+    this.initializePromise = this.#initialize(signal);
     try {
-      return await this.initializePromise;
+      return await abortable(this.initializePromise, signal);
     } catch (error) {
       this.initializePromise = null;
       throw error;
     }
   }
 
-  async #initialize() {
-    this.token = await this.tokenProvider();
+  async #initialize(signal) {
+    this.token = await this.tokenProvider({ signal });
+    signal?.throwIfAborted();
     const result = await this.rpc("initialize", {
       protocolVersion: "2025-11-25",
       capabilities: {},
       clientInfo: { name: "tgn-live", version: "0.1.0" },
-    }, { skipInitialize: true });
-    await this.notify("notifications/initialized", {});
+    }, { skipInitialize: true, signal });
+    await this.notify("notifications/initialized", {}, { signal });
     return result;
   }
 
   async rpc(method, params, { signal, skipInitialize = false } = {}) {
-    if (!skipInitialize) await this.initialize();
+    if (!skipInitialize) await this.initialize({ signal });
     const response = await this.#post({ jsonrpc: "2.0", id: ++this.rpcId, method, params }, signal);
     if (response?.error) {
       throw new AppError(`AgentDock MCP 错误：${response.error.message || "unknown"}`, {
@@ -97,7 +99,18 @@ export class McpHttpClient {
   }
 }
 
-export async function decryptAgentDockToken() {
+function abortable(promise, signal) {
+  if (!signal) return promise;
+  signal.throwIfAborted();
+  return new Promise((resolve, reject) => {
+    const abort = () => reject(signal.reason || new DOMException('Aborted', 'AbortError'));
+    signal.addEventListener('abort', abort, { once: true });
+    promise.then(resolve, reject).finally(() => signal.removeEventListener('abort', abort));
+  });
+}
+
+export async function decryptAgentDockToken({ signal } = {}) {
+  signal?.throwIfAborted();
   if (process.env.TGN_AGENTDOCK_TOKEN) return process.env.TGN_AGENTDOCK_TOKEN;
   const script = [
     "$ErrorActionPreference='Stop'",
@@ -112,6 +125,8 @@ export async function decryptAgentDockToken() {
       windowsHide: true,
       encoding: "utf8",
       maxBuffer: 64 * 1024,
+      signal,
+      timeout: 20000,
     });
     const token = stdout.trim();
     if (!token) throw new Error("empty token");

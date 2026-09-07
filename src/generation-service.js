@@ -17,10 +17,10 @@ export class GenerationService {
     return this.narrator.health;
   }
 
-  shouldPlan(game) {
+  shouldPlan(game, existingPlan) {
     return game.state.turnNumber === 0 ? this.openingPlanStrategy === "live"
       : game.state.turnNumber % this.plannerInterval === 0
-      || game.state.realm.progress >= 90;
+      || (game.state.realm.progress >= 90 && (!existingPlan?.basisNearBreakthrough || existingPlan.basisRealmRank !== game.state.realm.rank));
   }
 
   async execute({ game, world, action, language = game.language || "zh", existingPlan, signal, trace, onStage, onText }) {
@@ -29,14 +29,14 @@ export class GenerationService {
     trace.value.openingPlanStrategy = this.openingPlanStrategy;
     if (game.state.turnNumber === 0 && this.openingPlanStrategy === "authored") {
       await stage(trace, onStage, "authored_opening_plan", async () => {
-        freshPlan = authoredOpeningPlan(world);
+        freshPlan = authoredOpeningPlan(world, game.state);
         plan = freshPlan;
         trace.value.planSource = "authored-world-seed-no-model-call";
       });
     }
-    if (this.shouldPlan(game)) {
+    if (this.shouldPlan(game, existingPlan)) {
       trace.value.planSource = "live-story-brain";
-      const plannerPrompt = buildPlannerPrompt({ game, world, action, language });
+      const plannerPrompt = await stage(trace, onStage, "planner_context_assembly", async () => buildPlannerPrompt({ game, world, action, existingPlan, language }));
       trace.value.promptChars.planner = plannerPrompt.length;
       await stage(trace, onStage, "plan", async () => {
         beginSetupStage(trace, onStage, "planner");
@@ -46,6 +46,8 @@ export class GenerationService {
         });
         trace.value.provider.planner = providerResult(this.planner, result);
         freshPlan = validatePlan(extractJsonObject(result.text));
+        freshPlan.basisRealmRank = game.state.realm.rank;
+        freshPlan.basisNearBreakthrough = game.state.realm.progress >= 90;
         plan = freshPlan;
       });
     }
@@ -82,7 +84,8 @@ export class GenerationService {
     let reduced;
     try {
       await stage(trace, onStage, "parse_validate", async () => {
-        reduced = reduceState(game.state, parser.finish(), world, language);
+        const proposal = await stage(trace, onStage, "parse", async () => parser.finish());
+        reduced = await stage(trace, onStage, "reducer_validation", async () => reduceState(game.state, proposal, world, language));
       });
     } catch (firstError) {
       trace.value.repairAttempts = 1;
@@ -104,7 +107,8 @@ export class GenerationService {
         trace.value.provider.repair = providerResult(this.narrator, repairResult);
         trace.value.outputChars += repairedOutput.length;
         trace.value.candidateOutputs.push({ role: "repair", finalText: repairedOutput });
-        reduced = reduceState(game.state, repairedParser.finish(), world, language);
+        const repairedProposal = await stage(trace, onStage, "repair_parse", async () => repairedParser.finish());
+        reduced = await stage(trace, onStage, "repair_reducer_validation", async () => reduceState(game.state, repairedProposal, world, language));
       });
     }
 
@@ -136,6 +140,13 @@ function beginSetupStage(trace, onStage, role) {
 }
 
 function recordProviderEvent(trace, onStage, role, event) {
+  if (event.type === 'acp_setup_step') {
+    const name = `acp_${role}_${event.step}`;
+    if (event.status === 'start') trace.startStage(name);
+    else trace.endStage(name, event.status);
+    trace.point('acp_setup_step', {role,step:event.step,status:event.status,elapsedMs:event.elapsedMs});
+    return;
+  }
   if (event.type === "acp_config_applied") {
     const name = `acp_${role}_initialize_auth_session_model_setup`;
     const completed = trace.endStage(name, "complete");
@@ -175,15 +186,19 @@ function validatePlan(plan) {
     throw new AppError("Story Brain 返回格式无效", { code: "INVALID_PLAN", status: 502, retryable: true });
   }
   for (const field of ["npcMoves", "openings", "continuity"]) {
-    if (!Array.isArray(plan[field])) {
+    const optionalLegacy = field !== 'npcMoves' && plan[field] === undefined && plan.growth && typeof plan.growth === 'object' && !Array.isArray(plan.growth);
+    if (!optionalLegacy && !Array.isArray(plan[field])) {
       throw new AppError(`Story Brain 缺少 ${field}`, { code: "INVALID_PLAN", status: 502, retryable: true });
     }
   }
+  const growth = plan.growth && typeof plan.growth === 'object' && !Array.isArray(plan.growth)
+    ? Object.fromEntries(['want', 'payoff', 'afterUse'].map(key => [key, String(plan.growth[key] || '').slice(0, 400)])) : undefined;
   return {
     pressure: String(plan.pressure || "").slice(0, 300),
     npcMoves: plan.npcMoves.slice(0, 6),
-    openings: plan.openings.slice(0, 6).map(String),
-    continuity: plan.continuity.slice(0, 10).map(String),
+    openings: (plan.openings || []).slice(0, 6).map(String),
+    continuity: (plan.continuity || []).slice(0, 10).map(String),
     milestone: String(plan.milestone || "").slice(0, 300),
+    ...(growth ? { growth } : {}),
   };
 }

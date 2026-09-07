@@ -1,4 +1,4 @@
-import { LANGUAGE_KEY, LANGUAGES, MESSAGES, auditMessages, languageInfo, normalizeLanguage, translate } from './i18n.js';
+import { LANGUAGE_KEY, LANGUAGES, MESSAGES, auditMessages, languageInfo, normalizeLanguage, translate } from './i18n.js?v=0.8.0';
 
 const API = '/api';
 const $ = (selector) => document.querySelector(selector);
@@ -28,6 +28,8 @@ const app = {
   stream: null, worldStream: null, pendingAction: null, pendingWorld: null, startedAt: null, timer: null,
   worldStartedAt: null, worldTimer: null, lastMetrics: null, events: [], activeSheet: null, sheetTrigger: null,
   followLatest: true, composing: false, currentScreen: 'library', previousHub: 'discover',
+  lastScrollY: 0, programmaticScrollUntil: 0, touchStartY: null, dockFrame: null, clientTimings: [],
+  visibleMarks: [], visibleMarkFrame: null,
 };
 
 const t = (key, values = {}) => translate(app.language, key, values);
@@ -102,6 +104,71 @@ function record(name, details = '') {
   renderObservability();
 }
 
+function performanceMark(name) {
+  try { performance.mark(name); } catch {}
+}
+
+function beginTurnTiming(requestIdValue) {
+  const timing = { requestId:requestIdValue, gameId:app.game?.id, outcome:'pending', clickAt:performance.now(), clickEpochMs:Date.now(), visibilityMethod:'two consecutive unobscured viewport frames; not hardware display paint' };
+  app.visibleMarks = [];
+  performanceMark(`tgn:${requestIdValue}:click`);
+  return timing;
+}
+
+function markTiming(timing, key, label = key) {
+  if (!timing || timing[key] !== undefined) return;
+  timing[key] = performance.now() - timing.clickAt; performanceMark(`tgn:${timing.requestId}:${label}`);
+}
+
+function markTurnPaint(key, label = key, callback, timing = app.pendingAction?.timing) {
+  if (!timing || timing[key] !== undefined) return;
+  if (!app.visibleMarks.some(mark => mark.timing === timing && mark.key === key)) app.visibleMarks.push({ key, label, callback, timing, seen:false });
+  observeVisibleMarks();
+}
+
+function observeVisibleMarks() {
+  if (app.visibleMarkFrame !== null || !app.visibleMarks.length) return;
+  app.visibleMarkFrame = requestAnimationFrame(() => {
+    app.visibleMarkFrame = null;
+    const marks = app.visibleMarks; app.visibleMarks = [];
+    const viewport = window.visualViewport;
+    const top = Math.max(viewport?.offsetTop || 0, $('.story-header')?.getBoundingClientRect().bottom || 0);
+    const bottom = (viewport?.offsetTop || 0) + (viewport?.height || innerHeight);
+    const readingBottom = els.actionArea.getClientRects().length ? Math.min(bottom,els.actionArea.getBoundingClientRect().top) : bottom;
+    const visible = (node, lower = bottom) => {
+      if (!node?.getClientRects().length || getComputedStyle(node).visibility === 'hidden') return false;
+      const rect = node.getBoundingClientRect();
+      return rect.bottom > top && rect.top < lower && rect.right > 0 && rect.left < innerWidth;
+    };
+    let anotherFrame = false;
+    for (const mark of marks) {
+      const timing = mark.timing;
+      if (timing[mark.key] !== undefined || !['pending','complete'].includes(timing.outcome) || timing.gameId !== app.game?.id) continue;
+      let shown = false;
+      if (document.visibilityState === 'visible' && app.currentScreen === 'story' && !app.activeSheet) {
+        if (mark.key === 'immediateFeedbackPaintMs') shown = visible(els.generation);
+        else if (mark.key === 'choicesReadyPaintMs') shown = [...els.suggestions.querySelectorAll('button:not(:disabled)')].some(node => visible(node));
+        else if (mark.key === 'firstNarrativePaintMs') {
+          const section = app.pendingAction?.timing === timing ? $('#provisional-turn') : [...els.narrative.children].find(node => node.dataset.turnKey === timing.canonicalTurnKey);
+          shown = [...(section?.querySelectorAll('p:not(.turn-meta)') || [])].some(node => node.textContent.trim() && node.dataset.waiting !== 'true' && visible(node,readingBottom));
+        }
+      }
+      if (shown && mark.seen) { markTiming(timing,mark.key,mark.label); mark.callback?.(timing[mark.key]); }
+      else { mark.seen = shown; app.visibleMarks.push(mark); anotherFrame ||= shown; }
+    }
+    // A frame callback runs before paint. Require two visible frames, not just a DOM write.
+    // Offscreen observations stay pending and are checked on scroll/resize/next text.
+    if (anotherFrame) observeVisibleMarks();
+  });
+}
+
+function finishTurnTiming(outcome, timing = app.pendingAction?.timing) {
+  if (!timing || timing.finishedAt !== undefined) return;
+  timing.outcome = outcome; timing.finishedAt = performance.now() - timing.clickAt;
+  app.clientTimings.unshift(timing); app.clientTimings = app.clientTimings.slice(0, 12);
+  performanceMark(`tgn:${timing.requestId}:${outcome}`); renderObservability();
+}
+
 function toast(message) {
   const node = document.createElement('div');
   node.className = 'toast'; node.textContent = message; els.toastRegion.replaceChildren(node);
@@ -117,6 +184,8 @@ function checkLogin(response, expectedType = 'application/json') {
 }
 
 function apiError(payload = {}, status = '') {
+  if (payload.code === 'PROVIDER_SETUP_TIMEOUT') return t('error.providerSetup');
+  if (payload.code === 'PROVIDER_TIMEOUT') return t('error.providerTimeout');
   return app.language === 'zh' && payload.message ? payload.message : t('error.request', {status: payload.code || status});
 }
 
@@ -136,6 +205,7 @@ function showScreen(name) {
   document.body.classList.toggle('in-story', name === 'story');
   closeStoryMenu();
   if (name !== 'story') document.body.classList.remove('reader-mode', 'keyboard-open');
+  app.programmaticScrollUntil = performance.now() + 140;
   window.scrollTo({ top:0, behavior:'instant' });
 }
 
@@ -352,6 +422,17 @@ async function createGame(event) {
   finally { setArrowButton('#create-game-button', 'onboarding.enter'); validateCreation(); }
 }
 
+function progressionCardHtml(state) {
+  const assets = safeArray(state.progression?.leverage).filter(asset => asset.status === 'active');
+  const offers = safeArray(state.progression?.opportunities).filter(offer => offer.status === 'open');
+  const settled = safeArray(state.progression?.opportunities).filter(offer => offer.status === 'fulfilled').slice(-3);
+  const lang = contentLanguage(app.game?.language), dir = contentDirection(lang);
+  const items = assets.map(asset => `<li><strong>${escapeHtml(asset.name)}</strong><small class="item-description">${escapeHtml(asset.effect)}</small><small class="item-description">${escapeHtml(asset.scope)}</small>${asset.useCount ? `<small>${escapeHtml(t('status.reused', {count:asset.useCount}))}</small>` : ''}</li>`).join('');
+  const available = offers.map(offer => `<li><strong>${escapeHtml(offer.name)}</strong><small class="item-description">${escapeHtml(offer.payoff)}</small><small class="item-description">${escapeHtml(offer.approach)}</small></li>`).join('');
+  const results = settled.map(offer => `<li><strong>${escapeHtml(offer.name)}</strong><small class="item-description">${escapeHtml(offer.result)}</small></li>`).join('');
+  return `${items ? `<section class="status-summary"><h3>${escapeHtml(t('status.leverage'))}</h3><ul lang="${lang}" dir="${dir}">${items}</ul></section>` : ''}${available ? `<section class="status-summary"><h3>${escapeHtml(t('status.offers'))}</h3><ul lang="${lang}" dir="${dir}">${available}</ul></section>` : ''}${results ? `<section class="status-summary"><h3>${escapeHtml(t('status.fulfilled'))}</h3><ul lang="${lang}" dir="${dir}">${results}</ul></section>` : ''}`;
+}
+
 function stateCardHtml(state = {}) {
   const realm = state.realm || {}; const progress = Number(realm.progress); const meter = Number.isFinite(progress) ? Math.max(0, Math.min(100, progress)) : 0;
   const inventory = safeArray(state.inventory); const relationships = safeArray(state.relationships); const facts = safeArray(state.facts); const currency = state.currencyName || t('status.currency');
@@ -361,7 +442,7 @@ function stateCardHtml(state = {}) {
   const powerDetails = `${realm.benchmark ? `<section class="status-summary"><h3>${escapeHtml(t('status.realmMeaning'))}</h3><p lang="${stateLanguage}" dir="${stateDir}">${escapeHtml(realm.benchmark)}</p><p lang="${stateLanguage}" dir="${stateDir}">${escapeHtml(realm.unlock || '')}</p></section>` : ''}${abilities.length ? `<section class="status-summary"><h3>${escapeHtml(t('status.abilities'))}</h3>${abilities.map(ability => `<h4 lang="${stateLanguage}" dir="${stateDir}">${escapeHtml(ability.name)}</h4><p lang="${stateLanguage}" dir="${stateDir}">${escapeHtml(ability.description)}</p>`).join('')}</section>` : ''}`;
   const itemList = inventory.length ? `<ul lang="${stateLanguage}" dir="${stateDir}">${inventory.slice(0,8).map((item) => `<li>${escapeHtml(item?.name || t('status.itemUnnamed'))}${item?.qty ? ` ×<bdi>${escapeHtml(item.qty)}</bdi>` : ''}${item?.description ? `<small class="item-description">${escapeHtml(item.description)}</small>` : ''}</li>`).join('')}</ul>` : `<p>${escapeHtml(t('status.itemsEmpty'))}</p>`;
   const npcList = relationships.length ? `<ul lang="${stateLanguage}" dir="${stateDir}">${relationships.slice(0,8).map((npc) => { const attitudeKey = `enum.${npc?.attitude}`; const attitude = npc?.attitude && MESSAGES.zh[attitudeKey] ? t(attitudeKey) : npc?.attitude; return `<li>${escapeHtml(npc?.name || t('status.personUnnamed'))}${npc?.role ? ` · ${escapeHtml(npc.role)}` : ''}${attitude ? ` (${escapeHtml(attitude)})` : ''}</li>`; }).join('')}</ul>` : `<p>${escapeHtml(t('status.peopleEmpty'))}</p>`;
-  return `<section class="status-summary"><h3>${escapeHtml(t('status.realm'))}</h3><h2 lang="${stateLanguage}" dir="${stateDir}">${escapeHtml(realm.name || t('status.realmUnknown'))}</h2><p>${realm.rank !== undefined ? t('status.rank', { rank:`<bdi>${escapeHtml(realm.rank)}</bdi>` }) : t('status.rankUnknown')} · ${Number.isFinite(progress) ? t('status.progress', { progress:`<bdi>${meter}</bdi>` }) : t('status.progressUnknown')}</p><div class="realm-meter" aria-label="${escapeHtml(t('status.progressAria', { progress:meter }))}"><i style="width:${meter}%"></i></div></section><section class="status-summary"><h3>${escapeHtml(t('status.power'))}</h3><h2 lang="${stateLanguage}" dir="${stateDir}">${escapeHtml(currentPower?.name || t('status.notRecorded'))}</h2><p lang="${stateLanguage}" dir="${stateDir}">${escapeHtml(currentPower?.description || '')}</p></section>${powerDetails}<section class="status-summary"><h3>${escapeHtml(t('status.location'))}</h3><p lang="${stateLanguage}" dir="${stateDir}">${escapeHtml(state.location || t('status.locationUnknown'))}</p></section><section class="status-summary"><h3 lang="${stateLanguage}" dir="${stateDir}">${escapeHtml(currency)}</h3><p>${state.coins === undefined || state.coins === null ? escapeHtml(t('status.notRecorded')) : `<bdi>${escapeHtml(state.coins)}</bdi>`}</p></section><section class="status-summary"><h3>${escapeHtml(t('status.goal'))}</h3><p lang="${stateLanguage}" dir="${stateDir}">${escapeHtml(state.goal || t('status.goalEmpty'))}</p></section><section class="status-summary"><h3>${escapeHtml(t('status.items'))}</h3>${itemList}</section><section class="status-summary"><h3>${escapeHtml(t('status.people'))}</h3>${npcList}</section>${facts.length ? `<section class="status-summary"><h3>${escapeHtml(t('status.facts'))}</h3><ul lang="${stateLanguage}" dir="${stateDir}">${facts.slice(-6).map((fact) => `<li>${escapeHtml(fact)}</li>`).join('')}</ul></section>` : ''}`;
+  return `<section class="status-summary"><h3>${escapeHtml(t('status.realm'))}</h3><h2 lang="${stateLanguage}" dir="${stateDir}">${escapeHtml(realm.name || t('status.realmUnknown'))}</h2><p>${realm.rank !== undefined ? t('status.rank', { rank:`<bdi>${escapeHtml(realm.rank)}</bdi>` }) : t('status.rankUnknown')} · ${Number.isFinite(progress) ? t('status.progress', { progress:`<bdi>${meter}</bdi>` }) : t('status.progressUnknown')}</p><div class="realm-meter" aria-label="${escapeHtml(t('status.progressAria', { progress:meter }))}"><i style="width:${meter}%"></i></div></section><section class="status-summary"><h3>${escapeHtml(t('status.power'))}</h3><h2 lang="${stateLanguage}" dir="${stateDir}">${escapeHtml(currentPower?.name || t('status.notRecorded'))}</h2><p lang="${stateLanguage}" dir="${stateDir}">${escapeHtml(currentPower?.description || '')}</p></section>${powerDetails}${progressionCardHtml(state)}<section class="status-summary"><h3>${escapeHtml(t('status.location'))}</h3><p lang="${stateLanguage}" dir="${stateDir}">${escapeHtml(state.location || t('status.locationUnknown'))}</p></section><section class="status-summary"><h3 lang="${stateLanguage}" dir="${stateDir}">${escapeHtml(currency)}</h3><p>${state.coins === undefined || state.coins === null ? escapeHtml(t('status.notRecorded')) : `<bdi>${escapeHtml(state.coins)}</bdi>`}</p></section><section class="status-summary"><h3>${escapeHtml(t('status.goal'))}</h3><p lang="${stateLanguage}" dir="${stateDir}">${escapeHtml(state.goal || t('status.goalEmpty'))}</p></section><section class="status-summary"><h3>${escapeHtml(t('status.items'))}</h3>${itemList}</section><section class="status-summary"><h3>${escapeHtml(t('status.people'))}</h3>${npcList}</section>${facts.length ? `<section class="status-summary"><h3>${escapeHtml(t('status.facts'))}</h3><ul lang="${stateLanguage}" dir="${stateDir}">${facts.slice(-6).map((fact) => `<li>${escapeHtml(fact)}</li>`).join('')}</ul></section>` : ''}`;
 }
 
 function renderStatus() {
@@ -370,16 +451,99 @@ function renderStatus() {
   els.statusDrawer.querySelector('.sheet-close').addEventListener('click', closeSheet);
 }
 
-function nearStoryBottom() {
-  return document.documentElement.scrollHeight - (window.scrollY + window.innerHeight) < Math.max(260, els.actionArea.offsetHeight + 80);
+function turnKey(turn) {
+  return String(turn?.id || `turn-${turn?.index ?? 'unknown'}`);
+}
+
+function updateTurnBlock(node, turn) {
+  const language = contentLanguage(turn.language); const dir = contentDirection(language);
+  const fingerprint = JSON.stringify([app.language, turn.index, turn.createdAt, turnText(turn), turn.action, language]);
+  if (node.dataset.renderFingerprint === fingerprint) return;
+  node.dataset.renderFingerprint = fingerprint; node.dataset.turnLanguage = language; node.replaceChildren();
+  const meta = document.createElement('p'); meta.className = 'turn-meta';
+  meta.innerHTML = t('turn.meta', { number:`<bdi>${escapeHtml(turn.index || '?')}</bdi>`, date:`<bdi>${escapeHtml(formatDate(turn.createdAt))}</bdi>` });
+  node.append(meta);
+  for (const paragraph of turnText(turn).split(/\n{2,}/).filter(Boolean)) {
+    const prose = document.createElement('p'); prose.lang = language; prose.dir = dir; prose.textContent = paragraph; node.append(prose);
+  }
+  if (turn.action && turn.index > 1) {
+    const action = document.createElement('span'); action.className = 'turn-action'; action.lang = language; action.dir = dir; action.textContent = t('turn.action', { action:turn.action }); node.append(action);
+  }
+}
+
+function syncCommittedTurns(turns) {
+  const existing = new Map($$Within(els.narrative, '.turn-block:not(.provisional)').map(node => [node.dataset.turnKey, node]));
+  const keep = new Set(); let previous = null;
+  for (const turn of turns) {
+    const key = turnKey(turn); keep.add(key);
+    let node = existing.get(key);
+    if (!node) { node = document.createElement('section'); node.className = 'turn-block'; node.dataset.turnKey = key; }
+    updateTurnBlock(node, turn);
+    const reference = previous ? previous.nextSibling : els.narrative.firstChild;
+    if (node !== reference) els.narrative.insertBefore(node, reference);
+    previous = node;
+  }
+  for (const [key, node] of existing) if (!keep.has(key)) node.remove();
+}
+
+function syncProvisionalTurn() {
+  let node = $('#provisional-turn');
+  if (!app.pendingAction) { node?.remove(); return; }
+  const language = contentLanguage(app.pendingAction.language); const dir = contentDirection(language);
+  if (!node) {
+    node = document.createElement('section'); node.className = 'turn-block provisional'; node.id = 'provisional-turn';
+    const label = document.createElement('p'); label.className = 'turn-meta provisional-label';
+    node.append(label); els.narrative.append(node);
+  }
+  node.dataset.turnLanguage = language;
+  const stopped = ['not_canon','cancelled','cancel_pending'].includes(app.pendingAction.stage);
+  const label = node.querySelector('.provisional-label'); label.textContent = stopped ? stageLabel(app.pendingAction.stage) : t('turn.provisional');
+  const text = app.pendingAction.text || (stopped ? app.pendingAction.action : t('turn.waiting'));
+  const paragraphs = text.split(/\n{2,}/).filter(Boolean);
+  const existing = [...node.querySelectorAll('p:not(.turn-meta)')];
+  let footer = node.querySelector('.turn-action');
+  for (const [i, content] of paragraphs.entries()) {
+    let prose = existing[i];
+    if (!prose) { prose = document.createElement('p'); node.insertBefore(prose, footer); }
+    prose.lang = language; prose.dir = dir;
+    prose.dataset.waiting = app.pendingAction.text || stopped ? 'false' : 'true';
+    if (prose.firstChild?.nodeType === Node.TEXT_NODE && content.startsWith(prose.textContent)) prose.firstChild.appendData(content.slice(prose.textContent.length));
+    else if (prose.textContent !== content) prose.textContent = content;
+  }
+  for (const extra of existing.slice(paragraphs.length)) extra.remove();
+  if (safeArray(app.game?.turns).length > 0) {
+    if (!footer) { footer = document.createElement('span'); footer.className = 'turn-action'; node.append(footer); }
+    footer.lang = language; footer.dir = dir; footer.textContent = t('turn.action', {action:app.pendingAction.action});
+  }
+}
+
+function captureReadingAnchor() {
+  if (app.currentScreen !== 'story' || app.followLatest) return null;
+  const headerBottom = els.storyScreen.querySelector('.story-header')?.getBoundingClientRect().bottom || 0;
+  const node = $$Within(els.narrative, '.turn-block:not(.provisional)').find(item => item.getBoundingClientRect().bottom > headerBottom + 4);
+  return node ? { node, top:node.getBoundingClientRect().top } : null;
+}
+
+function restoreReadingAnchor(anchor) {
+  if (!anchor?.node?.isConnected || app.followLatest) return;
+  const delta = anchor.node.getBoundingClientRect().top - anchor.top;
+  if (Math.abs(delta) > .5) {
+    app.programmaticScrollUntil = performance.now() + 120;
+    window.scrollBy({ top:delta, behavior:'instant' });
+  }
 }
 
 function renderNarrative(options = {}) {
-  const shouldFollow = options.forceLatest || app.followLatest || nearStoryBottom(); const turns = safeArray(app.game?.turns);
-  els.narrative.innerHTML = turns.map((turn) => { const language = contentLanguage(turn.language); const dir = contentDirection(language); return `<section class="turn-block" data-turn-language="${language}"><p class="turn-meta">${t('turn.meta', { number:`<bdi>${escapeHtml(turn.index || '?')}</bdi>`, date:`<bdi>${escapeHtml(formatDate(turn.createdAt))}</bdi>` })}</p>${turnText(turn).split(/\n{2,}/).filter(Boolean).map((paragraph) => `<p lang="${language}" dir="${dir}">${escapeHtml(paragraph)}</p>`).join('')}${turn.action && turn.index > 1 ? `<span class="turn-action" lang="${language}" dir="${dir}">${escapeHtml(t('turn.action', { action:turn.action }))}</span>` : ''}</section>`; }).join('') || `<p class="awaiting">${escapeHtml(t('turn.awaiting'))}</p>`;
-  if (app.pendingAction) { const language = contentLanguage(app.pendingAction.language); const dir = contentDirection(language); els.narrative.insertAdjacentHTML('beforeend', `<section class="turn-block provisional" id="provisional-turn" data-turn-language="${language}"><span class="provisional-label">${escapeHtml(t('turn.provisional'))}</span><p lang="${language}" dir="${dir}">${escapeHtml(app.pendingAction.text || t('turn.waiting'))}</p></section>`); }
+  const shouldFollow = options.forceLatest || app.followLatest; const turns = safeArray(app.game?.turns); const anchor = shouldFollow ? null : captureReadingAnchor();
+  syncCommittedTurns(turns);
+  let awaiting = els.narrative.querySelector(':scope > .awaiting');
+  if (!turns.length && !app.pendingAction) {
+    if (!awaiting) { awaiting = document.createElement('p'); awaiting.className = 'awaiting'; els.narrative.append(awaiting); }
+    awaiting.textContent = t('turn.awaiting');
+  } else awaiting?.remove();
+  syncProvisionalTurn();
   els.storyEnd.hidden = Boolean(app.pendingAction) || !turns.length;
-  if (shouldFollow) requestAnimationFrame(() => scrollToLatest('instant'));
+  requestAnimationFrame(() => { if (shouldFollow) scrollToLatest('instant'); else restoreReadingAnchor(anchor); });
 }
 
 function renderActions() {
@@ -398,20 +562,29 @@ function renderActions() {
 function renderGeneration() {
   if (!app.stream || !app.startedAt) { els.generation.hidden = true; els.narrative.setAttribute('aria-busy','false'); clearInterval(app.timer); app.timer = null; updateDockHeight(); return; }
   const elapsed = Math.max(Date.now() - app.startedAt, app.pendingAction?.reportedElapsed || 0); els.narrative.setAttribute('aria-busy','true'); els.generation.hidden = false;
-  els.generation.innerHTML = `<span><i class="stage-pulse"></i><strong>${escapeHtml(stageLabel(app.pendingAction?.stage))}</strong> · <bdi>${escapeHtml(formatElapsed(elapsed))}</bdi></span><button type="button" class="stop-button" id="stop-turn">${escapeHtml(t('turn.stop'))}</button>`;
-  $('#stop-turn').addEventListener('click', cancelTurn); updateDockHeight();
+  if (!$('#stop-turn')) {
+    els.generation.innerHTML = '<span><i class="stage-pulse"></i><strong></strong> · <bdi></bdi></span><button type="button" class="stop-button" id="stop-turn"></button>';
+    $('#stop-turn').addEventListener('click', cancelTurn);
+  }
+  els.generation.querySelector('strong').textContent = stageLabel(app.pendingAction?.stage);
+  els.generation.querySelector('bdi').textContent = formatElapsed(elapsed);
+  $('#stop-turn').textContent = t('turn.stop');
+  updateDockHeight(); observeVisibleMarks();
 }
 
 function renderObservability() {
   const metrics = app.lastMetrics || app.turn?.metrics || {}; const rows = app.events.map((event) => `<li><strong><bdi>${escapeHtml(event.name)}</bdi></strong>${escapeHtml(event.details || '—')}<br><small><bdi>${escapeHtml(formatDate(event.at))}</bdi></small></li>`).join('');
   const model = `<bdi dir="ltr">${escapeHtml(app.health?.provider?.model || t('logs.modelMissing'))}</bdi>`; const elapsed = metrics.totalElapsedMs == null && metrics.totalMs == null ? escapeHtml(t('logs.notReported')) : `<bdi>${escapeHtml(formatElapsed(metrics.totalElapsedMs ?? metrics.totalMs))}</bdi>`;
-  els.observability.innerHTML = `<div class="sheet-handle" aria-hidden="true"></div><header class="sheet-header"><h2>${escapeHtml(t('sheet.logs'))}</h2><button class="sheet-close" type="button" aria-label="${escapeHtml(t('sheet.closeLogs'))}">×</button></header><p>${escapeHtml(t('logs.note'))}</p><p>${t('logs.model', { model })}<br>${t('logs.total', { time:elapsed })}</p><ul class="observability-list">${rows || `<li>${escapeHtml(t('logs.none'))}</li>`}</ul>`;
+  const timing = app.clientTimings[0] || app.pendingAction?.timing;
+  const timingValue = (value) => value === undefined ? escapeHtml(t('logs.pending')) : `<bdi>${escapeHtml(formatElapsed(value))}</bdi>`;
+  const timingMarkup = timing ? `<section class="client-timing"><h3>${escapeHtml(t('logs.browserTiming'))}</h3><p>${escapeHtml(t('logs.browserApprox'))}</p><dl><div><dt>${escapeHtml(t('logs.feedbackPaint'))}</dt><dd>${timingValue(timing.immediateFeedbackPaintMs)}</dd></div><div><dt>${escapeHtml(t('logs.firstNarrativePaint'))}</dt><dd>${timingValue(timing.firstNarrativePaintMs)}</dd></div><div><dt>${escapeHtml(t('logs.canonicalComplete'))}</dt><dd>${timingValue(timing.canonicalCompleteReceivedMs)}</dd></div><div><dt>${escapeHtml(t('logs.choicesReady'))}</dt><dd>${timingValue(timing.choicesReadyPaintMs)}</dd></div></dl></section>` : '';
+  els.observability.innerHTML = `<div class="sheet-handle" aria-hidden="true"></div><header class="sheet-header"><h2>${escapeHtml(t('sheet.logs'))}</h2><button class="sheet-close" type="button" aria-label="${escapeHtml(t('sheet.closeLogs'))}">×</button></header><p>${escapeHtml(t('logs.note'))}</p><p>${t('logs.model', { model })}<br>${t('logs.total', { time:elapsed })}</p>${timingMarkup}<ul class="observability-list">${rows || `<li>${escapeHtml(t('logs.none'))}</li>`}</ul>`;
   els.observability.querySelector('.sheet-close').addEventListener('click', closeSheet);
 }
 
 function renderReadingSettings() {
   const settings = readReadingSettings();
-  els.readingSettings.innerHTML = `<div class="sheet-handle" aria-hidden="true"></div><header class="sheet-header"><h2>${escapeHtml(t('sheet.reading'))}</h2><button class="sheet-close" type="button" aria-label="${escapeHtml(t('sheet.closeReading'))}">×</button></header><div class="setting-row"><label for="font-size-setting"><span>${escapeHtml(t('reading.font'))}</span><span id="font-size-value"><bdi>${settings.fontSize}px</bdi></span></label><input id="font-size-setting" type="range" min="16" max="24" step="1" value="${settings.fontSize}" /></div><div class="setting-row"><label for="line-height-setting"><span>${escapeHtml(t('reading.leading'))}</span><span id="line-height-value"><bdi>${settings.lineHeight.toFixed(2)}</bdi></span></label><input id="line-height-setting" type="range" min="1.7" max="2.4" step="0.05" value="${settings.lineHeight}" /></div><div class="setting-row"><span>${escapeHtml(t('reading.background'))}</span><div class="setting-buttons"><button type="button" data-reader-theme="dark">${escapeHtml(t('reading.dark'))}</button><button type="button" data-reader-theme="light">${escapeHtml(t('reading.light'))}</button><button type="button" data-reader-theme="system">${escapeHtml(t('reading.system'))}</button></div></div>`;
+  els.readingSettings.innerHTML = `<div class="sheet-handle" aria-hidden="true"></div><header class="sheet-header"><h2>${escapeHtml(t('sheet.reading'))}</h2><button class="sheet-close" type="button" aria-label="${escapeHtml(t('sheet.closeReading'))}">×</button></header><div class="setting-row"><label for="font-size-setting"><span>${escapeHtml(t('reading.font'))}</span><span id="font-size-value"><bdi>${settings.fontSize}px</bdi></span></label><input id="font-size-setting" type="range" min="12" max="24" step="1" value="${settings.fontSize}" /></div><div class="setting-row"><label for="line-height-setting"><span>${escapeHtml(t('reading.leading'))}</span><span id="line-height-value"><bdi>${settings.lineHeight.toFixed(2)}</bdi></span></label><input id="line-height-setting" type="range" min="1.7" max="2.4" step="0.05" value="${settings.lineHeight}" /></div><div class="setting-row"><span>${escapeHtml(t('reading.background'))}</span><div class="setting-buttons"><button type="button" data-reader-theme="dark">${escapeHtml(t('reading.dark'))}</button><button type="button" data-reader-theme="light">${escapeHtml(t('reading.light'))}</button><button type="button" data-reader-theme="system">${escapeHtml(t('reading.system'))}</button></div></div>`;
   els.readingSettings.querySelector('.sheet-close').addEventListener('click', closeSheet);
   const size = $('#font-size-setting'); const leading = $('#line-height-setting');
   size.addEventListener('input', () => saveReadingSettings({ fontSize:Number(size.value) })); leading.addEventListener('input', () => saveReadingSettings({ lineHeight:Number(leading.value) }));
@@ -419,8 +592,13 @@ function renderReadingSettings() {
 }
 
 function readReadingSettings() {
-  try { return { fontSize:18, lineHeight:2.05, theme:'system', ...JSON.parse(localStorage.getItem('tgn-live-reading') || '{}') }; }
-  catch { return { fontSize:18, lineHeight:2.05, theme:'system' }; }
+  const defaults = { fontSize:16, lineHeight:2.05, theme:'system' };
+  try {
+    const stored = { ...defaults, ...JSON.parse(localStorage.getItem('tgn-live-reading') || '{}') };
+    stored.fontSize = Math.max(12, Math.min(24, Number(stored.fontSize) || defaults.fontSize));
+    stored.lineHeight = Math.max(1.7, Math.min(2.4, Number(stored.lineHeight) || defaults.lineHeight));
+    return stored;
+  } catch { return defaults; }
 }
 
 function saveReadingSettings(patch = {}) {
@@ -430,8 +608,10 @@ function saveReadingSettings(patch = {}) {
 }
 
 function applyReadingSettings(settings = readReadingSettings()) {
+  const anchor = captureReadingAnchor();
   document.documentElement.style.setProperty('--reader-size', `${settings.fontSize}px`); document.documentElement.style.setProperty('--reader-leading', settings.lineHeight); document.documentElement.style.setProperty('--reader-leading-effective', app.language === 'zh' ? settings.lineHeight : Math.min(settings.lineHeight, 1.85));
   const light = settings.theme === 'light' || (settings.theme === 'system' && localStorage.getItem('tgn-live-theme') === 'light'); document.body.classList.toggle('light', light);
+  requestAnimationFrame(() => { if (app.followLatest && app.currentScreen === 'story') scrollToLatest('instant'); else restoreReadingAnchor(anchor); });
 }
 
 function focusableIn(node) { return $$Within(node, 'button:not(:disabled), input:not(:disabled), textarea:not(:disabled), [href], [tabindex]:not([tabindex="-1"])'); }
@@ -448,7 +628,7 @@ function closeSheet(restore = true) {
   if (!app.activeSheet) return;
   const panel = app.activeSheet; panel.classList.remove('open'); panel.setAttribute('aria-hidden','true'); els.scrim.hidden = true;
   [els.openStatus, els.openObservability].forEach((button) => button?.setAttribute('aria-expanded','false'));
-  const trigger = app.sheetTrigger; app.activeSheet = null; app.sheetTrigger = null; if (restore) trigger?.focus();
+  const trigger = app.sheetTrigger; app.activeSheet = null; app.sheetTrigger = null; if (restore) trigger?.focus(); observeVisibleMarks();
 }
 
 function applyGame(game, options = {}) {
@@ -466,32 +646,43 @@ async function loadGame(id) {
 
 function updateProvisional(text) {
   if (!app.pendingAction) return; app.pendingAction.text = `${app.pendingAction.text || ''}${text}`;
-  const node = $('#provisional-turn p'); if (node) node.textContent = app.pendingAction.text || t('turn.waiting');
+  syncProvisionalTurn();
+  if (app.pendingAction.timing?.firstNarrativePaintMs === undefined) markTurnPaint('firstNarrativePaintMs', 'first-narrative-paint', value => record('first-narrative-paint', `${Math.round(value)}ms`));
   if (app.followLatest) requestAnimationFrame(() => scrollToLatest('smooth'));
 }
 
 function showGrowth(changes) {
-  const items = safeArray(changes).filter(Boolean); if (!items.length) return;
+  const all = safeArray(changes); const kinds = safeArray(app.lastMetrics?.changeKinds);
+  const items = all.filter((change, i) => change && (kinds.length !== all.length || ['realm','capability','inventory','coins','leverage','relationship'].includes(kinds[i]?.field) || (kinds[i]?.field === 'opportunity' && kinds[i]?.op === 'fulfill')));
+  if (!items.length) return;
+  const anchor = captureReadingAnchor(); const shouldFollow = app.followLatest;
   const language = contentLanguage(app.turn?.language); const dir = contentDirection(language);
-  els.growth.hidden = false; els.growth.innerHTML = `<button type="button" aria-label="${escapeHtml(t('growth.close'))}">×</button><h2>${escapeHtml(t('growth.title'))}</h2><ul lang="${language}" dir="${dir}">${items.slice(0,6).map((change) => `<li>${escapeHtml(change)}</li>`).join('')}</ul>`;
-  els.growth.querySelector('button').addEventListener('click', () => { els.growth.hidden = true; }); setTimeout(() => { els.growth.hidden = true; }, 7000);
+  els.growth.hidden = false; els.growth.innerHTML = `<button type="button" aria-label="${escapeHtml(t('growth.close'))}">×</button><h2>${escapeHtml(t('growth.title'))}</h2><ul lang="${language}" dir="${dir}">${items.slice(0,3).map((change) => `<li>${escapeHtml(change)}</li>`).join('')}</ul>`;
+  els.growth.querySelector('button').addEventListener('click', () => { const closeAnchor = captureReadingAnchor(); els.growth.hidden = true; requestAnimationFrame(() => restoreReadingAnchor(closeAnchor)); });
+  requestAnimationFrame(() => { if (shouldFollow) scrollToLatest('instant'); else restoreReadingAnchor(anchor); });
 }
 
 function handleTurnEvent(name, data) {
   if (name === 'stage') { app.pendingAction.stage = data?.name || 'processing'; app.pendingAction.reportedElapsed = Number(data?.elapsedMs) || 0; record(`stage:${app.pendingAction.stage}`, data?.status || ''); renderGeneration(); return; }
-  if (name === 'text') { const delta = data?.delta || ''; if (delta) { if (!app.pendingAction.firstVisibleAt) { app.pendingAction.firstVisibleAt = Date.now(); record('first-visible-narrative', `${app.pendingAction.firstVisibleAt - app.startedAt}ms`); } updateProvisional(delta); } return; }
+  if (name === 'text') { const delta = data?.delta || ''; if (delta) updateProvisional(delta); return; }
   if (name === 'complete') {
+    const timing = app.pendingAction?.timing; markTiming(timing, 'canonicalCompleteReceivedMs', 'canonical-complete-received');
+    if (timing) timing.canonicalTurnKey = turnKey(data?.turn);
     const elapsed = Date.now() - app.startedAt; record('complete', `${elapsed}ms`); app.turn = data?.turn || null; app.game = data?.game || app.game; app.lastMetrics = data?.metrics || app.turn?.metrics || null;
-    if (app.turn) app.turn.metrics = app.lastMetrics || app.turn.metrics; const changes = app.turn?.changes; app.pendingAction = null; app.stream = null; app.startedAt = null; clearDraft(); applyGame(app.game); renderGeneration(); renderActions(); refreshLibrary(); showGrowth(changes); toast(t('turn.saved')); return;
+    if (app.turn) app.turn.metrics = app.lastMetrics || app.turn.metrics; const changes = app.turn?.changes; app.pendingAction = null; app.stream = null; app.startedAt = null; clearDraft(); applyGame(app.game); renderGeneration(); renderActions(); refreshLibrary(); showGrowth(changes); toast(t('turn.saved'));
+    finishTurnTiming('complete', timing);
+    markTurnPaint('choicesReadyPaintMs', 'next-choices-ready-paint', value => record('next-choices-ready-paint', `${Math.round(value)}ms`), timing);
+    observeVisibleMarks(); return;
   }
   if (name === 'error') failTurn(data?.message ? apiError(data) : t('turn.failed'), data);
 }
 
 async function submitTurn(action) {
   const text = String(action || els.customAction.value || '').trim(); if (!text || !app.game?.id || app.stream) return;
-  const shouldFollow = app.followLatest || nearStoryBottom();
-  els.turnError.textContent = ''; els.retry.hidden = true; clearDraft(); els.customAction.value = ''; resizeComposer(); app.followLatest = shouldFollow;
-  app.pendingAction = { text:'', action:text, language:app.language, stage:'validating', requestId:requestId(), reportedElapsed:0 }; app.startedAt = Date.now(); app.stream = new AbortController(); record('action-click', text.slice(0,80)); renderNarrative({ forceLatest:shouldFollow }); renderActions(); renderGeneration(); app.timer = setInterval(renderGeneration, 250);
+  const shouldFollow = app.followLatest; const turnRequestId = requestId();
+  els.turnError.textContent = ''; els.retry.hidden = true; els.growth.hidden = true; clearDraft(); els.customAction.value = ''; resizeComposer();
+  app.pendingAction = { text:'', action:text, language:app.language, stage:'validating', requestId:turnRequestId, reportedElapsed:0, timing:beginTurnTiming(turnRequestId) }; app.startedAt = Date.now(); app.stream = new AbortController(); record('action-click', text.slice(0,80)); renderNarrative({ forceLatest:shouldFollow }); renderActions(); renderGeneration();
+  markTurnPaint('immediateFeedbackPaintMs', 'immediate-feedback-paint', value => record('immediate-feedback-paint', `${Math.round(value)}ms`)); app.timer = setInterval(renderGeneration, 250);
   try {
     const response = await fetch(`${API}/games/${encodeURIComponent(app.game.id)}/turns`, { method:'POST', headers:{Accept:'text/event-stream','Content-Type':'application/json'}, body:JSON.stringify({ action:text, expectedVersion:app.game.version, requestId:app.pendingAction.requestId, language:app.pendingAction.language }), signal:app.stream.signal });
     await consumeSse(response, handleTurnEvent, () => Boolean(app.stream));
@@ -499,19 +690,19 @@ async function submitTurn(action) {
 }
 
 function failTurn(message, details = {}) {
-  record('turn-error', `${details.code || 'unknown'} · ${message}`); app.stream = null; app.startedAt = null;
+  record('turn-error', `${details.code || 'unknown'} · ${message}`); finishTurnTiming('error'); app.stream = null; app.startedAt = null;
   if (app.pendingAction) { app.pendingAction.stage = 'not_canon'; saveDraft(app.pendingAction.action); }
   els.turnError.textContent = message; els.retry.hidden = !app.pendingAction?.action; renderGeneration(); renderNarrative(); renderActions();
 }
 
 async function cancelTurn() {
   const gameId = app.game?.id; if (!gameId || !app.stream) return;
-  const previousVersion = app.game.version; const controller = app.stream; const pending = app.pendingAction; app.stream = null; controller.abort(); app.startedAt = null; record('cancel-click', gameId);
+  const previousVersion = app.game.version; const controller = app.stream; const pending = app.pendingAction; const timing = pending?.timing; app.stream = null; controller.abort(); app.startedAt = null; record('cancel-click', gameId);
   try {
     const payload = await fetchJson(`/games/${encodeURIComponent(gameId)}/cancel`, { method:'POST' }); const current = await fetchJson(`/games/${encodeURIComponent(gameId)}`);
-    if (current.game.version > previousVersion) { app.pendingAction = null; clearDraft(); applyGame(current.game); els.turnError.textContent = t('turn.cancelWon'); els.retry.hidden = true; }
-    else { app.pendingAction = pending ? { ...pending, text:'', stage:payload.cancelled ? 'cancelled' : 'cancel_pending' } : null; saveDraft(pending?.action || ''); applyGame(current.game); els.turnError.textContent = payload.cancelled ? t('turn.cancelled') : t('turn.cancelPending'); els.retry.hidden = !pending?.action; }
-  } catch (error) { saveDraft(pending?.action || ''); els.turnError.textContent = t('turn.cancelUnknown', { message:error.message }); els.retry.hidden = !pending?.action; }
+    if (current.game.version > previousVersion) { markTiming(timing, 'canonicalCompleteReceivedMs', 'canonical-complete-recovered'); finishTurnTiming('completed-before-cancel', timing); app.pendingAction = null; clearDraft(); applyGame(current.game); els.turnError.textContent = t('turn.cancelWon'); els.retry.hidden = true; }
+    else { finishTurnTiming(payload.cancelled ? 'cancelled' : 'cancel-pending', timing); app.pendingAction = pending ? { ...pending, text:'', stage:payload.cancelled ? 'cancelled' : 'cancel_pending' } : null; saveDraft(pending?.action || ''); applyGame(current.game); els.turnError.textContent = payload.cancelled ? t('turn.cancelled') : t('turn.cancelPending'); els.retry.hidden = !pending?.action; }
+  } catch (error) { finishTurnTiming('cancel-unknown', timing); saveDraft(pending?.action || ''); els.turnError.textContent = t('turn.cancelUnknown', { message:error.message }); els.retry.hidden = !pending?.action; }
   finally { renderGeneration(); renderNarrative(); renderActions(); }
 }
 
@@ -530,25 +721,59 @@ function clearDraft() { const key = draftKey(); if (key) localStorage.removeItem
 function restoreDraft(changedGame = false) { if (!changedGame && document.activeElement === els.customAction) return; const key = draftKey(); const draft = key ? localStorage.getItem(key) || '' : ''; els.customAction.value = draft; els.draftStatus.textContent = draft ? t('draft.restored') : t('actions.draftIdle'); resizeComposer(); }
 
 function resizeComposer() { els.customAction.style.height = 'auto'; els.customAction.style.height = `${Math.min(106, Math.max(32, els.customAction.scrollHeight))}px`; updateDockHeight(); }
-function updateDockHeight() { requestAnimationFrame(() => { document.documentElement.style.setProperty('--dock-height', `${els.actionArea.offsetHeight}px`); }); }
-function scrollToLatest(behavior = 'smooth') { app.followLatest = true; els.latest.hidden = true; window.scrollTo({ top:document.documentElement.scrollHeight, behavior }); }
+function updateDockHeight() {
+  if (app.dockFrame) cancelAnimationFrame(app.dockFrame);
+  const anchor = captureReadingAnchor(); const shouldFollow = app.followLatest;
+  app.dockFrame = requestAnimationFrame(() => {
+    app.dockFrame = null; const height = els.actionArea.offsetHeight; const current = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--dock-height')) || 0;
+    if (Math.abs(current - height) > .5) document.documentElement.style.setProperty('--dock-height', `${height}px`);
+    requestAnimationFrame(() => { if (shouldFollow && app.currentScreen === 'story') scrollToLatest('instant'); else restoreReadingAnchor(anchor); });
+  });
+}
+function scrollToLatest(behavior = 'smooth') {
+  app.followLatest = true; els.latest.hidden = true; app.programmaticScrollUntil = performance.now() + (behavior === 'smooth' ? 900 : 140);
+  window.scrollTo({ top:document.documentElement.scrollHeight, behavior });
+}
+
+function lockLatestFollowing() {
+  if (app.currentScreen !== 'story' || !app.followLatest) return;
+  app.followLatest = false; els.latest.hidden = document.body.classList.contains('reader-mode'); record('reading-position-locked', `${Math.round(window.scrollY)}px`);
+}
 
 function updateScrollIntent() {
-  if (app.currentScreen !== 'story') return; app.followLatest = nearStoryBottom(); els.latest.hidden = app.followLatest || Boolean(document.body.classList.contains('reader-mode'));
+  const current = window.scrollY;
+  if (app.currentScreen === 'story' && app.followLatest && current < app.lastScrollY - 2 && performance.now() > app.programmaticScrollUntil) lockLatestFollowing();
+  app.lastScrollY = current; els.latest.hidden = app.followLatest || Boolean(document.body.classList.contains('reader-mode'));
+}
+
+function handleWheelIntent(event) {
+  if (event.deltaY < 0) lockLatestFollowing();
+}
+
+function handleTouchStart(event) {
+  app.touchStartY = event.touches[0]?.clientY ?? null;
+}
+
+function handleTouchMove(event) {
+  const current = event.touches[0]?.clientY; if (current == null || app.touchStartY == null) return;
+  if (current > app.touchStartY + 6) lockLatestFollowing(); app.touchStartY = current;
 }
 
 function updateViewport() {
   const viewport = window.visualViewport; if (!viewport) return;
+  const anchor = captureReadingAnchor(); const shouldFollow = app.followLatest; app.programmaticScrollUntil = performance.now() + 180;
   const inset = Math.max(0, window.innerHeight - viewport.height - viewport.offsetTop); document.documentElement.style.setProperty('--keyboard-inset', `${inset}px`);
   const keyboardOpen = viewport.height < window.innerHeight * .76 && document.activeElement === els.customAction; document.body.classList.toggle('keyboard-open', keyboardOpen); updateDockHeight();
+  requestAnimationFrame(() => { if (shouldFollow && app.currentScreen === 'story') scrollToLatest('instant'); else restoreReadingAnchor(anchor); });
 }
 
 function closeStoryMenu() { els.storyMenuPopover.hidden = true; els.storyMenu.setAttribute('aria-expanded','false'); els.exportOptions.hidden = true; els.exportMenu?.setAttribute('aria-expanded','false'); }
 function download(format) { if (!app.game?.id) return; const link = document.createElement('a'); link.href = `${API}/games/${encodeURIComponent(app.game.id)}/export?format=${format}`; link.download = ''; document.body.append(link); link.click(); link.remove(); record('download', format); }
 
 function toggleReader() {
+  const anchor = captureReadingAnchor(); const shouldFollow = app.followLatest;
   const enabled = document.body.classList.toggle('reader-mode'); els.reader.setAttribute('aria-pressed', String(enabled)); els.reader.setAttribute('aria-label', enabled ? t('story.readerExit') : t('story.readerEnter')); closeStoryMenu();
-  if (!enabled) { updateDockHeight(); scrollToLatest('instant'); }
+  updateDockHeight(); requestAnimationFrame(() => { if (shouldFollow) scrollToLatest('instant'); else restoreReadingAnchor(anchor); els.latest.hidden = enabled || app.followLatest; });
 }
 
 function bindEvents() {
@@ -580,11 +805,17 @@ function bindEvents() {
   $('#theme-toggle').addEventListener('click', () => { const next = document.body.classList.contains('light') ? 'dark' : 'light'; localStorage.setItem('tgn-live-theme', next); saveReadingSettings({ theme:next }); });
   document.addEventListener('click', (event) => { if (!els.storyMenuPopover.hidden && !els.storyMenuPopover.contains(event.target) && !els.storyMenu.contains(event.target)) closeStoryMenu(); });
   document.addEventListener('keydown', (event) => {
+    const editing = ['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName) || document.activeElement?.isContentEditable;
+    if (!editing && (['ArrowUp','PageUp','Home'].includes(event.key) || (event.key === ' ' && event.shiftKey))) lockLatestFollowing();
     if (event.key === 'Escape') { if (app.activeSheet) closeSheet(); else closeStoryMenu(); }
     if (event.key === 'Tab' && app.activeSheet) { const items = focusableIn(app.activeSheet); if (!items.length) return; const first = items[0]; const last = items.at(-1); if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); } else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); } }
   });
-  window.addEventListener('scroll', updateScrollIntent, { passive:true }); window.visualViewport?.addEventListener('resize', updateViewport); window.visualViewport?.addEventListener('scroll', updateViewport);
-  new ResizeObserver(updateDockHeight).observe(els.actionArea);
+  window.addEventListener('scroll', updateScrollIntent, { passive:true }); window.addEventListener('wheel', handleWheelIntent, { passive:true }); window.addEventListener('touchstart', handleTouchStart, { passive:true }); window.addEventListener('touchmove', handleTouchMove, { passive:true }); window.visualViewport?.addEventListener('resize', updateViewport); window.visualViewport?.addEventListener('scroll', updateViewport);
+  window.addEventListener('scroll', observeVisibleMarks, {passive:true});
+  window.addEventListener('resize', observeVisibleMarks, {passive:true});
+  document.addEventListener('visibilitychange', observeVisibleMarks);
+  window.visualViewport?.addEventListener('resize', observeVisibleMarks);
+  new ResizeObserver(() => { updateDockHeight(); observeVisibleMarks(); }).observe(els.actionArea);
   window.addEventListener('offline', () => { els.connection.hidden = false; setProvider(null); }); window.addEventListener('online', refreshHealth);
   window.addEventListener('beforeunload', () => { if (app.stream && app.game?.id) navigator.sendBeacon?.(`${API}/games/${encodeURIComponent(app.game.id)}/cancel`); });
 }
@@ -596,4 +827,4 @@ async function initialize() {
 }
 
 initialize();
-window.tgnLive = { download, refreshHealth, refreshLibrary, refreshWorlds, openWorld, showHub, setLanguage, auditMessages, get language() { return app.language; } };
+window.tgnLive = { download, refreshHealth, refreshLibrary, refreshWorlds, openWorld, showHub, setLanguage, auditMessages, get language() { return app.language; }, getTimings() { return structuredClone(app.clientTimings); } };

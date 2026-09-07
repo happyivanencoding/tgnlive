@@ -1,0 +1,2466 @@
+[
+  {
+    "turn": 1,
+    "action": "开始我的故事",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 0
+    },
+    "coins": 22,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶并判断常见的温度与沉淀变化；陌生方仍需逐步验证。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-materials",
+        "name": "凉雾墨原料包",
+        "description": "你已付清的一份原料，只够完成一小批",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "陌生"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": []
+    },
+    "changes": []
+  },
+  {
+    "turn": 2,
+    "action": "我把便携蒸瓶搬到公共火台，按凉雾墨公开方开始炼制这一小批，先把原料变成能验收的成品。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 4
+    },
+    "coins": 22,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，判断常见的温度与沉淀变化；现已能在凉雾墨炼制中及时撤火、排出浑液，纠正一次明确的回温偏差。限制：仅适用于已掌握的低阶完整公开方，陌生方仍需逐步验证。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-ink",
+        "name": "凉雾墨",
+        "description": "一小陶匣新炼成的淡蓝薄膏，可使手掌大小的密封包保鲜三日；可现场验货、出售，或留作低阶刻式练习材料。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "陌生"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "ou-lan-preservation-trade",
+          "name": "邮船药箱的凉雾墨交易",
+          "payoff": "通过现场验货可得六枚潮券；若为整箱药包完成封护，可换今晚夜航的一格小货位。",
+          "approach": "携带这匣凉雾墨向欧岚选择现金验货或药箱封护交易。",
+          "status": "open",
+          "offeredAtTurn": 2
+        }
+      ]
+    },
+    "changes": [
+      "失去 凉雾墨原料包",
+      "获得 凉雾墨",
+      "能力提升: 小批配墨",
+      "修行进度 +4",
+      "可争取的成长: 邮船药箱的凉雾墨交易",
+      "沈舟在砾钟港旧邮市公共火台完成了一小批凉雾墨；他用错味校准发现并纠正第二次回温过早，成品可使手掌大小的密封包保鲜三日。",
+      "欧岚看过凉雾墨封口后提出两种待选交易：现场验货合格即付六枚潮券，或由沈舟为整箱药包封护以换取今晚夜航的一格小货位；均尚未成交。"
+    ]
+  },
+  {
+    "turn": 3,
+    "action": "我带凉雾墨到欧岚的药箱前现场验货，确认合格后收取六枚潮券。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 4
+    },
+    "coins": 28,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，判断常见的温度与沉淀变化；现已能在凉雾墨炼制中及时撤火、排出浑液，纠正一次明确的回温偏差。限制：仅适用于已掌握的低阶完整公开方，陌生方仍需逐步验证。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "ou-lan-preservation-trade",
+          "name": "邮船药箱的凉雾墨交易",
+          "payoff": "通过现场验货可得六枚潮券；若为整箱药包完成封护，可换今晚夜航的一格小货位。",
+          "approach": "携带这匣凉雾墨向欧岚选择现金验货或药箱封护交易。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟选择现场验货，凉雾墨合格后获得六枚潮券；夜航小货位未成交。",
+          "settledAtTurn": 3
+        }
+      ]
+    },
+    "changes": [
+      "潮券+6",
+      "失去 凉雾墨",
+      "欧岚: 好奇",
+      "成长兑现: 邮船药箱的凉雾墨交易",
+      "沈舟在欧岚的药箱前完成凉雾墨现场验货；欧岚以蜡封药包和验温铜片确认其保鲜效果合格。",
+      "欧岚按约付给沈舟六枚潮券；用于验货的整匣凉雾墨已留在邮船药箱处。"
+    ]
+  },
+  {
+    "turn": 4,
+    "action": "我去找弥策，先询问旧中继图能通往哪座外港、路线和风险，再根据他说的条件决定是否用潮券或剩余凉雾墨交换。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 4
+    },
+    "coins": 28,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，判断常见的温度与沉淀变化；现已能在凉雾墨炼制中及时撤火、排出浑液，纠正一次明确的回温偏差。限制：仅适用于已掌握的低阶完整公开方，陌生方仍需逐步验证。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mi-ce",
+        "name": "弥策",
+        "attitude": "中立"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "ou-lan-preservation-trade",
+          "name": "邮船药箱的凉雾墨交易",
+          "payoff": "通过现场验货可得六枚潮券；若为整箱药包完成封护，可换今晚夜航的一格小货位。",
+          "approach": "携带这匣凉雾墨向欧岚选择现金验货或药箱封护交易。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟选择现场验货，凉雾墨合格后获得六枚潮券；夜航小货位未成交。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "mi-ce-old-relay-map",
+          "name": "取得白帆外港旧中继图",
+          "payoff": "获得砾钟港至白帆外港的三处落签点与本次夜航前的落签说明，可据此规划小件递物路线。",
+          "approach": "向弥策支付二十枚潮券，或谈成他接受的等值交换；失修潮汐桩在大雾中存在递物入礁湾的风险。",
+          "status": "open",
+          "offeredAtTurn": 4
+        }
+      ]
+    },
+    "changes": [
+      "弥策: 中立",
+      "可争取的成长: 取得白帆外港旧中继图",
+      "弥策说明旧中继图标出砾钟港至白帆外港的旧递物线，仍有三个可用落签点，适合递送小件药材、配方抄本等货物。",
+      "据弥策所说，其中一处潮汐桩已半年无人维护；大雾时递物可能被拖入礁湾，需自行承担寻回风险。",
+      "弥策开价二十枚潮券出售旧中继图，并附今晚夜航前的落签说明；沈舟当前只有八枚潮券，尚未成交。"
+    ]
+  },
+  {
+    "turn": 5,
+    "action": "我用八枚潮券加上为弥策校验递物签的服务，尝试谈下旧中继图；若他不接受，就先问清最低条件。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 4
+    },
+    "coins": 20,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，判断常见的温度与沉淀变化；现已能在凉雾墨炼制中及时撤火、排出浑液，纠正一次明确的回温偏差。限制：仅适用于已掌握的低阶完整公开方，陌生方仍需逐步验证。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "old-relay-map",
+        "name": "白帆外港旧中继图",
+        "description": "弥策交出的旧图与本次夜航前的落签说明，标明砾钟港至白帆外港的三个可用落签点；东侧礁湾附近的失修潮汐桩在大雾中有递物失落风险。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mi-ce",
+        "name": "弥策",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "ou-lan-preservation-trade",
+          "name": "邮船药箱的凉雾墨交易",
+          "payoff": "通过现场验货可得六枚潮券；若为整箱药包完成封护，可换今晚夜航的一格小货位。",
+          "approach": "携带这匣凉雾墨向欧岚选择现金验货或药箱封护交易。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟选择现场验货，凉雾墨合格后获得六枚潮券；夜航小货位未成交。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "mi-ce-old-relay-map",
+          "name": "取得白帆外港旧中继图",
+          "payoff": "获得砾钟港至白帆外港的三处落签点与本次夜航前的落签说明，可据此规划小件递物路线。",
+          "approach": "向弥策支付二十枚潮券，或谈成他接受的等值交换；失修潮汐桩在大雾中存在递物入礁湾的风险。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "沈舟支付八枚潮券，并完成一次递物签校验服务，取得旧中继图与本次夜航前的落签说明。",
+          "settledAtTurn": 5
+        }
+      ]
+    },
+    "changes": [
+      "潮券-8",
+      "获得 白帆外港旧中继图",
+      "弥策: 好奇",
+      "成长兑现: 取得白帆外港旧中继图",
+      "沈舟以八枚潮券和一次递物签校验服务换得弥策的白帆外港旧中继图及本次夜航前的落签说明。",
+      "沈舟用错味校准发现弥策递物签的补墨内层有细裂；弥策按他的指示以湿布压签、余温回收后，潮纹重新闭合。",
+      "弥策说明图上三个落签点可由持图者自行规划递物，但东侧礁湾附近的失修潮汐桩仍不宜在大雾中使用。"
+    ]
+  },
+  {
+    "turn": 6,
+    "action": "我带着旧中继图去码头附近打听小件药材的低价货源，先确认能否用凉雾墨或校验服务换货，再决定是否筹备外港递物。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 4
+    },
+    "coins": 20,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，判断常见的温度与沉淀变化；现已能在凉雾墨炼制中及时撤火、排出浑液，纠正一次明确的回温偏差。限制：仅适用于已掌握的低阶完整公开方，陌生方仍需逐步验证。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "old-relay-map",
+        "name": "白帆外港旧中继图",
+        "description": "弥策交出的旧图与本次夜航前的落签说明，标明砾钟港至白帆外港的三个可用落签点；东侧礁湾附近的失修潮汐桩在大雾中有递物失落风险。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mi-ce",
+        "name": "弥策",
+        "attitude": "好奇"
+      },
+      {
+        "id": "tao-qing",
+        "name": "陶青",
+        "role": "药材贩",
+        "attitude": "中立"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "ou-lan-preservation-trade",
+          "name": "邮船药箱的凉雾墨交易",
+          "payoff": "通过现场验货可得六枚潮券；若为整箱药包完成封护，可换今晚夜航的一格小货位。",
+          "approach": "携带这匣凉雾墨向欧岚选择现金验货或药箱封护交易。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟选择现场验货，凉雾墨合格后获得六枚潮券；夜航小货位未成交。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "mi-ce-old-relay-map",
+          "name": "取得白帆外港旧中继图",
+          "payoff": "获得砾钟港至白帆外港的三处落签点与本次夜航前的落签说明，可据此规划小件递物路线。",
+          "approach": "向弥策支付二十枚潮券，或谈成他接受的等值交换；失修潮汐桩在大雾中存在递物入礁湾的风险。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "沈舟支付八枚潮券，并完成一次递物签校验服务，取得旧中继图与本次夜航前的落签说明。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "tao-qing-medicine-materials",
+          "name": "以校验换取外港试货材料",
+          "payoff": "获得一包青壳藻与两束苦叶根，可配合凉雾墨制作适合白帆外港递送的低价试货。",
+          "approach": "支付四枚潮券，或替陶青校验一罐止潮墨并指出一处能实际纠正的主要偏差。",
+          "status": "open",
+          "offeredAtTurn": 6
+        }
+      ]
+    },
+    "changes": [
+      "抵达 砾钟港码头外缘的临时药材摊",
+      "陶青: 中立",
+      "可争取的成长: 以校验换取外港试货材料",
+      "药材贩陶青称，白帆外港的药铺会收用凉雾墨封护的小件青壳藻与苦叶根；此说法尚待实际交易验证。",
+      "陶青开价四枚潮券出售一包青壳藻与两束苦叶根，或以一次成功校验他准备送船的止潮墨交换。"
+    ]
+  },
+  {
+    "turn": 7,
+    "action": "我替陶青校验止潮墨，指出一处能实际纠正的偏差，换取青壳藻与苦叶根，筹备第一笔外港递物试货。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 6
+    },
+    "coins": 20,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，判断常见的温度、沉淀与搅拌变化；现已能在凉雾墨炼制中纠正一次明确回温偏差，也能对低阶止潮墨指出并指导修正一处由搅拌失序造成的沉渣问题。限制：仅适用于已掌握的低阶完整公开方或可见的单一偏差，陌生方仍需逐步验证。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "old-relay-map",
+        "name": "白帆外港旧中继图",
+        "description": "弥策交出的旧图与本次夜航前的落签说明，标明砾钟港至白帆外港的三个可用落签点；东侧礁湾附近的失修潮汐桩在大雾中有递物失落风险。",
+        "qty": 1
+      },
+      {
+        "id": "green-shell-algae",
+        "name": "青壳藻",
+        "description": "陶青以止潮墨校验交换的一包晒干青壳藻，可与凉雾墨配合封护小件药材，适合制作外港递物试货。",
+        "qty": 1
+      },
+      {
+        "id": "bitterleaf-root",
+        "name": "苦叶根",
+        "description": "陶青以止潮墨校验交换的两束苦叶根，可作为低价药材试货；用凉雾墨封护后可尝试递送至白帆外港。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mi-ce",
+        "name": "弥策",
+        "attitude": "好奇"
+      },
+      {
+        "id": "tao-qing",
+        "name": "陶青",
+        "role": "药材贩",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "ou-lan-preservation-trade",
+          "name": "邮船药箱的凉雾墨交易",
+          "payoff": "通过现场验货可得六枚潮券；若为整箱药包完成封护，可换今晚夜航的一格小货位。",
+          "approach": "携带这匣凉雾墨向欧岚选择现金验货或药箱封护交易。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟选择现场验货，凉雾墨合格后获得六枚潮券；夜航小货位未成交。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "mi-ce-old-relay-map",
+          "name": "取得白帆外港旧中继图",
+          "payoff": "获得砾钟港至白帆外港的三处落签点与本次夜航前的落签说明，可据此规划小件递物路线。",
+          "approach": "向弥策支付二十枚潮券，或谈成他接受的等值交换；失修潮汐桩在大雾中存在递物入礁湾的风险。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "沈舟支付八枚潮券，并完成一次递物签校验服务，取得旧中继图与本次夜航前的落签说明。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "tao-qing-medicine-materials",
+          "name": "以校验换取外港试货材料",
+          "payoff": "获得一包青壳藻与两束苦叶根，可配合凉雾墨制作适合白帆外港递送的低价试货。",
+          "approach": "支付四枚潮券，或替陶青校验一罐止潮墨并指出一处能实际纠正的主要偏差。",
+          "status": "fulfilled",
+          "offeredAtTurn": 6,
+          "materialized": true,
+          "result": "沈舟校验出止潮墨因苦叶汁入盐后搅拌过急而形成的底层细渣，并协助陶青过滤、复搅使其通过湿帆布试涂；陶青按约交出一包青壳藻与两束苦叶根。",
+          "settledAtTurn": 7
+        }
+      ]
+    },
+    "changes": [
+      "获得 青壳藻",
+      "获得 苦叶根",
+      "陶青: 好奇",
+      "能力提升: 小批配墨",
+      "修行进度 +2",
+      "成长兑现: 以校验换取外港试货材料",
+      "沈舟替陶青校验止潮墨，发现苦叶汁入盐后搅拌过急形成底层细渣；经滤出上层清液并同向复搅后，止潮墨通过湿帆布试涂。",
+      "陶青按约以一包青壳藻和两束苦叶根交换沈舟的止潮墨校验服务。"
+    ]
+  },
+  {
+    "turn": 8,
+    "action": "回公共火台，用青壳藻和苦叶根炼一小批凉雾墨，封护试货后避开东侧坏桩，再决定是否赶今晚夜航。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 9
+    },
+    "coins": 20,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，判断常见的温度、沉淀与搅拌变化；现能完成一小批凉雾墨，并将其用于封护手掌大小的药材试货。限制：仅适用于已掌握的低阶完整公开方或可见的单一偏差，陌生方仍需逐步验证；材料不足或火候失控时不能保证成品。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "old-relay-map",
+        "name": "白帆外港旧中继图",
+        "description": "弥策交出的旧图与本次夜航前的落签说明，标明砾钟港至白帆外港的三个可用落签点；东侧礁湾附近的失修潮汐桩在大雾中有递物失落风险。",
+        "qty": 1
+      },
+      {
+        "id": "bitterleaf-root",
+        "name": "苦叶根",
+        "description": "剩余一束苦叶根，可作为低价药材试货或下一次低阶潮墨的植物材料。",
+        "qty": 2
+      },
+      {
+        "id": "sealed-algae-root-trial",
+        "name": "封护药材试货",
+        "description": "以一小批凉雾墨封护的一包青壳藻与切段苦叶根，可使这份手掌大小的密封药材包保鲜三日；可作为白帆外港递送试货、本地问价样品或低价转卖货。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mi-ce",
+        "name": "弥策",
+        "attitude": "好奇"
+      },
+      {
+        "id": "tao-qing",
+        "name": "陶青",
+        "role": "药材贩",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "ou-lan-preservation-trade",
+          "name": "邮船药箱的凉雾墨交易",
+          "payoff": "通过现场验货可得六枚潮券；若为整箱药包完成封护，可换今晚夜航的一格小货位。",
+          "approach": "携带这匣凉雾墨向欧岚选择现金验货或药箱封护交易。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟选择现场验货，凉雾墨合格后获得六枚潮券；夜航小货位未成交。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "mi-ce-old-relay-map",
+          "name": "取得白帆外港旧中继图",
+          "payoff": "获得砾钟港至白帆外港的三处落签点与本次夜航前的落签说明，可据此规划小件递物路线。",
+          "approach": "向弥策支付二十枚潮券，或谈成他接受的等值交换；失修潮汐桩在大雾中存在递物入礁湾的风险。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "沈舟支付八枚潮券，并完成一次递物签校验服务，取得旧中继图与本次夜航前的落签说明。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "tao-qing-medicine-materials",
+          "name": "以校验换取外港试货材料",
+          "payoff": "获得一包青壳藻与两束苦叶根，可配合凉雾墨制作适合白帆外港递送的低价试货。",
+          "approach": "支付四枚潮券，或替陶青校验一罐止潮墨并指出一处能实际纠正的主要偏差。",
+          "status": "fulfilled",
+          "offeredAtTurn": 6,
+          "materialized": true,
+          "result": "沈舟校验出止潮墨因苦叶汁入盐后搅拌过急而形成的底层细渣，并协助陶青过滤、复搅使其通过湿帆布试涂；陶青按约交出一包青壳藻与两束苦叶根。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "white-sail-trial-shipment",
+          "name": "西侧落签点药材试货",
+          "payoff": "将封护药材试货递至白帆外港后，可向当地药铺实际问价、出售或建立后续小件递送的可核验记录。",
+          "approach": "在今晚夜航前带试货询问托运或亲自登船，并按旧中继图使用西侧盐仓旧桩；不使用东侧礁湾失修潮汐桩。",
+          "status": "open",
+          "offeredAtTurn": 8
+        }
+      ]
+    },
+    "changes": [
+      "失去 青壳藻",
+      "苦叶根: 剩余一束苦叶根，可作为低价药材试货或下一次低阶潮墨的植物材料。",
+      "获得 封护药材试货",
+      "能力提升: 小批配墨",
+      "修行进度 +3",
+      "可争取的成长: 西侧落签点药材试货",
+      "沈舟在砾钟港旧邮市公共火台，用青壳藻与一束苦叶根炼成一小批凉雾墨；他纠正苦叶汁下得过早的回冷偏差，使成品可用于低价药材封护。",
+      "沈舟用这批凉雾墨封护出一包青壳藻与苦叶根试货，经潮湿木板旁静置一刻未返潮，可保鲜三日。",
+      "旧中继图的西侧盐仓旧桩可避开东侧礁湾的失修潮汐桩，且离今晚夜航船靠泊处最近。"
+    ]
+  },
+  {
+    "turn": 9,
+    "action": "我带着封护试货赶往夜航船，先询问西侧盐仓落签点的递送价和托运条件，不先承诺成交。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 9
+    },
+    "coins": 20,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，判断常见的温度、沉淀与搅拌变化；现能完成一小批凉雾墨，并将其用于封护手掌大小的药材试货。限制：仅适用于已掌握的低阶完整公开方或可见的单一偏差，陌生方仍需逐步验证；材料不足或火候失控时不能保证成品。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "old-relay-map",
+        "name": "白帆外港旧中继图",
+        "description": "弥策交出的旧图与本次夜航前的落签说明，标明砾钟港至白帆外港的三个可用落签点；东侧礁湾附近的失修潮汐桩在大雾中有递物失落风险。",
+        "qty": 1
+      },
+      {
+        "id": "bitterleaf-root",
+        "name": "苦叶根",
+        "description": "剩余一束苦叶根，可作为低价药材试货或下一次低阶潮墨的植物材料。",
+        "qty": 2
+      },
+      {
+        "id": "sealed-algae-root-trial",
+        "name": "封护药材试货",
+        "description": "以一小批凉雾墨封护的一包青壳藻与切段苦叶根，可使这份手掌大小的密封药材包保鲜三日；可作为白帆外港递送试货、本地问价样品或低价转卖货。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mi-ce",
+        "name": "弥策",
+        "attitude": "好奇"
+      },
+      {
+        "id": "tao-qing",
+        "name": "陶青",
+        "role": "药材贩",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [],
+      "opportunities": [
+        {
+          "id": "ou-lan-preservation-trade",
+          "name": "邮船药箱的凉雾墨交易",
+          "payoff": "通过现场验货可得六枚潮券；若为整箱药包完成封护，可换今晚夜航的一格小货位。",
+          "approach": "携带这匣凉雾墨向欧岚选择现金验货或药箱封护交易。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟选择现场验货，凉雾墨合格后获得六枚潮券；夜航小货位未成交。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "mi-ce-old-relay-map",
+          "name": "取得白帆外港旧中继图",
+          "payoff": "获得砾钟港至白帆外港的三处落签点与本次夜航前的落签说明，可据此规划小件递物路线。",
+          "approach": "向弥策支付二十枚潮券，或谈成他接受的等值交换；失修潮汐桩在大雾中存在递物入礁湾的风险。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "沈舟支付八枚潮券，并完成一次递物签校验服务，取得旧中继图与本次夜航前的落签说明。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "tao-qing-medicine-materials",
+          "name": "以校验换取外港试货材料",
+          "payoff": "获得一包青壳藻与两束苦叶根，可配合凉雾墨制作适合白帆外港递送的低价试货。",
+          "approach": "支付四枚潮券，或替陶青校验一罐止潮墨并指出一处能实际纠正的主要偏差。",
+          "status": "fulfilled",
+          "offeredAtTurn": 6,
+          "materialized": true,
+          "result": "沈舟校验出止潮墨因苦叶汁入盐后搅拌过急而形成的底层细渣，并协助陶青过滤、复搅使其通过湿帆布试涂；陶青按约交出一包青壳藻与两束苦叶根。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "white-sail-trial-shipment",
+          "name": "西侧落签点药材试货",
+          "payoff": "将封护药材试货递至白帆外港后，可向当地药铺实际问价、出售或建立后续小件递送的可核验记录。",
+          "approach": "在今晚夜航前带试货询问托运或亲自登船，并按旧中继图使用西侧盐仓旧桩；不使用东侧礁湾失修潮汐桩。",
+          "status": "open",
+          "offeredAtTurn": 8
+        },
+        {
+          "id": "mi-ce-relay-sign-checks",
+          "name": "旧递物签校验委托",
+          "payoff": "可按次获得潮券报酬，并积累可核验的递物签校验记录。",
+          "approach": "日后遇到持有旧递物签、且愿意付费校验的委托人时，先查验补墨、潮纹或封签偏差，再谈具体报酬与责任。",
+          "status": "open",
+          "offeredAtTurn": 9
+        }
+      ]
+    },
+    "changes": [
+      "可争取的成长: 旧递物签校验委托",
+      "欧岚查验封护药材试货与西侧落签说明后报出小件递送条件：三枚潮券，离港登记封口状态、重量与三日保鲜限期，白帆外港由潮栈转交青篱药铺并以西桩回签确认收货。",
+      "欧岚说明：外港拒收的试货暂存潮栈待货主领取；船方封签破损导致丢失按登记货值赔付，药材变质或药铺压价由货主承担。",
+      "弥策递来当夜雾况：西侧盐仓旧桩今夜雾薄可用。"
+    ]
+  },
+  {
+    "turn": 10,
+    "action": "支付三枚潮券，填写货主签，把封护药材交给欧岚，按西侧盐仓旧桩递往白帆外港青篱药铺。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 9
+    },
+    "coins": 17,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，判断常见的温度、沉淀与搅拌变化；现能完成一小批凉雾墨，并将其用于封护手掌大小的药材试货。限制：仅适用于已掌握的低阶完整公开方或可见的单一偏差，陌生方仍需逐步验证；材料不足或火候失控时不能保证成品。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "old-relay-map",
+        "name": "白帆外港旧中继图",
+        "description": "弥策交出的旧图与本次夜航前的落签说明，标明砾钟港至白帆外港的三个可用落签点；东侧礁湾附近的失修潮汐桩在大雾中有递物失落风险。",
+        "qty": 1
+      },
+      {
+        "id": "bitterleaf-root",
+        "name": "苦叶根",
+        "description": "剩余一束苦叶根，可作为低价药材试货或下一次低阶潮墨的植物材料。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mi-ce",
+        "name": "弥策",
+        "attitude": "好奇"
+      },
+      {
+        "id": "tao-qing",
+        "name": "陶青",
+        "role": "药材贩",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "white-sail-shipment-receipt",
+          "kind": "access",
+          "name": "白帆外港试货货主签",
+          "effect": "可凭货主号、旧中继图在砾钟港或白帆外港潮栈查询本次试货的回签、货况与给价；可向后续托运人证明曾完成小件递送登记。",
+          "scope": "仅限本次封护药材试货及其回签；不保证药铺收货、售价或后续仓位。",
+          "status": "active",
+          "acquiredAtTurn": 10,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "ou-lan-preservation-trade",
+          "name": "邮船药箱的凉雾墨交易",
+          "payoff": "通过现场验货可得六枚潮券；若为整箱药包完成封护，可换今晚夜航的一格小货位。",
+          "approach": "携带这匣凉雾墨向欧岚选择现金验货或药箱封护交易。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟选择现场验货，凉雾墨合格后获得六枚潮券；夜航小货位未成交。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "mi-ce-old-relay-map",
+          "name": "取得白帆外港旧中继图",
+          "payoff": "获得砾钟港至白帆外港的三处落签点与本次夜航前的落签说明，可据此规划小件递物路线。",
+          "approach": "向弥策支付二十枚潮券，或谈成他接受的等值交换；失修潮汐桩在大雾中存在递物入礁湾的风险。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "沈舟支付八枚潮券，并完成一次递物签校验服务，取得旧中继图与本次夜航前的落签说明。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "tao-qing-medicine-materials",
+          "name": "以校验换取外港试货材料",
+          "payoff": "获得一包青壳藻与两束苦叶根，可配合凉雾墨制作适合白帆外港递送的低价试货。",
+          "approach": "支付四枚潮券，或替陶青校验一罐止潮墨并指出一处能实际纠正的主要偏差。",
+          "status": "fulfilled",
+          "offeredAtTurn": 6,
+          "materialized": true,
+          "result": "沈舟校验出止潮墨因苦叶汁入盐后搅拌过急而形成的底层细渣，并协助陶青过滤、复搅使其通过湿帆布试涂；陶青按约交出一包青壳藻与两束苦叶根。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "white-sail-trial-shipment",
+          "name": "西侧落签点药材试货",
+          "payoff": "将封护药材试货递至白帆外港后，可向当地药铺实际问价、出售或建立后续小件递送的可核验记录。",
+          "approach": "在今晚夜航前带试货询问托运或亲自登船，并按旧中继图使用西侧盐仓旧桩；不使用东侧礁湾失修潮汐桩。",
+          "status": "fulfilled",
+          "offeredAtTurn": 8,
+          "materialized": true,
+          "result": "沈舟支付三枚潮券完成小件递送登记，封护药材试货已由夜航船按西侧盐仓旧桩递往白帆外港青篱药铺；收货、给价或拒收结果待回签确认。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "mi-ce-relay-sign-checks",
+          "name": "旧递物签校验委托",
+          "payoff": "可按次获得潮券报酬，并积累可核验的递物签校验记录。",
+          "approach": "日后遇到持有旧递物签、且愿意付费校验的委托人时，先查验补墨、潮纹或封签偏差，再谈具体报酬与责任。",
+          "status": "open",
+          "offeredAtTurn": 9
+        }
+      ]
+    },
+    "changes": [
+      "潮券-3",
+      "失去 封护药材试货",
+      "获得长期筹码: 白帆外港试货货主签",
+      "成长兑现: 西侧落签点药材试货",
+      "沈舟支付三枚潮券，填写货主签，将封护药材试货交给欧岚登记托运；货物按西侧盐仓旧桩递往白帆外港青篱药铺。",
+      "货主签登记了离港封口完整、重量两握与三日保鲜限期；白帆外港药铺会通过西侧盐仓旧桩回签写明收货货况与给价。",
+      "若青篱药铺拒收，封护药材试货将暂存白帆外港潮栈，待沈舟凭旧中继图和货主号领取。"
+    ]
+  },
+  {
+    "turn": 11,
+    "action": "去找弥策，询问他手头是否有愿意付费的旧递物签校验委托，并先谈清报酬与责任。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 9
+    },
+    "coins": 17,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，判断常见的温度、沉淀与搅拌变化；现能完成一小批凉雾墨，并将其用于封护手掌大小的药材试货。限制：仅适用于已掌握的低阶完整公开方或可见的单一偏差，陌生方仍需逐步验证；材料不足或火候失控时不能保证成品。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "old-relay-map",
+        "name": "白帆外港旧中继图",
+        "description": "弥策交出的旧图与本次夜航前的落签说明，标明砾钟港至白帆外港的三个可用落签点；东侧礁湾附近的失修潮汐桩在大雾中有递物失落风险。",
+        "qty": 1
+      },
+      {
+        "id": "bitterleaf-root",
+        "name": "苦叶根",
+        "description": "剩余一束苦叶根，可作为低价药材试货或下一次低阶潮墨的植物材料。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mi-ce",
+        "name": "弥策",
+        "attitude": "友善"
+      },
+      {
+        "id": "tao-qing",
+        "name": "陶青",
+        "role": "药材贩",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "white-sail-shipment-receipt",
+          "kind": "access",
+          "name": "白帆外港试货货主签",
+          "effect": "可凭货主号、旧中继图在砾钟港或白帆外港潮栈查询本次试货的回签、货况与给价；可向后续托运人证明曾完成小件递送登记。",
+          "scope": "仅限本次封护药材试货及其回签；不保证药铺收货、售价或后续仓位。",
+          "status": "active",
+          "acquiredAtTurn": 10,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "ou-lan-preservation-trade",
+          "name": "邮船药箱的凉雾墨交易",
+          "payoff": "通过现场验货可得六枚潮券；若为整箱药包完成封护，可换今晚夜航的一格小货位。",
+          "approach": "携带这匣凉雾墨向欧岚选择现金验货或药箱封护交易。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟选择现场验货，凉雾墨合格后获得六枚潮券；夜航小货位未成交。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "mi-ce-old-relay-map",
+          "name": "取得白帆外港旧中继图",
+          "payoff": "获得砾钟港至白帆外港的三处落签点与本次夜航前的落签说明，可据此规划小件递物路线。",
+          "approach": "向弥策支付二十枚潮券，或谈成他接受的等值交换；失修潮汐桩在大雾中存在递物入礁湾的风险。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "沈舟支付八枚潮券，并完成一次递物签校验服务，取得旧中继图与本次夜航前的落签说明。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "tao-qing-medicine-materials",
+          "name": "以校验换取外港试货材料",
+          "payoff": "获得一包青壳藻与两束苦叶根，可配合凉雾墨制作适合白帆外港递送的低价试货。",
+          "approach": "支付四枚潮券，或替陶青校验一罐止潮墨并指出一处能实际纠正的主要偏差。",
+          "status": "fulfilled",
+          "offeredAtTurn": 6,
+          "materialized": true,
+          "result": "沈舟校验出止潮墨因苦叶汁入盐后搅拌过急而形成的底层细渣，并协助陶青过滤、复搅使其通过湿帆布试涂；陶青按约交出一包青壳藻与两束苦叶根。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "white-sail-trial-shipment",
+          "name": "西侧落签点药材试货",
+          "payoff": "将封护药材试货递至白帆外港后，可向当地药铺实际问价、出售或建立后续小件递送的可核验记录。",
+          "approach": "在今晚夜航前带试货询问托运或亲自登船，并按旧中继图使用西侧盐仓旧桩；不使用东侧礁湾失修潮汐桩。",
+          "status": "fulfilled",
+          "offeredAtTurn": 8,
+          "materialized": true,
+          "result": "沈舟支付三枚潮券完成小件递送登记，封护药材试货已由夜航船按西侧盐仓旧桩递往白帆外港青篱药铺；收货、给价或拒收结果待回签确认。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "mi-ce-relay-sign-checks",
+          "name": "旧递物签校验委托",
+          "payoff": "可按次获得潮券报酬，并积累可核验的递物签校验记录。",
+          "approach": "日后遇到持有旧递物签、且愿意付费校验的委托人时，先查验补墨、潮纹或封签偏差，再谈具体报酬与责任。",
+          "status": "open",
+          "offeredAtTurn": 9
+        }
+      ]
+    },
+    "changes": [
+      "弥策: 友善",
+      "弥策介绍一桩待选旧递物签校验委托：盐商明日午前将在旧邮市东门交出两枚药柜封签，沈舟仅负责查验一处主要偏差并说明是否可修，不代签、不碰货柜，也不承担递送丢失责任。",
+      "弥策提出报酬：能指出具体偏差并给出可执行处置得一枚潮券；处置经货主当场复验通过再加一枚潮券。",
+      "沈舟触碰弥策展示的旧签后发现，其新补墨海胶过多，夜雾中可能闷裂旧潮纹边缘；可先温湿剥开厚胶层、露出原纹，再以薄盐墨补边。"
+    ]
+  },
+  {
+    "turn": 12,
+    "action": "请弥策替我留名，明早去旧邮市东门接盐商的封签校验，先指出偏差和修法，不代签、不碰货柜。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 9
+    },
+    "coins": 17,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，判断常见的温度、沉淀与搅拌变化；现能完成一小批凉雾墨，并将其用于封护手掌大小的药材试货。限制：仅适用于已掌握的低阶完整公开方或可见的单一偏差，陌生方仍需逐步验证；材料不足或火候失控时不能保证成品。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "old-relay-map",
+        "name": "白帆外港旧中继图",
+        "description": "弥策交出的旧图与本次夜航前的落签说明，标明砾钟港至白帆外港的三个可用落签点；东侧礁湾附近的失修潮汐桩在大雾中有递物失落风险。",
+        "qty": 1
+      },
+      {
+        "id": "bitterleaf-root",
+        "name": "苦叶根",
+        "description": "剩余一束苦叶根，可作为低价药材试货或下一次低阶潮墨的植物材料。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mi-ce",
+        "name": "弥策",
+        "attitude": "友善"
+      },
+      {
+        "id": "tao-qing",
+        "name": "陶青",
+        "role": "药材贩",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "white-sail-shipment-receipt",
+          "kind": "access",
+          "name": "白帆外港试货货主签",
+          "effect": "可凭货主号、旧中继图在砾钟港或白帆外港潮栈查询本次试货的回签、货况与给价；可向后续托运人证明曾完成小件递送登记。",
+          "scope": "仅限本次封护药材试货及其回签；不保证药铺收货、售价或后续仓位。",
+          "status": "active",
+          "acquiredAtTurn": 10,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "ou-lan-preservation-trade",
+          "name": "邮船药箱的凉雾墨交易",
+          "payoff": "通过现场验货可得六枚潮券；若为整箱药包完成封护，可换今晚夜航的一格小货位。",
+          "approach": "携带这匣凉雾墨向欧岚选择现金验货或药箱封护交易。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟选择现场验货，凉雾墨合格后获得六枚潮券；夜航小货位未成交。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "mi-ce-old-relay-map",
+          "name": "取得白帆外港旧中继图",
+          "payoff": "获得砾钟港至白帆外港的三处落签点与本次夜航前的落签说明，可据此规划小件递物路线。",
+          "approach": "向弥策支付二十枚潮券，或谈成他接受的等值交换；失修潮汐桩在大雾中存在递物入礁湾的风险。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "沈舟支付八枚潮券，并完成一次递物签校验服务，取得旧中继图与本次夜航前的落签说明。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "tao-qing-medicine-materials",
+          "name": "以校验换取外港试货材料",
+          "payoff": "获得一包青壳藻与两束苦叶根，可配合凉雾墨制作适合白帆外港递送的低价试货。",
+          "approach": "支付四枚潮券，或替陶青校验一罐止潮墨并指出一处能实际纠正的主要偏差。",
+          "status": "fulfilled",
+          "offeredAtTurn": 6,
+          "materialized": true,
+          "result": "沈舟校验出止潮墨因苦叶汁入盐后搅拌过急而形成的底层细渣，并协助陶青过滤、复搅使其通过湿帆布试涂；陶青按约交出一包青壳藻与两束苦叶根。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "white-sail-trial-shipment",
+          "name": "西侧落签点药材试货",
+          "payoff": "将封护药材试货递至白帆外港后，可向当地药铺实际问价、出售或建立后续小件递送的可核验记录。",
+          "approach": "在今晚夜航前带试货询问托运或亲自登船，并按旧中继图使用西侧盐仓旧桩；不使用东侧礁湾失修潮汐桩。",
+          "status": "fulfilled",
+          "offeredAtTurn": 8,
+          "materialized": true,
+          "result": "沈舟支付三枚潮券完成小件递送登记，封护药材试货已由夜航船按西侧盐仓旧桩递往白帆外港青篱药铺；收货、给价或拒收结果待回签确认。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "mi-ce-relay-sign-checks",
+          "name": "旧递物签校验委托",
+          "payoff": "可按次获得潮券报酬，并积累可核验的递物签校验记录。",
+          "approach": "日后遇到持有旧递物签、且愿意付费校验的委托人时，先查验补墨、潮纹或封签偏差，再谈具体报酬与责任。",
+          "status": "open",
+          "offeredAtTurn": 9
+        }
+      ]
+    },
+    "changes": [
+      "弥策已为沈舟在旧账上留名：明日午前可到旧邮市东门会见盐商顾阔，按约校验两枚药柜封签；沈舟不代签、不碰货柜、不承担递送损失。",
+      "弥策提醒顾阔厌恶临场加价；沈舟应在校验前重申报酬与责任边界。"
+    ]
+  },
+  {
+    "turn": 13,
+    "action": "明早前往旧邮市东门，先向顾阔重申只负责查验偏差和修法，不代签、不碰货柜、不承担递送损失，再检查两枚药柜封签。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 9
+    },
+    "coins": 19,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，判断常见的温度、沉淀与搅拌变化；现能完成一小批凉雾墨，并将其用于封护手掌大小的药材试货。限制：仅适用于已掌握的低阶完整公开方或可见的单一偏差，陌生方仍需逐步验证；材料不足或火候失控时不能保证成品。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "old-relay-map",
+        "name": "白帆外港旧中继图",
+        "description": "弥策交出的旧图与本次夜航前的落签说明，标明砾钟港至白帆外港的三个可用落签点；东侧礁湾附近的失修潮汐桩在大雾中有递物失落风险。",
+        "qty": 1
+      },
+      {
+        "id": "bitterleaf-root",
+        "name": "苦叶根",
+        "description": "剩余一束苦叶根，可作为低价药材试货或下一次低阶潮墨的植物材料。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mi-ce",
+        "name": "弥策",
+        "attitude": "友善"
+      },
+      {
+        "id": "tao-qing",
+        "name": "陶青",
+        "role": "药材贩",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "white-sail-shipment-receipt",
+          "kind": "access",
+          "name": "白帆外港试货货主签",
+          "effect": "可凭货主号、旧中继图在砾钟港或白帆外港潮栈查询本次试货的回签、货况与给价；可向后续托运人证明曾完成小件递送登记。",
+          "scope": "仅限本次封护药材试货及其回签；不保证药铺收货、售价或后续仓位。",
+          "status": "active",
+          "acquiredAtTurn": 10,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "ou-lan-preservation-trade",
+          "name": "邮船药箱的凉雾墨交易",
+          "payoff": "通过现场验货可得六枚潮券；若为整箱药包完成封护，可换今晚夜航的一格小货位。",
+          "approach": "携带这匣凉雾墨向欧岚选择现金验货或药箱封护交易。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟选择现场验货，凉雾墨合格后获得六枚潮券；夜航小货位未成交。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "mi-ce-old-relay-map",
+          "name": "取得白帆外港旧中继图",
+          "payoff": "获得砾钟港至白帆外港的三处落签点与本次夜航前的落签说明，可据此规划小件递物路线。",
+          "approach": "向弥策支付二十枚潮券，或谈成他接受的等值交换；失修潮汐桩在大雾中存在递物入礁湾的风险。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "沈舟支付八枚潮券，并完成一次递物签校验服务，取得旧中继图与本次夜航前的落签说明。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "tao-qing-medicine-materials",
+          "name": "以校验换取外港试货材料",
+          "payoff": "获得一包青壳藻与两束苦叶根，可配合凉雾墨制作适合白帆外港递送的低价试货。",
+          "approach": "支付四枚潮券，或替陶青校验一罐止潮墨并指出一处能实际纠正的主要偏差。",
+          "status": "fulfilled",
+          "offeredAtTurn": 6,
+          "materialized": true,
+          "result": "沈舟校验出止潮墨因苦叶汁入盐后搅拌过急而形成的底层细渣，并协助陶青过滤、复搅使其通过湿帆布试涂；陶青按约交出一包青壳藻与两束苦叶根。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "white-sail-trial-shipment",
+          "name": "西侧落签点药材试货",
+          "payoff": "将封护药材试货递至白帆外港后，可向当地药铺实际问价、出售或建立后续小件递送的可核验记录。",
+          "approach": "在今晚夜航前带试货询问托运或亲自登船，并按旧中继图使用西侧盐仓旧桩；不使用东侧礁湾失修潮汐桩。",
+          "status": "fulfilled",
+          "offeredAtTurn": 8,
+          "materialized": true,
+          "result": "沈舟支付三枚潮券完成小件递送登记，封护药材试货已由夜航船按西侧盐仓旧桩递往白帆外港青篱药铺；收货、给价或拒收结果待回签确认。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "mi-ce-relay-sign-checks",
+          "name": "旧递物签校验委托",
+          "payoff": "可按次获得潮券报酬，并积累可核验的递物签校验记录。",
+          "approach": "日后遇到持有旧递物签、且愿意付费校验的委托人时，先查验补墨、潮纹或封签偏差，再谈具体报酬与责任。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟在顾阔面前查出两枚药柜封签的具体主要偏差，并给出可执行处置；其中一枚经货主当场复验通过，按约获得两枚潮券。",
+          "settledAtTurn": 13
+        }
+      ]
+    },
+    "changes": [
+      "潮券+2",
+      "弥策: 友善",
+      "成长兑现: 旧递物签校验委托",
+      "沈舟在旧邮市东门向盐商顾阔重申校验边界后，查出两枚药柜封签分别存在海胶过厚闷裂旧潮纹、盐墨压实导致印角易起翘的问题。",
+      "顾阔按沈舟给出的处置先复验蓝蜡旧签：温湿剥开厚海胶、以薄盐墨补边后，湿帆布复验显示原潮纹贴合平整。",
+      "顾阔按约支付沈舟两枚潮券；两枚药柜封签与盐车始终由顾阔一方持有，沈舟未代签、未碰货柜，也未承担递送损失。"
+    ]
+  },
+  {
+    "turn": 14,
+    "action": "去潮栈凭货主号查询白帆外港试货是否已有回签、货况或给价。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 9
+    },
+    "coins": 26,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，判断常见的温度、沉淀与搅拌变化；现能完成一小批凉雾墨，并将其用于封护手掌大小的药材试货。限制：仅适用于已掌握的低阶完整公开方或可见的单一偏差，陌生方仍需逐步验证；材料不足或火候失控时不能保证成品。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "old-relay-map",
+        "name": "白帆外港旧中继图",
+        "description": "弥策交出的旧图与本次夜航前的落签说明，标明砾钟港至白帆外港的三个可用落签点；东侧礁湾附近的失修潮汐桩在大雾中有递物失落风险。",
+        "qty": 1
+      },
+      {
+        "id": "bitterleaf-root",
+        "name": "苦叶根",
+        "description": "剩余一束苦叶根，可作为低价药材试货或下一次低阶潮墨的植物材料。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mi-ce",
+        "name": "弥策",
+        "attitude": "友善"
+      },
+      {
+        "id": "tao-qing",
+        "name": "陶青",
+        "role": "药材贩",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "white-sail-shipment-receipt",
+          "kind": "access",
+          "name": "白帆外港试货货主签",
+          "effect": "可凭货主号、旧中继图在砾钟港或白帆外港潮栈查询本次试货的回签、货况与已记入的七枚潮券；可向后续托运人证明曾完成一次小件递送并由收件药铺收货。",
+          "scope": "本次试货已完成；七枚潮券可在潮栈兑取或用于后续外港交易抵扣。后续递送价格、药铺收货与给价仍须逐单确认。",
+          "status": "active",
+          "acquiredAtTurn": 10,
+          "lastUsedAtTurn": null,
+          "useCount": 0,
+          "updatedAtTurn": 14
+        },
+        {
+          "id": "qingli-small-trial-access",
+          "kind": "access",
+          "name": "青篱药铺小批试货窗口",
+          "effect": "可向白帆外港青篱药铺提交两包以内的封护药材试货，并以本次回签作为货况参考。",
+          "scope": "仅限后续两包以内的小批药材试货；药铺仍按材料、到港状态和当次行情决定是否收货与给价。",
+          "sourceId": "ou-lan",
+          "status": "active",
+          "acquiredAtTurn": 14,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "ou-lan-preservation-trade",
+          "name": "邮船药箱的凉雾墨交易",
+          "payoff": "通过现场验货可得六枚潮券；若为整箱药包完成封护，可换今晚夜航的一格小货位。",
+          "approach": "携带这匣凉雾墨向欧岚选择现金验货或药箱封护交易。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟选择现场验货，凉雾墨合格后获得六枚潮券；夜航小货位未成交。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "mi-ce-old-relay-map",
+          "name": "取得白帆外港旧中继图",
+          "payoff": "获得砾钟港至白帆外港的三处落签点与本次夜航前的落签说明，可据此规划小件递物路线。",
+          "approach": "向弥策支付二十枚潮券，或谈成他接受的等值交换；失修潮汐桩在大雾中存在递物入礁湾的风险。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "沈舟支付八枚潮券，并完成一次递物签校验服务，取得旧中继图与本次夜航前的落签说明。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "tao-qing-medicine-materials",
+          "name": "以校验换取外港试货材料",
+          "payoff": "获得一包青壳藻与两束苦叶根，可配合凉雾墨制作适合白帆外港递送的低价试货。",
+          "approach": "支付四枚潮券，或替陶青校验一罐止潮墨并指出一处能实际纠正的主要偏差。",
+          "status": "fulfilled",
+          "offeredAtTurn": 6,
+          "materialized": true,
+          "result": "沈舟校验出止潮墨因苦叶汁入盐后搅拌过急而形成的底层细渣，并协助陶青过滤、复搅使其通过湿帆布试涂；陶青按约交出一包青壳藻与两束苦叶根。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "white-sail-trial-shipment",
+          "name": "西侧落签点药材试货",
+          "payoff": "将封护药材试货递至白帆外港后，可向当地药铺实际问价、出售或建立后续小件递送的可核验记录。",
+          "approach": "在今晚夜航前带试货询问托运或亲自登船，并按旧中继图使用西侧盐仓旧桩；不使用东侧礁湾失修潮汐桩。",
+          "status": "fulfilled",
+          "offeredAtTurn": 8,
+          "materialized": true,
+          "result": "沈舟支付三枚潮券完成小件递送登记，封护药材试货已由夜航船按西侧盐仓旧桩递往白帆外港青篱药铺；收货、给价或拒收结果待回签确认。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "mi-ce-relay-sign-checks",
+          "name": "旧递物签校验委托",
+          "payoff": "可按次获得潮券报酬，并积累可核验的递物签校验记录。",
+          "approach": "日后遇到持有旧递物签、且愿意付费校验的委托人时，先查验补墨、潮纹或封签偏差，再谈具体报酬与责任。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟在顾阔面前查出两枚药柜封签的具体主要偏差，并给出可执行处置；其中一枚经货主当场复验通过，按约获得两枚潮券。",
+          "settledAtTurn": 13
+        },
+        {
+          "id": "qingli-repeat-trial",
+          "name": "青篱药铺后续小批试货",
+          "payoff": "可把两包以内的封护药材递至白帆外港，由青篱药铺按实际货况给价，并积累新的跨港交付记录。",
+          "approach": "备好合法药材与可用封护，确认下一班船的小件递送条件后托运；药铺收货和价格以到港状态为准。",
+          "status": "open",
+          "offeredAtTurn": 14
+        }
+      ]
+    },
+    "changes": [
+      "潮券+7",
+      "筹码改变: 白帆外港试货货主签",
+      "获得长期筹码: 青篱药铺小批试货窗口",
+      "可争取的成长: 青篱药铺后续小批试货",
+      "潮栈凭货主号确认：封护药材试货已经西侧盐仓旧桩送达白帆外港青篱药铺，离港封口与登记重量相符，药材未返潮。",
+      "青篱药铺按试货价收下整包封护药材，给价七枚潮券，款项记在沈舟的货主号下，可在砾钟港潮栈兑取或留作后续外港交易抵扣。",
+      "青篱药铺表示，若后续试货仍能以相近货况送达，愿查看两包以内的小批药材；具体价格仍取决于材料和到港状态。"
+    ]
+  },
+  {
+    "turn": 15,
+    "action": "把七枚潮券留在白帆外港潮栈货主号下，去问欧岚下一班小件递送的条件和抵扣方式。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 9
+    },
+    "coins": 26,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，判断常见的温度、沉淀与搅拌变化；现能完成一小批凉雾墨，并将其用于封护手掌大小的药材试货。限制：仅适用于已掌握的低阶完整公开方或可见的单一偏差，陌生方仍需逐步验证；材料不足或火候失控时不能保证成品。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "old-relay-map",
+        "name": "白帆外港旧中继图",
+        "description": "弥策交出的旧图与本次夜航前的落签说明，标明砾钟港至白帆外港的三个可用落签点；东侧礁湾附近的失修潮汐桩在大雾中有递物失落风险。",
+        "qty": 1
+      },
+      {
+        "id": "bitterleaf-root",
+        "name": "苦叶根",
+        "description": "剩余一束苦叶根，可作为低价药材试货或下一次低阶潮墨的植物材料。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mi-ce",
+        "name": "弥策",
+        "attitude": "友善"
+      },
+      {
+        "id": "tao-qing",
+        "name": "陶青",
+        "role": "药材贩",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "white-sail-shipment-receipt",
+          "kind": "access",
+          "name": "白帆外港试货货主签",
+          "effect": "可凭货主号、旧中继图在砾钟港或白帆外港潮栈查询本次试货的回签、货况与已记入的七枚潮券；可向后续托运人证明曾完成一次小件递送并由收件药铺收货。",
+          "scope": "本次试货已完成；七枚潮券可在潮栈兑取或用于后续外港交易抵扣。后续递送价格、药铺收货与给价仍须逐单确认。",
+          "status": "active",
+          "acquiredAtTurn": 10,
+          "lastUsedAtTurn": null,
+          "useCount": 0,
+          "updatedAtTurn": 14
+        },
+        {
+          "id": "qingli-small-trial-access",
+          "kind": "access",
+          "name": "青篱药铺小批试货窗口",
+          "effect": "可向白帆外港青篱药铺提交两包以内的封护药材试货，并以本次回签作为货况参考。",
+          "scope": "仅限后续两包以内的小批药材试货；药铺仍按材料、到港状态和当次行情决定是否收货与给价。",
+          "sourceId": "ou-lan",
+          "status": "active",
+          "acquiredAtTurn": 14,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "ou-lan-preservation-trade",
+          "name": "邮船药箱的凉雾墨交易",
+          "payoff": "通过现场验货可得六枚潮券；若为整箱药包完成封护，可换今晚夜航的一格小货位。",
+          "approach": "携带这匣凉雾墨向欧岚选择现金验货或药箱封护交易。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟选择现场验货，凉雾墨合格后获得六枚潮券；夜航小货位未成交。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "mi-ce-old-relay-map",
+          "name": "取得白帆外港旧中继图",
+          "payoff": "获得砾钟港至白帆外港的三处落签点与本次夜航前的落签说明，可据此规划小件递物路线。",
+          "approach": "向弥策支付二十枚潮券，或谈成他接受的等值交换；失修潮汐桩在大雾中存在递物入礁湾的风险。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "沈舟支付八枚潮券，并完成一次递物签校验服务，取得旧中继图与本次夜航前的落签说明。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "tao-qing-medicine-materials",
+          "name": "以校验换取外港试货材料",
+          "payoff": "获得一包青壳藻与两束苦叶根，可配合凉雾墨制作适合白帆外港递送的低价试货。",
+          "approach": "支付四枚潮券，或替陶青校验一罐止潮墨并指出一处能实际纠正的主要偏差。",
+          "status": "fulfilled",
+          "offeredAtTurn": 6,
+          "materialized": true,
+          "result": "沈舟校验出止潮墨因苦叶汁入盐后搅拌过急而形成的底层细渣，并协助陶青过滤、复搅使其通过湿帆布试涂；陶青按约交出一包青壳藻与两束苦叶根。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "white-sail-trial-shipment",
+          "name": "西侧落签点药材试货",
+          "payoff": "将封护药材试货递至白帆外港后，可向当地药铺实际问价、出售或建立后续小件递送的可核验记录。",
+          "approach": "在今晚夜航前带试货询问托运或亲自登船，并按旧中继图使用西侧盐仓旧桩；不使用东侧礁湾失修潮汐桩。",
+          "status": "fulfilled",
+          "offeredAtTurn": 8,
+          "materialized": true,
+          "result": "沈舟支付三枚潮券完成小件递送登记，封护药材试货已由夜航船按西侧盐仓旧桩递往白帆外港青篱药铺；收货、给价或拒收结果待回签确认。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "mi-ce-relay-sign-checks",
+          "name": "旧递物签校验委托",
+          "payoff": "可按次获得潮券报酬，并积累可核验的递物签校验记录。",
+          "approach": "日后遇到持有旧递物签、且愿意付费校验的委托人时，先查验补墨、潮纹或封签偏差，再谈具体报酬与责任。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟在顾阔面前查出两枚药柜封签的具体主要偏差，并给出可执行处置；其中一枚经货主当场复验通过，按约获得两枚潮券。",
+          "settledAtTurn": 13
+        },
+        {
+          "id": "qingli-repeat-trial",
+          "name": "青篱药铺后续小批试货",
+          "payoff": "可把两包以内的封护药材递至白帆外港，由青篱药铺按实际货况给价，并积累新的跨港交付记录。",
+          "approach": "备好合法药材与可用封护，确认下一班船的小件递送条件后托运；药铺收货和价格以到港状态为准。",
+          "status": "open",
+          "offeredAtTurn": 14
+        }
+      ]
+    },
+    "changes": [
+      "欧岚确认沈舟留在白帆外港潮栈货主号下的七枚潮券可继续保留，并可抵扣砾钟港至白帆外港的船方小件递送费。",
+      "欧岚说明下一班夜航走西侧盐仓旧桩的小件递送费为三枚潮券；两包以内、总重不超过两握的货物可并入同一张小件单，仍按一件计费。",
+      "欧岚说明三日后可能有返舱小件机会，递送费可降至两枚潮券，但船期不准，最长可能拖至五日；该条件尚未成交。",
+      "欧岚确认沈舟凭上一单回签递送药材时无需重新证明凉雾墨封护能力，但每包货物仍须在离港前验封并登记货况。"
+    ]
+  },
+  {
+    "turn": 16,
+    "action": "询问三日后返舱小件的具体开船条件、最晚抵达时间和货物限制，再决定是否用两枚潮券递送下一批试货。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 9
+    },
+    "coins": 26,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，判断常见的温度、沉淀与搅拌变化；现能完成一小批凉雾墨，并将其用于封护手掌大小的药材试货。限制：仅适用于已掌握的低阶完整公开方或可见的单一偏差，陌生方仍需逐步验证；材料不足或火候失控时不能保证成品。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "old-relay-map",
+        "name": "白帆外港旧中继图",
+        "description": "弥策交出的旧图与本次夜航前的落签说明，标明砾钟港至白帆外港的三个可用落签点；东侧礁湾附近的失修潮汐桩在大雾中有递物失落风险。",
+        "qty": 1
+      },
+      {
+        "id": "bitterleaf-root",
+        "name": "苦叶根",
+        "description": "剩余一束苦叶根，可作为低价药材试货或下一次低阶潮墨的植物材料。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mi-ce",
+        "name": "弥策",
+        "attitude": "友善"
+      },
+      {
+        "id": "tao-qing",
+        "name": "陶青",
+        "role": "药材贩",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "white-sail-shipment-receipt",
+          "kind": "access",
+          "name": "白帆外港试货货主签",
+          "effect": "可凭货主号、旧中继图在砾钟港或白帆外港潮栈查询本次试货的回签、货况与已记入的七枚潮券；可向后续托运人证明曾完成一次小件递送并由收件药铺收货。",
+          "scope": "本次试货已完成；七枚潮券可在潮栈兑取或用于后续外港交易抵扣。后续递送价格、药铺收货与给价仍须逐单确认。",
+          "status": "active",
+          "acquiredAtTurn": 10,
+          "lastUsedAtTurn": null,
+          "useCount": 0,
+          "updatedAtTurn": 14
+        },
+        {
+          "id": "qingli-small-trial-access",
+          "kind": "access",
+          "name": "青篱药铺小批试货窗口",
+          "effect": "可向白帆外港青篱药铺提交两包以内的封护药材试货，并以本次回签作为货况参考。",
+          "scope": "仅限后续两包以内的小批药材试货；药铺仍按材料、到港状态和当次行情决定是否收货与给价。",
+          "sourceId": "ou-lan",
+          "status": "active",
+          "acquiredAtTurn": 14,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "ou-lan-preservation-trade",
+          "name": "邮船药箱的凉雾墨交易",
+          "payoff": "通过现场验货可得六枚潮券；若为整箱药包完成封护，可换今晚夜航的一格小货位。",
+          "approach": "携带这匣凉雾墨向欧岚选择现金验货或药箱封护交易。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟选择现场验货，凉雾墨合格后获得六枚潮券；夜航小货位未成交。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "mi-ce-old-relay-map",
+          "name": "取得白帆外港旧中继图",
+          "payoff": "获得砾钟港至白帆外港的三处落签点与本次夜航前的落签说明，可据此规划小件递物路线。",
+          "approach": "向弥策支付二十枚潮券，或谈成他接受的等值交换；失修潮汐桩在大雾中存在递物入礁湾的风险。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "沈舟支付八枚潮券，并完成一次递物签校验服务，取得旧中继图与本次夜航前的落签说明。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "tao-qing-medicine-materials",
+          "name": "以校验换取外港试货材料",
+          "payoff": "获得一包青壳藻与两束苦叶根，可配合凉雾墨制作适合白帆外港递送的低价试货。",
+          "approach": "支付四枚潮券，或替陶青校验一罐止潮墨并指出一处能实际纠正的主要偏差。",
+          "status": "fulfilled",
+          "offeredAtTurn": 6,
+          "materialized": true,
+          "result": "沈舟校验出止潮墨因苦叶汁入盐后搅拌过急而形成的底层细渣，并协助陶青过滤、复搅使其通过湿帆布试涂；陶青按约交出一包青壳藻与两束苦叶根。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "white-sail-trial-shipment",
+          "name": "西侧落签点药材试货",
+          "payoff": "将封护药材试货递至白帆外港后，可向当地药铺实际问价、出售或建立后续小件递送的可核验记录。",
+          "approach": "在今晚夜航前带试货询问托运或亲自登船，并按旧中继图使用西侧盐仓旧桩；不使用东侧礁湾失修潮汐桩。",
+          "status": "fulfilled",
+          "offeredAtTurn": 8,
+          "materialized": true,
+          "result": "沈舟支付三枚潮券完成小件递送登记，封护药材试货已由夜航船按西侧盐仓旧桩递往白帆外港青篱药铺；收货、给价或拒收结果待回签确认。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "mi-ce-relay-sign-checks",
+          "name": "旧递物签校验委托",
+          "payoff": "可按次获得潮券报酬，并积累可核验的递物签校验记录。",
+          "approach": "日后遇到持有旧递物签、且愿意付费校验的委托人时，先查验补墨、潮纹或封签偏差，再谈具体报酬与责任。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟在顾阔面前查出两枚药柜封签的具体主要偏差，并给出可执行处置；其中一枚经货主当场复验通过，按约获得两枚潮券。",
+          "settledAtTurn": 13
+        },
+        {
+          "id": "qingli-repeat-trial",
+          "name": "青篱药铺后续小批试货",
+          "payoff": "可把两包以内的封护药材递至白帆外港，由青篱药铺按实际货况给价，并积累新的跨港交付记录。",
+          "approach": "备好合法药材与可用封护，确认下一班船的小件递送条件后托运；药铺收货和价格以到港状态为准。",
+          "status": "open",
+          "offeredAtTurn": 14
+        }
+      ]
+    },
+    "changes": [
+      "欧岚说明返舱小件最早三日后在西侧盐仓旧桩随返舱空药箱启运，若货格或潮位不合，最迟可能拖至第五日后的夜航；顺利时翌夜抵达白帆外港。",
+      "返舱小件费为两枚潮券，可从白帆外港潮栈货主号下的七枚余款直接抵扣；限两包以内、总重不超过两握、已验封的合法药材或配方抄本。",
+      "返舱递送不保证在三日内抵达；凉雾墨封护仅保鲜三日，若船期拖延导致药材返潮或药铺压价，损失由货主承担。"
+    ]
+  },
+  {
+    "turn": 17,
+    "action": "暂不预订返舱，带苦叶根去旧邮市询问本地收购价；先把材料变现或换到更耐放的货，再决定是否做下一批外港试货。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 9
+    },
+    "coins": 26,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，判断常见的温度、沉淀与搅拌变化；现能完成一小批凉雾墨，并将其用于封护手掌大小的药材试货。限制：仅适用于已掌握的低阶完整公开方或可见的单一偏差，陌生方仍需逐步验证；材料不足或火候失控时不能保证成品。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "old-relay-map",
+        "name": "白帆外港旧中继图",
+        "description": "弥策交出的旧图与本次夜航前的落签说明，标明砾钟港至白帆外港的三个可用落签点；东侧礁湾附近的失修潮汐桩在大雾中有递物失落风险。",
+        "qty": 1
+      },
+      {
+        "id": "bitterleaf-root",
+        "name": "苦叶根",
+        "description": "剩余一束苦叶根，可作为低价药材试货或下一次低阶潮墨的植物材料。",
+        "qty": 2
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mi-ce",
+        "name": "弥策",
+        "attitude": "友善"
+      },
+      {
+        "id": "tao-qing",
+        "name": "陶青",
+        "role": "药材贩",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "white-sail-shipment-receipt",
+          "kind": "access",
+          "name": "白帆外港试货货主签",
+          "effect": "可凭货主号、旧中继图在砾钟港或白帆外港潮栈查询本次试货的回签、货况与已记入的七枚潮券；可向后续托运人证明曾完成一次小件递送并由收件药铺收货。",
+          "scope": "本次试货已完成；七枚潮券可在潮栈兑取或用于后续外港交易抵扣。后续递送价格、药铺收货与给价仍须逐单确认。",
+          "status": "active",
+          "acquiredAtTurn": 10,
+          "lastUsedAtTurn": null,
+          "useCount": 0,
+          "updatedAtTurn": 14
+        },
+        {
+          "id": "qingli-small-trial-access",
+          "kind": "access",
+          "name": "青篱药铺小批试货窗口",
+          "effect": "可向白帆外港青篱药铺提交两包以内的封护药材试货，并以本次回签作为货况参考。",
+          "scope": "仅限后续两包以内的小批药材试货；药铺仍按材料、到港状态和当次行情决定是否收货与给价。",
+          "sourceId": "ou-lan",
+          "status": "active",
+          "acquiredAtTurn": 14,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "ou-lan-preservation-trade",
+          "name": "邮船药箱的凉雾墨交易",
+          "payoff": "通过现场验货可得六枚潮券；若为整箱药包完成封护，可换今晚夜航的一格小货位。",
+          "approach": "携带这匣凉雾墨向欧岚选择现金验货或药箱封护交易。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟选择现场验货，凉雾墨合格后获得六枚潮券；夜航小货位未成交。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "mi-ce-old-relay-map",
+          "name": "取得白帆外港旧中继图",
+          "payoff": "获得砾钟港至白帆外港的三处落签点与本次夜航前的落签说明，可据此规划小件递物路线。",
+          "approach": "向弥策支付二十枚潮券，或谈成他接受的等值交换；失修潮汐桩在大雾中存在递物入礁湾的风险。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "沈舟支付八枚潮券，并完成一次递物签校验服务，取得旧中继图与本次夜航前的落签说明。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "tao-qing-medicine-materials",
+          "name": "以校验换取外港试货材料",
+          "payoff": "获得一包青壳藻与两束苦叶根，可配合凉雾墨制作适合白帆外港递送的低价试货。",
+          "approach": "支付四枚潮券，或替陶青校验一罐止潮墨并指出一处能实际纠正的主要偏差。",
+          "status": "fulfilled",
+          "offeredAtTurn": 6,
+          "materialized": true,
+          "result": "沈舟校验出止潮墨因苦叶汁入盐后搅拌过急而形成的底层细渣，并协助陶青过滤、复搅使其通过湿帆布试涂；陶青按约交出一包青壳藻与两束苦叶根。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "white-sail-trial-shipment",
+          "name": "西侧落签点药材试货",
+          "payoff": "将封护药材试货递至白帆外港后，可向当地药铺实际问价、出售或建立后续小件递送的可核验记录。",
+          "approach": "在今晚夜航前带试货询问托运或亲自登船，并按旧中继图使用西侧盐仓旧桩；不使用东侧礁湾失修潮汐桩。",
+          "status": "fulfilled",
+          "offeredAtTurn": 8,
+          "materialized": true,
+          "result": "沈舟支付三枚潮券完成小件递送登记，封护药材试货已由夜航船按西侧盐仓旧桩递往白帆外港青篱药铺；收货、给价或拒收结果待回签确认。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "mi-ce-relay-sign-checks",
+          "name": "旧递物签校验委托",
+          "payoff": "可按次获得潮券报酬，并积累可核验的递物签校验记录。",
+          "approach": "日后遇到持有旧递物签、且愿意付费校验的委托人时，先查验补墨、潮纹或封签偏差，再谈具体报酬与责任。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟在顾阔面前查出两枚药柜封签的具体主要偏差，并给出可执行处置；其中一枚经货主当场复验通过，按约获得两枚潮券。",
+          "settledAtTurn": 13
+        },
+        {
+          "id": "qingli-repeat-trial",
+          "name": "青篱药铺后续小批试货",
+          "payoff": "可把两包以内的封护药材递至白帆外港，由青篱药铺按实际货况给价，并积累新的跨港交付记录。",
+          "approach": "备好合法药材与可用封护，确认下一班船的小件递送条件后托运；药铺收货和价格以到港状态为准。",
+          "status": "open",
+          "offeredAtTurn": 14
+        }
+      ]
+    },
+    "changes": [
+      "陶青查验两束苦叶根后报出本地条件：午前现金收购价为四枚潮券；若只换其柜中耐放干料，可按五枚潮券折抵，换取盐晒青穗与蜡皮籽。",
+      "旧邮市另外两家药材摊分别只肯为两束苦叶根出三枚潮券，或出四枚半但要求拆束挑根；陶青的四枚现金价为当前问到的最直接报价。",
+      "陶青说明盐晒青穗与蜡皮籽常温可存半月，适合做外港验封的低价试货；青篱药铺是否收货和给价仍须按到港状态另议。",
+      "陶青表示其四枚现金价与五枚折抵价只保留至午前，午后潮气加重将降为三枚半现金收购。"
+    ]
+  },
+  {
+    "turn": 18,
+    "action": "以两束苦叶根按五枚潮券折抵，向陶青换取盐晒青穗和蜡皮籽，准备耐放试货。",
+    "realm": {
+      "name": "白纸客",
+      "rank": 0,
+      "benchmark": "体能接近普通成年人，只会按公开方做简单潮墨，不能把刻式留在身上。",
+      "unlock": "可使用公共工位，小批炼制保存、清洁或显色类成品，并靠成品赚钱。",
+      "progress": 9
+    },
+    "coins": 26,
+    "capabilities": [
+      {
+        "id": "power-fault-taster",
+        "name": "错味校准",
+        "description": "触碰一份正在调制或已经完成的潮墨，你能指出其中最影响成败的一处步骤偏差。 边界: 不会直接给出完整配方，也不创造缺失材料；每批只能指出一处主要偏差，强行试毒仍会受伤。",
+        "source": "开局天赋"
+      },
+      {
+        "id": "basic-batch-brewing",
+        "name": "小批配墨",
+        "description": "能按完整公开方操作蒸瓶，判断常见的温度、沉淀与搅拌变化；现能完成一小批凉雾墨，并将其用于封护手掌大小的药材试货。限制：仅适用于已掌握的低阶完整公开方或可见的单一偏差，陌生方仍需逐步验证；材料不足或火候失控时不能保证成品。",
+        "source": "公共工坊训练"
+      }
+    ],
+    "inventory": [
+      {
+        "id": "folding-retort",
+        "name": "便携蒸瓶",
+        "description": "你的旧工具，可在公共火台上完成一小批低阶潮墨",
+        "qty": 1
+      },
+      {
+        "id": "cool-mist-recipe",
+        "name": "凉雾墨公开方",
+        "description": "你的合法抄本，步骤完整，成品可让手掌大小的密封包保鲜三日",
+        "qty": 1
+      },
+      {
+        "id": "old-relay-map",
+        "name": "白帆外港旧中继图",
+        "description": "弥策交出的旧图与本次夜航前的落签说明，标明砾钟港至白帆外港的三个可用落签点；东侧礁湾附近的失修潮汐桩在大雾中有递物失落风险。",
+        "qty": 1
+      },
+      {
+        "id": "salt-dried-green-spike",
+        "name": "盐晒青穗",
+        "description": "陶青以两束苦叶根折抵交付的耐放干料，常温可存约半月；可作为低价药材试货或低阶潮墨的植物材料，具体配方与外港收价仍需另行确认。",
+        "qty": 1
+      },
+      {
+        "id": "waxskin-seeds",
+        "name": "蜡皮籽",
+        "description": "陶青以两束苦叶根折抵交付的小包耐放种籽，外壳完整，常温可存约半月；可作低价药材试货或低阶潮墨的辅料，需按实际配方使用。",
+        "qty": 1
+      }
+    ],
+    "relationships": [
+      {
+        "id": "luo-sha",
+        "name": "洛纱",
+        "role": "配方掮客",
+        "attitude": "陌生"
+      },
+      {
+        "id": "ou-lan",
+        "name": "欧岚",
+        "role": "邮船记账员",
+        "attitude": "好奇"
+      },
+      {
+        "id": "mi-ce",
+        "name": "弥策",
+        "attitude": "友善"
+      },
+      {
+        "id": "tao-qing",
+        "name": "陶青",
+        "role": "药材贩",
+        "attitude": "好奇"
+      }
+    ],
+    "progression": {
+      "version": 1,
+      "leverage": [
+        {
+          "id": "white-sail-shipment-receipt",
+          "kind": "access",
+          "name": "白帆外港试货货主签",
+          "effect": "可凭货主号、旧中继图在砾钟港或白帆外港潮栈查询本次试货的回签、货况与已记入的七枚潮券；可向后续托运人证明曾完成一次小件递送并由收件药铺收货。",
+          "scope": "本次试货已完成；七枚潮券可在潮栈兑取或用于后续外港交易抵扣。后续递送价格、药铺收货与给价仍须逐单确认。",
+          "status": "active",
+          "acquiredAtTurn": 10,
+          "lastUsedAtTurn": null,
+          "useCount": 0,
+          "updatedAtTurn": 14
+        },
+        {
+          "id": "qingli-small-trial-access",
+          "kind": "access",
+          "name": "青篱药铺小批试货窗口",
+          "effect": "可向白帆外港青篱药铺提交两包以内的封护药材试货，并以本次回签作为货况参考。",
+          "scope": "仅限后续两包以内的小批药材试货；药铺仍按材料、到港状态和当次行情决定是否收货与给价。",
+          "sourceId": "ou-lan",
+          "status": "active",
+          "acquiredAtTurn": 14,
+          "lastUsedAtTurn": null,
+          "useCount": 0
+        }
+      ],
+      "opportunities": [
+        {
+          "id": "ou-lan-preservation-trade",
+          "name": "邮船药箱的凉雾墨交易",
+          "payoff": "通过现场验货可得六枚潮券；若为整箱药包完成封护，可换今晚夜航的一格小货位。",
+          "approach": "携带这匣凉雾墨向欧岚选择现金验货或药箱封护交易。",
+          "status": "fulfilled",
+          "offeredAtTurn": 2,
+          "materialized": true,
+          "result": "沈舟选择现场验货，凉雾墨合格后获得六枚潮券；夜航小货位未成交。",
+          "settledAtTurn": 3
+        },
+        {
+          "id": "mi-ce-old-relay-map",
+          "name": "取得白帆外港旧中继图",
+          "payoff": "获得砾钟港至白帆外港的三处落签点与本次夜航前的落签说明，可据此规划小件递物路线。",
+          "approach": "向弥策支付二十枚潮券，或谈成他接受的等值交换；失修潮汐桩在大雾中存在递物入礁湾的风险。",
+          "status": "fulfilled",
+          "offeredAtTurn": 4,
+          "materialized": true,
+          "result": "沈舟支付八枚潮券，并完成一次递物签校验服务，取得旧中继图与本次夜航前的落签说明。",
+          "settledAtTurn": 5
+        },
+        {
+          "id": "tao-qing-medicine-materials",
+          "name": "以校验换取外港试货材料",
+          "payoff": "获得一包青壳藻与两束苦叶根，可配合凉雾墨制作适合白帆外港递送的低价试货。",
+          "approach": "支付四枚潮券，或替陶青校验一罐止潮墨并指出一处能实际纠正的主要偏差。",
+          "status": "fulfilled",
+          "offeredAtTurn": 6,
+          "materialized": true,
+          "result": "沈舟校验出止潮墨因苦叶汁入盐后搅拌过急而形成的底层细渣，并协助陶青过滤、复搅使其通过湿帆布试涂；陶青按约交出一包青壳藻与两束苦叶根。",
+          "settledAtTurn": 7
+        },
+        {
+          "id": "white-sail-trial-shipment",
+          "name": "西侧落签点药材试货",
+          "payoff": "将封护药材试货递至白帆外港后，可向当地药铺实际问价、出售或建立后续小件递送的可核验记录。",
+          "approach": "在今晚夜航前带试货询问托运或亲自登船，并按旧中继图使用西侧盐仓旧桩；不使用东侧礁湾失修潮汐桩。",
+          "status": "fulfilled",
+          "offeredAtTurn": 8,
+          "materialized": true,
+          "result": "沈舟支付三枚潮券完成小件递送登记，封护药材试货已由夜航船按西侧盐仓旧桩递往白帆外港青篱药铺；收货、给价或拒收结果待回签确认。",
+          "settledAtTurn": 10
+        },
+        {
+          "id": "mi-ce-relay-sign-checks",
+          "name": "旧递物签校验委托",
+          "payoff": "可按次获得潮券报酬，并积累可核验的递物签校验记录。",
+          "approach": "日后遇到持有旧递物签、且愿意付费校验的委托人时，先查验补墨、潮纹或封签偏差，再谈具体报酬与责任。",
+          "status": "fulfilled",
+          "offeredAtTurn": 9,
+          "materialized": true,
+          "result": "沈舟在顾阔面前查出两枚药柜封签的具体主要偏差，并给出可执行处置；其中一枚经货主当场复验通过，按约获得两枚潮券。",
+          "settledAtTurn": 13
+        },
+        {
+          "id": "qingli-repeat-trial",
+          "name": "青篱药铺后续小批试货",
+          "payoff": "可把两包以内的封护药材递至白帆外港，由青篱药铺按实际货况给价，并积累新的跨港交付记录。",
+          "approach": "备好合法药材与可用封护，确认下一班船的小件递送条件后托运；药铺收货和价格以到港状态为准。",
+          "status": "open",
+          "offeredAtTurn": 14
+        }
+      ]
+    },
+    "changes": [
+      "失去 苦叶根",
+      "获得 盐晒青穗",
+      "获得 蜡皮籽",
+      "沈舟以两束苦叶根按陶青午前五枚潮券折抵价，换得一包盐晒青穗与一小包蜡皮籽；苦叶根已交给陶青。",
+      "沈舟当面查验盐晒青穗与蜡皮籽，确认干料无明显受潮或霉变；两样材料常温可存约半月，可分批用于低价试货。"
+    ]
+  }
+]

@@ -10,6 +10,14 @@ if ($listener) { throw "127.0.0.1:$Port already belongs to PID $($listener.Ownin
 $environment = @{ TGN_PORT = [string]$Port }
 foreach ($entry in Get-ChildItem Env:TGN_*) { $environment[$entry.Name] = $entry.Value }
 $environment.TGN_PORT = [string]$Port
+# Pin a tested UI release: later edits in public/ must not hot-change the live UI.
+# Test servers bypass this launcher and explicitly select their own frozen source.
+$version = (Get-Content (Join-Path $root 'package.json') -Raw | ConvertFrom-Json).version
+$releaseId = "$version-" + [DateTime]::UtcNow.ToString('yyyyMMdd-HHmmssfff')
+$publicRelease = Join-Path $runtime "public-releases\$releaseId"
+New-Item -ItemType Directory -Path $publicRelease -Force | Out-Null
+Copy-Item -Path (Join-Path $root 'public\*') -Destination $publicRelease -Recurse -Force
+$environment.TGN_PUBLIC_DIR = $publicRelease
 @{ node = (Get-Command node).Source; environment = $environment } | ConvertTo-Json -Depth 4 | Set-Content -Encoding utf8 (Join-Path $runtime 'server-bootstrap.json')
 $taskName = 'TGNLive-Web'
 $shell = (Get-Command pwsh -ErrorAction SilentlyContinue).Source
@@ -28,7 +36,7 @@ for ($attempt = 0; $attempt -lt 40; $attempt++) {
     $health = Invoke-RestMethod -Uri "http://127.0.0.1:$Port/api/health" -TimeoutSec 1
     if ($health.ok) {
       $record = Get-Content (Join-Path $runtime 'server.json') -Raw | ConvertFrom-Json
-      @{ Pid=$record.pid; Url="http://127.0.0.1:$Port"; TaskName=$taskName; Version=$health.version; RuntimeRecord=(Join-Path $runtime 'server.json') } | ConvertTo-Json
+      @{ Pid=$record.pid; Url="http://127.0.0.1:$Port"; TaskName=$taskName; Version=$health.version; PublicAssets=$publicRelease; RuntimeRecord=(Join-Path $runtime 'server.json') } | ConvertTo-Json
       exit 0
     }
   } catch {}

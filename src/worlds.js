@@ -1,6 +1,8 @@
 import { AppError } from "./errors.js";
 import { canonicalAttitude, isFanSourceLabel, localizedSourceLabel, normalizeLanguage, seedLabels } from "./i18n.js";
 import { localizePreset } from "./preset-i18n.js";
+import { emptyProgression } from './progression.js';
+import { PROGRESSION_WORLDS } from './progression-worlds.js';
 
 const ATTITUDES = new Set(["敌视", "戒备", "陌生", "中立", "好奇", "友善", "信任", "亲近"]);
 
@@ -256,7 +258,7 @@ const SOUL_MARK_WORLD = {
 };
 
 export const REALMS = CINDER_RIVER.powerSystem.realms.map(({ name, rank }) => ({ name, rank }));
-export const WORLDS = [CINDER_RIVER, SKY_BEAST_ISLES, WESTERN_MAGIC, ALCHEMY_WORLD, SOUL_MARK_WORLD].map((world) => validateWorldDefinition(world));
+export const WORLDS = [CINDER_RIVER, SKY_BEAST_ISLES, WESTERN_MAGIC, ALCHEMY_WORLD, SOUL_MARK_WORLD, ...PROGRESSION_WORLDS].map((world) => validateWorldDefinition(world));
 
 const LEGACY_CINDER_WORLD = validateWorldDefinition({
   ...CINDER_RIVER,
@@ -307,6 +309,7 @@ export function createSeedState(world, power) {
     power: structuredClone(power),
     facts: structuredClone(world.seed.facts),
     promises: structuredClone(world.seed.promises),
+    progression: emptyProgression(),
   };
 }
 
@@ -339,7 +342,12 @@ export function validateWorldDefinition(input, { id, createdAt, custom = false }
   const powers = validatePowers(input.powers, language);
   const opening = validateOpening(input.opening, language);
   const seed = validateSeed(input.seed, language);
-  return { id: worldId, title, subtitle, description, genre, tags, sourceLabel, powerSystem, powers, opening, seed, language, ...(createdAt || input.createdAt ? { createdAt: createdAt || input.createdAt } : {}) };
+  let growthGrammar;
+  if (input.growthGrammar !== undefined) {
+    if (!input.growthGrammar || typeof input.growthGrammar !== 'object' || Array.isArray(input.growthGrammar)) invalidWorld('growthGrammar必须是对象');
+    growthGrammar = Object.fromEntries(['desire', 'conversion', 'recognition', 'expansion'].map(key => [key, text(input.growthGrammar[key], `growthGrammar.${key}`, 8, 480)]));
+  }
+  return { id: worldId, title, subtitle, description, genre, tags, sourceLabel, powerSystem, powers, opening, seed, language, ...(growthGrammar ? { growthGrammar } : {}), ...(createdAt || input.createdAt ? { createdAt: createdAt || input.createdAt } : {}) };
 }
 
 function validatePowerSystem(value, language) {
