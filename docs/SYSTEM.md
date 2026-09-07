@@ -1,6 +1,10 @@
 # TGN Live 系统总览
 
-更新：2026-09-07。当前代码v0.6.4；具体发布证据和冻结范围读 `V060_RESEARCH_AND_EXPERIMENTS.md`，运行交接读根目录 `DEEP_CONTEXT_HANDOFF.md`。
+更新：2026-09-07。当前代码v0.7.0；具体发布证据和冻结范围读 `V060_RESEARCH_AND_EXPERIMENTS.md`，运行交接读根目录 `DEEP_CONTEXT_HANDOFF.md`。
+
+## 五语生成（v0.7.0）
+
+默认zh，可选en/fr/es/ar；主页右上角选择并保存在本设备，故事更多菜单可切。所有创建和行动接口传language，同一请求不同language冲突。成功回合才更新当前书语言，旧正文和world snapshot不回写。模型直接用目标语言生成，无逐回合翻译调用；Arabic RTL与历史段落各自方向分离。每个预设的力量来源/层级仍独立，不能为本地化变成通用规则。细节 `I18N_BACKEND.md`、`I18N_UI.md`，证据 `I18N_EXPERIMENTS.md`。
 
 ## 产品与权限边界
 
@@ -16,7 +20,7 @@
 
 `start-local.ps1` 用当前用户计划任务 `TGNLive-Web` 调用 `run-local.ps1`，因此可从有时限的AgentDock命令启动而不被父进程回收。节点入口仍只监听127.0.0.1。电脑睡眠/关机、用户未登录或AgentDock不可用会中断服务；不是云端常驻算力。停止脚本仅处理确认属于本项目的Node入口。
 
-现有 `src/access.js` 继续验证远程Access JWT与写入来源；没有把owner-only登录改成浏览器传一个名字即可。来源验证脚本在 `scripts/verify-remote.mjs`，当前证据写remote-v061，不覆盖v0.5基线。
+现有 `src/access.js` 继续验证远程Access JWT与写入来源；没有把owner-only登录改成浏览器传一个名字即可。来源验证脚本在 `scripts/verify-remote.mjs`，当前证据写remote-v070，不覆盖v0.5基线。
 
 ## 世界创建与游玩
 

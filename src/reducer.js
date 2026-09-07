@@ -1,9 +1,10 @@
 import { AppError } from "./errors.js";
 import { REALMS } from "./worlds.js";
 import { DELTA_LIMITS } from "./delta-contract.js";
+import { canonicalAttitude, formatChange, normalizeLanguage, seedLabels } from "./i18n.js";
 
 const ATTITUDES = new Set(["敌视", "戒备", "陌生", "中立", "好奇", "友善", "信任", "亲近"]);
-const MAX_TEXT = 160;
+const MAX_TEXT = 320;
 
 function shortText(value, field, { required = false, max = MAX_TEXT } = {}) {
   if (value === undefined || value === null) {
@@ -69,7 +70,7 @@ function applyInventory(state, operations, applied, rejected) {
         state.inventory.push({
           id: itemId || `item-${state.turnNumber + 1}-${state.inventory.length + 1}`,
           name,
-          description: shortText(operation.description, `inventoryOps[${index}].description`, { max: 180 }),
+          description: shortText(operation.description, `inventoryOps[${index}].description`, { max: 360 }),
           qty,
         });
       }
@@ -82,7 +83,7 @@ function applyInventory(state, operations, applied, rejected) {
         continue;
       }
       const existing = state.inventory[existingIndex];
-      const description = shortText(operation.description, `inventoryOps[${index}].description`, { required: true, max: 180 });
+      const description = shortText(operation.description, `inventoryOps[${index}].description`, { required: true, max: 360 });
       existing.description = description;
       applied.push({ field: "inventory", op, name: existing.name, description });
       continue;
@@ -115,7 +116,7 @@ function applyRelationships(state, changes, applied) {
   for (const [index, change] of changes.entries()) {
     const known = change?.id ? state.relationships.find(item => item.id === change.id) : undefined;
     const name = shortText(change?.name || known?.name, `relationshipChanges[${index}].name`, { required: true, max: 60 });
-    const attitude = shortText(change.attitude, `relationshipChanges[${index}].attitude`, { required: true, max: 20 });
+    const attitude = shortText(canonicalAttitude(change.attitude), `relationshipChanges[${index}].attitude`, { required: true, max: 20 });
     if (!ATTITUDES.has(attitude)) {
       throw new AppError(`关系态度 ${attitude} 不受支持`, { code: "INVALID_DELTA", status: 422 });
     }
@@ -132,7 +133,7 @@ function applyRelationships(state, changes, applied) {
   }
 }
 
-function applyCapabilities(state, operations, applied, rejected) {
+function applyCapabilities(state, operations, applied, rejected, language) {
   if (operations === undefined) return;
   if (!Array.isArray(operations) || operations.length > 3) {
     throw new AppError("capabilityOps 格式无效", { code: "INVALID_DELTA", status: 422 });
@@ -145,7 +146,7 @@ function applyCapabilities(state, operations, applied, rejected) {
     const op = operation.op;
     const id = shortText(operation.id, `capabilityOps[${index}].id`, { required: true, max: 80 });
     const name = shortText(operation.name, `capabilityOps[${index}].name`, { required: true, max: 60 });
-    const description = shortText(operation.description, `capabilityOps[${index}].description`, { required: true, max: 240 });
+    const description = shortText(operation.description, `capabilityOps[${index}].description`, { required: true, max: 480 });
     const existing = state.capabilities.find((ability) => ability.id === id || ability.name === name);
     if (op === "add") {
       if (existing) {
@@ -156,7 +157,7 @@ function applyCapabilities(state, operations, applied, rejected) {
         rejected.push({ field: "capabilities", op, id, reason: "capability_capacity" });
         continue;
       }
-      state.capabilities.push({ id, name, description, source: shortText(operation.source, `capabilityOps[${index}].source`, { max: 80 }) || "正文获得" });
+      state.capabilities.push({ id, name, description, source: shortText(operation.source, `capabilityOps[${index}].source`, { max: 160 }) || seedLabels(language).storyAcquired });
       applied.push({ field: "capability", op, name, description });
       continue;
     }
@@ -167,7 +168,7 @@ function applyCapabilities(state, operations, applied, rejected) {
       }
       existing.name = name;
       existing.description = description;
-      existing.source = shortText(operation.source, `capabilityOps[${index}].source`, { max: 80 }) || existing.source;
+      existing.source = shortText(operation.source, `capabilityOps[${index}].source`, { max: 160 }) || existing.source;
       applied.push({ field: "capability", op, name, description });
       continue;
     }
@@ -175,7 +176,7 @@ function applyCapabilities(state, operations, applied, rejected) {
   }
 }
 
-function applyRealm(state, delta, world, applied, rejected) {
+function applyRealm(state, delta, world, applied, rejected, language) {
   const progressDelta = boundedInteger(delta.realmProgressDelta, "realmProgressDelta", 0, 20, 0);
   if (progressDelta) {
     state.realm.progress = Math.min(100, state.realm.progress + progressDelta);
@@ -198,8 +199,10 @@ function applyRealm(state, delta, world, applied, rejected) {
     state.capabilities ||= [];
     const id = `realm-${expected.rank}`;
     if (!state.capabilities.some((ability) => ability.id === id)) {
-      state.capabilities.push({ id, name: `${expected.name}行动空间`, description: expected.unlock, source: "境界突破" });
-      applied.push({ field: "capability", op: "add", name: `${expected.name}行动空间`, description: expected.unlock });
+      const labels = seedLabels(language);
+      const name = labels.realmCapability(expected.name);
+      state.capabilities.push({ id, name, description: expected.unlock, source: labels.realmBreakthrough });
+      applied.push({ field: "capability", op: "add", name, description: expected.unlock });
     }
   }
 }
@@ -220,7 +223,7 @@ export function validateNarratorProposal(proposal) {
   }
   const choices = proposal.choices.map((choice, index) => ({
     id: shortText(choice?.id, `choices[${index}].id`, { required: true, max: 40 }),
-    label: shortText(choice?.label, `choices[${index}].label`, { required: true, max: 80 }),
+    label: shortText(choice?.label, `choices[${index}].label`, { required: true, max: 160 }),
   }));
   if (new Set(choices.map((choice) => choice.id)).size !== 3) {
     throw new AppError("行动选择 id 必须互不相同", { code: "INVALID_OUTPUT", status: 422, retryable: true });
@@ -231,7 +234,8 @@ export function validateNarratorProposal(proposal) {
   return { narrative, choices, delta: proposal.delta || {}, changes: uniqueStrings(proposal.changes, "changes", 8) };
 }
 
-export function reduceState(currentState, rawProposal, world) {
+export function reduceState(currentState, rawProposal, world, language = "zh") {
+  const code = normalizeLanguage(language);
   const proposal = validateNarratorProposal(rawProposal);
   const state = clone(currentState);
   const delta = proposal.delta;
@@ -256,10 +260,10 @@ export function reduceState(currentState, rawProposal, world) {
 
   applyInventory(state, delta.inventoryOps, applied, rejected);
   applyRelationships(state, delta.relationshipChanges, applied);
-  applyCapabilities(state, delta.capabilityOps, applied, rejected);
-  applyRealm(state, delta, world, applied, rejected);
+  applyCapabilities(state, delta.capabilityOps, applied, rejected, code);
+  applyRealm(state, delta, world, applied, rejected, code);
 
-  const goal = shortText(delta.goal, "goal", { max: 180 });
+  const goal = shortText(delta.goal, "goal", { max: 320 });
   if (goal && goal !== state.goal) {
     state.goal = goal;
     applied.push({ field: "goal", value: goal });
@@ -298,19 +302,6 @@ export function reduceState(currentState, rawProposal, world) {
     proposal,
     applied,
     rejected,
-    changes: applied.map(formatAppliedChange),
+    changes: applied.map((change) => formatChange(change, code)),
   };
-}
-
-function formatAppliedChange(change) {
-  if (change.field === "coins") return `${change.currencyName}${change.delta > 0 ? "+" : ""}${change.delta}`;
-  if (change.field === "realm.progress") return `修行进度 +${change.delta}`;
-  if (change.field === "realm") return `境界提升为${change.value}`;
-  if (change.field === "capability") return `${change.op === "improve" ? "能力提升" : "掌握能力"}：${change.name}`;
-  if (change.field === "location") return `抵达${change.value}`;
-  if (change.field === "inventory" && change.op === "update") return `${change.name}：${change.description}`;
-  if (change.field === "inventory") return `${change.op === "add" ? "获得" : "失去"}${change.name}`;
-  if (change.field === "relationship") return `${change.name}：${change.attitude}`;
-  if (change.field === "goal") return `目标：${change.value}`;
-  return change.value ? String(change.value) : change.field;
 }

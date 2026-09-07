@@ -18,7 +18,7 @@ export function loadConfig(overrides = {}) {
   const runtimeDir = path.resolve(rootDir, process.env.TGN_RUNTIME_DIR || ".runtime");
   const remotePath = path.join(runtimeDir, 'remote.json');
   return {
-    version: "0.6.4",
+    version: "0.7.0",
     remote: fs.existsSync(remotePath) ? JSON.parse(fs.readFileSync(remotePath, 'utf8')) : null,
     openingPlanStrategy: process.env.TGN_OPENING_PLAN || "authored",
     host: process.env.TGN_HOST || "127.0.0.1",

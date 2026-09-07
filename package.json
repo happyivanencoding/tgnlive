@@ -1,6 +1,6 @@
 {
   "name": "tgn-live",
-  "version": "0.6.4",
+  "version": "0.7.0",
   "private": true,
   "type": "module",
   "description": "Local TGN Live playable xianxia MVP backend",

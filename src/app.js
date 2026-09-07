@@ -4,8 +4,9 @@ import { createServer } from "node:http";
 import { AppError, publicError } from "./errors.js";
 import { createId } from "./ids.js";
 import { TurnTrace } from "./telemetry.js";
-import { createSeedState, getPower, publicWorld, publicWorlds } from "./worlds.js";
+import { createSeedState, getPower, publicWorld, publicWorldsForLanguage } from "./worlds.js";
 import { createRequestGuard } from './access.js';
+import { localizedGameTitle, normalizeLanguage } from "./i18n.js";
 
 const JSON_HEADERS = { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" };
 
@@ -46,7 +47,8 @@ export function createApp({ config, store, generationService, worldForge }) {
         });
       }
       if (request.method === "GET" && url.pathname === "/api/worlds") {
-        return sendJson(response, 200, { worlds: publicWorlds(store.listWorlds()) });
+        const language = normalizeLanguage(url.searchParams.get("language") || undefined);
+        return sendJson(response, 200, { worlds: publicWorldsForLanguage(store.listWorlds(), language) });
       }
       if (request.method === "POST" && url.pathname === "/api/worlds/custom") {
         return await handleWorld({ request, response });
@@ -56,17 +58,19 @@ export function createApp({ config, store, generationService, worldForge }) {
       }
       if (request.method === "POST" && url.pathname === "/api/games") {
         const body = await readJson(request);
+        const language = normalizeLanguage(body.language);
         const name = validateName(body.name);
-        const world = store.getWorld(body.worldId);
+        const world = store.getWorld(body.worldId, language);
         const power = getPower(world, body.powerId);
         if (!world || !power) throw new AppError("世界或异能不存在", { code: "INVALID_GAME_SELECTION", status: 400 });
         const game = store.createGame({
           name,
-          title: `${name}的《${world.title}》`,
+          title: localizedGameTitle(name, world.title, language),
           worldId: world.id,
           powerId: power.id,
           world,
           state: createSeedState(world, power),
+          language,
         });
         return sendJson(response, 201, { game });
       }
@@ -130,10 +134,11 @@ export function createApp({ config, store, generationService, worldForge }) {
     const action = validateAction(body.action, config.maxActionChars);
     const expectedVersion = validateVersion(body.expectedVersion);
     const requestId = validateRequestId(body.requestId);
+    const language = normalizeLanguage(body.language, { optional: true });
     if (inFlight.has(gameId)) throw new AppError("这段故事已有行动正在生成", { code: "GAME_BUSY", status: 409, retryable: true });
     const trace = new TurnTrace({ gameId, requestId });
     trace.startStage("request_validation");
-    const reservation = store.reserveRequest({ gameId, requestId, expectedVersion, traceId: trace.id, action });
+    const reservation = store.reserveRequest({ gameId, requestId, expectedVersion, traceId: trace.id, action, language });
     trace.endStage("request_validation", "complete");
 
     startSse(response);
@@ -159,6 +164,7 @@ export function createApp({ config, store, generationService, worldForge }) {
         game,
         world,
         action,
+        language: reservation.language,
         existingPlan,
         signal: controller.signal,
         trace,
@@ -174,6 +180,7 @@ export function createApp({ config, store, generationService, worldForge }) {
         requestId,
         expectedVersion,
         action,
+        language: reservation.language,
         reduced: generated.reduced,
         plan: generated.plan,
         chapterTurns: config.chapterTurns,
@@ -202,30 +209,35 @@ export function createApp({ config, store, generationService, worldForge }) {
   async function handleWorld({ request, response }) {
     const body = await readJson(request);
     const requestId = validateRequestId(body.requestId);
+    const language = normalizeLanguage(body.language);
     const prompt = typeof body.prompt === 'string' ? body.prompt.trim() : '';
     if (!prompt || prompt.length > 2000) throw new AppError('世界描述需为1—2000个字符', { code: 'INVALID_WORLD_PROMPT', status: 400 });
     const previous = store.getWorldRequest(requestId);
     if (previous) {
-      if (previous.prompt !== prompt) throw new AppError('这个requestId已经用于另一份世界描述', { code: 'IDEMPOTENCY_CONFLICT', status: 409 });
+      if (previous.prompt !== prompt || previous.language !== language) throw new AppError('这个requestId已经用于另一份世界描述或语言', { code: 'IDEMPOTENCY_CONFLICT', status: 409 });
       startSse(response);
       writeSse(response, 'complete', { world: publicWorld(previous.world), metrics: previous.metrics, idempotentReplay: true });
       return response.end();
     }
-    if (worldInFlight.has(requestId)) throw new AppError('这个世界仍在生成', { code: 'REQUEST_IN_PROGRESS', status: 409, retryable: true });
+    const activeWorld = worldInFlight.get(requestId);
+    if (activeWorld) {
+      if (activeWorld.prompt !== prompt || activeWorld.language !== language) throw new AppError('这个requestId已经用于另一份世界描述或语言', { code: 'IDEMPOTENCY_CONFLICT', status: 409 });
+      throw new AppError('这个世界仍在生成', { code: 'REQUEST_IN_PROGRESS', status: 409, retryable: true });
+    }
     if (!worldForge) throw new AppError('世界生成服务未配置', { code: 'WORLD_FORGE_UNAVAILABLE', status: 503 });
     const controller = new AbortController();
     const trace = new TurnTrace({ gameId: null, requestId });
     trace.value.kind = 'world-creation';
-    worldInFlight.set(requestId, controller);
+    worldInFlight.set(requestId, { controller, prompt, language });
     startSse(response);
     const heartbeat = setInterval(() => { if (!response.destroyed) response.write(': keepalive\n\n'); }, 15000);
     response.on('close', () => { if (!response.writableEnded) controller.abort(new Error('client disconnected')); });
     try {
-      const world = await worldForge.generate({ prompt, signal: controller.signal, trace, onStage: info => writeSse(response, 'stage', info) });
+      const world = await worldForge.generate({ prompt, language, signal: controller.signal, trace, onStage: info => writeSse(response, 'stage', info) });
       controller.signal.throwIfAborted();
       trace.startStage('world_persistence');
       writeSse(response, 'stage', { name: 'world_persistence', status: 'running', elapsedMs: trace.elapsed() });
-      store.saveWorld({ world, prompt, requestId });
+      store.saveWorld({ world, prompt, requestId, language });
       trace.endStage('world_persistence', 'complete');
       const finished = trace.finish('complete');
       store.insertTrace(finished, 'complete');

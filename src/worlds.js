@@ -1,4 +1,6 @@
 import { AppError } from "./errors.js";
+import { canonicalAttitude, isFanSourceLabel, localizedSourceLabel, normalizeLanguage, seedLabels } from "./i18n.js";
+import { localizePreset } from "./preset-i18n.js";
 
 const ATTITUDES = new Set(["敌视", "戒备", "陌生", "中立", "好奇", "友善", "信任", "亲近"]);
 
@@ -272,8 +274,9 @@ const LEGACY_CINDER_WORLD = validateWorldDefinition({
   ],
 });
 
-export function getWorld(worldId) {
-  return WORLDS.find((world) => world.id === worldId);
+export function getWorld(worldId, language = "zh") {
+  const world = WORLDS.find((candidate) => candidate.id === worldId);
+  return world ? localizePreset(world, normalizeLanguage(language)) : undefined;
 }
 
 export function getLegacyWorld(worldId) {
@@ -286,6 +289,7 @@ export function getPower(world, powerId) {
 
 export function createSeedState(world, power) {
   const firstRealm = world.powerSystem.realms[0];
+  const labels = seedLabels(world.language || "zh");
   return {
     worldId: world.id,
     realm: { ...firstRealm, progress: 0 },
@@ -295,7 +299,7 @@ export function createSeedState(world, power) {
     inventory: structuredClone(world.seed.inventory),
     relationships: structuredClone(world.seed.relationships),
     capabilities: [
-      { id: `power-${power.id}`, name: power.name, description: `${power.description} 边界：${power.boundary}`, source: "开局天赋" },
+      { id: `power-${power.id}`, name: power.name, description: `${power.description} ${labels.boundary}: ${power.boundary}`, source: labels.starterPower },
       ...structuredClone(world.seed.capabilities),
     ],
     goal: world.opening.goal,
@@ -313,65 +317,71 @@ export function publicWorld(world) {
 }
 
 export function publicWorlds(customWorlds = []) {
-  return [...WORLDS, ...customWorlds].map(publicWorld);
+  return publicWorldsForLanguage(customWorlds, "zh");
+}
+
+export function publicWorldsForLanguage(customWorlds = [], language = "zh") {
+  const code = normalizeLanguage(language);
+  return [...WORLDS.map((world) => localizePreset(world, code)), ...customWorlds].map(publicWorld);
 }
 
 export function validateWorldDefinition(input, { id, createdAt, custom = false } = {}) {
   if (!input || typeof input !== "object" || Array.isArray(input)) invalidWorld("世界必须是对象");
+  const language = normalizeLanguage(input.language);
   const worldId = shortId(id || input.id, "id");
-  const title = text(input.title, "title", 2, 40);
-  const subtitle = text(input.subtitle, "subtitle", 4, 80);
-  const description = text(input.description, "description", 40, 800);
-  const genre = text(input.genre, "genre", 2, 40);
-  const tags = stringList(input.tags, "tags", 2, 6, 2, 24);
-  const sourceLabel = custom ? (String(input.sourceLabel || "").includes("同人") ? "玩家自建 · 非官方同人灵感" : "玩家自建 · 原创生成") : text(input.sourceLabel, "sourceLabel", 2, 80);
-  const powerSystem = validatePowerSystem(input.powerSystem);
-  const powers = validatePowers(input.powers);
-  const opening = validateOpening(input.opening);
-  const seed = validateSeed(input.seed);
-  return { id: worldId, title, subtitle, description, genre, tags, sourceLabel, powerSystem, powers, opening, seed, ...(createdAt || input.createdAt ? { createdAt: createdAt || input.createdAt } : {}) };
+  const title = text(input.title, "title", 2, maxFor(language, 40, 80));
+  const subtitle = text(input.subtitle, "subtitle", 4, maxFor(language, 80, 160));
+  const description = text(input.description, "description", 40, maxFor(language, 800, 1200));
+  const genre = text(input.genre, "genre", 2, maxFor(language, 40, 80));
+  const tags = stringList(input.tags, "tags", 2, 6, 2, maxFor(language, 24, 48));
+  const sourceLabel = custom ? localizedSourceLabel({ language, custom: true, fan: isFanSourceLabel(input.sourceLabel) }) : text(input.sourceLabel, "sourceLabel", 2, 120);
+  const powerSystem = validatePowerSystem(input.powerSystem, language);
+  const powers = validatePowers(input.powers, language);
+  const opening = validateOpening(input.opening, language);
+  const seed = validateSeed(input.seed, language);
+  return { id: worldId, title, subtitle, description, genre, tags, sourceLabel, powerSystem, powers, opening, seed, language, ...(createdAt || input.createdAt ? { createdAt: createdAt || input.createdAt } : {}) };
 }
 
-function validatePowerSystem(value) {
+function validatePowerSystem(value, language) {
   if (!value || typeof value !== "object" || Array.isArray(value)) invalidWorld("powerSystem 必须是对象");
   if (!Array.isArray(value.realms) || value.realms.length < 4 || value.realms.length > 8) invalidWorld("realms 需要 4–8 个层级");
   const realms = value.realms.map((realm, index) => {
     if (!realm || typeof realm !== "object" || realm.rank !== index) invalidWorld("realm rank 必须从 0 连续递增");
-    return { name: text(realm.name, `realms[${index}].name`, 2, 30), rank: index, benchmark: text(realm.benchmark, `realms[${index}].benchmark`, 8, 220), unlock: text(realm.unlock, `realms[${index}].unlock`, 8, 220) };
+    return { name: text(realm.name, `realms[${index}].name`, 2, maxFor(language, 30, 60)), rank: index, benchmark: text(realm.benchmark, `realms[${index}].benchmark`, 8, maxFor(language, 220, 440)), unlock: text(realm.unlock, `realms[${index}].unlock`, 8, maxFor(language, 220, 440)) };
   });
   if (new Set(realms.map((realm) => realm.name)).size !== realms.length) invalidWorld("realm name 必须唯一");
-  return { summary: text(value.summary, "powerSystem.summary", 20, 600), growth: text(value.growth, "powerSystem.growth", 30, 800), realms };
+  return { summary: text(value.summary, "powerSystem.summary", 20, maxFor(language, 600, 1200)), growth: text(value.growth, "powerSystem.growth", 30, maxFor(language, 800, 1600)), realms };
 }
 
-function validatePowers(value) {
+function validatePowers(value, language) {
   if (!Array.isArray(value) || value.length !== 3) invalidWorld("powers 必须恰好有 3 个");
   const powers = value.map((power, index) => {
     if (!power || typeof power !== "object") invalidWorld(`powers[${index}] 必须是对象`);
-    const name = text(power.name, `powers[${index}].name`, 2, 30);
-    return { id: shortId(power.id || slug(name, `power-${index + 1}`), `powers[${index}].id`), name, description: text(power.description, `powers[${index}].description`, 15, 300), growth: text(power.growth, `powers[${index}].growth`, 15, 300), boundary: text(power.boundary, `powers[${index}].boundary`, 10, 260) };
+    const name = text(power.name, `powers[${index}].name`, 2, maxFor(language, 30, 60));
+    return { id: shortId(power.id || slug(name, `power-${index + 1}`), `powers[${index}].id`), name, description: text(power.description, `powers[${index}].description`, 15, maxFor(language, 300, 600)), growth: text(power.growth, `powers[${index}].growth`, 15, maxFor(language, 300, 600)), boundary: text(power.boundary, `powers[${index}].boundary`, 10, maxFor(language, 260, 520)) };
   });
   if (new Set(powers.map((power) => power.id)).size !== 3 || new Set(powers.map((power) => power.name)).size !== 3) invalidWorld("power id/name 必须唯一");
   return powers;
 }
 
-function validateOpening(value) {
+function validateOpening(value, language) {
   if (!value || typeof value !== "object" || Array.isArray(value)) invalidWorld("opening 必须是对象");
   if (!Array.isArray(value.npcMoves) || value.npcMoves.length < 2 || value.npcMoves.length > 5) invalidWorld("opening.npcMoves 需要 2–5 个 NPC");
-  const npcMoves = value.npcMoves.map((npc, index) => ({ id: shortId(npc?.id || slug(npc?.name, `npc-${index + 1}`), `npcMoves[${index}].id`), name: text(npc?.name, `npcMoves[${index}].name`, 1, 30), role: text(npc?.role, `npcMoves[${index}].role`, 2, 40), desire: text(npc?.desire, `npcMoves[${index}].desire`, 4, 100), nextMove: text(npc?.nextMove, `npcMoves[${index}].nextMove`, 5, 140) }));
-  return { location: text(value.location, "opening.location", 2, 80), chapterTitle: text(value.chapterTitle || "初入此界", "opening.chapterTitle", 2, 40), goal: text(value.goal, "opening.goal", 10, 220), situation: text(value.situation, "opening.situation", 80, 900), npcMoves, opportunities: stringList(value.opportunities, "opening.opportunities", 3, 3, 10, 180), continuity: stringList(value.continuity, "opening.continuity", 2, 8, 5, 180), milestone: text(value.milestone, "opening.milestone", 10, 260) };
+  const npcMoves = value.npcMoves.map((npc, index) => ({ id: shortId(npc?.id || slug(npc?.name, `npc-${index + 1}`), `npcMoves[${index}].id`), name: text(npc?.name, `npcMoves[${index}].name`, 1, maxFor(language, 30, 60)), role: text(npc?.role, `npcMoves[${index}].role`, 2, maxFor(language, 40, 80)), desire: text(npc?.desire, `npcMoves[${index}].desire`, 4, maxFor(language, 100, 200)), nextMove: text(npc?.nextMove, `npcMoves[${index}].nextMove`, 5, maxFor(language, 140, 280)) }));
+  return { location: text(value.location, "opening.location", 2, maxFor(language, 80, 160)), chapterTitle: text(value.chapterTitle || "初入此界", "opening.chapterTitle", 2, maxFor(language, 40, 80)), goal: text(value.goal, "opening.goal", 10, maxFor(language, 220, 440)), situation: text(value.situation, "opening.situation", 80, maxFor(language, 900, 1800)), npcMoves, opportunities: stringList(value.opportunities, "opening.opportunities", 3, 3, 10, maxFor(language, 180, 360)), continuity: stringList(value.continuity, "opening.continuity", 2, 8, 5, maxFor(language, 180, 360)), milestone: text(value.milestone, "opening.milestone", 10, maxFor(language, 260, 520)) };
 }
 
-function validateSeed(value) {
+function validateSeed(value, language) {
   if (!value || typeof value !== "object" || Array.isArray(value)) invalidWorld("seed 必须是对象");
   if (!Number.isInteger(value.coins) || value.coins < 0 || value.coins > 1000) invalidWorld("seed.coins 必须是 0–1000 的整数");
-  const inventory = objectList(value.inventory, "seed.inventory", 1, 8, (item, index) => ({ id: shortId(item?.id || `item-${index + 1}`, `seed.inventory[${index}].id`), name: text(item?.name, `seed.inventory[${index}].name`, 1, 40), description: text(item?.description, `seed.inventory[${index}].description`, 4, 180), qty: integer(item?.qty ?? 1, `seed.inventory[${index}].qty`, 1, 10) }));
+  const inventory = objectList(value.inventory, "seed.inventory", 1, 8, (item, index) => ({ id: shortId(item?.id || `item-${index + 1}`, `seed.inventory[${index}].id`), name: text(item?.name, `seed.inventory[${index}].name`, 1, maxFor(language, 40, 80)), description: text(item?.description, `seed.inventory[${index}].description`, 4, maxFor(language, 180, 360)), qty: integer(item?.qty ?? 1, `seed.inventory[${index}].qty`, 1, 10) }));
   const relationships = objectList(value.relationships, "seed.relationships", 1, 6, (npc, index) => {
-    const attitude = text(npc?.attitude, `seed.relationships[${index}].attitude`, 2, 10);
+    const attitude = text(canonicalAttitude(npc?.attitude), `seed.relationships[${index}].attitude`, 2, 10);
     if (!ATTITUDES.has(attitude)) invalidWorld(`seed.relationships[${index}].attitude 无效`);
-    return { id: shortId(npc?.id || `npc-${index + 1}`, `seed.relationships[${index}].id`), name: text(npc?.name, `seed.relationships[${index}].name`, 1, 30), role: text(npc?.role, `seed.relationships[${index}].role`, 2, 40), attitude };
+    return { id: shortId(npc?.id || `npc-${index + 1}`, `seed.relationships[${index}].id`), name: text(npc?.name, `seed.relationships[${index}].name`, 1, maxFor(language, 30, 60)), role: text(npc?.role, `seed.relationships[${index}].role`, 2, maxFor(language, 40, 80)), attitude };
   });
-  const capabilities = objectList(value.capabilities || [], "seed.capabilities", 0, 5, (ability, index) => ({ id: shortId(ability?.id || `ability-${index + 1}`, `seed.capabilities[${index}].id`), name: text(ability?.name, `seed.capabilities[${index}].name`, 2, 40), description: text(ability?.description, `seed.capabilities[${index}].description`, 8, 220), source: text(ability?.source || "开局", `seed.capabilities[${index}].source`, 2, 40) }));
-  return { currencyName: text(value.currencyName, "seed.currencyName", 1, 20), coins: value.coins, inventory, relationships, capabilities, facts: stringList(value.facts, "seed.facts", 2, 12, 4, 180), promises: stringList(value.promises || [], "seed.promises", 0, 5, 4, 180) };
+  const capabilities = objectList(value.capabilities || [], "seed.capabilities", 0, 5, (ability, index) => ({ id: shortId(ability?.id || `ability-${index + 1}`, `seed.capabilities[${index}].id`), name: text(ability?.name, `seed.capabilities[${index}].name`, 2, maxFor(language, 40, 80)), description: text(ability?.description, `seed.capabilities[${index}].description`, 8, maxFor(language, 220, 440)), source: text(ability?.source || "开局", `seed.capabilities[${index}].source`, 2, maxFor(language, 40, 80)) }));
+  return { currencyName: text(value.currencyName, "seed.currencyName", 1, maxFor(language, 20, 40)), coins: value.coins, inventory, relationships, capabilities, facts: stringList(value.facts, "seed.facts", 2, 12, 4, maxFor(language, 180, 360)), promises: stringList(value.promises || [], "seed.promises", 0, 5, 4, maxFor(language, 180, 360)) };
 }
 
 function objectList(value, field, minimum, maximum, mapper) {
@@ -396,6 +406,10 @@ function text(value, field, minimum, maximum) {
 function integer(value, field, minimum, maximum) {
   if (!Number.isInteger(value) || value < minimum || value > maximum) invalidWorld(`${field} 超出范围`);
   return value;
+}
+
+function maxFor(language, zh, translated) {
+  return language === "zh" ? zh : translated;
 }
 
 function shortId(value, field) {

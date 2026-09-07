@@ -4,6 +4,7 @@ import { DatabaseSync } from "node:sqlite";
 import { AppError } from "./errors.js";
 import { createId } from "./ids.js";
 import { getWorld, getLegacyWorld, publicWorld } from "./worlds.js";
+import { exportLabels, normalizeLanguage } from "./i18n.js";
 
 function parseJson(value, fallback) {
   if (!value) return fallback;
@@ -33,6 +34,7 @@ export class GameStore {
         power_id TEXT NOT NULL,
         version INTEGER NOT NULL,
         state_json TEXT NOT NULL,
+        language TEXT NOT NULL DEFAULT 'zh',
         created_at TEXT NOT NULL,
         updated_at TEXT NOT NULL
       );
@@ -41,6 +43,7 @@ export class GameStore {
         request_id TEXT NOT NULL UNIQUE,
         prompt TEXT NOT NULL,
         definition_json TEXT NOT NULL,
+        language TEXT NOT NULL DEFAULT 'zh',
         metrics_json TEXT,
         created_at TEXT NOT NULL
       );
@@ -60,6 +63,7 @@ export class GameStore {
         chapter_index INTEGER NOT NULL,
         trace_id TEXT NOT NULL,
         request_id TEXT NOT NULL,
+        language TEXT NOT NULL DEFAULT 'zh',
         UNIQUE(game_id, turn_index),
         UNIQUE(game_id, request_id)
       );
@@ -69,6 +73,7 @@ export class GameStore {
         status TEXT NOT NULL,
         expected_version INTEGER NOT NULL,
         action TEXT NOT NULL,
+        language TEXT NOT NULL DEFAULT 'zh',
         trace_id TEXT NOT NULL,
         turn_id TEXT,
         error_json TEXT,
@@ -105,6 +110,11 @@ export class GameStore {
     `);
     const requestColumns = this.db.prepare("PRAGMA table_info(requests)").all().map((column) => column.name);
     if (!requestColumns.includes("action")) this.db.exec("ALTER TABLE requests ADD COLUMN action TEXT NOT NULL DEFAULT ''");
+    const languageTables = ["games", "worlds", "turns", "requests"];
+    for (const table of languageTables) {
+      const columns = this.db.prepare(`PRAGMA table_info(${table})`).all().map((column) => column.name);
+      if (!columns.includes("language")) this.db.exec(`ALTER TABLE ${table} ADD COLUMN language TEXT NOT NULL DEFAULT 'zh'`);
+    }
   }
 
   close() {
@@ -123,36 +133,38 @@ export class GameStore {
     }
   }
 
-  createGame({ name, title, worldId, powerId, state, world = getWorld(worldId) }) {
+  createGame({ name, title, worldId, powerId, state, world = getWorld(worldId), language = "zh" }) {
+    const code = normalizeLanguage(language);
     const id = createId("game");
     const createdAt = nowIso();
     return this.transaction(() => {
       this.db.prepare(`
-        INSERT INTO games (id, name, title, world_id, power_id, version, state_json, created_at, updated_at)
-        VALUES (?, ?, ?, ?, ?, 0, ?, ?, ?)
-      `).run(id, name, title, worldId, powerId, JSON.stringify(state), createdAt, createdAt);
+        INSERT INTO games (id, name, title, world_id, power_id, version, state_json, language, created_at, updated_at)
+        VALUES (?, ?, ?, ?, ?, 0, ?, ?, ?, ?)
+      `).run(id, name, title, worldId, powerId, JSON.stringify(state), code, createdAt, createdAt);
       if (world) this.db.prepare("INSERT INTO game_worlds (game_id, definition_json) VALUES (?, ?)").run(id, JSON.stringify(world));
       return this.getGame(id);
     });
   }
 
   listWorlds() {
-    return this.db.prepare("SELECT definition_json FROM worlds ORDER BY created_at DESC").all().map(row => JSON.parse(row.definition_json));
+    return this.db.prepare("SELECT definition_json, language FROM worlds ORDER BY created_at DESC").all().map(row => ({ ...JSON.parse(row.definition_json), language: row.language || "zh" }));
   }
 
-  getWorld(worldId) {
-    const row = this.db.prepare("SELECT definition_json FROM worlds WHERE id = ?").get(worldId);
-    return row ? JSON.parse(row.definition_json) : getWorld(worldId);
+  getWorld(worldId, language = "zh") {
+    const row = this.db.prepare("SELECT definition_json, language FROM worlds WHERE id = ?").get(worldId);
+    return row ? { ...JSON.parse(row.definition_json), language: row.language || "zh" } : getWorld(worldId, language);
   }
 
   getWorldRequest(requestId) {
     const row = this.db.prepare("SELECT * FROM worlds WHERE request_id = ?").get(requestId);
-    return row ? { prompt: row.prompt, world: JSON.parse(row.definition_json), metrics: parseJson(row.metrics_json, null) } : null;
+    return row ? { prompt: row.prompt, language: row.language || "zh", world: { ...JSON.parse(row.definition_json), language: row.language || "zh" }, metrics: parseJson(row.metrics_json, null) } : null;
   }
 
-  saveWorld({ world, prompt, requestId }) {
-    this.db.prepare("INSERT INTO worlds (id, request_id, prompt, definition_json, created_at) VALUES (?, ?, ?, ?, ?)")
-      .run(world.id, requestId, prompt, JSON.stringify(world), world.createdAt || nowIso());
+  saveWorld({ world, prompt, requestId, language = world.language || "zh" }) {
+    const code = normalizeLanguage(language);
+    this.db.prepare("INSERT INTO worlds (id, request_id, prompt, definition_json, language, created_at) VALUES (?, ?, ?, ?, ?, ?)")
+      .run(world.id, requestId, prompt, JSON.stringify({ ...world, language: code }), code, world.createdAt || nowIso());
   }
 
   saveWorldMetrics(worldId, metrics) {
@@ -168,7 +180,7 @@ export class GameStore {
 
   listGames() {
     return this.db.prepare(`
-      SELECT id, name, title, updated_at, state_json FROM games ORDER BY updated_at DESC
+      SELECT id, name, title, updated_at, state_json, language FROM games ORDER BY updated_at DESC
     `).all().map((row) => {
       const state = parseJson(row.state_json, {});
       return {
@@ -178,6 +190,7 @@ export class GameStore {
         updatedAt: row.updated_at,
         turnNumber: state.turnNumber || 0,
         realm: state.realm,
+        language: row.language || "zh",
       };
     });
   }
@@ -197,10 +210,11 @@ export class GameStore {
       version: row.version,
       createdAt: row.created_at,
       updatedAt: row.updated_at,
+      language: row.language || "zh",
       state: parseJson(row.state_json, {}),
       turns,
       world: publicWorld(this.getGameWorld(gameId)),
-      chapters: groupChapters(turns, this.getGameWorld(gameId)?.opening?.chapterTitle),
+      chapters: groupChapters(turns, this.getGameWorld(gameId)?.opening?.chapterTitle, row.language || "zh"),
     };
   }
 
@@ -208,13 +222,14 @@ export class GameStore {
     return this.db.prepare("SELECT * FROM turns WHERE game_id = ? ORDER BY turn_index").all(gameId).map(mapTurn);
   }
 
-  reserveRequest({ gameId, requestId, expectedVersion, traceId, action }) {
+  reserveRequest({ gameId, requestId, expectedVersion, traceId, action, language = null }) {
     return this.transaction(() => {
       const game = this.getGameRow(gameId);
       if (!game) throw new AppError("找不到这段故事", { code: "GAME_NOT_FOUND", status: 404 });
+      const code = normalizeLanguage(language, { fallback: game.language || "zh" });
       const existing = this.db.prepare("SELECT * FROM requests WHERE game_id = ? AND request_id = ?").get(gameId, requestId);
       if (existing) {
-        if (existing.expected_version !== expectedVersion || existing.action !== action) {
+        if (existing.expected_version !== expectedVersion || existing.action !== action || (existing.language || "zh") !== code) {
           throw new AppError("这个 requestId 已绑定到不同的行动或版本", { code: "IDEMPOTENCY_CONFLICT", status: 409, retryable: false });
         }
         if (existing.status === "complete" && existing.turn_id) {
@@ -231,14 +246,14 @@ export class GameStore {
       }
       const createdAt = nowIso();
       this.db.prepare(`
-        INSERT INTO requests (game_id, request_id, status, expected_version, action, trace_id, created_at, updated_at)
-        VALUES (?, ?, 'running', ?, ?, ?, ?, ?)
-      `).run(gameId, requestId, expectedVersion, action, traceId, createdAt, createdAt);
-      return { kind: "reserved", game: this.getGame(gameId) };
+        INSERT INTO requests (game_id, request_id, status, expected_version, action, language, trace_id, created_at, updated_at)
+        VALUES (?, ?, 'running', ?, ?, ?, ?, ?, ?)
+      `).run(gameId, requestId, expectedVersion, action, code, traceId, createdAt, createdAt);
+      return { kind: "reserved", game: this.getGame(gameId), language: code };
     });
   }
 
-  commitTurn({ gameId, requestId, expectedVersion, action, reduced, trace, plan, chapterTurns }) {
+  commitTurn({ gameId, requestId, expectedVersion, action, language, reduced, trace, plan, chapterTurns }) {
     return this.transaction(() => {
       const gameRow = this.getGameRow(gameId);
       const request = this.db.prepare("SELECT * FROM requests WHERE game_id = ? AND request_id = ?").get(gameId, requestId);
@@ -248,20 +263,24 @@ export class GameStore {
       if (gameRow.version !== expectedVersion) {
         throw new AppError("故事版本在生成期间发生变化", { code: "VERSION_CONFLICT", status: 409, retryable: true });
       }
+      const code = normalizeLanguage(language, { fallback: request.language || gameRow.language || "zh" });
+      if ((request.language || "zh") !== code) {
+        throw new AppError("请求语言在生成期间发生变化", { code: "COMMIT_CONFLICT", status: 409, retryable: true });
+      }
       const turnIndex = reduced.state.turnNumber;
       const turnId = createId("turn");
       const createdAt = nowIso();
       const chapterIndex = Math.floor((turnIndex - 1) / chapterTurns) + 1;
       this.db.prepare(`
-        INSERT INTO turns (id, game_id, turn_index, action, narrative, choices_json, changes_json, created_at, chapter_index, trace_id, request_id)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        INSERT INTO turns (id, game_id, turn_index, action, narrative, choices_json, changes_json, language, created_at, chapter_index, trace_id, request_id)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `).run(
         turnId, gameId, turnIndex, action, reduced.proposal.narrative,
-        JSON.stringify(reduced.proposal.choices), JSON.stringify(reduced.changes), createdAt,
+        JSON.stringify(reduced.proposal.choices), JSON.stringify(reduced.changes), code, createdAt,
         chapterIndex, trace.id, requestId,
       );
-      this.db.prepare("UPDATE games SET version = version + 1, state_json = ?, updated_at = ? WHERE id = ?")
-        .run(JSON.stringify(reduced.state), createdAt, gameId);
+      this.db.prepare("UPDATE games SET version = version + 1, state_json = ?, language = ?, updated_at = ? WHERE id = ?")
+        .run(JSON.stringify(reduced.state), code, createdAt, gameId);
       this.db.prepare(`
         INSERT INTO canon_ledger (game_id, turn_index, kind, payload_json, created_at) VALUES (?, ?, 'turn_delta', ?, ?)
       `).run(gameId, turnIndex, JSON.stringify({ applied: reduced.applied, rejected: reduced.rejected }), createdAt);
@@ -333,15 +352,17 @@ export class GameStore {
     if (!game) return null;
     const lines = [];
     if (format === "md") {
-      lines.push(`# ${game.title}`, "", `主角：${game.name}`, `异能：${game.state.power.name}`, "");
+      const labels = exportLabels(game.language);
+      lines.push(`# ${game.title}`, "", `${labels.protagonist}: ${game.name}`, `${labels.power}: ${game.state.power.name}`, "");
       for (const chapter of game.chapters) {
-        lines.push(`## 第${chapter.index}章 ${chapter.title}`, "");
+        lines.push(`## ${labels.chapter(chapter.index)} ${chapter.title}`, "");
         for (const turn of chapter.turns) lines.push(turn.narrative, "");
       }
     } else {
-      lines.push(game.title, `主角：${game.name}`, `异能：${game.state.power.name}`, "");
+      const labels = exportLabels(game.language);
+      lines.push(game.title, `${labels.protagonist}: ${game.name}`, `${labels.power}: ${game.state.power.name}`, "");
       for (const chapter of game.chapters) {
-        lines.push(`第${chapter.index}章 ${chapter.title}`, "");
+        lines.push(`${labels.chapter(chapter.index)} ${chapter.title}`, "");
         for (const turn of chapter.turns) lines.push(turn.narrative, "");
       }
     }
@@ -361,10 +382,12 @@ function mapTurn(row) {
     createdAt: row.created_at,
     chapterIndex: row.chapter_index,
     traceId: row.trace_id,
+    language: row.language || "zh",
   };
 }
 
-function groupChapters(turns, openingTitle = "烬河倒流") {
+function groupChapters(turns, openingTitle = "烬河倒流", language = "zh") {
+  const labels = exportLabels(language);
   const groups = new Map();
   for (const turn of turns) {
     if (!groups.has(turn.chapterIndex)) groups.set(turn.chapterIndex, []);
@@ -372,7 +395,7 @@ function groupChapters(turns, openingTitle = "烬河倒流") {
   }
   return [...groups.entries()].map(([index, chapterTurns]) => ({
     index,
-    title: chapterTurns[0]?.index === 1 ? openingTitle : `第${chapterTurns[0]?.index}回起`,
+    title: chapterTurns[0]?.index === 1 ? openingTitle : labels.laterChapter(chapterTurns[0]?.index),
     turns: chapterTurns,
   }));
 }

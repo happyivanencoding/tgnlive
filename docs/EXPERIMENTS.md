@@ -1,3 +1,7 @@
+# v0.7.0 五语最新实测入口
+
+五语真实生成、Arabic状态枚举修复、手机RTL和旧存档迁移证据见 `I18N_EXPERIMENTS.md`。以下保留v0.4—0.6历史，不代表当前只有单世界/单语言。
+
 # 2026-09-07 v0.5.0 远程验收补充
 
 用户授权 private remote play 后，部署 https://live.thegreatnovel.com；原本机限定是历史版本范围。Cloudflare Access 本人登录和 origin JWT 验证同时生效。其他 Tunnel 路由逐项相同，原 12 份存档切换前后 hash 相同。

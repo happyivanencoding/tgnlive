@@ -24,6 +24,6 @@ for (const path of ['/', '/api/games']) {
 const health = await (await fetch('http://127.0.0.1:4317/api/health')).json();
 assert.equal(health.access.mode, 'owner-only');
 const result = { at: new Date().toISOString(), version: health.version, checks };
-fs.mkdirSync('artifacts/remote-v064', { recursive: true });
-fs.writeFileSync('artifacts/remote-v064/boundary.json', JSON.stringify(result, null, 2));
+fs.mkdirSync('artifacts/remote-v070', { recursive: true });
+fs.writeFileSync('artifacts/remote-v070/boundary.json', JSON.stringify(result, null, 2));
 console.log(JSON.stringify(result, null, 2));

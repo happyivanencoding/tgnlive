@@ -23,7 +23,7 @@ export class GenerationService {
       || game.state.realm.progress >= 90;
   }
 
-  async execute({ game, world, action, existingPlan, signal, trace, onStage, onText }) {
+  async execute({ game, world, action, language = game.language || "zh", existingPlan, signal, trace, onStage, onText }) {
     let plan = existingPlan;
     let freshPlan = null;
     trace.value.openingPlanStrategy = this.openingPlanStrategy;
@@ -36,7 +36,7 @@ export class GenerationService {
     }
     if (this.shouldPlan(game)) {
       trace.value.planSource = "live-story-brain";
-      const plannerPrompt = buildPlannerPrompt({ game, world, action });
+      const plannerPrompt = buildPlannerPrompt({ game, world, action, language });
       trace.value.promptChars.planner = plannerPrompt.length;
       await stage(trace, onStage, "plan", async () => {
         beginSetupStage(trace, onStage, "planner");
@@ -52,7 +52,7 @@ export class GenerationService {
 
     let narratorPrompt;
     await stage(trace, onStage, "context_assembly", async () => {
-      narratorPrompt = buildNarratorPrompt({ game, world, action, plan });
+      narratorPrompt = buildNarratorPrompt({ game, world, action, plan, language });
       trace.value.promptChars.narrator = narratorPrompt.length;
     });
 
@@ -82,14 +82,14 @@ export class GenerationService {
     let reduced;
     try {
       await stage(trace, onStage, "parse_validate", async () => {
-        reduced = reduceState(game.state, parser.finish(), world);
+        reduced = reduceState(game.state, parser.finish(), world, language);
       });
     } catch (firstError) {
       trace.value.repairAttempts = 1;
       trace.value.errors.push({ phase: "parse_validate", code: firstError.code || "INVALID_OUTPUT", message: firstError.message });
       await stage(trace, onStage, "repair", async () => {
         beginSetupStage(trace, onStage, "repair");
-        const repairPrompt = buildRepairPrompt({ game, world, action, invalidOutput: rawOutput, reason: firstError.message });
+        const repairPrompt = buildRepairPrompt({ game, world, action, invalidOutput: rawOutput, reason: firstError.message, language });
         trace.value.promptChars.repair = repairPrompt.length;
         let repairedOutput = "";
         const repairedParser = new StreamingNarratorParser();
@@ -104,7 +104,7 @@ export class GenerationService {
         trace.value.provider.repair = providerResult(this.narrator, repairResult);
         trace.value.outputChars += repairedOutput.length;
         trace.value.candidateOutputs.push({ role: "repair", finalText: repairedOutput });
-        reduced = reduceState(game.state, repairedParser.finish(), world);
+        reduced = reduceState(game.state, repairedParser.finish(), world, language);
       });
     }
 

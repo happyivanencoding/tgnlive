@@ -1,4 +1,28 @@
-# TGN Live — 当前交接
+# v0.7.0 五语上线交接（2026-09-07）
+
+任务 tsk_372fe95f0f4f9ec7。当前代码与4317运行版本v0.7.0，线上仍是既有live.thegreatnovel.com owner-only入口。源码仓库happyivanencoding/tgnlive、main；每次接受改动连带更新本文件与系统docs并commit/push。实际最终提交号以git HEAD、origin/main与本地交付报告核对，不把历史提交号当当前。
+
+## 本次变化
+
+主页最开始右上角五语：中文（zh，首访固定默认）、English(en)、Français(fr)、Español(es)、العربية(ar)，localStorage key为tgn-live-language。故事更多菜单也可切，生成中禁用。接口语言贯穿预设、World Forge、角色、Narrator/Planner/Repair及状态/导出固定标签；不增加无条件翻译模型。Arabic RTL、手机阅读输入、各历史正文段落自己的lang/dir均已处理。既有正文和源语言专名不自动翻译。
+
+先读docs/I18N_UI.md、I18N_BACKEND.md、I18N_EXPERIMENTS.md。I18N_CONTRACT是本次约定，不应覆盖实测后的具体实现。五套预设保持各自力量系统，fr/es/ar不共用通用力量尺；ID/rank/数量不改。Arabic固定attitude偶被模型翻译，两例已归一并保留真实失败，未知枚举仍拒绝。
+
+## 实测与部署
+
+全仓66/66 Node；隔离浏览器46项；真实浏览器20项，成功执行Arabic第3回合，但保留1个net::ERR_ABORTED收尾警告（没有丢档或JS错误）。五语各两个真实ACP回合均完成；中文转法语保留旧文，法语与阿语真实创建世界并开局均有成功证据。阿语创建先后两次格式失败未删，最终全新创建46.514秒、开局16.678秒。手机为桌面Chrome视口/事件模拟，不是Android/iPhone真机，也非母语文学编辑验收。
+
+2026-09-07T10:02:25Z部署重启后25书、121回合、2自建世界、10快照、126请求所有旧字段逐值相同，新语言列默认zh。没有hash或覆写历史。证据artifacts/reports/i18n-v070/production-after.json。现由原TGNLive-Web计划任务运行，PID35240（即时归属以.runtime/server.json为准）。线上仍只允许owner Access；边界6项通过artifacts/remote-v070/boundary.json。
+
+全部实验用独立4318和.runtime/i18n-test/games.sqlite，不要把测试书迁入线上。开发ACP两个早期run因断连失败，协调者接手完成实现和验证；不把它们报作成功交付。保留生产4317服务，测试服务器与有界实验在交付结束时关闭。原TGN和其它项目不改。
+
+原始事件、实际session/run/model/effort与阶段时间位于artifacts/eval/i18n-v070、i18n-ar-final-v070和artifacts/ui/i18n-live-final-v070。Node、fixture和离线重放不等于真实ACP质量；API接收不是屏幕paint；缺失账单token/cost/内部queue不猜测。
+
+---
+
+以下为v0.6.4历史交接，仅其仍相符的架构与运行规则适用，版本和功能以上文为准。
+
+# TGN Live — v0.6.4 交接与历史证据
 
 **2026-09-07，交付代码v0.6.4。** 本文件是当前入口；历史版本的结论不能覆盖这里。阅读顺序：AGENTS → 本文件 → docs/SYSTEM → WORLD_SYSTEM → MOBILE_DESIGN → V060_RESEARCH_AND_EXPERIMENTS。HANDOFF.md只做指引。
 
